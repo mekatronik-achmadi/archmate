@@ -1,0 +1,28 @@
+pkgname=ugfxlib
+tarname=uGFX
+pkgver=2.8
+pkgrel=1
+pkgdesc="uGFX Library"
+arch=('any')
+url="https://community.ugfx.io/files/"
+license=('custom')
+depends=('arm-none-eabi-gcc' 'arm-none-eabi-newlib')
+optdepends=('stm32chlib: for STM32 run on ChibiOS/RT')
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+source=("$tarname-v$pkgver.tar.gz::https://git.ugfx.io/uGFX/uGFX/archive/v$pkgver.tar.gz"
+	"ili9320.patch")
+sha256sums=('5b260ec7c5a9c4822b602e375654a329a4243d1f69fa21bda708fed446169e63'
+	    'a999aa860312566eced58b1f623bc460dd2e781228ffd5aa96635043eaff308e')
+
+prepare() {
+	cd "$srcdir/ugfx/drivers/gdisp/ILI9320/"
+	patch gdisp_lld_ILI9320.c ../../../../ili9320.patch
+}
+
+package() {
+	cd "$srcdir/ugfx/"
+
+	install -d $pkgdir/opt/ugfxlib/
+	mv -f ./* $pkgdir/opt/ugfxlib/
+	chmod -Rf 755 $pkgdir/opt/ugfxlib/
+}

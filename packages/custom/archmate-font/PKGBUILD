@@ -1,0 +1,35 @@
+pkgname=archmate-font
+pkgver=0.1
+pkgrel=1
+pkgdesc="default fonts settings for Arch Linux MATE"
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archmate/"
+license=('GPL')
+depends=('dconf-editor' 'gdk-pixbuf2'
+	'fontconfig' 'freetype2' 'fontforge'
+	'xorg-mkfontdir' 'ttf-liberation' 'ttf-inconsolata')
+optdepends=(
+	'ttf-tahoma: MS-Windows fonts'
+	'ttf-ms-fonts: MS-Windows fonts'
+	'ttf-vista-fonts: MS-Windows fonts'
+	'ttf-dejavu: Unicode symbols')
+options=('!makeflags')
+install=pkg.install
+source=(
+	'archmate-fonts.gschema.override'
+	'archmate-freetype2.sh'
+	'local.conf')
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+package() {
+	cd ../
+
+	install -d $pkgdir/usr/share/glib-2.0/schemas/
+	install -m 644 ./archmate-fonts.gschema.override $pkgdir/usr/share/glib-2.0/schemas/
+
+	install -d $pkgdir/usr/share/archmate-symlink/
+	install -m 644 ./local.conf $pkgdir/usr/share/archmate-symlink/
+
+	install -d $pkgdir/etc/profile.d/
+	install -m 755 ./archmate-freetype2.sh $pkgdir/etc/profile.d/
+}

@@ -1,0 +1,11 @@
+set autoindent
+set nowrap
+set linenumbers
+set mouse
+set noconvert
+set smooth
+set constantshow
+unset backup
+
+include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano-syntax-highlighting/*.nanorc"

@@ -1,0 +1,43 @@
+pkgname=python-pm100
+pkgver=v1.1.r23.dd65956
+pkgrel=1
+pkgdesc="Thorlabs PM100 Python module"
+arch=('any')
+url="https://github.com/clade/ThorlabsPM100"
+license=('GPL')
+depends=('python'
+	'python-numpy'
+	'python-pandas'
+	'python-py'
+	'python-pytest'
+	'python-pytest-runner'
+	'python-dateutil'
+	'python-pytz'
+	'python-six'
+	'python-instrumental'
+	'python-pyserial')
+makedepends=('python-setuptools')
+source=('git+https://github.com/clade/ThorlabsPM100.git'
+'git+https://github.com/ralph-group/pymeasure.git')
+sha256sums=('SKIP' 'SKIP')
+
+pkgver() {
+	cd "${srcdir}/ThorlabsPM100/"
+	printf "%s" "$(git describe --long | sed 's/\([^-]*-\)g/r\1/;s/-/./g;s/^rel\.//')"
+}
+
+build() {
+  cd "${srcdir}/ThorlabsPM100/"
+  python setup.py build
+
+  cd "${srcdir}/pymeasure/"
+  python setup.py build
+}
+
+package() {
+  cd "${srcdir}/ThorlabsPM100/"
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+
+  cd "${srcdir}/pymeasure/"
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+}

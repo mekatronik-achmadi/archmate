@@ -1,0 +1,41 @@
+pkgbase=gradle
+pkgname=gradle-bin
+pkgver=7.0
+pkgrel=1
+pkgdesc='Powerful build system for the JVM  (binary-package)'
+conflicts=('gradle' 'gradle4' 'gradle14')
+provides=('gradle')
+url='https://gradle.org/'
+arch=('any')
+license=('Apache')
+options=('!strip')
+depends=('java-environment' 'bash')
+source=(https://services.gradle.org/distributions/gradle-${pkgver}-bin.zip
+        gradle.sh)
+md5sums=('SKIP' '1b75f4bcc2add5ead876fe15a63ba77c')
+
+package() {
+  cd gradle-${pkgver}
+
+  # install profile.d script
+  install -Dm 755 "${srcdir}/gradle.sh" "${pkgdir}/etc/profile.d/$pkgbase.sh"
+
+  # create the necessary directory structure
+  install -d "${pkgdir}/usr/share/java/$pkgbase/bin"
+  install -d "${pkgdir}/usr/share/java/$pkgbase/lib/plugins"
+  install -d "${pkgdir}/usr/share/java/$pkgbase/init.d"
+  install -d "${pkgdir}/usr/bin"
+
+  # copy across jar files
+  install -Dm 644 lib/*.jar "${pkgdir}/usr/share/java/$pkgbase/lib"
+  install -Dm 644 lib/plugins/*.jar "${pkgdir}/usr/share/java/$pkgbase/lib/plugins"
+
+  # copy across scripts
+  install -m 644 NOTICE "${pkgdir}/usr/share/java/$pkgbase"
+  install -m 644 LICENSE "${pkgdir}/usr/share/java/$pkgbase"
+  install -m 755 bin/gradle "${pkgdir}/usr/share/java/$pkgbase/bin"
+  install -m 644 init.d/*.* "${pkgdir}/usr/share/java/$pkgbase/init.d"
+
+  # link gradle script to /usr/bin
+  ln -s "/usr/share/java/$pkgbase/bin/gradle" "${pkgdir}/usr/bin/$pkgbase"
+}

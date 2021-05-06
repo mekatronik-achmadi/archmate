@@ -1,0 +1,64 @@
+pkgname=archmate-default
+pkgver=0.1
+pkgrel=1
+pkgdesc="some default settings for ArchLinux MATE"
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archmate/"
+license=('GPL')
+depends=(
+	'vim'
+	'bash'
+	'dconf-editor'
+	'xdg-user-dirs'
+	'caja'
+	'pluma'
+	'marco'
+	'firefox'
+	'mate-panel'
+	'brisk-menu'
+	'mate-tweak'
+	'mate-terminal'
+	'mate-control-center'
+	'mate-settings-daemon'
+	'mate-session-manager'
+	'archmate-icon'
+	'archmate-theme')
+options=('!makeflags')
+install=pkg.install
+
+package() {
+	cd ../
+
+	install -d $pkgdir/usr/share/glib-2.0/schemas/
+	cp -f ./gschema_override/archmate-theme.gschema.override $pkgdir/usr/share/glib-2.0/schemas/
+	cp -f ./gschema_override/archmate-panel.gschema.override $pkgdir/usr/share/glib-2.0/schemas/
+	cp -f ./gschema_override/archmate-mate.gschema.override $pkgdir/usr/share/glib-2.0/schemas/
+	cp -f ./gschema_override/archmate-app.gschema.override $pkgdir/usr/share/glib-2.0/schemas/
+
+	install -d $pkgdir/usr/share/mate-panel/layouts/
+	cp -f ./archmate.layout $pkgdir/usr/share/mate-panel/layouts/
+
+	install -d $pkgdir/usr/share/backgrounds/standard/
+	install -d $pkgdir/usr/share/mate-background-properties/
+	cp -f ./backgrounds/*.jpg $pkgdir/usr/share/backgrounds/standard/
+	cp -f ./backgrounds/standard.xml $pkgdir/usr/share/mate-background-properties/
+
+	install -d $pkgdir/etc/profile.d/
+	install -m 755 ./profile/archmate-bin.sh $pkgdir/etc/profile.d/
+	install -m 755 ./profile/archmate-jre.sh $pkgdir/etc/profile.d/
+	install -m 755 ./profile/archmate-man.sh $pkgdir/etc/profile.d/
+	install -m 755 ./profile/archmate-qt5.sh $pkgdir/etc/profile.d/
+	install -m 755 ./profile/archmate-w3m.sh $pkgdir/etc/profile.d/
+
+	install -d $pkgdir/usr/bin/
+	install -m 755 ./scripts/archmate_userman $pkgdir/usr/bin/
+	install -m 755 ./scripts/archmate_autologin $pkgdir/usr/bin/
+
+	install -d $pkgdir/usr/share/archmate-default/
+	cp -f ./userset/archmate_bashrc $pkgdir/usr/share/archmate-default/
+	cp -f ./userset/redshift.conf $pkgdir/usr/share/archmate-default/
+	cp -f ./userset/mimeapps.list $pkgdir/usr/share/archmate-default/
+	cp -f ./userset/qt5ct.conf $pkgdir/usr/share/archmate-default/
+	cp -f ./userset/gitconfig $pkgdir/usr/share/archmate-default/
+	cp -f ./userset/nanorc $pkgdir/usr/share/archmate-default/
+}

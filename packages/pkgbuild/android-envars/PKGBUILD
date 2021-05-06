@@ -1,0 +1,22 @@
+pkgname=android-envars
+pkgver=0.1
+pkgrel=1
+pkgdesc='Common enviroment variables fo Android development'
+url="https://github.com/mekatronik-achmadi/my_pkgbuild/tree/master/android-envars/"
+arch=('any')
+license=('Apache License 2.0')
+depends=('bash' 'jdk8-openjdk' 'android-sdk' 'flutter' 'gradle')
+
+package() {
+	cd $srcdir/
+
+	rm -f android-envars.sh && touch android-envars.sh
+	echo "export FLUTTER_HOME=/opt/flutter" >> android-envars.sh
+	echo "export ANDROID_HOME=/opt/android-sdk" >> android-envars.sh
+	echo "export GRADLE_HOME=/usr/share/java/gradle" >> android-envars.sh
+	echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk" >> android-envars.sh
+
+	mkdir -p $pkgdir/etc/profile.d/
+	mv android-envars.sh $pkgdir/etc/profile.d/android-envars.sh
+	chmod a+x $pkgdir/etc/profile.d/android-envars.sh
+}

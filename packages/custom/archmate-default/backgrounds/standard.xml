@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "mate-wp-list.dtd">
+<wallpapers>
+	<wallpaper deleted="false">
+		<name>Blue Wave</name>
+		<filename>/usr/share/backgrounds/standard/blue-wave.jpg</filename>
+		<options>stretched</options>
+		<artist>Internet</artist>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Blue Space</name>
+		<filename>/usr/share/backgrounds/standard/blue-space.jpg</filename>
+		<options>stretched</options>
+		<artist>Internet</artist>
+	</wallpaper>
+	<wallpaper deleted="false">
+		<name>Blue Stripes</name>
+		<filename>/usr/share/backgrounds/standard/blue-stripes.jpg</filename>
+		<options>stretched</options>
+		<artist>Internet</artist>
+	</wallpaper>
+<!-- ============================== -->
+
+</wallpapers>

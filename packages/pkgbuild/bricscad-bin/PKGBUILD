@@ -1,0 +1,36 @@
+pkgname=bricscad-bin
+_pkgname=bricscad
+pkgver=15.3.9
+pkgrel=1
+pkgdesc="CAD program from Bricsys (Custom Linux binary)"
+arch=('x86_64')
+url="https://www.bricsys.com"
+license=('commercial')
+depends=('pth' 'gtk2' 'gdk-pixbuf2' 'libcups' 'gtk-engine-murrine')
+source=("$_pkgname-$pkgver-$arch.zip"
+		"bricscad_logo.png"
+		"bricscad.desktop"
+		"bricslicense"
+		"bricscad")
+md5sums=('47744ae1c4c826e0f3b38159cf2ace88'
+		'c24313275d36fa6db16d92d530862739'
+		'ffaa7a108276f6e47af30fa6b77c443f'
+		'4e7346e1d220a30e1f73fb39f9c72084'
+		'141160edb63d8d538720f8fd7b24ec37')
+
+package() {
+	cd $srcdir/$_pkgname-$pkgver-$arch/
+	install -d $pkgdir/opt/bricsys/
+	mv -f ./bricscad/ $pkgdir/opt/bricsys/bricscad/
+	mv -f ./license/ $pkgdir/opt/bricsys/license/
+	chmod a+x $pkgdir/opt/bricsys/license/rlm
+	chmod a+x $pkgdir/opt/bricsys/license/rlmutil
+	ln -sf /usr/lib/libz.so.1 $pkgdir/opt/bricsys/bricscad/libz.so.1
+
+	cd $srcdir/
+	install -dm755 $pkgdir/usr/{bin,share/{applications,pixmaps}}
+	install -Dm644 ./bricscad.desktop $pkgdir/usr/share/applications/
+	install -Dm644 ./bricscad_logo.png $pkgdir/usr/share/pixmaps/
+	install -Dm755 ./bricslicense $pkgdir/usr/bin/
+	install -Dm755 ./bricscad $pkgdir/usr/bin/
+}

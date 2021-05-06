@@ -1,0 +1,80 @@
+linux base base-devel
+linux-headers linux-firmware
+multilib-devel terminus-font
+
+bash-completion mkinitcpio
+squashfs-tools rsync zsync
+cdrtools archiso syslinux
+dkms arch-install-scripts
+neofetch lsb-release dtc
+nano dialog bc tmux tree
+nano-syntax-highlighting
+curl wget openssh sshfs
+intel-ucode amd-ucode
+mkinitcpio-archiso
+
+posix posix-software-development
+posix-xsi posix-c-development
+
+ranger lynx
+moc atool most
+python lua perl
+fdupes w3m imlib2
+poppler highlight
+mediainfo libcaca
+
+vim vim-jedi
+vim-nerdcommenter
+vim-ctrlp vim-nerdtree
+vim-airline vim-surround
+vim-tagbar vim-ultisnips
+
+net-tools wpa_supplicant iwd
+dhclient ppp bmon inetutils
+
+alsa-lib alsa-plugins
+alsa-utils alsa-firmware
+pulseaudio pulseaudio-alsa
+
+gst-plugins-base gst-plugins-good
+ffmpeg gstreamer gst-libav
+
+lrzip lzip lzop zip unzip zstd
+tar libarchive unrar lxsplit
+xz bzip2 gzip lz4 p7zip arj
+unarj lhasa cpio rpmextract
+
+hwloc hwinfo read-edid
+linux-tools hddtemp ccze
+htop atop dstat libstatgrab
+lsof nmon sysstat procps-ng
+usbutils dmidecode hwdetect
+hdparm sdparm smartmontools
+lm_sensors lshw ltrace strace
+
+gpart ntfs-3g exfat-utils
+dosfstools e2fsprogs
+gptfdisk mtools
+
+virtualbox-guest-utils
+virtualbox-guest-dkms
+
+grub os-prober
+efibootmgr
+edk2-shell
+edk2-ovmf
+
+inxi
+fake-hwclock
+
+clang-bear
+vim-addons
+
+vim-coc-git
+vim-coc-pairs-git
+vim-coc-snippets-git
+vim-coc-highlight-git
+vim-coc-sh-git
+vim-coc-clangd-git
+vim-coc-pyright-git
+vim-coc-ultisnips

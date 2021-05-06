@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="stm32" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="stm-gcc" />
+		<Build>
+			<Target title="release">
+				<Option output="stm32" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="bin/release/" />
+				<Option type="5" />
+				<Option compiler="stm-gcc" />
+			</Target>
+		</Build>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

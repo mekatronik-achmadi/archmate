@@ -1,0 +1,23 @@
+pkgname=bazel-bin
+pkgver=1.2.1
+pkgrel=1
+pkgdesc="Correct, reproducible, and fast builds for everyone"
+arch=('x86_64')
+url="http://bazel.io/"
+license=('Apache')
+depends=('java-environment=8' 'libarchive' 'zip' 'unzip')
+provides=('bazel')
+conflicts=('bazel' 'bazel-git')
+options=('!strip')
+source=("https://github.com/bazelbuild/bazel/releases/download/1.2.1/bazel_1.2.1-linux-x86_64.deb")
+md5sums=('SKIP')
+
+package(){
+	cd $srcdir/
+
+	mkdir -p datadeb/
+	tar -xf data.tar.gz --directory datadeb/
+
+	mkdir -p $pkgdir/
+	cp -r datadeb/* $pkgdir/
+}

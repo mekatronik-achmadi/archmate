@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $UID == 0 ];then
+	echo -e "This script must run as normal user"
+	exit
+fi
+
+systemctl --user stop anbox-session-manager.service
+sudo systemctl restart anbox-container-manager.service
+sudo killall -I anbox
+rm -rf ~/.local/share/applications/anbox/

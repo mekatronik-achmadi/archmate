@@ -1,0 +1,38 @@
+pkgname=python-astra-cpu
+pkgver=v1.8.3.r130.8190865
+pkgrel=1
+pkgdesc="ASTRA Tomography Toolbox (non-GPU)"
+arch=('any')
+url="https://github.com/astra-toolbox/astra-toolbox"
+license=('GPL')
+depends=('python' 'boost' 'python-numpy' 'python-scipy' 'python-six')
+makedepends=('python-setuptools')
+source=('git+https://github.com/astra-toolbox/astra-toolbox.git')
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/astra-toolbox/"
+	printf "%s" "$(git describe --tags | sed 's/\([^-]*-\)g/r\1/;s/-/./g;s/^rel\.//')"
+}
+
+build() {
+  cd "${srcdir}/astra-toolbox/"
+  cd build/linux
+  ./autogen.sh
+  ./configure --with-python --with-install-type=module
+  make
+}
+
+package() {
+  cd "${srcdir}/astra-toolbox/"
+  cd python
+  sed -i "s#distutils.core#setuptools#g" builder.py
+
+  cd "${srcdir}/astra-toolbox/"
+  cd build/linux
+  sed -i "s#/python/build install#/python/build install --prefix=/usr --root=${pkgdir} -O1#g" Makefile
+
+  cd "${srcdir}/astra-toolbox/"
+  cd build/linux
+  make install
+}

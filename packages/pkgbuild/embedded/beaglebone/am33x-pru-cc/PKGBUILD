@@ -1,0 +1,23 @@
+pkgname=am33x-pru-cc
+pkgver=2.0.0B2
+pkgrel=1
+pkgdesc="PRU C Compiler for BeagleBoneBlack"
+arch=('any')
+url="http://software-dl.ti.com/codegen/non-esd/downloads/beta.htm"
+license=('GPL')
+depends=()
+makedepends=()
+options=('!makeflags' '!strip' 'staticlibs' 'libtool')
+source=("pru-cc.zip" "pru-cc.sh" "am33x_pru.cmd")
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+package() {
+	cd $srcdir
+	
+	install -d $pkgdir/opt/
+	mv -vf pru-cc $pkgdir/opt/
+	mv -vf ../am33x_pru.cmd $pkgdir/opt/pru-cc/example/
+	
+	install -d $pkgdir/etc/profile.d/
+	mv -vf ../pru-cc.sh $pkgdir/etc/profile.d/
+}

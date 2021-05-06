@@ -1,0 +1,21 @@
+pkgname=python-pyotdr
+pkgver=0.1
+pkgrel=1
+pkgdesc="Simple OTDR SOR file parser written in Python"
+arch=('any')
+url="https://github.com/sid5432/pyOTDR"
+license=('GPL')
+depends=('python' 'python-lazyxml' 'python-crcmod')
+makedepends=('git' 'python-setuptools')
+source=("$pkgname::git+https://github.com/sid5432/pyOTDR.git")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/$pkgname"
+  python setup.py build
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+}

@@ -1,0 +1,16 @@
+pkgname=matlab-schemer
+pkgver=1.4.0
+pkgrel=1
+pkgdesc='Apply and save color schemes in MATLAB'
+arch=('any')
+url='https://github.com/scottclowe/matlab-schemer'
+license=(custom)
+optdepends=('matlab: main software')
+source=("https://github.com/scottclowe/matlab-schemer/archive/v${pkgver}.tar.gz")
+md5sums=('069efd04d79b232aaac0633ee345190a')
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+
+package() {
+  install -d -m755 ${pkgdir}/opt/mathworks/addons/schemer/
+  mv -f ./${pkgname}-${pkgver}/* ${pkgdir}/opt/mathworks/addons/schemer/
+}

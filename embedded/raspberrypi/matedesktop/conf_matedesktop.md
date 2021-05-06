@@ -1,0 +1,74 @@
+##### additional packages
+- matcha-azul-gtk-theme: https://github.com/mekatronik-achmadi/archmate-pkgbuild/tree/master/theme-azul/
+
+##### additional configurations
+
+~~~
+sudo cp -vf /usr/share/applications/onboard.desktop /etc/xdg/autostart/
+~~~
+
+~~~
+sudo cp -vf rpimate.layout /usr/share/mate-panel/layouts/
+gsettings set org.mate.panel default-layout 'rpimate'
+mate-panel --reset
+~~~
+
+##### audio output
+
+~~~
+echo "dtparam=audio=on" >> /boot/config.txt
+echo "audio_pwm_mode=2" >> /boot/config.txt
+echo "hdmi_drive=1" >> /boot/config.txt
+~~~
+
+~~~
+echo 'check audio-card for headphone output'
+pacmd list-sinks | grep -e 'name:' -e 'index:'
+
+echo 'set output to headphone on Rpi-3 audio card'
+pactl set-default-sink alsa_output.platform-bcm2835_audio.stereo-fallback.2
+pactl set-sink-volume @DEFAULT_SINK@ 100%
+~~~
+
+##### pychoacoustic tool
+
+~~~
+sudo pacman -S cython python-setuptools python-wheel python-pip python-distutils-extra
+sudo pacman -S sox python-pyqt5 python-numpy python-scipy python-pandas python-matplotlib
+~~~
+
+##### bluetooth audio (failed)
+
+~~~
+sudo pacman -S blueman bluez bluez-utils
+sudo systemctl enable bluetooth
+
+sed -i "s#console=ttyAMA0,115200 ##g" /boot/cmdline.txt
+echo "dtparam=krnbt=on" >> /boot/config.txt
+echo "enable_uart=0" >> /boot/config.txt
+
+BT_AUDIO='btc_mode=1\nbtc_params8=0x4e20\nbtc_params1=0x7530'
+echo -e $BT_AUDIO >> /usr/lib/firmware/updates/brcm/brcmfmac43430-sdio.txt
+echo -e $BT_AUDIO >> /usr/lib/firmware/updates/brcm/brcmfmac43455-sdio.txt
+~~~
+
+##### HDMI LCD 1024x600 Waveshare
+
+~~~
+echo "max_usb_current=1" >> /boot/config.txt
+echo "hdmi_group=2" >> /boot/config.txt
+echo "hdmi_mode=87" >> /boot/config.txt
+echo "hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
+~~~
+
+##### Screen no blank time
+
+~~~
+echo 'Section "ServerFlags"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime" "0"
+    Option "BlankTime" "0"
+EndSection' >  /etc/X11/xorg.conf.d/noblank.conf
+~~~
+

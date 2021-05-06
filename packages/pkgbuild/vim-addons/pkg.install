@@ -1,0 +1,24 @@
+vimrc_modify() {
+	echo '" /usr/share/vim/vimfiles/archlinux.vim' > /etc/vimrc
+	echo 'runtime! archlinux.vim' >> /etc/vimrc
+	echo 'autocmd BufWritePre * %s/\s\+$//e' >> /etc/vimrc
+	echo 'filetype plugin on' >> /etc/vimrc
+	echo 'set expandtab ts=4 sw=4 ai'  >> /etc/vimrc
+	echo 'filetype plugin indent on' >> /etc/vimrc
+	echo 'set ic is hls'  >> /etc/vimrc
+	echo 'set number'  >> /etc/vimrc
+	echo 'set wrap!'  >> /etc/vimrc
+}
+
+after_install() {
+	vimrc_modify
+	locale-gen
+}
+
+post_install() {
+	after_install
+}
+
+post_upgrade() {
+	after_install
+}

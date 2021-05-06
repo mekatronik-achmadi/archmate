@@ -1,0 +1,26 @@
+pkgname=libseabreeze
+_pkgname=seabreeze
+pkgver=3.0.11
+pkgrel=1
+pkgdesc="SeaBreeze is a device driver library that provides an interface to select Ocean Optics spectrometers"
+arch=('any')
+url="https://oceanoptics.com/product/seabreeze/"
+license=('MIT')
+source=("https://downloads.sourceforge.net/project/seabreeze/SeaBreeze/source/seabreeze-${pkgver}.zip")
+md5sums=('163aa19239838bf87462acc6eef7838c')
+depends=('libusb')
+
+build() {
+  cd "$srcdir/${_pkgname}-${pkgver}/SeaBreeze"
+
+  sed -i 's#-fno-stack-protector \\#-fno-stack-protector -Wno-error=deprecated -Wno-error=catch-value -Wno-error=misleading-indentation -Wno-error=class-memaccess -Wno-error=format-truncation -Wno-error=restrict \\#g' common.mk
+
+  make
+}
+
+package() {
+  cd "$srcdir/${_pkgname}-${pkgver}/SeaBreeze"
+
+  mkdir -p $pkgdir/usr/lib/
+  cp -f lib/libseabreeze.so $pkgdir/usr/lib/
+}

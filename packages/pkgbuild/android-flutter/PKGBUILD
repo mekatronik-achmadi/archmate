@@ -1,0 +1,40 @@
+pkgname=flutter-sdk
+_pkgname=flutter
+pkgver=2.0.5
+pkgrel=1
+pkgdesc="A new mobile app SDK to help developers and designers build modern mobile apps for iOS and Android."
+arch=('x86_64')
+url="https://${_pkgname}.io"
+license=('custom' 'BSD' 'CCPL')
+conflicts=("${_pkgname}")
+provides=("${_pkgname}")
+depends=('git' 'glu' 'java-environment-openjdk' 'libglvnd' 'unzip')
+optdepends=('android-sdk' 'perl' 'python')
+makedepends=('python')
+options=('!strip' '!buildflags' '!makeflags' '!emptydirs')
+install="${_pkgname}.install"
+source=(
+  "${_pkgname}-${pkgver}.tar.xz::https://storage.googleapis.com/flutter_infra/releases/stable/linux/${_pkgname}_linux_${pkgver/.hotfix/+hotfix}-stable.tar.xz"
+  "${_pkgname}.sh"
+)
+sha256sums=(
+  "SKIP"
+  "1dea1952d386c43948b9970382c2da5b65b7870684b8ad2ad89124e873aa485a"
+)
+
+build() {
+  cd "${srcdir}/${_pkgname}"
+  "${srcdir}/${_pkgname}/bin/${_pkgname}" doctor
+}
+
+package() {
+  install -Dm644 "${srcdir}/${_pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+  install -Dm755 "${srcdir}/${_pkgname}.sh" "${pkgdir}/etc/profile.d/${_pkgname}.sh"
+  install -dm755 "${pkgdir}/opt/${_pkgname}"
+  install -dm755 "${pkgdir}/usr/bin"
+  cp -ra "${srcdir}/${_pkgname}" "${pkgdir}/opt/"
+  find "${pkgdir}/opt/${_pkgname}" -type d -exec chmod a+rx {} +
+  find "${pkgdir}/opt/${_pkgname}" -type f -exec chmod a+r {} +
+  chmod a+rw "${pkgdir}/opt/${_pkgname}/version"
+  ln -s "/opt/${_pkgname}/bin/${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+}

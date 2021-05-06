@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Standard-Green-Dark
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Arc-Dark-Green-solid
+MetacityTheme=Arc-Dark-Green-solid
+IconTheme=Papirus-Dark-Maia
+CursorTheme=mate

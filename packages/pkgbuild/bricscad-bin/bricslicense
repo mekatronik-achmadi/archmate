@@ -1,0 +1,28 @@
+#!/bin/sh
+
+help_msg() {
+	echo "Setup Network Lisence Server:"
+	echo "0) Disconnect all internet connections"
+	echo "1) Open terminal and run 'bricslicense'"
+	echo "2) Open a browser at http://localhost:5054."
+	echo "3) On the web page, click the 'System Info' button on the left."
+	echo "4) Copy the ethernet hostid"
+	echo "5) Edit '/opt/bricsys/license/license.lic' with root permission"
+	echo "6) Replace '<yourmac>' with ethernet mac copied before"
+	echo "7) On the web page, click the 'Reread/Restart Servers' button."
+	echo "8) Run 'bricscad' from another terminal or from desktop menu"
+	echo "9) This license server currently only for v15 and it's revision"
+}
+
+if [ -z $1 ];then
+	unset LD_PRELOAD
+	export LD_LIBRARY_PATH=/opt/bricsys/bricscad:$LD_LIBRARY_PATH
+	export PATH=/opt/bricsys/bricscad:$PATH
+	exec /opt/bricsys/license/rlm
+else
+	if [ $1 == "--help" ] || [ $1 == "-h" ];then
+		help_msg
+	else
+		echo "argument(s) not valid"
+	fi
+fi

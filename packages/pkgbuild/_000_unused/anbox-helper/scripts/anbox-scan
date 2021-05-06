@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+	echo "Error: arguments is not sufficient"
+	exit
+fi
+
+CHECK=`adb devices -l`
+if [[ $CHECK == *"Anbox"* ]]; then
+	
+	LOCAL_FILE=${1}
+	REMOTE_PATH=${2}
+
+	FILENAME=${LOCAL_FILE##*/}
+	REMOTE_FILE=$REMOTE_PATH/$FILENAME
+	
+	if SCAN=$(adb -e shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file://$REMOTE_FILE);then
+		echo "File scanned successfully"
+	else
+		echo $SCAN	
+	fi
+	
+else
+	echo "Anbox device not found"
+fi
+
+

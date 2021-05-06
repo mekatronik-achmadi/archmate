@@ -1,0 +1,75 @@
+remove_themes() {
+	rm -rf /usr/share/themes/Clearlooks
+	rm -rf /usr/share/themes/Crux
+	rm -rf /usr/share/themes/Industrial
+	rm -rf /usr/share/themes/Mist
+	rm -rf /usr/share/themes/Raleigh
+	rm -rf /usr/share/themes/Redmond
+	rm -rf /usr/share/themes/ThinIce
+
+	rm -rf /usr/share/themes/BlueLaguna
+	rm -rf /usr/share/themes/GreenLaguna
+	rm -rf /usr/share/themes/TraditionalOk
+	rm -rf /usr/share/themes/TraditionalGreen
+	rm -rf /usr/share/themes/TraditionalOkTest
+
+	rm -rf /usr/share/themes/Blue-Submarine
+	rm -rf /usr/share/themes/Green-Submarine
+
+	rm -rf /usr/share/themes/BlackMATE
+
+	rm -rf /usr/share/themes/HighContrast
+	rm -rf /usr/share/themes/HighContrastInverse
+	rm -rf /usr/share/themes/ContrastHigh
+	rm -rf /usr/share/themes/ContrastHighInverse
+
+	rm -rf /usr/share/themes/Spidey*
+	rm -rf /usr/share/themes/Splint*
+	rm -rf /usr/share/themes/Dopple*
+	rm -rf /usr/share/themes/ClearlooksRe
+	rm -rf /usr/share/themes/DustBlue
+	rm -rf /usr/share/themes/Shiny
+	rm -rf /usr/share/themes/WinMe
+	rm -rf /usr/share/themes/eOS
+	rm -rf /usr/share/themes/Atlanta
+	rm -rf /usr/share/themes/Gorilla
+	rm -rf /usr/share/themes/Motif
+	rm -rf /usr/share/themes/Esco
+
+	rm -rf /usr/share/themes/*-border
+}
+
+remove_menus() {
+	rm -f /usr/share/themes/Arc-solid/index.theme
+	rm -f /usr/share/themes/Arc-Lighter-solid/index.theme
+	rm -f /usr/share/themes/Arc-Dark-solid/index.theme
+	rm -f /usr/share/themes/Arc-Darker-solid/index.theme
+}
+
+icon_modify() {
+	sed -i 's#IconTheme=mate#IconTheme=bluementa#g' /usr/share/themes/BlueMenta/index.theme
+}
+
+cursor_modify() {
+    echo "[Icon Theme]
+    Inherits=mate
+    " > /usr/share/icons/default/index.theme
+
+    sed -i "s#mate-black#mate#g" /usr/share/themes/BlueMenta/index.theme
+    sed -i "s#mate-black#mate#g" /usr/share/themes/Menta/index.theme
+}
+
+update() {
+	icon_modify
+	remove_themes
+	remove_menus
+	cursor_modify
+}
+
+post_install() {
+	update
+}
+
+post_upgrade() {
+	update
+}

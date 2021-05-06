@@ -1,0 +1,51 @@
+pkgname=archmate-icon
+pkgver=0.1
+pkgrel=1
+_maiapkg=papirus-maia-icon-theme
+pkgdesc="some Papirus icon themes for Arch Linux MATE"
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archmate/"
+license=('custom')
+conflicts=('papirus-maia-icon-theme')
+makedepends=('cmake')
+depends=(
+    'gtk-update-icon-cache'
+    'icon-naming-utils'
+    'librsvg'
+    'mate-icon-theme'
+    'papirus-icon-theme'
+    'gnome-icon-theme-extras'
+    'archmate-theme')
+install=pkg.install
+options=(!strip !emptydirs !makeflags)
+source=("${_maiapkg}.zip::https://github.com/Ste74/${_maiapkg}/archive/refs/heads/master.zip")
+sha256sums=('SKIP')
+
+build() {
+    cd ${srcdir}/${_maiapkg}-master/
+    mkdir -p build/
+    cd build/
+    cmake ../
+    make
+}
+
+package() {
+    ##################### Mist-Icon Modified ##############
+	cd ../
+	install -d $pkgdir/usr/share/icons/
+	cp -rf ./bluementa $pkgdir/usr/share/icons/
+
+	##################### Papirus Maia ####################
+
+    cd ${srcdir}/${_maiapkg}-master/
+    make -C build DESTDIR="${pkgdir}" install
+
+    rm -rf ${pkgdir}/usr/share/icons/Papirus-Adapta-Maia/
+    rm -rf ${pkgdir}/usr/share/icons/Papirus-Adapta-Nokto-Maia/
+
+	########################################################
+
+	# Mode fix
+	find "${pkgdir}" -type d -exec chmod 755 {} +
+	find "${pkgdir}" -type f -exec chmod 644 {} +
+}

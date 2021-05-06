@@ -1,0 +1,68 @@
+update_mime_cache() {
+    echo 'update mime database'
+	update-mime-database /usr/share/mime/
+}
+
+update_dconf() {
+    echo 'compile glib schemas'
+	glib-compile-schemas /usr/share/glib-2.0/schemas/
+}
+
+remove_autostart() {
+	rm -f /etc/xdg/autostart/mate-screensaver.desktop
+	rm -f /etc/xdg/autostart/onboard-autostart.desktop
+}
+
+custom_config() {
+	cp -f /usr/share/archmate-default/nanorc /etc/nanorc
+}
+
+panel_config() {
+    echo 'modify panel layout'
+	ln -sf archmate.layout /usr/share/mate-panel/layouts/manjaro.layout
+	rm -f /usr/share/mate-panel/layouts/fedora.layout
+	rm -f /usr/share/mate-panel/layouts/redmond.layout
+	rm -f /usr/share/mate-panel/layouts/opensuse.layout
+}
+
+skel_config() {
+    echo 'modify /etc/skel/ contents'
+
+    echo "
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+source ~/.bashrc
+    " > /etc/skel/.bash_profile
+
+    cp -f /usr/share/archmate-default/archmate_bashrc /etc/skel/.bashrc
+    cp -f /usr/share/archmate-default/gitconfig /etc/skel/.gitconfig
+
+    mkdir -p /etc/skel/.config
+    cp -f /usr/share/archmate-default/mimeapps.list /etc/skel/.config
+    cp -f /usr/share/archmate-default/redshift.conf /etc/skel/.config
+
+    mkdir -p /etc/skel/.config/qt5ct/
+    cp -f /usr/share/archmate-default/qt5ct.conf /etc/skel/.config/qt5ct/
+}
+
+updating() {
+	update_mime_cache
+	update_dconf
+	remove_autostart
+	custom_config
+	panel_config
+	skel_config
+}
+
+#=====================================================================================
+
+after_install() {
+	updating
+}
+
+post_install() {
+	after_install
+}
+
+post_upgrade() {
+	after_install
+}

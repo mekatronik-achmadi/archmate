@@ -1,0 +1,21 @@
+pkgname=cbcc-stm32
+pkgver=0.1
+pkgrel=1
+pkgdesc="Codeblocks GCC for STM32"
+arch=('any')
+url="http://www.codeblocks.org"
+license=('GPL')
+depends=('codeblocks' 'arm-none-eabi-gcc')
+_gitsource="i25ffz/stm32f4-codeblocks-dev/master/stm32-plugin"
+source=(
+	"https://raw.githubusercontent.com/${_gitsource}/compiler_stm-gcc.xml"
+	"https://raw.githubusercontent.com/${_gitsource}/options_stm-gcc.xml"
+	"stm32gcc.cbp")
+md5sums=('SKIP' 'SKIP' 'SKIP')
+
+package() {
+	cd "$srcdir"
+	install -Dm 644 compiler_stm-gcc.xml $pkgdir/usr/share/codeblocks/compilers/compiler_stm-gcc.xml
+	install -Dm 644 options_stm-gcc.xml $pkgdir/usr/share/codeblocks/compilers/options_stm-gcc.xml
+	install -Dm 644 stm32gcc.cbp $pkgdir/usr/share/codeblocks/templates/stm32gcc.cbp
+}

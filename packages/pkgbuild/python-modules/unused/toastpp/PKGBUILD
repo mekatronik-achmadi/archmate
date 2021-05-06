@@ -1,0 +1,50 @@
+pkgname=python2-toastpp
+pkgver=v2.0.1.r26.90067f2e
+pkgrel=1
+pkgdesc="Forward and inverse modelling in optical tomography"
+arch=('x86_64')
+url="https://github.com/toastpp/toastpp"
+license=('GPL-3.0')
+depends=('arpack' 'python2' 'python2-numpy' 'python2-scipy' 'python2-matplotlib')
+makedepends=('gcc-fortran' 'tcsh')
+source=('git+https://github.com/toastpp/toastpp.git'
+	'pytoastpp.sh')
+sha256sums=('SKIP' 'SKIP')
+
+pkgver() {
+	cd "${srcdir}/toastpp"
+	printf "%s" "$(git describe --tags | sed 's/\([^-]*-\)g/r\1/;s/-/./g;s/^rel\.//')"
+}
+
+build(){
+	# do this manually outside this building process
+	# GCC incompatiblity bug on C++14 math library
+	#sed -i "s#return __val == 0;#return __val == (__T) 0;#g" /usr/include/math.h
+
+	cd $srcdir/toastpp
+	export TOASTDIR=$(pwd)
+
+	./configure
+	source toastenv.sh
+	make all
+
+	sed -i "s#python setup.py#python2 setup.py#g" src/python/Makefile
+	make python
+}
+
+package(){
+	cd $srcdir/
+	install -Dm 755 pytoastpp.sh $pkgdir/etc/profile.d/pytoastpp.sh
+
+	cd $srcdir/toastpp
+	mkdir -p $pkgdir/usr/share/pytoastpp/
+	cp -r test/ $pkgdir/usr/share/pytoastpp/
+	cp -r *_shared_smp/ $pkgdir/usr/share/pytoastpp/
+	ln -sf *_shared_smp $pkgdir/usr/share/pytoastpp/linux64
+	install -Dm 755 toastenv.sh $pkgdir/usr/share/pytoastpp/toastenv.sh
+	install -Dm 755 ptoast_install.py $pkgdir/usr/share/pytoastpp/ptoast_install.py
+
+	mkdir -p $pkgdir/usr/share/pytoastpp/examples
+	install -Dm 644 examples/python/recon1.py $pkgdir/usr/share/pytoastpp/examples/recon1.py
+	cp -r script/python/tutorials/ $pkgdir/usr/share/pytoastpp/examples/
+}

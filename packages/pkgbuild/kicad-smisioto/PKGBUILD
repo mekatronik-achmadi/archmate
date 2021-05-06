@@ -1,0 +1,26 @@
+pkgname=kicad-library-smisioto
+pkgver=0.1
+pkgrel=1
+pkgdesc="KiCad libraries from Smisioto"
+arch=('any')
+url="http://smisioto.no-ip.org/elettronica/kicad/kicad-en.htm"
+license=('Custom')
+depends=('kicad')
+source=("$pkgname::git+https://github.com/peekpt/kicad_smisioto.git")
+md5sums=('SKIP')
+
+package(){
+	cd $srcdir/$pkgname/
+
+	mkdir -p $pkgdir/usr/share/kicad/smisioto/symbols/
+	cp library/walter/* $pkgdir/usr/share/kicad/smisioto/symbols/
+
+	mkdir -p $pkgdir/usr/share/kicad/smisioto/footprints/
+	cp -r library/walter/* $pkgdir/usr/share/kicad/smisioto/footprints/
+
+	mkdir -p $pkgdir/usr/share/kicad/smisioto/packages3d/
+	cp -r packages3d/walter/* $pkgdir/usr/share/kicad/smisioto/packages3d/
+
+	mkdir -p $pkgdir/usr/share/kicad/smisioto/website/
+	cp -r website/* $pkgdir/usr/share/kicad/smisioto/website/
+}

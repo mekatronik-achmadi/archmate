@@ -1,0 +1,22 @@
+pkgname=python-simupy
+pkgver=0.1
+pkgrel=1
+pkgdesc="Simulating interconnected dynamical system models"
+arch=('any')
+url="https://github.com/simupy/simupy"
+license=('GPL')
+depends=('python' 'python-scipy' 'python-numpy' 'python-sympy')
+optdepends=()
+makedepends=('git' 'python-setuptools')
+source=("$pkgname::git+https://github.com/simupy/simupy")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/$pkgname"
+  python setup.py build
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+}

@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Sample usage is as follows;
+# signapk myapp.apk android.keystore android androidkey
+#
+# param1, APK file: app.apk
+# param2, keystore location: ~/.android/android.keystore
+# param3, key storepass: android
+# param4, key alias: androidkey
+
+# user home directory
+USER_HOME=$(eval echo ~${SUDO_USER})
+
+# exit if APK file empty
+if [ -z $1 ];then
+	echo -e "minimum usage:"
+	echo -e "	signapk app.apk"
+	echo -e "	signapk default"
+	exit
+fi
+
+if [ "$1" == "default" ];then
+	KEYSTORE="$USER_HOME/.android/android.keystore"
+	ALIAS="androidkey"
+	PASSWD="android"
+	keytool -genkey -v -keystore $KEYSTORE -alias $ALIAS -keypass $PASSWD -storepass $PASSWD -keyalg RSA -keysize 2048 -validity 10000
+	sudo ln -svf /opt/android-sdk/build-tools/*/zipalign /usr/bin/zipalign
+	exit
+fi
+
+# use default generated key
+APK=$1
+KEYSTORE="${2:-$USER_HOME/.android/android.keystore}"
+STOREPASS="${3:-android}"
+ALIAS="${4:-androidkey}"
+
+# get the filename
+APK_BASENAME=$(basename $APK)
+SIGNED_APK="signed_"$APK_BASENAME
+
+# information
+echo ApkFile___: $APK
+echo KeyStore__: $KEYSTORE
+echo StorePass_: $STOREPASS
+echo KeyAlias__: $ALIAS
+
+# sign APK
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $KEYSTORE -storepass $STOREPASS $APK $ALIAS
+
+# verify APK
+jarsigner -verbose -verify $APK
+
+# zipalign
+zipalign -v 4 $APK $SIGNED_APK

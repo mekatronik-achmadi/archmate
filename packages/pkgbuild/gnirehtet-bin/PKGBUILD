@@ -1,0 +1,38 @@
+pkgname=gnirehtet-bin
+_pkgname=gnirehtet
+pkgver=2.3
+pkgrel=0
+pkgdesc="Gnirehtet provides reverse tethering for Android"
+arch=('x86_64')
+url="https://github.com/Genymobile/gnirehtet"
+license=('Apache-2.0')
+depends=('android-tools')
+optdepends=('java-environment: for run Java version')
+source=(
+	"https://github.com/Genymobile/gnirehtet/releases/download/v$pkgver/$_pkgname-rust-linux64-v$pkgver.zip"
+	"https://github.com/Genymobile/gnirehtet/releases/download/v$pkgver/$_pkgname-java-v$pkgver.zip"
+	"r_gnirehtet"
+	"j_gnirehtet"
+)
+sha256sums=(
+	'561d77e94d65ecf2d919053e5da6109b8cceb73bffedea71cd4e51304ccaa3d3'
+	'93d1d46ee566376596f033832626dd5e89e76c91f2c46d2383735937b7d3b8b0'
+	'af57e88fad091f2614dfb554c253b20042b23999b4f1ce0b1e46523d81f9a68b'
+	'5cbc2f06090df8fe2a17721289b4682dca771e0a379e5ff1bfeb5a02db97e40c'
+)
+
+package() {
+	cd $srcdir/
+
+	mkdir -p $pkgdir/usr/bin/
+	cp -f r_gnirehtet $pkgdir/usr/bin/
+	cp -f j_gnirehtet $pkgdir/usr/bin/
+
+	mkdir -p $pkgdir/usr/share/gnirehtet/rust/
+	cp ./$_pkgname-rust-linux64/gnirehtet $pkgdir/usr/share/gnirehtet/rust/
+	cp ./$_pkgname-rust-linux64/gnirehtet.apk $pkgdir/usr/share/gnirehtet/rust/
+
+	mkdir -p $pkgdir/usr/share/gnirehtet/java/
+	cp ./$_pkgname-java/gnirehtet.jar $pkgdir/usr/share/gnirehtet/java/
+	cp ./$_pkgname-java/gnirehtet.apk $pkgdir/usr/share/gnirehtet/java/
+}

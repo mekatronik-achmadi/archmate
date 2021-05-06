@@ -1,0 +1,25 @@
+pkgname=kicad-teardrops
+pkgver=r31.1e6ccb0
+pkgrel=1
+pkgdesc="KiCad plugin to add/delete Teardrop on PCB"
+arch=('any')
+url="https://github.com/stimulu/kicad-teardrops"
+license=('custom')
+depends=('python' 'kicad')
+source=('git+https://github.com/stimulu/kicad-teardrops.git')
+md5sums=('SKIP')
+
+pkgver() {
+    cd "$pkgname"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+    cd "$srcdir/$pkgname"
+
+    kicadplugindir="/usr/share/kicad/scripting/plugins"
+
+    mkdir -p "$pkgdir/$kicadplugindir/teardrops/"
+    cp -rvf ./rcs "$pkgdir/$kicadplugindir/teardrops/"
+    cp -vf ./*.py "$pkgdir/$kicadplugindir/teardrops/"
+}

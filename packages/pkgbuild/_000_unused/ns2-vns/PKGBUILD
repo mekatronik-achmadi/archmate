@@ -1,0 +1,22 @@
+pkgname=vns
+pkgver=1.0
+pkgrel=1
+pkgdesc="Virtual Network Simulator GUI for NS-2"
+url="https://apus.uma.pt/vns/"
+license=('LGPL')
+depends=('java-environment' 'ns' 'otcl' 'tclcl')
+arch=('any')
+source=("https://apus.uma.pt/vns/ficheiros/vns.1.0.linux.jar"
+	'vns-ns2.desktop')
+sha256sums=('87cd18bb2325653892bf7e78a6d0d4dc4f11ae8e460506af1be53feface4798f'
+	    '6c13a474955ed9c0a7886538dbb82d3bfd8a530d4c1ca292e06e0ee9361cb518')
+
+package() {
+  cd "${srcdir}"
+
+  install -d "${pkgdir}"/usr/bin
+  install -d "${pkgdir}"/usr/share/applications
+
+  install -Dm755 vns.1.0.linux.jar "${pkgdir}"/usr/bin/
+  install -Dm755 vns-ns2.desktop "${pkgdir}"/usr/share/applications/
+}

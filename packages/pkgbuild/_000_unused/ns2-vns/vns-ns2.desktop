@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=VNS
+Comment=Visual Network Simulator using NS2
+Exec=java -jar /usr/bin/vns.1.0.linux.jar
+Icon=network-server
+Categories=Network;Application;

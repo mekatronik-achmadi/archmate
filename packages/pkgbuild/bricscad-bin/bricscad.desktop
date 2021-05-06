@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Bricscad
+Comment=BricsCad is a CAD program with Autodesk DWG compatibility.
+Icon=/usr/share/pixmaps/bricscad_logo.png
+Exec=bash -c "bricscad"
+NoDisplay=false
+Categories=Graphics;
+StartupNotify=false
+Terminal=false

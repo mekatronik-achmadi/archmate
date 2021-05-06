@@ -1,0 +1,37 @@
+pkgname=idea-ce
+_pkgname=idea-IC
+_buildver=203.6682.168
+pkgver=2020.3.1
+pkgrel=1
+pkgdesc="Intellij Idea IDE (community version)"
+arch=('x86_64')
+options=(!strip)
+url="http://www.jetbrains.com/idea/"
+license=('Apache2')
+provides=('intellij-idea-community-edition' 'intellij-idea-ce')
+depends=('giflib' 'libxtst' 'java-environment-openjdk>=11')
+source=("https://download.jetbrains.com/idea/ideaIC-${pkgver}-no-jbr.tar.gz"
+        "idea-ce.desktop")
+sha256sums=('2e3825f6f70fabc32834a022da9a0e98e835371e6714edc8a82b56a7e9c65e7c'
+            'b38188c0533db6861cf5193deebd58731ad93647ae3c03b3fae6f7748b4ff849')
+
+package() {
+    cd "$srcdir"
+    mkdir -p "${pkgdir}/opt/${pkgname}"
+    cp -R "${srcdir}/idea-IC-$_buildver/"* "${pkgdir}/opt/${pkgname}"
+
+    mkdir -p "${pkgdir}/usr/bin/"
+    mkdir -p "${pkgdir}/usr/share/applications/"
+    mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}/"
+    install -Dm 644 $pkgdir/opt/$pkgname/bin/idea.png $pkgdir/usr/share/pixmaps/$pkgname.png
+    install -Dm644 "${startdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/"
+    for i in $(ls $srcdir/idea-IC-$_buildver/license/ ); do
+      ln -sf "/opt/${pkgname}/license/$i" "${pkgdir}/usr/share/licenses/${pkgname}/$i"
+    done
+    ln -s "/opt/${pkgname}/bin/idea.sh" "${pkgdir}/usr/bin/idea-ce"
+
+    mkdir -p $pkgdir/etc/profile.d/
+    OPENJDK_VER=$(ls /usr/lib/jvm/ | cut -d"-" -f2 | sort -nr | head -n1)
+    echo "export IDEA_JDK=/usr/lib/jvm/java-${OPENJDK_VER}-openjdk" > \
+    $pkgdir/etc/profile.d/idea-jdk.sh
+}

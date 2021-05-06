@@ -1,0 +1,27 @@
+pkgname=esp8266lib
+pkgver=0.1
+pkgrel=1
+pkgdesc="some additional libraries for esp8266"
+arch=('any')
+license=('custom')
+depends=('esp-open-sdk' 'esptool')
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+source=("git+https://github.com/martin-ger/esp_mqtt.git"
+        "git+https://github.com/mekatronik-achmadi/esp8266-mqtt/")
+sha256sums=('SKIP' 'SKIP')
+
+prepare() {
+    cd "$srcdir/esp_mqtt"
+    git submodule init
+    git submodule update
+}
+
+package() {
+        cd "$srcdir"
+
+        mkdir -p $pkgdir/opt/esp8266lib/
+        cp -rv ./esp_mqtt/ $pkgdir/opt/esp8266lib/
+
+        mkdir -p $pkgdir/opt/esp8266lib/demos/
+        cp -rv ./esp8266-mqtt $pkgdir/opt/esp8266lib/demos/
+}

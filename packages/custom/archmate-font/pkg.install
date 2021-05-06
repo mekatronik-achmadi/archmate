@@ -1,0 +1,43 @@
+font_reset() {
+	rm -f /etc/fonts/conf.d/10-scale-bitmap-fonts.conf
+	rm -f /etc/fonts/conf.d/10-no-sub-pixel.conf
+	rm -f /etc/fonts/conf.d/10-unhinted.conf
+	rm -f /etc/fonts/conf.d/10-autohint.conf
+	rm -f /etc/fonts/conf.d/10-hinting-none.conf
+	rm -f /etc/fonts/conf.d/10-hinting-full.conf
+	rm -f /etc/fonts/conf.d/10-hinting-medium.conf
+	rm -f /etc/fonts/conf.d/10-hinting-slight.conf
+	rm -f /etc/fonts/conf.d/10-sub-pixel-bgr.conf
+	rm -f /etc/fonts/conf.d/10-sub-pixel-vbgr.conf
+	rm -f /etc/fonts/conf.d/10-sub-pixel-vrgb.conf
+	rm -f /etc/fonts/conf.d/11-lcdfilter-light.conf
+	rm -f /etc/fonts/conf.d/11-lcdfilter-legacy.conf
+	rm -f /etc/fonts/conf.d/11-lcdfilter-default.conf
+}
+
+font_tweak() {
+	ln -sf /usr/share/archmate-symlink/local.conf /etc/fonts/local.conf
+
+	ln -sf /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+	ln -sf /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
+	ln -sf /etc/fonts/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d
+	ln -sf /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
+
+	fc-cache -f > /dev/null
+	mkfontscale /usr/share/fonts/TTF
+	mkfontdir /usr/share/fonts/TTF
+	gdk-pixbuf-query-loaders --update-cache
+
+	glib-compile-schemas /usr/share/glib-2.0/schemas/
+}
+
+post_install() {
+	font_reset
+	font_tweak
+}
+
+post_upgrade() {
+	font_reset
+	font_tweak
+}
+

@@ -1,0 +1,30 @@
+pkgname=libopencm3-demos
+pkgver=r2639.90753950
+pkgrel=1
+pkgdesc='Examples for libOpenCM3'
+arch=('any')
+url='http://www.libopencm3.org'
+license=('GPL')
+depends=('libopencm3')
+makedepends=('git')
+options=(!strip staticlibs !buildflags)
+source=("git+https://github.com/libopencm3/libopencm3-examples"
+        "git+https://github.com/libopencm3/libopencm3-miniblink")
+sha512sums=('SKIP' 'SKIP')
+
+package(){
+
+  mkdir -p $pkgdir/usr/share/libopencm3/demos/
+  cd $srcdir/libopencm3-examples/
+  cp -f Makefile $pkgdir/usr/share/libopencm3/demos/
+  cp -f README.md $pkgdir/usr/share/libopencm3/demos/
+  cp -rf examples $pkgdir/usr/share/libopencm3/demos/
+
+  mkdir -p $pkgdir/usr/share/libopencm3/demos/miniblink/
+  cd $srcdir/libopencm3-miniblink/
+  rm -rf libopencm3/
+  rm .gitignore
+  rm .gitmodules
+  cp -f ./* $pkgdir/usr/share/libopencm3/demos/miniblink/
+}
+

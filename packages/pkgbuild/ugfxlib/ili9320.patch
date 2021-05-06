@@ -1,0 +1,38 @@
+--- gdisp_lld_ILI9320.c	2017-10-30 01:02:01.000000000 +0700
++++ gdisp_lld_ILI9320.c	2018-10-13 10:03:02.558850493 +0700
+@@ -182,7 +182,7 @@
+ 
+ 	// Turn on the backlight
+ 	set_backlight(g, GDISP_INITIAL_BACKLIGHT);
+-	
++
+     /* Initialise the GDISP structure */
+     g->g.Width = GDISP_SCREEN_WIDTH;
+     g->g.Height = GDISP_SCREEN_HEIGHT;
+@@ -326,7 +326,7 @@
+ 
+ 				case GDISP_ROTATE_90:
+ 					acquire_bus(g);
+-					write_reg(g, 0x01, 0x0000);
++					write_reg(g, 0x01, 0x0100);
+ 					write_reg(g, 0x03, 0x1030);
+ 					write_reg(g, 0x60, 0x2700);
+ 					release_bus(g);
+@@ -348,7 +348,7 @@
+ 
+ 				case GDISP_ROTATE_270:
+ 					acquire_bus(g);
+-					write_reg(g, 0x01, 0x0100);
++					write_reg(g, 0x01, 0x0000);
+ 					write_reg(g, 0x03, 0x1038);
+ 					write_reg(g, 0x60, 0xA700);
+ 					release_bus(g);
+@@ -356,7 +356,7 @@
+ 					g->g.Height = GDISP_SCREEN_WIDTH;
+ 					g->g.Width = GDISP_SCREEN_HEIGHT;
+ 					break;
+-		
++
+ 				default:
+ 					return;
+ 				}

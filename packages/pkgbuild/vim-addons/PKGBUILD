@@ -1,0 +1,22 @@
+pkgname=vim-addons
+pkgver=0.1
+pkgrel=1
+pkgdesc="some addons for Vim"
+arch=('any')
+url="https://www.vim.org/"
+license=('custom:vim')
+install=pkg.install
+depends=('vim' 'cscope' 'ctags' 'clang' 'python-jedi' 'python-pylint'
+'vim-jedi' 'vim-nerdcommenter' 'vim-ctrlp' 'vim-nerdtree'
+'vim-airline' 'vim-surround' 'vim-tagbar' 'vim-ultisnips')
+source=('http://cscope.sourceforge.net/cscope_maps.vim' 'editor-vim.sh')
+md5sums=('SKIP' 'SKIP')
+
+package(){
+  cd $srcdir/
+  mkdir -p $pkgdir/usr/share/vim/vimfiles/plugin/
+  cp -f cscope_maps.vim $pkgdir/usr/share/vim/vimfiles/plugin/
+
+  install -d $pkgdir/etc/profile.d/
+  install -m 755 editor-vim.sh $pkgdir/etc/profile.d/
+}

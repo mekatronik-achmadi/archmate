@@ -1,0 +1,23 @@
+pkgname=python-seabreeze
+_pkgname=seabreeze
+pkgver=1.3.0
+pkgrel=1
+pkgdesc="Python way to access your Ocean Optics spectrometers"
+arch=('any')
+url="https://github.com/ap--/python-seabreeze"
+license=('GPL')
+depends=('python' 'python-pyusb')
+makedepends=('python-setuptools' 'git')
+optdepends=('libseabreeze: shared SeaBreeze library')
+source=(git+https://github.com/ap--/python-seabreeze.git)
+sha256sums=('SKIP')
+
+build() {
+  cd "${srcdir}/${pkgname}/"
+  python setup.py build
+}
+
+package() {
+  cd "${srcdir}/${pkgname}/"
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+}

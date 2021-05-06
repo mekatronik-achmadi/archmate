@@ -1,0 +1,37 @@
+pkgname=esp32-idf
+_pkgname=esp-idf
+pkgver=4.0.1
+pkgrel=1
+pkgdesc="Espressif IoT Development Framework. Official development framework for ESP32."
+arch=('i686' 'x86_64' 'aarch' 'aarch64' 'armv7h')
+url="https://github.com/espressif/esp-idf"
+license=('APACHE')
+options=('!strip' '!buildflags' '!makeflags')
+depends=('python' 'python-click' 'python-pyserial' 'python-future' 'python-cryptography' 'python-pyparsing' 'python-pyelftools')
+source=("https://github.com/espressif/${pkgname}/releases/download/v${pkgver}/${_pkgname}-v${pkgver}.zip"
+	"esp32-idf.sh")
+sha512sums=('f184c4cd0d682a040f89af5617d1ff60d76eaf20eb4aca3d9cd234de6538287276ee6fc724ed21e253a03ab74658601d5093e7dd088a42c129499034f80eb1b1'
+	   'SKIP')
+
+package() {
+  cd "${srcdir}"
+  mkdir -p ${pkgdir}/etc/profile.d
+  cp esp32-idf.sh ${pkgdir}/etc/profile.d/
+
+  mkdir -p ${pkgdir}/opt/esp32-idf
+  cd "${srcdir}/${_pkgname}-v${pkgver}"
+
+  msg "Installing to /opt/esp32-idf"
+  cp -R . ${pkgdir}/opt/esp32-idf
+
+  msg "cleaning up"
+  rm -rf ${pkgdir}/opt/esp32-idf/.git/
+  rm -rf ${pkgdir}/opt/esp32-idf/.github/
+  rm -r ${pkgdir}/opt/esp32-idf/.editorconfig
+  rm -r ${pkgdir}/opt/esp32-idf/.flake8
+  rm -r ${pkgdir}/opt/esp32-idf/.gitignore
+  rm -r ${pkgdir}/opt/esp32-idf/.gitlab-ci.yml
+  rm -r ${pkgdir}/opt/esp32-idf/.gitmodules
+  rm -r ${pkgdir}/opt/esp32-idf/.readthedocs.yml
+  rm -r ${pkgdir}/opt/esp32-idf/.travis.yml
+}

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Anbox Helper
+GenericName=Anbox Helper GUI
+Version=1.0
+Type=Application
+Icon=anbox
+Exec=anboxh
+Terminal=false
+Categories=Network;

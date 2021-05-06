@@ -1,0 +1,27 @@
+pkgname=texstudio-themes
+pkgver=0.1
+pkgrel=1
+pkgdesc='Additional themes for TexStudio'
+arch=('any')
+license=(custom)
+optdepends=('texstudio: program this themes build for')
+source=(
+	'Cobalt.txsprofile'
+	'Default.txsprofile'
+	'Desert.txsprofile'
+	'Matrix.txsprofile'
+	'Oblivion.txsprofile'
+	'Solarized_Dark.txsprofile'
+	'Solarized_Light.txsprofile'
+	'WhiteBlue.txsprofile'
+	'XColor_Cobalt.txsprofile'
+	'XColor_Oblivion.txsprofile'
+	'XColor_Solarized.txsprofile'
+)
+md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+package() {
+  cd "$srcdir/"
+  install -d -m755 ${pkgdir}/usr/share/texstudio/themes/
+  cp ../*.txsprofile ${pkgdir}/usr/share/texstudio/themes/
+}

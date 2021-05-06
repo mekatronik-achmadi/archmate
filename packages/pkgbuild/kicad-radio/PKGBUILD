@@ -1,0 +1,24 @@
+pkgname=kicad-library-radio
+_gitname=kicad-radio-libraries
+pkgver=0.1
+pkgrel=1
+pkgdesc="Some KiCad libraries"
+arch=('any')
+url="https://github.com/hitov/kicad-radio-libraries"
+license=('Custom')
+depends=('kicad')
+source=('git+https://github.com/hitov/kicad-radio-libraries.git')
+md5sums=('SKIP')
+
+package(){
+	cd $srcdir/${_gitname}/
+
+	mkdir -p $pkgdir/usr/share/kicad/userlib/symbols/radio
+	cp symbols/* $pkgdir/usr/share/kicad/userlib/symbols/radio/
+
+	mkdir -p $pkgdir/usr/share/kicad/userlib/footprints/radio
+	cp footprints/* $pkgdir/usr/share/kicad/userlib/footprints/radio/
+
+	mkdir -p $pkgdir/usr/share/kicad/userlib/packages3d/radio
+	cp 3d/* $pkgdir/usr/share/kicad/userlib/packages3d/radio/
+}

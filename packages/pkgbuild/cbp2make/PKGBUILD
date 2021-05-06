@@ -1,0 +1,27 @@
+pkgname=cbp2make
+pkgver=r5.77c43ad
+pkgrel=1
+pkgdesc="Convert Code::Blocks project to Makefile"
+arch=('x86_64')
+url="https://github.com/mirai-computing/cbp2make"
+license=('GPL3')
+depends=('glibc' 'gcc-libs')
+optdepends=('codeblocks: Original IDE')
+makedepends=('git')
+source=("git+https://github.com/mirai-computing/cbp2make")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "${srcdir}/$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+  cd "$srcdir/${pkgname}"
+  make -f cbp2make.cbp.mak.unix release
+}
+
+package() {
+  cd "$srcdir/${pkgname}"
+  install -Dm 755 ./bin/Release/cbp2make $pkgdir/usr/bin/cbp2make
+}

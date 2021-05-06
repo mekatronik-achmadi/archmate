@@ -1,0 +1,24 @@
+pkgname=python-pyutils
+pkgver=0.1
+pkgrel=1
+pkgdesc="Python Distribution Utilities"
+arch=('any')
+url="https://github.com/haaksmash/pyutils"
+license=('GPL')
+depends=('python' 'python-six')
+makedepends=('git' 'python-setuptools')
+source=("$pkgname::git+https://github.com/haaksmash/pyutils.git")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/$pkgname"
+  python setup.py build
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+
+  # remove conflict modules
+  rm -rf $pkgdir/usr/lib/python3.6/site-packages/tests/
+}

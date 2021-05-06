@@ -1,0 +1,19 @@
+pkgname=freertos
+pkgver=10.2.1
+pkgrel=1
+pkgdesc="Real-time operating system for microcontrollers"
+arch=('any')
+url="https://www.freertos.org/"
+license=('MIT')
+depends=('bash' 'perl')
+makedepends=('unzip')
+options=('!strip' '!buildflags' '!makeflags')
+source=("https://github.com/FreeRTOS/FreeRTOS/archive/V$pkgver.zip")
+md5sums=('SKIP')
+
+package() {
+	install -d "$pkgdir"/opt/$pkgname
+	cp -af FreeRTOS-$pkgver/* "$pkgdir"/opt/$pkgname
+	rm -f "$pkgdir"/opt/$pkgname/*.url
+}
+

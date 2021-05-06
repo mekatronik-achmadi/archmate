@@ -1,0 +1,20 @@
+pkgname=kicad-library-seeed-opl
+pkgver=0.1
+pkgrel=1
+pkgdesc="Unofficial additional KiCad libraries from Seeed Studio OPL"
+arch=('any')
+url="https://github.com/Seeed-Studio/OPL_Kicad_Library"
+license=('Custom')
+depends=('kicad')
+source=('git+https://github.com/Seeed-Studio/OPL_Kicad_Library.git')
+md5sums=('SKIP')
+
+package(){
+	cd $srcdir/OPL_Kicad_Library/Seeed_Fusion_PCBA_OPL_Component_Library_for_KiCad/
+
+	mkdir -p $pkgdir/usr/share/kicad/userlib/symbols/seeedopl/
+	cp ./*.lib $pkgdir/usr/share/kicad/userlib/symbols/seeedopl/
+
+	mkdir -p $pkgdir/usr/share/kicad/userlib/footprints/seeedopl/
+	cp -r ./*.pretty $pkgdir/usr/share/kicad/userlib/footprints/seeedopl/
+}

@@ -1,0 +1,40 @@
+pkgname=anbox-helper
+pkgver=0.1
+pkgrel=1
+pkgdesc='Helper tools for Anbox subsystem'
+arch=('x86_64')
+url='https://github.com/anbox/anbox/tree/master/scripts'
+license=('Custom')
+depends=('bash' 'systemd' 'android-tools' 'anbox-git' 'anbox-modules-dkms-git' 'python-pyqt5')
+install=pkg.install
+makedepends=('git')
+options=('!makeflags')
+source=("$pkgname::git+https://github.com/mekatronik-achmadi/anbox-helper")
+sha256sums=('SKIP')
+
+package() {
+	cd "$srcdir/$pkgname"
+
+	pyuic5 gui/anboxh.ui > gui/anboxh_ui.py
+
+	install -d $pkgdir/usr/share/anbox-helper/
+	cp -af gui/icons $pkgdir/usr/share/anbox-helper/
+	cp -af gui/anboxh.py $pkgdir/usr/share/anbox-helper/
+	cp -af gui/anboxh_ui.py $pkgdir/usr/share/anbox-helper/
+
+	install -d $pkgdir/usr/share/applications/
+	cp -af gui/anbox-helper.desktop $pkgdir/usr/share/applications/
+
+	install -d $pkgdir/usr/bin/
+	cp -af scripts/anbox-push $pkgdir/usr/bin/
+	cp -af scripts/anbox-scan $pkgdir/usr/bin/
+	cp -af scripts/anbox-start $pkgdir/usr/bin/
+	cp -af scripts/anbox-stop $pkgdir/usr/bin/
+
+	chmod a+x $pkgdir/usr/share/anbox-helper/anboxh.py
+	ln -sf /usr/share/anbox-helper/anboxh.py $pkgdir/usr/bin/anboxh
+
+	cp -af systemd/anbox.service $pkgdir/usr/share/anbox-helper/
+	cp -af systemd/anbox.network $pkgdir/usr/share/anbox-helper/
+}
+

@@ -1,0 +1,31 @@
+pkgname=archmate-archiso
+pkgver=0.1
+pkgrel=1
+pkgdesc="some example scripts to use archiso"
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archmate"
+license=('GPL')
+depends=(
+'squashfs-tools' 'archiso' 'syslinux'
+'patch' 'rsync' 'cdrtools' 'libisoburn'
+'curl' 'bash-completion' 'mkinitcpio'
+'dosfstools' 'e2fsprogs' 'sed'
+'wget' 'arch-install-scripts')
+options=('!makeflags')
+install=pkg.install
+source=(
+	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/mate/pkg-mate-x86_64.txt"
+	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/mate/archiso_mate.sh"
+	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/mate/newpkg_mate.sh"
+	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/custompkg.sh")
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+package() {
+	cd ../
+
+	install -d $pkgdir/usr/share/archmate-archiso/
+	install -m 644 ./pkg-mate-x86_64.txt $pkgdir/usr/share/archmate-archiso/
+	install -m 644 ./archiso_mate.sh $pkgdir/usr/share/archmate-archiso/
+	install -m 644 ./newpkg_mate.sh $pkgdir/usr/share/archmate-archiso/
+	install -m 644 ./custompkg.sh $pkgdir/usr/share/archmate-archiso/
+}

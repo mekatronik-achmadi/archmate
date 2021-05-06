@@ -1,0 +1,115 @@
+pkgname=archmate-theme
+pkgver=0.1
+_matchapkg=matcha-gtk-theme
+_matchaver=2020-10-23
+_arcgtkpkg=arc-theme
+_arcgtkver=20200819
+pkgrel=1
+pkgdesc="some Flat GTK themes for Arch Linux MATE"
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archmate/"
+license=('custom')
+makedepends=('inkscape')
+depends=(
+	'sassc'
+	'optipng'
+	'gtk-engines'
+	'gtk-engine-murrine'
+	'mate-themes'
+	'gnome-themes-extra'
+	'arc-solid-gtk-theme'
+	'archmate-icon')
+install=pkg.install
+options=('!makeflags' '!strip')
+source=(
+    "$_matchapkg-$_matchaver.tar.gz::https://github.com/vinceliuice/Matcha-gtk-theme/archive/$_matchaver.tar.gz"
+    "https://github.com/jnsh/${_arcgtkpkg}/releases/download/${_arcgtkver}/${_arcgtkpkg}-${_arcgtkver}.tar.xz")
+sha256sums=(
+    '6c50513ea2f235e5693aaf3d7168451ab2d8ff3a0ca7352b17577ebf8d76f8f0'
+    '8812440e8de7610646afbd25aa14c0a176683360fd0f181b367ccbd3a7b03422')
+
+prepare() {
+    #cp -a ${_arcgtkpkg}-${_arcgtkver}{,-Blue}
+	cp -a ${_arcgtkpkg}-${_arcgtkver}{,-Green}
+}
+
+colorize() {
+	cd $srcdir/${_arcgtkpkg}-${_arcgtkver}-$1
+
+	find . -type f -name "configure.ac" -exec sed -i \
+	"s/themes\/Arc-solid\]/themes\/Arc-$1-solid\]/Ig;\
+	 s/themes\/Arc-Darker-solid\]/themes\/Arc-Darker-$1-solid\]/Ig;\
+	 s/themes\/Arc-Dark-solid\]/themes\/Arc-Dark-$1-solid\]/Ig;\
+	 s/themes\/Arc-Lighter-solid\]/themes\/Arc-Lighter-$1-solid\]/Ig;\
+	" {} \;
+
+	find . -type f -name "*.*" -exec sed -i \
+	"s/#5294e2/$2/Ig;\
+	 s/#4DADD4/$3/Ig" {} \;
+	find . -type f -name "gtkrc" -exec sed -i \
+	"s/#5294e2/$2/Ig;\
+	 s/#4DADD4/$3/Ig" {} \;
+
+	./autogen.sh --prefix=/usr \
+	--with-gnome-shell=3.36 \
+	--with-cinnamon=4.6 \
+	--with-gtk3=3.24 \
+	--disable-xfwm \
+	--disable-plank \
+	--disable-transparency
+}
+
+rmindex() {
+    rm -f $pkgdir/usr/share/themes/Arc-$1-solid/index.theme
+    rm -f $pkgdir/usr/share/themes/Arc-Darker-$1-solid/index.theme
+    rm -f $pkgdir/usr/share/themes/Arc-Dark-$1-solid/index.theme
+    rm -f $pkgdir/usr/share/themes/Arc-Lighter-$1-solid/index.theme
+}
+
+build() {
+	#colorize "Blue" "#2196F3" "#64B5F6"
+	colorize "Green" "#4CAF50" "#81C784"
+}
+
+package() {
+    ####################### Arc Modified ####################
+	cd ../
+    for i in Arc Green Arc-Dark Green-Dark;do
+	    install -d $pkgdir/usr/share/themes/Standard-$i/;
+	    cp -f ./Standard-$i.theme $pkgdir/usr/share/themes/Standard-$i/index.theme;
+    done
+
+	####################### Matcha Dark ###################
+	cd "$srcdir/Matcha-gtk-theme-$_matchaver"
+	install -d "$pkgdir/usr/share/themes"
+	./install.sh -d "$pkgdir/usr/share/themes"
+
+	echo "remove unused"
+	cd "$pkgdir/usr/share/themes"
+	rm -rf Matcha-aliz/
+	rm -rf Matcha-dark-aliz/
+	rm -rf Matcha-light-aliz/
+	rm -rf Matcha-sea/
+	rm -rf Matcha-light-sea/
+	rm -rf Matcha-azul/
+	rm -rf Matcha-light-azul/
+
+	echo "remove index.theme"
+	rm -f Matcha-dark-azul/index.theme
+	rm -f Matcha-dark-sea/index.theme
+
+	################### Arc Solid ######################
+    #cd $srcdir/${_arcgtkpkg}-${_arcgtkver}-Blue
+	#make DESTDIR="${pkgdir}" install
+	#rmindex "Blue"
+
+    cd $srcdir/${_arcgtkpkg}-${_arcgtkver}-Green
+	make DESTDIR="${pkgdir}" install
+	rmindex "Green"
+
+	########################################################
+
+	# Mode fix
+	find "${pkgdir}" -type d -exec chmod 755 {} +
+	find "${pkgdir}" -type f -exec chmod 644 {} +
+}

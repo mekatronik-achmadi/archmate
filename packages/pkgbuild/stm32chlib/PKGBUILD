@@ -1,0 +1,52 @@
+pkgname=stm32chlib
+pkgver=3.0.6
+pkgrel=1
+stable_2=chibios-branches_stable_2.6.x-r13840
+stable_3=chibios-branches_stable_3.0.x-r13840
+pkgdesc="STM32 Libraries from ChibiOS/RT (2.6.x and 3.0.x)"
+arch=('any')
+url="https://osdn.net/projects/chibios/scm/svn/tree/head/branches/stable_3.0.x/"
+license=('custom')
+depends=('arm-none-eabi-gcc' 'arm-none-eabi-newlib')
+optdepends=('ugfxlib: for GUI on LCD-Touch with ChibiOS/RT')
+makedepends=('p7zip' 'unzip' 'tree')
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+source=("${stable_2}.zip" "${stable_3}.zip" 'unused_chibios30' 'unused_chibios26')
+sha256sums=('SKIP' 'SKIP'
+	'9858b8160e198285ec3933561dc4efef35ae080c9bd190fb522232b1abfb154e'
+	'39f36baf5a7d2e7b49369885b0677aa09c064f56e98b6d9163e6ec002f6af185')
+
+package() {
+        cd "$srcdir"
+
+        unzip -qqo ${stable_3}.zip
+        unzip -qqo ${stable_2}.zip
+
+        cd "$srcdir/${stable_3}/stable_3.0.x/ext/"
+        7z x fatfs-0.10b-patched.7z
+        7z x lwip-1.4.1_patched.7z
+        rm -f *.7z
+
+        cd "$srcdir/${stable_2}/stable_2.6.x/ext/"
+        7z x lwip-1.4.1_patched.7z
+        unzip -qqo fatfs-0.9-patched.zip
+        unzip -qqo uip-1.0.patches.zip -d ./uip-patches
+        tar -xzf uip-1.0.tar.gz
+        rm -f *.7z
+        rm -f *.zip
+        rm -f *.tar.gz
+
+        cd "$srcdir"
+
+        install -d -m755 $pkgdir/opt/stm32chlib/chibios30
+        mv -f $srcdir/${stable_3}/stable_3.0.x/* $pkgdir/opt/stm32chlib/chibios30
+
+        install -d -m755 $pkgdir/opt/stm32chlib/chibios26
+        mv -f $srcdir/${stable_2}/stable_2.6.x/* $pkgdir/opt/stm32chlib/chibios26
+
+        ./unused_chibios30 $pkgdir/opt/stm32chlib/chibios30
+        ./unused_chibios26 $pkgdir/opt/stm32chlib/chibios26
+
+        chmod -Rf 755 $pkgdir/opt/stm32chlib/chibios30
+        chmod -Rf 755 $pkgdir/opt/stm32chlib/chibios26
+}

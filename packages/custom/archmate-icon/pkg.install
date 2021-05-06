@@ -1,0 +1,22 @@
+remove_unused() {
+	rm -rf /usr/share/icons/ContrastHigh
+	rm -rf /usr/share/icons/HighContrast
+}
+
+update_icon_cache() {
+	for i in `ls -p /usr/share/icons/ | grep -v /`;do rm -f /usr/share/icons/$i;done
+	for i in /usr/share/icons/*;do gtk-update-icon-cache -qft $i;done
+}
+
+update() {
+	remove_unused
+	update_icon_cache
+}
+
+post_install() {
+	update
+}
+
+post_upgrade() {
+	update
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export CODESET=$HOME/.config/Code\ -\ OSS/User/settings.json
+cp -f /usr/share/vscode/example_settings.json "$CODESET"

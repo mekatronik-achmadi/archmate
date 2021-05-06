@@ -1,0 +1,100 @@
+#!/bin/bash
+
+rm -rf ${1}/boards/ARDUINO_MEGA 
+rm -rf ${1}/boards/EA_LPCXPRESSO_BB_1114 
+rm -rf ${1}/boards/EA_LPCXPRESSO_BB_11U14 
+rm -rf ${1}/boards/EA_LPCXPRESSO_BB_1343 
+rm -rf ${1}/boards/EA_LPCXPRESSO_LPC812 
+rm -rf ${1}/boards/NGX_BB_LPC11U14 
+rm -rf ${1}/boards/OLIMEX_AVR_CAN 
+rm -rf ${1}/boards/OLIMEX_AVR_MT_128 
+rm -rf ${1}/boards/OLIMEX_LPC_P1227 
+rm -rf ${1}/boards/OLIMEX_LPC_P1343 
+rm -rf ${1}/boards/OLIMEX_LPC_P2148 
+rm -rf ${1}/boards/OLIMEX_MSP430_P1611 
+rm -rf ${1}/boards/OLIMEX_SAM7_EX256 
+rm -rf ${1}/boards/OLIMEX_SAM7_P256 
+rm -rf ${1}/boards/ST_EVB_SPC560BC
+rm -rf ${1}/boards/ST_EVB_SPC560P 
+rm -rf ${1}/boards/ST_EVB_SPC563M 
+rm -rf ${1}/boards/ST_EVB_SPC564A
+rm -rf ${1}/boards/ST_EVB_SPC56EL
+rm -rf ${1}/boards/STUDIEL_AT91SAM7A3_EK 
+rm -rf ${1}/boards/WS_CORE407V
+rm -rf ${1}/boards/simulator
+
+rm -rf ${1}/demos/ARM7-AT91SAM7X-FATFS-GCC
+rm -rf ${1}/demos/ARM7-AT91SAM7X-GCC
+rm -rf ${1}/demos/ARM7-AT91SAM7X-LWIP-GCC
+rm -rf ${1}/demos/ARM7-AT91SAM7X-UIP-GCC
+rm -rf ${1}/demos/ARM7-LPC214x-FATFS-GCC
+rm -rf ${1}/demos/ARM7-LPC214x-G++
+rm -rf ${1}/demos/ARM7-LPC214x-GCC
+rm -rf ${1}/demos/ARMCM0-LPC1114-LPCXPRESSO
+rm -rf ${1}/demos/ARMCM0-LPC11U14-LPCXPRESSO
+rm -rf ${1}/demos/ARMCM0P-LPC812-LPCXPRESSO
+rm -rf ${1}/demos/ARMCM3-GENERIC-KERNEL
+rm -rf ${1}/demos/ARMCM3-LPC1343-LPCXPRESSO
+rm -rf ${1}/demos/ARMCM3-LPC1343-OLIMEX
+rm -rf ${1}/demos/ARMCM4-SAM4L
+rm -rf ${1}/demos/AVR-ArduinoMega-GCC
+rm -rf ${1}/demos/AVR-AT90CANx-GCC
+rm -rf ${1}/demos/AVR-ATmega128-GCC
+rm -rf ${1}/demos/MSP430-MSP430x1611-GCC
+rm -rf ${1}/demos/Posix-GCC
+rm -rf ${1}/demos/PPC-SPC560B-GCC
+rm -rf ${1}/demos/PPC-SPC560P-GCC
+rm -rf ${1}/demos/PPC-SPC563M-GCC
+rm -rf ${1}/demos/PPC-SPC564A-GCC
+rm -rf ${1}/demos/PPC-SPC56EL-GCC
+rm -rf ${1}/demos/Win32-MinGW
+
+rm -rf ${1}/testhal/LPC11xx
+rm -rf ${1}/testhal/LPC122x
+rm -rf ${1}/testhal/LPC13xx
+rm -rf ${1}/testhal/SPC560Pxx
+rm -rf ${1}/testhal/SPC563Mxx
+rm -rf ${1}/testhal/SPC56ELxx
+rm -rf ${1}/testhal/common
+
+rm -rf ${1}/os/hal/platforms/AT91SAM7
+rm -rf ${1}/os/hal/platforms/AVR
+rm -rf ${1}/os/hal/platforms/LPC11Uxx
+rm -rf ${1}/os/hal/platforms/LPC11xx
+rm -rf ${1}/os/hal/platforms/LPC122x
+rm -rf ${1}/os/hal/platforms/LPC13xx
+rm -rf ${1}/os/hal/platforms/LPC214x
+rm -rf ${1}/os/hal/platforms/LPC8xx
+rm -rf ${1}/os/hal/platforms/MSP430
+rm -rf ${1}/os/hal/platforms/Posix
+rm -rf ${1}/os/hal/platforms/SPC560BCxx
+rm -rf ${1}/os/hal/platforms/SPC560Pxx
+rm -rf ${1}/os/hal/platforms/SPC563Mxx
+rm -rf ${1}/os/hal/platforms/SPC564Axx
+rm -rf ${1}/os/hal/platforms/SPC56ELxx
+rm -rf ${1}/os/hal/platforms/SPC5xx
+rm -rf ${1}/os/hal/platforms/Win32
+
+rm -rf ${1}/os/ports/IAR
+rm -rf ${1}/os/ports/RVCT
+
+rm -rf ${1}/os/ports/GCC/ARM
+rm -rf ${1}/os/ports/GCC/AVR
+rm -rf ${1}/os/ports/GCC/MSP430
+rm -rf ${1}/os/ports/GCC/PPC
+rm -rf ${1}/os/ports/GCC/SIMIA32
+
+rm -rf ${1}/os/ports/GCC/ARMCMx/LPC11xx
+rm -rf ${1}/os/ports/GCC/ARMCMx/LPC122x
+rm -rf ${1}/os/ports/GCC/ARMCMx/LPC13xx
+rm -rf ${1}/os/ports/GCC/ARMCMx/LPC8xx
+rm -rf ${1}/os/ports/GCC/ARMCMx/SAM4L 
+
+for i in `find ${1} -type d | grep debug`;do rm -rf $i;done
+for i in `find ${1} -type d | grep doc`;do rm -rf $i;done
+for i in `find ${1} -type d | grep dox`;do rm -rf $i;done
+
+for i in `find ${1} -type f | grep html`;do rm -f $i;done
+for i in `find ${1} -type f | grep doc`;do rm -f $i;done
+for i in `find ${1} -type f | grep dox`;do rm -f $i;done
+for i in `find ${1} -type f | grep txt`;do rm -f $i;done

@@ -1,0 +1,15 @@
+install_msg() {
+	echo "-------------------------"
+	echo "run this commands first:"
+	echo ""
+	echo "signapk default"
+	echo "-------------------------"
+}
+
+post_install() {
+	install_msg
+}
+
+post_upgrade() {
+	install_msg
+}

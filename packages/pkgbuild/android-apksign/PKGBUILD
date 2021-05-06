@@ -1,0 +1,15 @@
+pkgname=android-apksign
+pkgver=0.1
+pkgrel=1
+pkgdesc='Bash script to help self-sign APK'
+url="https://code.google.com/p/apk-resigner/"
+arch=('any')
+license=('Apache License 2.0')
+install=apksign.install
+depends=('bash' 'java-environment-common')
+source=('signapk')
+md5sums=('SKIP')
+
+package() {
+  install -Dm0755 ${srcdir}/signapk ${pkgdir}/usr/bin/signapk
+}

@@ -1,0 +1,21 @@
+pkgname=vscode-settings
+pkgver=0.1
+pkgrel=1
+pkgdesc="some lightweight and useful settings for VSCodium"
+arch=('any')
+url="https://github.com/microsoft/vscode"
+license=('MIT')
+depends=('vscode')
+source=('example_settings.json' 'vscode-set')
+md5sums=('SKIP' 'SKIP')
+
+package(){
+  cd $srcdir/
+
+  mkdir -p $pkgdir/usr/bin/
+  cp -f vscode-set $pkgdir/usr/bin/
+  chmod a+x $pkgdir/usr/bin/vscode-set
+
+  mkdir -p $pkgdir/usr/share/vscode/
+  cp -f example_settings.json $pkgdir/usr/share/vscode/
+}

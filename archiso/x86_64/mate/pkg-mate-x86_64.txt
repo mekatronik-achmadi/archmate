@@ -1,0 +1,194 @@
+linux base base-devel
+linux-headers linux-firmware
+multilib-devel terminus-font
+
+bash-completion mkinitcpio
+squashfs-tools rsync zsync
+cdrtools archiso syslinux
+dkms arch-install-scripts
+neofetch lsb-release dtc
+nano dialog bc tmux tree
+nano-syntax-highlighting
+curl wget openssh sshfs
+intel-ucode amd-ucode
+mkinitcpio-archiso
+
+posix posix-software-development
+posix-xsi posix-c-development
+
+ranger lynx
+moc atool most
+python lua perl
+fdupes w3m imlib2
+poppler highlight
+mediainfo libcaca
+
+vim vim-jedi
+vim-nerdcommenter
+vim-ctrlp vim-nerdtree
+vim-airline vim-surround
+vim-tagbar vim-ultisnips
+
+xorg xorg-apps xorg-drivers
+xorg-xinit xorg-fonts
+
+lightdm lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+mate mate-extra zenity
+ttf-liberation onboard
+parcellite meld ghex
+redshift python-xdg
+gnome-disk-utility
+xdg-user-dirs-gtk
+ghostwriter xchm
+mypaint shotwell
+ttf-inconsolata
+qt5ct xdotool
+dconf-editor
+python-caja
+ttf-dejavu
+
+gtk2 gtk3 glade
+python-wxpython
+python-gobject
+wxgtk2 wxgtk3
+gtkmm gtkmm3
+
+gnome-icon-theme-extras gnome-themes-extra
+arc-solid-gtk-theme papirus-icon-theme
+gtk-engines gtk-engine-murrine
+
+networkmanager nm-connection-editor
+network-manager-applet modemmanager
+mobile-broadband-provider-info iftop
+bind-tools netctl ppp wpa_supplicant
+traceroute wavemon mtr bmon nethogs
+tcpdump fping gnu-netcat inetutils
+net-tools bridge-utils iwd ethtool
+crda wireless_tools usb_modeswitch
+iw gnome-keyring dhclient dnsmasq
+
+alsa-lib alsa-plugins
+alsa-utils alsa-firmware
+portaudio pavucontrol jack
+pulseaudio pulseaudio-equalizer
+pulseaudio-alsa pulseaudio-bluetooth
+libcanberra-pulse sound-theme-freedesktop
+
+gvfs gvfs-mtp gvfs-google
+gvfs-gphoto2 gvfs-afc
+gvfs-smb gvfs-nfs
+
+lrzip lzip lzop zip unzip zstd
+tar libarchive unrar lxsplit
+xz bzip2 gzip lz4 p7zip arj
+unarj lhasa cpio rpmextract
+
+npm yarn nodejs
+subversion mercurial
+git tig tk bzr cvs cloc
+vala autogen pkg-config
+gnome-common mate-common
+pkgconf gendesk help2man
+autoconf automake cscope
+cmake extra-cmake-modules
+dos2unix doxygen graphviz
+jre8-openjdk jdk8-openjdk
+tcsh gobject-introspection
+meson ninja qt5-base setconf
+
+clang llvm lld
+boost swig sip
+shiboken2 eigen
+
+cython python-setuptools
+python-wheel python-pip
+python-distutils-extra
+
+firefox thunderbird
+firefox-dark-reader
+firefox-ublock-origin
+qbittorrent filezilla
+uget aria2 wkhtmltopdf
+
+blueman bluez
+bluez-utils
+
+cheese guvcview ffmpeg
+gstreamer gst-libav
+ffmpegthumbnailer
+gst-plugins-base
+gst-plugins-good
+gst-plugins-bad
+vlc mplayer
+rhythmbox
+
+fuseiso mdf2iso
+brasero bchunk
+squashfuse
+dvdauthor
+vcdimager
+
+cups cups-pdf
+ghostscript gsfonts
+system-config-printer
+gutenprint foomatic-db-engine
+foomatic-db foomatic-db-nonfree
+
+hardinfo hwloc hwinfo lshw
+lm_sensors xsensors hddtemp
+htop atop dstat libstatgrab
+lsof nmon sysstat procps-ng
+usbutils dmidecode hwdetect
+hdparm sdparm smartmontools
+linux-tools arandr read-edid
+ltrace strace mesa-demos ccze
+
+ntfs-3g exfat-utils
+gparted dosfstools
+gpart e2fsprogs
+gptfdisk mtools
+
+virtualbox-guest-utils
+virtualbox-guest-dkms
+
+grub os-prober
+efibootmgr
+edk2-shell
+edk2-ovmf
+
+gtk3-nocsd-git
+python-polib
+caja-rename
+mate-tweak
+brisk-menu
+
+ttf-tahoma
+ttf-ms-fonts
+ttf-vista-fonts
+
+inxi
+git-cola
+pandoc-bin
+fake-hwclock
+qt5-styleplugins
+
+clang-bear
+vim-addons
+
+vim-coc-git
+vim-coc-pairs-git
+vim-coc-snippets-git
+vim-coc-highlight-git
+vim-coc-sh-git
+vim-coc-clangd-git
+vim-coc-pyright-git
+vim-coc-ultisnips
+
+archmate-font
+archmate-icon
+archmate-theme
+archmate-default
+archmate-archiso
+archmate-install

@@ -1,0 +1,21 @@
+pkgname=python-crcmod
+pkgver=0.1
+pkgrel=1
+pkgdesc="crcmod for Calculating CRCs"
+arch=('any')
+url="http://crcmod.sourceforge.net/"
+license=('GPL')
+depends=('python')
+makedepends=('git' 'python-setuptools')
+source=("crcmod-1.7.tar.gz::https://files.pythonhosted.org/packages/6b/b0/e595ce2a2527e169c3bcd6c33d2473c1918e0b7f6826a043ca1245dd4e5b/crcmod-1.7.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "${srcdir}/crcmod-1.7/"
+  python setup.py build
+}
+
+package() {
+  cd "${srcdir}/crcmod-1.7/"
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+}
