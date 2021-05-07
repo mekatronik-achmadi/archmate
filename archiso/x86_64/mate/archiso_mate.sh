@@ -167,8 +167,8 @@ autologin-user=live
 
 echo '[greeter]
 panel-position = top
-icon-theme-name = Papirus-Dark
-theme-name = Matcha-dark-azul
+icon-theme-name = Papirus-Light
+theme-name = Arc-Lighter-solid
 background = /usr/share/backgrounds/standard/blue-stripes.jpg
 font-name = Liberation Sans 8
 xft-dpi = 96

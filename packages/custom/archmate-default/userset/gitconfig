@@ -1,6 +1,5 @@
 [cola]
 	spellcheck = false
-	icontheme = dark
 	theme = default
 	fontdiff = Inconsolata,9,-1,5,50,0,0,0,0,0
 	startupmode = list

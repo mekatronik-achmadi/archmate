@@ -50,10 +50,6 @@ package() {
 	install -m 755 ./profile/archmate-qt5.sh $pkgdir/etc/profile.d/
 	install -m 755 ./profile/archmate-w3m.sh $pkgdir/etc/profile.d/
 
-	install -d $pkgdir/usr/bin/
-	install -m 755 ./scripts/archmate_userman $pkgdir/usr/bin/
-	install -m 755 ./scripts/archmate_autologin $pkgdir/usr/bin/
-
 	install -d $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/archmate_bashrc $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/redshift.conf $pkgdir/usr/share/archmate-default/
