@@ -37,12 +37,11 @@ lightdm-gtk-greeter-settings
 
 mate mate-extra zenity
 ttf-liberation onboard
+mypaint shotwell xchm
 parcellite meld ghex
 redshift python-xdg
 gnome-disk-utility
 xdg-user-dirs-gtk
-ghostwriter xchm
-mypaint shotwell
 ttf-inconsolata
 qt5ct xdotool
 dconf-editor
@@ -107,6 +106,7 @@ python-wheel python-pip
 python-distutils-extra
 
 firefox thunderbird
+firefox-dark-reader
 firefox-ublock-origin
 qbittorrent filezilla
 uget aria2 wkhtmltopdf
@@ -169,9 +169,11 @@ ttf-vista-fonts
 
 inxi
 git-cola
-pandoc-bin
 fake-hwclock
+
 qt5-styleplugins
+windows10-icon-theme-git
+windows10-dark-gtk-theme-git
 
 clang-bear
 vim-addons

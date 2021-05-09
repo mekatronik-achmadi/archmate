@@ -11,13 +11,11 @@ url="https://github.com/mekatronik-achmadi/archmate/"
 license=('custom')
 makedepends=('inkscape')
 depends=(
-	'sassc'
-	'optipng'
-	'gtk-engines'
-	'gtk-engine-murrine'
-	'mate-themes'
-	'gnome-themes-extra'
+	'sassc' 'optipng'
+	'gtk-engines' 'gtk-engine-murrine'
+	'mate-themes' 'gnome-themes-extra'
 	'arc-solid-gtk-theme'
+	'windows10-dark-gtk-theme-git'
 	'archmate-icon')
 install=pkg.install
 options=('!makeflags' '!strip')

@@ -45,12 +45,11 @@ lightdm-gtk-greeter-settings
 ##### install install mate-desktop
 mate mate-extra zenity
 ttf-liberation onboard
+mypaint shotwell xchm
 parcellite meld ghex
 redshift python-xdg
 gnome-disk-utility
 xdg-user-dirs-gtk
-ghostwriter xchm
-mypaint shotwell
 ttf-inconsolata
 qt5ct xdotool
 dconf-editor
@@ -125,6 +124,7 @@ python-distutils-extra
 
 #### install internet tools
 firefox thunderbird
+firefox-dark-reader
 firefox-ublock-origin
 qbittorrent filezilla
 uget aria2 wkhtmltopdf
@@ -200,9 +200,12 @@ edk2-ovmf
 ##### install additional tools
 - inxi: https://aur.archlinux.org/packages/inxi/
 - git-cola: https://aur.archlinux.org/packages/git-cola/ (--nocheck)
-- pandoc-bin: https://aur.archlinux.org/packages/pandoc-bin/
 - fake-hwclock: https://aur.archlinux.org/packages/fake-hwclock/
+
+##### install additional themes
 - qt5-styleplugins: https://aur.archlinux.org/packages/qt5-styleplugins/
+- windows10-icon-theme-git: https://aur.archlinux.org/packages/windows10-icon-theme-git/
+- windows10-dark-gtk-theme-git: https://aur.archlinux.org/packages/windows10-dark-gtk-theme-git/
 
 ##### install additional programming tools
 - clang-bear: https://github.com/mekatronik-achmadi/archmate/tree/master/packages/pkgbuild/clang-bear/
@@ -231,6 +234,36 @@ archmate-install
 ~~~
 
 --------------------------------------------------------------------------------
+
+##### configure grub
+
+~~~
+echo 'Reinstall GRUB (BIOS)'
+
+sudo mount /dev/sda1 /mnt/
+sudo arch-chroot /mnt/
+
+grub-install --recheck --target=i386-pc /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
+exit
+sudo umount /mnt/
+~~~
+
+~~~
+echo 'Reinstall GRUB (UEFI)'
+
+sudo mount /dev/sda2 /mnt/
+sudo mount /dev/sda1 /mnt/boot/EFI
+sudo arch-chroot /mnt/
+
+grub-install --recheck --target=x86_64-efi --efi-directory=/boot/EFI/ --bootloader-id=grub_uefi
+grub-mkconfig -o /boot/grub/grub.cfg
+
+exit
+sudo umount /mnt/boot/EFI
+sudo umount /mnt/
+~~~
 
 ##### configure timezone
 

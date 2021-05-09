@@ -1,3 +1,6 @@
+##### install md editor
+ghostwriter
+
 ##### install fortran compiler
 gcc-fortran arpack
 
@@ -34,6 +37,9 @@ libxslt chrpath
 texinfo perl-gd
 
 --------------------------------------------------------------------------------
+
+##### install md renderer
+- pandoc-bin: https://aur.archlinux.org/packages/pandoc-bin/
 
 ##### install glade-gtk2
 - https://aur.archlinux.org/packages/glade-gtk2/

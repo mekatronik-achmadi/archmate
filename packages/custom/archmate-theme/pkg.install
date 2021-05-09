@@ -44,6 +44,8 @@ remove_menus() {
 	rm -f /usr/share/themes/Arc-Lighter-solid/index.theme
 	rm -f /usr/share/themes/Arc-Dark-solid/index.theme
 	rm -f /usr/share/themes/Arc-Darker-solid/index.theme
+
+	rm -f /usr/share/themes/Windows10-Dark/index.theme
 }
 
 icon_modify() {

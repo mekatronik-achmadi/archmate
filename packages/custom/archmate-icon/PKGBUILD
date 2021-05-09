@@ -9,12 +9,10 @@ license=('custom')
 conflicts=('papirus-maia-icon-theme')
 makedepends=('cmake')
 depends=(
-    'gtk-update-icon-cache'
-    'icon-naming-utils'
-    'librsvg'
-    'mate-icon-theme'
-    'papirus-icon-theme'
+    'gtk-update-icon-cache' 'icon-naming-utils' 'librsvg'
+    'mate-icon-theme' 'papirus-icon-theme'
     'gnome-icon-theme-extras'
+    'windows10-icon-theme-git'
     'archmate-theme')
 install=pkg.install
 options=(!strip !emptydirs !makeflags)
