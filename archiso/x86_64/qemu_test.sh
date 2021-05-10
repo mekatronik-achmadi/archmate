@@ -4,7 +4,7 @@
 #dd status=progress if=/dev/zero of=vdisk.img bs=1G count=12
 #sudo parted vdisk.img mklabel msdos
 
-qemu-system-x86_64 -m 1536M \
+qemu-system-x86_64 -m 2048M \
 -smp 2 -monitor stdio -enable-kvm \
 -display gtk,zoom-to-fit=on \
 -nic user,model=virtio-net-pci \

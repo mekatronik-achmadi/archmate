@@ -246,6 +246,10 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
             wx.MessageBox("Root Address is empty","Error", wx.OK|wx.ICON_ERROR)
             return False
 
+        if not path.exists(self.Root):
+            wx.MessageBox("Root Address is not exist","Error", wx.OK|wx.ICON_ERROR)
+            return False
+
         if self.m_chkHome.IsChecked():
             self.Home = self.m_txtHome.GetValue()
             self.msgConfirm += "Home dev: " + self.Home + "\n"
@@ -253,6 +257,11 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
                 self.UseHome = True
             else:
                 wx.MessageBox("Home Address is empty","Error", wx.OK|wx.ICON_ERROR)
+                return False
+
+            if not path.exists(self.Home):
+                wx.MessageBox("Home Address is not exist","Error", wx.OK|wx.ICON_ERROR)
+                self.UseHome = False
                 return False
 
         if self.m_chkEFI.IsChecked():
@@ -270,12 +279,17 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
 
             self.UseEFI = True
 
-        self.GRUB = self.m_txtGRUB.GetValue()
-        self.msgConfirm += "GRUB dev: " + self.GRUB + "\n"
+        if self.m_chkGRUB.IsChecked():
+            self.GRUB = self.m_txtGRUB.GetValue()
+            self.msgConfirm += "GRUB dev: " + self.GRUB + "\n"
 
-        if not self.GRUB:
-            wx.MessageBox("GRUB is empty","Error", wx.OK|wx.ICON_ERROR)
-            return False
+            if not self.GRUB:
+                wx.MessageBox("GRUB is empty","Error", wx.OK|wx.ICON_ERROR)
+                return False
+
+            if not path.exists(self.GRUB):
+                wx.MessageBox("GRUB Address is not exist","Error", wx.OK|wx.ICON_ERROR)
+                return False
 
         if path.exists("/sys/firmware/efi"):
             if not self.UseEFI:
