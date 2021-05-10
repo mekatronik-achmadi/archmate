@@ -13,6 +13,16 @@ remove_autostart() {
 	rm -f /etc/xdg/autostart/onboard-autostart.desktop
 }
 
+remove_guimenu() {
+    rm -f /usr/share/applications/vim.desktop
+    rm -f /usr/share/applications/lstopo.desktop
+    rm -f /usr/share/applications/gtk-lshw.desktop
+    rm -f /usr/share/applications/cmake-gui.desktop
+    rm -f /usr/share/applications/bssh.desktop
+    rm -f /usr/share/applications/bvnc.desktop
+    rm -f /usr/share/applications/avahi-discover.desktop
+}
+
 custom_config() {
 	cp -f /usr/share/archmate-default/nanorc /etc/nanorc
 }
@@ -48,6 +58,7 @@ updating() {
 	update_mime_cache
 	update_dconf
 	remove_autostart
+	remove_guimenu
 	custom_config
 	panel_config
 	skel_config

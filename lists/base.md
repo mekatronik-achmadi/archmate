@@ -238,7 +238,7 @@ archmate-install
 ##### configure grub
 
 ~~~
-echo 'Reinstall GRUB (BIOS)'
+echo 'Reinstall GRUB-BIOS from archiso'
 
 sudo mount /dev/sda1 /mnt/
 sudo arch-chroot /mnt/
@@ -251,7 +251,7 @@ sudo umount /mnt/
 ~~~
 
 ~~~
-echo 'Reinstall GRUB (UEFI)'
+echo 'Reinstall GRUB-UEFI from archiso'
 
 sudo mount /dev/sda2 /mnt/
 sudo mount /dev/sda1 /mnt/boot/EFI
@@ -263,6 +263,13 @@ grub-mkconfig -o /boot/grub/grub.cfg
 exit
 sudo umount /mnt/boot/EFI
 sudo umount /mnt/
+~~~
+
+~~~
+echo 'Reconfig GRUB to Linux only'
+sudo sed -i 's@# Uncomment to disable submenus in boot menu@\
+GRUB_DISABLE_OS_PROBER=true@g' /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ~~~
 
 ##### configure timezone
