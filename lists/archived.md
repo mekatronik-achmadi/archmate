@@ -16,9 +16,6 @@
 
 #### archived official packages
 
-##### install LTS kernel
-linux-lts linux-lts-headers
-
 ##### install maxima
 wxmaxima maxima-ecl
 rlwrap gnuplot
@@ -32,12 +29,6 @@ rlwrap gnuplot
 - https://aur.archlinux.org/packages/bluez-hciconfig/
 - https://aur.archlinux.org/packages/bluez-hcitool/
 - https://aur.archlinux.org/packages/bluez-rfcomm/
-
-##### install anbox
-- https://aur.archlinux.org/packages/anbox-image/
-- https://aur.archlinux.org/packages/anbox-modules-dkms-git/
-- https://aur.archlinux.org/packages/anbox-git/
-- https://aur.archlinux.org/packages/anbox-bridge/
 
 ##### install arm-linux-gnueabihf toolchain
 - https://aur.archlinux.org/packages/arm-linux-gnueabihf-binutils/

@@ -1,8 +1,0 @@
-[Unit]
-Description=Anbox Session Manager
-
-[Service]
-ExecStart=anbox session-manager --window-size=720,1024 --gles-driver=host
-
-[Install]
-WantedBy=default.target
