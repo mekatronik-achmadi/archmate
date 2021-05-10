@@ -471,13 +471,6 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
         stepMsg = "Configure GRUB Bootloader"
         self.m_lblLog.SetLabel(stepMsg)
 
-        sed_args  = 's@'
-        sed_args += 'GRUB_DEFAULT=0'
-        sed_args += '@'
-        sed_args += 'GRUB_DEFAULT="linux"'
-        sed_args += '@g'
-        p = subprocess.Popen(["sed", "-i", sed_args, "/target/etc/default/grub"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
-
         if self.UseEFI:
             uefiNum = "".join(self.EFI.rsplit(self.GRUB))
             p = subprocess.Popen(["arch-chroot", "/target", "parted", self.GRUB, "set", uefiNum, "esp", "on"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)

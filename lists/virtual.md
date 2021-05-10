@@ -1,10 +1,7 @@
 ##### install qemu
+virt-manager virt-viewer
 qemu qemu-arch-extra
 qemu-guest-agent
-
-##### install libvirt
-libvirt virt-viewer libvncserver
-virt-manager virt-install lxc lxcfs
 
 ##### install virtualbox host
 virtualbox virtualbox-host-dkms
