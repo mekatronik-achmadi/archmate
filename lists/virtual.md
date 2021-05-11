@@ -20,6 +20,9 @@ virtualbox-guest-iso vde2
 - https://aur.archlinux.org/packages/binfmt-qemu-static/
 - https://aur.archlinux.org/packages/qemu-user-static-bin/
 
+##### install virtual android
+- https://aur.archlinux.org/packages/genymotion/
+
 --------------------------------------------------------------------------------
 
 ##### configure virtualbox host
@@ -58,4 +61,24 @@ virsh -c qemu:///session list
 echo "Max Hotpluggable >= CPU Count"
 echo "GPU Type: Virtio VGA Card"
 echo "Accelerator: KVM"
+~~~
+
+##### configure genymotion
+
+~~~
+sudo rm -f /usr/share/applications/genymotion-player.desktop
+
+echo 'Android API cache'
+ls -l ~/.Genymobile/Genymotion/ova/
+~~~
+
+~~~
+echo 'ARM Translation'
+xdg-open https://github.com/m9rco/Genymotion_ARM_Translation
+
+export GENYARM=https://raw.githubusercontent.com/m9rco/Genymotion_ARM_Translation
+wget $GENYARM/master/package/Genymotion-ARM-Translation_for_8.0.zip
+echo 'Drop File to Virtual Android's screen'
+echo 'OK to Flash file'
+echo 'Reboot Virtual Android'
 ~~~
