@@ -22,6 +22,7 @@ virtualbox-guest-iso vde2
 
 ##### install virtual android
 - https://aur.archlinux.org/packages/genymotion/
+- https://aur.archlinux.org/packages/qemu-android-x86/
 
 --------------------------------------------------------------------------------
 
@@ -81,4 +82,42 @@ wget $GENYARM/master/package/Genymotion-ARM-Translation_for_8.0.zip
 echo 'Drop File to Virtual Android's screen'
 echo 'OK to Flash file'
 echo 'Reboot Virtual Android'
+~~~
+
+##### configure android-x86
+
+~~~
+sudo sed -i "s#\$NET_QEMULINE \$DATA_QEMULINE#\
+-net nic -net user,hostfwd=tcp::4444-:5555 \$DATA_QEMULINE#g" \
+/usr/bin/qemu-android
+
+mkdir -p ~/.config/android-x86/
+cp -f /usr/share/android-x86/config ~/.config/android-x86/
+~~~
+
+~~~
+Settings -> Network & internet -> Wi-Fi -> VirtWifi
+Settings -> Android-x86 Options -> Enable native bridge
+
+FULL = CTRL+ALT+F
+BACK = CTRL+ALT+BACKSPACE
+HOME = WINDOWS
+~~~
+
+~~~
+echo 'VirtWifi must connected'
+adb disconnect
+adb connect localhost:4444
+adb install /usr/share/gnirehtet/java/gnirehtet.apk
+j_gnirehtet
+
+export REMOTEDIR=/storage/self/primary/Download
+adb push file.mp3 $REMOTEDIR/Download/
+adb -e shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE \
+-d file://$REMOTEDIR/file.mp3
+~~~
+
+~~~
+echo 'reset device'
+rm -f ~/.config/android-x86/data.img
 ~~~
