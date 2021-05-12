@@ -58,29 +58,16 @@ virsh -c qemu:///session list
 ##### configure qemu android-x86
 
 ~~~
-#wget https://github.com/redchenjs/aur-packages/releases/download/anbox-image/houdini_y.sfs
-#wget https://github.com/redchenjs/aur-packages/releases/download/anbox-image/houdini_z.sfs
+wget https://raw.githubusercontent.com/m9rco/Genymotion_ARM_Translation/master/package/Genymotion-ARM-Translation_for_8.0.zip
 
 unsquashfs -q -f -d $HOME/.config/android-x86/ /usr/share/android-x86/system.sfs
 sudo mount $HOME/.config/android-x86/system.img /mnt/
 
-#mkdir -p houdini_y;rm -rf ./houdini_y/*;unsquashfs -q -f -d ./houdini_y ./houdini_y.sfs
-#sudo mkdir -p /mnt/lib/arm/;sudo cp -r ./houdini_y/* /mnt/lib/arm/;rm -r ./houdini_y/
-#sudo mv /mnt/lib/arm/libhoudini.so /mnt/lib/libhoudini.so
+unzip Genymotion-ARM-Translation_for_8.0.zip
+sudo cp -rf system/* /mnt/;rm -r ./system/
 
-mkdir -p houdini_z;rm -rf ./houdini_z/*;unsquashfs -q -f -d ./houdini_z ./houdini_z.sfs
-sudo mkdir -p /mnt/lib64/arm64/;sudo cp -r ./houdini_z/* /mnt/lib64/arm64/;rm -r ./houdini_z/
-sudo mv /mnt/lib64/arm64/libhoudini.so /mnt/lib64/libhoudini.so
-
-sudo mkdir -p /mnt/etc/binfmt_misc/
-#echo ':arm_exe:M::\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28::/system/lib/arm/houdini:P' | sudo tee -a /mnt/etc/binfmt_misc/arm_exe
-#echo ':arm_dyn:M::\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x28::/system/lib/arm/houdini:P' | sudo tee -a /mnt/etc/binfmt_misc/arm_dyn
-echo ':arm64_exe:M::\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xb7::/system/lib64/arm64/houdini64:P' | sudo tee -a /mnt/etc/binfmt_misc/arm64_exe
-echo ':arm64_dyn:M::\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\xb7::/system/lib64/arm64/houdini64:P' | sudo tee -a /mnt/etc/binfmt_misc/arm64_dyn
-
-#sudo sed -i '/^ro.product.cpu.abilist32=x86/ s/$/,armeabi-v7a,armeabi/' /mnt/build.prop
-sudo sed -i '/^ro.product.cpu.abilist=x86_64,x86,armeabi-v7a,armeabi/ s/$/,arm64-v8a/' /mnt/build.prop
-sudo sed -i '/^ro.product.cpu.abilist64=x86_64/ s/$/,arm64-v8a/' /mnt/build.prop
+sudo sed -i '/^ro.product.cpu.abilist=x86_64,x86/ s/$/,armeabi-v7a,armeabi/' /mnt/build.prop
+sudo sed -i '/^ro.product.cpu.abilist32=x86/ s/$/,armeabi-v7a,armeabi/' /mnt/build.prop
 
 echo 'persist.sys.nativebridge=1' | sudo tee -a /mnt/build.prop
 sudo sed -i 's/ro.dalvik.vm.native.bridge=0/ro.dalvik.vm.native.bridge=libhoudini.so/' /mnt/build.prop
