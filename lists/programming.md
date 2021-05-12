@@ -52,7 +52,6 @@ texinfo perl-gd
 
 ##### install android sdk
 - https://aur.archlinux.org/packages/android-sdk/
-- https://aur.archlinux.org/packages/android-platform-26/
 - https://aur.archlinux.org/packages/android-platform-28/
 - https://aur.archlinux.org/packages/android-platform-29/
 - https://aur.archlinux.org/packages/android-platform-30/
