@@ -3,9 +3,8 @@ gimp scribus
 inkscape vym
 
 ##### install multimedia tools
-openshot audacity
-sox libquicktime
-frei0r-plugins
+openshot blender audacity
+frei0r-plugins faac sox
 
 ##### install scanner program
 sane-airscan
