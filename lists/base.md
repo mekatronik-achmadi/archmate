@@ -124,7 +124,6 @@ python-distutils-extra
 
 #### install internet tools
 firefox thunderbird
-firefox-dark-reader
 firefox-ublock-origin
 qbittorrent filezilla
 uget aria2 wkhtmltopdf
