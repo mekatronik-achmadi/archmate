@@ -107,6 +107,10 @@ python-tensorflow-cuda
 ##### install r-studio
 - https://aur.archlinux.org/packages/rstudio-desktop-bin/
 
+##### install jupyterthemes
+- https://aur.archlinux.org/packages/python-lesscpy/ (--asdeps)
+- https://aur.archlinux.org/packages/jupyterthemes/
+
 --------------------------------------------------------------------------------
 
 ##### install texstudio themes
@@ -158,6 +162,21 @@ Categories=Education;Math;Science;#g" /usr/share/applications/scidavis.desktop
 ~~~
 "latex -shell-escape -src -interaction=nonstopmode %.tex"
 "pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex"
+~~~
+
+##### configure jupyter themes
+
+~~~
+jt -t onedork -altp -T -N -kl -f inconsolata -fs 9 -tfs 11 -nfs 11 -ofs 7 -cellw 100%
+jt -t grade3 -altp -T -N -kl -f inconsolata -fs 9 -tfs 11 -nfs 11 -ofs 7 -cellw 100%
+jt -r
+~~~
+
+~~~
+from jupyterthemes import jtplot
+
+jtplot.style(theme='onedork')
+jtplot.style(theme='grade3')
 ~~~
 
 ##### configure matlab
