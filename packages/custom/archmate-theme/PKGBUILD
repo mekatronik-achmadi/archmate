@@ -72,7 +72,9 @@ build() {
 package() {
     ####################### Arc Modified ####################
 	cd ../
-    for i in Arc Green Arc-Dark Green-Dark;do
+	install -d $pkgdir/usr/share/themes/Standard/;
+    cp -f ./Standard.theme $pkgdir/usr/share/themes/Standard/index.theme;
+    for i in Green Dark Dark-Green;do
 	    install -d $pkgdir/usr/share/themes/Standard-$i/;
 	    cp -f ./Standard-$i.theme $pkgdir/usr/share/themes/Standard-$i/index.theme;
     done

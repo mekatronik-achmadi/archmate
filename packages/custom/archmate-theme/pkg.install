@@ -56,9 +56,6 @@ cursor_modify() {
     echo "[Icon Theme]
     Inherits=mate-black
     " > /usr/share/icons/default/index.theme
-
-    #sed -i "s#mate-black#mate#g" /usr/share/themes/BlueMenta/index.theme
-    #sed -i "s#mate-black#mate#g" /usr/share/themes/Menta/index.theme
 }
 
 update() {
