@@ -167,8 +167,8 @@ Categories=Education;Math;Science;#g" /usr/share/applications/scidavis.desktop
 ##### configure jupyter themes
 
 ~~~
-jt -t onedork -altp -T -N -kl -f inconsolata -fs 9 -tfs 11 -nfs 11 -ofs 7 -cellw 100%
-jt -t grade3 -altp -T -N -kl -f inconsolata -fs 9 -tfs 11 -nfs 11 -ofs 7 -cellw 100%
+jt -t onedork -altp -N -f inconsolata -fs 9 -tfs 11 -nfs 11 -ofs 8 -cellw 100%
+jt -t grade3 -altp -N -f inconsolata -fs 9 -tfs 11 -nfs 11 -ofs 8 -cellw 100%
 jt -r
 ~~~
 
