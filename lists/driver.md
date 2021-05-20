@@ -36,6 +36,10 @@ don't use kernel-5.12.patch on prepare
 ##### install printer
 - https://aur.archlinux.org/packages/cnijfilter-ip2700series/
 
+##### install bluetooth deprecated
+- https://aur.archlinux.org/packages/bluez-hcitool/
+- https://aur.archlinux.org/packages/bluez-rfcomm/
+
 --------------------------------------------------------------------------------
 
 ##### configure nvidia optimus

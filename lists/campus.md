@@ -80,6 +80,10 @@ tensorflow-cuda
 python-pytorch-cuda
 python-tensorflow-cuda
 
+##### install maxima
+wxmaxima maxima-ecl
+rlwrap gnuplot
+
 --------------------------------------------------------------------------------
 
 ##### install diagram editor
@@ -201,4 +205,11 @@ sudo chown -R $USER:users $HOME/.matlab/R2018a/
 matlab-cli
 cd /opt/mathworks/addons/schemer/
 schemer_import
+~~~
+
+##### configure wxmaxima
+
+~~~
+echo "dark theme ini file to load"
+xdg-open https://gist.github.com/motchy869/fd68dba6d7320f0335092c9ffe47611a#file-dark-style-ini
 ~~~

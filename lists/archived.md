@@ -16,19 +16,12 @@
 
 #### archived official packages
 
-##### install maxima
-wxmaxima maxima-ecl
-rlwrap gnuplot
+##### install kernel lts
+linux-lts linux-lts-headers
 
 --------------------------------------------------------------------------------
 
 #### archived aur packages
-
-##### install bluetooth additionals
-- https://aur.archlinux.org/packages/bluez-firmware/
-- https://aur.archlinux.org/packages/bluez-hciconfig/
-- https://aur.archlinux.org/packages/bluez-hcitool/
-- https://aur.archlinux.org/packages/bluez-rfcomm/
 
 ##### install arm-linux-gnueabihf toolchain
 - https://aur.archlinux.org/packages/arm-linux-gnueabihf-binutils/
@@ -83,10 +76,4 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 echo "use latest kernel"
 sudo sed -i 's#GRUB_DEFAULT="linux-lts"#GRUB_DEFAULT="linux"#g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-~~~
-
-##### configure wireshark
-
-~~~
-sudo gpasswd -a $USER wireshark
 ~~~
