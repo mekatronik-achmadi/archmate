@@ -55,6 +55,7 @@ biber
 
 ##### install opencv
 opencv hdf5 vtk
+python-opencv
 
 ##### install python learning
 python-tensorflow-estimator tensorboard
