@@ -23,6 +23,7 @@ python-blinker python-simplejson
 ##### install webkit/webengine
 qt5-webkit webkit2gtk
 python-pyqtwebengine
+otter-browser midori
 
 ##### install telegram
 telegram-desktop
