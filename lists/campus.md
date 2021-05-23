@@ -11,6 +11,7 @@ jupyter-notebook
 python-pyaudio
 python-gnuplot
 python-pytables
+python-tabulate
 python-matplotlib
 python-bottleneck
 python-virtualenv
