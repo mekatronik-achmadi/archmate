@@ -39,6 +39,5 @@ pinned-shortcuts=[]
 rollover-activate=false
 favourites=['pluma.desktop', 'caja-browser.desktop', 'mate-terminal.desktop', 'firefox.desktop', 'matecc.desktop']
 
-
 [org.onboard]
 layout='/usr/share/onboard/layouts/Compact.onboard'

@@ -106,6 +106,7 @@ python-wheel python-pip
 python-distutils-extra
 
 firefox thunderbird
+firefox-dark-reader
 firefox-ublock-origin
 qbittorrent filezilla
 uget aria2 wkhtmltopdf
