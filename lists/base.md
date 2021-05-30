@@ -200,6 +200,7 @@ edk2-ovmf
 
 ##### install additional tools
 - inxi: https://aur.archlinux.org/packages/inxi/
+- git-cola: https://aur.archlinux.org/packages/git-cola/
 - fake-hwclock: https://aur.archlinux.org/packages/fake-hwclock/
 
 ##### install additional themes
@@ -210,7 +211,6 @@ edk2-ovmf
 ##### install additional programming tools
 - clang-bear: https://github.com/mekatronik-achmadi/archmate/tree/master/packages/pkgbuild/clang-bear/
 - vim-addons: https://github.com/mekatronik-achmadi/archmate/tree/master/packages/pkgbuild/vim-addons/
-- github-desktop: https://github.com/mekatronik-achmadi/archmate/tree/master/packages/pkgbuild/github-desktop/
 
 ###### install vim-coc plugins
 - vim-coc-git: https://aur.archlinux.org/packages/vim-coc-git/
