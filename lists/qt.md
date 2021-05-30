@@ -3,8 +3,9 @@ qt qt5 qtcreator
 perf x11-ssh-askpass
 
 ##### install qt python bindings
-pyside2 sip4 python-pyqt5-sip
-pyside2-tools python-pyqt5
+sip4 python-pyqt5-sip
+pyside2 pyside2-tools
+python-pyqt5 python-qtpy
 
 ##### install qt5 graph plot
 qcustomplot

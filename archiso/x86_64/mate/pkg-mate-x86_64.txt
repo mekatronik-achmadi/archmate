@@ -169,7 +169,6 @@ ttf-ms-fonts
 ttf-vista-fonts
 
 inxi
-git-cola
 fake-hwclock
 
 qt5-styleplugins
@@ -178,6 +177,7 @@ windows10-dark-gtk-theme-git
 
 clang-bear
 vim-addons
+github-desktop
 
 vim-coc-git
 vim-coc-pairs-git
