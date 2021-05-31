@@ -141,8 +141,7 @@ gst-plugins-base
 gst-plugins-good
 gst-plugins-bad
 gstreamer-vaapi
-vlc mplayer
-rhythmbox
+vlc rhythmbox
 
 ##### install cd-dvd tools
 fuseiso mdf2iso
