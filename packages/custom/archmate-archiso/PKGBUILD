@@ -17,8 +17,9 @@ source=(
 	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/mate/pkg-mate-x86_64.txt"
 	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/mate/archiso_mate.sh"
 	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/mate/newpkg_mate.sh"
-	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/custompkg.sh")
-sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/custompkg.sh"
+	"https://raw.githubusercontent.com/mekatronik-achmadi/archmate/master/archiso/x86_64/pacconf.sh")
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
 
 package() {
 	cd ../
@@ -28,4 +29,7 @@ package() {
 	install -m 644 ./archiso_mate.sh $pkgdir/usr/share/archmate-archiso/
 	install -m 644 ./newpkg_mate.sh $pkgdir/usr/share/archmate-archiso/
 	install -m 644 ./custompkg.sh $pkgdir/usr/share/archmate-archiso/
+
+	install -d $pkgdir/usr/bin/
+	install -m 755 ./pacconf.sh $pkgdir/usr/bin/pacconf
 }

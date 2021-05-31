@@ -78,3 +78,5 @@ vim-coc-sh-git
 vim-coc-clangd-git
 vim-coc-pyright-git
 vim-coc-ultisnips
+
+archmate-archiso
