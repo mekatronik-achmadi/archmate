@@ -89,3 +89,11 @@ git log
 git show <hash_commit_hex_number>
 ~~~
 
+#### github access token
+
+~~~
+xdg-open 'https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token'
+echo 'export GITTOKEN=github_token' >> ~/.bashrc
+echo $GITTOKEN
+~~~
+
