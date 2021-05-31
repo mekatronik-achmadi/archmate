@@ -4,6 +4,9 @@ ghostwriter
 ##### install fortran compiler
 gcc-fortran arpack
 
+##### install golang
+go go-tools liteide
+
 ##### install debugger
 nemiver valgrind lldb
 

@@ -99,10 +99,11 @@ xz bzip2 gzip lz4 p7zip arj
 unarj lhasa cpio rpmextract
 
 ##### install build tools
-npm yarn nodejs
-subversion mercurial
-git tig tk bzr cvs cloc
+meson ninja qt5-base
+npm yarn nodejs setconf
 vala autogen pkg-config
+tk subversion mercurial
+git hub tig bzr cvs cloc
 gnome-common mate-common
 pkgconf gendesk help2man
 autoconf automake cscope
@@ -110,7 +111,6 @@ cmake extra-cmake-modules
 dos2unix doxygen graphviz
 jre8-openjdk jdk8-openjdk
 tcsh gobject-introspection
-meson ninja qt5-base setconf
 
 ##### install clang compiler
 clang llvm lld
