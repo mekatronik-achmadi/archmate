@@ -200,6 +200,7 @@ sudo mount R2018a_glnxa64_dvd2.iso /mnt/
 
 ~~~
 sudo cp libmwlmgrimpl.so /opt/mathworks/matlab-2018a/bin/glnxa64/matlab_startup_plugins/lmgrimpl/
+sudo matlab
 sudo chown -R $USER:users $HOME/.matlab/R2018a/
 ~~~
 
