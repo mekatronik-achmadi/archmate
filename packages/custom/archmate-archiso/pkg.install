@@ -10,11 +10,28 @@ archiso_modify() {
 	sed -i 's#-C "${work_dir}/pacman.conf"#-C "${airootfs_dir}/etc/pacman.conf"#g' /usr/bin/mkarchiso
 }
 
+pacman_nocustom() {
+    BAKCONF=/etc/pacman_bak.conf
+    if [ -f "$BAKCONF" ]; then
+        echo "Backup pacman.conf exist"
+    else
+        echo "Backup pacman.conf file"
+        cp /etc/pacman.conf $BAKCONF
+    fi
+
+    echo "Remove custom in pacman.conf"
+    cp -f $BAKCONF /etc/pacman.conf
+    sed -i 's@\[custom\]@#\[custom\]@g' /etc/pacman.conf
+    sed -i 's@Server = file:///home/custompkgs@#Server = file:///home/custompkgs@g' /etc/pacman.conf
+}
+
 post_install() {
 	archiso_modify
+	pacman_nocustom
 }
 
 post_upgrade() {
 	archiso_modify
+	pacman_nocustom
 }
 
