@@ -115,7 +115,7 @@ class frmArchInstall ( wx.Frame ):
 
 		bGRUB = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_lblGRUB = wx.StaticText( sbDisk.GetStaticBox(), wx.ID_ANY, u"DISK", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_lblGRUB = wx.StaticText( sbDisk.GetStaticBox(), wx.ID_ANY, u"GRUB", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_lblGRUB.Wrap( -1 )
 
 		bGRUB.Add( self.m_lblGRUB, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )

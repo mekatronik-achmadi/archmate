@@ -12,7 +12,7 @@ Size at least 15GB. Must be formatted first. Mandatory.
 - **Home**: Home partition in *ext4* format (ex: */dev/sda3*). Optional
 - **EFI** : EFI partition in *fat32* format (ex: */dev/sda1*).
 Must be in GPT a disk. Size about 500MB. Mandatory if in EFI mode.
-- **DISK**: Installation disk (not partition) name (ex: */dev/sda*).
+- **GRUB**: Installation disk (not partition) name (ex: */dev/sda*).
 Must be in same disk with Root, Home, Swap, and EFI partition. Mandatory.
 
 Extract Method:

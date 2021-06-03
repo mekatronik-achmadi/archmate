@@ -72,6 +72,7 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
 
         self.pid = None
 
+        self.m_chkGRUB.SetValue(True)
         if path.exists("/sys/firmware/efi"):
             self.m_chkEFI.SetValue(True)
             self.m_txtEFI.Enable()
