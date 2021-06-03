@@ -75,15 +75,9 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
         if path.exists("/sys/firmware/efi"):
             self.m_chkEFI.SetValue(True)
             self.m_txtEFI.Enable()
-            self.UseEFI = True
-            self.m_chkGRUB.SetValue(False)
-            self.m_txtGRUB.Disable()
         else:
             self.m_chkEFI.SetValue(False)
             self.m_txtEFI.Disable()
-            self.UseEFI = False
-            self.m_chkGRUB.SetValue(True)
-            self.m_txtGRUB.Enable()
 
         self.m_chkSfs.SetValue(False)
         self.m_chkUnsfs.SetValue(True)
