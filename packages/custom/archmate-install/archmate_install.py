@@ -455,6 +455,12 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
         p = subprocess.Popen(["arch-chroot","/target","useradd","-m","-g","users","-G","wheel,storage,power","-s","/bin/bash","-c",self.User,self.User], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
         self.ConsoleLog(p)
 
+        p = subprocess.Popen(["arch-chroot","/target","sudo","-u",self.User,"mkdir","-p","/home/"+self.User+"/"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
+        self.ConsoleLog(p)
+
+        p = subprocess.Popen(["arch-chroot","/target","sudo","-u",self.User,"rsync","-a","/etc/skel/","/home/"+self.User+"/"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
+        self.ConsoleLog(p)
+
         p = subprocess.Popen(["arch-chroot","/target","passwd","-d","root"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
         self.ConsoleLog(p)
 

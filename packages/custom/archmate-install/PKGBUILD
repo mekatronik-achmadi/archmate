@@ -5,8 +5,8 @@ pkgdesc="Deploy Archiso to disk using simple GUI"
 arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
-depends=('squashfs-tools' 'efibootmgr' 'gparted' 'util-linux'
-'grub' 'sed' 'arch-install-scripts' 'rsync' 'python-wxpython')
+depends=('squashfs-tools' 'efibootmgr' 'gparted' 'util-linux' 'sudo'
+        'grub' 'sed' 'arch-install-scripts' 'rsync' 'python-wxpython')
 options=('!makeflags')
 source=(
     'help.html'
