@@ -176,7 +176,7 @@ vscode-set
 
 ~~~
 echo "install some usefull plugins"
-echo "Python, Clangd, Flutter, Dart, ,TexLab, Vim"
+echo "Python, Clangd, Flutter, Dart"
 
 ls ~/.vscode-oss/extensions/
 ~~~
