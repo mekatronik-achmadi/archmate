@@ -75,9 +75,15 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
         if path.exists("/sys/firmware/efi"):
             self.m_chkEFI.SetValue(True)
             self.m_txtEFI.Enable()
+            self.UseEFI = True
+            self.m_chkGRUB.SetValue(False)
+            self.m_txtGRUB.Disable()
         else:
             self.m_chkEFI.SetValue(False)
             self.m_txtEFI.Disable()
+            self.UseEFI = False
+            self.m_chkGRUB.SetValue(True)
+            self.m_txtGRUB.Enable()
 
         self.m_chkSfs.SetValue(False)
         self.m_chkUnsfs.SetValue(True)
@@ -347,11 +353,11 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
         self.m_lblLog.SetLabel(stepMsg)
 
         if self.UseUnsfs:
-            self.m_txtConsole.write("Unsquashfs started. This will take a while\n")
+            self.m_txtConsole.write("Unsquashfs started. This program freeze for a while\n")
             p = subprocess.Popen(["unsquashfs", "-q", "-f", "-d", "/target/", self.Squash], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
             self.ConsoleLog(p)
         else:
-            self.m_txtConsole.write("RSync started. This will take a while\n")
+            self.m_txtConsole.write("RSync started. This process take a while\n")
             p = subprocess.Popen(["rsync", "-q", "-avh", self.Sfs, "/target/"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
             self.ConsoleLog(p)
 
