@@ -15,5 +15,5 @@ sudo sed -i "s#-c -G -M#-G -M#g" /usr/bin/mkarchiso
 sudo sed -i "s#pacstrap -C#pacstrap_install -C#g" /usr/bin/mkarchiso
 sudo sed -i 's#-C "${work_dir}/pacman.conf"#-C "${airootfs_dir}/etc/pacman.conf"#g' /usr/bin/mkarchiso
 
-#sudo pacman-key --init
-#sudo pacman-key --populate archlinux
+sudo pacman-key --init
+sudo pacman-key --populate archlinux
