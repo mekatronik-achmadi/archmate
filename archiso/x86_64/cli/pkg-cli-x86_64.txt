@@ -29,8 +29,14 @@ vim-ctrlp vim-nerdtree
 vim-airline vim-surround
 vim-tagbar vim-ultisnips
 
-net-tools wpa_supplicant iwd
-dhclient ppp bmon inetutils
+networkmanager modemmanager
+mobile-broadband-provider-info iftop
+bind-tools netctl ppp wpa_supplicant
+tcpdump fping gnu-netcat inetutils
+net-tools bridge-utils iwd ethtool
+crda wireless_tools usb_modeswitch
+mtr iw dhclient dnsmasq firewalld
+traceroute wavemon bmon nethogs
 
 alsa-lib alsa-plugins
 alsa-utils alsa-firmware
@@ -78,5 +84,3 @@ vim-coc-sh-git
 vim-coc-clangd-git
 vim-coc-pyright-git
 vim-coc-ultisnips
-
-archmate-archiso

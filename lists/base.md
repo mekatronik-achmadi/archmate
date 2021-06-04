@@ -52,6 +52,7 @@ gnome-disk-utility
 xdg-user-dirs-gtk
 ttf-inconsolata
 qt5ct xdotool
+gnome-keyring
 dconf-editor
 python-caja
 ttf-dejavu
@@ -73,11 +74,11 @@ networkmanager nm-connection-editor
 network-manager-applet modemmanager
 mobile-broadband-provider-info iftop
 bind-tools netctl ppp wpa_supplicant
-traceroute wavemon mtr bmon nethogs
 tcpdump fping gnu-netcat inetutils
 net-tools bridge-utils iwd ethtool
 crda wireless_tools usb_modeswitch
-iw gnome-keyring dhclient dnsmasq
+mtr iw dhclient dnsmasq firewalld
+traceroute wavemon bmon nethogs
 
 ##### install audio system
 alsa-lib alsa-plugins

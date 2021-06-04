@@ -180,12 +180,22 @@ export SYSTEMD='airootfs/etc/systemd/system/multi-user.target.wants'
 mkdir -p ${SYSTEMD}
 
 ln -sf /usr/lib/systemd/system/systemd-timesyncd.service ${SYSTEMD}/systemd-timesyncd.service
-ln -sf /usr/lib/systemd/system/systemd-networkd.service ${SYSTEMD}/systemd-networkd.service
-ln -sf /usr/lib/systemd/system/systemd-resolved.service ${SYSTEMD}/systemd-resolved.service
 ln -sf /usr/lib/systemd/system/fake-hwclock.service ${SYSTEMD}/fake-hwclock.service
 ln -sf /usr/lib/systemd/system/vboxservice.service ${SYSTEMD}/vboxservice.service
 ln -sf /usr/lib/systemd/system/sensord.service ${SYSTEMD}/sensord.service
 ln -sf /usr/lib/systemd/system/sshd.service ${SYSTEMD}/sshd.service
+~~~
+
+#### config network
+
+~~~
+rm -f airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service
+rm -f airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket
+rm -f airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
+rm -rf airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d/
+
+ln -sf /usr/lib/systemd/system/systemd-resolved.service ${SYSTEMD}/systemd-resolved.service
+ln -sf /usr/lib/systemd/system/NetworkManager.service ${SYSTEMD}/NetworkManager.service
 ~~~
 
 #### config users
@@ -281,7 +291,6 @@ keyboard = onboard
 #### config systemd
 
 ~~~
-ln -sf /usr/lib/systemd/system/NetworkManager.service ${SYSTEMD}/NetworkManager.service
 ln -sf /usr/lib/systemd/system/bluetooth.service ${SYSTEMD}/bluetooth.service
 ln -sf /usr/lib/systemd/system/lightdm.service ${SYSTEMD}/lightdm.service
 ln -sf /usr/lib/systemd/system/cups.service ${SYSTEMD}/cups.service
