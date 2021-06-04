@@ -183,9 +183,6 @@ ls ~/.vscode-oss/extensions/
 ##### configure docker
 
 ~~~
-echo "loop" | sudo tee /etc/modules-load.d/loop.conf
-sudo modprobe loop
-
 sudo groupadd -f docker
 sudo gpasswd -a $USER docker
 
@@ -222,7 +219,7 @@ docker-compose up -d --build
 ~~~
 
 ~~~
-echo "docker container can't access internet"
+sudo systemctl list-units --type=service | grep systemd-networkd
 sudo systemctl disable systemd-networkd
 sudo reboot
 ~~~
