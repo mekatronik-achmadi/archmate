@@ -25,8 +25,7 @@ code electron11
 typescript ts-node
 
 ##### install docker
-docker docker-machine docker-compose
-python-docker python-dockerpty
+docker docker-compose
 
 ##### install build dependencies
 ant guile2.0
@@ -221,3 +220,10 @@ docker-compose up
 docker-compose down
 docker-compose up -d --build
 ~~~
+
+~~~
+echo "docker container can't access internet"
+sudo systemctl disable systemd-networkd
+sudo reboot
+~~~
+
