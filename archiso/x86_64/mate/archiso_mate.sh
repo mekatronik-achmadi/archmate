@@ -113,6 +113,8 @@ export SYSTEMD='airootfs/etc/systemd/system/multi-user.target.wants'
 mkdir -p ${SYSTEMD}
 
 ln -sf /usr/lib/systemd/system/systemd-timesyncd.service ${SYSTEMD}/systemd-timesyncd.service
+ln -sf /usr/lib/systemd/system/systemd-networkd.service ${SYSTEMD}/systemd-networkd.service
+ln -sf /usr/lib/systemd/system/systemd-resolved.service ${SYSTEMD}/systemd-resolved.service
 ln -sf /usr/lib/systemd/system/fake-hwclock.service ${SYSTEMD}/fake-hwclock.service
 ln -sf /usr/lib/systemd/system/vboxservice.service ${SYSTEMD}/vboxservice.service
 ln -sf /usr/lib/systemd/system/sensord.service ${SYSTEMD}/sensord.service
