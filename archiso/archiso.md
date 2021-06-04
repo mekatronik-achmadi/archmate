@@ -239,6 +239,16 @@ ExecStart=-/sbin/agetty --autologin live --noclear %I 38400 linux
 " > airootfs/etc/systemd/system/getty@tty1.service.d/autologin.conf
 ~~~
 
+#### package list
+
+~~~
+export ARCHCLI='airootfs/usr/share/archcli'
+mkdir -p $ARCHCLI/
+cp -f $PKGLIST $ARCHCLI/
+cp -f ../archiso_cli.sh $ARCHCLI/
+cp -f ../pacstrapmod $ARCHCLI/
+~~~
+
 ----------------------------------------------------------------------
 
 ### Archiso MATE

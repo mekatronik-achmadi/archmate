@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ $UID != 0 ];then
+	echo -e "This script must run as root"
+	exit
+fi
+
+sudo cp -f /usr/bin/pacstrap /usr/bin/pacstrap_install
+sudo cp -f /usr/bin/pacstrap /usr/bin/pacstrap_pkgurl
+
+sudo sed -i 's#-Sy#-S#g' /usr/bin/pacstrap_install
+sudo sed -i 's#-Sy#-Sp#g' /usr/bin/pacstrap_pkgurl
+
+sudo sed -i "s#-c -G -M#-G -M#g" /usr/bin/mkarchiso
+sudo sed -i "s#pacstrap -C#pacstrap_install -C#g" /usr/bin/mkarchiso
+sudo sed -i 's#-C "${work_dir}/pacman.conf"#-C "${airootfs_dir}/etc/pacman.conf"#g' /usr/bin/mkarchiso
+
+#sudo pacman-key --init
+#sudo pacman-key --populate archlinux
