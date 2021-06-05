@@ -61,8 +61,6 @@ telegram-desktop
 ~~~
 echo 'adjust timezone'
 sudo ln -svf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-sudo hwclock --systohc
-sudo timedatectl set-ntp true
 ~~~
 
 ##### configure apache
