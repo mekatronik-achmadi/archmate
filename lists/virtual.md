@@ -45,7 +45,7 @@ sudo groupadd -rf kvm
 sudo groupadd -rf libvirt
 sudo gpasswd -a $USER kvm
 sudo gpasswd -a $USER libvirt
-echo " kvm_intel" | sudo tee /etc/modules-load.d/kvm.conf
+echo "kvm_intel" | sudo tee /etc/modules-load.d/kvm.conf
 sudo systemctl enable libvirtd
 ~~~
 
