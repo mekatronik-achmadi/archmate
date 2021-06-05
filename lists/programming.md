@@ -133,8 +133,8 @@ sudo chmod -Rf g+w /opt/flutter
 #sudo archlinux-java set java-8-openjdk
 echo "Re-Login before continue"
 
-flutter doctor
 flutter doctor --android-licenses
+flutter doctor
 ~~~
 
 ~~~

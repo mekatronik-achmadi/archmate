@@ -124,7 +124,6 @@ rlwrap gnuplot
 
 ##### install matlab binary
 - https://github.com/mekatronik-achmadi/archmate/tree/master/packages/pkgbuild/matlab-bin/matlab-bin-basic/
-- https://github.com/mekatronik-achmadi/archmate/tree/master/packages/pkgbuild/matlab-bin/matlab-bin-core/
 
 ##### install matlab themes
 - https://github.com/mekatronik-achmadi/archmate/tree/master/packages/pkgbuild/matlab-bin/matlab-schemer/
@@ -196,6 +195,15 @@ sudo mount R2018a_glnxa64_dvd1.iso /mnt/
 /mnt/install &
 sudo umount /mnt/
 sudo mount R2018a_glnxa64_dvd2.iso /mnt/
+~~~
+
+~~~
+# install folder: /home/developments/Packages/Matlab-2018a/built/matlab-2018a/
+cd /home/developments/Packages/Matlab-2018a/built/
+ls matlab-2018a/
+mv -vf ./matlab-2018a/ matlab-bin-basic/matlab-2018a/
+cd matlab-bin-basic/
+makepkg -sir
 ~~~
 
 ~~~

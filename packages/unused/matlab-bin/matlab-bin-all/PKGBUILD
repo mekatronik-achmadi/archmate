@@ -1,4 +1,4 @@
-pkgname=matlab-bin-basic
+pkgname=matlab-bin-all
 _pkgname=matlab
 pkgver=2018a
 pkgrel=1
@@ -9,20 +9,22 @@ license=(custom)
 conflicts=('matlab')
 provides=('matlab')
 depends=('gcc-libs' 'bash' 'ncurses5-compat-libs' 'jre8-openjdk' 'freetype2')
-source=("${_pkgname}-${pkgver}.tar"
+source=(
 	"${_pkgname}-gui"
 	"${_pkgname}-cli"
 	"${_pkgname}-env.sh"
 	"${_pkgname}.desktop"
 	"${_pkgname}.png")
-md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
 PKGEXT='.pkg.tar'
 options=('!makeflags' 'libtool' 'staticlibs' '!strip')
 
 package() {
+  cd $srcdir/
+
   msg2 'Moving installation'
   install -d -m755 "${pkgdir}/opt/mathworks/"
-  mv -f "./${_pkgname}-${pkgver}" "${pkgdir}/opt/mathworks/"
+  mv -f "../${_pkgname}-${pkgver}/" "${pkgdir}/opt/mathworks/${_pkgname}-${pkgver}/"
 
   msg2 'Installing executables'
   install -d -m755 "${pkgdir}/usr/bin/"
