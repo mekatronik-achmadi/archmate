@@ -36,8 +36,16 @@ esptool moserial
 ##### install esp8266 sdk
 
 ~~~
-remove python2 and python2-pyserial from depends
-change expat version to 2.3.0 in crosstool-NG/config/companion-libs/expat.in
+echo 'remove python2 and python2-pyserial from depends'
+
+cd crosstool-NG/
+mkdir -p ./.build/tarballs/
+cd ./.build/tarballs/
+wget -c -O expat-2.1.0.zip https://github.com/libexpat/libexpat/archive/refs/tags/R_2_1_0.zip
+
+mkdir -p ./.build/src/expat-2.1.0/
+cd ./.build/src/expat-2.1.0/
+./buildconf.sh
 ~~~
 - https://aur.archlinux.org/packages/esp-open-sdk-git/
 
