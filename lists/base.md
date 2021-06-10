@@ -48,6 +48,7 @@ ttf-liberation onboard
 mypaint shotwell xchm
 parcellite meld ghex
 redshift python-xdg
+geany geany-plugins
 gnome-disk-utility
 xdg-user-dirs-gtk
 ttf-inconsolata
@@ -201,6 +202,8 @@ edk2-ovmf
 ##### install additional tools
 - inxi: https://aur.archlinux.org/packages/inxi/
 - git-cola: https://aur.archlinux.org/packages/git-cola/
+- geany-tags: https://aur.archlinux.org/packages/geany-tags/
+- geany-themes: https://aur.archlinux.org/packages/geany-themes/
 - fake-hwclock: https://aur.archlinux.org/packages/fake-hwclock/
 
 ##### install additional themes

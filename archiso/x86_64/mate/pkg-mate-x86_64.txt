@@ -40,6 +40,7 @@ ttf-liberation onboard
 mypaint shotwell xchm
 parcellite meld ghex
 redshift python-xdg
+geany geany-plugins
 gnome-disk-utility
 xdg-user-dirs-gtk
 ttf-inconsolata
@@ -170,6 +171,8 @@ ttf-vista-fonts
 
 inxi
 git-cola
+geany-tags
+geany-themes
 fake-hwclock
 
 qt5-styleplugins

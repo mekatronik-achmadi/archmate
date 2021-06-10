@@ -55,6 +55,7 @@ package() {
 	cp -f ./userset/redshift.conf $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/mimeapps.list $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/qt5ct.conf $pkgdir/usr/share/archmate-default/
+	cp -f ./userset/geany.conf $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/gitconfig $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/nanorc $pkgdir/usr/share/archmate-default/
 }
