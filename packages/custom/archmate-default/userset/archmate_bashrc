@@ -87,5 +87,5 @@ export HISTCONTROL=ignorespace:ignoredups:erasedups
 # sudo with preserve envars
 alias sudo='sudo -E'
 
-# disable bash color prompt
-#PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
+# alternative bash color prompt for light theme
+PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
