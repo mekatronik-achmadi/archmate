@@ -103,9 +103,8 @@ clang llvm lld
 boost swig sip
 shiboken2 eigen
 
-cython python-setuptools
-python-wheel python-pip
-python-distutils-extra
+python-setuptools python-wheel python-pip
+cython python-invoke python-distutils-extra
 
 midori webkit2gtk
 firefox thunderbird
