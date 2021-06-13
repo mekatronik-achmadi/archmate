@@ -5,26 +5,25 @@ libreoffice-fresh-id
 libreoffice-extension-texmaths
 libreoffice-extension-writer2latex
 
+##### install python programming
+python-cffi python-invoke python-virtualenv
+python-nose python-yaml python-beautifulsoup4
+python-sounddevice python-pyaudio python-pillow
+
 ##### install python computing
 spyder jupyterlab
 jupyter-notebook
-python-pyaudio
 python-gnuplot
 python-pytables
 python-tabulate
 python-matplotlib
 python-bottleneck
-python-virtualenv
 python-statsmodels
-python-sounddevice
 python-scikit-learn
-python-beautifulsoup4
-python-cffi python-yaml
-python-patsy python-nose
 python-numpy python-rpy2
 python-sympy python-scipy
 python-pandas python-h5py
-python-pillow python-seaborn
+python-seaborn python-patsy
 python-pyqtdatavisualization
 
 ##### install tesseract

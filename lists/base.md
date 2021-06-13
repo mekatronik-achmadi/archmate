@@ -120,8 +120,9 @@ boost swig sip
 shiboken2 eigen
 
 ##### install python installer
-python-setuptools python-wheel python-pip
-cython python-invoke python-distutils-extra
+cython python-setuptools
+python-wheel python-pip
+python-distutils-extra
 
 #### install internet tools
 midori webkit2gtk
