@@ -10,6 +10,7 @@ python-pyqt5 python-qtpy
 ##### install qt5 graph plot
 qcustomplot
 qwt qwtpolar
+pyqt-builder
 python-pyqt3d
 python-pyqtgraph
 python-pyqtchart
@@ -19,6 +20,7 @@ python-pyqtchart
 ##### install qwt additionals
 - https://aur.archlinux.org/packages/qwt5-qt5/
 - https://aur.archlinux.org/packages/qwtplot3d-qt5/
+- https://aur.archlinux.org/packages/python-pyqt-qwt/
 
 --------------------------------------------------------------------------------
 
