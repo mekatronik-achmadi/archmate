@@ -125,6 +125,7 @@ rm -rf airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d/
 
 ln -sf /usr/lib/systemd/system/systemd-resolved.service ${SYSTEMD}/systemd-resolved.service
 ln -sf /usr/lib/systemd/system/NetworkManager.service ${SYSTEMD}/NetworkManager.service
+ln -sf /usr/lib/systemd/system/firewalld.service ${SYSTEMD}/firewalld.service
 
 echo 'root:x:0:0:root:/root:/bin/bash
 live:x:1000:984:live:/home/live:/bin/bash
