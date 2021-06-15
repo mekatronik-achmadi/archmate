@@ -99,12 +99,11 @@ rlwrap gnuplot
 ##### install data tools
 - https://aur.archlinux.org/packages/scidavis-qt5/
 
-##### install opencv additionals
+##### install python additionals
 - https://aur.archlinux.org/packages/python-imutils/
-
-##### install python learning
-- https://aur.archlinux.org/packages/python-keras/
+- https://aur.archlinux.org/packages/python-pyfftw/
 - https://aur.archlinux.org/packages/python-theano/
+- https://aur.archlinux.org/packages/python-keras/
 
 ##### install ncurses5 (for matlab-bin)
 - https://aur.archlinux.org/packages/ncurses5-compat-libs/ (--skippgpcheck)
