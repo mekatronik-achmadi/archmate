@@ -147,6 +147,7 @@ flutter build apk --split-per-abi
 
 export OUTAPKDIR="build/app/outputs/flutter-apk"
 adb install $OUTAPKDIR/app-armeabi-v7a-release.apk
+adb install -r $OUTAPKDIR/app-armeabi-v7a-release.apk
 
 flutter clean
 gradle --stop
