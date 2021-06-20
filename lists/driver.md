@@ -33,8 +33,13 @@ don't use kernel-5.12.patch on prepare
 - https://aur.archlinux.org/packages/brscan3/
 - https://aur.archlinux.org/packages/brother-mfc-j220/
 
-##### install printer
+##### install printer canon
 - https://aur.archlinux.org/packages/cnijfilter-ip2700series/
+
+##### install printer hp
+- https://aur.archlinux.org/packages/hplip-plugin/
+- https://aur.archlinux.org/packages/hpuld/
+- https://aur.archlinux.org/packages/hpoj/
 
 ##### install bluetooth deprecated
 - https://aur.archlinux.org/packages/bluez-hcitool/
