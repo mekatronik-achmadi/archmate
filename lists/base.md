@@ -12,6 +12,7 @@ neofetch lsb-release dtc
 nano dialog bc tmux tree
 nano-syntax-highlighting
 curl wget openssh sshfs
+pacman-contrib mlocate
 intel-ucode amd-ucode
 mkinitcpio-archiso
 
@@ -202,6 +203,7 @@ edk2-ovmf
 ##### install additional tools
 - inxi: https://aur.archlinux.org/packages/inxi/
 - git-cola: https://aur.archlinux.org/packages/git-cola/
+- downgrade: https://aur.archlinux.org/packages/downgrade/
 - geany-tags: https://aur.archlinux.org/packages/geany-tags/
 - geany-themes: https://aur.archlinux.org/packages/geany-themes/
 - fake-hwclock: https://aur.archlinux.org/packages/fake-hwclock/
