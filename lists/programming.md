@@ -118,6 +118,13 @@ sudo setfacl -d -m g:android-sdk:rwx /opt/android-sdk
 
 #sdkmanager --licenses
 signapk default
+
+adb tcpip 5555 # first using USB
+adb connect 192.168.50.238:5555 # then using Wifi
+
+adb forward tcp:5555 tcp:7612 # via USB in case port blocked
+adb tcpip 7612
+adb connect 192.168.50.238:7612
 ~~~
 
 ##### configure flutter
