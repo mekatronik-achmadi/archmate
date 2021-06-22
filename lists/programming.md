@@ -158,6 +158,7 @@ adb install -r $OUTAPKDIR/app-armeabi-v7a-release.apk
 
 flutter clean
 gradle --stop
+ps ax | grep java | grep -v 'grep' | cut -d '?' -f1 | xargs kill -9
 ~~~
 
 ~~~
