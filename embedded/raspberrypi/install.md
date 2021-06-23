@@ -60,33 +60,12 @@ sudo mount ${DEVDISK}1 /mnt/root/boot
 sudo cp -vf /usr/bin/qemu-arm-static /mnt/root/usr/bin/
 ~~~
 
-##### manual chrooting
-
-~~~
-sudo mount --bind /proc /mnt/root/proc
-sudo mount --bind /sys /mnt/root/sys
-sudo mount --bind /dev /mnt/root/dev
-sudo mount --bind /dev/pts /mnt/root/dev/pts
-cp /etc/resolv.conf /mnt/etc/resolv.conf
-sudo chroot /mnt/root /bin/bash
-
-exit
-sudo umount /mnt/root/proc
-sudo umount /mnt/root/sys
-sudo umount /mnt/root/dev/pts
-sudo umount /mnt/root/dev
-
-sudo umount /mnt/root/boot/
-sudo umount /mnt/root/
-~~~
-
 ##### arch-chrooting
 
 ~~~
 sudo arch-chroot /mnt/root /bin/bash
 
 uname -a
-exit
 
 exit
 ~~~
