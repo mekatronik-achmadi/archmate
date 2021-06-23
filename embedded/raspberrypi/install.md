@@ -296,14 +296,3 @@ echo "hdmi_group=2" >> /boot/config.txt
 echo "hdmi_mode=87" >> /boot/config.txt
 echo "hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
 ~~~
-
-##### Screen no blank time (qemu-chroot)
-
-~~~
-echo 'Section "ServerFlags"
-    Option "StandbyTime" "0"
-    Option "SuspendTime" "0"
-    Option "OffTime" "0"
-    Option "BlankTime" "0"
-EndSection' >  /etc/X11/xorg.conf.d/noblank.conf
-~~~
