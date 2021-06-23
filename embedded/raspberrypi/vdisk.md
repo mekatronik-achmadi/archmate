@@ -28,23 +28,23 @@ wget http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
 ##### deploy image
 
 ~~~
-sudo mkdir -p /mnt/rpi/boot
-sudo mkdir -p /mnt/rpi/root
+sudo mkdir -p /mnt/boot
+sudo mkdir -p /mnt/root
 
 sudo losetup --partscan --find --show rpi.img
 
-sudo mount -o rw /dev/loop0p1 /mnt/rpi/boot/
-sudo mount -o rw /dev/loop0p2 /mnt/rpi/root/
+sudo mount -o rw /dev/loop0p1 /mnt/boot/
+sudo mount -o rw /dev/loop0p2 /mnt/root/
 ~~~
 
 ~~~
-sudo bsdtar -xpf ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/rpi/root
+sudo bsdtar -xpf ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
 sudo sync
 
-sudo mv -vf /mnt/rpi/root/boot/* /mnt/rpi/boot/
+sudo mv -vf /mnt/root/boot/* /mnt/boot/
 sudo sync
 
-sudo umount /mnt/rpi/root /mnt/rpi/boot
+sudo umount /mnt/root /mnt/boot
 
 sudo losetup -d /dev/loop0
 ~~~
@@ -54,14 +54,14 @@ sudo losetup -d /dev/loop0
 ~~~
 sudo losetup --partscan --find --show rpi.img
 
-sudo mount -o rw /dev/loop0p2 /mnt/rpi/root/
-sudo mount -o rw /dev/loop0p1 /mnt/rpi/root/boot/
+sudo mount -o rw /dev/loop0p2 /mnt/root/
+sudo mount -o rw /dev/loop0p1 /mnt/root/boot/
 
-sudo cp -vf /usr/bin/qemu-arm-static /mnt/rpi/root/usr/bin/
+sudo cp -vf /usr/bin/qemu-arm-static /mnt/root/usr/bin/
 ~~~
 
 ~~~
-sudo arch-chroot /mnt/rpi/root /bin/bash
+sudo arch-chroot /mnt/root /bin/bash
 
 uname -a
 
@@ -69,8 +69,8 @@ exit
 ~~~
 
 ~~~
-sudo umount /mnt/rpi/root/boot/
-sudo umount /mnt/rpi/root/
+sudo umount /mnt/root/boot/
+sudo umount /mnt/root/
 
 sudo losetup -d /dev/loop0
 ~~~
