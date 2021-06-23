@@ -123,8 +123,7 @@ cd ../
 ~~~
 
 ~~~
-sudo cp -vf databases/*.db /mnt/root/var/lib/pacman/sync/
-sudo cp -vf databases/*.files /mnt/root/var/lib/pacman/sync/
+sudo rsync -avh databases/ /mnt/root/var/lib/pacman/sync/
 ~~~
 
 ##### generate upgrade packages urls (qemu-chroot)
@@ -143,7 +142,7 @@ cd ../../
 ~~~
 
 ~~~
-sudo cp -vf packages/official/*.pkg.tar.xz /mnt/root/var/cache/pacman/pkg/
+sudo rsync -avh packages/official/ /mnt/root/var/cache/pacman/pkg/
 ~~~
 
 ##### upgrade packages (qemu-chroot)
@@ -174,7 +173,7 @@ cd ../../
 ~~~
 
 ~~~
-sudo cp -vf packages/official/*.pkg.tar.xz /mnt/root/var/cache/pacman/pkg/
+sudo rsync -avh packages/official/ /mnt/root/var/cache/pacman/pkg/
 ~~~
 
 ##### install packages (qemu-chroot)
@@ -186,6 +185,12 @@ pacman -S --noconfirm $(cat /home/alarm/pkglist.txt)
 --------------------------------------------------------------------------------
 
 ### Global Configuration
+
+##### set hostname (qemu-chroot)
+
+~~~
+echo "alarmrpi" > /etc/hostname
+~~~
 
 ##### disable audit messages (qemu-chroot)
 
@@ -221,6 +226,12 @@ passwd -d alarm
 echo "FONT=ter-112n
 FONT_MAP=8859-2
 " > /etc/vconsole.conf
+~~~
+
+##### enable ssh server (qemu-chroot)
+
+~~~
+systemctl enable sshd.service
 ~~~
 
 ### CLI Configuration
@@ -267,12 +278,13 @@ echo -e "autologin-user=alarm" >> /etc/lightdm/lightdm.conf
 ~~~
 rm -vf /home/alarm/{install_pkgs.txt,pkglist.txt,upgrade_pkgs.txt}
 rm -vf /var/cache/pacman/pkg/*
-exit
 ~~~
 
 ##### umount disk
 
 ~~~
+exit
+
 sudo umount /mnt/root/boot/
 sudo umount /mnt/root/
 ~~~

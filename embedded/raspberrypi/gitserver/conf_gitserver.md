@@ -8,18 +8,6 @@ exit
 exit
 ~~~
 
-##### gitserver hostname
-
-~~~
-echo "mygitserver" > /etc/hostname
-~~~
-
-##### ssh server
-
-~~~
-systemctl enable sshd.service
-~~~
-
 ##### apache server
 
 ~~~

@@ -1,0 +1,17 @@
+base base-devel terminus-font
+bash-completion htop tmux
+nano-syntax-highlighting
+
+ranger lynx
+moc atool most
+python lua perl
+fdupes w3m imlib2
+poppler highlight
+mediainfo libcaca
+sysstat lm_sensors
+
+vim vim-ctrlp vim-nerdtree
+vim-ultisnips vim-nerdcommenter
+vim-tagbar vim-airline vim-surround
+
+openssh bmon git

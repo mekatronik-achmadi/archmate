@@ -56,15 +56,13 @@ sudo losetup --partscan --find --show rpi.img
 
 sudo mount -o rw /dev/loop0p2 /mnt/root/
 sudo mount -o rw /dev/loop0p1 /mnt/root/boot/
+~~~
 
+~~~
 sudo cp -vf /usr/bin/qemu-arm-static /mnt/root/usr/bin/
-~~~
 
-~~~
 sudo arch-chroot /mnt/root /bin/bash
-
 uname -a
-
 exit
 ~~~
 
