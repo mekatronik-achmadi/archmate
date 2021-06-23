@@ -288,7 +288,7 @@ exit
 exit
 ~~~
 
-##### HDMI LCD 1024x600 Waveshare
+##### HDMI LCD 1024x600 Waveshare (qemu-chroot)
 
 ~~~
 echo "max_usb_current=1" >> /boot/config.txt
@@ -297,7 +297,7 @@ echo "hdmi_mode=87" >> /boot/config.txt
 echo "hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
 ~~~
 
-##### Screen no blank time
+##### Screen no blank time (qemu-chroot)
 
 ~~~
 echo 'Section "ServerFlags"
