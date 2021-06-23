@@ -1,4 +1,4 @@
-### Qemu Install
+### Virtual Disk Image
 
 ##### prepare vdisk
 
