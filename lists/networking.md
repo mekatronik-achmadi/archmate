@@ -124,7 +124,7 @@ mosquitto_pub -t hello/world -m "MQTT on ArchLinux"
 ##### configure teamviewer
 
 ~~~
-sudo rm -vf /usr/share/applications/teamviewerapi.desktop
+sudo rm -f /usr/share/applications/teamviewerapi.desktop
 
 sudo systemctl enable teamviewerd
 sudo systemctl start teamviewerd

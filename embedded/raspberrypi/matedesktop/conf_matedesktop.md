@@ -51,24 +51,3 @@ BT_AUDIO='btc_mode=1\nbtc_params8=0x4e20\nbtc_params1=0x7530'
 echo -e $BT_AUDIO >> /usr/lib/firmware/updates/brcm/brcmfmac43430-sdio.txt
 echo -e $BT_AUDIO >> /usr/lib/firmware/updates/brcm/brcmfmac43455-sdio.txt
 ~~~
-
-##### HDMI LCD 1024x600 Waveshare
-
-~~~
-echo "max_usb_current=1" >> /boot/config.txt
-echo "hdmi_group=2" >> /boot/config.txt
-echo "hdmi_mode=87" >> /boot/config.txt
-echo "hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
-~~~
-
-##### Screen no blank time
-
-~~~
-echo 'Section "ServerFlags"
-    Option "StandbyTime" "0"
-    Option "SuspendTime" "0"
-    Option "OffTime" "0"
-    Option "BlankTime" "0"
-EndSection' >  /etc/X11/xorg.conf.d/noblank.conf
-~~~
-

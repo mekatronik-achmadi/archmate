@@ -62,3 +62,9 @@ optimus-manager --no-confirm --switch intel
 ~~~
 sudo sed -i "s#startup_mode=intel#startup_mode=nvidia#g" /usr/share/optimus-manager.conf
 ~~~
+
+##### configure drivers
+
+~~~
+sudo rm -f /usr/share/applications/hp-uiscan.desktop
+~~~
