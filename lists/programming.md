@@ -16,9 +16,9 @@ cython2 python2-pip
 python2-wheel python2-six
 
 ##### install opengl programming
+glfw-x11 python-glfw
+glew python-opengl
 freeglut glu glm
-glfw-x11 glew
-python-opengl
 
 ##### install javascript programming
 code electron11

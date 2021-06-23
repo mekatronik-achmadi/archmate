@@ -37,6 +37,6 @@ libcanberra-pulse sound-theme-freedesktop
 openssh bmon
 
 git meld
-parcellite 
+parcellite
 
 vlc mplayer rhythmbox

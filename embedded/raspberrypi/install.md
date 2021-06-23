@@ -257,13 +257,13 @@ echo -e "autologin-user=alarm" >> /etc/lightdm/lightdm.conf
 ~~~
 rm -vf /home/alarm/{install_pkgs.txt,pkglist.txt,upgrade_pkgs.txt}
 rm -vf /var/cache/pacman/pkg/*
+
+exit
 ~~~
 
 ##### umount disk
 
 ~~~
-exit
-
 sudo umount /mnt/root/boot/
 sudo umount /mnt/root/
 ~~~
