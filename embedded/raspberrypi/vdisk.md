@@ -1,4 +1,4 @@
-### Virtual Disk Image
+### Disk Install
 
 ##### prepare vdisk
 
