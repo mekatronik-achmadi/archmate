@@ -126,7 +126,6 @@ python-wheel python-pip
 python-distutils-extra
 
 #### install internet tools
-midori webkit2gtk
 firefox thunderbird
 firefox-ublock-origin
 qbittorrent filezilla
