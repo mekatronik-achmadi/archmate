@@ -20,6 +20,9 @@ python-django-extensions
 python-django python-django-q
 python-blinker python-simplejson
 
+##### install python networking
+python-pbkdf2 python-pycryptodome
+
 ##### install webkit/webengine
 qt5-webkit webkit2gtk
 python-pyqtwebengine
@@ -53,6 +56,9 @@ telegram-desktop
 
 ##### install cisco packet simulator
 - https://aur.archlinux.org/packages/packettracer/
+
+##### install python networking
+- https://aur.archlinux.org/packages/python-wifiwrapper/
 
 --------------------------------------------------------------------------------
 

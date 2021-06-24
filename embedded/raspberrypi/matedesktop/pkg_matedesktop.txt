@@ -40,3 +40,6 @@ git meld
 parcellite
 
 vlc mplayer rhythmbox
+
+qt qt5 python-pyqt5
+python-pyqtgraph

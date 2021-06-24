@@ -171,10 +171,11 @@ pacman -S --noconfirm $(cat /home/alarm/pkglist.txt)
 echo "alarmrpi" > /etc/hostname
 ~~~
 
-##### disable audit messages (qemu-chroot)
+##### silent cli (qemu-chroot)
 
 ~~~
-sed -i '$s/$/ audit=0/' /boot/cmdline.txt
+sed -i '$s/$/ audit=0 quiet loglevel=0/' /boot/cmdline.txt
+echo 'kernel.printk = 3 3 3 3' > /etc/sysctl.d/20-quiet-printk.conf
 ~~~
 
 ##### generate locale (qemu-chroot)
@@ -295,4 +296,16 @@ echo "max_usb_current=1" >> /boot/config.txt
 echo "hdmi_group=2" >> /boot/config.txt
 echo "hdmi_mode=87" >> /boot/config.txt
 echo "hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
+~~~
+
+##### WiFi for Rpi 3/4 (qemu-chroot)
+
+~~~
+echo '[Match]
+Name=wlan0
+
+[Network]
+Description=On-board wireless NIC
+DHCP=yes' > /etc/systemd/network/wlan0.network
+systemctl enable systemd-networkd
 ~~~
