@@ -51,9 +51,6 @@ source ~/.bashrc
 
     mkdir -p /etc/skel/.config/qt5ct/
     cp -f /usr/share/archmate-default/qt5ct.conf /etc/skel/.config/qt5ct/
-
-    mkdir -p /etc/skel/.config/geany/
-    cp -f /usr/share/archmate-default/geany.conf /etc/skel/.config/geany/
 }
 
 updating() {

@@ -13,6 +13,7 @@ depends=(
     'mate-icon-theme' 'papirus-icon-theme'
     'gnome-icon-theme-extras'
     'windows10-icon-theme-git'
+    'chicago95-icon-theme-git'
     'archmate-theme')
 install=pkg.install
 options=(!strip !emptydirs !makeflags)

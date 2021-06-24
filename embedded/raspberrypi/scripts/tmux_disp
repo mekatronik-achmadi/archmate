@@ -1,0 +1,18 @@
+#!/bin/bash
+
+tmux_path=$(command -v tmux)
+if [ -z "$tmux_path" ];then echo "tmux not found";exit;fi
+
+################# start new tmux session #################
+session="tmux_display"
+tmux new -d -s $session
+
+################# split window into 4 panes #################
+tmux split-window -v -t $session
+tmux select-pane -t 0
+tmux split-window -h -t $session
+tmux select-pane -t 2
+tmux split-window -h -t $session
+
+################# actual tmux running #################
+tmux attach -t $session

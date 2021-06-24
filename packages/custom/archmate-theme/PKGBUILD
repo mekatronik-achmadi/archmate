@@ -16,6 +16,7 @@ depends=(
 	'mate-themes' 'gnome-themes-extra'
 	'arc-solid-gtk-theme'
 	'windows10-dark-gtk-theme-git'
+	'chicago95-gtk-theme-git'
 	'archmate-icon')
 install=pkg.install
 options=('!makeflags' '!strip')

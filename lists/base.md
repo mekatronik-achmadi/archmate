@@ -49,7 +49,6 @@ ttf-liberation onboard
 mypaint shotwell xchm
 parcellite meld ghex
 redshift python-xdg
-geany geany-plugins
 gnome-disk-utility
 xdg-user-dirs-gtk
 ttf-inconsolata
@@ -203,12 +202,12 @@ edk2-ovmf
 - inxi: https://aur.archlinux.org/packages/inxi/
 - git-cola: https://aur.archlinux.org/packages/git-cola/
 - downgrade: https://aur.archlinux.org/packages/downgrade/
-- geany-tags: https://aur.archlinux.org/packages/geany-tags/
-- geany-themes: https://aur.archlinux.org/packages/geany-themes/
 - fake-hwclock: https://aur.archlinux.org/packages/fake-hwclock/
 
 ##### install additional themes
 - qt5-styleplugins: https://aur.archlinux.org/packages/qt5-styleplugins/
+- chicago95-gtk-theme-git: https://aur.archlinux.org/packages/chicago95-gtk-theme-git/
+- chicago95-icon-theme-git: https://aur.archlinux.org/packages/chicago95-icon-theme-git/
 - windows10-icon-theme-git: https://aur.archlinux.org/packages/windows10-icon-theme-git/
 - windows10-dark-gtk-theme-git: https://aur.archlinux.org/packages/windows10-dark-gtk-theme-git/
 
