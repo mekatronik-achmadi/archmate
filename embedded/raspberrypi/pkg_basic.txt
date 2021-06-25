@@ -19,3 +19,4 @@ openssh bmon git
 xorg xorg-apps xorg-drivers
 xorg-xinit xorg-fonts qt qt5
 python-pyqt5 python-pyqtgraph
+python-pbkdf2 python-pycryptodome
