@@ -37,7 +37,7 @@ vim-tagbar vim-ultisnips
 
 ##### install xorg server
 xorg xorg-apps xorg-drivers
-xorg-xinit xorg-fonts
+xorg-xinit xorg-fonts xterm
 
 ##### install login manager
 lightdm lightdm-gtk-greeter

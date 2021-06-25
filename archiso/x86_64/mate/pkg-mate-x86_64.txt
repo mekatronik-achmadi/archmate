@@ -31,7 +31,7 @@ vim-airline vim-surround
 vim-tagbar vim-ultisnips
 
 xorg xorg-apps xorg-drivers
-xorg-xinit xorg-fonts
+xorg-xinit xorg-fonts xterm
 
 lightdm lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
