@@ -5,14 +5,14 @@ pkgdesc="default fonts settings for Arch Linux MATE"
 arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
-depends=('dconf-editor' 'gdk-pixbuf2'
-	'fontconfig' 'freetype2' 'fontforge'
-	'xorg-mkfontdir' 'ttf-liberation' 'ttf-inconsolata')
+depends=(
+    'dconf-editor' 'gdk-pixbuf2'
+	'fontconfig' 'freetype2' 'xorg-mkfontdir'
+	'ttf-liberation' 'ttf-inconsolata' 'ttf-dejavu')
 optdepends=(
 	'ttf-tahoma: MS-Windows fonts'
 	'ttf-ms-fonts: MS-Windows fonts'
-	'ttf-vista-fonts: MS-Windows fonts'
-	'ttf-dejavu: Unicode symbols')
+	'ttf-vista-fonts: MS-Windows fonts')
 options=('!makeflags')
 install=pkg.install
 source=(
