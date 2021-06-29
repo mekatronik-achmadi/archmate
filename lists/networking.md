@@ -166,3 +166,16 @@ echo "aud code -> audio only: opus @160k (48000Hz)"
 FILENM="LP Rebellion"
 ffmpeg -i "${FILENM}.webm" -vn -ab 128k -ar 44100 -y "${FILENM}.mp3"
 ~~~
+
+##### configure public ip
+
+~~~
+ngrok authtoken 1xxxxxxxxxxxxxxxx_yyyyyyyyyyyyyyy
+ngrok http 80
+~~~
+
+##### configure free VPS
+- https://www.heroku.com/
+- https://vercel.com/
+- https://www.netlify.com/
+
