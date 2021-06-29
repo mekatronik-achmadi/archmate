@@ -54,6 +54,10 @@ telegram-desktop
 - https://aur.archlinux.org/packages/mongodb-bin/
 - https://aur.archlinux.org/packages/mongodb-tools-bin/
 
+##### install public ip tunnel
+- https://aur.archlinux.org/packages/ngrok-bin/
+- https://aur.archlinux.org/packages/ngrok-tunnel-docker/
+
 ##### install cisco packet simulator
 - https://aur.archlinux.org/packages/packettracer/
 
