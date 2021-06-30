@@ -172,6 +172,8 @@ ffmpeg -i "${FILENM}.webm" -vn -ab 128k -ar 44100 -y "${FILENM}.mp3"
 ~~~
 ngrok authtoken 1xxxxxxxxxxxxxxxx_yyyyyyyyyyyyyyy
 ngrok http 80
+ngrok http -subdomain=ehealth-proto 80 #ngrok subdomain ehealth-proto.ngrok.io
+ngrok http -region=id -hostname=itsehealth.its.ac.id #ngrok custom domain (white label URLs)
 ~~~
 
 ##### configure free VPS

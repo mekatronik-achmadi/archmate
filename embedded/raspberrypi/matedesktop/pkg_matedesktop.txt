@@ -2,8 +2,8 @@ base base-devel terminus-font
 bash-completion htop tmux
 nano-syntax-highlighting
 
-ranger lynx
 moc atool most
+dtc ranger lynx
 python lua perl
 fdupes w3m imlib2
 poppler highlight
@@ -16,6 +16,7 @@ vim-tagbar vim-airline vim-surround
 
 xorg xorg-apps xorg-drivers
 xorg-xinit xorg-fonts xterm
+xf86-video-fbturbo-git
 
 lightdm lightdm-gtk-greeter
 

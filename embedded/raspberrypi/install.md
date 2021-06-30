@@ -81,6 +81,14 @@ pacman-key --init
 pacman-key --populate archlinuxarm
 ~~~
 
+##### disable siglevel
+
+~~~
+sudo sed -i "s#= Required DatabaseOptional#= Never#g" /mnt/root/etc/pacman.conf
+sudo sed -i "s#= Optional TrustAll#= Never#g" /mnt/root/etc/pacman.conf
+sudo sed -i "s#= Optional#= Never#g" /mnt/root/etc/pacman.conf
+~~~
+
 ##### prepare database
 
 ~~~
@@ -176,6 +184,12 @@ echo "alarmrpi" > /etc/hostname
 ~~~
 sed -i '$s/$/ audit=0 quiet loglevel=0/' /boot/cmdline.txt
 echo 'kernel.printk = 3 3 3 3' > /etc/sysctl.d/20-quiet-printk.conf
+~~~
+
+##### increase gpu memory
+
+~~~
+echo "gpu_mem=128" >> /boot/config.txt
 ~~~
 
 ##### generate locale (qemu-chroot)
@@ -292,10 +306,26 @@ exit
 ##### HDMI LCD 1024x600 Waveshare (qemu-chroot)
 
 ~~~
-echo "max_usb_current=1" >> /boot/config.txt
-echo "hdmi_group=2" >> /boot/config.txt
-echo "hdmi_mode=87" >> /boot/config.txt
-echo "hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
+echo "
+max_usb_current=1
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
+~~~
+
+##### Waveshare 3.5 LCD (qemu-chroot)
+- https://github.com/waveshare/LCD-show/
+- https://whitedome.com.au/download/Overlays/
+- https://github.com/swkim01/waveshare-dtoverlays/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        n
+- https://aur.archlinux.org/packages/waveshare35a/ (obsolete)
+
+~~~
+echo "
+dtparam=spi=on
+dtparam=i2c_arm=on
+overlay=waveshare35a" >> /boot/config.txt
+
+sed -i '$s/$/ fbcon=map:10 fbcon=rotate:2 fbcon=font:ProFont6x11/' /boot/cmdline.txt
 ~~~
 
 ##### WiFi for Rpi 3/4 (qemu-chroot)

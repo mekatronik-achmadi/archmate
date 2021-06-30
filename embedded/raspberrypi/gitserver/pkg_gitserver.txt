@@ -2,8 +2,8 @@ base base-devel terminus-font
 bash-completion htop tmux
 nano-syntax-highlighting
 
-ranger lynx
 moc atool most
+dtc ranger lynx
 python lua perl
 fdupes w3m imlib2
 poppler highlight
