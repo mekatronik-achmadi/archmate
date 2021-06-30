@@ -19,3 +19,4 @@ openssh bmon git
 xorg xorg-apps xorg-drivers
 xorg-xinit xorg-fonts xterm
 xf86-video-fbturbo-git
+xinput_calibrator

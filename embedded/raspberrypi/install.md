@@ -324,9 +324,28 @@ cp -f waveshare35a.dtbo /boot/overlays/
 echo "
 dtparam=i2c_arm=on
 dtparam=spi=on
-dtoverlay=waveshare35a" >> /boot/config.txt
+dtoverlay=waveshare35a:rotate=270,swapxy=1" >> /boot/config.txt
 
-sed -i '$s/$/ fbcon=map:10 fbcon=rotate:2 fbcon=font:ProFont6x11/' /boot/cmdline.txt
+sed -i '$s/$/ fbcon=map:10 fbcon=font:ProFont6x11/' /boot/cmdline.txt
+
+groupadd -fr video
+gpasswd -a alarm video
+~~~
+
+##### Waveshare 3.5 Touchscreen (qemu-chroot)
+
+~~~
+startx /usr/bin/xinput_calibrator | tee calib.log
+less calib.log
+
+# invert Y
+echo 'Section "InputClass"
+    Identifier          "libinput touchscreen"
+    MatchIsTouchScreen  "on"
+    MacthDevicePath     "/dev/input/event*"
+    Driver              "libinput"
+    Option "TransformationMatrix" "1 0 0 0 -1 1 0 0 1"
+EndSection' > /etc/X11/xorg.conf.d/99-calibration.conf
 ~~~
 
 ##### WiFi for Rpi 3/4 (qemu-chroot)
