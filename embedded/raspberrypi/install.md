@@ -31,7 +31,7 @@ wget http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
 ##### deploy image
 
 ~~~
-sudo bsdtar -xpf ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
+sudo bsdtar -xpf ../ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
 sudo sync
 
 sudo mv -vf /mnt/root/boot/* /mnt/boot/
@@ -81,12 +81,12 @@ pacman-key --init
 pacman-key --populate archlinuxarm
 ~~~
 
-##### disable siglevel
+##### disable siglevel (qemu-chroot)
 
 ~~~
-sudo sed -i "s#= Required DatabaseOptional#= Never#g" /mnt/root/etc/pacman.conf
-sudo sed -i "s#= Optional TrustAll#= Never#g" /mnt/root/etc/pacman.conf
-sudo sed -i "s#= Optional#= Never#g" /mnt/root/etc/pacman.conf
+sed -i "s#= Required DatabaseOptional#= Never#g" /etc/pacman.conf
+sed -i "s#= Optional TrustAll#= Never#g" /etc/pacman.conf
+sed -i "s#= Optional#= Never#g" /etc/pacman.conf
 ~~~
 
 ##### prepare database
@@ -132,16 +132,16 @@ cd ../../
 sudo rsync -avh packages/official/ /mnt/root/var/cache/pacman/pkg/
 ~~~
 
+##### copy install packages list
+
+~~~
+cp -vf ../pkg_*.txt /mnt/root/home/alarm/pkglist.txt
+~~~
+
 ##### upgrade packages (qemu-chroot)
 
 ~~~
 pacman -Su --noconfirm
-~~~
-
-##### copy install packages list
-
-~~~
-cp -vf pkg_*.txt /mnt/root/home/alarm/pkglist.txt
 ~~~
 
 ##### generate install packages urls (qemu-chroot)
@@ -184,12 +184,6 @@ echo "alarmrpi" > /etc/hostname
 ~~~
 sed -i '$s/$/ audit=0 quiet loglevel=0/' /boot/cmdline.txt
 echo 'kernel.printk = 3 3 3 3' > /etc/sysctl.d/20-quiet-printk.conf
-~~~
-
-##### increase gpu memory
-
-~~~
-echo "gpu_mem=128" >> /boot/config.txt
 ~~~
 
 ##### generate locale (qemu-chroot)
@@ -317,13 +311,20 @@ hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
 - https://github.com/waveshare/LCD-show/
 - https://whitedome.com.au/download/Overlays/
 - https://github.com/swkim01/waveshare-dtoverlays/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        n
-- https://aur.archlinux.org/packages/waveshare35a/ (obsolete)
 
 ~~~
+# in actual running rpi unit
+wget https://raw.githubusercontent.com/swkim01/waveshare-dtoverlays/master/waveshare35a.dts
+dtc -@ -Hepapr -I dts -O dtb -o waveshare35a.dtbo waveshare35a.dts
+~~~
+
+~~~
+cp -f waveshare35a.dtbo /boot/overlays/
+
 echo "
-dtparam=spi=on
 dtparam=i2c_arm=on
-overlay=waveshare35a" >> /boot/config.txt
+dtparam=spi=on
+dtoverlay=waveshare35a" >> /boot/config.txt
 
 sed -i '$s/$/ fbcon=map:10 fbcon=rotate:2 fbcon=font:ProFont6x11/' /boot/cmdline.txt
 ~~~
