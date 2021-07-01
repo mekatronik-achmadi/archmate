@@ -238,6 +238,12 @@ archmate-install
 
 --------------------------------------------------------------------------------
 
+##### create new password
+
+~~~
+sudo passwd username
+~~~
+
 ##### configure grub
 
 ~~~

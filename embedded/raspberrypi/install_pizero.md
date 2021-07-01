@@ -25,13 +25,16 @@ sudo mount ${DEVDISK}2 /mnt/root
 ##### download image
 
 ~~~
-wget http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
+wget http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-latest.tar.gz
+
+mkdir -p rpi/
+cd rpi/
 ~~~
 
 ##### deploy image
 
 ~~~
-sudo bsdtar -xpf ../ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
+sudo bsdtar -xpf ../ArchLinuxARM-rpi-latest.tar.gz -C /mnt/root
 sudo sync
 
 sudo mv -vf /mnt/root/boot/* /mnt/boot/
@@ -94,16 +97,16 @@ sed -i "s#= Optional#= Never#g" /etc/pacman.conf
 ~~~
 mkdir -p databases/;cd databases/
 echo "
-http://mirror.archlinuxarm.org/armv7h/core/core.db
-http://mirror.archlinuxarm.org/armv7h/core/core.files
-http://mirror.archlinuxarm.org/armv7h/extra/extra.db
-http://mirror.archlinuxarm.org/armv7h/extra/extra.files
-http://mirror.archlinuxarm.org/armv7h/community/community.db
-http://mirror.archlinuxarm.org/armv7h/community/community.files
-http://mirror.archlinuxarm.org/armv7h/alarm/alarm.db
-http://mirror.archlinuxarm.org/armv7h/alarm/alarm.files
-http://mirror.archlinuxarm.org/armv7h/aur/aur.db
-http://mirror.archlinuxarm.org/armv7h/aur/aur.files
+http://mirror.archlinuxarm.org/armv6h/core/core.db
+http://mirror.archlinuxarm.org/armv6h/core/core.files
+http://mirror.archlinuxarm.org/armv6h/extra/extra.db
+http://mirror.archlinuxarm.org/armv6h/extra/extra.files
+http://mirror.archlinuxarm.org/armv6h/community/community.db
+http://mirror.archlinuxarm.org/armv6h/community/community.files
+http://mirror.archlinuxarm.org/armv6h/alarm/alarm.db
+http://mirror.archlinuxarm.org/armv6h/alarm/alarm.files
+http://mirror.archlinuxarm.org/armv6h/aur/aur.db
+http://mirror.archlinuxarm.org/armv6h/aur/aur.files
 " > ../dbase.txt
 wget -i ../dbase.txt
 cd ../
@@ -316,6 +319,43 @@ max_usb_current=1
 hdmi_group=2
 hdmi_mode=87
 hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
+~~~
+
+##### PiZero Ethernet Gadget  (qemu-chroot)
+
+~~~
+echo "PiZero as USB-Device not USB-Host"
+
+echo "dtoverlay=dwc2" >> /boot/config.txt
+
+echo "dwc2
+g_ether" >> /etc/modules-load.d/raspberrypi.conf
+
+echo "options g_ether host_addr=12:a5:cf:42:92:fd dev_addr=5e:bc:ca:27:92:b1 idVendor=1317 idProduct=42146" \
+> /etc/modprobe.d/g_ether.conf
+
+echo "
+subnet 192.168.7.0 netmask 255.255.255.0 {
+  range 192.168.7.150 192.168.7.150;
+}" > /etc/dhcpd.conf
+
+echo "
+Description='pizero g_ether gadget'
+Interface=usb0
+Connection=ethernet
+IP=static
+SkipNoCarrier=yes
+Address=('192.168.7.3/24')
+Gateway='192.168.7.150'
+DNS=('8.8.8.8')" > /etc/netctl/usbpizero
+
+netctl enable usbpizero
+systemctl enable dhcpd4
+~~~
+
+~~~
+# ssh from a USB-Host
+ssh alarm@192.168.7.3
 ~~~
 
 ##### Waveshare 3.5 LCD (qemu-chroot)
