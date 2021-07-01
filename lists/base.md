@@ -77,8 +77,8 @@ bind-tools netctl ppp wpa_supplicant
 tcpdump fping gnu-netcat inetutils
 net-tools bridge-utils iwd ethtool
 crda wireless_tools usb_modeswitch
-mtr iw dhclient dnsmasq firewalld
 traceroute wavemon bmon nethogs
+mtr iw dhcp dhclient dnsmasq
 
 ##### install audio system
 alsa-lib alsa-plugins
