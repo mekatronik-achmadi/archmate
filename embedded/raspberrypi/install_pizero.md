@@ -386,6 +386,8 @@ dtoverlay=waveshare35a:rotate=270,swapxy=1" >> /boot/config.txt
 
 sed -i '$s/$/ fbcon=map:10 fbcon=font:ProFont6x11/' /boot/cmdline.txt
 
+sed -i "s#/dev/fb0#/dev/fb1#g" /etc/X11/xorg.conf.d/99-fbturbo.conf
+
 groupadd -fr video
 gpasswd -a alarm video
 gpasswd -a alarm tty
@@ -401,20 +403,45 @@ less calib.log
 echo 'Section "InputClass"
     Identifier          "libinput touchscreen"
     MatchIsTouchScreen  "on"
-    MacthDevicePath     "/dev/input/event*"
+    MatchDevicePath     "/dev/input/event*"
     Driver              "libinput"
     Option "TransformationMatrix" "1 0 0 0 -1 1 0 0 1"
 EndSection' > /etc/X11/xorg.conf.d/99-calibration.conf
 ~~~
 
-##### WiFi for Rpi 3/4 (qemu-chroot)
+##### WiFi Connection (qemu-chroot)
 
 ~~~
-echo '[Match]
-Name=wlan0
+systemctl disable systemd-networkd
+echo "
+Description='Wireless connection'
+Interface=wlan0
+Connection=wireless
 
-[Network]
-Description=On-board wireless NIC
-DHCP=yes' > /etc/systemd/network/wlan0.network
-systemctl enable systemd-networkd
+Security=wpa
+IP=dhcp
+
+ESSID='vibrasticlab'
+Key='bismillah'
+" > /etc/netctl/wifi
+netctl enable wifi
+~~~
+
+##### GUI Program at start
+
+~~~
+rm ~/.xinitrc
+echo "startx /usr/bin/python /home/alarm/qt5_coba.py" >> ~/.bashrc
+~~~
+
+~~~
+startx /usr/bin/python /home/alarm/qt5_coba.py -- -verbose 6 -logverbose 6 &> ~/xorg.log
+~~~
+
+~~~
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    echo "SSH Login"
+else
+    startx /usr/bin/python /home/alarm/qt5_coba.py
+fi
 ~~~
