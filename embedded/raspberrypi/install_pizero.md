@@ -412,19 +412,17 @@ EndSection' > /etc/X11/xorg.conf.d/99-calibration.conf
 ##### WiFi Connection (qemu-chroot)
 
 ~~~
-systemctl disable systemd-networkd
-echo "
-Description='Wireless connection'
-Interface=wlan0
-Connection=wireless
+echo '[Match]
+Name=wlan0
 
-Security=wpa
-IP=dhcp
+[Network]
+Description=On-board wireless NIC
+DHCP=yes' > /etc/systemd/network/wlan0.network
 
-ESSID='vibrasticlab'
-Key='bismillah'
-" > /etc/netctl/wifi
-netctl enable wifi
+wpa_passphrase "vibrastic" "bismillah" > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+
+ln -s /usr/lib/systemd/system/wpa_supplicant@.service \
+/etc/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
 ~~~
 
 ##### GUI Program at start
