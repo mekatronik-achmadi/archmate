@@ -335,11 +335,6 @@ echo "options g_ether host_addr=12:a5:cf:42:92:fd dev_addr=5e:bc:ca:27:92:b1 idV
 > /etc/modprobe.d/g_ether.conf
 
 echo "
-subnet 192.168.7.0 netmask 255.255.255.0 {
-  range 192.168.7.150 192.168.7.150;
-}" > /etc/dhcpd.conf
-
-echo "
 Description='pizero g_ether gadget'
 Interface=usb0
 Connection=ethernet
@@ -348,14 +343,26 @@ SkipNoCarrier=yes
 Address=('192.168.7.3/24')
 Gateway='192.168.7.150'
 DNS=('8.8.8.8')" > /etc/netctl/usbpizero
-
 netctl enable usbpizero
-systemctl enable dhcpd4
+systemctl disable dhcpd4
 ~~~
 
 ~~~
-# ssh from a USB-Host
+# from other computer/USB-Host
+# connect usb g_ether to computer first
+export CONNAME="Wired connection 2"
+sudo nmcli con | grep "$CONNAME"
+sudo nmcli con mod "$CONNAME" ipv4.addresses 192.168.7.150/24
+sudo nmcli con mod "$CONNAME" ipv4.gateway 192.168.7.150
+sudo nmcli con mod "$CONNAME" ipv4.dns "8.8.8.8"
+sudo nmcli con mod "$CONNAME" ipv4.method manual
+sudo nmcli con up "$CONNAME"
+
+#rm -r ~/.ssh/
 ssh alarm@192.168.7.3
+
+mkdir -p sshfs/
+sshfs alarm@192.168.7.3:/home/alarm/ ./sshfs/
 ~~~
 
 ##### Waveshare 3.5 LCD (qemu-chroot)
@@ -381,6 +388,7 @@ sed -i '$s/$/ fbcon=map:10 fbcon=font:ProFont6x11/' /boot/cmdline.txt
 
 groupadd -fr video
 gpasswd -a alarm video
+gpasswd -a alarm tty
 ~~~
 
 ##### Waveshare 3.5 Touchscreen (qemu-chroot)
