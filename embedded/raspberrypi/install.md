@@ -326,6 +326,7 @@ exit
 ~~~
 sudo nmcli radio wifi on
 
+sudo nmcli dev wifi
 sudo iwlist wlan0 scan | grep SSID
 
 sudo nmcli --ask dev wifi connect CobaMQTT
