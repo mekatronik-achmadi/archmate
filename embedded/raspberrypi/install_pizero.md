@@ -327,12 +327,7 @@ hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
 echo "PiZero as USB-Device not USB-Host"
 
 echo "dtoverlay=dwc2" >> /boot/config.txt
-
-echo "dwc2
-g_ether" >> /etc/modules-load.d/raspberrypi.conf
-
-echo "options g_ether host_addr=12:a5:cf:42:92:fd dev_addr=5e:bc:ca:27:92:b1 idVendor=1317 idProduct=42146" \
-> /etc/modprobe.d/g_ether.conf
+sed -i "s#rootwait console#rootwait modules-load=dwc2,g_ether console#g" /boot/cmdline.txt
 
 echo "
 Description='pizero g_ether gadget'
@@ -344,7 +339,6 @@ Address=('192.168.7.3/24')
 Gateway='192.168.7.150'
 DNS=('8.8.8.8')" > /etc/netctl/usbpizero
 netctl enable usbpizero
-systemctl disable dhcpd4
 ~~~
 
 ~~~
@@ -412,6 +406,8 @@ EndSection' > /etc/X11/xorg.conf.d/99-calibration.conf
 ##### WiFi Connection (qemu-chroot)
 
 ~~~
+## CURRENTLY FAILED on PiZero
+
 echo '[Match]
 Name=wlan0
 
@@ -419,7 +415,7 @@ Name=wlan0
 Description=On-board wireless NIC
 DHCP=yes' > /etc/systemd/network/wlan0.network
 
-wpa_passphrase "vibrastic" "bismillah" > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+wpa_passphrase "CobaMQTT" "cobamqtt" > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 
 ln -s /usr/lib/systemd/system/wpa_supplicant@.service \
 /etc/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service

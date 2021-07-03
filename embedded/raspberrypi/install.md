@@ -372,10 +372,18 @@ Name=wlan0
 Description=On-board wireless NIC
 DHCP=yes' > /etc/systemd/network/wlan0.network
 
-wpa_passphrase "vibrastic" "bismillah" > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+echo "
+country=ID
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
 
-ln -s /usr/lib/systemd/system/wpa_supplicant@.service \
-/etc/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
+network={
+    ssid="CobaMQTT"
+    psk="cobamqtt"
+}" > /etc/wpa_supplicant/wpa_supplicant.conf
+
+ln -s /usr/lib/systemd/system/wpa_supplicant.service \
+/etc/systemd/system/multi-user.target.wants/wpa_supplicant.service
 ~~~
 
 ##### GUI Program at start
