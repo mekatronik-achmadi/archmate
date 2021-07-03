@@ -17,7 +17,7 @@ yes | sudo parted ${DEVDISK} set 1 boot on
 yes | sudo mkfs.vfat ${DEVDISK}1
 yes | sudo mkfs.ext4 ${DEVDISK}2
 
-mkdir -p /mnt/{boot,root}
+sudo mkdir -p /mnt/{boot,root}
 sudo mount ${DEVDISK}1 /mnt/boot
 sudo mount ${DEVDISK}2 /mnt/root
 ~~~
@@ -84,14 +84,6 @@ pacman-key --init
 pacman-key --populate archlinuxarm
 ~~~
 
-##### disable siglevel (qemu-chroot)
-
-~~~
-sed -i "s#= Required DatabaseOptional#= Never#g" /etc/pacman.conf
-sed -i "s#= Optional TrustAll#= Never#g" /etc/pacman.conf
-sed -i "s#= Optional#= Never#g" /etc/pacman.conf
-~~~
-
 ##### prepare database
 
 ~~~
@@ -144,7 +136,15 @@ cp -vf ../pkg_*.txt /mnt/root/home/alarm/pkglist.txt
 ##### upgrade packages (qemu-chroot)
 
 ~~~
+##### upgrade packages (qemu-chroot)
+
+~~~
+sed -i "s#= Required DatabaseOptional#= Never#g" /etc/pacman.conf
+sed -i "s#= Optional TrustAll#= Never#g" /etc/pacman.conf
+sed -i "s#= Optional#= Never#g" /etc/pacman.conf
+
 pacman -Su --noconfirm
+~~~
 ~~~
 
 ##### generate install packages urls (qemu-chroot)
@@ -169,6 +169,10 @@ sudo rsync -avh packages/official/ /mnt/root/var/cache/pacman/pkg/
 ##### install packages (qemu-chroot)
 
 ~~~
+sed -i "s#= Required DatabaseOptional#= Never#g" /etc/pacman.conf
+sed -i "s#= Optional TrustAll#= Never#g" /etc/pacman.conf
+sed -i "s#= Optional#= Never#g" /etc/pacman.conf
+
 pacman -S --noconfirm $(cat /home/alarm/pkglist.txt)
 ~~~
 
@@ -311,6 +315,31 @@ exit
 exit
 ~~~
 
+##### WiFi Connection (qemu-chroot)
+
+~~~
+
+~~~
+
+##### GUI Program at start
+
+~~~
+rm ~/.xinitrc
+echo "startx /usr/bin/python /home/alarm/qt5_coba.py" >> ~/.bashrc
+~~~
+
+~~~
+startx /usr/bin/python /home/alarm/qt5_coba.py -- -verbose 6 -logverbose 6 &> ~/xorg.log
+~~~
+
+~~~
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    echo "SSH Login"
+else
+    startx /usr/bin/python /home/alarm/qt5_coba.py
+fi
+~~~
+
 ##### HDMI LCD 1024x600 Waveshare (qemu-chroot)
 
 ~~~
@@ -401,41 +430,4 @@ echo 'Section "InputClass"
     Driver              "libinput"
     Option "TransformationMatrix" "1 0 0 0 -1 1 0 0 1"
 EndSection' > /etc/X11/xorg.conf.d/99-calibration.conf
-~~~
-
-##### WiFi Connection (qemu-chroot)
-
-~~~
-## CURRENTLY FAILED on PiZero
-
-echo '[Match]
-Name=wlan0
-
-[Network]
-Description=On-board wireless NIC
-DHCP=yes' > /etc/systemd/network/wlan0.network
-
-wpa_passphrase "CobaMQTT" "cobamqtt" > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
-
-ln -s /usr/lib/systemd/system/wpa_supplicant@.service \
-/etc/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
-~~~
-
-##### GUI Program at start
-
-~~~
-rm ~/.xinitrc
-echo "startx /usr/bin/python /home/alarm/qt5_coba.py" >> ~/.bashrc
-~~~
-
-~~~
-startx /usr/bin/python /home/alarm/qt5_coba.py -- -verbose 6 -logverbose 6 &> ~/xorg.log
-~~~
-
-~~~
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    echo "SSH Login"
-else
-    startx /usr/bin/python /home/alarm/qt5_coba.py
-fi
 ~~~
