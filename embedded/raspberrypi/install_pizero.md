@@ -334,9 +334,9 @@ sudo iwlist wlan0 scan | grep SSID
 sudo nmcli --ask dev wifi connect CobaMQTT
 sudo nmcli dev wifi connect CobaMQTT password "cobamqtt"
 
-sudo nmcli connection
-sudo nmcli connection show CobaMQTT
-sudo nmcli connection delete CobaMQTT
+sudo nmcli con
+sudo nmcli con show CobaMQTT
+sudo nmcli con delete CobaMQTT
 ~~~
 
 ##### GUI Program at start
