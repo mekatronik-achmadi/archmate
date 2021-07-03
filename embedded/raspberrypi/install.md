@@ -31,6 +31,9 @@ wget http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
 ##### deploy image
 
 ~~~
+mkdir -p rpi-2/
+cd rpi-2/
+
 sudo bsdtar -xpf ../ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
 sudo sync
 
@@ -309,6 +312,8 @@ rm -vf dbase.txt install_pkgs.txt upgrade_pkgs.txt
 ##### login ssh
 
 ~~~
+rm -r ~/.ssh/
+
 ssh alarm@10.124.4.150
 sudo su
 
@@ -319,7 +324,16 @@ exit
 ##### WiFi Connection
 
 ~~~
+sudo nmcli radio wifi on
 
+sudo iwlist wlan0 scan | grep SSID
+
+sudo nmcli --ask dev wifi connect CobaMQTT
+sudo nmcli dev wifi connect CobaMQTT password "cobamqtt"
+
+sudo nmcli connection
+sudo nmcli connection show CobaMQTT
+sudo nmcli connection delete CobaMQTT
 ~~~
 
 ##### GUI Program at start
@@ -327,10 +341,6 @@ exit
 ~~~
 rm ~/.xinitrc
 echo "startx /usr/bin/python /home/alarm/qt5_coba.py" >> ~/.bashrc
-~~~
-
-~~~
-startx /usr/bin/python /home/alarm/qt5_coba.py -- -verbose 6 -logverbose 6 &> ~/xorg.log
 ~~~
 
 ~~~
@@ -363,7 +373,7 @@ dtc -@ -Hepapr -I dts -O dtb -o waveshare35a.dtbo waveshare35a.dts
 ~~~
 
 ~~~
-cp -f waveshare35a.dtbo /boot/overlays/
+cp -f /home/alarm/waveshare35a.dtbo /boot/overlays/
 
 echo "
 dtparam=i2c_arm=on

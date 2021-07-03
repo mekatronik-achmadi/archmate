@@ -26,14 +26,14 @@ sudo mount ${DEVDISK}2 /mnt/root
 
 ~~~
 wget http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-latest.tar.gz
-
-mkdir -p rpi/
-cd rpi/
 ~~~
 
 ##### deploy image
 
 ~~~
+mkdir -p rpi/
+cd rpi/
+
 sudo bsdtar -xpf ../ArchLinuxARM-rpi-latest.tar.gz -C /mnt/root
 sudo sync
 
@@ -145,7 +145,6 @@ sed -i "s#= Optional#= Never#g" /etc/pacman.conf
 
 pacman -Su --noconfirm
 ~~~
-~~~
 
 ##### generate install packages urls (qemu-chroot)
 
@@ -221,6 +220,14 @@ passwd -d alarm
 echo "FONT=ter-112n
 FONT_MAP=8859-2
 " > /etc/vconsole.conf
+~~~
+
+##### enable network manager (qemu-chroot)
+
+~~~
+systemctl disable dhcpd4
+systemctl disable wpa_supplicant
+systemctl enable NetworkManager
 ~~~
 
 ##### enable ssh server (qemu-chroot)
@@ -308,6 +315,8 @@ rm -vf dbase.txt install_pkgs.txt upgrade_pkgs.txt
 ##### login ssh
 
 ~~~
+rm -r ~/.ssh/
+
 ssh alarm@10.124.4.150
 sudo su
 
@@ -315,10 +324,19 @@ exit
 exit
 ~~~
 
-##### WiFi Connection (qemu-chroot)
+##### WiFi Connection
 
 ~~~
+sudo nmcli radio wifi on
 
+sudo iwlist wlan0 scan | grep SSID
+
+sudo nmcli --ask dev wifi connect CobaMQTT
+sudo nmcli dev wifi connect CobaMQTT password "cobamqtt"
+
+sudo nmcli connection
+sudo nmcli connection show CobaMQTT
+sudo nmcli connection delete CobaMQTT
 ~~~
 
 ##### GUI Program at start
@@ -326,10 +344,6 @@ exit
 ~~~
 rm ~/.xinitrc
 echo "startx /usr/bin/python /home/alarm/qt5_coba.py" >> ~/.bashrc
-~~~
-
-~~~
-startx /usr/bin/python /home/alarm/qt5_coba.py -- -verbose 6 -logverbose 6 &> ~/xorg.log
 ~~~
 
 ~~~
@@ -353,7 +367,7 @@ hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
 ##### PiZero Ethernet Gadget  (qemu-chroot)
 
 ~~~
-echo "PiZero as USB-Device not USB-Host"
+# "PiZero as USB-Device not USB-Host"
 
 echo "dtoverlay=dwc2" >> /boot/config.txt
 sed -i "s#rootwait console#rootwait modules-load=dwc2,g_ether console#g" /boot/cmdline.txt
@@ -381,7 +395,6 @@ sudo nmcli con mod "$CONNAME" ipv4.dns "8.8.8.8"
 sudo nmcli con mod "$CONNAME" ipv4.method manual
 sudo nmcli con up "$CONNAME"
 
-#rm -r ~/.ssh/
 ssh alarm@192.168.7.3
 
 mkdir -p sshfs/
@@ -400,7 +413,7 @@ dtc -@ -Hepapr -I dts -O dtb -o waveshare35a.dtbo waveshare35a.dts
 ~~~
 
 ~~~
-cp -f waveshare35a.dtbo /boot/overlays/
+cp -f /home/alarm/waveshare35a.dtbo /boot/overlays/
 
 echo "
 dtparam=i2c_arm=on

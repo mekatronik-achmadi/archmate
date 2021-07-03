@@ -12,9 +12,9 @@ crda wireless_tools usb_modeswitch
 traceroute wavemon bmon nethogs
 mtr iw dhcp dhclient dnsmasq
 
-dtc rsync
 ranger lynx
 moc atool most
+dtc rsync wget
 python lua perl
 fdupes w3m imlib2
 poppler highlight
