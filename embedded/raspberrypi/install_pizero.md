@@ -423,6 +423,7 @@ dtoverlay=waveshare35a:rotate=270,swapxy=1" >> /boot/config.txt
 
 sed -i '$s/$/ fbcon=map:10 fbcon=font:ProFont6x11/' /boot/cmdline.txt
 
+# except Pi-4 without any HDMI out
 sed -i "s#/dev/fb0#/dev/fb1#g" /etc/X11/xorg.conf.d/99-fbturbo.conf
 
 groupadd -fr video
