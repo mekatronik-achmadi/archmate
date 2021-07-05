@@ -136,9 +136,6 @@ cp -vf ../pkg_*.txt /mnt/root/home/alarm/pkglist.txt
 ##### upgrade packages (qemu-chroot)
 
 ~~~
-##### upgrade packages (qemu-chroot)
-
-~~~
 sed -i "s#= Required DatabaseOptional#= Never#g" /etc/pacman.conf
 sed -i "s#= Optional TrustAll#= Never#g" /etc/pacman.conf
 sed -i "s#= Optional#= Never#g" /etc/pacman.conf
@@ -344,14 +341,14 @@ sudo nmcli con delete CobaMQTT
 
 ~~~
 rm ~/.xinitrc
-echo "startx /usr/bin/python /home/alarm/qt5_coba.py" >> ~/.bashrc
+echo "startx /usr/bin/python /home/alarm/gtkweb.py" >> ~/.bashrc
 ~~~
 
 ~~~
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     echo "SSH Login"
 else
-    startx /usr/bin/python /home/alarm/qt5_coba.py
+    startx /usr/bin/python /home/alarm/gtkweb.py
 fi
 ~~~
 
@@ -405,7 +402,7 @@ sshfs alarm@192.168.7.3:/home/alarm/ ./sshfs/
 ##### Waveshare 3.5 LCD (qemu-chroot)
 - https://github.com/waveshare/LCD-show/
 - https://whitedome.com.au/download/Overlays/
-- https://github.com/swkim01/waveshare-dtoverlays/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        n
+- https://github.com/swkim01/waveshare-dtoverlays/
 
 ~~~
 # in actual running rpi unit

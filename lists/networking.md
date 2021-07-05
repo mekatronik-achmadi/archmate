@@ -23,10 +23,6 @@ python-blinker python-simplejson
 ##### install python networking
 python-pbkdf2 python-pycryptodome
 
-##### install webkit/webengine
-qt5-webkit webkit2gtk
-python-pyqtwebengine
-
 ##### install telegram
 telegram-desktop
 

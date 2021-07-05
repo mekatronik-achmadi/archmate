@@ -15,6 +15,9 @@ python-pyqt3d
 python-pyqtgraph
 python-pyqtchart
 
+##### install qt webengine
+qt5-webkit python-pyqtwebengine
+
 --------------------------------------------------------------------------------
 
 ##### install qwt additionals

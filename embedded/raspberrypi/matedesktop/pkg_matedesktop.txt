@@ -35,10 +35,16 @@ lightdm lightdm-gtk-greeter
 onboard dconf-editor
 papirus-icon-theme
 gtk-engine-murrine
-gtk-engines gtk2
-qt5ct ttf-dejavu
+gtk-engines qt5ct
 mate mate-extra
 ttf-liberation
+ttf-dejavu
+
+python-wxpython
+python-gobject
+wxgtk2 wxgtk3
+webkit2gtk
+gtk2 gtk3
 
 alsa-lib alsa-plugins
 alsa-utils alsa-firmware
@@ -53,6 +59,3 @@ git meld
 parcellite
 
 vlc mplayer rhythmbox
-
-qt qt5 python-pyqt5
-python-pyqtgraph

@@ -24,9 +24,15 @@ vim vim-ctrlp vim-nerdtree
 vim-ultisnips vim-nerdcommenter
 vim-tagbar vim-airline vim-surround
 
-openssh bmon git
-
 xorg xorg-apps xorg-drivers
 xorg-xinit xorg-fonts xterm
 xf86-video-fbturbo-git
 xinput_calibrator
+
+python-wxpython
+python-gobject
+wxgtk2 wxgtk3
+webkit2gtk
+gtk2 gtk3
+
+openssh git

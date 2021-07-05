@@ -63,6 +63,7 @@ python-wxpython
 python-gobject
 wxgtk2 wxgtk3
 gtkmm gtkmm3
+webkit2gtk
 
 ##### install themes and icons
 gnome-icon-theme-extras gnome-themes-extra

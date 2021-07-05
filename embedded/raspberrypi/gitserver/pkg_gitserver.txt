@@ -24,6 +24,4 @@ vim vim-ctrlp vim-nerdtree
 vim-ultisnips vim-nerdcommenter
 vim-tagbar vim-airline vim-surround
 
-openssh bmon
-
-git apache perl-cgi
+openssh git apache perl-cgi
