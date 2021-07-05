@@ -394,8 +394,8 @@ gpasswd -a alarm tty
 ##### Waveshare 3.5 Touchscreen (qemu-chroot)
 
 ~~~
-startx /usr/bin/xinput_calibrator | tee calib.log
-less calib.log
+#startx /usr/bin/xinput_calibrator | tee calib.log
+#less calib.log
 
 # invert Y
 echo 'Section "InputClass"
