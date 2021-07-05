@@ -224,6 +224,7 @@ FONT_MAP=8859-2
 ~~~
 systemctl disable dhcpd4
 systemctl disable wpa_supplicant
+systemctl disable systemd-networkd
 systemctl enable NetworkManager
 ~~~
 
@@ -345,10 +346,11 @@ echo "startx /usr/bin/python /home/alarm/gtkweb.py" >> ~/.bashrc
 ~~~
 
 ~~~
+# add to .bashrc
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     echo "SSH Login"
 else
-    startx /usr/bin/python /home/alarm/gtkweb.py
+    startx /usr/bin/python /home/alarm/gtkweb.py &> /dev/null
 fi
 ~~~
 
