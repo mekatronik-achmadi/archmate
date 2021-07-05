@@ -25,16 +25,16 @@ sudo mount ${DEVDISK}2 /mnt/root
 ##### download image
 
 ~~~
-wget http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-latest.tar.gz
+wget http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz
 ~~~
 
 ##### deploy image
 
 ~~~
-mkdir -p rpi/
-cd rpi/
+mkdir -p armv7h/
+cd armv7h/
 
-sudo bsdtar -xpf ../ArchLinuxARM-rpi-latest.tar.gz -C /mnt/root
+sudo bsdtar -xpf ../ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
 sudo sync
 
 sudo mv -vf /mnt/root/boot/* /mnt/boot/
@@ -89,16 +89,16 @@ pacman-key --populate archlinuxarm
 ~~~
 mkdir -p databases/;cd databases/
 echo "
-http://mirror.archlinuxarm.org/armv6h/core/core.db
-http://mirror.archlinuxarm.org/armv6h/core/core.files
-http://mirror.archlinuxarm.org/armv6h/extra/extra.db
-http://mirror.archlinuxarm.org/armv6h/extra/extra.files
-http://mirror.archlinuxarm.org/armv6h/community/community.db
-http://mirror.archlinuxarm.org/armv6h/community/community.files
-http://mirror.archlinuxarm.org/armv6h/alarm/alarm.db
-http://mirror.archlinuxarm.org/armv6h/alarm/alarm.files
-http://mirror.archlinuxarm.org/armv6h/aur/aur.db
-http://mirror.archlinuxarm.org/armv6h/aur/aur.files
+http://mirror.archlinuxarm.org/armv7h/core/core.db
+http://mirror.archlinuxarm.org/armv7h/core/core.files
+http://mirror.archlinuxarm.org/armv7h/extra/extra.db
+http://mirror.archlinuxarm.org/armv7h/extra/extra.files
+http://mirror.archlinuxarm.org/armv7h/community/community.db
+http://mirror.archlinuxarm.org/armv7h/community/community.files
+http://mirror.archlinuxarm.org/armv7h/alarm/alarm.db
+http://mirror.archlinuxarm.org/armv7h/alarm/alarm.files
+http://mirror.archlinuxarm.org/armv7h/aur/aur.db
+http://mirror.archlinuxarm.org/armv7h/aur/aur.files
 " > ../dbase.txt
 wget -i ../dbase.txt
 cd ../
@@ -360,43 +360,6 @@ max_usb_current=1
 hdmi_group=2
 hdmi_mode=87
 hdmi_cvt 1024 600 60 6 0 0 0" >> /boot/config.txt
-~~~
-
-##### PiZero Ethernet Gadget  (qemu-chroot)
-
-~~~
-# "PiZero as USB-Device not USB-Host"
-
-echo "dtoverlay=dwc2" >> /boot/config.txt
-sed -i "s#rootwait console#rootwait modules-load=dwc2,g_ether console#g" /boot/cmdline.txt
-
-echo "
-Description='pizero g_ether gadget'
-Interface=usb0
-Connection=ethernet
-IP=static
-SkipNoCarrier=yes
-Address=('192.168.7.3/24')
-Gateway='192.168.7.150'
-DNS=('8.8.8.8')" > /etc/netctl/usbpizero
-netctl enable usbpizero
-~~~
-
-~~~
-# from other computer/USB-Host
-# connect usb g_ether to computer first
-export CONNAME="Wired connection 2"
-sudo nmcli con | grep "$CONNAME"
-sudo nmcli con mod "$CONNAME" ipv4.addresses 192.168.7.150/24
-sudo nmcli con mod "$CONNAME" ipv4.gateway 192.168.7.150
-sudo nmcli con mod "$CONNAME" ipv4.dns "8.8.8.8"
-sudo nmcli con mod "$CONNAME" ipv4.method manual
-sudo nmcli con up "$CONNAME"
-
-ssh alarm@192.168.7.3
-
-mkdir -p sshfs/
-sshfs alarm@192.168.7.3:/home/alarm/ ./sshfs/
 ~~~
 
 ##### Waveshare 3.5 LCD (qemu-chroot)
