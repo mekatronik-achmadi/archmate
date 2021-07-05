@@ -1,0 +1,41 @@
+base base-devel terminus-font
+bash-completion htop tmux
+nano-syntax-highlighting
+
+networkmanager modemmanager
+mobile-broadband-provider-info iftop
+bind-tools netctl ppp wpa_supplicant
+tcpdump fping gnu-netcat inetutils
+net-tools bridge-utils iwd ethtool
+crda wireless_tools usb_modeswitch
+traceroute wavemon bmon nethogs
+mtr iw dhcp dhclient dnsmasq
+
+ranger lynx
+moc atool most
+dtc rsync wget
+python lua perl
+fdupes w3m imlib2
+poppler highlight
+mediainfo libcaca
+sysstat lm_sensors
+
+vim vim-ctrlp vim-nerdtree
+vim-ultisnips vim-nerdcommenter
+vim-tagbar vim-airline vim-surround
+
+xorg xorg-apps xorg-drivers
+xorg-xinit xorg-fonts xterm
+xf86-video-fbturbo-git
+xinput_calibrator
+
+python-wxpython
+python-gobject
+wxgtk2 wxgtk3
+webkit2gtk
+gtk2 gtk3
+
+openssh git
+
+python-pyqt5 python-pyqtgraph
+python-pbkdf2 python-pycryptodome
