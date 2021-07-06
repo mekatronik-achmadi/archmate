@@ -316,9 +316,10 @@ rm -vf dbase.txt install_pkgs.txt upgrade_pkgs.txt
 rm -r ~/.ssh/
 
 ssh alarm@10.124.4.150
-sudo su
 
-exit
+hwclock --show --verbose;date
+sudo date -s "9 JUL 2021 07:00:00"
+
 exit
 ~~~
 
@@ -407,4 +408,38 @@ echo 'Section "InputClass"
     Driver              "libinput"
     Option "TransformationMatrix" "1 0 0 0 -1 1 0 0 1"
 EndSection' > /etc/X11/xorg.conf.d/99-calibration.conf
+~~~
+
+##### Enable Audio BlueTooth (qemu-chroot)
+~~~
+pulseaudio-alsa
+alsa-lib alsa-plugins
+alsa-utils alsa-firmware
+
+python-docutils
+bluez bluez-utils
+pulseaudio-bluetooth
+~~~
+
+- https://aur.archlinux.org/packages/bluez-utils-compat/
+- https://aur.archlinux.org/packages/pi-bluetooth/
+
+~~~
+systemctl enable bluetooth
+systemctl enable brcm43438
+
+sed -i "s#console=ttyAMA0,115200 ##g" /boot/cmdline.txt
+echo "dtparam=krnbt=on" >> /boot/config.txt
+echo "enable_uart=0" >> /boot/config.txt
+
+BT_AUDIO='btc_mode=1\nbtc_params8=0x4e20\nbtc_params1=0x7530'
+echo -e $BT_AUDIO >> /usr/lib/firmware/updates/brcm/brcmfmac43430-sdio.txt
+echo -e $BT_AUDIO >> /usr/lib/firmware/updates/brcm/brcmfmac43455-sdio.txt
+~~~
+
+~~~
+# disable wifi to improve
+# in actual running RPi
+sudo nmcli radio wifi off
+sudo reboot
 ~~~
