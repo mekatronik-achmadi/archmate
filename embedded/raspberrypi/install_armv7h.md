@@ -355,6 +355,16 @@ else
 fi
 ~~~
 
+~~~
+# debug xorg app
+# add to .bashrc
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    echo "SSH Login"
+else
+    startx /usr/bin/python /home/alarm/gtkweb.py -- -logverbose 6 &> ~/xorg.log
+fi
+~~~
+
 ##### HDMI LCD 1024x600 Waveshare (qemu-chroot)
 
 ~~~
@@ -411,6 +421,7 @@ EndSection' > /etc/X11/xorg.conf.d/99-calibration.conf
 ~~~
 
 ##### Enable Audio BlueTooth (qemu-chroot)
+
 ~~~
 pulseaudio-alsa
 alsa-lib alsa-plugins

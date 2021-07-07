@@ -55,7 +55,7 @@ icon_modify() {
 
 cursor_modify() {
     echo "[Icon Theme]
-    Inherits=mate-black
+    Inherits=mate
     " > /usr/share/icons/default/index.theme
 }
 

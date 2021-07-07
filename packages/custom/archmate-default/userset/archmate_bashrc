@@ -88,4 +88,4 @@ export HISTCONTROL=ignorespace:ignoredups:erasedups
 alias sudo='sudo -E'
 
 # alternative bash color prompt for light theme
-PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
+#PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'

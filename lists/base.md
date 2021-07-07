@@ -49,6 +49,7 @@ ttf-liberation onboard
 mypaint shotwell xchm
 parcellite meld ghex
 redshift python-xdg
+gnome-disk-utility
 xdg-user-dirs-gtk
 ttf-inconsolata
 qt5ct xdotool
@@ -126,6 +127,7 @@ python-distutils-extra
 
 #### install internet tools
 firefox thunderbird
+firefox-dark-reader
 firefox-ublock-origin
 qbittorrent filezilla
 uget aria2 wkhtmltopdf
