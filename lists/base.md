@@ -23,6 +23,7 @@ posix-xsi posix-c-development
 ##### install cli tools
 ranger lynx
 moc atool most
+arch-wiki-lite
 python lua perl
 fdupes w3m imlib2
 poppler highlight
