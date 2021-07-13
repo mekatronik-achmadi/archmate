@@ -34,7 +34,8 @@ pactl set-sink-volume @DEFAULT_SINK@ 100%
 
 ~~~
 sudo pacman -S cython python-setuptools python-wheel python-pip python-distutils-extra
-sudo pacman -S sox python-pyqt5 python-numpy python-scipy python-pandas python-matplotlib
+sudo pacman -S sox python-scipy python-pandas python-matplotlib
+sudo pacman -S python-pyqt5 python-numpy
 ~~~
 
 ##### bluetooth audio (failed)
@@ -50,15 +51,4 @@ echo "enable_uart=0" >> /boot/config.txt
 BT_AUDIO='btc_mode=1\nbtc_params8=0x4e20\nbtc_params1=0x7530'
 echo -e $BT_AUDIO >> /usr/lib/firmware/updates/brcm/brcmfmac43430-sdio.txt
 echo -e $BT_AUDIO >> /usr/lib/firmware/updates/brcm/brcmfmac43455-sdio.txt
-~~~
-
-##### Screen no blank time
-
-~~~
-echo 'Section "ServerFlags"
-    Option "StandbyTime" "0"
-    Option "SuspendTime" "0"
-    Option "OffTime" "0"
-    Option "BlankTime" "0"
-EndSection' >  /etc/X11/xorg.conf.d/noblank.conf
 ~~~

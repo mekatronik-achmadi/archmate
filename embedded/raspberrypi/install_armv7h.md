@@ -365,6 +365,17 @@ else
 fi
 ~~~
 
+##### Xorg no blank
+
+~~~
+echo 'Section "ServerFlags"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime" "0"
+    Option "BlankTime" "0"
+EndSection' >  /etc/X11/xorg.conf.d/noblank.conf
+~~~
+
 ##### HDMI LCD 1024x600 Waveshare (qemu-chroot)
 
 ~~~
