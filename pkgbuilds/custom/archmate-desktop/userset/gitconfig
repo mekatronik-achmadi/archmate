@@ -1,0 +1,34 @@
+[gui]
+	spellingdictionary = none
+	editor = pluma
+	fontui = -family \"Liberation Sans\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"LiterationMono Nerd Font\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+
+[guitool "Pull"]
+	cmd = git pull
+
+[cola]
+	spellcheck = false
+	icontheme = light
+	startupmode = list
+	fontdiff = LiterationMono Nerd Font,8,-1,5,50,0,0,0,0,0
+
+[diff]
+	tool = meld
+
+[merge]
+	tool = meld
+
+[color]
+	ui = auto
+
+[credential]
+	helper = cache --timeout=3600
+
+[advice]
+	addIgnoredFile = false
+
+[user]
+	name =
+	email =
+

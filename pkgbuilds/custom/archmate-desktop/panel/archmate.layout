@@ -1,0 +1,48 @@
+[Toplevel bottom]
+orientation=bottom
+expand=true
+size=22
+
+
+
+[Object brisk-menu]
+applet-iid=BriskMenuFactory::BriskMenu
+locked=true
+toplevel-id=bottom
+position=0
+object-type=applet
+panel-right-stick=false
+
+[Object windowlistapplet]
+applet-iid=WnckletFactory::WindowListApplet
+locked=true
+toplevel-id=bottom
+position=20
+object-type=applet
+panel-right-stick=false
+
+
+
+[Object notificationarea]
+applet-iid=NotificationAreaAppletFactory::NotificationArea
+locked=true
+toplevel-id=bottom
+position=20
+object-type=applet
+panel-right-stick=true
+
+[Object brightnessapplet]
+applet-iid=BrightnessAppletFactory::BrightnessApplet
+locked=true
+toplevel-id=bottom
+position=10
+object-type=applet
+panel-right-stick=true
+
+[Object clockapplet]
+applet-iid=ClockAppletFactory::ClockApplet
+locked=true
+toplevel-id=bottom
+position=0
+object-type=applet
+panel-right-stick=true

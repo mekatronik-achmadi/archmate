@@ -1,0 +1,116 @@
+update_mime_cache() {
+    echo 'update mime database'
+
+    update-mime-database /usr/share/mime/
+}
+
+update_dconf() {
+    echo 'compile glib schemas'
+
+    glib-compile-schemas /usr/share/glib-2.0/schemas/
+}
+
+remove_autostart() {
+    echo 'remove some autostart'
+
+    rm -f /etc/xdg/autostart/mate-screensaver.desktop
+    rm -f /etc/xdg/autostart/onboard-autostart.desktop
+}
+
+panel_config() {
+    echo 'modify panel layout'
+
+    ln -sf archmate.layout /usr/share/mate-panel/layouts/manjaro.layout
+    ln -sf archdefault.layout /usr/share/mate-panel/layouts/default.layout
+    rm -f /usr/share/mate-panel/layouts/fedora.layout
+    rm -f /usr/share/mate-panel/layouts/linuxmint.layout
+    rm -f /usr/share/mate-panel/layouts/redmond.layout
+    rm -f /usr/share/mate-panel/layouts/opensuse.layout
+}
+
+vim_settings() {
+    echo 'vim settings'
+
+    mkdir -p /etc
+    echo '" /usr/share/vim/vimfiles/archlinux.vim' > /etc/vimrc
+    echo 'runtime! archlinux.vim
+autocmd BufWritePre * %s/\s\+$//e
+filetype plugin on
+filetype indent on
+filetype plugin indent on
+set expandtab ts=4 sw=4 ai
+set conceallevel=0
+set encoding=utf-8
+set termguicolors
+set ic is hls
+set number
+set wrap!
+set mouse=a
+let g:tagbar_width=20
+let g:NERDTreeWinSize=20
+syntax on
+if has("gui_running")
+  colorscheme shine
+  set guifont=LiterationMono\ Nerd\ Font\ Mono\ 8
+endif' >> /etc/vimrc
+}
+
+arch_profile() {
+    echo 'default profile'
+
+    echo 'export PATH=$PATH:~/.local/bin
+export QT_QPA_PLATFORMTHEME=qt5ct
+export VISUAL=vim
+export EDITOR=vim
+export PAGER=most
+export VIEWER=most
+export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
+export FT2_SUBPIXEL_HINTING=2
+export GTK_CSD=0
+export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0:$LD_PRELOAD
+' > /etc/profile.d/arch-profile.sh
+}
+
+skel_config() {
+    echo 'modify /etc/skel/ contents'
+
+    cp -f /usr/share/archmate-default/archmate_bashrc /etc/skel/.bashrc
+    cp -f /usr/share/archmate-default/gitconfig /etc/skel/.gitconfig
+
+    mkdir -p /etc/skel/.config
+    cp -f /usr/share/archmate-default/mimeapps.list /etc/skel/.config
+    cp -f /usr/share/archmate-default/redshift.conf /etc/skel/.config
+
+    mkdir -p /etc/skel/.config/qt5ct/
+    cp -f /usr/share/archmate-default/qt5ct.conf /etc/skel/.config/qt5ct/
+
+    mkdir -p /etc/skel/.config/qt6ct/
+    cp -f /usr/share/archmate-default/qt6ct.conf /etc/skel/.config/qt6ct/
+
+    mkdir -p /etc/skel/.config/geany/
+    cp -f /usr/share/archmate-default/geany.conf /etc/skel/.config/geany/
+}
+
+updating() {
+    update_mime_cache
+    update_dconf
+    remove_autostart
+    panel_config
+    vim_settings
+    arch_profile
+    skel_config
+}
+
+#=====================================================================================
+
+after_install() {
+	updating
+}
+
+post_install() {
+	after_install
+}
+
+post_upgrade() {
+	after_install
+}
