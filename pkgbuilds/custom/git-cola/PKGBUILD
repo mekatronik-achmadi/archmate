@@ -1,0 +1,33 @@
+pkgname=git-cola
+pkgver=3.12.0
+pkgrel=1
+pkgdesc="The highly caffeinated Git GUI"
+arch=('any')
+url="https://git-cola.github.io"
+license=('GPL2')
+depends=('git' 'hicolor-icon-theme' 'python-qtpy')
+makedepends=('docbook-xsl' 'rsync')
+optdepends=(
+    'python-pygments: syntax highlighting'
+    'python-send2trash: enables "Send to Trash" functionality.'
+    'tcl: to use the built-in ssh-askpass handler')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/git-cola/git-cola/archive/v$pkgver.tar.gz")
+sha256sums=('ec1167ea9a472214bf18f5537d96e137c724f3d28a85b3642f07dba35f04b24a')
+
+build() {
+  cd "$pkgname-$pkgver"
+  export USE_ENV_PYTHON=1
+  export GIT_COLA_NO_PRIVATE_LIBS=1
+  export GIT_COLA_NO_VENDOR_LIBS=1
+  export SETUPTOOLS_SCM_PRETEND_VERSION=${pkgver}
+  make prefix=/usr all
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  export USE_ENV_PYTHON=1
+  export GIT_COLA_NO_PRIVATE_LIBS=1
+  export GIT_COLA_NO_VENDOR_LIBS=1
+  export SETUPTOOLS_SCM_PRETEND_VERSION=${pkgver}
+  make prefix=/usr DESTDIR="$pkgdir" install
+}
