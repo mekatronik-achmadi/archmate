@@ -1,0 +1,194 @@
+linux linux-headers linux-firmware
+base base-devel multilib-devel
+
+bash-completion mkinitcpio
+squashfs-tools rsync dkms
+most highlight mc fdupes
+neofetch lsb-release dtc
+nano dialog bc tmux tree
+curl wget openssh sshfs
+pacman-contrib mlocate
+virtualbox-guest-utils
+intel-ucode amd-ucode
+arch-install-scripts
+mkinitcpio-archiso
+cdrtools syslinux
+libxcrypt-compat
+zsh-completions
+pv archinstall
+terminus-font
+
+posix posix-software-development
+posix-xsi posix-c-development
+
+gvim vim-nerdtree vim-surround
+vim-nerdcommenter vim-gitgutter
+vim-airline vim-tagbar vim-tabular
+
+xorg xorg-apps xorg-drivers
+xorg-xinit xorg-fonts
+xsel xclip xterm
+xorg-fonts-misc
+xorg-xmessage
+
+mate mate-extra
+libappindicator-gtk3
+mate-common gnome-common
+lightdm lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+gnome-icon-theme-extras gnome-themes-extra
+gtk-update-icon-cache icon-naming-utils
+arc-solid-gtk-theme papirus-icon-theme
+libcanberra sound-theme-freedesktop
+gtk-engines gtk-engine-murrine
+
+gtk3 wxgtk3 glade
+gtk2 gtkmm gtkmm3
+python-wxpython
+python-gobject
+
+tk ttf-liberation onboard
+ttf-liberation-mono-nerd
+ttf-droid gnome-keyring
+dconf-editor trash-cli
+xdg-desktop-portal-gtk
+fontforge ttf-dejavu
+redshift python-xdg
+archlinux-wallpaper
+xdg-desktop-portal
+xdg-user-dirs-gtk
+
+xdotool shotwell xchm
+geany geany-plugins
+qt5-base qt6-base
+qt5ct qt6ct scrot
+parcellite meld
+
+openbox obconf tint2 feh bashrun
+light volumeicon xarchiver xpdf
+
+networkmanager nm-connection-editor
+network-manager-applet modemmanager
+mobile-broadband-provider-info iftop
+bind-tools netctl ppp wpa_supplicant
+net-tools wavemon bmon nethogs gping
+crda iw iwd wireless_tools tigervnc
+bridge-utils ethtool usb_modeswitch
+traceroute dhcp dnsmasq nss-mdns
+openresolv dhclient dhcpcd mtr
+gnu-netcat nmap termshark
+tcpdump fping inetutils
+
+android-file-transfer scrcpy
+android-udev python-pyudev
+
+pulseaudio portaudio
+jack2 pulseaudio-jack
+alsa-utils alsa-firmware
+alsa-ucm-conf sof-firmware
+alsa-oss alsa-lib alsa-plugins
+pulseaudio-equalizer pavucontrol
+pulseaudio-alsa pulseaudio-bluetooth
+
+gvfs gvfs-gphoto2 gvfs-afc
+gvfs-mtp gvfs-smb gvfs-nfs
+
+tar atool xz libarchive unrar unarj
+lhasa rpmextract lxsplit unrar-free
+bzip2 gzip lz4 p7zip zip unzip
+lrzip lzip lzop zstd cpio
+
+autoconf meson ninja
+vala autogen automake
+cblas openblas lapack
+gobject-introspection
+git tig bear subversion
+pkgconf gendesk help2man
+mercurial breezy cvs cloc
+cmake extra-cmake-modules
+dos2unix doxygen graphviz
+
+python-pkgconfig python-wheel
+python-build python-installer
+python-pipenv python-virtualenv
+python-pip python-distutils-extra
+cython0 pybind11 python-setuptools
+
+firefox filezilla uget aria2
+vimb qbittorrent-nox qbittorrent
+
+blueman bluez
+bluez-utils
+
+vlc ffmpegthumbnailer
+gstreamer gst-libav
+gst-plugins-base
+gst-plugins-good
+gst-plugins-ugly
+gst-plugins-bad
+gstreamer-vaapi
+guvcview ffmpeg
+
+intel-media-driver
+libva-intel-driver
+libva-vdpau-driver
+libva-mesa-driver
+libva libva-utils
+libvdpau-va-gl
+vdpauinfo
+
+gnome-multi-writer
+fuseiso mdf2iso
+brasero bchunk
+squashfuse
+dvdauthor
+vcdimager
+
+cups cups-pdf
+ghostscript gsfonts
+system-config-printer
+gutenprint foomatic-db-engine
+foomatic-db foomatic-db-nonfree
+
+sane sane-airscan xsane
+ipp-usb simple-scan
+
+lm_sensors xsensors hddtemp
+lsof nmon sysstat procps-ng
+usbutils dmidecode hwdetect
+hdparm sdparm smartmontools
+htop ltrace strace mesa-demos
+linux-tools arandr read-edid
+hwloc hwinfo lshw mesa-utils
+ccze inxi atop libstatgrab
+
+ntfs-3g exfat-utils
+gparted dosfstools
+gpart e2fsprogs
+gptfdisk mtools
+fuse2 fuse3
+
+grub os-prober
+efibootmgr
+edk2-shell
+edk2-ovmf
+
+qt5gtk2 qt6gtk2
+brisk-menu gtk3-nocsd-git
+mate-tweak mate-zenity
+
+downgrade fake-hwclock
+git-cola hardinfo-git
+
+vim-plug-git
+vi-vim-symlink
+vim-devicons-git
+
+archmate-font
+archmate-theme
+archmate-openbox
+archmate-default
+archmate-archiso
+archmate-install
+
