@@ -10,13 +10,13 @@ curl wget openssh sshfs
 pacman-contrib mlocate
 virtualbox-guest-utils
 intel-ucode amd-ucode
+git tig terminus-font
 arch-install-scripts
 mkinitcpio-archiso
 cdrtools syslinux
 libxcrypt-compat
 zsh-completions
 pv archinstall
-terminus-font
 
 posix posix-software-development
 posix-xsi posix-c-development
@@ -33,7 +33,6 @@ xorg-xmessage
 
 mate mate-extra
 libappindicator-gtk3
-mate-common gnome-common
 lightdm lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 
@@ -99,15 +98,16 @@ lhasa rpmextract lxsplit unrar-free
 bzip2 gzip lz4 p7zip zip unzip
 lrzip lzip lzop zstd cpio
 
-autoconf meson ninja
-vala autogen automake
+subversion automake
+mk-configure autogen
 cblas openblas lapack
 gobject-introspection
-git tig bear subversion
+mate-common gnome-common
 pkgconf gendesk help2man
 mercurial breezy cvs cloc
 cmake extra-cmake-modules
 dos2unix doxygen graphviz
+bear autoconf meson ninja
 
 python-pkgconfig python-wheel
 python-build python-installer
@@ -182,13 +182,12 @@ downgrade fake-hwclock
 git-cola hardinfo-git
 
 vim-plug-git
-vi-vim-symlink
 vim-devicons-git
 
 archmate-font
 archmate-theme
 archmate-openbox
-archmate-default
 archmate-archiso
+archmate-desktop
 archmate-install
 

@@ -18,13 +18,13 @@ curl wget openssh sshfs
 pacman-contrib mlocate
 virtualbox-guest-utils
 intel-ucode amd-ucode
+git tig terminus-font
 arch-install-scripts
 mkinitcpio-archiso
 cdrtools syslinux
 libxcrypt-compat
 zsh-completions
 pv archinstall
-terminus-font
 
 ### install posix meta
 
@@ -49,7 +49,6 @@ xorg-xmessage
 
 mate mate-extra
 libappindicator-gtk3
-mate-common gnome-common
 lightdm lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 
@@ -137,15 +136,16 @@ lrzip lzip lzop zstd cpio
 
 ### install build tools
 
-autoconf meson ninja
-vala autogen automake
+subversion automake
+mk-configure autogen
 cblas openblas lapack
 gobject-introspection
-git tig bear subversion
+mate-common gnome-common
 pkgconf gendesk help2man
 mercurial breezy cvs cloc
 cmake extra-cmake-modules
 dos2unix doxygen graphviz
+bear autoconf meson ninja
 
 ### install python installer
 
@@ -257,7 +257,6 @@ edk2-ovmf
 ### install vim additionals
 
 - vim-plug-git: https://aur.archlinux.org/packages/vim-plug-git/
-- vi-vim-symlink: https://aur.archlinux.org/packages/vi-vim-symlink/
 - vim-devicons-git: https://aur.archlinux.org/packages/vim-devicons-git/
 
 ### install archmate
@@ -265,8 +264,8 @@ edk2-ovmf
 - archmate-font: https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/custom/archmate-font/
 - archmate-theme: https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/custom/archmate-theme/
 - archmate-openbox: https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/custom/archmate-openbox/
-- archmate-default: https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/custom/archmate-default/
 - archmate-archiso: https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/custom/archmate-archiso/
+- archmate-desktop: https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/custom/archmate-desktop/
 - archmate-install: https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/custom/archmate-install/
 
 --------------------------------------------------------------------------------
