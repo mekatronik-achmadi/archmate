@@ -1,0 +1,43 @@
+[org.gnome.desktop.interface]
+document-font-name='Liberation Sans 8'
+font-name='Liberation Sans 8'
+monospace-font-name='LiterationMono Nerd Font 8'
+
+[org.gnome.desktop.wm.preferences]
+titlebar-font='Liberation Sans Bold 8'
+
+[org.gnome.Charmap]
+font='Liberation Sans 8'
+
+[org.gnome.meld]
+custom-font='LiterationMono Nerd Font 8'
+
+[org.mate.caja.desktop]
+font='Liberation Sans 8'
+
+[org.mate.dictionary]
+print-font='Liberation Sans 8'
+
+[org.mate.interface]
+font-name='Liberation Sans 8'
+document-font-name='Liberation Sans 8'
+monospace-font-name='LiterationMono Nerd Font 8'
+
+[org.mate.Marco.general]
+titlebar-font='Liberation Sans Bold 8'
+
+[org.mate.pluma]
+editor-font='LiterationMono Nerd Font 8'
+print-font-body-pango='LiterationMono Nerd Font 8'
+print-font-header-pango='Liberation Sans 8'
+print-font-numbers-pango='Liberation Sans 8'
+
+[org.mate.peripherals-keyboard-xkb.indicator]
+font-family='Liberation Sans 8'
+
+[org.mate.font-rendering]
+antialiasing = 'rgba'
+rgba-order = 'rgb'
+hinting = 'slight'
+dpi = 96.0
+
