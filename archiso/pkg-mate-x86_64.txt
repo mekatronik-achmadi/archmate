@@ -65,7 +65,7 @@ qt5-base qt6-base
 qt5ct qt6ct scrot
 parcellite meld
 
-openbox obconf tint2 feh bashrun
+openbox obconf trayer feh bashrun
 light volumeicon xarchiver xpdf
 
 networkmanager nm-connection-editor

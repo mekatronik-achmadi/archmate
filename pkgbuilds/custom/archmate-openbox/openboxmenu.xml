@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<!-- ########################## Program Menu ########################## -->
+
+<menu id="programs" label="Programs">
+  <item label="Firefox" icon="/usr/share/icons/Papirus/32x32/apps/firefox.svg">
+    <action name="Execute"><command>firefox</command></action>
+  </item>
+  <item label="Geany" icon="/usr/share/icons/Papirus/32x32/apps/geany.svg">
+    <action name="Execute"><command>geany</command></action>
+  </item>
+  <item label="GVim" icon="/usr/share/icons/Papirus/32x32/apps/gvim.svg">
+    <action name="Execute"><command>gvim</command></action>
+  </item>
+  <item label="MC FileMan" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
+    <action name="Execute"><command>xterm -e mc --nocolor</command></action>
+  </item>
+  <item label="VimBrowser" icon=" /usr/share/icons/Papirus/32x32/apps/web-browser.svg">
+    <action name="Execute"><command>vimb</command></action>
+  </item>
+  <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
+    <action name="Execute"><command>onboard</command></action>
+  </item>
+  <item label="TaskManager" icon="/usr/share/icons/Papirus/32x32/apps/htop.svg">
+    <action name="Execute"><command>xterm -e htop -C</command></action>
+  </item>
+  <item label="XTerminal" icon="/usr/share/icons/Papirus/32x32/apps/terminal.svg">
+    <action name="Execute"><command>xterm</command></action>
+  </item>
+  <item label="XArchiver" icon="/usr/share/icons/Papirus/32x32/apps/xarchiver.svg">
+    <action name="Execute"><command>xarchiver</command></action>
+  </item>
+  <item label="XPDF" icon="/usr/share/icons/Papirus/32x32/apps/xpdf.svg">
+    <action name="Execute"><command>xpdf</command></action>
+  </item>
+</menu>
+
+<!-- ########################## Screenshot Menu ########################## -->
+
+<menu id="screenshot" label="Screenshot">
+  <item label="Desktop" icon="/usr/share/icons/Papirus/24x24/places/user-desktop.svg">
+    <action name="Execute"><execute>
+      scrot -z 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+    </execute></action>
+  </item>
+  <item label="Desktop (5s)" icon="/usr/share/icons/Papirus/24x24/places/user-desktop.svg">
+    <action name="Execute"><execute>
+      scrot -z -d 5 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+    </execute></action>
+  </item>
+  <item label="Selection" icon="/usr/share/icons/Papirus/24x24/actions/select-rectangular.svg">
+    <action name="Execute"><execute>
+      scrot -z -s 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+    </execute></action>
+  </item>
+  <item label="Window" icon="/usr/share/icons/Papirus/24x24/actions/window.svg">
+    <action name="Execute"><execute>
+      scrot -z -d 1 -u 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+    </execute></action>
+  </item>
+  <item label="Window (5s)" icon="/usr/share/icons/Papirus/24x24/actions/window.svg">
+    <action name="Execute"><execute>
+      scrot -z -d 5 -u 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+    </execute></action>
+  </item>
+</menu>
+
+<!-- ########################## Brightness Menu ########################## -->
+
+<menu id="brightness" label="Brightness">
+  <item label="35%" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+    <action name="Execute"><command>light -S 35</command></action>
+  </item>
+  <item label="25%" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+    <action name="Execute"><command>light -S 25</command></action>
+  </item>
+  <item label="15%" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+    <action name="Execute"><command>light -S 15</command></action>
+  </item>
+  <item label="5%" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+    <action name="Execute"><command>light -S 5</command></action>
+  </item>
+</menu>
+
+<!-- ####################### Background Menu ####################### -->
+
+<menu id="background" label="Background">
+  <item label="Choose" icon="/usr/share/icons/ePapirus/24x24/actions/gtk-edit.svg">
+    <action name="Execute"><command>xterm -e vim /usr/share/openbox/fehbg</command></action>
+  </item>
+  <item label="Redraw" icon="/usr/share/icons/ePapirus/24x24/actions/reload.svg">
+    <action name="Execute"><command>bash /usr/share/openbox/fehbg</command></action>
+  </item>
+</menu>
+
+<!-- #################### Configuration Menu ##################### -->
+
+<menu id="configuration" label="Configuration">
+  <menu id="background" icon="/usr/share/icons/Papirus/32x32/apps/background.svg"/>
+  <menu id="brightness" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg"/>
+  <item label="Display" icon="/usr/share/icons/Papirus/32x32/apps/preferences-desktop-display.svg">
+    <action name="Execute"><command>arandr</command></action>
+  </item>
+  <item label="Sound" icon="/usr/share/icons/Papirus/32x32/apps/multimedia-volume-control.svg">
+    <action name="Execute"><command>pavucontrol</command></action>
+  </item>
+  <item label="OBConf" icon="/usr/share/icons/Papirus/32x32/apps/obconf.svg">
+    <action name="Execute"><command>obconf</command></action>
+  </item>
+</menu>
+
+<!-- ####################### Main Menu List ####################### -->
+
+<menu id="root-menu" label="Main Menu">
+  <separator label="Main Menu" />
+  <item label="Run a Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
+    <action name="Execute"><command>bashrun</command></action>
+  </item>
+  <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
+  <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
+  <menu id="configuration" icon="/usr/share/icons/Papirus/32x32/apps/applications-utilities.svg"/>
+  <menu id="client-list-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
+
+  <separator label="Exit" />
+  <item label="Logout" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-logout.svg">
+    <action name="Exit"><prompt>yes</prompt></action>
+  </item>
+  <item label="Suspend" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-suspend.svg">
+      <action name="Execute"><command>systemctl suspend</command><prompt>Suspend now?</prompt></action>
+  </item>
+  <item label="Reboot" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-reboot.svg">
+    <action name="Execute"><command>systemctl reboot</command><prompt>Reboot now?</prompt></action>
+  </item>
+  <item label="Shutdown" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-shutdown.svg">
+    <action name="Execute"><command>systemctl poweroff</command><prompt>Poweroff now?</prompt></action>
+  </item>
+</menu>
+
+</openbox_menu>

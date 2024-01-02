@@ -1,0 +1,26 @@
+openbox_symlink() {
+    ln -sf /usr/share/openbox/rc.xml /etc/xdg/openbox/rc.xml
+    ln -sf /usr/share/openbox/menu.xml /etc/xdg/openbox/menu.xml
+    ln -sf /usr/share/openbox/autostart /etc/xdg/openbox/autostart
+}
+
+bashrun_theme() {
+    sed -i 's#BGCOLOR=black#BGCOLOR=white#g' /usr/bin/bashrun
+    sed -i 's#FGCOLOR=grey#FGCOLOR=black#g' /usr/bin/bashrun
+}
+
+editable_fehbg() {
+    chmod a+w /usr/share/openbox/fehbg
+}
+
+post_install() {
+    openbox_symlink
+    editable_fehbg
+    bashrun_theme
+}
+
+post_upgrade() {
+    openbox_symlink
+    editable_fehbg
+    bashrun_theme
+}
