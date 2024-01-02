@@ -1,0 +1,30 @@
+pkgname=archmate-install
+pkgver=0.1
+pkgrel=1
+pkgdesc="Deploy Archiso to disk using simple GUI"
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archmate/"
+license=('GPL')
+depends=('squashfs-tools' 'efibootmgr' 'gparted' 'util-linux' 'sudo'
+        'grub' 'sed' 'arch-install-scripts' 'rsync' 'python-wxpython')
+options=('!makeflags')
+source=(
+    'help.html'
+	'archmate_gui.py'
+	'archmate_install.py'
+	'archmate_install.svg'
+	'archmateinstall.desktop')
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+package() {
+	cd ../
+
+	install -d $pkgdir/usr/share/archmate-install/
+	install -m 644 ./help.html $pkgdir/usr/share/archmate-install/
+	install -m 644 ./archmate_gui.py $pkgdir/usr/share/archmate-install/
+	install -m 644 ./archmate_install.py $pkgdir/usr/share/archmate-install/
+	install -m 644 ./archmate_install.svg $pkgdir/usr/share/archmate-install/
+
+	install -d $pkgdir/usr/share/applications/
+	install -m 755 ./archmateinstall.desktop $pkgdir/usr/share/applications/
+}

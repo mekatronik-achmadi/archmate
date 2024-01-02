@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Standard-Dark
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Arc-Dark-solid
+MetacityTheme=Arc-Dark-solid
+IconTheme=Papirus-Dark
+CursorTheme=mate-black

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Standard-Faenza
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Menta
+MetacityTheme=Menta
+IconTheme=matefaenza
+CursorTheme=mate-black

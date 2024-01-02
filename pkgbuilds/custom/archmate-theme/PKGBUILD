@@ -1,0 +1,31 @@
+pkgname=archmate-theme
+pkgver=0.1
+pkgrel=1
+pkgdesc="some GTK/Icon themes for Arch Linux MATE"
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archlinuxmate/"
+license=('custom')
+depends=(
+	'gtk-engines' 'gtk-engine-murrine'
+	'mate-themes' 'gnome-themes-extra'
+	'arc-solid-gtk-theme'
+	'gtk-update-icon-cache' 'icon-naming-utils'
+    'papirus-icon-theme' 'gnome-icon-theme-extras'
+    'mate-icon-theme' 'mate-icon-theme-faenza')
+install=pkg.install
+options=('!makeflags' '!strip')
+
+package() {
+    ####################### Theme Index ####################
+
+	cd ../
+    for i in Black Dark Faenza Light Mate;do
+	    install -d $pkgdir/usr/share/themes/Standard-$i/;
+	    cp -f ./Standard-$i.theme $pkgdir/usr/share/themes/Standard-$i/index.theme;
+    done
+
+	################### Mode Fix #######################
+
+	find "${pkgdir}" -type d -exec chmod 755 {} +
+	find "${pkgdir}" -type f -exec chmod 644 {} +
+}

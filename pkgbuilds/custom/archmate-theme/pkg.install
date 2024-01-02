@@ -1,0 +1,99 @@
+# ----------------------- Theme Section ----------------------------------------
+
+remove_themes() {
+	rm -rf /usr/share/themes/Clearlooks
+	rm -rf /usr/share/themes/Crux
+	rm -rf /usr/share/themes/Industrial
+	rm -rf /usr/share/themes/Mist
+	rm -rf /usr/share/themes/Raleigh
+	rm -rf /usr/share/themes/Redmond
+	rm -rf /usr/share/themes/ThinIce
+
+	rm -rf /usr/share/themes/Blue*
+	rm -rf /usr/share/themes/Green*
+	rm -rf /usr/share/themes/Traditional*
+	rm -rf /usr/share/themes/Yaru*
+
+	rm -rf /usr/share/themes/*-border
+
+	rm -rf /usr/share/themes/HighContrast*
+	rm -rf /usr/share/themes/ContrastHigh*
+}
+
+remove_menus() {
+	rm -f /usr/share/themes/Arc-solid/index.theme
+	rm -f /usr/share/themes/Arc-Lighter-solid/index.theme
+	rm -f /usr/share/themes/Arc-Dark-solid/index.theme
+	rm -f /usr/share/themes/Arc-Darker-solid/index.theme
+
+    rm -f /usr/share/themes/BlackMATE/index.theme
+    rm -f /usr/share/themes/BlueMenta/index.theme
+    rm -f /usr/share/themes/Menta/index.theme
+
+    rm -f /usr/share/themes/TraditionalGreen/index.theme
+    rm -f /usr/share/themes/TraditionalOk/index.theme
+
+    rm -f /usr/share/themes/Chicago95/index.theme
+}
+
+cursor_modify() {
+echo "[Icon Theme]
+Name=default
+Comment=default cursor
+Inherits=mate" > /usr/share/icons/default/index.theme
+}
+
+update_theme() {
+	remove_themes
+	remove_menus
+	cursor_modify
+}
+
+# ----------------------- Icon Section -----------------------------------------
+
+remove_unused() {
+	rm -rf /usr/share/icons/ContrastHigh
+	rm -rf /usr/share/icons/HighContrast
+}
+
+matefaenza_halt() {
+    convert \
+    /usr/share/icons/matefaenza/apps/22/gnome-shutdown.png \
+    -resize 16x16 \
+    /usr/share/icons/matefaenza/apps/16/gnome-shutdown.png
+}
+
+matefaenza_start() {
+    ln -sf start-here-mate.png /usr/share/icons/matefaenza/places/22/start-here.png
+    ln -sf start-here-mate.png /usr/share/icons/matefaenza/places/24/start-here.png
+    ln -sf start-here-mate.png /usr/share/icons/matefaenza/places/32/start-here.png
+    ln -sf start-here-mate.png /usr/share/icons/matefaenza/places/48/start-here.png
+    ln -sf start-here-mate.png /usr/share/icons/matefaenza/places/64/start-here.png
+    ln -sf start-here-mate.png /usr/share/icons/matefaenza/places/96/start-here.png
+    ln -sf start-here-mate.svg /usr/share/icons/matefaenza/places/scalable/start-here.svg
+
+    ln -sf start-here-mate.png /usr/share/icons/matefaenzadark/places/22/start-here.png
+    ln -sf start-here-mate.png /usr/share/icons/matefaenzadark/places/24/start-here.png
+}
+
+update_icon_cache() {
+	for i in `ls -p /usr/share/icons/ | grep -v /`;do rm -f /usr/share/icons/$i;done
+	for i in /usr/share/icons/*;do gtk-update-icon-cache -qft $i;done
+}
+
+update_icon() {
+	remove_unused
+	matefaenza_halt
+	matefaenza_start
+	update_icon_cache
+}
+
+post_install() {
+	update_theme
+	update_icon
+}
+
+post_upgrade() {
+	update_theme
+	update_icon
+}

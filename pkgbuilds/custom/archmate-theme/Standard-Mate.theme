@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Standard-Mate
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Menta
+MetacityTheme=Menta
+IconTheme=menta
+CursorTheme=mate-black

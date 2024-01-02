@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ArchMate Install
+Comment=Deploy Archiso to disk using simple GUI
+Categories=GNOME;GTK;Settings;System;Utility;
+Exec=sudo python /usr/share/archmate-install/archmate_install.py
+Icon=/usr/share/archmate-install/archmate_install.svg
+Terminal=false
+Type=Application

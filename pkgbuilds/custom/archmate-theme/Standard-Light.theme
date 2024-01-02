@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Standard-Light
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Arc-Lighter-solid
+MetacityTheme=Arc-Lighter-solid
+IconTheme=Papirus-Light
+CursorTheme=mate-black
