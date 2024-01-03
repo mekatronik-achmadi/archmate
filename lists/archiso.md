@@ -167,14 +167,11 @@ bluez-utils
 
 ### install multimedia
 
-vlc ffmpegthumbnailer
-gstreamer gst-libav
-gst-plugins-base
+ffmpegthumbnailer
+ffmpeg gst-libav
 gst-plugins-good
-gst-plugins-ugly
-gst-plugins-bad
-gstreamer-vaapi
-guvcview ffmpeg
+gst-plugins-base
+vlc guvcview
 
 ### install libva driver
 
