@@ -467,7 +467,7 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
         p = subprocess.Popen(["arch-chroot","/target","passwd","-d",self.User], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
         self.ConsoleLog(p)
 
-        p = subprocess.Popen(["arch-chroot","/target","groupadd","-r", "autologin"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
+        p = subprocess.Popen(["arch-chroot","/target","groupadd","-f","-r","autologin"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
         self.ConsoleLog(p)
 
         p = subprocess.Popen(["arch-chroot","/target","gpasswd","-a", self.User, "autologin"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)

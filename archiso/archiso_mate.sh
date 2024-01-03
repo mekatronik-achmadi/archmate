@@ -165,6 +165,7 @@ video:x:985:live
 power:x:98:live
 wheel:x:998:live
 storage:x:987:live
+autologin:x:969:
 wireshark:x:150:live
 ' | tee airootfs/etc/group
 
@@ -178,6 +179,7 @@ video:!*::live
 power:!*::live
 wheel:!*::live
 storage:!*::live
+autologin:!*::
 wireshark:!*::live
 ' | tee airoot/etc/gshadow
 
