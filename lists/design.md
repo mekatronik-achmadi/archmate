@@ -19,7 +19,6 @@ kicad-library-3d ngspice
 ### install cad tools
 
 - https://aur.archlinux.org/packages/cura-bin/
-- https://aur.archlinux.org/packages/easyeda-pro-electron/
 
 --------------------------------------------------------------------------------
 
