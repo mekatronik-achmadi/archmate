@@ -85,11 +85,6 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 - https://github.com/mekatronik-achmadi/atmega-dev/tree/master/atmega-demos/
 - https://github.com/mekatronik-achmadi/atmega-dev/tree/master/qtcreator-arduino/
 
-### install stm8 tools
-
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm8gal/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm8spl/
-
 --------------------------------------------------------------------------------
 
 ## Configurations

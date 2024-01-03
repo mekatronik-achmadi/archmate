@@ -1,0 +1,26 @@
+pkgname=esp8266-rtos
+pkgver=3.4
+pkgrel=1
+pkgdesc="ESP8266 RTOS SDK"
+arch=('x86_64')
+url="https://github.com/espressif/ESP8266_RTOS_SDK"
+license=('Espressif MIT')
+depends=('python39'  'python-virtualenv')
+optdepends=('xtensa-lx106-elf-gcc-bin: Toolchain for the ESP8266')
+makedepends=('git')
+options=(!strip)
+
+prepare() {
+    git clone https://github.com/espressif/ESP8266_RTOS_SDK.git
+    cd "${srcdir}/ESP8266_RTOS_SDK/"
+    git checkout release/v3.4
+    git submodule update --init
+}
+
+package() {
+	install -d "$pkgdir"/opt/$pkgname
+	rm -rf ESP8266_RTOS_SDK/.git/
+	echo '' | tee ESP8266_RTOS_SDK/requirements.txt
+	sudo sed -i "s#fputc(c,#//fputc(c,#" ESP8266_RTOS_SDK/components/console/linenoise/linenoise.c
+	cp -af ESP8266_RTOS_SDK/* "$pkgdir"/opt/$pkgname
+}

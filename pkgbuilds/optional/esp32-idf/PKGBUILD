@@ -1,0 +1,33 @@
+pkgname=esp-idf
+pkgver=4.3
+pkgrel=1
+pkgdesc="Espressif IoT Development Framework. Official development framework for ESP32."
+arch=('i686' 'x86_64' 'aarch' 'aarch64' 'armv7h')
+url="https://github.com/espressif/esp-idf"
+license=('APACHE')
+depends=('cmake' 'git' 'libusb' 'ccache' 'dfu-util' 'python-virtualenv' 'python39')
+makedepends=('unzip')
+options=(!strip)
+source=(https://dl.espressif.com/dl/${pkgname}/releases/${pkgname}-v${pkgver}.zip)
+noextract=(${pkgname}-v${pkgver}.zip)
+sha512sums=('8580fbda9208bf4fb807c5f7e5c04621985ca7894cd56862928b68dedf097dca5bacc9d8a104f5b3dccd52a82c54997284350b960ab476122b7fae4397cd9961')
+
+prepare() {
+	unzip -o ${pkgname}-v${pkgver}.zip
+	cd "$srcdir/${pkgname}-v${pkgver}"
+	git submodule update --init
+}
+
+package() {
+    mkdir -p ${pkgdir}/opt/esp-idf
+    cd "${srcdir}/${pkgname}-v${pkgver}"
+    rm -rf .git/
+
+    # requires python3.9
+    echo '' | tee requirements.txt
+
+    # disable echo in dumb console
+    sed -i "s#fputc(c,#//fputc(c,#" components/console/linenoise/linenoise.c
+
+    cp -R . ${pkgdir}/opt/esp-idf
+}

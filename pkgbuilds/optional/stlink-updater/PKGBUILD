@@ -1,0 +1,22 @@
+pkgname=stlink-updater
+pkgver=2.37.27
+pkgrel=1
+pkgdesc="ST-Link update firmware"
+arch=(any)
+url="https://www.st.com/en/development-tools/stsw-link007.html"
+license=('custom')
+options=('!makeflags' '!strip' 'staticlibs' 'libtool')
+depends=('java-runtime' 'stlink')
+source=('en.stsw-link007.zip' 'st-updater')
+sha256sums=('SKIP' '533230b34576047c0a4ae8b85f6c82e881257a203fc37341fe74f752f7f1ef54')
+
+package() {
+	cd "${srcdir}"
+	install -Dm755 st-updater "${pkgdir}/usr/bin/st-updater"
+
+	cd "${srcdir}/stsw-link007/AllPlatforms/"
+
+	install -Dm755 STLinkUpgrade.jar "${pkgdir}/opt/stlink-update/STLinkUpgrade.jar"
+	install -Dm644 native/linux_x64/libSTLinkUSBDriver.so "${pkgdir}/opt/stlink-update/native/linux_x64/libSTLinkUSBDriver.so"
+	install -Dm644 native/linux_x86/libSTLinkUSBDriver.so "${pkgdir}/opt/stlink-update/native/linux_x86/libSTLinkUSBDriver.so"
+}

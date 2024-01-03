@@ -1,0 +1,23 @@
+pkgname=esp-dsp
+pkgver=v1.0.r74.g6b25cbb
+pkgrel=1
+pkgdesc="DSP Libraries for ESP-IDF (ESP32)"
+arch=('i686' 'x86_64' 'aarch' 'aarch64' 'armv7h')
+url="https://github.com/espressif/esp-dsp"
+license=('APACHE')
+depends=('esp-idf')
+options=(!strip)
+source=("$pkgname::git+https://github.com/espressif/esp-dsp")
+sha512sums=('SKIP')
+
+pkgver() {
+    cd "$pkgname"
+    git describe --long --tags | sed 's/-/.r/;s/-/./'
+}
+
+package() {
+	mkdir -p ${pkgdir}/opt/esp-idf/components/esp-dsp
+	cd "${srcdir}/${pkgname}"
+	rm -rf .git/
+	cp -R . ${pkgdir}/opt/esp-idf/components/esp-dsp
+}
