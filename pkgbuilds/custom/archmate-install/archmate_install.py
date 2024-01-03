@@ -452,7 +452,7 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
             self.ConsoleLog(p)
 
         self.m_txtConsole.write("Create installed user\n")
-        p = subprocess.Popen(["arch-chroot","/target","useradd","-m","-g","users","-G","wheel,storage,power,video,tty,autologin","-s","/bin/bash","-c",self.User,self.User], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
+        p = subprocess.Popen(["arch-chroot","/target","useradd","-m","-g","users","-G","wheel,storage,power,video,tty","-s","/bin/bash","-c",self.User,self.User], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
         self.ConsoleLog(p)
 
         p = subprocess.Popen(["arch-chroot","/target","sudo","-u",self.User,"mkdir","-p","/home/"+self.User+"/"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)

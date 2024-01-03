@@ -272,30 +272,29 @@ edk2-ovmf
 ### after installation
 
 ```sh
-rsync -a /etc/skel/ $HOME/
-
 sudo systemctl enable systemd-timesyncd
 sudo systemctl start systemd-timesyncd
 sudo systemctl enable fake-hwclock fake-hwclock-save
 sudo systemctl start fake-hwclock fake-hwclock-save
-sudo ln -svf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-sudo date -s "28 MAR 2023 20:46:00"
 
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
-echo "en_US ISO-8859-1" >> /etc/locale.gen
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-locale-gen
+sudo ln -svf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+sudo date -s "3 JAN 2024 20:46:00"
+
+echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
+echo "en_US ISO-8859-1" | sudo tee /etc/locale.gen
+echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
+sudo locale-gen
 
 sudo mkdir -vp /var/lib/pacman/sync/
 sudo mkdir -vp /var/cache/pacman/pkg/
 
-export ISOVER='mate_102023'
+export ISOVER='mate_012024'
 export DIRPATH="/home/developments/Packages/ArchMate-x86_64/$ISOVER"
 sudo rsync -avh $DIRPATH/databases/ /var/lib/pacman/sync/
 sudo rsync -avh $DIRPATH/packages/official/ /var/cache/pacman/pkg/
 
 echo "install driver packages"
-most lists/driver.md
+pluma lists/driver.md
 ```
 
 ### pacman-key problem

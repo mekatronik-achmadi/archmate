@@ -79,7 +79,7 @@ sed -i "s#archiso_kms#kms#g" airootfs/etc/mkinitcpio.conf
 echo "archlive" | tee airootfs/etc/hostname
 
 echo "LANG=en_US.UTF-8" | tee airootfs/etc/locale.conf
-echo "en_US ISO-8859-1" | tee -a airootfs/etc/locale.gen
+echo "en_US ISO-8859-1" | tee airootfs/etc/locale.gen
 echo "en_US.UTF-8 UTF-8" | tee -a airootfs/etc/locale.gen
 
 echo "FONT=ter-112n
