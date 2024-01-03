@@ -1,0 +1,35 @@
+pkgname=chibios20
+pkgver=20.3.5
+pkgrel=1
+pkgdesc="ChibiOS v20 - free embedded RTOS"
+arch=('any')
+url="https://osdn.net/projects/chibios/scm/svn/tree/head/branches/stable_20.3.x/"
+license=('custom')
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+makedepends=('p7zip' 'unzip' 'tree')
+install=ch20.install
+zipsrc=chibios-branches_stable_20.3.x-r15655
+source=("${zipsrc}.zip")
+sha256sums=('SKIP')
+
+package() {
+	cd "$srcdir"
+	unzip -qqo ${zipsrc}.zip
+
+	cd "$srcdir/${zipsrc}/stable_20.3.x/ext/"
+	7z x fatfs*.7z
+	rm -f fatfs*.7z
+	7z x lwip*.7z
+	rm -f lwip*.7z
+
+	cd "$srcdir"
+
+	install -d -m755 $pkgdir/opt/${pkgname}
+	mv -f $srcdir/${zipsrc}/stable_20.3.x/* $pkgdir/opt/${pkgname}
+
+	chmod -Rf 755 $pkgdir/opt/${pkgname}
+
+	##### some bugfixes ######
+	sed -i "s#STM32_I2C_SPI2_TX_DMA_STREAM#STM32_I2S_SPI2_TX_DMA_STREAM#g" \
+	${pkgdir}/opt/${pkgname}/os/hal/ports/STM32/STM32F3xx/stm32_registry.h
+}

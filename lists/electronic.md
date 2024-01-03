@@ -33,7 +33,6 @@ python-pyserial python-pyusb
 ### install stm32 tools
 
 - https://aur.archlinux.org/packages/stm32flash/
-- https://aur.archlinux.org/packages/stm32cubemx/
 
 ### install esp8266 compiler
 
@@ -56,12 +55,6 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 
 - https://aur.archlinux.org/packages/simulide/
 - https://aur.archlinux.org/packages/arduino-mk/
-- https://aur.archlinux.org/packages/arduino-ide-bin/
-
-### install stm8 tools
-
-- https://aur.archlinux.org/packages/stm8cubemx/
-- https://aur.archlinux.org/packages/stm8flash-git/
 
 --------------------------------------------------------------------------------
 
@@ -71,8 +64,6 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/ugfxlib/
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm32chlib/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm32chlib2/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm32freertos/
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm32-chibios17/
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm32-chibios20/
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm32chlib-bluepill/
@@ -80,12 +71,12 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 ### install esp libraries
 
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/esp32-idf/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/esp32-idf
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/esp32-dsp/
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/esp8266-rtos/
 
 ### install stm32 tools
 
+- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stm32cubemx/
 - https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/stlink-updater/
 
 ### install atmega tools
@@ -113,36 +104,7 @@ sudo gpasswd -a $USER lock
 sudo gpasswd -a $USER uucp
 ```
 
-### configure cutecom
-
-```sh
-sudo sed -i "s#X-KDE-StartupNotify=false#Categories=Development;#g" /usr/share/applications/cutecom.desktop
-```
-
-### configure simutron
-
-```sh
-sudo sed -i "s#Categories=Electronics;#Categories=Development;#g" /usr/share/applications/simutron.desktop
-```
-
-### configure arduino-IDE
-
-```text
-File -> Preferences -> Additional Board Manager URLs
-Tools -> Board: -> Boards Manager
-
-https://arduino.esp8266.com/stable/package_esp8266com_index.json
-https://dan.drown.org/stm32duino/package_STM32duino_index.json
-https://dl.espressif.com/dl/package_esp32_index.json
-```
-
-```sh
-mkdir -p ~/Arduino/libraries/
-cd ~/Arduino/libraries/
-git clone https://github.com/sandeepmistry/arduino-LoRa.git LoRa
-```
-
-### configure arduino-CLI
+### configure arduino-cli
 
 ```sh
 arduino-cli config init
@@ -185,15 +147,9 @@ sudo st-flash --reset --connect-under-reset --format ihex write ./build/ch.hex
 #### debugging via st-link
 
 ```sh
-# using openocd
-sudo openocd -f /usr/share/openocd/scripts/interface/stlink-v2.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
-
-# using st-util
 sudo st-util -p 3333
-```
 
-```sh
-$> arm-none-eabi-gdb build/ch.elf
+arm-none-eabi-gdb build/ch.elf
 (gdb) target extended-remote localhost:3333
 (gdb) r
 (gdb) CTRL+C

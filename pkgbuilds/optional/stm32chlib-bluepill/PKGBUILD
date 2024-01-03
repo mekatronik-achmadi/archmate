@@ -1,0 +1,19 @@
+pkgname=stm32chlib-bluepill
+pkgver=3.0.6
+pkgrel=1
+pkgdesc="STM32 Libraries from ChibiOS/RT 3.0.x for Blue-Pill boards"
+arch=('any')
+url="https://osdn.net/projects/chibios/scm/svn/tree/head/branches/stable_3.0.x/"
+license=('custom')
+depends=('stm32chlib')
+optdepends=('ugfxlib: for GUI on LCD-Touch with ChibiOS/RT')
+
+package() {
+	cd "$srcdir"
+
+	mkdir -p $pkgdir/opt/stm32chlib/chibios3/
+	cp -rf ../os $pkgdir/opt/stm32chlib/chibios3/
+	cp -rf ../demos $pkgdir/opt/stm32chlib/chibios3/
+
+	chmod -Rf 755 $pkgdir/opt/stm32chlib/chibios3/
+}

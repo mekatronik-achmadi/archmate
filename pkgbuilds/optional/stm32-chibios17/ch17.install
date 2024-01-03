@@ -1,0 +1,23 @@
+modify_shell() {
+    # disable echo
+    sed -i "584s#^#//#" /opt/chibios17/os/various/shell/shell.c
+
+    # disable start message
+    sed -i "356s#^#//#" /opt/chibios17/os/various/shell/shell.c
+
+    # disable invalid message
+    sed -i "396s#^#//#" /opt/chibios17/os/various/shell/shell.c
+    sed -i "397s#^#//#" /opt/chibios17/os/various/shell/shell.c
+}
+
+libraries_modify() {
+    modify_shell
+}
+
+post_install() {
+	libraries_modify
+}
+
+post_upgrade() {
+	libraries_modify
+}

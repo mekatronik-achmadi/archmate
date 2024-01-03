@@ -1,0 +1,32 @@
+pkgname=chibios17
+pkgver=17.6.5
+pkgrel=1
+pkgdesc="ChibiOS v17 (RT-Kernel 4) - free embedded RTOS"
+arch=('any')
+url="https://osdn.net/projects/chibios/scm/svn/tree/head/branches/stable_17.6.x/"
+license=('custom')
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+optdepends=('ugfxlib: for GUI on LCD-Touch with ChibiOS/RT')
+makedepends=('p7zip' 'unzip' 'tree')
+install=ch17.install
+zipsrc=chibios-branches_stable_17.6.x-r15655
+source=("${zipsrc}.zip")
+sha256sums=('SKIP')
+
+package() {
+	cd "$srcdir"
+	unzip -qqo ${zipsrc}.zip
+
+	cd "$srcdir/${zipsrc}/stable_17.6.x/ext/"
+	7z x fatfs*.7z
+	rm -f fatfs*.7z
+	7z x lwip*.7z
+	rm -f lwip*.7z
+
+	cd "$srcdir"
+
+	install -d -m755 $pkgdir/opt/${pkgname}
+	mv -f $srcdir/${zipsrc}/stable_17.6.x/* $pkgdir/opt/${pkgname}
+
+	chmod -Rf 755 $pkgdir/opt/${pkgname}
+}

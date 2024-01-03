@@ -1,0 +1,53 @@
+#!/bin/bash
+
+rm -rf ${1}/demos/AVR
+rm -rf ${1}/demos/KINETIS
+rm -rf ${1}/demos/LPC21xx
+rm -rf ${1}/demos/SPC5
+
+rm -rf ${1}/testhal/AVR
+rm -rf ${1}/testhal/KINETIS
+
+rm -rf ${1}/os/common/ports/e200
+
+rm -f  ${1}/os/common/ports/ARMCMx/compilers/GCC/ld/KL25Z128.ld
+rm -f  ${1}/os/common/ports/ARMCMx/compilers/GCC/ld/MK20DX128.ld
+rm -f  ${1}/os/common/ports/ARMCMx/compilers/GCC/mk/startup_k20x.mk
+rm -f  ${1}/os/common/ports/ARMCMx/compilers/GCC/mk/startup_kl2x.mk
+
+rm -rf ${1}/os/common/ports/ARMCMx/compilers/IAR
+rm -rf ${1}/os/common/ports/ARMCMx/compilers/RVCT
+rm -rf ${1}/os/common/ports/ARMCMx/devices/K20x
+rm -rf ${1}/os/common/ports/ARMCMx/devices/KL2x
+
+rm -rf ${1}/os/ext/CMSIS/KINETIS
+
+rm -rf ${1}/os/hal/boards/ARDUINO_MEGA
+rm -rf ${1}/os/hal/boards/EA_LPCXPRESSO*
+rm -rf ${1}/os/hal/boards/FREESCALE_FREEDOM*
+rm -rf ${1}/os/hal/boards/MCHCK_K20*
+rm -rf ${1}/os/hal/boards/NGX_BB_LPC*
+rm -rf ${1}/os/hal/boards/OLIMEX_AVR*
+rm -rf ${1}/os/hal/boards/OLIMEX_LPC*
+rm -rf ${1}/os/hal/boards/OLIMEX_MSP*
+rm -rf ${1}/os/hal/boards/OLIMEX_SAM*
+rm -rf ${1}/os/hal/boards/PJRC_TEENSY_3
+rm -rf ${1}/os/hal/boards/RAISONANCE_REVA_STM8S
+rm -rf ${1}/os/hal/boards/ST_EVB_SPC*
+rm -rf ${1}/os/hal/boards/ST_STM8*
+rm -rf ${1}/os/hal/boards/STUDIEL_AT91SAM*
+
+rm -rf ${1}/os/hal/ports/AVR
+rm -rf ${1}/os/hal/ports/KINETIS
+rm -rf ${1}/os/hal/ports/LPC
+rm -rf ${1}/os/hal/ports/SPC5
+
+rm -rf ${1}/os/nil/ports/AVR
+rm -rf ${1}/os/nil/ports/e200
+
+rm -rf ${1}/os/rt/ports/AVR
+rm -rf ${1}/os/rt/ports/e200
+rm -rf ${1}/os/rt/ports/SIMIA32
+
+rm -rf ${1}/os/rt/ports/ARMCMx/compilers/IAR
+rm -rf ${1}/os/rt/ports/ARMCMx/compilers/RVCT

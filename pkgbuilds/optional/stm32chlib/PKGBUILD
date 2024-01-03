@@ -1,0 +1,33 @@
+pkgname=stm32chlib
+pkgver=3.0.6
+pkgrel=1
+ziprev=r16280
+zipsrc=chibios-code-${ziprev}-branches-stable_3.0.x
+pkgdesc="ChibiOS v3.0 - free embedded RTOS for STM32"
+arch=('any')
+url="https://sourceforge.net/p/chibios/code/HEAD/tree/branches/stable_3.0.x/"
+license=('custom')
+depends=('arm-none-eabi-gcc' 'arm-none-eabi-newlib')
+optdepends=('ugfxlib: for GUI on LCD-Touch with ChibiOS/RT')
+makedepends=('p7zip' 'unzip' 'tree')
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+install=ch3x.install
+source=("${zipsrc}.zip" "unused_chibios3")
+sha256sums=('SKIP' 'SKIP')
+
+package() {
+	cd "$srcdir/${zipsrc}/ext/"
+	7z x fatfs*.7z
+	rm -f fatfs*.7z
+	7z x lwip*.7z
+	rm -f lwip*.7z
+
+	cd "$srcdir"
+
+	install -d -m755 $pkgdir/opt/stm32chlib/chibios3
+	mv -f $srcdir/${zipsrc}/* $pkgdir/opt/stm32chlib/chibios3
+
+	./unused_chibios3 $pkgdir/opt/stm32chlib/chibios3
+
+	chmod -Rf 755 $pkgdir/opt/stm32chlib/chibios3
+}
