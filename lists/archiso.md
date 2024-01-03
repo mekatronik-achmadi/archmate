@@ -107,11 +107,6 @@ openresolv dhclient dhcpcd mtr
 gnu-netcat nmap termshark
 tcpdump fping inetutils
 
-### install android driver
-
-android-file-transfer scrcpy
-android-udev python-pyudev
-
 ### install audio system
 
 pulseaudio portaudio
@@ -540,8 +535,8 @@ sudo rm -vf /usr/share/applications/electron*
 
 ### updated list
 
-- [ ] archiso
-- [ ] driver
+- [x] archiso
+- [x] driver
 - [ ] design
 - [ ] media
 - [ ] virtual

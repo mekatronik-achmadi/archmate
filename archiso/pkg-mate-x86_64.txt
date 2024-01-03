@@ -79,9 +79,6 @@ openresolv dhclient dhcpcd mtr
 gnu-netcat nmap termshark
 tcpdump fping inetutils
 
-android-file-transfer scrcpy
-android-udev python-pyudev
-
 pulseaudio portaudio
 jack2 pulseaudio-jack
 alsa-utils alsa-firmware
