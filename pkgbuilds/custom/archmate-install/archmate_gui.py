@@ -37,7 +37,7 @@ class frmArchInstall ( wx.Frame ):
 
 		bHost.Add( self.m_lblHost, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
-		self.m_txtHost = wx.TextCtrl( sbHostUser.GetStaticBox(), wx.ID_ANY, u"archlinuxmate", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_txtHost = wx.TextCtrl( sbHostUser.GetStaticBox(), wx.ID_ANY, u"archmate", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bHost.Add( self.m_txtHost, 1, wx.ALL, 5 )
 
 

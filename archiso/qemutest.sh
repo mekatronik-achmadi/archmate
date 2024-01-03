@@ -6,7 +6,7 @@ qemu-system-x86_64 -m 2048M -vga virtio \
 -cpu host -smp 2 -monitor stdio -enable-kvm \
 -nic user,model=virtio-net-pci \
 -global isa-fdc.fdtypeA=none \
--boot d -cdrom ${1} #\
+-boot d -cdrom ${1}
 
 ################################################################################
 
@@ -16,14 +16,13 @@ qemu-system-x86_64 -m 2048M -vga virtio \
 #parted vdisk.img mklabel msdos
 
 #### using virtual disk
-#-drive file=${1},format=raw,if=virtio
-#-drive file=vdisk.img,format=raw,if=virtio
+#-drive file=../vdisk.img,format=raw,if=virtio \
 
 ################################################################################
 
 #### add host shared folder
 #-device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=shared0 \
-#-fsdev local,security_model=none,id=fsdev0,path=../../ArchMate-x86_64/mate_012024/
+#-fsdev local,security_model=none,id=fsdev0,path=../../ArchMate-x86_64/mate_012024/ \
 
 #### mount host shared folder inside guest
 #sudo mount -t 9p -o trans=virtio,version=9p2000.L,rw,uid=$USER shared0 /mnt
