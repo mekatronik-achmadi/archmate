@@ -175,8 +175,8 @@ vim +PlugInstall
 vim -c "CocInstall coc-pairs coc-snippets"
 vim -c "CocInstall coc-sh coc-ultisnips"
 vim -c "CocInstall coc-clangd coc-jedi"
-vim -c "CocInstall coc-json coc-yaml coc-html"
-vim -c "CocInstall coc-tsserver coc-rust-analyzer"
+vim -c "CocInstall coc-json coc-yaml"
+
 vim +PlugClean
 
 echo "For editing PKGBUILD"
