@@ -8,9 +8,8 @@ license=('custom')
 depends=(
 	'gtk-engines' 'gtk-engine-murrine'
 	'mate-themes' 'gnome-themes-extra'
-	'arc-solid-gtk-theme'
 	'gtk-update-icon-cache' 'icon-naming-utils'
-    'papirus-icon-theme' 'gnome-icon-theme-extras'
+    'papirus-icon-theme' 'arc-solid-gtk-theme'
     'mate-icon-theme' 'mate-icon-theme-faenza')
 install=pkg.install
 options=('!makeflags' '!strip')
