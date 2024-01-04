@@ -30,7 +30,8 @@ python-pandas python-numexpr
 
 ### install python interface
 
-jupyterlab jupyter-notebook
+ipython jupyterlab
+jupyter-notebook
 
 ### install python additional
 
