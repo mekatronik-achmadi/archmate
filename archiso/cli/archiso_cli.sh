@@ -9,11 +9,12 @@ fi
 
 echo $REPOURL
 export ISOVER='mate_012024'
+export ISONAME='cli_012024'
 export DIRPATH="/home/developments/Packages/ArchMate-x86_64/$ISOVER"
 export DBPATH="$DIRPATH/databases"
 export PKGPATH="$DIRPATH/packages/official"
 export CSTPATH="$DIRPATH/packages/custom"
-export PKGLIST='../pkg-mate-x86_64.txt'
+export PKGLIST='../pkg-cli-x86_64.txt'
 export PKGCUSTOM='true'
 
 mkdir -pv archlive/
@@ -26,7 +27,7 @@ sed -i 's/ /\n/g' ./packages.x86_64
 mkdir -pv work/x86_64/airootfs/
 
 sed -i 's#iso_label="ARCH_$(date +%Y%m)"#iso_label="ARCH_LINUX"#g' profiledef.sh
-sed -i 's#iso_version="$(date +%Y.%m.%d)"#iso_version="$ISOVER"#g' profiledef.sh
+sed -i 's#iso_version="$(date +%Y.%m.%d)"#iso_version="$ISONAME"#g' profiledef.sh
 sed -i "s#'-comp' 'xz' '-Xbcj' 'x86' '-b' '1M' '-Xdict-size' '1M'#'-limit' '75' '-comp' 'zstd' '-b' '1M'#g" profiledef.sh
 
 ######################### Archiso Configs #########################
@@ -66,9 +67,6 @@ fi
 
 export URLREPO="$REPOURL/\$repo/os/\$arch"
 sed -i "s#Include = /etc/pacman.d/mirrorlist#Server = $URLREPO#g" pacman.conf
-
-mkdir -pv airootfs/usr/bin/
-cp -vf ../pacstrap_modify airootfs/usr/bin/
 
 ######################### Basic Configs ##########################
 
@@ -221,6 +219,23 @@ else
     fi
 fi' | tee airootfs/etc/skel/.bash_profile
 
+echo '[[ $- != *i* ]] && return' | tee airootfs/etc/skel/.bashrc
+
+echo "
+shopt -s checkwinsize
+shopt -s histappend
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+export REPOURL='http://mirror.internode.on.net/pub/archlinux/'
+alias sudo='sudo -E'
+export MAKEFLAGS=-j$(nproc)
+alias makepkg='makepkg --nocheck --skippgpcheck'
+alias htop='htop -C'
+alias mc='mc --nocolor'
+PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
+" | tee -a airootfs/etc/skel/.bashrc
+
 mkdir -pv airootfs/etc/profile.d/
 echo 'export PATH=$PATH:~/.local/bin
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -285,37 +300,6 @@ Grp cups
 Out ${HOME}/PDF
 ' | tee airootfs/etc/cups/cups-pdf.conf
 ln -svf /usr/lib/systemd/system/cups.service ${SYSTEMD}/cups.service
-
-######################### Archiso LightDM #########################
-
-mkdir -pv airootfs/etc/lightdm
-
-echo '[Seat:*]
-pam-service=lightdm
-pam-autologin-service=lightdm-autologin
-allow-guest=false
-session-wrapper=/etc/lightdm/Xsession
-greeter-session=lightdm-gtk-greeter
-autologin-user-timeout=0
-autologin-session=mate
-autologin-user=live
-' | tee airootfs/etc/lightdm/lightdm.conf
-
-echo '[greeter]
-panel-position = top
-icon-theme-name = Papirus-Light
-theme-name = Arc-Lighter-solid
-background = /usr/share/backgrounds/archlinux/conference.png
-font-name = Liberation Sans 8
-xft-dpi = 96
-xft-antialias = true
-xft-rgba = rgb
-xft-hintstyle = hintslight
-hide-user-image = true
-keyboard = onboard
-' | tee airootfs/etc/lightdm/lightdm-gtk-greeter.conf
-
-ln -svf /usr/lib/systemd/system/lightdm.service ${SYSTEMD}/lightdm.service
 
 ######################### Archiso Packages #########################
 

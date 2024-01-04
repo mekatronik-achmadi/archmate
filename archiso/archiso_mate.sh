@@ -67,9 +67,6 @@ fi
 export URLREPO="$REPOURL/\$repo/os/\$arch"
 sed -i "s#Include = /etc/pacman.d/mirrorlist#Server = $URLREPO#g" pacman.conf
 
-mkdir -pv airootfs/usr/bin/
-cp -vf ../pacstrap_modify airootfs/usr/bin/
-
 ######################### Basic Configs ##########################
 
 sed -i "s#archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs#consolefont#g" airootfs/etc/mkinitcpio.conf

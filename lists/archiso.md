@@ -55,11 +55,11 @@ lightdm-gtk-greeter-settings
 
 ### install themes and icons
 
-gnome-icon-theme-extras gnome-themes-extra
-gtk-update-icon-cache icon-naming-utils
-arc-solid-gtk-theme papirus-icon-theme
-libcanberra sound-theme-freedesktop
+icon-naming-utils gtk-update-icon-cache
+papirus-icon-theme arc-solid-gtk-theme
 gtk-engines gtk-engine-murrine
+gnome-themes-extra libcanberra
+sound-theme-freedesktop
 
 ### install gtk 2/3 libraries
 
@@ -179,7 +179,6 @@ vdpauinfo
 
 ### install cd-dvd tools
 
-gnome-multi-writer
 fuseiso mdf2iso
 brasero bchunk
 squashfuse
@@ -196,7 +195,7 @@ foomatic-db foomatic-db-nonfree
 
 ### install image scanner
 
-sane sane-airscan xsane
+sane sane-airscan
 ipp-usb simple-scan
 
 ### install system information
@@ -357,24 +356,13 @@ SWAPUUID=$(sudo blkid -s UUID -o value /dev/sdxy)
 echo "UUID=$SWAPUUID none swap defaults 0 0" | sudo tee -a /etc/fstab
 ```
 
-#### Bash AutoLogin
+### generic configurations
+
+#### modify pacstrap
 
 ```sh
-sudo systemctl disable lightdm
-
-sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
-
-echo "[Service]
-TTYVTDisallocate=no
-" | sudo tee /etc/systemd/system/getty@tty1.service.d/noclear.conf
-
-echo -e "[Service]
-ExecStart=
-ExecStart=-/sbin/agetty --autologin $USER --noissue --noclear %I 38400 linux
-" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
+sudo bash /usr/share/archmate-archiso/pacstrap_modify
 ```
-
-### generic configurations
 
 #### configure git user
 
@@ -494,6 +482,27 @@ HandleLidSwitchDocked=suspend
 ' | sudo tee /etc/systemd/logind.conf.d/lid-suspend.conf
 
 sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
+```
+
+#### configure login without lightdm
+
+```sh
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
+
+echo "[Service]
+TTYVTDisallocate=no
+" | sudo tee /etc/systemd/system/getty@tty1.service.d/noclear.conf
+
+echo -e "[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin $USER --noissue --noclear %I 38400 linux
+" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
+```
+
+#### openbox without lighdm
+
+```sh
+startx /usr/bin/openbox-session
 ```
 
 #### configure vnc server

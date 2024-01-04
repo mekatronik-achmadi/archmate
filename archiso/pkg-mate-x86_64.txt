@@ -37,11 +37,11 @@ libappindicator-gtk3
 lightdm lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 
-gnome-icon-theme-extras gnome-themes-extra
-gtk-update-icon-cache icon-naming-utils
-arc-solid-gtk-theme papirus-icon-theme
-libcanberra sound-theme-freedesktop
+icon-naming-utils gtk-update-icon-cache
+papirus-icon-theme arc-solid-gtk-theme
 gtk-engines gtk-engine-murrine
+gnome-themes-extra libcanberra
+sound-theme-freedesktop
 
 gtk3 wxgtk3 glade
 gtk2 gtkmm gtkmm3
@@ -57,10 +57,10 @@ archlinux-wallpaper
 xdg-desktop-portal
 xdg-user-dirs-gtk
 
-xdotool shotwell xchm
 geany geany-plugins
 qt5-base qt6-base
 qt5ct qt6ct scrot
+xdotool shotwell
 parcellite meld
 
 openbox obconf trayer feh bashrun
@@ -131,7 +131,6 @@ libva libva-utils
 libvdpau-va-gl
 vdpauinfo
 
-gnome-multi-writer
 fuseiso mdf2iso
 brasero bchunk
 squashfuse
@@ -144,7 +143,7 @@ system-config-printer
 gutenprint foomatic-db-engine
 foomatic-db foomatic-db-nonfree
 
-sane sane-airscan xsane
+sane sane-airscan
 ipp-usb simple-scan
 
 lm_sensors xsensors hddtemp
