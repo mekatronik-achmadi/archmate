@@ -45,6 +45,11 @@ texlive texlive-langenglish
 texstudio minted biber pdftk
 dblatex latex2html latex2rtf
 
+### install opencv library
+
+opencv hdf5-openmpi
+python-opencv vtk
+
 ### install programming additionals
 
 fftw liquid-dsp libsndfile
