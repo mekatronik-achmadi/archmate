@@ -226,13 +226,13 @@ shopt -s checkwinsize
 shopt -s histappend
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-export HISTCONTROL=ignorespace:ignoredups:erasedups
-export REPOURL='http://mirror.internode.on.net/pub/archlinux/'
 alias sudo='sudo -E'
-export MAKEFLAGS=-j$(nproc)
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias htop='htop -C'
 alias mc='mc --nocolor'
+export MAKEFLAGS=-j$(nproc)
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+export REPOURL='http://mirror.internode.on.net/pub/archlinux'
 PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 " | tee -a airootfs/etc/skel/.bashrc
 

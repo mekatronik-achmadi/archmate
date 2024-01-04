@@ -34,7 +34,6 @@ package() {
 	cp -f ./panel/archdefault.layout $pkgdir/usr/share/mate-panel/layouts/
 
 	install -d $pkgdir/usr/share/archmate-default/
-	cp -f ./userset/archmate_bashrc $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/redshift.conf $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/mimeapps.list $pkgdir/usr/share/archmate-default/
 	cp -f ./userset/qt5ct.conf $pkgdir/usr/share/archmate-default/

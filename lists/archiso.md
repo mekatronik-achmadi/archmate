@@ -262,6 +262,16 @@ edk2-ovmf
 
 ## Configurations
 
+### repository setting
+
+```sh
+# ArchLinux Repository Main Server URL
+# Lower Mirror Score means better
+# Look for 100% synced mirror from here:
+#   https://archlinux.org/mirrors/status/#successful
+export REPOURL='http://mirror.internode.on.net/pub/archlinux'
+```
+
 ### after installation
 
 ```sh

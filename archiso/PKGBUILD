@@ -15,15 +15,7 @@ depends=(
 'arch-install-scripts' 'erofs-utils' 'mkinitcpio-archiso')
 options=('!makeflags')
 install=pkg.install
-source=(
-    'pkg-mate-x86_64.txt'
-    'archiso_mate.sh'
-    'pacstrap_modify'
-    'custompkg.sh'
-    'qemutest.sh'
-    'newpkgs.md'
-	"git+https://gitlab.archlinux.org/archlinux/archiso.git#tag=v$pkgver")
-sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+source=("git+https://gitlab.archlinux.org/archlinux/archiso.git#tag=v$pkgver")
 
 package() {
 	cd ../
