@@ -133,21 +133,6 @@ sudo systemctl enable anydesk
 sudo systemctl start anydesk
 ```
 
-### configure teamviewer
-
-```sh
-sudo rm -f /usr/share/applications/teamviewerapi.desktop
-
-sudo systemctl enable teamviewerd
-sudo systemctl start teamviewerd
-```
-
-### configure cisco packet simulator
-
-```sh
-sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
-```
-
 ### configure ftp server
 
 ```sh

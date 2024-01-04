@@ -235,3 +235,19 @@ schemer_import
 # fix graphic low level issue
 echo "-Djogl.disable.openglarbcontext=1" | sudo tee -a /opt/mathworks/matlab-2018a/bin/glnxa64/java.opts
 ```
+
+### configure teamviewer
+
+```sh
+sudo rm -f /usr/share/applications/teamviewerapi.desktop
+
+sudo systemctl enable teamviewerd
+sudo systemctl start teamviewerd
+```
+
+### configure cisco packet simulator
+
+```sh
+sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
+```
+
