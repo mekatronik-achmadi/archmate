@@ -56,7 +56,7 @@ rust rust-src rust-analyzer
 ### install markdown tools
 
 - https://aur.archlinux.org/packages/pandoc-bin/
-- https://aur.archlinux.org/packages/vim-instant-markdown/
+- https://aur.archlinux.org/packages/marktext-bin/
 
 ### install qwt additionals
 
@@ -134,7 +134,9 @@ echo "Edit->Preferences->FakeVim"
 echo "uncheck: Use FakeVim"
 ```
 
-### alternative install vim plug
+### configure vim
+
+#### alternative vim plug
 
 ```sh
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -145,7 +147,7 @@ call plug#end()" | tee ~/.vimrc
 vim +PlugStatus
 ```
 
-### configure vim plugins
+#### vim plugins
 
 ```sh
 echo -e "call plug#begin('~/.vim/pack/plug/start')
@@ -161,8 +163,6 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
-
-let g:instant_markdown_autostart=0
 " | tee ~/.vimrc
 ```
 
