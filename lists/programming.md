@@ -53,6 +53,11 @@ rust rust-src rust-analyzer
 
 ## AUR
 
+### install markdown tools
+
+- https://aur.archlinux.org/packages/pandoc-bin/
+- https://aur.archlinux.org/packages/vim-instant-markdown/
+
 ### install qwt additionals
 
 ```sh
@@ -156,6 +161,8 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
+
+/home/achmaday/Downloads/vim-instant-markdown.tar.gz
 " | tee ~/.vimrc
 ```
 
