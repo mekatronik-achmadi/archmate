@@ -11,15 +11,11 @@ arm-none-eabi-newlib stlink sdcc
 
 avr-gcc avr-gdb avr-libc avrdude
 
-### install arduino programming
+### install additional tools
 
-arduino-cli arduino-avr-core
-
-### install serial terminal
-
-minicom picocom moserial screen
-dfu-util esptool socat gtkwave
+arduino-cli minicom moserial
 python-pyserial python-pyusb
+dfu-util esptool socat screen
 
 --------------------------------------------------------------------------------
 
@@ -51,10 +47,9 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 
 - https://aur.archlinux.org/packages/xtensa-esp32-elf-gcc-bin/
 
-### install arduino tools
+### install simulator
 
 - https://aur.archlinux.org/packages/simulide/
-- https://aur.archlinux.org/packages/arduino-mk/
 
 --------------------------------------------------------------------------------
 
@@ -83,7 +78,6 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 
 - https://github.com/mekatronik-achmadi/atmega-dev/tree/master/atmega-tools/
 - https://github.com/mekatronik-achmadi/atmega-dev/tree/master/atmega-demos/
-- https://github.com/mekatronik-achmadi/atmega-dev/tree/master/qtcreator-arduino/
 
 --------------------------------------------------------------------------------
 
