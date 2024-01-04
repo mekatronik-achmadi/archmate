@@ -21,7 +21,6 @@
 
 ### install internet tools
 
-- https://aur.archlinux.org/packages/hyperspace-bin/
 - https://aur.archlinux.org/packages/google-chrome/
 - https://aur.archlinux.org/packages/teamviewer/
 
@@ -250,4 +249,3 @@ sudo systemctl start teamviewerd
 ```sh
 sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
 ```
-
