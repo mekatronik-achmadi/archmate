@@ -544,5 +544,5 @@ sudo rm -vf /usr/share/applications/electron*
 - [x] networking
 - [x] electronic
 - [x] programming
-- [ ] college
-- [ ] other
+- [x] college
+- [x] other

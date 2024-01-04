@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ ! -d "$MATLAB_LOG_DIR" ]; then
+  mkdir $MATLAB_LOG_DIR
+fi
+
+/usr/bin/matlab -nosoftwareopengl -desktop

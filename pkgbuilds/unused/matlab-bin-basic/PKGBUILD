@@ -1,0 +1,42 @@
+pkgname=matlab-bin-basic
+_pkgname=matlab
+pkgver=2018a
+pkgrel=1
+pkgdesc='An impractical programming software'
+arch=('x86_64')
+url='http://www.mathworks.com'
+license=(custom)
+conflicts=('matlab')
+provides=('matlab')
+depends=('gcc-libs' 'bash' 'ncurses5-compat-libs' 'jre8-openjdk' 'freetype2')
+source=(
+	"${_pkgname}-gui"
+	"${_pkgname}-cli"
+	"${_pkgname}-env.sh"
+	"${_pkgname}.desktop"
+	"${_pkgname}.png")
+md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+PKGEXT='.pkg.tar'
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+
+package() {
+  cd $srcdir/
+
+  msg2 'Moving installation'
+  install -d -m755 "${pkgdir}/opt/mathworks/"
+  mv -f "../${_pkgname}-${pkgver}/" "${pkgdir}/opt/mathworks/${_pkgname}-${pkgver}/"
+
+  msg2 'Installing executables'
+  install -d -m755 "${pkgdir}/usr/bin/"
+  install -D -m755 "${_pkgname}-gui" "${pkgdir}/usr/bin/${_pkgname}-gui"
+  install -D -m755 "${_pkgname}-cli" "${pkgdir}/usr/bin/${_pkgname}-cli"
+  ln -s "/opt/mathworks/${_pkgname}-${pkgver}/bin/${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+  ln -sf "/usr/lib/libfreetype.so.6" "${pkgdir}/opt/mathworks/${_pkgname}-${pkgver}/bin/glnxa64/libfreetype.so.6"
+
+  msg2 'Installing environments'
+  install -D -m755 "${_pkgname}-env.sh" "${pkgdir}/etc/profile.d/${_pkgname}-env.sh"
+
+  msg2 'Installing menu files'
+  install -D -m644 "${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+  install -D -m644 "${_pkgname}.png" "${pkgdir}/usr/share/pixmaps/${_pkgname}.png"
+}

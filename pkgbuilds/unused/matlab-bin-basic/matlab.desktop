@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Matlab
+Comment=An overpriced numerical computation software
+Exec=/usr/bin/matlab-gui
+Icon=/usr/share/pixmaps/matlab.png
+Terminal=false
+Type=Application
+Categories=Education;Science;Math;
+MimeType=text/x-octave;text/x-matlab;
+Keywords=science;math;matrix;numerical computation;plotting;matlab;
