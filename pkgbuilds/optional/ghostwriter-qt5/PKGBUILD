@@ -1,0 +1,32 @@
+pkgname=ghostwriter-qt5
+_pkgname=ghostwriter
+pkgver=2.1.6.r4.g151268b
+pkgrel=1
+pkgdesc="Cross-platform Markdown editor (without KF5)"
+arch=(i686 x86_64)
+url="https://github.com/wereturtle/ghostwriter"
+license=('GPL3')
+conflicts=("${_pkgname}")
+provides=("${_pkgname}")
+makedepends=('git' 'qt5-tools')
+depends=('qt5-base' 'qt5-svg' 'hunspell' 'desktop-file-utils'
+         'gtk-update-icon-cache' 'discount' 'qt5-webengine')
+optdepends=('hunspell: spell checking')
+source=(git+https://github.com/KDE/ghostwriter.git#branch=old_relase_branch)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "${_pkgname}"
+  git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  cd "${_pkgname}"
+  qmake PREFIX=/usr
+  make
+}
+
+package() {
+  cd "${_pkgname}"
+  make INSTALL_ROOT="$pkgdir/" install
+}
