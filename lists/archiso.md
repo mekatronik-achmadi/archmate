@@ -48,6 +48,7 @@ xorg-xmessage
 ### install mate desktop
 
 mate mate-extra
+dconf dconf-editor
 libappindicator-gtk3
 lightdm lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
@@ -71,10 +72,8 @@ python-gobject
 
 tk ttf-liberation onboard
 ttf-liberation-mono-nerd
-ttf-droid gnome-keyring
-dconf-editor trash-cli
 xdg-desktop-portal-gtk
-fontforge ttf-dejavu
+ttf-dejavu ttf-droid
 redshift python-xdg
 archlinux-wallpaper
 xdg-desktop-portal
@@ -82,10 +81,10 @@ xdg-user-dirs-gtk
 
 ### install desktop tools
 
-xdotool shotwell xchm
 geany geany-plugins
 qt5-base qt6-base
 qt5ct qt6ct scrot
+xdotool shotwell
 parcellite meld
 
 ### install openbox session
