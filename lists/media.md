@@ -22,6 +22,11 @@ ddrescue ext4magic foremost testdisk
 
 ## AUR
 
+### install markdown tools
+
+- https://aur.archlinux.org/packages/pandoc-bin/
+- https://aur.archlinux.org/packages/marktext-bin/
+
 ### install disk recovery tools
 
 - https://aur.archlinux.org/packages/extundelete/

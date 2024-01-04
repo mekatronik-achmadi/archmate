@@ -96,7 +96,7 @@ exit-with-last-window=false
 
 [org.mate.caja.window-state]
 start-with-status-bar=true
-start-with-toolbar=false
+start-with-toolbar=true
 start-with-sidebar=true
 
 [org.mate.caja-open-terminal]
@@ -116,9 +116,9 @@ default-extension='.tar.gz'
 auto-save=true
 auto-save-interval=10
 bracket-matching=true
-toolbar-visible=false
+toolbar-visible=true
 statusbar-visible=true
-side-pane-visible=true
+side-pane-visible=false
 display-line-numbers=true
 display-right-margin=true
 bottom-panel-visible=false

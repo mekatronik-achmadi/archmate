@@ -537,8 +537,8 @@ sudo rm -vf /usr/share/applications/electron*
 
 - [x] archiso
 - [x] driver
-- [x] design
 - [x] media
+- [x] design
 - [x] virtual
 - [x] winlayer
 - [x] networking

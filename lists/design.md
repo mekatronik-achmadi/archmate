@@ -52,10 +52,10 @@ FreeCAD recommended plugins:
 
 ### configure kicad
 
-#### kicad shortcuts
+#### kicad menu
 
 ```sh
-for i in `pacman -Qlq kicad | grep desktop`;do sudo sed -i "s#Categories=Science;Electronics;#Categories=Development;#g" $i;done
+for i in `pacman -Qlq kicad | grep desktop`;do sudo sed -i "s#Categories=Science;Electronics;#Categories=Graphics;#g" $i;done
 ```
 
 #### kicad plugins

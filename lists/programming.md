@@ -53,11 +53,6 @@ rust rust-src rust-analyzer
 
 ## AUR
 
-### install markdown tools
-
-- https://aur.archlinux.org/packages/pandoc-bin/
-- https://aur.archlinux.org/packages/marktext-bin/
-
 ### install qwt additionals
 
 ```sh
