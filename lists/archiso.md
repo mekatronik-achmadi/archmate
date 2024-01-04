@@ -537,12 +537,12 @@ sudo rm -vf /usr/share/applications/electron*
 
 - [x] archiso
 - [x] driver
-- [ ] design
-- [ ] media
-- [ ] virtual
-- [ ] programming
-- [ ] networking
-- [ ] winlayer
-- [ ] electronic
+- [x] design
+- [x] media
+- [x] virtual
+- [x] winlayer
+- [x] networking
+- [x] electronic
+- [x] programming
 - [ ] college
 - [ ] other

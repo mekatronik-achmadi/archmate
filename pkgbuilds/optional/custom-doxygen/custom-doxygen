@@ -1,0 +1,309 @@
+#!/bin/bash
+
+export PAR1=${1}
+export PAR2=${2}
+export PAR3=${3}
+
+export DOXYCONF="doxyconf"
+export PRJNAME="untitled"
+export OUTDIR="doxy_doc"
+export OPTLANG="NONE"
+export OPTLANGINFO="NONE"
+
+help_msg() {
+    echo "usage: "
+    echo "custom-doxygen -a PROJECT_NAME LANG_OPT : create config"
+    echo "custom-doxygen -b CONFIG_FILE LANG_OPT  : build html"
+    echo "custom-doxygen -c CONFIG_FILE LANG_OPT  : modify config"
+    echo ""
+    echo "LANG_OPT options:"
+    echo "none       : leave as is"
+    echo "-C         : optimize for C/C++"
+    echo "-J         : optimize for Java/Python"
+    #echo "-V         : VHDL"
+    #echo "-F         : FORTRAN"
+    echo ""
+    echo "Make sure your INPUT values are correct for your project"
+}
+
+doxyfile_config() {
+    # warnings related
+    sed -i "s#QUIET                  = YES#QUIET                  = NO#g" $DOXYCONF
+    sed -i "s#WARNINGS               = YES#WARNINGS               = NO#g" $DOXYCONF
+    sed -i "s#WARN_IF_UNDOCUMENTED   = YES#WARN_IF_UNDOCUMENTED   = NO#g" $DOXYCONF
+    sed -i "s#WARN_IF_DOC_ERROR      = YES#WARN_IF_DOC_ERROR      = NO#g" $DOXYCONF
+    sed -i "s#WARN_NO_PARAMDOC       = YES#WARN_NO_PARAMDOC       = NO#g" $DOXYCONF
+    sed -i "s#WARN_AS_ERROR          = YES#WARN_AS_ERROR          = NO#g" $DOXYCONF
+
+    # source scope related
+    sed -i "s#ALWAYS_DETAILED_SEC    = NO#ALWAYS_DETAILED_SEC    = YES#g" $DOXYCONF
+    sed -i "s#VERBATIM_HEADERS       = NO#VERBATIM_HEADERS       = YES#g" $DOXYCONF
+    sed -i "s#RECURSIVE              = NO#RECURSIVE              = YES#g" $DOXYCONF
+    sed -i "s#EXTRACT_ALL            = NO#EXTRACT_ALL            = YES#g" $DOXYCONF
+    sed -i "s#EXTRACT_STATIC         = NO#EXTRACT_STATIC         = YES#g" $DOXYCONF
+    sed -i "s#EXTRACT_PACKAGE        = NO#EXTRACT_PACKAGE        = YES#g" $DOXYCONF
+    sed -i "s#EXTRACT_PRIVATE        = NO#EXTRACT_PRIVATE        = YES#g" $DOXYCONF
+    sed -i "s#EXTRACT_PRIV_VIRTUAL   = NO#EXTRACT_PRIV_VIRTUAL   = YES#g" $DOXYCONF
+    sed -i "s#EXTRACT_LOCAL_METHODS  = NO#EXTRACT_LOCAL_METHODS  = YES#g" $DOXYCONF
+    sed -i "s#EXTRACT_LOCAL_CLASSES  = NO#EXTRACT_LOCAL_CLASSES  = YES#g" $DOXYCONF
+    sed -i "s#SKIP_FUNCTION_MACROS   = YES#SKIP_FUNCTION_MACROS   = NO#g" $DOXYCONF
+    sed -i "s#HIDE_UNDOC_MEMBERS     = YES#HIDE_UNDOC_MEMBERS     = NO#g" $DOXYCONF
+    sed -i "s#HIDE_UNDOC_CLASSES     = YES#HIDE_UNDOC_CLASSES     = NO#g" $DOXYCONF
+    sed -i "s#FULL_PATH_NAMES        = YES#FULL_PATH_NAMES        = NO#g" $DOXYCONF
+
+    # graph and diagram related
+    sed -i "s#HAVE_DOT               = NO#HAVE_DOT               = YES#g" $DOXYCONF
+    sed -i "s#UML_LOOK               = NO#UML_LOOK               = YES#g" $DOXYCONF
+    sed -i "s#CALL_GRAPH             = NO#CALL_GRAPH             = YES#g" $DOXYCONF
+    sed -i "s#CALLER_GRAPH           = NO#CALLER_GRAPH           = YES#g" $DOXYCONF
+    sed -i "s#CLASS_DIAGRAMS         = NO#CLASS_DIAGRAMS         = YES#g" $DOXYCONF
+    sed -i "s#DOT_MULTI_TARGETS      = NO#DOT_MULTI_TARGETS      = YES#g" $DOXYCONF
+    sed -i "s#INCLUDE_GRAPH          = NO#INCLUDE_GRAPH          = YES#g" $DOXYCONF
+    sed -i "s#INCLUDED_BY_GRAPH      = NO#INCLUDED_BY_GRAPH      = YES#g" $DOXYCONF
+    sed -i "s#DIRECTORY_GRAPH        = NO#DIRECTORY_GRAPH        = YES#g" $DOXYCONF
+    sed -i "s#DOT_TRANSPARENT        = NO#DOT_TRANSPARENT        = YES#g" $DOXYCONF
+    sed -i "s#GRAPHICAL_HIERARCHY    = NO#GRAPHICAL_HIERARCHY    = YES#g" $DOXYCONF
+    sed -i "s#HIDE_UNDOC_RELATIONS   = YES#HIDE_UNDOC_RELATIONS   = NO#g" $DOXYCONF
+
+    # source browsing related
+    sed -i "s#SOURCE_BROWSER         = NO#SOURCE_BROWSER         = YES#g" $DOXYCONF
+    sed -i "s#MARKDOWN_SUPPORT       = NO#MARKDOWN_SUPPORT       = YES#g" $DOXYCONF
+    sed -i "s#STRIP_CODE_COMMENTS    = NO#STRIP_CODE_COMMENTS    = YES#g" $DOXYCONF
+    sed -i "s#CASE_SENSE_NAMES       = NO#CASE_SENSE_NAMES       = YES#g" $DOXYCONF
+    sed -i "s#WARN_NO_PARAMDOC       = NO#WARN_NO_PARAMDOC       = YES#g" $DOXYCONF
+    sed -i "s#REFERENCED_BY_RELATION = NO#REFERENCED_BY_RELATION = YES#g" $DOXYCONF
+    sed -i "s#REFERENCES_RELATION    = NO#REFERENCES_RELATION    = YES#g" $DOXYCONF
+    sed -i "s#ENABLE_PREPROCESSING   = NO#ENABLE_PREPROCESSING   = YES#g" $DOXYCONF
+    sed -i "s#MACRO_EXPANSION        = NO#MACRO_EXPANSION        = YES#g" $DOXYCONF
+    sed -i "s#EXPAND_ONLY_PREDEF     = NO#EXPAND_ONLY_PREDEF     = YES#g" $DOXYCONF
+    sed -i "s#SEARCHENGINE           = NO#SEARCHENGINE           = YES#g" $DOXYCONF
+    sed -i "s#DOCBOOK_PROGRAMLISTING = NO#DOCBOOK_PROGRAMLISTING = YES#g" $DOXYCONF
+    sed -i "s#ALPHABETICAL_INDEX     = YES#ALPHABETICAL_INDEX     = NO#g" $DOXYCONF
+    sed -i "s#INHERIT_DOCS           = YES#INHERIT_DOCS           = NO#g" $DOXYCONF
+    sed -i "s#SORT_MEMBER_DOCS       = YES#SORT_MEMBER_DOCS       = NO#g" $DOXYCONF
+    sed -i "s#REFERENCES_LINK_SOURCE = YES#REFERENCES_LINK_SOURCE = NO#g" $DOXYCONF
+    sed -i "s#USE_MATHJAX            = YES#USE_MATHJAX            = NO#g" $DOXYCONF
+    sed -i "s#DISABLE_INDEX          = YES#DISABLE_INDEX          = NO#g" $DOXYCONF # Safer Treeview replacement
+    sed -i "s#GENERATE_TREEVIEW      = YES#GENERATE_TREEVIEW      = NO#g" $DOXYCONF # if YES, memory crash at big project
+
+    # use html and pdflatex output
+    sed -i "s#GENERATE_HTML          = NO#GENERATE_HTML          = YES#g" $DOXYCONF
+    sed -i "s#GENERATE_LATEX         = YES#GENERATE_LATEX         = NO#g" $DOXYCONF
+    sed -i "s#GENERATE_DOCBOOK       = YES#GENERATE_DOCBOOK       = NO#g" $DOXYCONF
+    sed -i "s#GENERATE_HTMLHELP      = YES#GENERATE_HTMLHELP      = NO#g" $DOXYCONF
+    sed -i "s#GENERATE_RTF           = YES#GENERATE_RTF           = NO#g" $DOXYCONF
+    sed -i "s#GENERATE_MAN           = YES#GENERATE_MAN           = NO#g" $DOXYCONF
+    sed -i "s#GENERATE_XML           = YES#GENERATE_XML           = NO#g" $DOXYCONF
+    sed -i "s#GENERATE_AUTOGEN_DEF   = YES#GENERATE_AUTOGEN_DEF   = NO#g" $DOXYCONF
+    sed -i "s#GENERATE_PERLMOD       = YES#GENERATE_PERLMOD       = NO#g" $DOXYCONF
+
+    # pdflatex related
+    sed -i "s#USE_PDFLATEX           = NO#USE_PDFLATEX           = YES#g" $DOXYCONF
+    sed -i "s#LATEX_CMD_NAME         =\$#LATEX_CMD_NAME         = \"pdflatex -interaction=nonstopmode\"#g" $DOXYCONF
+
+    # html custom css
+    #sed -i 's@HTML_EXTRA_STYLESHEET  =@HTML_EXTRA_STYLESHEET  = "/usr/share/doxygen/theme/dark/custom.css" "/usr/share/doxygen/theme/dark/custom_dark_theme.css"@g' $DOXYCONF
+}
+
+project_config() {
+    sed -i "s#PROJECT_NAME           = \"My Project\"#PROJECT_NAME           = \"$PRJNAME\"#g" $DOXYCONF
+    sed -i "s#OUTPUT_DIRECTORY       =#OUTPUT_DIRECTORY       = ./$OUTDIR#g" $DOXYCONF
+}
+
+html_viewer() {
+    export DOCTITLE=$(echo $PRJNAME | tr -d '"')
+    echo "<!DOCTYPE html>" > $OUTDIR/documentation.html
+    echo "<title>$DOCTITLE</title>"  >> $OUTDIR/documentation.html
+    echo "<iframe src=\"html/index.html\" style=\"position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;\">" >> $OUTDIR/documentation.html
+    echo "</iframe></html>" >> $OUTDIR/documentation.html
+}
+
+latex_build() {
+    cd $OUTDIR/latex/
+    make -j$(nproc) all
+    mv -f refman.pdf ../
+}
+
+lang_chk() {
+    if [ ! -z "$PAR3" ];then
+        if [ "$PAR3" == "-C" ];then
+            export OPTLANG="C"
+            echo "Optimize selected: C"
+        elif [ "$PAR3" == "-J" ];then
+            export OPTLANG="J"
+            echo "Optimize selected: Java/Python"
+        elif [ "$PAR3" == "-F" ];then
+            export OPTLANG="F"
+            echo "Optimize selected: FORTRAN"
+        elif [ "$PAR3" == "-V" ];then
+            export OPTLANG="V"
+            echo "Optimize selected: VHDL"
+        else
+            export OPTLANG="NONE"
+            echo "Optimize not recognized: leave as is"
+        fi
+    else
+        export OPTLANG="NONE"
+        echo "Optimize not set: leave as is"
+    fi
+}
+
+lang_config() {
+    if [ ! "$OPTLANG" == "NONE" ];then
+        sed -i "s#OPTIMIZE_OUTPUT_FOR_C  = YES#OPTIMIZE_OUTPUT_FOR_C  = NO#g" $DOXYCONF
+        sed -i "s#OPTIMIZE_OUTPUT_JAVA  = YES#OPTIMIZE_OUTPUT_JAVA  = NO#g" $DOXYCONF
+        sed -i "s#OPTIMIZE_FOR_FORTRAN  = YES#OPTIMIZE_FOR_FORTRAN  = NO#g" $DOXYCONF
+        sed -i "s#OPTIMIZE_OUTPUT_VHDL  = YES#OPTIMIZE_OUTPUT_VHDL  = NO#g" $DOXYCONF
+
+        if [ "$OPTLANG" == "C" ];then
+            sed -i "s#OPTIMIZE_OUTPUT_FOR_C  = NO#OPTIMIZE_OUTPUT_FOR_C  = YES#g" $DOXYCONF
+        elif [ "$OPTLANG" == "J" ];then
+            sed -i "s#OPTIMIZE_OUTPUT_JAVA   = NO#OPTIMIZE_OUTPUT_JAVA   = YES#g" $DOXYCONF
+        elif [ "$OPTLANG" == "F" ];then
+            sed -i "s#OPTIMIZE_FOR_FORTRAN   = NO#OPTIMIZE_FOR_FORTRAN   = YES#g" $DOXYCONF
+        elif [ "$OPTLANG" == "V" ];then
+            sed -i "s#OPTIMIZE_OUTPUT_VHDL   = NO#OPTIMIZE_OUTPUT_VHDL   = YES#g" $DOXYCONF
+        fi
+    fi
+}
+
+info_get() {
+    export PRJNAME=$(cat $DOXYCONF | grep -w "PROJECT_NAME" | cut -f2 -d\= | tr -d '[:space:]')
+    export OUTDIR=$(cat $DOXYCONF | grep -w "OUTPUT_DIRECTORY" | cut -f2 -d\= | tr -d '[:space:]')
+
+    export IS_C=$(cat $DOXYCONF | grep -w "OPTIMIZE_OUTPUT_FOR_C" | cut -f2 -d\= | tr -d '[:space:]')
+    export IS_J=$(cat $DOXYCONF | grep -w "OPTIMIZE_OUTPUT_JAVA" | cut -f2 -d\= | tr -d '[:space:]')
+    export IS_F=$(cat $DOXYCONF | grep -w "OPTIMIZE_FOR_FORTRAN" | cut -f2 -d\= | tr -d '[:space:]')
+    export IS_V=$(cat $DOXYCONF | grep -w "OPTIMIZE_OUTPUT_VHDL" | cut -f2 -d\= | tr -d '[:space:]')
+
+    if [ "$IS_C" == "YES" ];then
+        export OPTLANGINFO="For C"
+    fi
+
+    if [ "$IS_J" == "YES" ];then
+        export OPTLANGINFO="For Java/Python"
+    fi
+
+    if [ "$IS_F" == "YES" ];then
+        export OPTLANGINFO="For FORTRAN"
+    fi
+
+    if [ "$IS_V" == "YES" ];then
+        export OPTLANGINFO="For VHDL"
+    fi
+}
+
+info_msg() {
+    info_get
+    echo "specified project parameters:"
+    echo "DOXYCONFIG  : $DOXYCONF"
+    echo "PROJECT_NAME: $PRJNAME"
+    echo "OUTPUT DIR  : $OUTDIR"
+
+    if [ "$OPTLANGINFO" == "NONE" ];then
+        echo "OPTI LANG   : Not Set"
+    else
+        echo "OPTI LANG   : $OPTLANGINFO"
+    fi
+}
+
+dep_chk() {
+    if [ ! -f /usr/bin/doxygen ];then
+        echo "doxygen not found"
+        exit
+    fi
+
+    if [ ! -f /usr/bin/dot ];then
+        echo "graphviz not found"
+        exit
+    fi
+
+    if [ ! -f /usr/bin/sed ];then
+        echo "script editor not found"
+        exit
+    fi
+}
+
+args_chk() {
+    dep_chk
+    if [ -z "$PAR1" ] || [ -z "$PAR2" ];then
+        help_msg
+        exit
+    fi
+}
+
+func_a() {
+    export PRJNAME="$PAR2"
+    export DOXYCONF="${PAR2}_doxyconf"
+    export OUTDIR="${PAR2}_doc"
+
+    echo "create config file: $DOXYCONF"
+    doxygen -s -g $DOXYCONF > /dev/null 2>&1
+    doxyfile_config
+    project_config
+
+    lang_chk
+    lang_config
+
+    rm -f $DOXYCONF.bak
+    echo "config file created"
+    info_msg
+}
+
+func_b() {
+    export DOXYCONF="$PAR2"
+
+    if [ ! -f $DOXYCONF ];then
+        echo "file $DOXYCONF not found"
+        exit
+    fi
+
+    info_get
+
+    if [ -d $OUTDIR ];then
+        echo "output directory $OUTDIR already exist"
+        exit
+    fi
+
+    lang_chk
+    lang_config
+
+    echo "starting build html documents"
+    doxygen $DOXYCONF
+    html_viewer
+
+    #echo "starting build latex documents"
+    #latex_build
+
+    echo "build documents completed"
+}
+
+func_c() {
+    export DOXYCONF="$PAR2"
+
+    if [ ! -f $DOXYCONF ];then
+        echo "file $DOXYCONF not found"
+        exit
+    fi
+
+    echo "config file to modify: $DOXYCONF"
+    doxyfile_config
+
+    lang_chk
+    lang_config
+
+    rm -f $DOXYCONF.bak
+    echo "config file modified"
+    info_msg
+}
+
+##################### Main Script ###################################
+
+args_chk
+if  [ "$PAR1" == "-a" ];then
+    func_a
+elif [ "$PAR1" == "-b" ];then
+    func_b
+elif [ "$PAR1" == "-c" ];then
+    func_c
+fi

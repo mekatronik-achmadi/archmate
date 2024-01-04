@@ -1,0 +1,29 @@
+pkgname=custom-doxygen
+pkgver=0.1
+pkgrel=1
+pkgdesc="doxygen helper tool"
+arch=('any')
+url="http://www.doxygen.nl/"
+license=('GPL')
+depends=('bash' 'doxygen')
+optdepends=(
+    'dblatex: Docbook to PDF(LaTeX)'
+    'texlive-latexextra: PDF(LaTeX)')
+options=('!makeflags')
+#install=pkg.install
+source=("git+https://github.com/MaJerle/doxygen-dark-theme.git" "custom-doxygen")
+sha256sums=('SKIP' 'SKIP')
+
+package() {
+    cd $srcdir/
+
+    install -d $pkgdir/usr/bin/
+    install -m 755 custom-doxygen $pkgdir/usr/bin/
+
+    #install -d $pkgdir/usr/share/custom-doxygen/
+    #install -m 644 tabu.sty $pkgdir/usr/share/custom-doxygen/
+
+    cd $srcdir/doxygen-dark-theme/
+    mkdir -p $pkgdir/usr/share/doxygen/theme/dark
+    cp * $pkgdir/usr/share/doxygen/theme/dark/
+}

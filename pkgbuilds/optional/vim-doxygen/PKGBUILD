@@ -1,0 +1,20 @@
+pkgname=vim-doxygen
+pkgver=0.2.13
+_scriptid=14064
+pkgrel=5
+pkgdesc="Doxygen Plugin fo Vim"
+arch=('any')
+url="http://www.vim.org/scripts/script.php?script_id=987"
+license=('GPL')
+groups=('vim-plugins')
+depends=('vim')
+provides=('vim-doxygentoolkit')
+conflicts=('vim-doxygentoolkit')
+source=(DoxygenToolkit.vim)
+sha512sums=('SKIP')
+
+package() {
+  cd "${srcdir}"
+  install -D -m644 DoxygenToolkit.vim "${pkgdir}/usr/share/vim/vimfiles/plugin/DoxygenToolkit.vim"
+}
+

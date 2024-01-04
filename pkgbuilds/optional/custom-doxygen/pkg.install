@@ -1,0 +1,26 @@
+docbook_msg() {
+    echo '----------------------------------------------'
+    echo 'install dblatex to use:'
+    echo '"dblatex -o documentation.pdf docbook/index.xml"'
+    echo '----------------------------------------------'
+}
+
+symlink_tweak() {
+	mkdir -p /usr/share/texmf-dist/tex/latex/tabu/
+	ln -sf /usr/share/custom_doxygen/tabu.sty /usr/share/texmf-dist/tex/latex/tabu/tabu.sty
+}
+
+#=====================================================================================
+
+after_install() {
+    symlink_tweak
+    docbook_msg
+}
+
+post_install() {
+	after_install
+}
+
+post_upgrade() {
+	after_install
+}
