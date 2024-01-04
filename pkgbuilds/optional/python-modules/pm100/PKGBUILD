@@ -1,0 +1,30 @@
+pkgname=python-pm100
+pkgver=v1.2.2
+pkgrel=1
+pkgdesc="Thorlabs PM100 Python module"
+arch=('any')
+url="https://github.com/clade/ThorlabsPM100"
+license=('GPL')
+depends=('python-numpy' 'python-pandas' 'python-py' 'python-pytz'
+'python-dateutil' 'python-six' 'python-instrumental' 'python-pyserial')
+makedepends=('python-setuptools')
+source=(
+"https://files.pythonhosted.org/packages/42/67/5d6790000cdc4e45db63a83d70f9a652428bb2fb454c95f62254ce82ecf5/PyMeasure-0.10.0.tar.gz"
+"https://files.pythonhosted.org/packages/0a/5e/ef1769d291e959d19bd8a5a488e899897ff1f657eca39fe8db872fa691dd/ThorlabsPM100-1.2.2.tar.gz")
+sha256sums=('SKIP' 'SKIP')
+
+build() {
+  cd ${srcdir}/ThorlabsPM100*/
+  python setup.py build
+
+  cd ${srcdir}/PyMeasure-0.10.0*/
+  python setup.py build
+}
+
+package() {
+  cd ${srcdir}/ThorlabsPM100*/
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+
+  cd ${srcdir}/PyMeasure-0.10.0*/
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+}

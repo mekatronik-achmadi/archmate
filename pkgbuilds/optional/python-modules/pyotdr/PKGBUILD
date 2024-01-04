@@ -1,0 +1,30 @@
+pkgname=python-pyotdr
+pkgver=2.1.0
+pkgrel=1
+pkgdesc="Simple OTDR SOR file parser written in Python"
+arch=('any')
+url="https://github.com/sid5432/pyOTDR"
+license=('GPL')
+depends=('python')
+makedepends=('python-setuptools')
+source=(
+  "https://github.com/sid5432/pyOTDR/archive/refs/tags/2.1.0.tar.gz"
+  "https://files.pythonhosted.org/packages/6b/b0/e595ce2a2527e169c3bcd6c33d2473c1918e0b7f6826a043ca1245dd4e5b/crcmod-1.7.tar.gz"
+  )
+sha256sums=('SKIP' 'SKIP')
+
+build() {
+  cd $srcdir/pyOTDR*/
+  python setup.py build
+
+  cd ${srcdir}/crcmod*/
+  python setup.py build
+}
+
+package() {
+  cd $srcdir/pyOTDR*/
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+
+  cd ${srcdir}/crcmod*/
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+}

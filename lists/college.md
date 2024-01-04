@@ -79,7 +79,7 @@ fftw liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/python-soundfile/
 - https://aur.archlinux.org/packages/python-pyfftw/
 
-### install audio tools <-- rest here
+### install audio tools
 
 - https://aur.archlinux.org/packages/roomeqwizard/
 - https://aur.archlinux.org/packages/wavesurfer/

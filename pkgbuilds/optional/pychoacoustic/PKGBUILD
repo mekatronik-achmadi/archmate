@@ -1,0 +1,29 @@
+pkgname=pychoacoustics
+pkgver=0.5.14
+pkgrel=1
+pkgdesc="Software for psychoacoustics experiments "
+arch=('any')
+url="http://samcarcagno.altervista.org/pychoacoustics/pychoacoustics.html"
+license=('GPL-3.0')
+depends=('sox' 'alsa-utils' 'libsndfile'
+	 'python-pyqt5' 'python-numpy' 'python-scipy')
+optdepends=('python-pandas' 'python-matplotlib')
+makedepends=('python-setuptools')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/sam81/pychoacoustics/archive/${pkgver}.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}/"
+
+  python setup.py build
+
+  pyrcc5 -o qrc_resources.py resources.qrc
+  cp qrc_resources.py build/lib/${pkgname}/
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}/"
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+
+  ln -svf /usr/bin/pychoacoustics.pyw ${pkgdir}/usr/bin/pychoacoustics
+}

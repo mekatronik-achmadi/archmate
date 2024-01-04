@@ -1,0 +1,38 @@
+pkgname=python-instrumental
+pkgver=0.7
+pyvisaver=1.12.0
+pyvisapyver=0.5.3
+pkgrel=1
+pkgdesc="Python-based instrumentation library (including NI's VISA)"
+arch=('any')
+url="https://github.com/mabuchilab/Instrumental"
+license=('GPL')
+depends=('python' 'python-numpy' 'python-scipy' 'python-matplotlib' 'python-pint' 'python-pyserial')
+makedepends=('python-setuptools')
+source=(
+"https://github.com/mabuchilab/Instrumental/archive/refs/tags/0.7.tar.gz"
+"https://github.com/pyvisa/pyvisa-py/archive/refs/tags/0.5.3.tar.gz"
+"https://github.com/pyvisa/pyvisa/archive/refs/tags/1.12.0.tar.gz")
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+build() {
+  cd ${srcdir}/Instrumental-$pkgver/
+  python setup.py build
+
+  cd ${srcdir}/pyvisa-$pyvisaver/
+  python setup.py build
+
+  cd ${srcdir}/pyvisa-py-$pyvisapyver/
+  python setup.py build
+}
+
+package() {
+  cd ${srcdir}/Instrumental-$pkgver/
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+
+  cd ${srcdir}/pyvisa-$pyvisaver/
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+
+  cd ${srcdir}/pyvisa-py-$pyvisapyver/
+  python setup.py install --prefix=/usr --root=${pkgdir} -O1 --skip-build
+}
