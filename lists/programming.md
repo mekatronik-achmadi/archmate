@@ -162,7 +162,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 
-/home/achmaday/Downloads/vim-instant-markdown.tar.gz
+let g:instant_markdown_autostart=0
 " | tee ~/.vimrc
 ```
 
