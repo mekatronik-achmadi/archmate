@@ -256,6 +256,11 @@ Xft.dpi: 96
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault" | tee airootfs/etc/skel/.Xdefaults
 
+mkdir -pv airootfs/etc/skel/.config/git/
+echo 'set mainfont {{Liberation Sans} 8}
+set textfont {{LiterationMono Nerd Font} 8}
+set uifont {{Liberation Sans} 8 bold}' | tee airootfs/etc/skel/.config/git/gitk
+
 mkdir -pv airootfs/etc/gtk-2.0/
 echo '
 gtk-icon-theme-name = "Papirus-Light"
