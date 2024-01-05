@@ -36,7 +36,6 @@ mosquitto libwebsockets
 ### install social media
 
 - https://aur.archlinux.org/packages/whatsdesk-bin/
-- https://aur.archlinux.org/packages/hyperspace-bin/
 
 ### install remote desktop
 
