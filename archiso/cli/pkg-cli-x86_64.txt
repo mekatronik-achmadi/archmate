@@ -57,7 +57,7 @@ qt5ct qt6ct scrot
 xdotool shotwell
 parcellite meld
 
-openbox obconf trayer feh bashrun
+openbox obconf tint2 feh bashrun
 light volumeicon xarchiver xpdf
 
 networkmanager nm-connection-editor

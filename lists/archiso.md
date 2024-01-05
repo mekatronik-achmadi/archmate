@@ -89,7 +89,7 @@ parcellite meld
 
 ### install openbox session
 
-openbox obconf trayer feh bashrun
+openbox obconf tint2 feh bashrun
 light volumeicon xarchiver xpdf
 
 ### install networking system

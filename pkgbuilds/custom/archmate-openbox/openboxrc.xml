@@ -47,8 +47,8 @@
 </placement>
 
 <theme>
-  <name>Natura</name>
-  <titleLayout>LSMC</titleLayout>
+  <name>Bear2</name>
+  <titleLayout>LIM</titleLayout>
   <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon

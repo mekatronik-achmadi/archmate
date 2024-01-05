@@ -1,5 +1,6 @@
-trayer --edge top --align center --widthtype request &
 #bash ~/.screenlayout/dual_monitor.sh &
 bash /usr/share/openbox/fehbg &
-light -S 15 &
 volumeicon &
+light -S 15 &
+(sleep 1s && tint2 -c /usr/share/openbox/tint2.rc) &
+
