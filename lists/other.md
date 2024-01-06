@@ -24,6 +24,11 @@
 - https://aur.archlinux.org/packages/google-chrome/
 - https://aur.archlinux.org/packages/teamviewer/
 
+### install academic tools
+
+- https://aur.archlinux.org/packages/zotero-bin/
+- https://aur.archlinux.org/packages/mendeleydesktop-bundled/
+
 --------------------------------------------------------------------------------
 
 ## External

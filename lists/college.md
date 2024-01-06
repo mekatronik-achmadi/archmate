@@ -64,11 +64,6 @@ fftw liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/ttf-ms-fonts/
 - https://aur.archlinux.org/packages/ttf-vista-fonts/
 
-### install academic tools
-
-- https://aur.archlinux.org/packages/zotero-bin/
-- https://aur.archlinux.org/packages/mendeleydesktop-bundled/
-
 ### install wps office
 
 - https://aur.archlinux.org/packages/libtiff5/

@@ -4,10 +4,11 @@
 
 ### install wine
 
-wine wine-mono wine_gecko
-samba smbclient vkd3d
+samba smbclient
+wine-staging vkd3d
 winetricks msitools
 cabextract icoutils
+wine-mono wine_gecko
 
 ### install wine lib32
 
