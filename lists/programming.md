@@ -36,10 +36,6 @@ gdb gdb-dashboard
 lldb lld valgrind
 llvm clang boost
 
-### install java programming
-
-jre8-openjdk jdk8-openjdk
-
 ### install javacript programming
 
 nodejs node-gyp yq
