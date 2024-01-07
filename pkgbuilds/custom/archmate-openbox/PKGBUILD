@@ -6,10 +6,10 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/archlinuxmate/"
 license=('GPL')
 depends=(
-'bash' 'papirus-icon-theme' 'pavucontrol' 'volumeicon' 'htop'
+'openbox' 'obconf' 'tint2' 'scrot' 'onboard' 'xterm' 'gvim' 'git'
+'udisks2' 'papirus-icon-theme' 'pavucontrol' 'volumeicon' 'htop'
 'bashrun' 'mc' 'most' 'arc-solid-gtk-theme' 'papirus-icon-theme'
-'feh' 'archlinux-wallpaper' 'gsimplecal' 'arandr' 'vimb' 'light'
-'openbox' 'obconf' 'tint2' 'scrot' 'onboard' 'xterm' 'gvim' 'git')
+'feh' 'archlinux-wallpaper' 'gsimplecal' 'arandr' 'vimb' 'light')
 optdepends=(
 'geany: text editor'
 'firefox: web browser'

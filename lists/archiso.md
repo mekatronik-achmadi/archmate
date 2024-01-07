@@ -515,6 +515,16 @@ ExecStart=-/sbin/agetty --autologin $USER --noissue --noclear %I 38400 linux
 startx /usr/bin/openbox-session
 ```
 
+#### openbox mount disks
+
+```sh
+udisksctl mount -b /dev/sdb2
+udisksctl umount -b /dev/sdb2
+
+udisksctl power-off -b /dev/sdb2
+udisksctl power-off -b /dev/sdb
+```
+
 #### configure vnc server
 
 ```sh
