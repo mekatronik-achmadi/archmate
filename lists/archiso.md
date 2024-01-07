@@ -517,6 +517,8 @@ startx /usr/bin/openbox-session
 #### openbox mount disks
 
 ```sh
+sudo fdisk -l
+
 udisksctl mount -b /dev/sdb2
 udisksctl umount -b /dev/sdb2
 
