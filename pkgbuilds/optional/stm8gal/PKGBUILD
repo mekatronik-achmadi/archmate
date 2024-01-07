@@ -1,0 +1,23 @@
+pkgname=stm8gal
+pkgver=1.6.0
+pkgrel=1
+pkgdesc='Open source flash program for the STM8 processors using the ST serial bootloader over UART or I2C'
+arch=('x86_64')
+url='https://github.com/gicking/stm8gal'
+license=('Apache')
+provides=("$pkgname")
+conflicts=("$pkgname")
+depends=('glibc')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/gicking/stm8gal/archive/refs/tags/v1.6.0.tar.gz")
+md5sums=('8da535a8a47571fa100a3c2c7b229a76')
+
+build() {
+  cd $pkgname-$pkgver
+  make -j$(nproc)
+}
+
+package() {
+  cd $pkgname-$pkgver
+  install -Dm755 $pkgname "$pkgdir/usr/bin/$pkgname"
+}
+

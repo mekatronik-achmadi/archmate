@@ -1,0 +1,48 @@
+pkgname=stm8spl
+pkgver=r43.c276f87
+pkgrel=1
+pkgdesc='STM8 SPL and its patch for SDCC'
+arch=('any')
+url='https://github.com/gicking/STM8-SPL_SDCC_patch'
+license=('Apache')
+makedepends=('git')
+depends=('glibc' 'sdcc')
+optdepends=('stm8gal: flashing using Bootloader' 'stm8flash-git: flashing using ST-Link')
+source=(
+"git+https://github.com/gicking/STM8-SPL_SDCC_patch.git"
+"git+https://github.com/aguegu/stm8demos.git"
+"git+https://github.com/lujji/stm8-bare-min.git"
+"local://en.stsw-stm8069.zip"
+)
+md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+pkgver() {
+	cd "STM8-SPL_SDCC_patch/"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+    cd "$srcdir/"
+    patch -p0 < STM8-SPL_SDCC_patch/STM8S_StdPeriph_Lib_V2.3.1_sdcc.patch
+}
+
+package() {
+    cd "$srcdir/STM8S_StdPeriph_Lib/"
+    install -dm755 $pkgdir/opt/stm8spl/patches/
+    install -dm755 $pkgdir/opt/stm8spl/demos/
+    install -dm755 $pkgdir/opt/stm8spl/demos-bare/
+
+    cp -rf Libraries/ $pkgdir/opt/stm8spl/
+    cp -rf Project/ $pkgdir/opt/stm8spl/
+    cp -rf Utilities/ $pkgdir/opt/stm8spl/
+    cp -f Doxyfile $pkgdir/opt/stm8spl/
+
+    cp -f $srcdir/STM8-SPL_SDCC_patch/*.patch $pkgdir/opt/stm8spl/patches/
+    cp -f $srcdir/STM8-SPL_SDCC_patch/Archive/*.patch $pkgdir/opt/stm8spl/patches/
+
+    cp -rf $srcdir/stm8demos/stm8s*/ $pkgdir/opt/stm8spl/demos/
+
+    cp -rf $srcdir/stm8-bare-min/stm8s/ $pkgdir/opt/stm8spl/demos-bare/
+    cp -rf $srcdir/stm8-bare-min/util/ $pkgdir/opt/stm8spl/demos-bare/
+}
+

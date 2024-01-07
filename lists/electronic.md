@@ -51,6 +51,10 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 
 - https://aur.archlinux.org/packages/simulide/
 
+### install stm8 tools
+
+- https://aur.archlinux.org/packages/stm8flash-git/
+
 --------------------------------------------------------------------------------
 
 ## External
@@ -78,6 +82,11 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 
 - https://github.com/mekatronik-achmadi/atmega-dev/tree/master/atmega-tools/
 - https://github.com/mekatronik-achmadi/atmega-dev/tree/master/atmega-demos/
+
+### install stm8 tools
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/stm8spl/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/stm8gal/
 
 --------------------------------------------------------------------------------
 
