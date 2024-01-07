@@ -89,8 +89,8 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 
 ### install doxygen tools
 
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/custom-doxygen/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/vim-doxygen/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/custom-doxygen/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/vim-doxygen/
 
 --------------------------------------------------------------------------------
 

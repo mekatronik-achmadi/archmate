@@ -26,7 +26,7 @@ kicad-library-3d ngspice
 
 ### install kicad library
 
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/kicadlib-user/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/kicadlib-user/
 
 --------------------------------------------------------------------------------
 

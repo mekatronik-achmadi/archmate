@@ -92,13 +92,13 @@ fftw liquid-dsp libsndfile
 
 ### install python visa tools
 
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/python-modules/instrumental/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/python-modules/pyotdr/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/python-modules/pm100/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/instrumental/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/pyotdr/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/pm100/
 
 ### install python acoustics tools
 
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/pychoacoustics/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/pychoacoustics/
 
 --------------------------------------------------------------------------------
 

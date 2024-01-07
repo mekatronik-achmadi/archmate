@@ -2,6 +2,13 @@
 
 ## Official
 
+### install vulkan mesa driver
+
+vulkan-radeon lib32-vulkan-radeon
+vulkan-icd-loader lib32-vulkan-icd-loader
+lib32-vulkan-intel lib32-vulkan-mesa-layers
+vulkan-tools vulkan-intel vulkan-mesa-layers
+
 ### install intel-nvidia driver
 
 ```

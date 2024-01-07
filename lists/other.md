@@ -40,12 +40,12 @@
 ### install cadsoft eagle
 
 - https://aur.archlinux.org/packages/openssl-1.0/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/unused/eaglecad/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/eaglecad/
 
 ### install internet tool
 
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/unused/discord/
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/unused/packettracer/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
 
 --------------------------------------------------------------------------------
 

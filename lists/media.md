@@ -25,7 +25,6 @@ ddrescue ext4magic foremost testdisk
 ### install markdown tools
 
 - https://aur.archlinux.org/packages/pandoc-bin/
-- https://aur.archlinux.org/packages/marktext-bin/
 
 ### install disk recovery tools
 
@@ -42,7 +41,11 @@ ddrescue ext4magic foremost testdisk
 
 ### install youtube programs
 
-- https://github.com/mekatronik-achmadi/archlinuxmate/tree/main/pkgbuilds/optional/youtube/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/youtube/
+
+### install markdown tools
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/ghostwriter-qt5/
 
 --------------------------------------------------------------------------------
 
