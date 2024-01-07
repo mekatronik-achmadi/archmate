@@ -112,6 +112,8 @@ skel_config() {
 }
 
 gitgui_menu() {
+echo 'add git-gui menu'
+
 echo '[Desktop Entry]
 Name=Git GUI
 Comment=GUI for Git
