@@ -141,6 +141,10 @@ cmake extra-cmake-modules
 dos2unix doxygen graphviz
 bear autoconf meson ninja
 
+### install java basic
+
+jre8-openjdk jdk8-openjdk
+
 ### install python installer
 
 python-pkgconfig python-wheel

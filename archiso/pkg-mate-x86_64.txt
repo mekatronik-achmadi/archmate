@@ -105,6 +105,8 @@ cmake extra-cmake-modules
 dos2unix doxygen graphviz
 bear autoconf meson ninja
 
+jre8-openjdk jdk8-openjdk
+
 python-pkgconfig python-wheel
 python-build python-installer
 python-pipenv python-virtualenv

@@ -73,8 +73,9 @@ fftw liquid-dsp libsndfile
 
 ### install r programming
 
-- https://aur.archlinux.org/packages/rstudio-desktop-bin/
+- https://aur.archlinux.org/packages/python-rchitect/
 - https://aur.archlinux.org/packages/littler/
+- https://aur.archlinux.org/packages/radian/
 
 ### install python additionals
 
@@ -109,10 +110,19 @@ fftw liquid-dsp libsndfile
 
 - [CRAN MIRRORs](https://cran.r-project.org/mirrors.html)
 - [Packages](https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
+- [Radian Themes](https://pygments.org/styles/)
 - [Tutorial](https://www.tutorialspoint.com/r/index.htm)
 
 ```sh
-sudo sed -i "s#Categories=Development#Categories=Education#g" /usr/share/applications/rstudio.desktop
+echo '[Desktop Entry]
+Name=Radian
+Comment=R console
+Exec=radian
+Icon=/usr/share/pixmaps/r.png
+StartupNotify=true
+Terminal=true
+Type=Application
+Categories=Math;Science;Education' | sudo tee /usr/share/applications/radian.desktop
 ```
 
 ```sh
@@ -126,7 +136,11 @@ local({
   r["CRAN"] <- "https://mirror.aarnet.edu.au/pub/CRAN/"
   options(repos = r)
 })
-' | tee -a ~/.Rprofile
+options(radian.color_scheme = "tango")
+options(radian.auto_match = TRUE)
+options(radian.highlight_matching_bracket = FALSE)
+options(radian.auto_indentation = TRUE)
+options(radian.tab_size = 4)' | tee -a ~/.Rprofile
 
 r -e 'install.packages("languageserver")'
 r -e 'install.packages(c("ImportExport","tidymodels","tidyverse","markdown"))'

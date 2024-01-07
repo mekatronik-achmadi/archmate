@@ -2,10 +2,6 @@
 
 ## Official
 
-### install java programming
-
-jre8-openjdk jdk8-openjdk
-
 ### install vulkan mesa driver
 
 vulkan-radeon lib32-vulkan-radeon
