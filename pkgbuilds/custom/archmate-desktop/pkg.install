@@ -111,6 +111,19 @@ skel_config() {
     cp -f /usr/share/archmate-default/geany.conf /etc/skel/.config/geany/
 }
 
+gitgui_menu() {
+echo '[Desktop Entry]
+Name=Git GUI
+Comment=GUI for Git
+Exec=git gui
+Icon=git-cola
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Development;RevisionControl;
+' | tee /usr/share/applications/git-gui.desktop
+}
+
 updating() {
     update_mime_cache
     update_dconf
@@ -120,6 +133,7 @@ updating() {
     arch_profile
     skel_config
     custom_bashrc
+    gitgui_menu
 }
 
 #=====================================================================================
