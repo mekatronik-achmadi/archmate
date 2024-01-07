@@ -1,7 +1,8 @@
-#include <stdio.h>
+#include "cli.h"
 
 int main(int argc, char *argv[])
 {
-    printf("C Template\r\n");
+    cli_msg();
+
     return 0;
 }
