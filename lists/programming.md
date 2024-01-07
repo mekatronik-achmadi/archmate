@@ -168,10 +168,10 @@ mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
 vim -c "CocInstall coc-pairs coc-snippets"
+vim -c "CocInstall coc-json coc-tsserver"
 vim -c "CocInstall coc-sh coc-ultisnips"
 vim -c "CocInstall coc-clangd coc-jedi"
-vim -c "CocInstall coc-json coc-yaml"
-
+vim -c "CocInstall coc-html coc-yaml"
 vim +PlugClean
 
 echo "For editing PKGBUILD"
@@ -186,7 +186,9 @@ jq -n '
 ."pairs.enableCharacters"=["(","[","\"","'\''","`"]
 ' ~/.vim/coc-settings.json > ~/.vim/coc-settings.json
 cat ~/.vim/coc-settings.json
+```
 
+```sh
 echo "vim color setting commands
 echo ":h cterm-colors"
 echo ":h gui-colors"
