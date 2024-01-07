@@ -5,7 +5,7 @@
 ### install stm32 programming
 
 arm-none-eabi-gcc arm-none-eabi-gdb
-arm-none-eabi-newlib stlink sdcc
+arm-none-eabi-newlib stlink
 
 ### install atmega programming
 
