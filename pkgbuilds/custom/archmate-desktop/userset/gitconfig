@@ -1,23 +1,20 @@
+[core]
+    pager = cat
+    editor = vim
+    whitespace = -trailing-space
+
 [gui]
 	spellingdictionary = none
-	editor = pluma
+	editor = vim
 	fontui = -family \"Liberation Sans\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family \"LiterationMono Nerd Font\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
 
 [guitool "Pull"]
 	cmd = git pull
 
-[cola]
-	spellcheck = false
-	icontheme = light
-	startupmode = list
-	fontdiff = LiterationMono Nerd Font,8,-1,5,50,0,0,0,0,0
-
 [diff]
-	tool = meld
-
-[merge]
-	tool = meld
+    renames = true
+	tool = vimdiff
 
 [color]
 	ui = auto
@@ -27,6 +24,9 @@
 
 [advice]
 	addIgnoredFile = false
+
+[init]
+	defaultBranch = main
 
 [user]
 	name =

@@ -16,7 +16,7 @@ docker docker-compose
 
 ## AUR
 
-### install iso2usb writer
+### install live USB writer
 
 - https://aur.archlinux.org/packages/ventoy-bin/
 

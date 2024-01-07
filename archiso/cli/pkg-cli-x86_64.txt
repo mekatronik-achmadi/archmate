@@ -134,8 +134,9 @@ edk2-ovmf
 qt5gtk2 qt6gtk2
 gtk3-nocsd-git
 
-downgrade fake-hwclock
-git-cola hardinfo-git
+downgrade
+fake-hwclock
+hardinfo-git
 
 vim-plug-git
 vim-devicons-git

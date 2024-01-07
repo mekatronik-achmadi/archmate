@@ -241,7 +241,6 @@ edk2-ovmf
 
 - downgrade: https://aur.archlinux.org/packages/downgrade/
 - fake-hwclock: https://aur.archlinux.org/packages/fake-hwclock/
-- git-cola: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/git-cola/
 - hardinfo-git: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/hardinfo/
 
 ### install vim additionals

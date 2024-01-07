@@ -87,6 +87,10 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 
 ## External
 
+### install git tools
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/git-cola/
+
 ### install doxygen tools
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/custom-doxygen/

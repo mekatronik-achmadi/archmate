@@ -170,8 +170,9 @@ qt5gtk2 qt6gtk2
 brisk-menu gtk3-nocsd-git
 mate-tweak mate-zenity
 
-downgrade fake-hwclock
-git-cola hardinfo-git
+downgrade
+fake-hwclock
+hardinfo-git
 
 vim-plug-git
 vim-devicons-git

@@ -70,7 +70,7 @@ sed -i '2i EXTRA_CFLAGS += -DCONFIG_RTW_LED' src/8192eu/Makefile
 
 ## Configurations
 
-### configure new driver modeset
+### configure newer gpu modeset
 
 ```sh
 sudo sed -i 's#loglevel=3 quiet#loglevel=3 driver=nonfree nouveau.modeset=0 i915.modeset=1 radeon.modeset=1 quiet#' \

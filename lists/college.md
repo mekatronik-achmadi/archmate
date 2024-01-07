@@ -13,6 +13,7 @@ gnuplot mpdecimal
 
 ### install python computing
 
+python-pygments
 python-tabulate
 python-matplotlib
 python-bottleneck
