@@ -31,7 +31,7 @@ dir:
 $(ODIR)/$(TARGET): $(COBJ)
 	$(CC) $(COBJ) $(LFLAGS) -o $(ODIR)/$(TARGET)
 
-$(COBJ): $(CSRC)
+$(ODIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(INCDIR) $(CFLAGS) -c $< -o $@
 
 clean:
