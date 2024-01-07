@@ -165,13 +165,6 @@ sudo sed -i '/^$/d' /usr/share/desktop-directories/wps-office.directory
 echo 'NoDisplay=true' | sudo tee -a /usr/share/desktop-directories/wps-office.directory
 ```
 
-### configure mendeley desktop
-
-```sh
-sudo sed -i 's#mendeleydesktop %f#mendeleydesktop -style gtk %f#g' /usr/share/applications/mendeleydesktop.desktop
-sed -i 's#mendeleydesktop %f#mendeleydesktop -style gtk %f#g' ~/.local/share/applications/mendeleydesktop.desktop
-```
-
 ### configure texstudio
 
 ```sh
