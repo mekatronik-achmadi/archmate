@@ -121,7 +121,7 @@ StartupNotify=true
 Terminal=false
 Type=Application
 Categories=Development;RevisionControl;
-' | tee /usr/share/applications/git-gui.desktop
+' > /usr/share/applications/git-gui.desktop
 }
 
 updating() {
