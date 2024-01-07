@@ -3,7 +3,7 @@ pkgver=0.1
 pkgrel=1
 pkgdesc="alternative session using OpenBox"
 arch=('any')
-url="https://github.com/mekatronik-achmadi/archlinuxmate/"
+url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
 depends=(
 'openbox' 'obconf' 'tint2' 'scrot' 'onboard' 'xterm' 'gvim' 'git'

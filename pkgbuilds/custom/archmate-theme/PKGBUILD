@@ -3,7 +3,7 @@ pkgver=0.1
 pkgrel=1
 pkgdesc="some GTK/Icon themes for Arch Linux MATE"
 arch=('any')
-url="https://github.com/mekatronik-achmadi/archlinuxmate/"
+url="https://github.com/mekatronik-achmadi/archmate/"
 license=('custom')
 depends=(
 	'gtk-engines' 'gtk-engine-murrine'
