@@ -209,11 +209,10 @@ compiledb make -j$(nproc)
 
 ```sh
 # Initial clangd config without header cleaning
+mkdir -p ~/.config/clangd/
 echo "
 Diagnostics:
   UnusedIncludes: None
 " | tee ~/.config/clangd/config.yaml
-
-# Disable header cleaning
 sed -i 's@UnusedIncludes: Strict@UnusedIncludes: None@g' ~/.config/clangd/config.yaml
 ```
