@@ -2,7 +2,7 @@
 TARGET=appname
 
 # compiler binary
-CC=gcc
+CC=g++
 
 # source directories
 SRCDIR=./
@@ -11,21 +11,21 @@ SRCDIR=./
 INCDIR=-I./
 
 # gui resource
-GUIRC=main.glade
+GUIRC=gui.glade
 
 # build output directory
 ODIR=build
 
 # compiler options
 COPT=-O0 -Wall -pthread
-CFLAGS=$(COPT) $(shell pkg-config --cflags gtk+-3.0) -rdynamic
-LFLAGS=$(COPT) $(shell pkg-config --libs gtk+-3.0) -rdynamic
+CFLAGS=$(COPT) $(shell pkg-config --cflags gtkmm-3.0)
+LFLAGS=$(COPT) $(shell pkg-config --libs gtkmm-3.0)
 
 
 ################### Non Configurable ########################
 
-CSRC=$(wildcard $(SRCDIR)/*.c)
-COBJ= $(patsubst $(SRCDIR)/%.c,$(ODIR)/%.o,$(CSRC))
+CSRC=$(wildcard $(SRCDIR)/*.cpp)
+COBJ= $(patsubst $(SRCDIR)/%.cpp,$(ODIR)/%.o,$(CSRC))
 
 all: dir $(ODIR)/$(TARGET)
 
@@ -36,7 +36,7 @@ $(ODIR)/$(TARGET): $(COBJ)
 	$(CC) $(COBJ) $(LFLAGS) -o $(ODIR)/$(TARGET)
 	cp -vf $(GUIRC) $(ODIR)/$(GUIRC)
 
-$(ODIR)/%.o: $(SRCDIR)/%.c
+$(ODIR)/%.o: $(SRCDIR)/%.cpp
 	$(CC) $(INCDIR) $(CFLAGS) -c $< -o $@
 
 clean:
