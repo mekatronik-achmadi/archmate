@@ -168,11 +168,42 @@ cp -vf ../archrpi/pkg_server.txt /mnt/mmc/root/home/alarm/serverlist.txt
 cp -vf ../archrpi/pkg_openbox.txt /mnt/mmc/root/home/alarm/openboxlist.txt
 ```
 
-### generate packages urls (qemu-chroot)
+### generate install packages urls (qemu-chroot)
 
 ```sh
 pacman -Sp $(cat /home/alarm/basiclist.txt) > /home/alarm/basic_pkgs.txt
 pacman -Sp $(cat /home/alarm/morelist.txt) > /home/alarm/more_pkgs.txt
 pacman -Sp $(cat /home/alarm/serverlist.txt) > /home/alarm/server_pkgs.txt
 pacman -Sp $(cat /home/alarm/openboxlist.txt) > /home/alarm/openbox_pkgs.txt
+```
+
+### download install packages (host-pc)
+
+```sh
+cp -vf /mnt/mmc/root/home/alarm/basic_pkgs.txt ./
+cp -vf /mnt/mmc/root/home/alarm/more_pkgs.txt ./
+cp -vf /mnt/mmc/root/home/alarm/server_pkgs.txt ./
+cp -vf /mnt/mmc/root/home/alarm/openbox_pkgs.txt ./
+
+mkdir -p packages/official/;cd packages/official/
+wget -c -i ../../basic_pkgs.txt
+wget -c -i ../../more_pkgs.txt
+wget -c -i ../../server_pkgs.txt
+wget -c -i ../../openbox_pkgs.txt
+cd ../../
+
+sudo rsync -avh packages/official/ /mnt/mmc/root/var/cache/pacman/pkg/
+```
+
+### install install packages (qemu-chroot)
+
+```sh
+sed -i "s#= Required DatabaseOptional#= Never#g" /etc/pacman.conf
+sed -i "s#= Optional TrustAll#= Never#g" /etc/pacman.conf
+sed -i "s#= Optional#= Never#g" /etc/pacman.conf
+
+pacman -S --noconfirm $(cat /home/alarm/basiclist.txt)
+pacman -S --noconfirm $(cat /home/alarm/morelist.txt)
+pacman -S --noconfirm $(cat /home/alarm/serverlist.txt)
+pacman -S --noconfirm $(cat /home/alarm/openboxlist.txt)
 ```

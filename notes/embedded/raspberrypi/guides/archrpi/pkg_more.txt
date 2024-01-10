@@ -6,6 +6,12 @@ alsa-oss alsa-lib alsa-plugins
 pulseaudio-equalizer pavucontrol
 pulseaudio-alsa pulseaudio-bluetooth
 
+geany geany-plugins
+qt5-base qt6-base
+qt5ct qt6ct scrot
+xdotool shotwell
+parcellite meld
+
 python-pkgconfig python-wheel
 python-build python-installer
 python-pipenv python-virtualenv
