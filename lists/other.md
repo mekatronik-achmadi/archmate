@@ -66,7 +66,6 @@ vscodium --list-extensions
 vscodium --force --install-extension vscodevim.vim
 vscodium --force --install-extension cschlosser.doxdocgen
 vscodium --force --install-extension llvm-vs-code-extensions.vscode-clangd
-vscodium --force --install-extension rust-lang.rust-analyzer
 vscodium --force --install-extension golang.Go
 vscodium --force --install-extension REditorSupport.r
 vscodium --force --install-extension ms-python.python

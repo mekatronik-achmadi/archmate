@@ -41,10 +41,6 @@ llvm clang boost
 nodejs node-gyp yq
 npm yarn asar jq
 
-### install rust programming
-
-rust rust-src rust-analyzer
-
 --------------------------------------------------------------------------------
 
 ## AUR
