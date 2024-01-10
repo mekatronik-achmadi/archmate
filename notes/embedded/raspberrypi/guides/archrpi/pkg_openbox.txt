@@ -20,4 +20,3 @@ redshift python-xdg
 archlinux-wallpaper
 xdg-desktop-portal
 xdg-user-dirs-gtk
-

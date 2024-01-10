@@ -163,33 +163,33 @@ pacman -Su --noconfirm
 
 ```sh
 cp -vf ../archrpi/pkg_basic.txt /mnt/mmc/root/home/alarm/basiclist.txt
+cp -vf ../archrpi/pkg_openbox.txt /mnt/mmc/root/home/alarm/openboxlist.txt
 cp -vf ../archrpi/pkg_more.txt /mnt/mmc/root/home/alarm/morelist.txt
 cp -vf ../archrpi/pkg_server.txt /mnt/mmc/root/home/alarm/serverlist.txt
-cp -vf ../archrpi/pkg_openbox.txt /mnt/mmc/root/home/alarm/openboxlist.txt
 ```
 
 ### generate install packages urls (qemu-chroot)
 
 ```sh
 pacman -Sp $(cat /home/alarm/basiclist.txt) > /home/alarm/basic_pkgs.txt
+pacman -Sp $(cat /home/alarm/openboxlist.txt) > /home/alarm/openbox_pkgs.txt
 pacman -Sp $(cat /home/alarm/morelist.txt) > /home/alarm/more_pkgs.txt
 pacman -Sp $(cat /home/alarm/serverlist.txt) > /home/alarm/server_pkgs.txt
-pacman -Sp $(cat /home/alarm/openboxlist.txt) > /home/alarm/openbox_pkgs.txt
 ```
 
 ### download install packages (host-pc)
 
 ```sh
 cp -vf /mnt/mmc/root/home/alarm/basic_pkgs.txt ./
+cp -vf /mnt/mmc/root/home/alarm/openbox_pkgs.txt ./
 cp -vf /mnt/mmc/root/home/alarm/more_pkgs.txt ./
 cp -vf /mnt/mmc/root/home/alarm/server_pkgs.txt ./
-cp -vf /mnt/mmc/root/home/alarm/openbox_pkgs.txt ./
 
 mkdir -p packages/official/;cd packages/official/
 wget -c -i ../../basic_pkgs.txt
+wget -c -i ../../openbox_pkgs.txt
 wget -c -i ../../more_pkgs.txt
 wget -c -i ../../server_pkgs.txt
-wget -c -i ../../openbox_pkgs.txt
 cd ../../
 
 sudo rsync -avh packages/official/ /mnt/mmc/root/var/cache/pacman/pkg/
@@ -203,7 +203,22 @@ sed -i "s#= Optional TrustAll#= Never#g" /etc/pacman.conf
 sed -i "s#= Optional#= Never#g" /etc/pacman.conf
 
 pacman -S --noconfirm $(cat /home/alarm/basiclist.txt)
+pacman -S --noconfirm $(cat /home/alarm/openboxlist.txt)
 pacman -S --noconfirm $(cat /home/alarm/morelist.txt)
 pacman -S --noconfirm $(cat /home/alarm/serverlist.txt)
-pacman -S --noconfirm $(cat /home/alarm/openboxlist.txt)
 ```
+
+### copy openbox default package (host-pc)
+
+```sh
+sudo cp -vf ../archrpi/archmate-openbox* /mnt/mmc/root/home/alarm/
+```
+
+### install openbox default package (qemu-chroot)
+
+```sh
+pacman -U --noconfirm --assume-installed light \
+/home/alarm/archmate-openbox-0.1-1-any.pkg.tar.zst
+```
+
+--------------------------------------------------------------------------------
