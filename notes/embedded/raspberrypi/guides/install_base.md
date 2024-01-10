@@ -230,6 +230,13 @@ pacman -U --noconfirm --assume-installed light \
 /home/alarm/archmate-openbox-0.1-1-any.pkg.tar.zst
 ```
 
+### copy font configuration (host-pc)
+
+```sh
+sudo cp -vf ../archrpi/archfont.conf \
+/mnt/mmc/root/etc/fonts/
+```
+
 --------------------------------------------------------------------------------
 
 ## Global Configuration
@@ -458,6 +465,37 @@ gtk-theme-name = Arc-Lighter-solid
 gtk-font-name = Liberation Sans 8
 gtk-application-prefer-dark-theme = false
 ' | tee /etc/gtk-3.0/settings.ini
+```
+
+### configure font (qemu-chroot)
+
+```sh
+export FONTCONFLS="
+10-scale-bitmap-fonts.conf
+10-no-sub-pixel.conf
+10-unhinted.conf
+10-autohint.conf
+10-hinting-none.conf
+10-hinting-full.conf
+10-hinting-medium.conf
+10-hinting-slight.conf
+10-sub-pixel-bgr.conf
+10-sub-pixel-rgb.conf
+10-sub-pixel-vbgr.conf
+10-sub-pixel-vrgb.conf
+11-lcdfilter-light.conf
+11-lcdfilter-legacy.conf
+11-lcdfilter-default.conf
+70-no-bitmaps.conf"
+
+for i in `echo $FONTCONFLS`;do
+    ln -sf /usr/share/fontconfig/conf.avail/$i /etc/fonts/conf.d/$i
+done
+
+fc-cache -f > /dev/null
+mkfontscale /usr/share/fonts/TTF
+mkfontdir /usr/share/fonts/TTF
+gdk-pixbuf-query-loaders --update-cache
 ```
 
 --------------------------------------------------------------------------------
