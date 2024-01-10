@@ -48,5 +48,11 @@ linux-tools arandr
 inxi hwloc lshw mesa-utils
 ccze ltrace strace mesa-demos
 
+ntfs-3g exfat-utils
+gparted dosfstools
+gpart e2fsprogs
+gptfdisk mtools
+fuse2 fuse3 udisks2
+
 gpio-utils wiringpi fake-hwclock
 python-periphery python-wiringx-git
