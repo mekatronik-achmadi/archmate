@@ -1,31 +1,26 @@
 linux-rpi-headers
-base base-devel
+base-devel terminus-font
 
 bash-completion mkinitcpio
-rsync dkms
-most highlight mc fdupes
+dkms rsync zsync
 neofetch lsb-release dtc
 nano dialog bc tmux tree
+nano-syntax-highlighting
 curl wget openssh sshfs
+zsh pv libxcrypt-compat
 pacman-contrib mlocate
-git tig terminus-font
-pv libxcrypt-compat
-zsh-completions
 
 posix posix-software-development
 posix-xsi posix-c-development
 
+mc highlight
+python lua perl
+hexedit most bat
+fdupes w3m lynx
+
 gvim vim-nerdtree vim-surround
 vim-nerdcommenter vim-gitgutter
 vim-airline vim-tagbar vim-tabular
-
-xorg xorg-apps xorg-drivers
-xorg-xinit xorg-fonts
-xf86-video-armsoc-git
-xinput_calibrator
-xsel xclip xterm
-xorg-fonts-misc
-xorg-xmessage
 
 networkmanager nm-connection-editor
 network-manager-applet modemmanager
@@ -52,7 +47,8 @@ ntfs-3g exfat-utils
 gparted dosfstools
 gpart e2fsprogs
 gptfdisk mtools
-fuse2 fuse3 udisks2
+fuse2 fuse3
 
 gpio-utils wiringpi fake-hwclock
 python-periphery python-wiringx-git
+

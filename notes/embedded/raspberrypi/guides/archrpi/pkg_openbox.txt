@@ -1,22 +1,37 @@
-icon-naming-utils gtk-update-icon-cache
-papirus-icon-theme arc-solid-gtk-theme
-gtk-engines gtk-engine-murrine
-gnome-themes-extra libcanberra
-sound-theme-freedesktop
+xorg xorg-apps xorg-drivers
+xorg-xinit xorg-fonts
+xf86-video-armsoc-git
+xinput_calibrator
+xsel xclip xterm
+xorg-fonts-misc
+
+tk ttf-droid ttf-liberation-mono-nerd
+fontforge ttf-liberation ttf-dejavu
 
 gtk3 wxgtk3 gtk2
 python-wxpython
 python-gobject
 gtkmm gtkmm3
 
-openbox obconf tint2 feh bashrun
-volumeicon xarchiver xpdf
+lightdm lightdm-gtk-greeter
 
-tk ttf-liberation onboard
-ttf-liberation-mono-nerd
+openbox tint2 obconf feh volumeicon
+xpdf gsimplecal xarchiver gmrun light
+
+dconf-editor trash-cli
 xdg-desktop-portal-gtk
-ttf-dejavu ttf-droid
 redshift python-xdg
 archlinux-wallpaper
+geany geany-plugins
 xdg-desktop-portal
 xdg-user-dirs-gtk
+parcellite meld
+scrot onboard
+gnome-keyring
+
+gnome-icon-theme-extras gnome-themes-extra
+gtk-update-icon-cache icon-naming-utils
+arc-solid-gtk-theme papirus-icon-theme
+libcanberra sound-theme-freedesktop
+gtk-engines gtk-engine-murrine
+
