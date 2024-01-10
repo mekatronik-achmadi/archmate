@@ -1,0 +1,53 @@
+linux-rpi-headers
+base base-devel
+
+bash-completion mkinitcpio
+rsync dkms
+most highlight mc fdupes
+neofetch lsb-release dtc
+nano dialog bc tmux tree
+curl wget openssh sshfs
+pacman-contrib mlocate
+git tig terminus-font
+pv libxcrypt-compat
+zsh-completions
+
+posix posix-software-development
+posix-xsi posix-c-development
+
+gvim vim-nerdtree vim-surround
+vim-nerdcommenter vim-gitgutter
+vim-airline vim-tagbar vim-tabular
+
+xorg xorg-apps xorg-drivers
+xorg-xinit xorg-fonts
+xf86-video-armsoc-git
+xinput_calibrator
+xsel xclip xterm
+xorg-fonts-misc
+xorg-xmessage
+
+networkmanager nm-connection-editor
+network-manager-applet modemmanager
+mobile-broadband-provider-info iftop
+bind-tools netctl ppp wpa_supplicant
+net-tools wavemon bmon nethogs gping
+crda iw iwd wireless_tools tigervnc
+bridge-utils ethtool usb_modeswitch
+traceroute dhcp dnsmasq nss-mdns
+openresolv dhclient dhcpcd mtr
+gnu-netcat nmap termshark
+tcpdump fping inetutils
+
+lm_sensors xsensors hddtemp
+htop atop libstatgrab
+lsof nmon sysstat procps-ng
+usbutils dmidecode hwdetect
+hdparm sdparm smartmontools
+linux-tools arandr
+inxi hwloc lshw mesa-utils
+ccze ltrace strace mesa-demos
+
+gpio-utils wiringpi fake-hwclock
+python-periphery python-wiringx-git
+

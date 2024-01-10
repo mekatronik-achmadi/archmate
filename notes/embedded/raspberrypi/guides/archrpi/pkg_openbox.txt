@@ -1,0 +1,23 @@
+icon-naming-utils gtk-update-icon-cache
+papirus-icon-theme arc-solid-gtk-theme
+gtk-engines gtk-engine-murrine
+gnome-themes-extra libcanberra
+sound-theme-freedesktop
+
+gtk3 wxgtk3 gtk2
+python-wxpython
+python-gobject
+gtkmm gtkmm3
+
+openbox obconf tint2 feh bashrun
+volumeicon xarchiver xpdf
+
+tk ttf-liberation onboard
+ttf-liberation-mono-nerd
+xdg-desktop-portal-gtk
+ttf-dejavu ttf-droid
+redshift python-xdg
+archlinux-wallpaper
+xdg-desktop-portal
+xdg-user-dirs-gtk
+

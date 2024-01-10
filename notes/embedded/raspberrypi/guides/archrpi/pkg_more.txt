@@ -1,0 +1,36 @@
+pulseaudio portaudio
+jack2 pulseaudio-jack
+alsa-utils alsa-firmware
+alsa-ucm-conf sof-firmware
+alsa-oss alsa-lib alsa-plugins
+pulseaudio-equalizer pavucontrol
+pulseaudio-alsa pulseaudio-bluetooth
+
+python-pkgconfig python-wheel
+python-build python-installer
+python-pipenv python-virtualenv
+python-pip python-distutils-extra
+cython0 pybind11 python-setuptools
+
+firefox vimb uget aria2
+qbittorrent-nox qbittorrent
+
+blueman bluez
+bluez-utils
+
+ffmpegthumbnailer
+ffmpeg-rpi gst-libav
+gst-plugins-good
+gst-plugins-base
+vlc-rpi guvcview
+
+libva-vdpau-driver
+libva-mesa-driver
+libva libva-utils
+libvdpau-va-gl
+vdpauinfo
+
+python-numpy python-requests
+python-scipy python-matplotlib
+sox python-pandas python-pyqt5
+

@@ -1,0 +1,25 @@
+vsftpd perl-cgi lighttpd
+apache fake-hwclock
+
+openssl openssl-1.1
+
+jq yq
+nodejs
+npm yarn
+
+mysql++ mariadb
+mariadb-libs
+
+python-flask python-dotenv
+python-mysql-connector
+python-mysqlclient
+python-mongoengine
+python-pymongo
+
+mosquitto libwebsockets
+
+docker docker-compose
+
+gitea memcached
+postgresql redis
+
