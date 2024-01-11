@@ -6,7 +6,7 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-class Coba():
+class Template():
     def __init__(self):
         self.builder = Gtk.Builder()
         self.builder.add_from_file("main.glade")
@@ -27,6 +27,6 @@ class Coba():
         print("Template Python GTK")
 
 if __name__ == "__main__":
-    app = Coba()
+    app = Template()
     Gtk.main()
 
