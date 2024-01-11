@@ -6,17 +6,6 @@ alsa-oss alsa-lib alsa-plugins
 pulseaudio-equalizer pavucontrol
 pulseaudio-alsa pulseaudio-bluetooth
 
-git tig github-cli
-bear hub subversion
-autoconf meson ninja
-vala autogen automake
-cblas openblas lapack
-gobject-introspection
-pkgconf gendesk help2man
-mercurial breezy cvs cloc
-cmake extra-cmake-modules
-dos2unix doxygen graphviz
-
 python-pkgconfig python-wheel
 python-build python-installer
 python-pipenv python-virtualenv

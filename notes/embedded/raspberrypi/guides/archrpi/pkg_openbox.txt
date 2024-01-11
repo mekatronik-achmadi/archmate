@@ -16,23 +16,23 @@ gtkmm gtkmm3
 openbox tint2 obconf feh volumeicon
 xpdf gsimplecal xarchiver gmrun light
 
-dconf-editor trash-cli
+tk ttf-liberation onboard
+ttf-liberation-mono-nerd
 xdg-desktop-portal-gtk
+ttf-dejavu ttf-droid
 redshift python-xdg
 archlinux-wallpaper
-geany geany-plugins
 xdg-desktop-portal
 xdg-user-dirs-gtk
-parcellite meld
-scrot onboard
-gnome-keyring
 
-gnome-icon-theme-extras gnome-themes-extra
-gtk-update-icon-cache icon-naming-utils
-arc-solid-gtk-theme papirus-icon-theme
-libcanberra sound-theme-freedesktop
+icon-naming-utils gtk-update-icon-cache
+papirus-icon-theme arc-solid-gtk-theme
 gtk-engines gtk-engine-murrine
+gnome-themes-extra libcanberra
+sound-theme-freedesktop
 
-firefox vimb uget aria2
-qbittorrent-nox qbittorrent
+geany geany-plugins
+qt5-base qt6-base
+qt5ct qt6ct scrot
+xdotool parcellite
 
