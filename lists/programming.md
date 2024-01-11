@@ -54,9 +54,8 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 - https://aur.archlinux.org/packages/qwt-qt6-svn/
 - https://aur.archlinux.org/packages/python-pyqt-qwt/
 
-### install programmming editor
+### install wxwidget tools
 
-- https://aur.archlinux.org/packages/eric/
 - https://aur.archlinux.org/packages/wxhexeditor/
 - https://aur.archlinux.org/packages/wxformbuilder/
 
