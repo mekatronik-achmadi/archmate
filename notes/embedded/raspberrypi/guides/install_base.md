@@ -130,7 +130,7 @@ http://mirror.archlinuxarm.org/armv7h/aur/aur.db
 
 for i in `cat ../dbase.txt`;do
 echo $i
-wget -q -c $i -b
+wget -q -c $i &
 done
 
 cd ../
@@ -158,7 +158,7 @@ cd packages/official/
 
 for i in `cat ../../upgrade_pkgs.txt`;do
 echo $i
-wget -q -c $i -b
+wget -q -c $i &
 done
 
 cd ../../
@@ -202,11 +202,9 @@ $(cat /home/alarm/serverlist.txt) > /home/alarm/install_pkgs.txt
 ```sh
 cp -vf /mnt/mmc/root/home/alarm/install_pkgs.txt ./
 
-mkdir -p packages/official/;cd packages/official/
-
 for i in `cat ../../install_pkgs.txt`;do
 echo $i
-wget -q -c $i -b
+wget -q -c $i &
 done
 
 cd ../../
