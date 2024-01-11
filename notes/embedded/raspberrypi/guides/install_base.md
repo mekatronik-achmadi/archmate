@@ -159,16 +159,6 @@ sed -i "s#= Optional#= Never#g" /etc/pacman.conf
 pacman -Su --noconfirm
 ```
 
-### re-entry chroot (qemu-chroot)
-
-```sh
-exit
-```
-
-```sh
-sudo arch-chroot /mnt/mmc/root /bin/bash
-```
-
 ### copy install packages list (host-pc)
 
 ```sh

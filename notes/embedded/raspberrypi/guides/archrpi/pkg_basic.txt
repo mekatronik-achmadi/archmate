@@ -24,6 +24,15 @@ xinput_calibrator
 xsel xclip xterm
 xorg-fonts-misc
 
+tk ttf-liberation onboard
+ttf-liberation-mono-nerd
+xdg-desktop-portal-gtk
+ttf-dejavu ttf-droid
+redshift python-xdg
+archlinux-wallpaper
+xdg-desktop-portal
+xdg-user-dirs-gtk
+
 networkmanager nm-connection-editor
 network-manager-applet modemmanager
 mobile-broadband-provider-info iftop
@@ -38,15 +47,6 @@ tcpdump fping inetutils
 
 firefox vimb uget aria2
 qbittorrent-nox qbittorrent
-
-lm_sensors xsensors hddtemp
-htop atop libstatgrab
-lsof nmon sysstat procps-ng
-usbutils dmidecode hwdetect
-hdparm sdparm smartmontools
-linux-tools arandr
-inxi hwloc lshw mesa-utils
-ccze ltrace strace mesa-demos
 
 ntfs-3g exfat-utils
 gparted dosfstools

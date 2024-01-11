@@ -1,22 +1,10 @@
-tk ttf-droid ttf-liberation-mono-nerd
-fontforge ttf-liberation ttf-dejavu
-
 gtk3 wxgtk3 gtk2
 python-wxpython
 python-gobject
 gtkmm gtkmm3
 
-openbox tint2 obconf feh volumeicon
-xpdf gsimplecal xarchiver gmrun light
-
-tk ttf-liberation onboard
-ttf-liberation-mono-nerd
-xdg-desktop-portal-gtk
-ttf-dejavu ttf-droid
-redshift python-xdg
-archlinux-wallpaper
-xdg-desktop-portal
-xdg-user-dirs-gtk
+openbox tint2 obconf feh volumeicon htop
+xpdf gsimplecal xarchiver bashrun arandr
 
 icon-naming-utils gtk-update-icon-cache
 papirus-icon-theme arc-solid-gtk-theme
