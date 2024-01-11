@@ -54,9 +54,10 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 - https://aur.archlinux.org/packages/qwt-qt6-svn/
 - https://aur.archlinux.org/packages/python-pyqt-qwt/
 
-### install wxwidget tools
+### install programming tools
 
 - https://aur.archlinux.org/packages/wxhexeditor/
+- https://aur.archlinux.org/packages/vscodium-bin/
 - https://aur.archlinux.org/packages/wxformbuilder/
 
 ### install compiledb
@@ -211,3 +212,77 @@ Diagnostics:
 " | tee ~/.config/clangd/config.yaml
 sed -i 's@UnusedIncludes: Strict@UnusedIncludes: None@g' ~/.config/clangd/config.yaml
 ```
+
+### configure vscodium
+
+#### settings
+
+```sh
+sudo rm -vf /usr/share/applications/codium-wayland.desktop
+```
+
+```sh
+VSCONFDIR=~/.config/VSCodium/User
+
+mkdir -p "$VSCONFDIR"
+echo "{}" > "$VSCONFDIR/settings.json"
+
+jq -n '
+."clangd.arguments"=["-header-insertion=never"] |
+."C_Cpp.intelliSenseEngine"="disabled" |
+."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
+."doxdocgen.file.fileOrder"=["file","brief","empty","custom"] |
+."editor.fontFamily"="'\''Liberation Mono'\''" |
+."editor.fontSize"=10 |
+."editor.minimap.enabled"=false |
+."files.trimTrailingWhitespace"=true |
+."git.openRepositoryInParentFolders"="never" |
+."terminal.integrated.fontSize"=10 |
+."terminal.integrated.gpuAcceleration"="canvas" |
+."debug.console.wordWrap"=false |
+."workbench.startupEditor"="none" |
+."workbench.activityBar.visible"=false |
+."workbench.colorTheme"="Default Light+" |
+."security.workspace.trust.untrustedFiles"="open" |
+."window.restoreWindows"="none" |
+."telemetry.enableTelemetry"=false |
+."telemetry.enableCrashReporter"=false
+' | tee "$VSCONFDIR/temp.json"
+
+rm -f "$VSCONFDIR/settings.json"
+mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
+
+cat "$VSCONFDIR/settings.json"
+```
+
+#### extension
+
+```sh
+vscodium --list-extensions
+
+vscodium --force --install-extension vscodevim.vim
+vscodium --force --install-extension cschlosser.doxdocgen
+vscodium --force --install-extension llvm-vs-code-extensions.vscode-clangd
+vscodium --force --install-extension REditorSupport.r
+vscodium --force --install-extension ms-python.python
+```
+
+#### windows terminal settings
+
+```json
+ "terminal.integrated.profiles.windows": {
+    "msys64": {
+        "path": "C:\\msys64\\usr\\bin\\bash.exe",
+        "args": [
+            "--login",
+            "-i"
+        ],
+          "env": {
+            "MSYSTEM": "MINGW64",
+            "CHERE_INVOKING": "1"
+        }
+    },
+},
+"terminal.integrated.defaultProfile.windows": "msys64",
+```
+
