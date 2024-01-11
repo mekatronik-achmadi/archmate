@@ -127,12 +127,7 @@ http://mirror.archlinuxarm.org/armv7h/community/community.db
 http://mirror.archlinuxarm.org/armv7h/alarm/alarm.db
 http://mirror.archlinuxarm.org/armv7h/aur/aur.db
 " > ../dbase.txt
-
-for i in `cat ../dbase.txt`;do
-echo $i
-wget -q -c $i &
-done
-
+wget -c -i ../dbase.txt
 cd ../
 ```
 
@@ -156,10 +151,7 @@ rm -rvf packages/official/
 mkdir -p packages/official/
 cd packages/official/
 
-for i in `cat ../../upgrade_pkgs.txt`;do
-echo $i
-wget -q -c $i &
-done
+wget -c -i ../../upgrade_pkgs.txt
 
 cd ../../
 ```
@@ -202,10 +194,7 @@ $(cat /home/alarm/serverlist.txt) > /home/alarm/install_pkgs.txt
 ```sh
 cp -vf /mnt/mmc/root/home/alarm/install_pkgs.txt ./
 
-for i in `cat ../../install_pkgs.txt`;do
-echo $i
-wget -q -c $i &
-done
+wget -c -i ../../install_pkgs.txt
 
 cd ../../
 ```
@@ -568,8 +557,3 @@ sudo umount /mnt/mmc/root/boot/
 sudo umount /mnt/mmc/root/
 ```
 
-### clear url list files (host-pc)
-
-```sh
-rm -vf dbase.txt upgrade_pkgs.txt install_pkgs.txt
-```
