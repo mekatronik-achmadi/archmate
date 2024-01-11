@@ -8,8 +8,8 @@ libreoffice-fresh coin-or-mp
 
 ### install fortran
 
-gcc-fortran mpdecimal
-octave gnuplot arpack
+gcc-fortran arpack
+mpdecimal gnuplot
 
 ### install python computing
 
