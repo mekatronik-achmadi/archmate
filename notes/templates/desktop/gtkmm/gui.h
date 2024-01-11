@@ -15,7 +15,6 @@ public:
 
 protected:
     Glib::RefPtr<Gtk::Builder> mBuilder;
-    Glib::RefPtr<Gtk::Application> mApp;
 
     Gtk::Button *mBtnMsg;
     Gtk::Button *mBtnQuit;
