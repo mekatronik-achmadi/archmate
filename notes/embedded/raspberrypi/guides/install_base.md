@@ -44,7 +44,9 @@ echo ${DEVDISK}
 sudo mkdir -p /mnt/mmc/{boot,root}
 sudo mount ${DEVDISK}1 /mnt/mmc/boot
 sudo mount ${DEVDISK}2 /mnt/mmc/root
+```
 
+```sh
 mkdir -p armv7h/;cd armv7h/
 
 sudo bsdtar -xpf ../ArchLinuxARM-rpi-armv7-latest.tar.gz -C /mnt/mmc/root
