@@ -127,7 +127,12 @@ http://mirror.archlinuxarm.org/armv7h/community/community.db
 http://mirror.archlinuxarm.org/armv7h/alarm/alarm.db
 http://mirror.archlinuxarm.org/armv7h/aur/aur.db
 " > ../dbase.txt
-wget -c -i ../dbase.txt
+
+for i in `cat ../dbase.txt`;do
+echo $i
+wget -q -c $i -b
+done
+
 cd ../
 ```
 
@@ -150,7 +155,12 @@ cp -vf /mnt/mmc/root/home/alarm/upgrade_pkgs.txt ./
 rm -rvf packages/official/
 mkdir -p packages/official/
 cd packages/official/
-wget -c -i ../../upgrade_pkgs.txt
+
+for i in `cat ../../upgrade_pkgs.txt`;do
+echo $i
+wget -q -c $i -b
+done
+
 cd ../../
 ```
 
@@ -193,9 +203,16 @@ $(cat /home/alarm/serverlist.txt) > /home/alarm/install_pkgs.txt
 cp -vf /mnt/mmc/root/home/alarm/install_pkgs.txt ./
 
 mkdir -p packages/official/;cd packages/official/
-wget -c -i ../../install_pkgs.txt
-cd ../../
 
+for i in `cat ../../install_pkgs.txt`;do
+echo $i
+wget -q -c $i -b
+done
+
+cd ../../
+```
+
+```sh
 sudo rsync -avh packages/official/ /mnt/mmc/root/var/cache/pacman/pkg/
 ```
 
