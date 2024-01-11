@@ -1,10 +1,3 @@
-xorg xorg-apps xorg-drivers
-xorg-xinit xorg-fonts
-xf86-video-armsoc-git
-xinput_calibrator
-xsel xclip xterm
-xorg-fonts-misc
-
 tk ttf-droid ttf-liberation-mono-nerd
 fontforge ttf-liberation ttf-dejavu
 

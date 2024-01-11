@@ -17,6 +17,13 @@ gvim vim-nerdtree vim-surround
 vim-nerdcommenter vim-gitgutter
 vim-airline vim-tagbar vim-tabular
 
+xorg xorg-apps xorg-drivers
+xorg-xinit xorg-fonts
+xf86-video-armsoc-git
+xinput_calibrator
+xsel xclip xterm
+xorg-fonts-misc
+
 networkmanager nm-connection-editor
 network-manager-applet modemmanager
 mobile-broadband-provider-info iftop
