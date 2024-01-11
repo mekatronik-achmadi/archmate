@@ -10,6 +10,7 @@ class Gui(QMainWindow,Ui_Gui):
     def __init__(self,parent=None):
         super(Gui, self).__init__(parent)
         self.setupUi(self)
+        self.setFixedSize(200, 100)
 
     @pyqtSlot()
     def on_btnMsg_clicked(self):
