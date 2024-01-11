@@ -341,6 +341,7 @@ void loop(){
 ' | tee src/main.cpp
 
 bear -- make all
+compiledb make all
 
 vim src/main.c
 ```
