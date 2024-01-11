@@ -23,9 +23,6 @@ python-pipenv python-virtualenv
 python-pip python-distutils-extra
 cython0 pybind11 python-setuptools
 
-firefox vimb uget aria2
-qbittorrent-nox qbittorrent
-
 blueman bluez
 bluez-utils
 

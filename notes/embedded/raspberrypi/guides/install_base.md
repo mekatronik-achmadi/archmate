@@ -16,12 +16,12 @@ sudo parted ${DEVDISK} mklabel msdos
 ```
 
 ```sh
-sudo parted ${DEVDISK} mkpart primary 0% 200
-sudo parted ${DEVDISK} mkpart primary 200 100%
+sudo parted ${DEVDISK} mkpart primary fat32 0% 200
+sudo parted ${DEVDISK} mkpart primary ext4 200 100%
 
-sudo mkfs.vfat -F 32 ${DEVDISK}1
+sudo mkfs.fat -F32 ${DEVDISK}1
 sudo parted ${DEVDISK} set 1 boot on
-#sudo parted ${DEVDISK} set 1 lba on
+sudo parted ${DEVDISK} set 1 lba on
 sudo mkfs.ext4 ${DEVDISK}2
 ```
 
@@ -159,6 +159,16 @@ sed -i "s#= Optional#= Never#g" /etc/pacman.conf
 pacman -Su --noconfirm
 ```
 
+### re-entry chroot (qemu-chroot)
+
+```sh
+exit
+```
+
+```sh
+sudo arch-chroot /mnt/mmc/root /bin/bash
+```
+
 ### copy install packages list (host-pc)
 
 ```sh
@@ -171,25 +181,19 @@ cp -vf ../archrpi/pkg_server.txt /mnt/mmc/root/home/alarm/serverlist.txt
 ### generate install packages urls (qemu-chroot)
 
 ```sh
-pacman -Sp $(cat /home/alarm/basiclist.txt) > /home/alarm/basic_pkgs.txt
-pacman -Sp $(cat /home/alarm/openboxlist.txt) > /home/alarm/openbox_pkgs.txt
-pacman -Sp $(cat /home/alarm/morelist.txt) > /home/alarm/more_pkgs.txt
-pacman -Sp $(cat /home/alarm/serverlist.txt) > /home/alarm/server_pkgs.txt
+pacman -Sp $(cat /home/alarm/basiclist.txt) \
+$(cat /home/alarm/openboxlist.txt) \
+$(cat /home/alarm/morelist.txt) \
+$(cat /home/alarm/serverlist.txt) > /home/alarm/install_pkgs.txt
 ```
 
 ### download install packages (host-pc)
 
 ```sh
-cp -vf /mnt/mmc/root/home/alarm/basic_pkgs.txt ./
-cp -vf /mnt/mmc/root/home/alarm/openbox_pkgs.txt ./
-cp -vf /mnt/mmc/root/home/alarm/more_pkgs.txt ./
-cp -vf /mnt/mmc/root/home/alarm/server_pkgs.txt ./
+cp -vf /mnt/mmc/root/home/alarm/install_pkgs.txt ./
 
 mkdir -p packages/official/;cd packages/official/
-wget -c -i ../../basic_pkgs.txt
-wget -c -i ../../openbox_pkgs.txt
-wget -c -i ../../more_pkgs.txt
-wget -c -i ../../server_pkgs.txt
+wget -c -i ../../install_pkgs.txt
 cd ../../
 
 sudo rsync -avh packages/official/ /mnt/mmc/root/var/cache/pacman/pkg/
@@ -291,12 +295,14 @@ passwd -d alarm
 echo "FONT=ter-112n
 FONT_MAP=8859-2
 " > /etc/vconsole.conf
+mkinitcpio -p linux-rpi
 ```
 
 ### enable timesync (qemu-chroot)
 
 ```sh
 systemctl enable systemd-timesyncd
+systemctl enable fake-hwclock fake-hwclock-save
 ```
 
 ### enable network manager (qemu-chroot)
@@ -309,12 +315,6 @@ systemctl disable systemd-resolved
 
 ln -svf /run/NetworkManager/resolv.conf /etc/resolv.conf
 systemctl enable NetworkManager
-```
-
-### enable fake hwclock (qemu-chroot)
-
-```sh
-systemctl enable fake-hwclock fake-hwclock-save
 ```
 
 ### enable ssh server (qemu-chroot)
@@ -456,23 +456,6 @@ gtk-application-prefer-dark-theme = false
 ' | tee /etc/gtk-3.0/settings.ini
 ```
 
-### clean unused themes
-
-```sh
-rm -rf /usr/share/themes/Clearlooks
-rm -rf /usr/share/themes/Crux
-rm -rf /usr/share/themes/Industrial
-rm -rf /usr/share/themes/Mist
-rm -rf /usr/share/themes/Raleigh
-rm -rf /usr/share/themes/Redmond
-rm -rf /usr/share/themes/ThinIce
-
-rm -rf /usr/share/themes/HighContrast
-rm -rf /usr/share/themes/HighContrastInverse
-rm -rf /usr/share/themes/ContrastHigh
-rm -rf /usr/share/themes/ContrastHighInverse
-```
-
 --------------------------------------------------------------------------------
 
 ## User Configuration
@@ -489,7 +472,9 @@ alias bat='bat --theme=GitHub'
 PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 " | tee -a /home/alarm/.bashrc
 chown -vf alarm:alarm /home/alarm/.bashrc
+```
 
+```sh
 echo '
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 source ~/.bashrc
@@ -549,11 +534,9 @@ chown -vf alarm:alarm /home/alarm/.Xdefaults
 
 ```sh
 rm -vf /home/alarm/archmate-openbox*
-rm -vf /home/alarm/upgrade_pkgs.txt
-rm -vf /home/alarm/{basic_pkgs.txt,basiclist.txt}
-rm -vf /home/alarm/{more_pkgs.txt,morelist.txt}
-rm -vf /home/alarm/{server_pkgs.txt,serverlist.txt}
-rm -vf /home/alarm/{openbox_pkgs.txt,openboxlist.txt}
+rm -vf /home/alarm/{upgrade_pkgs.txt,install_pkgs.txt}
+rm -vf /home/alarm/{basiclist.txt,openboxlist.txt}
+rm -vf /home/alarm/{morelist.txt,serverlist.txt}
 rm -vf /var/cache/pacman/pkg/*
 ```
 
@@ -573,7 +556,5 @@ sudo umount /mnt/mmc/root/
 ### clear url list files (host-pc)
 
 ```sh
-rm -vf dbase.txt upgrade_pkgs.txt \
-basic_pkgs.txt more_pkgs.txt \
-server_pkgs.txt openbox_pkgs.txt
+rm -vf dbase.txt upgrade_pkgs.txt install_pkgs.txt
 ```

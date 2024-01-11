@@ -13,8 +13,6 @@ python-wxpython
 python-gobject
 gtkmm gtkmm3
 
-lightdm lightdm-gtk-greeter
-
 openbox tint2 obconf feh volumeicon
 xpdf gsimplecal xarchiver gmrun light
 
@@ -34,4 +32,7 @@ gtk-update-icon-cache icon-naming-utils
 arc-solid-gtk-theme papirus-icon-theme
 libcanberra sound-theme-freedesktop
 gtk-engines gtk-engine-murrine
+
+firefox vimb uget aria2
+qbittorrent-nox qbittorrent
 
