@@ -116,7 +116,9 @@ locale-gen
 ### download database (host-pc)
 
 ```sh
-mkdir -p databases/;cd databases/
+rm -rvf databases/
+mkdir -p databases/
+cd databases/
 
 echo "
 http://mirror.archlinuxarm.org/armv7h/core/core.db
@@ -127,7 +129,9 @@ http://mirror.archlinuxarm.org/armv7h/aur/aur.db
 " > ../dbase.txt
 wget -c -i ../dbase.txt
 cd ../
+```
 
+```sh
 sudo mkdir -p /mnt/mmc/root/var/lib/pacman/sync/
 sudo rsync -avh databases/ /mnt/mmc/root/var/lib/pacman/sync/
 ```
@@ -143,10 +147,14 @@ pacman -Sup > /home/alarm/upgrade_pkgs.txt
 ```sh
 cp -vf /mnt/mmc/root/home/alarm/upgrade_pkgs.txt ./
 
-mkdir -p packages/official/;cd packages/official/
+rm -rvf packages/official/
+mkdir -p packages/official/
+cd packages/official/
 wget -c -i ../../upgrade_pkgs.txt
 cd ../../
+```
 
+```sh
 sudo mkdir -p /mnt/mmc/root/var/cache/pacman/pkg/
 sudo rsync -avh packages/official/ /mnt/mmc/root/var/cache/pacman/pkg/
 ```
