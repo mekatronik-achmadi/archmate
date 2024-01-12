@@ -21,7 +21,6 @@
 ## install visual studio code
 
 - https://aur.archlinux.org/packages/visual-studio-code-bin/
-- https://aur.archlinux.org/packages/visual-studio-code-cli-bin/
 
 ## install academic tools
 

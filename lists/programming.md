@@ -32,9 +32,8 @@ python-pyqtgraph
 
 ### install c/c++ programming
 
-tcsh gdb clang
-lld llvm lldb boost
-valgrind gdb-dashboard
+lld llvm lldb clang boost
+tcsh gdb gdb-dashboard
 
 ### install javacript programming
 
