@@ -1,0 +1,176 @@
+// https://github.com/beagleboard/bb.org-overlays
+
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "ti,beaglebone", "ti,beaglebone-black", "ti,beaglebone-green";
+	part-number = "achmadi";
+	version = "00A0";
+	
+	fragment@0 {
+		target = <&am33xx_pinmux>;
+		__overlay__ {
+			pin_pwm_spec: default_pwm_pins {
+				pinctrl-single,pins = <
+					0x048 0x06 /* (U14) gpmc_a2.ehrpwm1A */
+					0x04c 0x06 /* (T14) gpmc_a3.ehrpwm1B */
+				>;
+			};
+			pin_pps_spec: default_pps_pin {
+				pinctrl-single,pins = <0x078 0x27>;
+            };
+            
+            pin_pps_gmtimer_spec: default_pps_gmtimer_pin {
+				pinctrl-single,pins = <
+				      0x90 0x22 /* P8.7 MODE2 TIMER4 */
+				>;
+			};
+
+			pin_eqep0_spec: default_eqep0_pins {
+				pinctrl-single,pins = <
+					//BONE_P9_42B (PIN_INPUT | MUX_MODE1)	// GPIO3_18 = EQEP0A_in
+					//BONE_P9_27  (PIN_INPUT | MUX_MODE1)	// GPIO3_19 = EQEP0B_in
+					//BONE_P9_41B (PIN_INPUT | MUX_MODE1)	// GPIO3_20 = EQEP0_index
+					//BONE_P9_25  (PIN_INPUT | MUX_MODE1)	// GPIO3_21 = EQEP0_strobe
+					0x1A0 0x31
+					0x1A4 0x31
+					0x1A8 0x31
+					0x1AC 0x31
+				>;
+			};
+		};
+	};
+	
+	fragment@1 {
+		target = <&ocp>;
+		__overlay__ {
+			test_helper: helper {
+				compatible = "bone-pinmux-helper";
+                pinctrl-names = "default";
+                pinctrl-0 = <&pin_pwm_spec>;
+                status = "okay";
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <&epwmss0>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@3 {
+		target = <&ehrpwm0>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@4 {
+		target = <&ecap0>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@5 {
+		target = <&epwmss1>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@6 {
+		target = <&ehrpwm1>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@7 {
+		target = <&epwmss2>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@8 {
+		target = <&ehrpwm2>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@9 {
+		target = <&ecap2>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+	
+	fragment@10 {
+		target = <&tscadc>;
+		__overlay__ {
+			status = "okay";
+			adc {
+				ti,adc-channels = <0 1 2 3 4 5 6>;
+				ti,chan-step-avg = <0x16 0x16 0x16 0x16 0x16 0x16 0x16>;
+				ti,chan-step-opendelay = <0x98 0x98 0x98 0x98 0x98 0x98 0x98>;
+				ti,chan-step-sampledelay = <0x0 0x0 0x0 0x0 0x0 0x0 0x0>;
+			};
+		};
+	};
+	
+	fragment@11 {
+        target = <&ocp>;
+        __overlay__ {
+            pps {
+                compatible = "pps-gpio";
+                status = "okay";
+                pinctrl-names = "default";
+                pinctrl-0 = <&pin_pps_spec>;
+                gpios = <&gpio1 28 0>;
+                assert-rising-edge;
+            };
+        };
+    };
+    
+    fragment@12 {
+		target = <&ocp>;
+		__overlay__ {
+			pps_gmtimer {
+				compatible = "pps-gmtimer";
+				status = "okay";
+				timer = <&timer4>;
+				pinctrl-names = "default";
+				pinctrl-0 = <&pin_pps_gmtimer_spec>;
+			};
+		};
+	};
+    
+    fragment@13 {
+		target = <&eqep0>;
+		__overlay__ {
+			pinctrl-names = "default";
+			pinctrl-0 = <&pin_eqep0_spec>;
+
+			count_mode = <1>;	// count_mode is not userspace op_mode
+			// 0 -> Quadrature mode, normal 90 phase offset cha & chb.
+			// 1 -> Direction mode.  cha input = clock, chb input = direction
+			// 2 -> UP count mode for frequency measurement QDIR=1, ignore direction input
+			// 3 -> DOWN count mode for frequency measurement QDIR=0, ignore direction input
+
+			swap_inputs = <0>; 	// swap channel A and B? (0 - no, 1 - yes)
+			invert_qa = <0>;   	// invert channel A input?
+			invert_qb = <0>;   	// invert channel B input?
+			invert_qi = <0>;   	// invert index input?
+			invert_qs = <0>;   	// invert strobe input?
+			omit_interrupt = <0>;	// 1 -> do not install interrupt handler, 0 -> do install
+
+			status = "okay";
+		};
+	};
+	
+};

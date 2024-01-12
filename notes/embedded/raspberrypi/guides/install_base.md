@@ -601,3 +601,4 @@ sudo umount /mnt/mmc/root/
 rm -vf *.txt
 exit
 ```
+
