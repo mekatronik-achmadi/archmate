@@ -4,28 +4,35 @@
 import tkinter as tk
 from tkinter import messagebox
 
-def onbtnquit():
-    window.destroy()
+class Template():
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.geometry("200x100")
+        self.window.title("Template")
 
-def onbtnmsg():
-    messagebox.showinfo("Template","Template Python Tkinter")
+        self.txtlabel = tk.Label(self.window,text="Template Tkinter")
+        self.txtlabel.pack(side=tk.TOP,expand=True)
 
-window = tk.Tk()
-window.geometry("200x100")
-window.title("Template")
+        self.btnfrm = tk.Frame(self.window)
 
-txtlabel = tk.Label(window,text="Template Tkinter")
-txtlabel.pack(side=tk.TOP,expand=True)
+        self.btnmsg = tk.Button(self.btnfrm,text="Message",command=self.onbtnmsg)
+        self.btnmsg.pack(side=tk.TOP,expand=True)
 
-btnfrm = tk.Frame(window)
+        self.btnquit = tk.Button(self.btnfrm,text="Quit",command=self.onbtnquit)
+        self.btnquit.pack(side=tk.BOTTOM,expand=True)
 
-btnmsg = tk.Button(btnfrm,text="Message",command=onbtnmsg)
-btnmsg.pack(side=tk.TOP,expand=True)
+        self.btnfrm.pack(side=tk.BOTTOM,expand=True)
 
-btnquit = tk.Button(btnfrm,text="Quit",command=onbtnquit)
-btnquit.pack(side=tk.BOTTOM,expand=True)
+    def run(self):
+        self.window.mainloop()
 
-btnfrm.pack(side=tk.BOTTOM,expand=True)
+    def onbtnquit(self):
+        self.window.destroy()
 
-window.mainloop()
+    def onbtnmsg(self):
+        messagebox.showinfo("Template","Template Python Tkinter")
+
+if __name__ == "__main__":
+    app = Template()
+    app.run()
 
