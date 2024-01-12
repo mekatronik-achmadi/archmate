@@ -15,15 +15,11 @@ cython0 pybind11 python-setuptools
 blueman bluez
 bluez-utils
 
-gstreamer gst-libav
-vlc-rpi rhythmbox mpv
 ffmpegthumbnailer
-gst-plugins-base
+ffmpeg-rpi gst-libav
 gst-plugins-good
-gst-plugins-ugly
-gst-plugins-bad
-gstreamer-vaapi
-guvcview ffmpeg-rpi
+gst-plugins-base
+vlc-rpi guvcview
 
 libva-vdpau-driver
 libva-mesa-driver
