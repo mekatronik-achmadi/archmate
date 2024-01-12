@@ -154,6 +154,8 @@ sudo R CMD javareconf
 r -e 'install.packages("xlsx")'
 r -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
 r -e 'library(xlsx)'
+
+vim -c "CocInstall coc-r-lsp"
 ```
 
 ### configure wps office
