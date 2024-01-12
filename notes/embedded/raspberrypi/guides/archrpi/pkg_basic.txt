@@ -48,11 +48,11 @@ tcpdump fping inetutils
 firefox vimb uget aria2
 qbittorrent-nox qbittorrent
 
+fuse2 fuse3 udisks2
 ntfs-3g exfat-utils
 gparted dosfstools
 gpart e2fsprogs
 gptfdisk mtools
-fuse2 fuse3
 
 gpio-utils wiringpi fake-hwclock
 python-periphery python-wiringx-git
