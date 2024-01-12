@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "node-gtk": "^0.12.0"
+    "node-gtk": "*",
+    "express": "*"
   }
 }
