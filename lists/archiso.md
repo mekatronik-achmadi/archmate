@@ -521,13 +521,20 @@ startx /usr/bin/openbox-session
 #### openbox mount disks
 
 ```sh
-sudo fdisk -l
+# list attached disk
+lsblk -f -o NAME,FSTYPE,LABEL,FSAVAIL
 
+# mount a partition
 udisksctl mount -b /dev/sdb2
-udisksctl umount -b /dev/sdb2
 
+# check partition
+lsblk -f -o NAME,FSTYPE,LABEL,FSAVAIL
+
+# unmount partition
+udisksctl unmount -b /dev/sdb2
+
+# power off disks
 udisksctl power-off -b /dev/sdb2
-udisksctl power-off -b /dev/sdb
 ```
 
 #### configure vnc server
