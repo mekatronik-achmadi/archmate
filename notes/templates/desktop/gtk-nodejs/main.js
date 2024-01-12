@@ -5,17 +5,17 @@
 //node main.js
 
 //////////////////// Simple Server /////////////////
-const server = require('express')
-const app = server()
+const express = require('express')
+const app = express()
 const port = 3000
 
 app.get('/',(req,res) => {
     res.send('NodeJS Template')
 })
 
-app.listen(port, ()=> {
-    console.log(`NodeJS Template on port ${port}`)
-})
+server = app.listen(port,() => {
+    console.log(`Running server on port ${port} closed`)
+});
 
 //////////////////// Desktop Gtk /////////////////
 const path = require('path')
@@ -28,12 +28,19 @@ Gtk.init()
 const uiFile = path.join(__dirname,'main.glade')
 const builder = Gtk.Builder.newFromFile(uiFile)
 
+function appClose(){
+    server.close(() => {
+        console.log(`Server on port ${port} closed`)
+    })
+    Gtk.mainQuit()
+}
+
 const handlers = {
-    mWnd_destroy_cb: Gtk.mainQuit,
+    mWnd_destroy_cb: appClose,
     mBtnMsg_clicked_cb: function() {
-        console.log('Template NodeJS GTK')
+        console.log(`NodeJS GTK Template with server on port ${port}`)
     },
-    mBtnQuit_clicked_cb: Gtk.mainQuit,
+    mBtnQuit_clicked_cb: appClose,
 }
 
 builder.connectSignals(handlers)
