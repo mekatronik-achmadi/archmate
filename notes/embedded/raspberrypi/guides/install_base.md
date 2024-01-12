@@ -595,3 +595,9 @@ sudo umount /mnt/mmc/root/boot/
 sudo umount /mnt/mmc/root/
 ```
 
+### clean URL lists (host-pc)
+
+```sh
+rm -vf *.txt
+exit
+```
