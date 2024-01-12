@@ -12,6 +12,9 @@ python-pipenv python-virtualenv
 python-pip python-distutils-extra
 cython0 pybind11 python-setuptools
 
+opencv hdf5-openmpi
+python-opencv vtk
+
 blueman bluez
 bluez-utils
 
