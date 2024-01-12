@@ -11,17 +11,17 @@ class Template():
         self.window.title("Template")
 
         self.txtlabel = tk.Label(self.window,text="Template Tkinter")
-        self.txtlabel.pack(side=tk.TOP,expand=True)
+        self.txtlabel.pack(side=tk.TOP,expand=True,fill='both')
 
         self.btnfrm = tk.Frame(self.window)
 
         self.btnmsg = tk.Button(self.btnfrm,text="Message",command=self.onbtnmsg)
-        self.btnmsg.pack(side=tk.TOP,expand=True)
+        self.btnmsg.pack(side=tk.TOP,expand=True,fill='both')
 
         self.btnquit = tk.Button(self.btnfrm,text="Quit",command=self.onbtnquit)
-        self.btnquit.pack(side=tk.BOTTOM,expand=True)
+        self.btnquit.pack(side=tk.BOTTOM,expand=True,fill='both')
 
-        self.btnfrm.pack(side=tk.BOTTOM,expand=True)
+        self.btnfrm.pack(side=tk.BOTTOM,expand=True,fill='both')
 
     def run(self):
         self.window.mainloop()
