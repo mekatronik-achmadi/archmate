@@ -133,6 +133,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 echo -e "call plug#begin('~/.vim/pack/plug/start')
 call plug#end()" | tee ~/.vimrc
+mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugStatus
 ```
@@ -140,12 +141,14 @@ vim +PlugStatus
 #### vim plugins
 
 ```sh
+# basic settings
 echo -e "call plug#begin('~/.vim/pack/plug/start')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/csv.vim'
 Plug 'SirVer/ultisnips'
+Plug 'vala-lang/vala.vim'
 call plug#end()
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
@@ -154,11 +157,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 " | tee ~/.vimrc
-```
 
-```sh
-node -v
-cat ~/.vimrc
+# install extensions
+#node -v;cat ~/.vimrc
 mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
