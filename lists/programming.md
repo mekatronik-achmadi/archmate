@@ -37,8 +37,8 @@ tcsh gdb gdb-dashboard
 
 ### install javacript programming
 
-nodejs node-gyp yq
-npm yarn asar jq
+nodejs npm yarn asar
+jq yq node-gyp ts-node
 
 --------------------------------------------------------------------------------
 
