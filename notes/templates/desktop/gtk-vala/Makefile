@@ -14,7 +14,7 @@ GUIRC=main.glade
 ODIR=build
 
 # compiler options
-COPT=-O0 -Wall -pthread
+COPT=-O0 -Wall -pthread -rdynamic
 FLAGS=--pkg gtk+-3.0 --pkg gmodule-2.0
 
 

@@ -17,9 +17,9 @@ GUIRC=main.glade
 ODIR=build
 
 # compiler options
-COPT=-O0 -Wall -pthread
-CFLAGS=$(COPT) $(shell pkg-config --cflags gtk+-3.0) -rdynamic
-LFLAGS=$(COPT) $(shell pkg-config --libs gtk+-3.0) -rdynamic
+COPT=-O0 -Wall -pthread -rdynamic
+CFLAGS=$(COPT) $(shell pkg-config --cflags gtk+-3.0)
+LFLAGS=$(COPT) $(shell pkg-config --libs gtk+-3.0)
 
 
 ################### Non Configurable ########################

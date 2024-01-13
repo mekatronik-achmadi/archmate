@@ -17,7 +17,7 @@ GUIRC=gui.glade
 ODIR=build
 
 # compiler options
-COPT=-O0 -Wall -pthread
+COPT=-O0 -Wall -pthread -rdynamic
 CFLAGS=$(COPT) $(shell pkg-config --cflags gtkmm-3.0)
 LFLAGS=$(COPT) $(shell pkg-config --libs gtkmm-3.0)
 
