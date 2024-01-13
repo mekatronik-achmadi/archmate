@@ -151,7 +151,7 @@ sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
 
 ### configure vscode
 
-#### settings (windows/linux)
+#### settings
 
 ```sh
 VSCONFDIR=~/.config/Code/User
@@ -159,7 +159,7 @@ VSCONFDIR=~/.config/Code/User
 mkdir -p "$VSCONFDIR"
 echo "{}" > "$VSCONFDIR/settings.json"
 
-jq -n '
+jq '
 ."clangd.arguments"=["-header-insertion=never"] |
 ."C_Cpp.intelliSenseEngine"="disabled" |
 ."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
@@ -180,73 +180,25 @@ jq -n '
 ."window.restoreWindows"="none" |
 ."telemetry.enableTelemetry"=false |
 ."telemetry.enableCrashReporter"=false
-' | tee "$VSCONFDIR/temp.json"
-
-rm -f "$VSCONFDIR/settings.json"
-mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
-
-cat "$VSCONFDIR/settings.json"
-```
-
-#### extension (windows/linux)
-
-```sh
-code --list-extensions
-
-#code --force --install-extension vscodevim.vim
-#code --force --install-extension ms-pyright.pyright
-code --force --install-extension cschlosser.doxdocgen
-code --force --install-extension ms-python.python
-```
-
-#### windows terminal settings (windows-only)
-
-```sh
-code $WINDOWS_VSCODE_INSTALL_PATH/settings.json
-```
-
-```json
- "terminal.integrated.profiles.windows": {
-    "msys64": {
-        "path": "C:\\msys64\\usr\\bin\\bash.exe",
-        "args": [
-            "--login",
-            "-i"
-        ],
-          "env": {
-            "MSYSTEM": "MINGW64",
-            "CHERE_INVOKING": "1"
-        }
-    },
-},
-"terminal.integrated.defaultProfile.windows": "msys64",
-```
-
-#### arduino-platformio (windows-only)
--
-```sh
-code --list-extensions
-
-code --force --install-extension ms-vscode.cpptools
-code --force --install-extension platformio.platformio-ide
-code --force --install-extension vsciot-vscode.vscode-arduino
-code --force --install-extension ms-vscode.vscode-serial-monitor
-```
-
-```sh
-VSCONFDIR=~/.config/Code/User
-
-jq '
-."C_Cpp.intelliSenseEngine"="default" |
-."arduino.commandPath"="arduino-cli" |
-."arduino.enableUSBDetection"=true |
-."arduino.logLevel"="verbose" |
-."arduino.path"="/usr/bin/" |
-."arduino.useArduinoCli"=true
 ' "$VSCONFDIR/settings.json" | tee "$VSCONFDIR/temp.json"
 
 rm -f "$VSCONFDIR/settings.json"
 mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
 
 cat "$VSCONFDIR/settings.json"
--```
+```
+
+#### extension
+
+```sh
+code --list-extensions
+
+#code --force --install-extension vscodevim.vim
+#code --force --install-extension ms-pyright.pyright
+#code --force --install-extension ms-vscode.cpptools
+code --force --install-extension cschlosser.doxdocgen
+code --force --install-extension ms-python.python
+code --force --install-extension llvm-vs-code-extensions.vscode-clangd
+code --force --install-extension REditorSupport.r
+```
+
