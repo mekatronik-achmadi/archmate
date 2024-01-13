@@ -1,15 +1,15 @@
 #include <gtk/gtk.h>
 
-void mWnd_destroy_cb(){
-    gtk_main_quit();
-}
-
 void mBtnQuit_clicked_cb(){
     gtk_main_quit();
 }
 
 void mBtnMsg_clicked_cb(){
-    g_print("Template C GTK3\r\n");
+    GtkWidget *msgbox;
+
+    msgbox = gtk_message_dialog_new(NULL, 0, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Template C GTK");
+    gtk_dialog_run(GTK_DIALOG(msgbox));
+    gtk_widget_destroy(GTK_WIDGET(msgbox));
 }
 
 int main(int argc, char *argv[])

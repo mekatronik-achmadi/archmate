@@ -4,7 +4,6 @@
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkWindow" id="mWnd">
     <property name="can-focus">False</property>
-    <signal name="destroy" handler="mWnd_destroy_cb" swapped="no"/>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>

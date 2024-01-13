@@ -30,15 +30,19 @@ const builder = Gtk.Builder.newFromFile(uiFile)
 
 function appClose(){
     server.close(() => {
-        console.log(`Server on port ${port} closed`)
+        console.log(`Express Server on port ${port} closed`)
     })
     Gtk.mainQuit()
 }
 
 const handlers = {
-    mWnd_destroy_cb: appClose,
     mBtnMsg_clicked_cb: function() {
-        console.log(`NodeJS GTK Template with server on port ${port}`)
+        let msgbox = new Gtk.MessageDialog({
+            text: 'Template NodeJS GTK',
+            buttons: Gtk.ButtonsType.OK,
+        })
+        msgbox.run()
+        msgbox.destroy()
     },
     mBtnQuit_clicked_cb: appClose,
 }

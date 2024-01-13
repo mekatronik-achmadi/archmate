@@ -1,7 +1,6 @@
 #ifndef GUI_H
 #define GUI_H
 
-#include <iostream>
 #include <gtkmm-3.0/gtkmm.h>
 
 class Gui : public Gtk::Window
@@ -18,6 +17,7 @@ protected:
 
     Gtk::Button *mBtnMsg;
     Gtk::Button *mBtnQuit;
+    Gtk::Window *mWnd;
 
     void on_mBtnMsg(void);
     void on_mBtnQuit(void);

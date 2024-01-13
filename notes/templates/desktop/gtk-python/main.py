@@ -17,14 +17,14 @@ class Template():
         self.window.set_resizable(False)
         self.window.show_all()
 
-    def mWnd_destroy_cb(self,window):
-        Gtk.main_quit()
-
     def mBtnQuit_clicked_cb(self,button):
         Gtk.main_quit()
 
     def mBtnMsg_clicked_cb(self,button):
-        print("Template Python GTK")
+        self.msgbox = Gtk.MessageDialog(text="Template Python GTK",
+                                        buttons=Gtk.ButtonsType.OK)
+        self.msgbox.run()
+        self.msgbox.destroy()
 
 if __name__ == "__main__":
     app = Template()
