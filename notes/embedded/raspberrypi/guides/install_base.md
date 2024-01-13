@@ -5,7 +5,7 @@
 ### prepare disk
 
 ```sh
-sudo fdisk -l
+lsblk -f -o NAME,FSTYPE
 export DEVDISK='/dev/sdb'
 ```
 
@@ -34,7 +34,7 @@ wget -c http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-armv7-latest.tar.gz
 ### deploy image
 
 ```sh
-sudo fdisk -l
+lsblk -f -o NAME,FSTYPE
 export DEVDISK='/dev/sdb'
 ```
 
@@ -65,7 +65,7 @@ sudo umount /mnt/mmc/root /mnt/mmc/boot
 ### mount disk (host-pc)
 
 ```sh
-sudo fdisk -l
+lsblk -f -o NAME,FSTYPE
 export DEVDISK='/dev/sdb'
 ```
 
