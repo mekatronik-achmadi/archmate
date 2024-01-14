@@ -6,11 +6,21 @@ const port = 8001;
 
 app.use(express.static('public'));
 
-app.listen(port, () =>{
+var server = app.listen(port, () =>{
     console.log(`Server Listening on port ${port}`);
 });
 
 app.get('/',(req,res) =>{
     res.sendFile(__dirname+'/index.html');
+});
+
+app.post('/clicked',() => {
+    console.log('Web Button Just Clicked');
+});
+
+app.post('/stopit',() => {
+    server.close();
+    console.log('Closing Server');
+    console.log('Waiting Tab/Window closed');
 });
 
