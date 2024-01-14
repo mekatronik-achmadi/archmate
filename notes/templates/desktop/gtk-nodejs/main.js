@@ -1,7 +1,3 @@
-// commands to run:
-//npm install
-//node main.js
-
 const path = require('path');
 const gi = require('node-gtk');
 const Gtk = gi.require('Gtk','3.0');
