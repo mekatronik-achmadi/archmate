@@ -92,6 +92,15 @@ parcellite meld
 openbox obconf tint2 feh bashrun
 light volumeicon xarchiver xpdf
 
+### install lxde-gtk3 session
+
+lxterminal lxtask-gtk3
+gpicview lxde-icon-theme
+lxde-common lxpanel-gtk3
+lxhotkey-gtk3 lxinput-gtk3
+pcmanfm-gtk3 lxsession-gtk3
+lxrandr-gtk3 lxappearance-gtk3
+
 ### install networking system
 
 networkmanager nm-connection-editor
@@ -256,6 +265,7 @@ edk2-ovmf
 
 - archmate-font: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-font/
 - archmate-theme: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-theme/
+- archmate-lxde3: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-lxde3/
 - archmate-openbox: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-openbox/
 - archmate-archiso: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso/
 - archmate-desktop: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-desktop/

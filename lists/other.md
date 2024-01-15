@@ -2,15 +2,6 @@
 
 ## Official
 
-### install lxde-gtk3
-
-lxterminal lxtask-gtk3
-gpicview lxde-icon-theme
-lxde-common lxpanel-gtk3
-lxhotkey-gtk3 lxinput-gtk3
-pcmanfm-gtk3 lxsession-gtk3
-lxrandr-gtk3 lxappearance-gtk3
-
 --------------------------------------------------------------------------------
 
 ## AUR

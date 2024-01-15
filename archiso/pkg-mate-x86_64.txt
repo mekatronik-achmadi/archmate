@@ -66,6 +66,13 @@ parcellite meld
 openbox obconf tint2 feh bashrun
 light volumeicon xarchiver xpdf
 
+lxterminal lxtask-gtk3
+gpicview lxde-icon-theme
+lxde-common lxpanel-gtk3
+lxhotkey-gtk3 lxinput-gtk3
+pcmanfm-gtk3 lxsession-gtk3
+lxrandr-gtk3 lxappearance-gtk3
+
 networkmanager nm-connection-editor
 network-manager-applet modemmanager
 mobile-broadband-provider-info iftop
@@ -181,6 +188,7 @@ vim-devicons-git
 
 archmate-font
 archmate-theme
+archmate-lxde3
 archmate-openbox
 archmate-archiso
 archmate-desktop
