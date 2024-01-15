@@ -133,13 +133,13 @@ lrzip lzip lzop zstd cpio
 subversion automake
 mk-configure autogen
 cblas openblas lapack
+gobject-introspection
 mate-common gnome-common
 pkgconf gendesk help2man
 mercurial breezy cvs cloc
 cmake extra-cmake-modules
 dos2unix doxygen graphviz
 bear autoconf meson ninja
-vala gobject-introspection
 
 ### install java basic
 
