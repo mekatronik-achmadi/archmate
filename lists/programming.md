@@ -149,7 +149,6 @@ Plug 'tpope/vim-commentary'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/csv.vim'
 Plug 'SirVer/ultisnips'
-Plug 'vala-lang/vala.vim'
 call plug#end()
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
