@@ -1,5 +1,18 @@
 # Other Packages
 
+## Official
+
+### install lxde
+
+lxterminal lxtask-gtk3
+lxde-icon-theme gpicview
+lxde-common lxpanel-gtk3
+lxhotkey-gtk3 lxinput-gtk3
+lxrandr-gtk3 lxsession-gtk3
+pcmanfm-gtk3 lxappearance-gtk3
+
+--------------------------------------------------------------------------------
+
 ## AUR
 
 ### nvidia
