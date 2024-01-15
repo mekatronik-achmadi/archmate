@@ -98,9 +98,17 @@
   </item>
 </menu>
 
-<!-- #################### Configuration Menu ##################### -->
+<!-- ####################### Main Menu List ####################### -->
 
-<menu id="configuration" label="Configuration">
+<menu id="root-menu" label="Main Menu">
+  <separator label="Main Menu" />
+  <item label="Run a Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
+    <action name="Execute"><command>bashrun</command></action>
+  </item>
+  <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
+  <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
+
+  <separator label="Configuration" />
   <menu id="background" icon="/usr/share/icons/Papirus/32x32/apps/background.svg"/>
   <menu id="brightness" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg"/>
   <item label="Display" icon="/usr/share/icons/Papirus/32x32/apps/preferences-desktop-display.svg">
@@ -112,18 +120,6 @@
   <item label="OBConf" icon="/usr/share/icons/Papirus/32x32/apps/obconf.svg">
     <action name="Execute"><command>obconf</command></action>
   </item>
-</menu>
-
-<!-- ####################### Main Menu List ####################### -->
-
-<menu id="root-menu" label="Main Menu">
-  <separator label="Main Menu" />
-  <item label="Run a Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
-    <action name="Execute"><command>bashrun</command></action>
-  </item>
-  <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
-  <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
-  <menu id="configuration" icon="/usr/share/icons/Papirus/32x32/apps/applications-utilities.svg"/>
 
 <!--
   <menu id="client-list-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
