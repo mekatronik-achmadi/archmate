@@ -529,12 +529,17 @@ ExecStart=-/sbin/agetty --autologin $USER --noissue --noclear %I 38400 linux
 " | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
 ```
 
-#### alternative session without lighdm
+#### desktop session without lighdm
 
 ```sh
+# using LXDE
 startx /usr/bin/startlxde
 
+# using openbox
 startx /usr/bin/openbox-session
+
+# using Mate
+startx /usr/bin/mate-session
 ```
 
 #### cli mount disks
