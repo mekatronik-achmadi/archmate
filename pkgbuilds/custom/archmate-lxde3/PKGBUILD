@@ -27,5 +27,5 @@ package() {
     cp -f ../lxde3_rc.xml $pkgdir/usr/share/lxde3/rc.xml
     cp -f ../lxde3_panel $pkgdir/usr/share/lxde3/panel
     cp -f ../lxde3_pcmanfm.conf $pkgdir/usr/share/lxde3/pcmanfm.conf
-    cp -f ../lxde3_libfm.conf $pkgdir/usr/share/lxde3/pcmanfm.conf
+    cp -f ../lxde3_libfm.conf $pkgdir/usr/share/lxde3/libfm.conf
 }

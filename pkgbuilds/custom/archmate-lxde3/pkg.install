@@ -8,6 +8,8 @@ modify_settings() {
 
     ln -sf /usr/share/lxde3/pcmanfm.conf /etc/xdg/pcmanfm/LXDE/pcmanfm.conf
     ln -sf /usr/share/lxde3/pcmanfm.conf /etc/xdg/pcmanfm/default/pcmanfm.conf
+
+    ln -sf /usr/share/lxde3/libfm.conf /etc/xdg/libfm/libfm.conf
 }
 
 post_install() {

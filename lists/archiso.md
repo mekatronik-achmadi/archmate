@@ -495,7 +495,7 @@ gtk-application-prefer-dark-theme = false
 ' | sudo tee /etc/gtk-3.0/settings.ini
 ```
 
-#### configure openbox as default
+#### configure alternative session default
 
 ```sh
 sudo rm -vf /etc/systemd/logind.conf.d/do-not-suspend.conf
@@ -504,7 +504,14 @@ HandleLidSwitch=suspend
 HandleLidSwitchDocked=suspend
 ' | sudo tee /etc/systemd/logind.conf.d/lid-suspend.conf
 
+# check available session
+ls /usr/share/xsessions/ | cut -d. -f1
+
+# using openbox
 sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
+
+# using LXDE
+sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
 ```
 
 #### configure login without lightdm
@@ -522,13 +529,15 @@ ExecStart=-/sbin/agetty --autologin $USER --noissue --noclear %I 38400 linux
 " | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
 ```
 
-#### openbox without lighdm
+#### alternative session without lighdm
 
 ```sh
+startx /usr/bin/startlxde
+
 startx /usr/bin/openbox-session
 ```
 
-#### openbox mount disks
+#### cli mount disks
 
 ```sh
 # list attached disk
