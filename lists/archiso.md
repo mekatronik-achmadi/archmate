@@ -511,7 +511,7 @@ ls /usr/share/xsessions/ | cut -d. -f1
 sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
 
 # using LXDE
-sudo sed -i 's#session=mate#session=openbox-lxde#g' /etc/lightdm/lightdm.conf
+sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
 ```
 
 #### configure login without lightdm

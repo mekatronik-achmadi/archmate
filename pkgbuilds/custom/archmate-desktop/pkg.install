@@ -1,7 +1,13 @@
 lightdm_session() {
     echo 'lightdm session'
 
-    cp -f /usr/share/xsessions/mate.desktop /usr/share/xsessions/archmate.desktop
+    echo '[Desktop Entry]
+Name=ArchMATE
+Comment=MATE Desktop Session
+Exec=mate-session
+TryExec=mate-session
+Icon=
+Type=Application' > /usr/share/xsessions/archmate.desktop
 }
 
 update_mime_cache() {
