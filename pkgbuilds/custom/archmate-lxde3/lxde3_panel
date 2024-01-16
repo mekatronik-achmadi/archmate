@@ -19,9 +19,15 @@ Global {
   backgroundfile=/usr/share/lxpanel/images/background.png
 }
 Plugin {
+    type = space
+    Config {
+        Size=2
+    }
+}
+Plugin {
   type=menu
   Config {
-    image=/usr/share/lxde/images/lxde-icon.png
+    image=/usr/share/icons/Papirus/64x64/apps/start-here-archlinux.svg
     system {
     }
     separator {
@@ -36,6 +42,12 @@ Plugin {
       command=logout
     }
   }
+}
+Plugin {
+    type = space
+    Config {
+        Size=4
+    }
 }
 Plugin {
   type=taskbar

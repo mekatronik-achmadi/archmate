@@ -97,8 +97,8 @@
 
 <!-- ####################### Main Menu List ####################### -->
 
-<menu id="root-menu" label="Main Menu">
-  <separator label="Main Menu" />
+<menu id="root-menu" label="Root Menu">
+  <separator label="Quick Menu" />
   <item label="Run a Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
     <action name="Execute"><command>bashrun</command></action>
   </item>
