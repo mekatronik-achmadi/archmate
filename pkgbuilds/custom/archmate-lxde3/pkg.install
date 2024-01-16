@@ -1,22 +1,19 @@
-lxterminal () {
-    echo '
-[general]
-fontname=LiterationMono Nerd Font Mono 8
-selchars=-A-Za-z0-9,./?%&#:_
-scrollback=1000
-bgcolor=rgb(255,255,255)
-fgcolor=rgb(0,0,0)
-' > /usr/share/lxterminal/lxterminal.conf
-}
-
 modify_settings() {
-    lxterminal
+    echo 'Modify LXDE GTK3 Defaults'
+
+    ln -sf /usr/share/lxde3/lxterminal.conf /usr/share/lxterminal/lxterminal.conf
+    ln -sf /usr/share/lxde3/desktop.conf /etc/xdg/lxsession/LXDE/desktop.conf
+    ln -sf /usr/share/lxde3/rc.xml /etc/xdg/openbox/LXDE/rc.xml
+    ln -sf /usr/share/lxde3/panel /etc/xdg/lxpanel/LXDE/panels/panel
+
+    ln -sf /usr/share/lxde3/pcmanfm.conf /etc/xdg/pcmanfm/LXDE/pcmanfm.conf
+    ln -sf /usr/share/lxde3/pcmanfm.conf /etc/xdg/pcmanfm/default/pcmanfm.conf
 }
 
 post_install() {
-
+    modify_settings
 }
 
 post_upgrade() {
-
+    modify_settings
 }
