@@ -1,3 +1,9 @@
+lightdm_session() {
+    echo 'lightdm session'
+
+    cp -f /usr/share/xsessions/mate.desktop /usr/share/xsessions/archmate.desktop
+}
+
 update_mime_cache() {
     echo 'update mime database'
 
@@ -127,6 +133,7 @@ Categories=Development;RevisionControl;
 }
 
 updating() {
+    lightdm_session
     update_mime_cache
     update_dconf
     remove_autostart
