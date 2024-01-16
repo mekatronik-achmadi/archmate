@@ -51,7 +51,7 @@ Plugin {
     FlatButton=0
     MaxTaskWidth=150
     spacing=1
-    DisableUpscale=-1
+    DisableUpscale=0
     GroupedTasks=1
     UseSmallerIcons=-1
   }
