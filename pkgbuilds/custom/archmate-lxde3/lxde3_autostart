@@ -1,0 +1,3 @@
+@lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+@brightnessctl -q s 25%

@@ -73,17 +73,14 @@
 <!-- ########################## Brightness Menu ########################## -->
 
 <menu id="brightness" label="Brightness">
-  <item label="35%" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
-    <action name="Execute"><command>light -S 35</command></action>
+  <item label="Increase" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+    <action name="Execute"><command>brightnessctl -q s 10%+</command></action>
   </item>
-  <item label="25%" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
-    <action name="Execute"><command>light -S 25</command></action>
+  <item label="Default" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+    <action name="Execute"><command>brightnessctl -q s 25%</command></action>
   </item>
-  <item label="15%" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
-    <action name="Execute"><command>light -S 15</command></action>
-  </item>
-  <item label="5%" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
-    <action name="Execute"><command>light -S 5</command></action>
+  <item label="Decrease" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+    <action name="Execute"><command>brightnessctl -q s 10%-</command></action>
   </item>
 </menu>
 

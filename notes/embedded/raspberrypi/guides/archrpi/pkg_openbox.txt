@@ -3,8 +3,8 @@ python-wxpython
 python-gobject
 gtkmm gtkmm3
 
-openbox tint2 obconf feh volumeicon htop
-xpdf gsimplecal xarchiver bashrun arandr
+openbox tint2 obconf feh volumeicon htop bashrun
+xpdf gsimplecal xarchiver brightnessctl arandr
 
 icon-naming-utils gtk-update-icon-cache
 papirus-icon-theme arc-solid-gtk-theme

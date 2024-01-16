@@ -89,8 +89,8 @@ parcellite meld
 
 ### install openbox session
 
-openbox obconf tint2 feh bashrun
-light volumeicon xarchiver xpdf
+openbox obconf tint2 feh xpdf bashrun
+volumeicon xarchiver brightnessctl
 
 ### install lxde-gtk3 session
 
