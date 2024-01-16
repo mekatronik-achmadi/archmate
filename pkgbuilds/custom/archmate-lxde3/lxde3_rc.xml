@@ -338,7 +338,7 @@
     </keybind>
   <keybind key="C-A-w">
     <action name="Execute">
-     <command>vimb</command>
+     <command>firefox</command>
     </action>
   </keybind>
   <keybind key="C-A-f">

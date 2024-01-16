@@ -188,7 +188,6 @@ vim-devicons-git
 
 archmate-font
 archmate-theme
-archmate-lxde3
 archmate-openbox
 archmate-archiso
 archmate-desktop
