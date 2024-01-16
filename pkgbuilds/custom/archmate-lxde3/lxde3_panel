@@ -43,9 +43,6 @@ Plugin {
       id=pcmanfm.desktop
     }
     Button {
-      id=firefox.desktop
-    }
-    Button {
       id=lxterminal.desktop
     }
   }
