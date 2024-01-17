@@ -263,21 +263,12 @@ edk2-ovmf
 
 ### install custom packages
 
-#### mate desktop
-
 - archmate-font: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-font/
 - archmate-theme: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-theme/
 - archmate-lxde3: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-lxde3/
 - archmate-openbox: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-openbox/
 - archmate-archiso: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso/
 - archmate-desktop: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-desktop/
-- archmate-install: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-install/
-
-#### cli/lxde desktop
-
-- archmate-font: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-font/
-- archmate-lxde3: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-lxde3/
-- archmate-openbox: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-openbox/
 - archmate-install: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-install/
 
 --------------------------------------------------------------------------------
@@ -520,7 +511,7 @@ ls /usr/share/xsessions/ | cut -d. -f1
 sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
 
 # using LXDE
-sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
+sudo sed -i 's#session=mate#session=openbox-lxde#g' /etc/lightdm/lightdm.conf
 ```
 
 #### configure login without lightdm

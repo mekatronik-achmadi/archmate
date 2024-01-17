@@ -10,6 +10,8 @@ modify_settings() {
     ln -sf /usr/share/lxde3/pcmanfm.conf /etc/xdg/pcmanfm/default/pcmanfm.conf
 
     ln -sf /usr/share/lxde3/libfm.conf /etc/xdg/libfm/libfm.conf
+
+    mv -f /usr/share/xsessions/LXDE.desktop /usr/share/xsessions/openbox-lxde.desktop
 }
 
 post_install() {
