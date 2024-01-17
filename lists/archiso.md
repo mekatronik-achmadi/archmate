@@ -261,7 +261,9 @@ edk2-ovmf
 - vim-plug-git: https://aur.archlinux.org/packages/vim-plug-git/
 - vim-devicons-git: https://aur.archlinux.org/packages/vim-devicons-git/
 
-### install archmate
+### install custom packages
+
+#### mate desktop
 
 - archmate-font: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-font/
 - archmate-theme: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-theme/
@@ -269,6 +271,13 @@ edk2-ovmf
 - archmate-openbox: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-openbox/
 - archmate-archiso: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso/
 - archmate-desktop: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-desktop/
+- archmate-install: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-install/
+
+#### cli/lxde desktop
+
+- archmate-font: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-font/
+- archmate-lxde3: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-lxde3/
+- archmate-openbox: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-openbox/
 - archmate-install: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-install/
 
 --------------------------------------------------------------------------------
