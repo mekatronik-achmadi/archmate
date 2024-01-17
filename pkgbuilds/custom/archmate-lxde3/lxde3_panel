@@ -46,7 +46,24 @@ Plugin {
 Plugin {
     type = space
     Config {
-        Size=4
+        Size=2
+    }
+}
+Plugin {
+    type = launchbar
+    Config {
+        Button {
+            id=pcmanfm.desktop
+        }
+        Button {
+            id=lxterminal.desktop
+        }
+    }
+}
+Plugin {
+    type = space
+    Config {
+        Size=2
     }
 }
 Plugin {
@@ -70,6 +87,12 @@ Plugin {
   }
 }
 Plugin {
+    type = space
+    Config {
+        Size=2
+    }
+}
+Plugin {
   type=volume
   Config {
     VolumeMuteKey=XF86AudioMute
@@ -91,5 +114,11 @@ Plugin {
     IconOnly=0
     CenterText=0
   }
+}
+Plugin {
+    type = space
+    Config {
+        Size=2
+    }
 }
 
