@@ -226,15 +226,13 @@ cp -vf ../archrpi/archmate-openbox-0.1-1-any.pkg.tar.zst \
 ### install openbox default package (qemu-chroot)
 
 ```sh
-pacman -U --noconfirm --assume-installed light \
-/home/alarm/archmate-openbox-0.1-1-any.pkg.tar.zst
+pacman -U --noconfirm /home/alarm/archmate-openbox-0.1-1-any.pkg.tar.zst
 ```
 
 ### copy font configuration (host-pc)
 
 ```sh
-sudo cp -vf ../archrpi/archfont.conf \
-/mnt/mmc/root/etc/fonts/
+sudo cp -vf ../archrpi/archfont.conf /mnt/mmc/root/etc/fonts/
 ```
 
 --------------------------------------------------------------------------------
