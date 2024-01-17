@@ -325,12 +325,12 @@
   <!-- Keybindings for backlight/brightness -->
   <keybind key="C-A-i">
     <action name="Execute">
-      <command>brightnessctl -q s 10%-</command>
+      <command>brightnessctl -q s 5%-</command>
     </action>
   </keybind>
   <keybind key="C-A-o">
     <action name="Execute">
-      <command>brightnessctl -q s 10%+</command>
+      <command>brightnessctl -q s 5%+</command>
     </action>
   </keybind>
 </keyboard>

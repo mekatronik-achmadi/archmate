@@ -74,13 +74,13 @@
 
 <menu id="brightness" label="Brightness">
   <item label="Increase" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
-    <action name="Execute"><command>brightnessctl -q s 10%+</command></action>
+    <action name="Execute"><command>brightnessctl -q s 5%+</command></action>
   </item>
   <item label="Default" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
-    <action name="Execute"><command>brightnessctl -q s 25%</command></action>
+    <action name="Execute"><command>brightnessctl -q s 15%</command></action>
   </item>
   <item label="Decrease" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
-    <action name="Execute"><command>brightnessctl -q s 10%-</command></action>
+    <action name="Execute"><command>brightnessctl -q s 5%-</command></action>
   </item>
 </menu>
 
