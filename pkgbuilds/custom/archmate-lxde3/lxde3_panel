@@ -14,6 +14,7 @@ Global {
   heightwhenhidden=0
   usefontcolor=1
   fontcolor=#000000
+  monitor=0
   background=0
   backgroundfile=/usr/share/lxpanel/images/background.png
 }
