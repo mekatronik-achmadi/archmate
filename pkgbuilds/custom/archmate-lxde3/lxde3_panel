@@ -44,10 +44,11 @@ Plugin {
   }
 }
 Plugin {
-    type = space
-    Config {
-        Size=2
-    }
+  type=deskno
+  Config {
+    BoldFont=0
+    WMLabels=1
+  }
 }
 Plugin {
     type = launchbar
@@ -61,11 +62,10 @@ Plugin {
     }
 }
 Plugin {
-  type=deskno
-  Config {
-    BoldFont=0
-    WMLabels=1
-  }
+    type = space
+    Config {
+        Size=2
+    }
 }
 Plugin {
   type=taskbar
