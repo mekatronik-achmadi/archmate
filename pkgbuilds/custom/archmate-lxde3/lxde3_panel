@@ -19,10 +19,10 @@ Global {
   backgroundfile=/usr/share/lxpanel/images/background.png
 }
 Plugin {
-    type = space
-    Config {
-        Size=2
-    }
+  type=space
+  Config {
+    Size=2
+  }
 }
 Plugin {
   type=menu
@@ -44,28 +44,20 @@ Plugin {
   }
 }
 Plugin {
-  type=deskno
+  type=launchbar
   Config {
-    BoldFont=1
-    WMLabels=1
+    Button {
+      id=pcmanfm.desktop
+    }
+    Button {
+      id=lxterminal.desktop
+    }
   }
 }
 Plugin {
-    type = launchbar
-    Config {
-        Button {
-            id=pcmanfm.desktop
-        }
-        Button {
-            id=lxterminal.desktop
-        }
-    }
-}
-Plugin {
-    type = space
-    Config {
-        Size=2
-    }
+  type=separator
+  Config {
+  }
 }
 Plugin {
   type=taskbar
@@ -88,10 +80,9 @@ Plugin {
   }
 }
 Plugin {
-    type = space
-    Config {
-        Size=2
-    }
+  type=separator
+  Config {
+  }
 }
 Plugin {
   type=volume
@@ -116,4 +107,27 @@ Plugin {
     CenterText=0
   }
 }
-
+Plugin {
+  type=separator
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=2
+  }
+}
+Plugin {
+  type=deskno
+  Config {
+    BoldFont=1
+    WMLabels=1
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=2
+  }
+}
