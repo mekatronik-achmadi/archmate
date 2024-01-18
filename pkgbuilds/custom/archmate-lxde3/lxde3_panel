@@ -46,7 +46,7 @@ Plugin {
 Plugin {
   type=deskno
   Config {
-    BoldFont=0
+    BoldFont=1
     WMLabels=1
   }
 }
