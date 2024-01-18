@@ -66,8 +66,8 @@ parcellite meld
 openbox obconf tint2 feh xpdf bashrun
 volumeicon xarchiver brightnessctl
 
-lxterminal lxtask-gtk3
-gpicview lxde-icon-theme
+lxde-icon-theme
+lxterminal gpicview
 lxde-common lxpanel-gtk3
 lxhotkey-gtk3 lxinput-gtk3
 pcmanfm-gtk3 lxsession-gtk3

@@ -61,10 +61,11 @@ Plugin {
     }
 }
 Plugin {
-    type = space
-    Config {
-        Size=2
-    }
+  type=deskno
+  Config {
+    BoldFont=0
+    WMLabels=1
+  }
 }
 Plugin {
   type=taskbar
@@ -79,7 +80,7 @@ Plugin {
     UseMouseWheel=1
     UseUrgencyHint=1
     FlatButton=0
-    MaxTaskWidth=150
+    MaxTaskWidth=100
     spacing=1
     DisableUpscale=0
     GroupedTasks=1
@@ -114,11 +115,5 @@ Plugin {
     IconOnly=0
     CenterText=0
   }
-}
-Plugin {
-    type = space
-    Config {
-        Size=2
-    }
 }
 

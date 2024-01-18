@@ -94,8 +94,8 @@ volumeicon xarchiver brightnessctl
 
 ### install lxde-gtk3 session
 
-lxterminal lxtask-gtk3
-gpicview lxde-icon-theme
+lxde-icon-theme
+lxterminal gpicview
 lxde-common lxpanel-gtk3
 lxhotkey-gtk3 lxinput-gtk3
 pcmanfm-gtk3 lxsession-gtk3
