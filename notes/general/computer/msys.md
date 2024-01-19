@@ -163,6 +163,17 @@ echo "For editing PKGBUILD"
 echo ":set ft=PKGBUILD"
 ```
 
+```sh
+mkdir -p ~/.vim
+
+jq -n '
+."clangd.arguments"=["-header-insertion=never"] |
+."pairs.enableCharacters"=["(","[","\"","'\''","`"]
+' > ~/.vim/coc-settings.json
+
+vim ~/.vim/coc-settings.json
+```
+
 ## Generate Clangd compile_commands.json
 
 ```sh

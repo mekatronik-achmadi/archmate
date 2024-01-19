@@ -179,12 +179,14 @@ echo ":set ft=PKGBUILD"
 
 ```sh
 mkdir -p ~/.vim
-echo '{}' > ~/.vim/coc-settings.json
+
 jq -n '
 ."clangd.arguments"=["-header-insertion=never"] |
-."pairs.enableCharacters"=["(","[","\"","'\''","`"]
-' ~/.vim/coc-settings.json > ~/.vim/coc-settings.json
-cat ~/.vim/coc-settings.json
+."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
+."go.goplsPath"="/usr/bin/gopls"
+' > ~/.vim/coc-settings.json
+
+vim ~/.vim/coc-settings.json
 ```
 
 ```sh
