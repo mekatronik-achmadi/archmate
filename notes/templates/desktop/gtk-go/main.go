@@ -23,7 +23,8 @@ func main() {
         errorChk(err)
 
         signals := map[string]interface{}{
-            "mBtnQuit_clicked_cb" : appQuit,
+            "mBtnQuit_clicked_cb" : wnd.Close,
+            "mBtnMsg_clicked_cb" : msg,
         }
         builder.ConnectSignals(signals)
 
@@ -35,11 +36,15 @@ func main() {
     os.Exit(app.Run(os.Args))
 }
 
-func appQuit() {
-    gtk.MainQuit()
+func msg() {
+    dialog := gtk.MessageDialogNew(nil,
+        gtk.DIALOG_MODAL,
+        gtk.MESSAGE_INFO,
+        gtk.BUTTONS_OK, "Template GTK3 GO")
+
+    dialog.Run()
+    dialog.Destroy()
 }
-
-
 
 func toGtkWindow(obj glib.IObject)(*gtk.Window) {
     win := obj.(*gtk.Window)
