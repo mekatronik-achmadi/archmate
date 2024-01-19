@@ -147,16 +147,16 @@ endif" | tee ~/.vimrc
 ```
 
 ```sh
-node -v
-cat ~/.vimrc
-ls ~/.vim/pack/plug/start/
+# install extensions
+#node -v;cat ~/.vimrc
+mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
 vim -c "CocInstall coc-pairs coc-snippets"
-vim -c "CocInstall coc-json coc-tsserver"
 vim -c "CocInstall coc-sh coc-ultisnips"
 vim -c "CocInstall coc-clangd coc-jedi"
 vim -c "CocInstall coc-html coc-yaml"
+vim -c "CocInstall coc-json coc-tsserver"
 vim +PlugClean
 
 echo "For editing PKGBUILD"

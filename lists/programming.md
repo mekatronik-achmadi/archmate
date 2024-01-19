@@ -35,6 +35,8 @@ python-pyqtgraph
 gdb gdb-dashboard
 tcsh lld llvm lldb
 valabind clang boost
+go gopls rust
+rust-analyzer
 
 ### install javacript programming
 
@@ -164,10 +166,11 @@ mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
 vim -c "CocInstall coc-pairs coc-snippets"
-vim -c "CocInstall coc-json coc-tsserver"
 vim -c "CocInstall coc-sh coc-ultisnips"
 vim -c "CocInstall coc-clangd coc-jedi"
 vim -c "CocInstall coc-html coc-yaml"
+vim -c "CocInstall coc-json coc-tsserver"
+vim -c "CocInstall coc-go coc-rust-analyzer"
 vim +PlugClean
 
 echo "For editing PKGBUILD"
