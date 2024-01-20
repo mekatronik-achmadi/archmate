@@ -46,6 +46,7 @@ tk ttf-liberation onboard
 ttf-liberation-mono-nerd
 xdg-desktop-portal-gtk
 ttf-dejavu ttf-droid
+libappindicator-gtk3
 redshift python-xdg
 archlinux-wallpaper
 xdg-desktop-portal

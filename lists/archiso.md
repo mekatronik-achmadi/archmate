@@ -45,13 +45,14 @@ xsel xclip xterm
 xorg-fonts-misc
 xorg-xmessage
 
+### install login manager
+
+lightdm lightdm-gtk-greeter
+
 ### install mate desktop
 
 mate mate-extra
 dconf dconf-editor
-libappindicator-gtk3
-lightdm lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
 
 ### install themes and icons
 
@@ -74,6 +75,7 @@ tk ttf-liberation onboard
 ttf-liberation-mono-nerd
 xdg-desktop-portal-gtk
 ttf-dejavu ttf-droid
+libappindicator-gtk3
 redshift python-xdg
 archlinux-wallpaper
 xdg-desktop-portal
@@ -94,9 +96,9 @@ volumeicon xarchiver brightnessctl
 
 ### install lxde-gtk3 session
 
-lxde-icon-theme
-lxterminal gpicview
+lxdm-gtk3 lxterminal
 lxde-common lxpanel-gtk3
+lxde-icon-theme gpicview
 lxhotkey-gtk3 lxinput-gtk3
 pcmanfm-gtk3 lxsession-gtk3
 lxrandr-gtk3 lxappearance-gtk3

@@ -31,11 +31,10 @@ xsel xclip xterm
 xorg-fonts-misc
 xorg-xmessage
 
+lightdm lightdm-gtk-greeter
+
 mate mate-extra
 dconf dconf-editor
-libappindicator-gtk3
-lightdm lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
 
 icon-naming-utils gtk-update-icon-cache
 papirus-icon-theme arc-solid-gtk-theme
@@ -52,6 +51,7 @@ tk ttf-liberation onboard
 ttf-liberation-mono-nerd
 xdg-desktop-portal-gtk
 ttf-dejavu ttf-droid
+libappindicator-gtk3
 redshift python-xdg
 archlinux-wallpaper
 xdg-desktop-portal
