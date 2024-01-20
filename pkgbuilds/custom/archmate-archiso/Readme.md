@@ -2,7 +2,7 @@
 
 This section contains scripts and files to build a custom ArchISO images
 
-## Project Repository  
+## Project Repository
 
 You can find all required files in project repository here: [ArchMate ArchISO](https://github.com/mekatronik-achmadi/archmate/tree/main/archiso).
 
@@ -25,7 +25,7 @@ Minimal requirements:
 		- folder/databases (contain database files)
 		- folder/packages/official (contain packages from repository)
 		- folder/packages/custom (contain your custom packages)
-		
+
 Please read the script for more details.
 You can use **newpkgs.md** as guideline to build package folders.
 
