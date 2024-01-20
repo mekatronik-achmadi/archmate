@@ -12,6 +12,9 @@ inkscape
 
 audacity sox faac
 openshot frei0r-plugins
+
+### install gaming client
+
 steam steam-native-runtime
 
 ### install disk recovery tools

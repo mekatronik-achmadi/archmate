@@ -601,11 +601,11 @@ sudo rm -vf /usr/share/applications/electron*
 
 ### updated list
 
-- [ ] [archiso](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/archiso.md)
-- [ ] [driver](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/driver.md)
-- [ ] [media](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/media.md)
-- [ ] [design](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/design.md)
-- [ ] [virtual](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/virtual.md)
+- [x] [archiso](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/archiso.md)
+- [x] [driver](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/driver.md)
+- [x] [media](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/media.md)
+- [x] [design](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/design.md)
+- [x] [virtual](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/virtual.md)
 - [ ] [winlayer](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/winlayer.md)
 - [ ] [networking](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/networking.md)
 - [ ] [electronic](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/electronic.md)
