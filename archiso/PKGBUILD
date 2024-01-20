@@ -22,12 +22,7 @@ package() {
 	cd ../
 
 	install -d $pkgdir/usr/share/archmate-archiso/
-	install -m 644 ./pkg-mate-x86_64.txt $pkgdir/usr/share/archmate-archiso/
-	install -m 644 ./archiso_mate.sh $pkgdir/usr/share/archmate-archiso/
-	install -m 644 ./pacstrap_modify $pkgdir/usr/share/archmate-archiso/
-	install -m 644 ./custompkg.sh $pkgdir/usr/share/archmate-archiso/
-	install -m 644 ./qemutest.sh $pkgdir/usr/share/archmate-archiso/
-	install -m 644 ./newpkgs.md $pkgdir/usr/share/archmate-archiso/
+	install -m 644 ./Readme.md $pkgdir/usr/share/archmate-archiso/
 
 	cd $srcdir/
 	make DESTDIR="$pkgdir" PREFIX=/usr install -C archiso
