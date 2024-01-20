@@ -22,6 +22,7 @@ package() {
 	cd ../
 
 	install -d $pkgdir/usr/share/archmate-archiso/
+	install -m 644 ./pacstrap_modify $pkgdir/usr/share/archmate-archiso/
 	install -m 644 ./Readme.md $pkgdir/usr/share/archmate-archiso/
 
 	cd $srcdir/
