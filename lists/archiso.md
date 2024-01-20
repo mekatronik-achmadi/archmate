@@ -296,7 +296,7 @@ sudo systemctl enable fake-hwclock fake-hwclock-save
 sudo systemctl start fake-hwclock fake-hwclock-save
 
 sudo ln -svf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-sudo date -s "3 JAN 2024 20:46:00"
+sudo date -s "3 JAN 2024 20:46"
 
 echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
 echo "en_US ISO-8859-1" | sudo tee /etc/locale.gen
@@ -601,14 +601,14 @@ sudo rm -vf /usr/share/applications/electron*
 
 ### updated list
 
-- [x] [archiso](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/archiso.md)
-- [x] [driver](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/driver.md)
-- [x] [media](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/media.md)
-- [x] [design](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/design.md)
-- [x] [virtual](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/virtual.md)
-- [x] [winlayer](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/winlayer.md)
-- [x] [networking](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/networking.md)
-- [x] [electronic](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/electronic.md)
-- [x] [programming](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/programming.md)
-- [x] [college](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/college.md)
+- [ ] [archiso](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/archiso.md)
+- [ ] [driver](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/driver.md)
+- [ ] [media](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/media.md)
+- [ ] [design](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/design.md)
+- [ ] [virtual](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/virtual.md)
+- [ ] [winlayer](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/winlayer.md)
+- [ ] [networking](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/networking.md)
+- [ ] [electronic](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/electronic.md)
+- [ ] [programming](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/programming.md)
+- [ ] [college](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/college.md)
 - [x] [other](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/other.md)
