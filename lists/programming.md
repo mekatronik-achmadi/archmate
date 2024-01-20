@@ -59,7 +59,6 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 ### install programming tools
 
 - https://aur.archlinux.org/packages/wxhexeditor/
-- https://aur.archlinux.org/packages/vscodium-bin/
 - https://aur.archlinux.org/packages/wxformbuilder/
 
 ### install compiledb
