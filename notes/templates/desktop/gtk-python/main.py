@@ -10,17 +10,28 @@ class Template():
     def __init__(self):
         self.builder = Gtk.Builder()
         self.builder.add_from_file("main.glade")
-        self.builder.connect_signals(self)
 
-        self.window = self.builder.get_object("mWnd")
-        self.window.set_default_size(200,100)
-        self.window.set_resizable(False)
-        self.window.show_all()
+        self.mWnd = self.builder.get_object("mWnd")
+        self.mBtnMsg = self.builder.get_object("mBtnMsg")
+        self.mBtnQuit = self.builder.get_object("mBtnQuit")
 
-    def mBtnQuit_clicked_cb(self,button):
+        self.mWnd.set_default_size(200,100)
+        self.mWnd.set_resizable(False)
+        self.mWnd.connect("destroy",self.mWnd_destroy)
+
+        self.mBtnMsg.connect("clicked",self.mBtnMsg_clicked)
+        self.mBtnQuit.connect("clicked",self.mBtnQuit_clicked)
+
+    def show_all(self):
+        self.mWnd.show_all()
+
+    def mWnd_destroy(self,window):
         Gtk.main_quit()
 
-    def mBtnMsg_clicked_cb(self,button):
+    def mBtnQuit_clicked(self,button):
+        Gtk.main_quit()
+
+    def mBtnMsg_clicked(self,button):
         self.msgbox = Gtk.MessageDialog(text="Template Python GTK",
                                         buttons=Gtk.ButtonsType.OK)
         self.msgbox.run()
@@ -28,5 +39,6 @@ class Template():
 
 if __name__ == "__main__":
     app = Template()
+    app.show_all()
     Gtk.main()
 
