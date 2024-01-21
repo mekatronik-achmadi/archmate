@@ -22,7 +22,7 @@ static void buildWidgets(void){
     wi.g.height = 50;
     wi.g.parent = ghContainerPage;
     wi.g.y = 10;
-    wi.g.x = 10;
+    wi.g.x = 20;
     wi.text = "Message";
     btnMsg = gwinButtonCreate(0, &wi);
 
@@ -31,7 +31,7 @@ static void buildWidgets(void){
     wi.g.height = 50;
     wi.g.parent = ghContainerPage;
     wi.g.y = 60;
-    wi.g.x = 10;
+    wi.g.x = 20;
     wi.text = "Quit";
     btnQuit = gwinButtonCreate(0, &wi);
 }
