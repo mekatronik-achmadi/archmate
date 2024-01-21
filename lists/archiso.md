@@ -613,4 +613,4 @@ sudo rm -vf /usr/share/applications/electron*
 
 ### unused package list
 
-- [x] [other](https://github.com/mekatronik-achmadi/archmate/blob/main/notes/general/computer/other.md)
+- [x] [unused](https://github.com/mekatronik-achmadi/archmate/blob/main/pkgbuilds/unused/unused.md)

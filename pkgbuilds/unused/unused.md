@@ -22,13 +22,14 @@
 - https://aur.archlinux.org/packages/google-chrome/
 - https://aur.archlinux.org/packages/teamviewer/
 
-## install visual studio code
+## install programming editor
 
+- https://aur.archlinux.org/packages/rstudio-desktop-bin/
 - https://aur.archlinux.org/packages/visual-studio-code-bin/
 
 ## install academic tools
 
-- https://aur.archlinux.org/packages/rstudio-desktop-bin/
+- https://aur.archlinux.org/packages/zotero-bin/
 - https://aur.archlinux.org/packages/mendeleydesktop-bundled/
 
 --------------------------------------------------------------------------------
