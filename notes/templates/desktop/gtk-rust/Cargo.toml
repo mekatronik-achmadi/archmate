@@ -1,0 +1,6 @@
+[package]
+name = "gtk_template"
+version = "0.1.0"
+
+[dependencies]
+gtk = "^0"
