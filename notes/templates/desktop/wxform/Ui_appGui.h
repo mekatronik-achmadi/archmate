@@ -37,11 +37,6 @@ class frmMain : public wxFrame
 		wxButton* mBtnMsg;
 		wxButton* mBtnQuit;
 
-		// Virtual event handlers, override them in your derived class
-		virtual void on_btnMsg_clicked( wxCommandEvent& event ) { event.Skip(); }
-		virtual void on_btnQuit_clicked( wxCommandEvent& event ) { event.Skip(); }
-
-
 	public:
 
 		frmMain( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 250,150 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );

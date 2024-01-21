@@ -2,17 +2,20 @@
 
 MainGUI::MainGUI(const wxString &title)
     : frmMain(NULL, wxID_ANY, title,wxDefaultPosition,wxSize(200,150),wxDEFAULT_FRAME_STYLE & ~wxRESIZE_BORDER)
-{}
+{
+    mBtnMsg->Connect(wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainGUI::btnMsg_clicked),NULL,this);
+    mBtnQuit->Connect(wxEVT_COMMAND_BUTTON_CLICKED,wxCommandEventHandler(MainGUI::btnQuit_clicked),NULL,this);
+}
 
 MainGUI::~MainGUI()
 {}
 
-void MainGUI::on_btnMsg_clicked(wxCommandEvent& WXUNUSED(event)) {
+void MainGUI::btnMsg_clicked(wxCommandEvent& WXUNUSED(event)) {
     wxMessageBox( wxT("Template C++ wxGTK"),
     wxT("Template"),
     wxICON_INFORMATION);
 }
 
-void MainGUI::on_btnQuit_clicked(wxCommandEvent& WXUNUSED(event)){
+void MainGUI::btnQuit_clicked(wxCommandEvent& WXUNUSED(event)){
     Close(true);
 }

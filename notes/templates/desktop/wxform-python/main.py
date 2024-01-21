@@ -10,10 +10,13 @@ class MainGui(frmMain):
     def __init__(self,parent=None):
         super().__init__(parent)
 
-    def on_btnMsg_clicked(self,event):
+        self.mBtnMsg.Bind(wx.EVT_BUTTON, self.btnMsg_clicked)
+        self.mBtnQuit.Bind(wx.EVT_BUTTON,self.btnQuit_clicked)
+
+    def btnMsg_clicked(self,event):
         wx.MessageBox("Template C++ wxGTK","Template",wx.ICON_INFORMATION)
 
-    def on_btnQuit_clicked( self, event ):
+    def btnQuit_clicked( self, event ):
         sys.exit()
 
 if __name__ == "__main__":

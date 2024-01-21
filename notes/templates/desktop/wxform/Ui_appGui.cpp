@@ -31,16 +31,8 @@ frmMain::frmMain( wxWindow* parent, wxWindowID id, const wxString& title, const 
 	this->Layout();
 
 	this->Centre( wxBOTH );
-
-	// Connect Events
-	mBtnMsg->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( frmMain::on_btnMsg_clicked ), NULL, this );
-	mBtnQuit->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( frmMain::on_btnQuit_clicked ), NULL, this );
 }
 
 frmMain::~frmMain()
 {
-	// Disconnect Events
-	mBtnMsg->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( frmMain::on_btnMsg_clicked ), NULL, this );
-	mBtnQuit->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( frmMain::on_btnQuit_clicked ), NULL, this );
-
 }

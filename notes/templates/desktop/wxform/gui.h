@@ -16,8 +16,8 @@ class MainGUI : public frmMain
     MainGUI(const wxString &title);
     ~MainGUI();
 
-    void on_btnMsg_clicked(wxCommandEvent& event);
-    void on_btnQuit_clicked(wxCommandEvent& event);
+    void btnMsg_clicked(wxCommandEvent& event);
+    void btnQuit_clicked(wxCommandEvent& event);
 };
 
 #endif

@@ -40,19 +40,7 @@ class frmMain ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
-		# Connect Events
-		self.mBtnMsg.Bind( wx.EVT_BUTTON, self.on_btnMsg_clicked )
-		self.mBtnQuit.Bind( wx.EVT_BUTTON, self.on_btnQuit_clicked )
-
 	def __del__( self ):
 		pass
-
-
-	# Virtual event handlers, override them in your derived class
-	def on_btnMsg_clicked( self, event ):
-		event.Skip()
-
-	def on_btnQuit_clicked( self, event ):
-		event.Skip()
 
 

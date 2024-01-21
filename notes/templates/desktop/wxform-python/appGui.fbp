@@ -194,7 +194,6 @@
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
                         <property name="window_style"></property>
-                        <event name="OnButtonClick">on_btnMsg_clicked</event>
                     </object>
                 </object>
                 <object class="sizeritem" expanded="1">
@@ -268,7 +267,6 @@
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
                         <property name="window_style"></property>
-                        <event name="OnButtonClick">on_btnQuit_clicked</event>
                     </object>
                 </object>
             </object>

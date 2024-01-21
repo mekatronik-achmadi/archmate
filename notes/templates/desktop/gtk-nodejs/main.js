@@ -8,24 +8,30 @@ Gtk.init();
 const uiFile = path.join(__dirname,'main.glade');
 const builder = Gtk.Builder.newFromFile(uiFile);
 
-const handlers = {
-    mBtnMsg_clicked_cb: function() {
-        let msgbox = new Gtk.MessageDialog({
-            text: 'Template NodeJS GTK',
-            buttons: Gtk.ButtonsType.OK,
-        });
-        msgbox.run();
-        msgbox.destroy();
-    },
-    mBtnQuit_clicked_cb: Gtk.mainQuit,
-};
+const mWnd = builder.getObject('mWnd');
+mWnd.setDefaultSize(200,100);
+mWnd.setResizable(false);
+mWnd.on('destroy',()=>{
+    Gtk.mainQuit();
+});
 
-builder.connectSignals(handlers);
+const mBtnMsg = builder.getObject('mBtnMsg');
+mBtnMsg.on('clicked', () => {
+    let msgbox = new Gtk.MessageDialog({
+        text: 'Template NodeJS GTK3',
+        buttons: Gtk.ButtonsType.OK,
+    });
 
-const win = builder.getObject('mWnd');
-win.setDefaultSize(200,100);
-win.setResizable(false);
+    msgbox.run();
+    msgbox.destroy();
+});
 
-win.showAll();
+const mBtnQuit = builder.getObject('mBtnQuit');
+mBtnQuit.on('clicked', () => {
+    Gtk.mainQuit();
+});
+
+mWnd.showAll();
+
 Gtk.main();
 
