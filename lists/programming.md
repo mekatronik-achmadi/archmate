@@ -183,7 +183,7 @@ jq -n '
 ."clangd.arguments"=["-header-insertion=never"] |
 ."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
 ."go.goplsPath"="/usr/bin/gopls" |
-."rust-analyzer.server.path"=" /usr/bin/rust-analyzer"
+."rust-analyzer.server.path"="/usr/bin/rust-analyzer"
 ' > ~/.vim/coc-settings.json
 
 vim ~/.vim/coc-settings.json
