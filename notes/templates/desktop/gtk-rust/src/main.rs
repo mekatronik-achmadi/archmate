@@ -1,11 +1,12 @@
 extern crate gtk;
 use gtk::prelude::*;
+use std::path;
 
 pub fn main() {
     let _ = gtk::init();
 
-    let glade_src = include_str!("main.glade");
-    let builder  = gtk::Builder::from_string(glade_src);
+    let ui_file = path::Path::new("target/debug/main.glade");
+    let builder  = gtk::Builder::from_file(ui_file);
 
     let m_wnd : gtk::Window = builder.object("mWnd").unwrap();
     let m_btn_quit : gtk::Button = builder.object("mBtnQuit").unwrap();
