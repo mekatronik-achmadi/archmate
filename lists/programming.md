@@ -140,7 +140,7 @@ mkdir -p ~/.vim/pack/plug/start/
 vim +PlugStatus
 ```
 
-#### vim plugins
+#### vim plugins settings
 
 ```sh
 # basic settings
@@ -158,18 +158,18 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 " | tee ~/.vimrc
+```
 
-# install extensions
-#node -v;cat ~/.vimrc
+#### vim plugin install
+
+```sh
+node -v;ls ~/.vimrc
 mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-snippets"
-vim -c "CocInstall coc-sh coc-ultisnips"
-vim -c "CocInstall coc-clangd coc-jedi"
-vim -c "CocInstall coc-html coc-yaml"
-vim -c "CocInstall coc-json coc-tsserver"
-vim -c "CocInstall coc-go coc-rust-analyzer"
+vim -c "CocInstall coc-pairs coc-snippets coc-sh coc-ultisnips"
+vim -c "CocInstall coc-clangd coc-jedi coc-json coc-tsserver"
+vim -c "CocInstall coc-html coc-yaml coc-go coc-rust-analyzer"
 vim +PlugClean
 
 echo "For editing PKGBUILD"
@@ -209,10 +209,12 @@ compiledb make -j$(nproc)
 
 ```sh
 # Initial clangd config without header cleaning
+
 mkdir -p ~/.config/clangd/
 echo "
 Diagnostics:
   UnusedIncludes: None
 " | tee ~/.config/clangd/config.yaml
+
 sed -i 's@UnusedIncludes: Strict@UnusedIncludes: None@g' ~/.config/clangd/config.yaml
 ```

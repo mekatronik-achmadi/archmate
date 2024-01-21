@@ -92,7 +92,7 @@ call plug#end()" > ~/.vimrc
 vim +PlugStatus
 ```
 
-### install plugins
+### plugins settings
 
 **WARNING:**  Python error on Vim Ultisnips
 
@@ -146,17 +146,15 @@ if has(\"gui_running\")
 endif" | tee ~/.vimrc
 ```
 
+### plugins install
+
 ```sh
-# install extensions
-#node -v;cat ~/.vimrc
+node -v;ls ~/.vimrc
 mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-snippets"
-vim -c "CocInstall coc-sh coc-ultisnips"
-vim -c "CocInstall coc-clangd coc-jedi"
-vim -c "CocInstall coc-html coc-yaml"
-vim -c "CocInstall coc-json coc-tsserver"
+vim -c "CocInstall coc-pairs coc-snippets coc-sh coc-ultisnips coc-html"
+vim -c "CocInstall coc-clangd coc-jedi coc-json coc-tsserver coc-yaml"
 vim +PlugClean
 
 echo "For editing PKGBUILD"

@@ -55,7 +55,7 @@ FreeCAD recommended plugins:
 #### kicad menu
 
 ```sh
-for i in `pacman -Qlq kicad | grep desktop`;do sudo sed -i "s#Categories=Science;Electronics;#Categories=Graphics;#g" $i;done
+for i in `pacman -Qlq kicad | grep desktop`;do sudo sed -i "s#Categories=Science;Electronics;#Categories=Development;#g" $i;done
 ```
 
 #### kicad plugins
@@ -70,9 +70,18 @@ KiCAD recommended plugins:
 - https://github.com/openscopeproject/InteractiveHtmlBom/
 - https://github.com/Steffen-W/Import-LIB-KiCad-Plugin/
 - https://github.com/bennymeg/JLC-Plugin-for-KiCad/
-- https://github.com/Bouni/kicad-jlcpcb-tools/
 - https://github.com/gregdavill/KiBuzzard/
 - https://gitlab.com/dennevi/Board2Pdf/
+
+KiCAD JLC plugin:
+
+- https://github.com/Bouni/kicad-jlcpcb-tools/
+
+```
+# Manage -> Manage Repository -> Add (+)
+
+https://raw.githubusercontent.com/Bouni/bouni-kicad-repository/main/repository.json
+```
 
 #### kicad custom symbol/footprint
 

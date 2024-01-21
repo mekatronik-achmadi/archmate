@@ -9,7 +9,7 @@ libreoffice-fresh coin-or-mp
 ### install fortran
 
 gcc-fortran arpack
-mpdecimal gnuplot
+r mpdecimal gnuplot
 
 ### install python computing
 
@@ -31,8 +31,7 @@ python-pandas python-numexpr
 
 ### install python interface
 
-ipython jupyterlab
-jupyter-notebook
+jupyterlab jupyter-notebook
 
 ### install python additional
 
@@ -71,11 +70,9 @@ fftw liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/wps-office/
 - https://aur.archlinux.org/packages/ttf-wps-fonts/
 
-### install r programming
+### install r shell
 
-- https://aur.archlinux.org/packages/python-rchitect/
 - https://aur.archlinux.org/packages/littler/
-- https://aur.archlinux.org/packages/radian/
 
 ### install python additionals
 
@@ -110,20 +107,7 @@ fftw liquid-dsp libsndfile
 
 - [CRAN MIRRORs](https://cran.r-project.org/mirrors.html)
 - [Packages](https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
-- [Radian Themes](https://pygments.org/styles/)
 - [Tutorial](https://www.tutorialspoint.com/r/index.htm)
-
-```sh
-echo '[Desktop Entry]
-Name=Radian
-Comment=R console
-Exec=radian
-Icon=/usr/share/pixmaps/r.png
-StartupNotify=true
-Terminal=true
-Type=Application
-Categories=Math;Science;Education' | sudo tee /usr/share/applications/radian.desktop
-```
 
 ```sh
 mkdir -p $HOME/R/library
@@ -135,26 +119,22 @@ local({
   r <- getOption("repos")
   r["CRAN"] <- "https://mirror.aarnet.edu.au/pub/CRAN/"
   options(repos = r)
-})
-options(radian.color_scheme = "tango")
-options(radian.auto_match = TRUE)
-options(radian.highlight_matching_bracket = FALSE)
-options(radian.auto_indentation = TRUE)
-options(radian.tab_size = 4)' | tee -a ~/.Rprofile
+})' | tee -a ~/.Rprofile
 
-r -e 'install.packages("languageserver")'
+r -e 'print(R.version.string)'
+r -e 'print(.libPaths())'
+r -e 'print(library())'
+
 r -e 'install.packages(c("ImportExport","tidymodels","tidyverse","markdown"))'
 r -e 'install.packages(c("randomForest","party","survival","plyr","plotrix"))'
 r -e 'install.packages(c("streamR","shiny","httpgd","GGally","haven","XML2R"))'
-
-r -e 'print(.libPaths())'
-r -e 'print(library())'
 
 sudo R CMD javareconf
 r -e 'install.packages("xlsx")'
 r -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
 r -e 'library(xlsx)'
 
+r -e 'install.packages("languageserver")'
 vim -c "CocInstall coc-r-lsp"
 ```
 

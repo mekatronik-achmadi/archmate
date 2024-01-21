@@ -599,7 +599,7 @@ sudo rm -vf /usr/share/applications/electron*
 
 ## Notes
 
-### updated list
+### updated package list
 
 - [x] [archiso](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/archiso.md)
 - [x] [driver](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/driver.md)
@@ -610,4 +610,7 @@ sudo rm -vf /usr/share/applications/electron*
 - [x] [electronic](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/electronic.md)
 - [x] [programming](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/programming.md)
 - [x] [college](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/college.md)
-- [x] [other](https://github.com/mekatronik-achmadi/archmate/blob/main/lists/other.md)
+
+### unused package list
+
+- [x] [other](https://github.com/mekatronik-achmadi/archmate/blob/main/notes/general/computer/other.md)

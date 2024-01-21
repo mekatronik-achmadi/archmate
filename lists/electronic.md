@@ -264,6 +264,7 @@ sudo pacman -S clangd python-pipenv python-virtualenv
 ```sh
 cd $HOME
 virtualenv platformio --system-site-packages
+
 source $HOME/platformio/bin/activate
 
 mkdir -p $HOME/.platformio/
@@ -278,9 +279,6 @@ deactivate
 UDEV=https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules
 curl -fsSL $UDEV | sudo tee /etc/udev/rules.d/99-platformio-udev.rules
 
-sudo gpasswd -a $USER lock
-sudo gpasswd -a $USER uucp
-
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
@@ -290,12 +288,13 @@ sudo udevadm trigger
 ```sh
 source $HOME/platformio/bin/activate
 
-sed -i "s@'dark'@'light'@g" $HOME/.platformio/packages/contrib-piohome/index.html
-
 pio home --host=0.0.0.0 --no-open
+vimb http://localhost:8008/
 
 #xdg-mime default vimb.desktop x-scheme-handler/http
 #pio home --host=0.0.0.0
+
+#sed -i "s@'dark'@'light'@g" $HOME/.platformio/packages/contrib-piohome/index.html
 ```
 
 #### example arduino avr
