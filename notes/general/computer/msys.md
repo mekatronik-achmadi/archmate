@@ -8,7 +8,6 @@
 - Latest MSVC++: https://learn.microsoft.com/id-id/cpp/windows/latest-supported-vc-redist
 - CopyQ: https://github.com/hluk/CopyQ/releases
 - Ghostwriter: https://ghostwriter.kde.org/download/
-- MarkText: https://www.marktext.cc/
 - WinMerge: https://winmerge.org/downloads/?lang=en
 - Notepad++: https://notepad-plus-plus.org/downloads/
 - Git: https://git-scm.com/download/win
@@ -44,23 +43,8 @@ pacman -Su --noconfirm
 
 ```sh
 pacman -S $(echo "
-base base-devel gvim mc git tig bear
-winpty neofetch bash-completion tmux
-")
-```
-
-### additional devel packages
-
-```sh
-pacman -S $(echo "
-mingw-w64-x86_64-python
-mingw-w64-x86_64-cython0
-mingw-w64-x86_64-python-pip
-mingw-w64-x86_64-toolchain
-mingw-w64-x86_64-clang-analyzer
-mingw-w64-x86_64-clang-tools-extra
-mingw-w64-x86_64-ttf-liberation-mono-nerd
-mingw-w64-x86_64-nodejs mingw-w64-x86_64-yarn
+base base-devel vim mc git tig neofetch
+zip unrar p7zip winpty bash-completion
 ")
 ```
 
@@ -74,6 +58,29 @@ export EDITOR=vim
 export PAGER=less
 export VIEWER=less
 " | tee /etc/profile.d/msys_profile.sh
+```
+
+### additional devel packages
+
+```sh
+pacman -S $(echo "
+mingw-w64-x86_64-jq
+mingw-w64-x86_64-python
+mingw-w64-x86_64-cython0
+mingw-w64-x86_64-python-pip
+mingw-w64-x86_64-toolchain
+mingw-w64-x86_64-clang-analyzer
+mingw-w64-x86_64-clang-tools-extra
+mingw-w64-x86_64-ttf-liberation-mono-nerd
+mingw-w64-x86_64-nodejs mingw-w64-x86_64-yarn
+")
+```
+
+### gtk3 programming
+
+```sh
+pacman -S $(echo "mingw-w64-x86_64-gtk3 mingw-w64-x86_64-python-gobject
+mingw-w64-x86_64-gtkmm3 mingw-w64-x86_64-glade mingw-w64-x86_64-fltk")
 ```
 
 ## Vim CoC
@@ -101,19 +108,17 @@ echo "
 call plug#begin('~/.vim/pack/plug/start')
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/nerdtree'
-    Plug 'jlanzarotta/bufexplorer'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-commentary'
     Plug 'airblade/vim-gitgutter'
     Plug 'godlygeek/tabular'
     Plug 'preservim/tagbar'
-    Plug 'lervag/vimtex'
+\"    Plug 'lervag/vimtex'
     Plug 'chrisbra/csv.vim'
-\"    Plug 'ryanoasis/vim-devicons'
-\"    Plug 'SirVer/ultisnips'
-\"    Plug 'honza/vim-snippets'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -142,7 +147,6 @@ let g:NERDTreeWinSize=30
 syntax on
 if has(\"gui_running\")
   set guifont=LiterationMono\ Nerd\ Font\ Mono\ 8
-\"  colorscheme evening
 endif" | tee ~/.vimrc
 ```
 
@@ -153,16 +157,14 @@ node -v;ls ~/.vimrc
 mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-snippets coc-sh coc-ultisnips coc-html"
-vim -c "CocInstall coc-clangd coc-jedi coc-json coc-tsserver coc-yaml"
+vim -c "CocInstall coc-pairs coc-snippets coc-ultisnips coc-sh coc-clangd"
+vim -c "CocInstall coc-jedi coc-json coc-tsserver coc-yaml coc-html"
 vim +PlugClean
-
-echo "For editing PKGBUILD"
-echo ":set ft=PKGBUILD"
 ```
 
 ```sh
-mkdir -p ~/.vim
+mkdir -p ~/.vim/
+rm -vf ~/.vim/coc-settings.json
 
 jq -n '
 ."clangd.arguments"=["-header-insertion=never"] |
@@ -175,20 +177,15 @@ vim ~/.vim/coc-settings.json
 ## Generate Clangd compile_commands.json
 
 ```sh
-bear -- gcc -o coba.exe coba.c
-bear -- make -j$(nproc)
-```
-
-```sh
 pip install compiledb
 
 compiledb gcc -o coba.exe coba.c
 compiledb make -j$(nproc)
 ```
 
-### VSCode
+## VSCode
 
-#### settings
+### settings
 
 - %APPDATA%\Code\User\settings.json.
 
@@ -246,7 +243,7 @@ compiledb make -j$(nproc)
 }
 ```
 
-#### extension
+### extension
 
 ```sh
 code --list-extensions
