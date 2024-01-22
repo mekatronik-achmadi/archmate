@@ -11,6 +11,7 @@
 - WinMerge: https://winmerge.org/downloads/?lang=en
 - Notepad++: https://notepad-plus-plus.org/downloads/
 - Git: https://git-scm.com/download/win
+- Git-Cola: https://git-cola.github.io/downloads.html
 - VSCode: https://code.visualstudio.com/download/
 
 ## Installation
@@ -95,14 +96,13 @@ compiledb make all
 
 ### settings
 
-- %APPDATA%\Code\User\settings.json.
+Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**.
 
 ```json
 {
   "clangd.arguments": [
     "-header-insertion=never"
   ],
-  "C_Cpp.intelliSenseEngine": "default",
   "doxdocgen.file.customTag": [
     "@addtogroup ",
     "@{"
@@ -126,6 +126,7 @@ compiledb make all
   "workbench.colorTheme": "Default Light+",
   "security.workspace.trust.untrustedFiles": "open",
   "window.restoreWindows": "none",
+  "telemetry.telemetryLevel": "off",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "workbench.activityBar.location": "hidden",
@@ -143,31 +144,41 @@ compiledb make all
     }
   },
   "terminal.integrated.defaultProfile.windows": "msys64",
-  "arduino.commandPath": "arduino-cli",
-  "arduino.enableUSBDetection": true,
-  "arduino.logLevel": "verbose",
-  "arduino.path": "/usr/bin/",
-  "arduino.useArduinoCli": true
 }
 ```
 
 ### extension
 
 ```sh
-# list installed
 code --list-extensions
 
-# generic
 #code --force --install-extension vscodevim.vim
 #code --force --install-extension ms-pyright.pyright
 code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension ms-python.python
+```
 
-# arduino/platformio
-# clangd extension must be disabled
+### arduino/platformio
+
+**Note:** clangd extension must be disabled
+
+```sh
+code --list-extensions
+
 code --force --install-extension ms-vscode.cpptools
 code --force --install-extension platformio.platformio-ide
 code --force --install-extension vsciot-vscode.vscode-arduino
 code --force --install-extension ms-vscode.vscode-serial-monitor
+```
+
+Additional settings to **%APPDATA%\Roaming\Code\User\settings.json**.
+
+```json
+"C_Cpp.intelliSenseEngine": "default",
+"arduino.path": "/usr/bin/",
+"arduino.commandPath": "arduino-cli",
+"arduino.useArduinoCli": true,
+"arduino.enableUSBDetection": true,
+"arduino.logLevel": "verbose",
 ```
