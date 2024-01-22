@@ -79,8 +79,10 @@ mingw-w64-x86_64-nodejs mingw-w64-x86_64-yarn
 ### gtk3 programming
 
 ```sh
-pacman -S $(echo "mingw-w64-x86_64-gtk3 mingw-w64-x86_64-python-gobject
-mingw-w64-x86_64-gtkmm3 mingw-w64-x86_64-glade mingw-w64-x86_64-fltk")
+pacman -S $(echo "
+mingw-w64-x86_64-gtk3
+mingw-w64-x86_64-gtkmm3
+mingw-w64-x86_64-glade")
 ```
 
 ## Vim CoC
@@ -102,6 +104,7 @@ vim +PlugStatus
 ### plugins settings
 
 **WARNING:**  Python error on Vim Ultisnips
+**WARNING:**  DevIcons failed in Windows CMD
 
 ```sh
 echo "
@@ -114,11 +117,11 @@ call plug#begin('~/.vim/pack/plug/start')
     Plug 'airblade/vim-gitgutter'
     Plug 'godlygeek/tabular'
     Plug 'preservim/tagbar'
-\"    Plug 'lervag/vimtex'
     Plug 'chrisbra/csv.vim'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'SirVer/ultisnips'
+    Plug 'tpope/vim-commentary'
     Plug 'honza/vim-snippets'
+\"    Plug 'SirVer/ultisnips'
+\"    Plug 'ryanoasis/vim-devicons'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -157,8 +160,7 @@ node -v;ls ~/.vimrc
 mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-snippets coc-ultisnips coc-sh coc-clangd"
-vim -c "CocInstall coc-jedi coc-json coc-tsserver coc-yaml coc-html"
+vim -c "CocInstall coc-pairs coc-sh coc-jedi coc-clangd"
 vim +PlugClean
 ```
 
@@ -174,13 +176,13 @@ jq -n '
 vim ~/.vim/coc-settings.json
 ```
 
-## Generate Clangd compile_commands.json
+## CLang compile commands
 
 ```sh
 pip install compiledb
 
-compiledb gcc -o coba.exe coba.c
-compiledb make -j$(nproc)
+compiledb gcc -o main main.c
+compiledb make all
 ```
 
 ## VSCode
