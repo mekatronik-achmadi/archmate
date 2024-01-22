@@ -43,8 +43,8 @@ pacman -Su --noconfirm
 
 ```sh
 pacman -S $(echo "
-base base-devel vim mc git tig neofetch
-zip unrar p7zip winpty bash-completion
+base base-devel nano neofetch
+git tig winpty bash-completion
 ")
 ```
 
@@ -53,8 +53,8 @@ zip unrar p7zip winpty bash-completion
 ```sh
 echo "
 export PATH=$PATH:~/.local/bin
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nano
+export EDITOR=nano
 export PAGER=less
 export VIEWER=less
 " | tee /etc/profile.d/msys_profile.sh
@@ -64,15 +64,12 @@ export VIEWER=less
 
 ```sh
 pacman -S $(echo "
-mingw-w64-x86_64-jq
 mingw-w64-x86_64-python
 mingw-w64-x86_64-cython0
 mingw-w64-x86_64-python-pip
 mingw-w64-x86_64-toolchain
 mingw-w64-x86_64-clang-analyzer
 mingw-w64-x86_64-clang-tools-extra
-mingw-w64-x86_64-ttf-liberation-mono-nerd
-mingw-w64-x86_64-nodejs mingw-w64-x86_64-yarn
 ")
 ```
 
@@ -83,97 +80,6 @@ pacman -S $(echo "
 mingw-w64-x86_64-gtk3
 mingw-w64-x86_64-gtkmm3
 mingw-w64-x86_64-glade")
-```
-
-## Vim CoC
-
-### install vim-plug
-
-- https://github.com/junegunn/vim-plug/
-
-```sh
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-echo -e "
-call plug#begin('~/.vim/pack/plug/start')
-call plug#end()" > ~/.vimrc
-
-vim +PlugStatus
-```
-
-### plugins settings
-
-**WARNING:**  Python error on Vim Ultisnips
-**WARNING:**  DevIcons failed in Windows CMD
-
-```sh
-echo "
-call plug#begin('~/.vim/pack/plug/start')
-    Plug 'preservim/nerdcommenter'
-    Plug 'preservim/nerdtree'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'tpope/vim-surround'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'godlygeek/tabular'
-    Plug 'preservim/tagbar'
-    Plug 'chrisbra/csv.vim'
-    Plug 'tpope/vim-commentary'
-    Plug 'honza/vim-snippets'
-\"    Plug 'SirVer/ultisnips'
-\"    Plug 'ryanoasis/vim-devicons'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
-
-let g:coc_data_home = 'C:\\\\msys64\\\\home\\\\$USER\\\\.config\\\\coc'
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \\: \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\"
-
-hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
-hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
-
-autocmd BufWritePre * %s/\s\+$//e
-filetype plugin on
-filetype indent on
-filetype plugin indent on
-set expandtab ts=4 sw=4 ai
-set conceallevel=0
-set encoding=utf-8
-set termguicolors
-set ic is hls
-set number
-set wrap!
-set mouse=a
-let g:tagbar_width=30
-let g:NERDTreeWinSize=30
-syntax on
-if has(\"gui_running\")
-  set guifont=LiterationMono\ Nerd\ Font\ Mono\ 8
-endif" | tee ~/.vimrc
-```
-
-### plugins install
-
-```sh
-node -v;ls ~/.vimrc
-mkdir -p ~/.vim/pack/plug/start/
-
-vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-sh coc-jedi coc-clangd"
-vim +PlugClean
-```
-
-```sh
-mkdir -p ~/.vim/
-rm -vf ~/.vim/coc-settings.json
-
-jq -n '
-."clangd.arguments"=["-header-insertion=never"] |
-."pairs.enableCharacters"=["(","[","\"","'\''","`"]
-' > ~/.vim/coc-settings.json
-
-vim ~/.vim/coc-settings.json
 ```
 
 ## CLang compile commands
@@ -248,15 +154,19 @@ compiledb make all
 ### extension
 
 ```sh
+# list installed
 code --list-extensions
 
+# generic
 #code --force --install-extension vscodevim.vim
 #code --force --install-extension ms-pyright.pyright
-#code --force --install-extension llvm-vs-code-extensions.vscode-clangd
+code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension ms-python.python
-code --force --install-extension ms-vscode.cpptools
 
+# arduino/platformio
+# clangd extension must be disabled
+code --force --install-extension ms-vscode.cpptools
 code --force --install-extension platformio.platformio-ide
 code --force --install-extension vsciot-vscode.vscode-arduino
 code --force --install-extension ms-vscode.vscode-serial-monitor
