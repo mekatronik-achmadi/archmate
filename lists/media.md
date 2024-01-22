@@ -15,9 +15,8 @@ openshot frei0r-plugins
 
 ### install gaming client
 
-vkd3d lib32-vkd3d
-steam steam-native-runtime
-lutris gamemode lib32-gamemode
+steam vkd3d lib32-vkd3d
+steam-native-runtime
 
 ### install disk recovery tools
 
