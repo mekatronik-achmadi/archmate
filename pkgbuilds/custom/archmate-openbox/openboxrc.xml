@@ -48,7 +48,7 @@
 
 <theme>
   <name>Bear2</name>
-  <titleLayout>LIM</titleLayout>
+  <titleLayout>NLIMC</titleLayout>
   <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
