@@ -190,11 +190,20 @@ jq -n '
 vim ~/.vim/coc-settings.json
 ```
 
+```
+# vim color setting commands
+
+:h cterm-colors
+:h gui-colors
+:hi
+
+# gvim colorscheme
+
+:colo <CTRL+D>
+```
+
 ```sh
-echo "vim color setting commands
-echo ":h cterm-colors"
-echo ":h gui-colors"
-echo ":hi"
+sudo sed -i 's#colorscheme shine#colorscheme evening#' /etc/vimrc
 ```
 
 ### configure clangd
