@@ -50,6 +50,10 @@
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
 
+### install alternative desktop session
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/archmate-lxde3/
+
 --------------------------------------------------------------------------------
 
 ## Configurations
@@ -207,3 +211,12 @@ code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 code --force --install-extension REditorSupport.r
 ```
 
+### configure lxde session
+
+```sh
+# using lightdm session
+sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
+
+# without using lightdm
+startx /usr/bin/startlxde
+```

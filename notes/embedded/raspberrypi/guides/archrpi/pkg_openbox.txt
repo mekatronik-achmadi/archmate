@@ -6,13 +6,6 @@ gtkmm gtkmm3
 openbox tint2 obconf feh volumeicon htop bashrun
 xpdf gsimplecal xarchiver brightnessctl arandr
 
-lxdm-gtk3 lxterminal
-lxde-common lxpanel-gtk3
-lxde-icon-theme gpicview
-lxhotkey-gtk3 lxinput-gtk3
-pcmanfm-gtk3 lxsession-gtk3
-lxrandr-gtk3 lxappearance-gtk3
-
 icon-naming-utils gtk-update-icon-cache
 papirus-icon-theme arc-solid-gtk-theme
 gtk-engines gtk-engine-murrine

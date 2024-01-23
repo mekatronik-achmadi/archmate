@@ -94,15 +94,6 @@ parcellite meld
 openbox obconf tint2 feh xpdf bashrun
 volumeicon xarchiver brightnessctl
 
-### install lxde-gtk3 session
-
-lxdm-gtk3 lxterminal
-lxde-common lxpanel-gtk3
-lxde-icon-theme gpicview
-lxhotkey-gtk3 lxinput-gtk3
-pcmanfm-gtk3 lxsession-gtk3
-lxrandr-gtk3 lxappearance-gtk3
-
 ### install networking system
 
 networkmanager nm-connection-editor
@@ -267,7 +258,6 @@ edk2-ovmf
 
 - archmate-font: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-font/
 - archmate-theme: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-theme/
-- archmate-lxde3: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-lxde3/
 - archmate-openbox: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-openbox/
 - archmate-archiso: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso/
 - archmate-desktop: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-desktop/
@@ -497,7 +487,7 @@ gtk-application-prefer-dark-theme = false
 ' | sudo tee /etc/gtk-3.0/settings.ini
 ```
 
-#### configure alternative session default
+#### configure lightdm default session
 
 ```sh
 sudo rm -vf /etc/systemd/logind.conf.d/do-not-suspend.conf
@@ -511,9 +501,6 @@ ls /usr/share/xsessions/ | cut -d. -f1
 
 # using openbox
 sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
-
-# using LXDE
-sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
 ```
 
 #### configure login without lightdm
@@ -534,9 +521,6 @@ ExecStart=-/sbin/agetty --autologin $USER --noissue --noclear %I 38400 linux
 #### desktop session without lighdm
 
 ```sh
-# using LXDE
-startx /usr/bin/startlxde
-
 # using openbox
 startx /usr/bin/openbox-session
 
