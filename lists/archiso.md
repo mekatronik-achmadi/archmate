@@ -564,32 +564,10 @@ x0vncserver -rfbauth ~/.vnc/passwd
 vncviewer <ip_number>:0
 ```
 
-#### configure guvcview
-
-```sh
-echo "[Desktop Entry]
-Name=guvcview
-GenericName=GTK3 UVC Camera
-Comment=Linux UVC camera program
-Exec=guvcview -i guvcview.raw
-Icon=guvcview
-Terminal=false
-Type=Application
-Categories=Video;AudioVideo;
-StartupNotify=true
-" | sudo tee /usr/share/applications/guvcview.desktop
-```
-
 #### configure firefox
 
 - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
 - https://addons.mozilla.org/en-US/firefox/addon/adblock-for-firefox/
-
-#### configure electron menu
-
-```sh
-sudo rm -vf /usr/share/applications/electron*
-```
 
 --------------------------------------------------------------------------------
 

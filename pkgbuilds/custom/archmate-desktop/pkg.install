@@ -1,15 +1,3 @@
-lightdm_session() {
-    echo 'lightdm session'
-
-    echo '[Desktop Entry]
-Name=ArchMATE
-Comment=MATE Desktop Session
-Exec=mate-session
-TryExec=mate-session
-Icon=
-Type=Application' > /usr/share/xsessions/archmate.desktop
-}
-
 update_mime_cache() {
     echo 'update mime database'
 
@@ -123,10 +111,10 @@ skel_config() {
     cp -f /usr/share/archmate-default/geany.conf /etc/skel/.config/geany/
 }
 
-gitgui_menu() {
-echo 'add git-gui menu'
+desktop_menu() {
+    echo 'add some desktop menu'
 
-echo '[Desktop Entry]
+    echo '[Desktop Entry]
 Name=Git GUI
 Comment=GUI for Git
 Exec=git gui
@@ -136,10 +124,21 @@ Terminal=false
 Type=Application
 Categories=Development;RevisionControl;
 ' > /usr/share/applications/git-gui.desktop
+
+    echo "[Desktop Entry]
+Name=guvcview
+GenericName=GTK3 UVC Camera
+Comment=Linux UVC camera program
+Exec=guvcview -i guvcview.raw
+Icon=guvcview
+Terminal=false
+Type=Application
+Categories=Video;AudioVideo;
+StartupNotify=true
+" > /usr/share/applications/guvcview.desktop
 }
 
 updating() {
-    lightdm_session
     update_mime_cache
     update_dconf
     remove_autostart
@@ -148,7 +147,7 @@ updating() {
     arch_profile
     skel_config
     custom_bashrc
-    gitgui_menu
+    desktop_menu
 }
 
 #=====================================================================================

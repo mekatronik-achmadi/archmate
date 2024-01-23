@@ -373,7 +373,7 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
         preset += 'ALL_kver="/boot/vmlinuz-linux"\n'
         preset += "PRESETS=('default')\n"
         preset += 'default_image="/boot/initramfs-linux.img"\n'
-        presetFile = open("/target/etc/mkinitcpio.d/archmate.preset","w")
+        presetFile = open("/target/etc/mkinitcpio.d/archlinux.preset","w")
         presetFile.write(preset)
         presetFile.close()
 
@@ -396,7 +396,7 @@ class ArchMateInstall(archmate_gui.frmArchInstall):
         p = subprocess.Popen(["cp", "-f", vmlinuz , "/target/boot/vmlinuz-linux"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
         self.ConsoleLog(p)
 
-        p = subprocess.Popen(["arch-chroot", "/target", "mkinitcpio", "-p", "archmate"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
+        p = subprocess.Popen(["arch-chroot", "/target", "mkinitcpio", "-p", "archlinux"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1)
         self.ConsoleLog(p)
 
         self.m_txtConsole.write("Initramfs Completed\n\n")
