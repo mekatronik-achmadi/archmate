@@ -1,5 +1,4 @@
-linux linux-headers linux-firmware
-base base-devel multilib-devel
+linux base base-devel
 
 bash-completion mkinitcpio
 squashfs-tools rsync dkms
@@ -17,11 +16,4 @@ cdrtools syslinux
 libxcrypt-compat
 zsh-completions
 pv archinstall
-
-posix posix-software-development
-posix-xsi posix-c-development
-
-gvim vim-nerdtree vim-surround
-vim-nerdcommenter vim-gitgutter
-vim-airline vim-tagbar vim-tabular
 

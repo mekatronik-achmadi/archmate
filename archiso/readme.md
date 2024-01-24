@@ -9,6 +9,11 @@ To try, there are two options:
 	+ [Brief](#brief)
 	+ [Requirements](#requirements)
 	+ [Preparation](#preparation)
+	+ [Get Databases](#get-databases)
+	+ [Get URL List](#get-url-list)
+	+ [Get Packages](#get-packages)
+    + [Prepare script](#prepare-script)
+    + [Build ISO](#build-iso)
 
 Any my custom package recipes that build these ISO can be found [here](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom).
 
@@ -64,6 +69,8 @@ Some basic requirements:
 	+ At least 15GB free space disk. For more larger number of packages it may needs more
 	+ 4GB RAM. Its recommended to use 8GB.
 	+ Decent Processor. Pentium or lower aren't recommended.
+	+ Decent stable internet connection.
+	+ Running ArchLinux x86_64 operating system.
 - My custom  archiso package from [here](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso). Reasons:
 	+ Its basically archiso version 58
 	+ It modify **/usr/bin/mkarchiso** and **/usr/bin/pactrap** script to be more "offline" manner. 
@@ -74,7 +81,9 @@ Some basic requirements:
 
 **Notes:** For beginner purpose, custom package will not used in this guidelines, especially if requires compilation and dynamic linking.
 
-First create structure folder and like this:
+First, install my custom archiso from [here](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso).
+
+then, create structure folder and like this:
 
 ```
 archiso_project
@@ -84,7 +93,7 @@ archiso_project
         +-- core.db
         +-- extra.db
         +-- ...
-	+-- packages
+    +-- packages
 	    +-- custom
 	        +-- ...
         +-- official
@@ -102,5 +111,126 @@ mkdir -p archiso_project/{local_repo/{databases,package/{custom,official}},build
 ```
 
 and here some basic files:
-- [pkg-cli-minimal-x86_64.txt]()
-- [archiso_cli.sh]()
+- [pkg-cli-minimal-x86_64.txt](https://github.com/mekatronik-achmadi/archmate/blob/main/archiso/cli/pkg-cli-minimal-x86_64.txt)
+- [archiso_cli.sh](https://github.com/mekatronik-achmadi/archmate/blob/main/archiso/cli/archiso_cli.sh)
+
+### get databases
+
+first, build a temporary root structure in **local_repo** folder:
+
+```sh
+cd local_repo/
+
+mkdir -p tmproot/etc/
+mkdir -p tmproot/var/lib/pacman/sync/
+mkdir -p tmproot/var/cache/pacman/pkg/
+```
+
+then, set some shell variables:
+
+```sh
+export REPOURL='http://mirror.internode.on.net/pub/archlinux' 
+export ISOVER='cli_minimal'
+export PKGLIST='pkg-cli-minimal-x86_64.txt'
+export PKGCUSTOM='false'
+```
+
+download the databases
+
+```sh
+cd databases/
+wget -c $REPOURL/core/os/x86_64/core.db
+wget -c $REPOURL/extra/os/x86_64/extra.db
+wget -c $REPOURL/multilib/os/x86_64/multilib.db
+cd ../
+```
+
+### get URL list
+
+first a create simple pacman.conf using command:
+
+```sh
+export URLREPO="$REPOURL/\$repo/os/\$arch"
+echo "[options]
+HoldPkg           = pacman glibc
+Architecture      = x86_64
+SigLevel          = Never
+LocalFileSigLevel = Never
+ParallelDownloads = 5
+
+[core]
+Server = $URLREPO
+
+[extra]
+Server = $URLREPO
+
+[multilib]
+Server = $URLREPO
+" | tee pacman.conf
+```
+
+then, copy everything to temporary root
+
+```sh
+cp -vf pacman.conf tmproot/etc/pacman.conf
+rsync -avh databases/ tmproot/var/lib/pacman/sync/
+rsync -avh packages/official/ tmproot/var/cache/pacman/pkg/
+```
+
+lastly, generate the URL list using command
+
+```sh
+sudo pacstrap_pkgurl -GM -C tmproot/etc/pacman.conf tmproot $(cat $PKGLIST) > pkgurl.txt
+
+sed -i -e '1d;2d' pkgurl.txt
+```
+
+if there succeded, it will yield **pkgurl.txt** that contain all package URLs.
+
+### get packages
+
+now, you can download using wget:
+
+```sh
+cd packages/official/
+wget -c -i ../../pkgurl.txt
+cd ../../
+```
+
+### prepare script
+
+before build the iso, first go to the **build_iso** folder and set shell variabel like previous
+
+```sh
+cd ../build_iso/
+
+export REPOURL='http://mirror.internode.on.net/pub/archlinux' 
+export ISOVER='cli_minimal'
+export PKGLIST='pkg-cli-minimal-x86_64.txt'
+export PKGCUSTOM='false'
+```
+
+then adjust some variables inside the script **archiso_cli.sh**  at line 10 to 18, according to your folder. 
+
+For example:
+
+```sh
+export ISONAME='cli_minimal'
+export DIRPATH="../local_repo/"
+export PKGLIST='pkg-cli-minimal-x86_64.txt'
+export PKGCUSTOM='false'
+```
+
+**TIPS:** Its encouraged to read the script throughly as this script prepare the ISO's root more in details.
+
+### build iso
+
+next step, is build the actual ISO using files from **local_repo**, that can be started using command:
+
+```sh
+sudo ./archiso_cli.sh
+```
+
+wait for a while as the pacstrap build the root and compressing squashfs takes time.
+
+**TIPS:** If the build process need to repeated, or just to save disk space, delete the **archlive** folder using root privillage, after the ISO succesfully build.
