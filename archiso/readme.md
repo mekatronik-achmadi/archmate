@@ -6,6 +6,9 @@ To try, there are two options:
     + [CLI Variant](#cli-variant)
     + [MATE Variant](#mate-variant)
 - [Build Yourself](#build-yourself)
+	+ [Brief](#brief)
+	+ [Requirements](#requirements)
+	+ [Preparation](#preparation)
 
 Any my custom package recipes that build these ISO can be found [here](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom).
 
@@ -63,10 +66,41 @@ Some basic requirements:
 	+ Decent Processor. Pentium or lower aren't recommended.
 - My custom  archiso package from [here](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso). Reasons:
 	+ Its basically archiso version 58
-	+ It modify mkarchiso and pactrap script to be more "offline" manner. You can also modify them manually using this [script](https://github.com/mekatronik-achmadi/archmate/blob/main/pkgbuilds/custom/archmate-archiso/pacstrap_modify).
+	+ It modify **/usr/bin/mkarchiso** and **/usr/bin/pactrap** script to be more "offline" manner. 
+	
+	You can also modify them manually using this [script](https://github.com/mekatronik-achmadi/archmate/blob/main/pkgbuilds/custom/archmate-archiso/pacstrap_modify).
 	
 ### Preparation
 
-**Notes:** For beginner purpose, custom package will be disable in this guidelines, especially if requires compilation and dynamic linking.
+**Notes:** For beginner purpose, custom package will not used in this guidelines, especially if requires compilation and dynamic linking.
 
-First create structure folder like this
+First create structure folder and like this:
+
+```
+archiso_project
++-- local_repo
+    +-- pkg-cli-minimal-x86_64.txt (or use your own)
+    +-- databases
+        +-- core.db
+        +-- extra.db
+        +-- ...
+	+-- packages
+	    +-- custom
+	        +-- ...
+        +-- official
+            +-- *.pkg.tar.zst
+            +-- ...
++-- build_iso
+    +-- pkg-cli-minimal-x86_64.txt (or use your own)
+    +-- archiso_cli.sh (or use your own)
+```
+
+For convinient, you can use this command to build folders above:
+
+```sh
+mkdir -p archiso_project/{local_repo/{databases,package/{custom,official}},build_iso}
+```
+
+and here some basic files:
+- [pkg-cli-minimal-x86_64.txt]()
+- [archiso_cli.sh]()
