@@ -1,5 +1,22 @@
 # ----------------------- Theme Section ----------------------------------------
 
+default_gtk() {
+    mkdir -p /etc/gtk-2.0/
+    echo '
+gtk-icon-theme-name = "Papirus-Light"
+gtk-theme-name = "Arc-Lighter-solid"
+gtk-font-name = "Liberation Sans 8"
+' > /etc/gtk-2.0/gtkrc
+
+    mkdir -p /etc/gtk-3.0/
+    echo '[Settings]
+gtk-icon-theme-name = Papirus-Light
+gtk-theme-name = Arc-Lighter-solid
+gtk-font-name = Liberation Sans 8
+gtk-application-prefer-dark-theme = false
+' > /etc/gtk-3.0/settings.ini
+}
+
 remove_themes() {
     # installed by mate themes
 	rm -rf /usr/share/themes/Clearlooks
@@ -55,6 +72,7 @@ Inherits=mate-black" > /usr/share/icons/default/index.theme
 }
 
 update_theme() {
+    default_gtk
 	remove_themes
 	remove_menus
 	cursor_modify

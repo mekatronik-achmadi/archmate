@@ -17,9 +17,6 @@
   <item label="GVim" icon="/usr/share/icons/Papirus/32x32/apps/gvim.svg">
     <action name="Execute"><command>gvim</command></action>
   </item>
-  <item label="MC FileMan" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
-    <action name="Execute"><command>xterm -e mc --nocolor</command></action>
-  </item>
   <item label="VimBrowser" icon=" /usr/share/icons/Papirus/32x32/apps/web-browser.svg">
     <action name="Execute"><command>vimb</command></action>
   </item>
@@ -28,9 +25,6 @@
   </item>
   <item label="TaskManager" icon="/usr/share/icons/Papirus/32x32/apps/htop.svg">
     <action name="Execute"><command>xterm -e htop -C</command></action>
-  </item>
-  <item label="XTerminal" icon="/usr/share/icons/Papirus/32x32/apps/terminal.svg">
-    <action name="Execute"><command>xterm</command></action>
   </item>
   <item label="XArchiver" icon="/usr/share/icons/Papirus/32x32/apps/xarchiver.svg">
     <action name="Execute"><command>xarchiver</command></action>
@@ -73,13 +67,13 @@
 <!-- ########################## Brightness Menu ########################## -->
 
 <menu id="brightness" label="Brightness">
-  <item label="Increase" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+  <item label="Increase">
     <action name="Execute"><command>brightnessctl -q s 5%+</command></action>
   </item>
-  <item label="Default" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+  <item label="Default">
     <action name="Execute"><command>brightnessctl -q s 15%</command></action>
   </item>
-  <item label="Decrease" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg">
+  <item label="Decrease">
     <action name="Execute"><command>brightnessctl -q s 5%-</command></action>
   </item>
 </menu>
@@ -87,25 +81,17 @@
 <!-- ####################### Background Menu ####################### -->
 
 <menu id="background" label="Background">
-  <item label="Choose" icon="/usr/share/icons/ePapirus/24x24/actions/gtk-edit.svg">
+  <item label="Choose">
     <action name="Execute"><command>xterm -e vim /usr/share/openbox/fehbg</command></action>
   </item>
-  <item label="Redraw" icon="/usr/share/icons/ePapirus/24x24/actions/reload.svg">
+  <item label="Redraw">
     <action name="Execute"><command>bash /usr/share/openbox/fehbg</command></action>
   </item>
 </menu>
 
-<!-- ####################### Main Menu List ####################### -->
+<!-- ####################### Settings Menu ####################### -->
 
-<menu id="root-menu" label="Root Menu">
-  <separator label="Quick Menu" />
-  <item label="Run a Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
-    <action name="Execute"><command>bashrun</command></action>
-  </item>
-  <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
-  <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
-
-  <separator label="Setting" />
+<menu id="settings" label="Settings">
   <menu id="background" icon="/usr/share/icons/Papirus/32x32/apps/background.svg"/>
   <menu id="brightness" icon="/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg"/>
   <item label="Display" icon="/usr/share/icons/Papirus/32x32/apps/preferences-desktop-display.svg">
@@ -117,7 +103,25 @@
   <item label="OBConf" icon="/usr/share/icons/Papirus/32x32/apps/obconf.svg">
     <action name="Execute"><command>obconf</command></action>
   </item>
-  <!--<menu id="client-list-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>-->
+</menu>
+
+<!-- ####################### Quick Menu List ####################### -->
+
+<menu id="root-menu" label="Root Menu">
+  <separator label="Quick Menu" />
+  <item label="Run a Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
+    <action name="Execute"><command>bashrun</command></action>
+  </item>
+  <item label="MC FileMan" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
+    <action name="Execute"><command>xterm -e mc --nocolor</command></action>
+  </item>
+  <item label="XTerminal" icon="/usr/share/icons/Papirus/32x32/apps/terminal.svg">
+    <action name="Execute"><command>xterm</command></action>
+  </item>
+  <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
+  <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
+  <menu id="settings" icon="/usr/share/icons/Papirus/32x32/apps/preferences.svg"/>
+  <menu id="client-list-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
 
   <separator label="Exit" />
   <item label="Logout" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-logout.svg">
