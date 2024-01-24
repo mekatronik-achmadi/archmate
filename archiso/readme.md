@@ -88,20 +88,20 @@ then, create structure folder and like this:
 ```
 archiso_project
 +-- local_repo
-    +-- pkg-cli-minimal-x86_64.txt (or use your own)
-    +-- databases
-        +-- core.db
-        +-- extra.db
-        +-- ...
-    +-- packages
-	    +-- custom
-	        +-- ...
-        +-- official
-            +-- *.pkg.tar.zst
-            +-- ...
+|	+-- pkg-cli-minimal-x86_64.txt (or use your own)
+|	+-- databases
+|	|	+-- core.db
+|	|	+-- extra.db
+|	|	+-- ...
+|	+-- packages
+|	|	+-- custom
+|	|	|	+-- ...
+|	|	+-- official
+|	|	|	+-- *.pkg.tar.zst
+|	|	|	+-- ...
 +-- build_iso
-    +-- pkg-cli-minimal-x86_64.txt (or use your own)
-    +-- archiso_cli.sh (or use your own)
+|	+-- pkg-cli-minimal-x86_64.txt (or use your own)
+|	+-- archiso_cli.sh (or use your own)
 ```
 
 For convinient, you can use this command to build folders above:
