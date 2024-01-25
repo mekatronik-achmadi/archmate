@@ -28,70 +28,6 @@ panel_config() {
     rm -f /usr/share/mate-panel/layouts/opensuse.layout
 }
 
-vim_settings() {
-    echo 'vim settings'
-
-    mkdir -p /etc
-    echo '" /usr/share/vim/vimfiles/archlinux.vim' > /etc/vimrc
-    echo 'runtime! archlinux.vim
-autocmd BufWritePre * %s/\s\+$//e
-filetype plugin on
-filetype indent on
-filetype plugin indent on
-set expandtab ts=4 sw=4 ai
-set conceallevel=0
-set encoding=utf-8
-set termguicolors
-set ic is hls
-set number
-set wrap!
-set mouse=a
-let g:tagbar_width=20
-let g:NERDTreeWinSize=20
-syntax on
-if has("gui_running")
-  colorscheme shine
-  set guifont=LiterationMono\ Nerd\ Font\ Mono\ 8
-endif' >> /etc/vimrc
-}
-
-arch_profile() {
-    echo 'default profile'
-
-    echo 'export PATH=$PATH:~/.local/bin
-export QT_QPA_PLATFORMTHEME=qt5ct
-export VISUAL=vim
-export EDITOR=vim
-export PAGER=most
-export VIEWER=most
-export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
-export FT2_SUBPIXEL_HINTING=2
-export GTK_CSD=0
-export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0:$LD_PRELOAD
-' > /etc/profile.d/arch-profile.sh
-}
-
-custom_bashrc() {
-echo 'creating custom bashrc'
-
-echo '[[ $- != *i* ]] && return' > /etc/skel/.bashrc
-
-echo "
-shopt -s checkwinsize
-shopt -s histappend
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias sudo='sudo -E'
-alias makepkg='makepkg --nocheck --skippgpcheck'
-alias htop='htop -C'
-alias mc='mc --nocolor'
-export MAKEFLAGS=-j$(nproc)
-export HISTCONTROL=ignorespace:ignoredups:erasedups
-export REPOURL='http://mirror.internode.on.net/pub/archlinux'
-PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
-" >> /etc/skel/.bashrc
-}
-
 skel_config() {
     echo 'modify /etc/skel/ contents'
 
@@ -143,10 +79,7 @@ updating() {
     update_dconf
     remove_autostart
     panel_config
-    vim_settings
-    arch_profile
     skel_config
-    custom_bashrc
     desktop_menu
 }
 

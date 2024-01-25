@@ -210,7 +210,6 @@ else
 fi' | tee airootfs/etc/skel/.bash_profile
 
 echo '[[ $- != *i* ]] && return' | tee airootfs/etc/skel/.bashrc
-
 echo "
 shopt -s checkwinsize
 shopt -s histappend
@@ -228,8 +227,8 @@ PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 
 mkdir -pv airootfs/etc/profile.d/
 echo 'export PATH=$PATH:~/.local/bin
-export VISUAL=nano
-export EDITOR=nano
+export VISUAL=vim
+export EDITOR=vim
 export PAGER=most
 export VIEWER=most
 ' | tee airootfs/etc/profile.d/arch-profile.sh

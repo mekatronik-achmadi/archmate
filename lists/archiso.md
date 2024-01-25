@@ -379,6 +379,26 @@ echo "UUID=$SWAPUUID none swap defaults 0 0" | sudo tee -a /etc/fstab
 sudo bash /usr/share/archmate-archiso/pacstrap_modify
 ```
 
+#### configure bashrc
+
+```sh
+echo '[[ $- != *i* ]] && return' |  tee ~/.bashrc
+echo "
+shopt -s checkwinsize
+shopt -s histappend
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias sudo='sudo -E'
+alias makepkg='makepkg --nocheck --skippgpcheck'
+alias htop='htop -C'
+alias mc='mc --nocolor'
+export MAKEFLAGS=-j$(nproc)
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+export REPOURL='http://mirror.internode.on.net/pub/archlinux'
+PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
+" | tee -a ~/.bashrc
+```
+
 #### configure git user
 
 ```sh
@@ -485,6 +505,29 @@ gtk-theme-name = Arc-Lighter-solid
 gtk-font-name = Liberation Sans 8
 gtk-application-prefer-dark-theme = false
 ' | sudo tee /etc/gtk-3.0/settings.ini
+```
+
+#### configure xterm
+
+```sh
+echo "XTerm*faceName: LiterationMono Nerd Font Mono
+XTerm*faceSize: 8
+XTerm*background: white
+XTerm*foreground: black
+XTerm*selectToClipboard: true
+XTerm*eightBitInput: false
+XTerm*eightBitOutput: true
+xterm*scrollBar: true
+xterm*rightScrollBar: true
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault" | tee ~/.Xdefaults
+
+xrdb .Xdefaults
 ```
 
 #### configure lightdm default session

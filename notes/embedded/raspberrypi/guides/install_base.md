@@ -503,12 +503,19 @@ gdk-pixbuf-query-loaders --update-cache
 ### configure bash (qemu-chroot)
 
 ```sh
-echo "alias sudo='sudo -E'
+echo '[[ $- != *i* ]] && return' | tee /home/alarm/.bashrc
+echo "
+shopt -s checkwinsize
+shopt -s histappend
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias sudo='sudo -E'
+alias makepkg='makepkg --nocheck --skippgpcheck'
 alias htop='htop -C'
 alias mc='mc --nocolor'
 export MAKEFLAGS=-j$(nproc)
-alias makepkg='makepkg --nocheck --skippgpcheck'
-alias bat='bat --theme=GitHub'
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+export REPOURL='http://mirror.internode.on.net/pub/archlinux'
 PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 " | tee -a /home/alarm/.bashrc
 chown -vf alarm:alarm /home/alarm/.bashrc
@@ -556,6 +563,8 @@ XTerm*foreground: black
 XTerm*selectToClipboard: true
 XTerm*eightBitInput: false
 XTerm*eightBitOutput: true
+xterm*scrollBar: true
+xterm*rightScrollBar: true
 Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true

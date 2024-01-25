@@ -219,6 +219,22 @@ else
     fi
 fi' | tee airootfs/etc/skel/.bash_profile
 
+echo '[[ $- != *i* ]] && return' | tee airootfs/etc/skel/.bashrc
+echo "
+shopt -s checkwinsize
+shopt -s histappend
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias sudo='sudo -E'
+alias makepkg='makepkg --nocheck --skippgpcheck'
+alias htop='htop -C'
+alias mc='mc --nocolor'
+export MAKEFLAGS=-j$(nproc)
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+export REPOURL='http://mirror.internode.on.net/pub/archlinux'
+PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
+" | tee -a airootfs/etc/skel/.bashrc
+
 mkdir -pv airootfs/etc/profile.d/
 echo 'export PATH=$PATH:~/.local/bin
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -249,6 +265,8 @@ XTerm*foreground: black
 XTerm*selectToClipboard: true
 XTerm*eightBitInput: false
 XTerm*eightBitOutput: true
+xterm*scrollBar: true
+xterm*rightScrollBar: true
 Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true
