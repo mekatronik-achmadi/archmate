@@ -571,6 +571,71 @@ vncviewer <ip_number>:0
 
 --------------------------------------------------------------------------------
 
+## SourceForge Upload
+
+### setup
+
+Project folder:
+- https://sourceforge.net/projects/archlinux-custom-iso/files/archmate/
+
+For uploading using web interface:
+- https://sourceforge.net/projects/archlinux-custom-iso/upload/archmate/
+
+For uploading using sftp interface:
+- https://sourceforge.net/p/forge/documentation/SFTP/
+
+create SSH using username and project-name:
+
+```sh
+ssh -t mekatronik,archlinux-custom-iso@shell.sourceforge.net create
+```
+
+then you can exit
+
+```sh
+```
+
+### manage
+
+login using previously created SSH
+
+```sh
+ssh -t mekatronik,archlinux-custom-iso@shell.sourceforge.net
+```
+
+check directory:
+
+```sh
+pwd
+cd /home/frs/project/archlinux-custom-iso/
+tree
+```
+
+### uploading sftp
+
+upload using sftp from a new bash shell:
+
+```sh
+sftp mekatronik@frs.sourceforge.net
+```
+
+```sh
+sftp> cd /home/frs/project/archlinux-custom-iso/archmate/
+sftp> put archiso_cli.sh
+sftp> exit
+```
+
+### uploading filezilla
+
+Connect FileZilla using:
+- host: sftp://frs.sourceforge.net
+- username: mekatronik
+- password: password
+- port: 22
+- directory: /home/pfs/project/archlinux-custom-iso/
+
+--------------------------------------------------------------------------------
+
 ## Notes
 
 ### updated package list
