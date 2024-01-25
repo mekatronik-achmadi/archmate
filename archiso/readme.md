@@ -11,12 +11,12 @@ Any my custom package recipes that build these ISO can be found [here](https://g
 
 ## Download Example
 
-There are two variants: Command Line Interface and MATE Desktop
+There are two variants: Command Line Interface and MATE Desktop.
+You can download from [SourceForge]().
 
 ### CLI variant
 
 This ArchISO using CLI BASH as default interface and Openbox as optional.
-You can download from [SourceFore]().
 
 CLI ISO automatically login into a BASH interface after booting using **live** user.
 
@@ -36,3 +36,14 @@ startx /usr/bin/openbox-session
 
 ### MATE variant
 
+This ArchISO provide MATE Desktop and Openbox with LightDM as login manager.
+
+After booting, it will show the LightDM to choose session:
+
+![](screenshots/archdm.png)
+
+If MATE desktop chosen, it will login into Mate desktop using **live** user.
+
+![](screenshots/archmate.png)
+
+## Build Yourself
