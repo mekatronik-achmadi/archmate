@@ -17,7 +17,7 @@ libxcrypt-compat
 zsh-completions
 pv archinstall
 
-gvim vim-nerdtree vim-surround
+vim vim-nerdtree vim-surround
 vim-nerdcommenter vim-gitgutter
 vim-airline vim-tagbar vim-tabular
 

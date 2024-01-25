@@ -21,7 +21,7 @@ pv archinstall
 posix posix-software-development
 posix-xsi posix-c-development
 
-gvim vim-nerdtree vim-surround
+vim vim-nerdtree vim-surround
 vim-nerdcommenter vim-gitgutter
 vim-airline vim-tagbar vim-tabular
 

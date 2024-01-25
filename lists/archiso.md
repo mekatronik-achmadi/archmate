@@ -33,7 +33,7 @@ posix-xsi posix-c-development
 
 ### install vim editor
 
-gvim vim-nerdtree vim-surround
+vim vim-nerdtree vim-surround
 vim-nerdcommenter vim-gitgutter
 vim-airline vim-tagbar vim-tabular
 
@@ -462,11 +462,7 @@ set wrap!
 set mouse=a
 let g:tagbar_width=20
 let g:NERDTreeWinSize=20
-syntax on
-if has("gui_running")
-  colorscheme shine
-  set guifont=LiterationMono\ Nerd\ Font\ Mono\ 8
-endif' | sudo tee -a /etc/vimrc
+syntax on' | sudo tee -a /etc/vimrc
 ```
 
 #### configure profile

@@ -398,11 +398,7 @@ set wrap!
 set mouse=a
 let g:tagbar_width=20
 let g:NERDTreeWinSize=20
-syntax on
-if has("gui_running")
-  colorscheme shine
-  set guifont=LiterationMono\ Nerd\ Font\ Mono\ 8
-endif' >> /etc/vimrc
+syntax on' >> /etc/vimrc
 ```
 
 ### user group access (qemu-chroot)

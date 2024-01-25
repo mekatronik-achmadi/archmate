@@ -6,7 +6,7 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
 depends=(
-	'bash' 'gvim'
+	'bash' 'vim'
 	'dconf-editor'
 	'xdg-user-dirs-gtk'
 	'caja'
@@ -18,8 +18,7 @@ depends=(
 	'mate-terminal'
 	'mate-session-manager'
 	'archmate-font'
-	'archmate-theme'
-	'archmate-openbox')
+	'archmate-theme')
 options=('!makeflags')
 install=pkg.install
 
