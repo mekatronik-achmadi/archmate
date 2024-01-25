@@ -9,13 +9,13 @@ fi
 
 echo $REPOURL
 export ISOVER='mate_012024'
-export ISONAME=$ISOVER
+export ISONAME='minimal_012024'
 export DIRPATH="/home/developments/Packages/ArchMate-x86_64/$ISOVER"
 export DBPATH="$DIRPATH/databases"
 export PKGPATH="$DIRPATH/packages/official"
 export CSTPATH="$DIRPATH/packages/custom"
-export PKGLIST='../pkg-mate-x86_64.txt'
-export PKGCUSTOM='true'
+export PKGLIST='../pkg-minimal-x86_64.txt'
+export PKGCUSTOM='false'
 
 mkdir -pv archlive/
 cp -rvf /usr/share/archiso/configs/releng/* archlive/
@@ -112,11 +112,7 @@ export SYSTEMD='airootfs/etc/systemd/system/multi-user.target.wants'
 mkdir -pv ${SYSTEMD}
 
 ln -svf /usr/lib/systemd/system/systemd-timesyncd.service ${SYSTEMD}/systemd-timesyncd.service
-ln -svf /usr/lib/systemd/system/fake-hwclock-save.service ${SYSTEMD}/fake-hwclock-save.service
-ln -svf /usr/lib/systemd/system/fake-hwclock.service ${SYSTEMD}/fake-hwclock.service
 ln -svf /usr/lib/systemd/system/vboxservice.service ${SYSTEMD}/vboxservice.service
-ln -svf /usr/lib/systemd/system/bluetooth.service ${SYSTEMD}/bluetooth.service
-ln -svf /usr/lib/systemd/system/sensord.service ${SYSTEMD}/sensord.service
 ln -svf /usr/lib/systemd/system/sshd.service ${SYSTEMD}/sshd.service
 
 rm -vf airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service
@@ -128,12 +124,6 @@ rm -rvf airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d/
 rm -vf airootfs/etc/systemd/system/dbus-org.freedesktop.resolve1.service
 rm -vf airootfs/etc/systemd/system/sysinit.target.wants/systemd-resolved.service
 rm -vf airootfs/etc/systemd/system/multi-user.target.wants/systemd-resolved.service
-
-ln -svf /usr/lib/systemd/system/NetworkManager-wait-online.service ${SYSTEMD}/NetworkManager-wait-online.service
-ln -svf /usr/lib/systemd/system/NetworkManager-dispatcher.service ${SYSTEMD}/NetworkManager-dispatcher.service
-ln -svf /usr/lib/systemd/system/NetworkManager.service ${SYSTEMD}/NetworkManager.service
-
-ln -svf /run/NetworkManager/resolv.conf airootfs/etc/resolv.conf
 
 mkdir -pv airootfs/etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
@@ -183,29 +173,6 @@ wireshark:!*::live
 
 ######################### CLI Configs ############################
 
-mkdir -pv airootfs/etc/
-echo '" /usr/share/vim/vimfiles/archlinux.vim' | tee airootfs/etc/vimrc
-echo 'runtime! archlinux.vim
-autocmd BufWritePre * %s/\s\+$//e
-filetype plugin on
-filetype indent on
-filetype plugin indent on
-set expandtab ts=4 sw=4 ai
-set conceallevel=0
-set encoding=utf-8
-set termguicolors
-set ic is hls
-set number
-set wrap!
-set mouse=a
-let g:tagbar_width=20
-let g:NERDTreeWinSize=20
-syntax on
-if has("gui_running")
-  colorscheme shine
-  set guifont=LiterationMono\ Nerd\ Font\ Mono\ 8
-endif' | tee -a airootfs/etc/vimrc
-
 mkdir -pv airootfs/etc/skel/
 echo '
 [[ -f ~/.bashrc ]] && . ~/.bashrc
@@ -219,106 +186,32 @@ else
     fi
 fi' | tee airootfs/etc/skel/.bash_profile
 
+echo '[[ $- != *i* ]] && return' | tee airootfs/etc/skel/.bashrc
+
+echo "
+shopt -s checkwinsize
+shopt -s histappend
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias sudo='sudo -E'
+alias makepkg='makepkg --nocheck --skippgpcheck'
+alias htop='htop -C'
+alias mc='mc --nocolor'
+export MAKEFLAGS=-j$(nproc)
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+export REPOURL='http://mirror.internode.on.net/pub/archlinux'
+PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
+" | tee -a airootfs/etc/skel/.bashrc
+
 mkdir -pv airootfs/etc/profile.d/
 echo 'export PATH=$PATH:~/.local/bin
-export QT_QPA_PLATFORMTHEME=qt5ct
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nano
+export EDITOR=nano
 export PAGER=most
 export VIEWER=most
-export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
-export FT2_SUBPIXEL_HINTING=2
-export GTK_CSD=0
-export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0:$LD_PRELOAD
 ' | tee airootfs/etc/profile.d/arch-profile.sh
 
 ######################### GUI Configs ############################
-
-mkdir -pv airootfs/etc/X11/xorg.conf.d/
-echo 'Section "ServerFlags"
-    Option "StandbyTime" "0"
-    Option "SuspendTime" "0"
-    Option "OffTime" "0"
-    Option "BlankTime" "0"
-EndSection' | tee  airootfs/etc/X11/xorg.conf.d/noblank.conf
-
-echo "XTerm*faceName: LiterationMono Nerd Font Mono
-XTerm*faceSize: 8
-XTerm*background: white
-XTerm*foreground: black
-XTerm*selectToClipboard: true
-XTerm*eightBitInput: false
-XTerm*eightBitOutput: true
-Xft.autohint: 0
-Xft.antialias: 1
-Xft.hinting: true
-Xft.hintstyle: hintslight
-Xft.dpi: 96
-Xft.rgba: rgb
-Xft.lcdfilter: lcddefault" | tee airootfs/etc/skel/.Xdefaults
-
-mkdir -pv airootfs/etc/skel/.config/git/
-echo 'set mainfont {{Liberation Sans} 8}
-set textfont {{LiterationMono Nerd Font} 8}
-set uifont {{Liberation Sans} 8 bold}' | tee airootfs/etc/skel/.config/git/gitk
-
-mkdir -pv airootfs/etc/gtk-2.0/
-echo '
-gtk-icon-theme-name = "Papirus-Light"
-gtk-theme-name = "Arc-Lighter-solid"
-gtk-font-name = "Liberation Sans 8"
-' | tee airootfs/etc/gtk-2.0/gtkrc
-
-mkdir -pv airootfs/etc/gtk-3.0/
-echo '
-[Settings]
-gtk-icon-theme-name = Papirus-Light
-gtk-theme-name = Arc-Lighter-solid
-gtk-font-name = Liberation Sans 8
-gtk-application-prefer-dark-theme = false
-' | tee airootfs/etc/gtk-3.0/settings.ini
-
-mkdir -pv airootfs/etc/X11/xorg.conf.d/
-export SYNAPTICCONF=$(ls /usr/share/X11/xorg.conf.d/ | grep -i synaptic)
-cp -vf /usr/share/X11/xorg.conf.d/${SYNAPTICCONF} airootfs/etc/X11/xorg.conf.d/
-
-mkdir -pv airootfs/etc/cups
-echo '
-Grp cups
-Out ${HOME}/PDF
-' | tee airootfs/etc/cups/cups-pdf.conf
-ln -svf /usr/lib/systemd/system/cups.service ${SYSTEMD}/cups.service
-
-######################### Archiso LightDM #########################
-
-mkdir -pv airootfs/etc/lightdm
-
-echo '[Seat:*]
-pam-service=lightdm
-pam-autologin-service=lightdm-autologin
-allow-guest=false
-session-wrapper=/etc/lightdm/Xsession
-greeter-session=lightdm-gtk-greeter
-autologin-user-timeout=0
-autologin-session=mate
-autologin-user=live
-' | tee airootfs/etc/lightdm/lightdm.conf
-
-echo '[greeter]
-panel-position = top
-icon-theme-name = Papirus-Light
-theme-name = Arc-Lighter-solid
-background = /usr/share/backgrounds/archlinux/conference.png
-font-name = Liberation Sans 8
-xft-dpi = 96
-xft-antialias = true
-xft-rgba = rgb
-xft-hintstyle = hintslight
-hide-user-image = true
-keyboard = onboard
-' | tee airootfs/etc/lightdm/lightdm-gtk-greeter.conf
-
-ln -svf /usr/lib/systemd/system/lightdm.service ${SYSTEMD}/lightdm.service
 
 ######################### Archiso Packages #########################
 

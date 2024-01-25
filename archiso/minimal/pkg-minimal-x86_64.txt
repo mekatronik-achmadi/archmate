@@ -17,3 +17,5 @@ libxcrypt-compat
 zsh-completions
 pv archinstall
 
+htop lm_sensors
+
