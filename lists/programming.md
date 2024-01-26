@@ -44,6 +44,10 @@ tcsh fltk
 nodejs npm yarn asar
 jq yq node-gyp ts-node
 
+### install useless things
+
+cmatrix cool-retro-term
+
 --------------------------------------------------------------------------------
 
 ## AUR

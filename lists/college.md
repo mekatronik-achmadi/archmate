@@ -52,7 +52,7 @@ python-opencv vtk
 
 ### install programming additionals
 
-fftw liquid-dsp libsndfile cool-retro-term
+fftw liquid-dsp libsndfile
 
 --------------------------------------------------------------------------------
 
