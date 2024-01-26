@@ -24,6 +24,7 @@
 
 ## install academic tools
 
+- https://aur.archlinux.org/packages/zotero-bin/
 - https://aur.archlinux.org/packages/visual-studio-code-bin/
 - https://aur.archlinux.org/packages/mendeleydesktop-bundled/
 
