@@ -12,11 +12,11 @@ virtualbox-guest-utils
 intel-ucode amd-ucode
 git tig terminus-font
 arch-install-scripts
+less pv archinstall
 mkinitcpio-archiso
 cdrtools syslinux
 libxcrypt-compat
 zsh-completions
-pv archinstall
 
 posix posix-software-development
 posix-xsi posix-c-development

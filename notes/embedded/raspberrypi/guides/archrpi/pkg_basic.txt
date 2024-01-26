@@ -5,10 +5,10 @@ rsync dkms
 most highlight mc fdupes
 neofetch lsb-release dtc
 nano dialog bc tmux tree
+less pv libxcrypt-compat
 curl wget openssh sshfs
 pacman-contrib mlocate
 git tig terminus-font
-pv libxcrypt-compat
 
 posix posix-software-development
 posix-xsi posix-c-development

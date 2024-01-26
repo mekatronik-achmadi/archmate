@@ -20,11 +20,11 @@ virtualbox-guest-utils
 intel-ucode amd-ucode
 git tig terminus-font
 arch-install-scripts
+less pv archinstall
 mkinitcpio-archiso
 cdrtools syslinux
 libxcrypt-compat
 zsh-completions
-pv archinstall
 
 ### install posix meta
 
@@ -391,6 +391,7 @@ alias grep='grep --color=auto'
 alias sudo='sudo -E'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias htop='htop -C'
+alias less='less -N'
 alias mc='mc --nocolor'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedups
