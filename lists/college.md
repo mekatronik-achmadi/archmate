@@ -125,17 +125,24 @@ R -e 'print(R.version.string)'
 R -e 'print(.libPaths())'
 R -e 'print(library())'
 
-R -e 'install.packages(c("ImportExport","tidymodels","tidyverse","markdown"))'
-R -e 'install.packages(c("randomForest","party","survival","plyr","plotrix"))'
-R -e 'install.packages(c("streamR","shiny","httpgd","GGally","haven","XML2R"))'
+R -e 'install.packages("languageserver")'
+vim -c "CocInstall coc-r-lsp"
+
+R -e 'install.packages("littler")'
+echo 'export PATH=$PATH:~/R/library/littler/bin' | tee -a ~/.bashrc
+```
+
+```sh
+r -e 'print(R.version.string);print(.libPaths())'
+
+r -e 'install.packages(c("ImportExport","tidymodels","tidyverse","markdown"))'
+r -e 'install.packages(c("randomForest","party","survival","plyr","plotrix"))'
+r -e 'install.packages(c("streamR","shiny","httpgd","GGally","haven","XML2R"))'
 
 sudo R CMD javareconf
-R -e 'install.packages("xlsx")'
-R -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
-R -e 'library(xlsx)'
-
-R -e 'install.packages("languageserver","littler")'
-vim -c "CocInstall coc-r-lsp"
+r -e 'install.packages("xlsx")'
+r -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
+r -e 'library(xlsx)'
 ```
 
 ### configure wps office
