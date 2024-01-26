@@ -173,6 +173,29 @@ wireshark:!*::live
 
 ######################### CLI Configs ############################
 
+mkdir -pv airootfs/etc/
+echo '" /usr/share/vim/vimfiles/archlinux.vim' | tee airootfs/etc/vimrc
+echo 'runtime! archlinux.vim
+autocmd BufWritePre * %s/\s\+$//e
+filetype plugin on
+filetype indent on
+filetype plugin indent on
+set expandtab ts=4 sw=4 ai
+set conceallevel=0
+set encoding=utf-8
+set termguicolors
+set ic is hls
+set number
+set wrap!
+set mouse=a
+let g:tagbar_width=20
+let g:NERDTreeWinSize=20
+syntax on
+if has("gui_running")
+  colorscheme shine
+  set guifont=LiterationMono\ Nerd\ Font\ Mono\ 8
+endif' | tee -a airootfs/etc/vimrc
+
 mkdir -pv airootfs/etc/skel/
 echo '
 [[ -f ~/.bashrc ]] && . ~/.bashrc

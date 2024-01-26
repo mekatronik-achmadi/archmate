@@ -17,5 +17,11 @@ libxcrypt-compat
 zsh-completions
 pv archinstall
 
-htop lm_sensors
+gvim vim-nerdtree vim-surround
+vim-nerdcommenter vim-gitgutter
+vim-airline vim-tagbar vim-tabular
+
+networkmanager nm-connection-editor
+
+lsof htop lm_sensors usbutils inxi
 
