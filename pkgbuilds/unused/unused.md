@@ -24,7 +24,6 @@
 
 ## install programming editor
 
-- https://aur.archlinux.org/packages/rstudio-desktop-bin/
 - https://aur.archlinux.org/packages/visual-studio-code-bin/
 
 ## install academic tools
@@ -208,7 +207,6 @@ code --list-extensions
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension ms-python.python
 code --force --install-extension llvm-vs-code-extensions.vscode-clangd
-code --force --install-extension REditorSupport.r
 ```
 
 ### configure lxde session

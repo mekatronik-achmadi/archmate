@@ -70,9 +70,9 @@ fftw liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/wps-office/
 - https://aur.archlinux.org/packages/ttf-wps-fonts/
 
-### install r shell
+### install r programming
 
-- https://aur.archlinux.org/packages/littler/
+- https://aur.archlinux.org/packages/rstudio-desktop-bin/
 
 ### install python additionals
 
@@ -121,20 +121,20 @@ local({
   options(repos = r)
 })' | tee -a ~/.Rprofile
 
-r -e 'print(R.version.string)'
-r -e 'print(.libPaths())'
-r -e 'print(library())'
+R -e 'print(R.version.string)'
+R -e 'print(.libPaths())'
+R -e 'print(library())'
 
-r -e 'install.packages(c("ImportExport","tidymodels","tidyverse","markdown"))'
-r -e 'install.packages(c("randomForest","party","survival","plyr","plotrix"))'
-r -e 'install.packages(c("streamR","shiny","httpgd","GGally","haven","XML2R"))'
+R -e 'install.packages(c("ImportExport","tidymodels","tidyverse","markdown"))'
+R -e 'install.packages(c("randomForest","party","survival","plyr","plotrix"))'
+R -e 'install.packages(c("streamR","shiny","httpgd","GGally","haven","XML2R"))'
 
 sudo R CMD javareconf
-r -e 'install.packages("xlsx")'
-r -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
-r -e 'library(xlsx)'
+R -e 'install.packages("xlsx")'
+R -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
+R -e 'library(xlsx)'
 
-r -e 'install.packages("languageserver")'
+R -e 'install.packages("languageserver","littler")'
 vim -c "CocInstall coc-r-lsp"
 ```
 
