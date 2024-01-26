@@ -21,7 +21,7 @@ LFLAGS=$(COPT)
 ################### Non Configurable ########################
 
 CSRC=$(wildcard $(SRCDIR)/*.c)
-COBJ= $(patsubst $(SRCDIR)/%.c,$(ODIR)/%.o,$(CSRC))
+COBJ=$(patsubst $(SRCDIR)/%.c,$(ODIR)/%.o,$(CSRC))
 
 all: dir $(ODIR)/$(TARGET)
 

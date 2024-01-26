@@ -22,7 +22,7 @@ LFLAGS=$(COPT) $(shell wx-config --libs)
 ################### Non Configurable ########################
 
 CSRC=$(wildcard $(SRCDIR)/*.cpp)
-COBJ= $(patsubst $(SRCDIR)/%.cpp,$(ODIR)/%.o,$(CSRC))
+COBJ=$(patsubst $(SRCDIR)/%.cpp,$(ODIR)/%.o,$(CSRC))
 
 all: dir $(ODIR)/$(TARGET)
 

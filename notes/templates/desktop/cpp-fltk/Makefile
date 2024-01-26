@@ -24,7 +24,7 @@ LFLAGS=$(COPT) -lfltk -lfltk_forms
 ################### Non Configurable ########################
 
 CSRC=$(wildcard $(SRCDIR)/*.cxx)
-COBJ= $(patsubst $(SRCDIR)/%.cxx,$(ODIR)/%.o,$(CSRC))
+COBJ=$(patsubst $(SRCDIR)/%.cxx,$(ODIR)/%.o,$(CSRC))
 
 all: dir uic $(ODIR)/$(TARGET)
 

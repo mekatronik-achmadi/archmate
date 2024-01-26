@@ -25,7 +25,7 @@ LFLAGS=$(COPT) $(shell pkg-config --libs gtkmm-3.0)
 ################### Non Configurable ########################
 
 CSRC=$(wildcard $(SRCDIR)/*.cpp)
-COBJ= $(patsubst $(SRCDIR)/%.cpp,$(ODIR)/%.o,$(CSRC))
+COBJ=$(patsubst $(SRCDIR)/%.cpp,$(ODIR)/%.o,$(CSRC))
 
 all: dir $(ODIR)/$(TARGET)
 
