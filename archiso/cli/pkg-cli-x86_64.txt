@@ -144,5 +144,6 @@ vim-devicons-git
 
 archmate-font
 archmate-openbox
+archmate-archiso
 archmate-install
 
