@@ -73,6 +73,7 @@ liquid-dsp libsndfile
 
 ### install r programming
 
+- https://aur.archlinux.org/packages/littler/
 - https://aur.archlinux.org/packages/rstudio-desktop-bin/
 
 ### install python additionals
@@ -129,8 +130,9 @@ R -e 'print(library())'
 R -e 'install.packages("languageserver")'
 vim -c "CocInstall coc-r-lsp"
 
-R -e 'install.packages("littler")'
-echo 'export PATH=$PATH:~/R/library/littler/bin' | tee -a ~/.bashrc
+# alternative little-r
+#R -e 'install.packages("littler")'
+#echo 'export PATH=$PATH:~/R/library/littler/bin' | tee -a ~/.bashrc
 ```
 
 ```sh
