@@ -71,11 +71,6 @@ liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/wps-office/
 - https://aur.archlinux.org/packages/ttf-wps-fonts/
 
-### install r programming
-
-- https://aur.archlinux.org/packages/littler/
-- https://aur.archlinux.org/packages/rstudio-desktop-bin/
-
 ### install python additionals
 
 - https://aur.archlinux.org/packages/python-soundfile/
@@ -86,6 +81,12 @@ liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/roomeqwizard/
 - https://aur.archlinux.org/packages/wavesurfer/
 - https://aur.archlinux.org/packages/snack/
+
+### install shell additional
+
+- https://aur.archlinux.org/packages/littler/
+- https://aur.archlinux.org/packages/ttyplot-git/
+- https://aur.archlinux.org/packages/ncurses5-compat-libs/
 
 --------------------------------------------------------------------------------
 
@@ -105,7 +106,7 @@ liquid-dsp libsndfile
 
 ## Configurations
 
-### configure r programming
+### configure r shell
 
 - [CRAN MIRRORs](https://cran.r-project.org/mirrors.html)
 - [Packages](https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
