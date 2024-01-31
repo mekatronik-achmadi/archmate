@@ -217,6 +217,9 @@ jq '
 ."workbench.colorTheme"="Default Light+" |
 ."security.workspace.trust.untrustedFiles"="open" |
 ."window.restoreWindows"="none" |
+."window.commandCenter"=false |
+."window.titleBarStyle"="native" |
+."telemetry.telemetryLevel"="off" |
 ."telemetry.enableTelemetry"=false |
 ."telemetry.enableCrashReporter"=false
 ' "$VSCONFDIR/settings.json" | tee "$VSCONFDIR/temp.json"

@@ -12,7 +12,7 @@
 - Notepad++: https://notepad-plus-plus.org/downloads/
 - Git: https://git-scm.com/download/win
 - Git-Cola: https://git-cola.github.io/downloads.html
-- VSCode: https://code.visualstudio.com/download/
+- VSCodium: https://github.com/VSCodium/vscodium/releases/
 
 ## Installation
 
@@ -92,11 +92,25 @@ compiledb gcc -o main main.c
 compiledb make all
 ```
 
-## VSCode
+## VSCodium
+
+### marketplace
+
+Product file located at: **%ProgramFiles%/VSCodium/resources/app/product.json**
+
+```json
+{
+  "extensionsGallery": {
+    "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+    "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
+    "itemUrl": "https://marketplace.visualstudio.com/items"
+  },
+}
+```
 
 ### settings
 
-Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**.
+Setting file located at **%APPDATA%\Roaming\VSCodium\User\settings.json**
 
 ```json
 {
@@ -130,6 +144,8 @@ Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**.
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "workbench.activityBar.location": "hidden",
+  "window.commandCenter": false,
+  "window.titleBarStyle": "native",
   "terminal.integrated.profiles.windows": {
     "msys64": {
       "path": "C:\\msys64\\usr\\bin\\bash.exe",
@@ -150,15 +166,15 @@ Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**.
 ### extensions
 
 ```sh
-code --list-extensions
+vscodium --list-extensions
 
-#code --force --install-extension vscodevim.vim
-#code --force --install-extension ms-pyright.pyright
+#vscodium --force --install-extension vscodevim.vim
+#vscodium --force --install-extension ms-pyright.pyright
 
-code --force --install-extension cschlosser.doxdocgen
-code --force --install-extension ms-python.python
-code --force --install-extension llvm-vs-code-extensions.vscode-clangd
-code --force --install-extension mads-hartmann.bash-ide-vscode
+vscodium --force --install-extension cschlosser.doxdocgen
+vscodium --force --install-extension ms-python.python
+vscodium --force --install-extension llvm-vs-code-extensions.vscode-clangd
+vscodium --force --install-extension mads-hartmann.bash-ide-vscode
 
 ```
 
@@ -167,15 +183,13 @@ code --force --install-extension mads-hartmann.bash-ide-vscode
 **Note:** clangd extension must be disabled
 
 ```sh
-code --list-extensions
-
-code --force --install-extension ms-vscode.cpptools
-code --force --install-extension platformio.platformio-ide
-code --force --install-extension vsciot-vscode.vscode-arduino
-code --force --install-extension ms-vscode.vscode-serial-monitor
+vscodium --force --install-extension ms-vscode.cpptools
+vscodium --force --install-extension platformio.platformio-ide
+vscodium --force --install-extension vsciot-vscode.vscode-arduino
+vscodium --force --install-extension ms-vscode.vscode-serial-monitor
 ```
 
-Additional settings to **%APPDATA%\Roaming\Code\User\settings.json**.
+Additional settings to **%APPDATA%\Roaming\VSCodium\User\settings.json**
 
 ```json
 "C_Cpp.intelliSenseEngine": "default",
