@@ -25,8 +25,6 @@
 ## install academic tools
 
 - https://aur.archlinux.org/packages/zotero-bin/
-- https://aur.archlinux.org/packages/rstudio-desktop-bin/
-- https://aur.archlinux.org/packages/visual-studio-code-bin/
 - https://aur.archlinux.org/packages/mendeleydesktop-bundled/
 
 --------------------------------------------------------------------------------
@@ -153,58 +151,6 @@ sudo systemctl start teamviewerd
 
 ```sh
 sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
-```
-
-### configure vscode
-
-#### settings
-
-```sh
-VSCONFDIR=~/.config/Code/User
-
-mkdir -p "$VSCONFDIR"
-echo "{}" > "$VSCONFDIR/settings.json"
-
-jq '
-."clangd.arguments"=["-header-insertion=never"] |
-."C_Cpp.intelliSenseEngine"="disabled" |
-."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
-."doxdocgen.file.fileOrder"=["file","brief","empty","custom"] |
-."editor.fontFamily"="'\''Liberation Mono'\''" |
-."editor.fontSize"=10 |
-."editor.minimap.enabled"=false |
-."files.trimTrailingWhitespace"=true |
-."files.enableTrash"=false |
-."git.openRepositoryInParentFolders"="never" |
-."terminal.integrated.fontSize"=10 |
-."terminal.integrated.gpuAcceleration"="canvas" |
-."debug.console.wordWrap"=false |
-."workbench.startupEditor"="none" |
-."workbench.activityBar.visible"=false |
-."workbench.colorTheme"="Default Light+" |
-."security.workspace.trust.untrustedFiles"="open" |
-."window.restoreWindows"="none" |
-."telemetry.enableTelemetry"=false |
-."telemetry.enableCrashReporter"=false
-' "$VSCONFDIR/settings.json" | tee "$VSCONFDIR/temp.json"
-
-rm -f "$VSCONFDIR/settings.json"
-mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
-
-cat "$VSCONFDIR/settings.json"
-```
-
-#### extension
-
-```sh
-code --list-extensions
-
-#code --force --install-extension vscodevim.vim
-#code --force --install-extension ms-pyright.pyright
-#code --force --install-extension ms-vscode.cpptools
-code --force --install-extension cschlosser.doxdocgen
-code --force --install-extension ms-python.python
-code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 ```
 
 ### configure lxde session

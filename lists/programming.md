@@ -72,6 +72,11 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 - https://aur.archlinux.org/packages/python-wifiwrapper/
 - https://aur.archlinux.org/packages/python-pyalsaaudio/
 
+### install shell additional
+
+- https://aur.archlinux.org/packages/ttyplot-git/
+- https://aur.archlinux.org/packages/ncurses5-compat-libs/
+
 --------------------------------------------------------------------------------
 
 ## External
