@@ -415,6 +415,14 @@ gpasswd -a alarm uucp
 gpasswd -a alarm tty
 ```
 
+### dkms directory (qemu-chroot)
+
+```sh
+cd /usr/lib/modules/$(uname -r)/build/arch/
+ln -svf arm armv7l
+cd -
+```
+
 --------------------------------------------------------------------------------
 
 ## Xorg Configuration
