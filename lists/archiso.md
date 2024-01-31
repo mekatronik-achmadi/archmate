@@ -320,6 +320,20 @@ sudo pacman-key --populate archlinux
 
 ### configure booting
 
+#### GRUB Disable Submenu
+
+```sh
+sudo sed -i "s@#GRUB_DISABLE_SUBMENU=y@GRUB_DISABLE_SUBMENU=y@g" /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+#### GRUB Default Kernel
+
+```sh
+sudo sed -i "s@GRUB_DEFAULT=0@GRUB_DEFAULT=2@g" /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 #### GRUB-BIOS from Live ISO
 
 ```sh
