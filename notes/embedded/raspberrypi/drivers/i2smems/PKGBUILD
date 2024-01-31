@@ -1,0 +1,41 @@
+pkgname=snd-i2smic-rpi
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="I2S Microphone Module for RaspberryPi"
+url="https://github.com/adafruit/Raspberry-Pi-Installer-Scripts"
+arch=('armv6h' 'armv7h')
+license=('custom')
+install=depmod.install
+makedepends=('linux-rpi-headers')
+options=('!makeflags' 'libtool' 'staticlibs' '!strip')
+source=(
+    'https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/main/i2s_mic_module/Makefile'
+    'https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/main/i2s_mic_module/snd-i2smic-rpi.c'
+    'https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/main/i2s_mic_module/snd-i2smic-rpi.h'
+)
+md5sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare(){
+    cd ../
+    sed -i 's#MDIR\t?= /lib#MDIR\t?= ../pkg/snd-i2smic-rpi/usr/lib#g' Makefile
+    sed -i 's@depmod -a@@g' Makefile
+}
+
+build(){
+    cd $srcdir/
+    make
+}
+
+package(){
+    cd $srcdir/
+    make install
+
+    mkdir -p $pkgdir/etc/modules-load.d/
+    echo "snd-i2smic_rpi" > $pkgdir/etc/modules-load.d/snd-i2smic_rpi.conf
+
+    # 0 for PiZero
+    # 1 for Pi-2/Pi-3
+    # 2 for Pi-4
+    mkdir -p $pkgdir/etc/modprobe.d/
+    echo "options snd-i2smic_rpi rpi_platform_generation=2" > $pkgdir/etc/modprobe.d/snd-i2smic_rpi.conf
+}
