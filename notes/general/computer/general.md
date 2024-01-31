@@ -205,7 +205,7 @@ nvidia-smi -q -d MEMORY | grep Used | head -n1 | cut -d: -f2
 
 ---------------------------------------------------------------------------------------------------
 
-## Network configurations
+## Network Configurations
 
 ### ping root access only fix
 
@@ -387,3 +387,110 @@ sshfs sshuser@192.168.56.101:/home/sshuser sshmnt/ #enter password
 fusermount -u sshmnt/
 ```
 
+---------------------------------------------------------------------------------------------------
+
+## Python
+
+### python virtualenv
+
+#### install virtualenv
+
+```sh
+sudo pacman -S python-pipenv python-virtualenv
+```
+
+#### create virtualenv
+
+```sh
+cd $HOME
+virtualenv infrapyenv --system-site-packages
+source $HOME/infrapyenv/bin/activate
+```
+
+#### install additional
+
+```sh
+pip install pisces pathos cx_Oracle tsfresh obspy PyWavelets bokeh xyzservices
+```
+
+#### deactivate
+
+```sh
+deactivate
+```
+
+### jupyter notebook
+
+#### install kernel specs
+
+```sh
+source $HOME/infrapyenv/bin/activate
+ipython kernel install --user --name=infrapyenv
+```
+
+#### run inside environment
+
+```sh
+jupyter-notebook --no-browser
+```
+
+---------------------------------------------------------------------------------------------------
+
+## Android Tools
+
+### adb
+
+#### basic setup
+
+```txt
+Settings -> Developer options
+```
+
+```sh
+adb devices
+adb shell
+```
+
+#### using Wifi
+
+```sh
+echo "connect on USB First"
+adb tcpip 5555
+
+echo "ping device wlan ip"
+ping <device_ip_address>
+
+echo "switch to wifi"
+adb connect <device_ip_address>:5555
+
+echo "disconnect USB and check"
+adb devices
+
+echo "back to usb"
+adb kill-server
+adb usb
+```
+
+#### restart
+
+```sh
+adb kill-server
+adb start-server
+
+adb connect <device_ip_address>:5555
+adb devices
+```
+
+### scrcpy
+
+```sh
+echo "via USB"
+scrcpy -w -S --disable-screensaver --no-audio
+
+echo "via WiFi"
+scrcpy -w -S -b2M -m800 --disable-screensaver --no-audio
+
+echo "device/port selection"
+scrcpy -w -S --disable-screensaver --no-audio [-d/-e] <device>
+scrcpy -w -S --disable-screensaver --no-audio --tcpip[=ip[:port]]
+```
