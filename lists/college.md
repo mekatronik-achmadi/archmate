@@ -193,6 +193,9 @@ echo "Comment=Room Equalizer Wizard"  | sudo tee -a /usr/share/applications/room
 #### settings
 
 ```sh
+# remove wayland menu
+sudo rm -vf /usr/share/applications/codium-wayland.desktop
+
 VSCONFDIR=~/.config/VSCodium/User
 
 mkdir -p "$VSCONFDIR"
