@@ -1,0 +1,52 @@
+# Virtual Disk
+
+## Disk Install
+
+### prepare vdisk
+
+```sh
+qemu-img create rpi.img 4G
+dd status=progress if=/dev/zero of=rpi.img bs=1G count=4
+
+sudo parted rpi.img mklabel msdos
+
+yes | sudo parted rpi.img mkpart primary 0% 200
+yes | sudo parted rpi.img mkpart primary 200 100%
+
+sudo losetup --partscan --find --show rpi.img
+yes | sudo mkfs.vfat -F 32 /dev/loop0p1
+yes | sudo parted rpi.img set 1 boot on
+yes | sudo parted rpi.img set 1 lba on
+yes | sudo mkfs.ext4 /dev/loop0p2
+sudo losetup -d /dev/loop0
+```
+
+### download image
+
+```sh
+wget -c http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-armv7-latest.tar.gz
+```
+
+### deploy image
+
+```sh
+sudo mkdir -p /mnt/img/{boot,root}
+
+sudo losetup --partscan --find --show rpi.img
+
+sudo mount -o rw /dev/loop0p1 /mnt/img/boot/
+sudo mount -o rw /dev/loop0p2 /mnt/img/root/
+```
+
+```sh
+sudo bsdtar -xpf ArchLinuxARM-rpi-armv7-latest.tar.gz -C /mnt/img/root
+sudo sync
+
+sudo mv -vf /mnt/img/root/boot/* /mnt/img/boot/
+sudo sync
+
+sudo umount /mnt/img/root /mnt/img/boot
+
+sudo losetup -d /dev/loop0
+```
+ 
