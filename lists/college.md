@@ -223,11 +223,9 @@ jq '
 
 rm -f "$VSCONFDIR/settings.json"
 mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
-
-cat "$VSCONFDIR/settings.json"
 ```
 
-#### extension
+#### extensions
 
 ```sh
 vscodium --list-extensions
@@ -235,7 +233,12 @@ vscodium --list-extensions
 #vscodium --force --install-extension vscodevim.vim
 #vscodium --force --install-extension ms-pyright.pyright
 #vscodium --force --install-extension ms-vscode.cpptools
+
 vscodium --force --install-extension cschlosser.doxdocgen
 vscodium --force --install-extension ms-python.python
 vscodium --force --install-extension llvm-vs-code-extensions.vscode-clangd
+vscodium --force --install-extension mads-hartmann.bash-ide-vscode
+
+vscodium --force --install-extension reditorsupport.r
+vscodium --force --install-extension rust-lang.rust-analyzer
 ```

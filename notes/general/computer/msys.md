@@ -147,16 +147,19 @@ Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**.
 }
 ```
 
-### extension
+### extensions
 
 ```sh
 code --list-extensions
 
 #code --force --install-extension vscodevim.vim
 #code --force --install-extension ms-pyright.pyright
-code --force --install-extension llvm-vs-code-extensions.vscode-clangd
+
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension ms-python.python
+code --force --install-extension llvm-vs-code-extensions.vscode-clangd
+code --force --install-extension mads-hartmann.bash-ide-vscode
+
 ```
 
 ### arduino/platformio
