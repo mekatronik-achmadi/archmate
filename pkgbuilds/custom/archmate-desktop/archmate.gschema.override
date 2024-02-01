@@ -177,10 +177,10 @@ switch-windows-backward='<Alt><Shift>Tab'
 [org.mate.Marco.window-keybindings]
 tile-to-side-e='<Primary><Shift>Right'
 tile-to-side-w='<Primary><Shift>Left'
-tile-to-side-ne='<Primary><Shift>u'
-tile-to-side-nw='<Primary><Shift>y'
-tile-to-side-se='<Primary><Shift>j'
-tile-to-side-sw='<Primary><Shift>h'
+tile-to-corner-ne='<Primary><Shift>u'
+tile-to-corner-nw='<Primary><Shift>y'
+tile-to-corner-se='<Primary><Shift>j'
+tile-to-corner-sw='<Primary><Shift>h'
 
 [org.mate.SettingsDaemon.plugins.media-keys]
 screensaver='disabled'
