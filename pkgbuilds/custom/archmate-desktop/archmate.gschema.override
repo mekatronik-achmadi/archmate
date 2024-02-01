@@ -96,7 +96,7 @@ exit-with-last-window=false
 
 [org.mate.caja.window-state]
 start-with-status-bar=true
-start-with-toolbar=true
+start-with-toolbar=false
 start-with-sidebar=true
 
 [org.mate.caja-open-terminal]
@@ -116,7 +116,7 @@ default-extension='.tar.gz'
 auto-save=true
 auto-save-interval=10
 bracket-matching=true
-toolbar-visible=true
+toolbar-visible=false
 statusbar-visible=true
 side-pane-visible=false
 display-line-numbers=true
@@ -173,6 +173,14 @@ switch-windows='<Alt>Tab'
 switch-windows-all='<Control><Alt>Tab'
 switch-windows-all-backward='<Control><Alt><Shift>Tab'
 switch-windows-backward='<Alt><Shift>Tab'
+
+[org.mate.Marco.window-keybindings]
+tile-to-side-e='<Primary><Shift>Right'
+tile-to-side-w='<Primary><Shift>Left'
+tile-to-side-ne='<Primary><Shift>u'
+tile-to-side-nw='<Primary><Shift>y'
+tile-to-side-se='<Primary><Shift>j'
+tile-to-side-sw='<Primary><Shift>h'
 
 [org.mate.SettingsDaemon.plugins.media-keys]
 screensaver='disabled'
