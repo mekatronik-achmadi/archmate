@@ -12,11 +12,10 @@
 - Xfce
 - Conda
 - PyTest
-- Mono/C#
 - Linting
 - Wayland
 - Python-2
-- Microsoft
+- Mono/NET
 - Nativefier
 
 ### Usage of GNOME-3

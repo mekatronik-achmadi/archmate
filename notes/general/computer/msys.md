@@ -114,9 +114,7 @@ Setting file located at **%APPDATA%\Roaming\VSCodium\User\settings.json**
 
 ```json
 {
-  "clangd.arguments": [
-    "-header-insertion=never"
-  ],
+  "C_Cpp.intelliSenseEngine": "default",
   "doxdocgen.file.customTag": [
     "@addtogroup ",
     "@{"
@@ -172,18 +170,15 @@ vscodium --list-extensions
 #vscodium --force --install-extension ms-pyright.pyright
 
 vscodium --force --install-extension cschlosser.doxdocgen
+vscodium --force --install-extension ms-vscode.cpptools
 vscodium --force --install-extension ms-python.python
-vscodium --force --install-extension llvm-vs-code-extensions.vscode-clangd
 vscodium --force --install-extension mads-hartmann.bash-ide-vscode
 
 ```
 
 ### arduino/platformio
 
-**Note:** clangd extension must be disabled
-
 ```sh
-vscodium --force --install-extension ms-vscode.cpptools
 vscodium --force --install-extension platformio.platformio-ide
 vscodium --force --install-extension vsciot-vscode.vscode-arduino
 vscodium --force --install-extension ms-vscode.vscode-serial-monitor
