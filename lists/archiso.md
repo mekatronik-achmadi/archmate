@@ -417,7 +417,6 @@ PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 #### configure git user
 
 ```sh
-git config --global init.defaultBranch main
 git config --global user.name "mekatronik-achmadi"
 git config --global user.email "mekatronik.achmadi@gmail.com"
 

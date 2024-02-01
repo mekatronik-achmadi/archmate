@@ -1,11 +1,11 @@
 [core]
-    pager = cat
-    editor = vim
-    whitespace = -trailing-space
+	pager = cat
+	editor = vim
+	whitespace = -trailing-space
 
 [gui]
+	editor = geany
 	spellingdictionary = none
-	editor = vim
 	fontui = -family \"Liberation Sans\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family \"LiterationMono Nerd Font\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
 
@@ -13,7 +13,7 @@
 	cmd = git pull
 
 [diff]
-    renames = true
+	renames = true
 	tool = vimdiff
 
 [color]
