@@ -57,6 +57,9 @@ wget https://www.spice-space.org/download/binaries/spice-guest-tools/spice-guest
 sudo groupadd -f docker
 sudo gpasswd -a $USER docker
 
+# temporarily reload group
+newgrp docker
+
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 
@@ -65,15 +68,20 @@ docker run hello-world
 ```
 
 ```sh
+export DOCKERPATH="/home/developments/Servers"
+
 sudo systemctl stop docker
-mkdir -p /path/to/your/docker
-sudo chown -R root:root /path/to/your/docker
+
+sudo mkdir -p /etc/docker/
+sudo mkdir -p $DOCKERPATH/
+
+sudo chown -R root:root $DOCKERPATH/
 sudo touch /etc/docker/daemon.json
-echo '
+echo "
 {
-    "data-root": "/path/to/your/docker"
-}' | sudo tee /etc/docker/daemon.json
-sudo rsync -aP /var/lib/docker/ /path/to/your/docker
+    \"data-root\": \"$DOCKERPATH\"
+}" | sudo tee /etc/docker/daemon.json
+sudo rsync -aP /var/lib/docker/ $DOCKERPATH
 sudo systemctl start docker
 ```
 

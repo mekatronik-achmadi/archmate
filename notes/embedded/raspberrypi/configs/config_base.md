@@ -56,35 +56,6 @@ fi
 ' >> /home/alarm/.bashrc
 ```
 
-### ftp server
-
-```sh
-echo 'vsftpd: ALL
-vsftpd: 10.0.0.0/255.255.255.0
-' | sudo tee /etc/hosts.allow
-
-echo '
-listen=YES
-local_enable=YES
-write_enable=NO
-local_root=/home/alarm/Downloads/
-anonymous_enable=YES
-no_anon_password=YES
-anon_upload_enable=NO
-anon_mkdir_write_enable=NO
-anon_other_write_enable=NO
-anon_world_readable_only=YES
-anon_root=/home/alarm/Downloads/
-ftpd_banner=Welcome on Achmadi Movie Torrent
-' | sudo tee /etc/vsftpd.conf
-
-sudo systemctl enable vsftpd
-sudo systemctl start vsftpd
-
-# test on local
-ftp localhost
-```
-
 ## VNC
 
 ### server settings
