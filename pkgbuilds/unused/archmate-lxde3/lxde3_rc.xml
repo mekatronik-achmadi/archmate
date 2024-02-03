@@ -67,7 +67,7 @@
     </font>
     <font place="MenuHeader">
       <name>Liberation Sans</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
       <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -76,7 +76,7 @@
     </font>
     <font place="MenuItem">
       <name>Liberation Sans</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
       <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -300,6 +300,25 @@
         <direction>down</direction>
       </action>
     </keybind>
+
+  <!-- Keybindings for window snapping -->
+  <keybind key="C-S-Left">        # HalfLeftScreen
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo"><x>0</x><y>-0</y><height>100%</height><width>50%</width></action>
+  </keybind>
+  <keybind key="C-S-Right">       # HalfRightScreen
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo"><x>-0</x><y>-0</y><height>100%</height><width>50%</width></action>
+  </keybind>
+  <keybind key="C-S-Up">          # HalfUpperScreen
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo"><y>0</y><width>50%</width><height>50%</height></action>
+  </keybind>
+  <keybind key="C-S-Down">        # HalfLowerScreen
+    <action name="UnmaximizeFull"/>
+    <action name="MoveResizeTo"><y>-0</y><width>50%</width><height>50%</height></action>
+  </keybind>
+
     <!-- Keybindings for running applications -->
     <keybind key="W-r">
       <action name="Execute">
