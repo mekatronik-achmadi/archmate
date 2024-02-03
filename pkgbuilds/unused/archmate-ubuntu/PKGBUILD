@@ -1,0 +1,33 @@
+pkgname=archmate-ubuntu
+pkgver=20.04.2
+humver=0.6.15
+pkgrel=1
+pkgdesc="GTK2, GTK3, Unity and Metacity themes from Ubuntu MATE."
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archmate/"
+license=('GPL')
+depends=('ttf-ubuntu-font-family' 'gtk-engine-murrine')
+conflicts=('ubuntu-mate-themes' 'ubuntu-mate-icon-themes' 'humanity-icon-theme')
+provides=('ubuntu-mate-themes' 'ubuntu-mate-icon-themes' 'humanity-icon-theme')
+install=pkg.install
+options=('!makeflags' '!strip')
+source=(
+"http://mirrors.kernel.org/ubuntu/pool/universe/u/ubuntu-mate-artwork/ubuntu-mate-themes_${pkgver}_all.deb"
+"https://mirrors.edge.kernel.org/ubuntu/pool/universe/u/ubuntu-mate-artwork/ubuntu-mate-icon-themes_${pkgver}_all.deb"
+"https://launchpad.net/ubuntu/+archive/primary/+files/humanity-icon-theme_${humver}.tar.xz")
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+package() {
+    cd $srcdir/
+
+    ar x ubuntu-mate-themes_${pkgver}_all.deb
+    tar xf data.tar.*
+    mv -f usr $pkgdir/
+
+    ar x ubuntu-mate-icon-themes_${pkgver}_all.deb
+    tar xf data.tar.*
+    cp -rf usr $pkgdir/
+
+    cd humanity-icon-theme-${humver}/
+    cp -rf Humanity* $pkgdir/usr/share/icons/
+}

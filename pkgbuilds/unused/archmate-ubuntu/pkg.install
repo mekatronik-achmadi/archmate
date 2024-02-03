@@ -1,0 +1,20 @@
+cursor_theme() {
+    sed -i 's#CursorTheme=mate#CursorTheme=default#g' /usr/share/themes/Ambiant-MATE-Dark/index.theme
+    sed -i 's#CursorTheme=mate#CursorTheme=default#g' /usr/share/themes/Ambiant-MATE/index.theme
+    sed -i 's#CursorTheme=mate#CursorTheme=default#g' /usr/share/themes/Radiant-MATE/index.theme
+}
+
+update_icon_cache() {
+	for i in `ls -p /usr/share/icons/ | grep -v /`;do rm -f /usr/share/icons/$i;done
+	for i in /usr/share/icons/*;do gtk-update-icon-cache -qft $i;done
+}
+
+post_install() {
+    cursor_theme
+	update_icon_cache
+}
+
+post_upgrade() {
+    cursor_theme
+	update_icon_cache
+}
