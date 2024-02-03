@@ -2,7 +2,7 @@ pkgname=archmate-ubuntu
 pkgver=20.04.2
 humver=0.6.15
 pkgrel=1
-pkgdesc="GTK2, GTK3, Unity and Metacity themes from Ubuntu MATE."
+pkgdesc="GTK2, GTK3, and Metacity themes from Ubuntu MATE."
 arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
@@ -30,4 +30,12 @@ package() {
 
     cd humanity-icon-theme-${humver}/
     cp -rf Humanity* $pkgdir/usr/share/icons/
+
+    rm -rf $pkgdir/usr/share/themes/Ambiant-MATE-Dark/unity
+    rm -rf $pkgdir/usr/share/themes/Ambiant-MATE/unity
+    rm -rf $pkgdir/usr/share/themes/Radiant-MATE/unity
+
+    sed -i 's#CursorTheme=mate#CursorTheme=default#g' $pkgdir/usr/share/themes/Ambiant-MATE-Dark/index.theme
+    sed -i 's#CursorTheme=mate#CursorTheme=default#g' $pkgdir/usr/share/themes/Ambiant-MATE/index.theme
+    sed -i 's#CursorTheme=mate#CursorTheme=default#g' $pkgdir/usr/share/themes/Radiant-MATE/index.theme
 }

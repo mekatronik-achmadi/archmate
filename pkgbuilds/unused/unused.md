@@ -45,6 +45,10 @@
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
 
+### install ubuntu themes
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/archmate-ubuntu/
+
 ### install alternative desktop session
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/archmate-lxde3/
