@@ -30,6 +30,7 @@ xorg-fonts-misc
 xorg-xmessage
 
 lightdm lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
 
 mate mate-extra
 dconf dconf-editor

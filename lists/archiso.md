@@ -46,6 +46,7 @@ xorg-xmessage
 ### install login manager
 
 lightdm lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
 
 ### install mate desktop
 
