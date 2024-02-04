@@ -130,16 +130,16 @@ lrzip lzip lzop zstd cpio
 
 ### install build tools
 
-subversion automake
-mk-configure autogen
 cblas openblas lapack
 gobject-introspection
+subversion mk-configure
 mate-common gnome-common
 pkgconf gendesk help2man
+bear meson ninja setconf
+automake autogen autoconf
 mercurial breezy cvs cloc
 cmake extra-cmake-modules
 dos2unix doxygen graphviz
-bear autoconf meson ninja
 
 ### install java basic
 

@@ -106,7 +106,6 @@ matefaenza_start() {
 }
 
 update_icon_cache() {
-	for i in `ls -p /usr/share/icons/ | grep -v /`;do rm -f /usr/share/icons/$i;done
 	for i in /usr/share/icons/*;do gtk-update-icon-cache -qft $i;done
 }
 

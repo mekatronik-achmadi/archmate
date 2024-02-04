@@ -17,5 +17,3 @@ qt5-base qt6-base
 qt5ct qt6ct scrot
 xdotool parcellite
 
-cool-retro-term
-
