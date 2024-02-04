@@ -9,10 +9,14 @@ provides=('archiso')
 conflicts=('archiso')
 makedepends=('git')
 depends=(
-'squashfs-tools' 'libarchive' 'syslinux' 'edk2-ovmf'
-'patch' 'rsync' 'cdrtools' 'libisoburn' 'bash-completion'
-'dosfstools' 'e2fsprogs' 'sed' 'curl' 'wget' 'mkinitcpio'
-'arch-install-scripts' 'erofs-utils' 'mkinitcpio-archiso')
+'arch-install-scripts'
+'cdrtools' 'libisoburn'
+'amd-ucode' 'intel-ucode'
+'grub' 'syslinux' 'edk2-ovmf'
+'squashfs-tools' 'libarchive'
+'mkinitcpio' 'mkinitcpio-archiso'
+'dosfstools' 'e2fsprogs' 'erofs-utils'
+'bash' 'rsync' 'patch' 'sed' 'curl' 'wget')
 options=('!makeflags')
 install=pkg.install
 source=("git+https://gitlab.archlinux.org/archlinux/archiso.git#tag=v$pkgver")
