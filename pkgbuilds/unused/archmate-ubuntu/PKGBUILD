@@ -35,7 +35,7 @@ package() {
     rm -rf $pkgdir/usr/share/themes/Ambiant-MATE/unity
     rm -rf $pkgdir/usr/share/themes/Radiant-MATE/unity
 
-    sed -i 's#CursorTheme=mate#CursorTheme=default#g' $pkgdir/usr/share/themes/Ambiant-MATE-Dark/index.theme
-    sed -i 's#CursorTheme=mate#CursorTheme=default#g' $pkgdir/usr/share/themes/Ambiant-MATE/index.theme
-    sed -i 's#CursorTheme=mate#CursorTheme=default#g' $pkgdir/usr/share/themes/Radiant-MATE/index.theme
+    sed -i 's#CursorTheme=mate#CursorTheme=mate-black#g' $pkgdir/usr/share/themes/Ambiant-MATE-Dark/index.theme
+    sed -i 's#CursorTheme=mate#CursorTheme=mate-black#g' $pkgdir/usr/share/themes/Ambiant-MATE/index.theme
+    sed -i 's#CursorTheme=mate#CursorTheme=mate-black#g' $pkgdir/usr/share/themes/Radiant-MATE/index.theme
 }
