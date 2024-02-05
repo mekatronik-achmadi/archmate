@@ -20,6 +20,12 @@ The Openbox WM can be started using command:
 startx /usr/bin/openbox-session
 ```
 
+## Install From Live Session
+
+You can try to follow this document:
+
+https://github.com/mekatronik-achmadi/archmate/tree/main/archiso/install_live/install_readme.md
+
 ## Project Repository
 
 You are free to visit this project repository on Github:
