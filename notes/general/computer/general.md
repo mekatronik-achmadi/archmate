@@ -12,13 +12,20 @@
 - KDE
 - LXQt
 - Xfce
+- Snap
 - Conda
 - PyTest
 - Linting
-- Wayland
+- Flatpak
 - Python-2
 - Mono/NET
 - Nativefier
+
+### Usage of GNOME-3
+
+- for infrastructures (e.g gvfs, glib2, etc)
+- for artworks (e.g gnome-themes-extra, etc)
+- for tools (e.g dconf, glade, brasero, etc)
 
 ---------------------------------------------------------------------------------------------------
 
