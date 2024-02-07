@@ -198,13 +198,12 @@ sudo rm -vf /usr/share/applications/codium-wayland.desktop
 
 ```sh
 VSCONFDIR=~/.config/VSCodium/User
-
 mkdir -p "$VSCONFDIR"
 echo "{}" > "$VSCONFDIR/settings.json"
 
 jq '
 ."clangd.arguments"=["-header-insertion=never"] |
-."C_Cpp.intelliSenseEngine"="default" |
+."C_Cpp.intelliSenseEngine"="disabled" |
 ."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
 ."doxdocgen.file.fileOrder"=["file","brief","empty","custom"] |
 ."editor.fontFamily"="'\''Liberation Mono'\''" |
@@ -239,12 +238,12 @@ vscodium --list-extensions
 
 #vscodium --force --install-extension vscodevim.vim
 #vscodium --force --install-extension ms-pyright.pyright
-#vscodium --force --install-extension llvm-vs-code-extensions.vscode-clangd
+#vscodium --force --install-extension ms-vscode.cpptools
 
-vscodium --force --install-extension cschlosser.doxdocgen
-vscodium --force --install-extension ms-vscode.cpptools
 vscodium --force --install-extension ms-python.python
+vscodium --force --install-extension cschlosser.doxdocgen
 vscodium --force --install-extension mads-hartmann.bash-ide-vscode
+vscodium --force --install-extension llvm-vs-code-extensions.vscode-clangd
 
 vscodium --force --install-extension reditorsupport.r
 vscodium --force --install-extension rust-lang.rust-analyzer

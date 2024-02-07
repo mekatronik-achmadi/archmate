@@ -4,11 +4,13 @@
 
 ### Avoided Toolkit/Libraries
 
+- Adwaita
 - GNOME-4
 - WxGTK-2
 - GTK-4
 - Qt-4
 - KDE
+- LXQt
 - Xfce
 - Conda
 - PyTest
@@ -17,13 +19,6 @@
 - Python-2
 - Mono/NET
 - Nativefier
-
-### Usage of GNOME-3
-
-- for libraries (e.g glib2, gdk-pixbuf2, etc)
-- for infrastructures (e.g gvfs, zenity, etc)
-- for artworks (e.g gnome-themes-extra, etc)
-- for tools (e.g dconf, glade, brasero, etc)
 
 ---------------------------------------------------------------------------------------------------
 

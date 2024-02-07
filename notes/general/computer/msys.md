@@ -184,10 +184,9 @@ vscodium --force --install-extension vsciot-vscode.vscode-arduino
 vscodium --force --install-extension ms-vscode.vscode-serial-monitor
 ```
 
-Additional settings to **%APPDATA%\Roaming\VSCodium\User\settings.json**
+Optional settings to **%APPDATA%\Roaming\VSCodium\User\settings.json**
 
 ```json
-"C_Cpp.intelliSenseEngine": "default",
 "arduino.path": "/usr/bin/",
 "arduino.commandPath": "arduino-cli",
 "arduino.useArduinoCli": true,
