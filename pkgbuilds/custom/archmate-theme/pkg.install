@@ -23,6 +23,7 @@ remove_themes() {
 	rm -rf /usr/share/themes/Crux
 	rm -rf /usr/share/themes/Industrial
 	rm -rf /usr/share/themes/Mist
+	rm -rf /usr/share/themes/Shiny
 	rm -rf /usr/share/themes/Raleigh
 	rm -rf /usr/share/themes/Redmond
 	rm -rf /usr/share/themes/ThinIce
@@ -60,6 +61,7 @@ remove_menus() {
 	rm -f /usr/share/themes/Arc-Dark-solid/index.theme
 	rm -f /usr/share/themes/Arc-Darker-solid/index.theme
 
+    rm -f /usr/share/themes/Raleigh-Reloaded/index.theme
     rm -f /usr/share/themes/BlackMATE/index.theme
     rm -f /usr/share/themes/Menta/index.theme
 }
