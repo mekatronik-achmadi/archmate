@@ -17,12 +17,12 @@ nano dialog bc tmux tree
 curl wget openssh sshfs
 pacman-contrib mlocate
 virtualbox-guest-utils
+cmus libxcrypt-compat
 git tig terminus-font
 arch-install-scripts
 less pv archinstall
 mkinitcpio-archiso
 cdrtools syslinux
-libxcrypt-compat
 
 ### install posix meta
 
