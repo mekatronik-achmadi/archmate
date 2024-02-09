@@ -1,0 +1,6 @@
+*
+!.gitignore
+!*.c
+!*.sim1
+!Makefile
+
