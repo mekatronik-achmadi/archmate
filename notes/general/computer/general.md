@@ -4,6 +4,8 @@
 
 ### Avoided Toolkit/Libraries
 
+- Pipewire
+- Wayland
 - Adwaita
 - GNOME-4
 - WxGTK-2
