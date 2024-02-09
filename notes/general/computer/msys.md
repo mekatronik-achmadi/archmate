@@ -44,9 +44,9 @@ pacman -Su --noconfirm
 
 ```sh
 pacman -S $(echo "
-base base-devel nano neofetch
+base base-devel vim neofetch
 git tig winpty bash-completion
-tmux openssh mc unrar zip p7zip
+nano openssh mc unrar zip p7zip
 ")
 ```
 
@@ -55,8 +55,8 @@ tmux openssh mc unrar zip p7zip
 ```sh
 echo '
 export PATH=$PATH:~/.local/bin
-export VISUAL=nano
-export EDITOR=nano
+export VISUAL=vim
+export EDITOR=vim
 export PAGER=less
 export VIEWER=less
 ' | tee /etc/profile.d/msys_profile.sh
@@ -82,6 +82,7 @@ pacman -S $(echo "
 mingw-w64-x86_64-python
 mingw-w64-x86_64-cython0
 mingw-w64-x86_64-python-pip
+mingw-w64-x86_64-ctags
 mingw-w64-x86_64-toolchain
 mingw-w64-x86_64-clang-analyzer
 mingw-w64-x86_64-clang-tools-extra
@@ -108,16 +109,6 @@ compiledb make all
 
 ## Vim
 
-### install editor
-
-```sh
-pacman -S $(echo "
-vim mingw-w64-x86_64-jq
-mingw-w64-x86_64-nodejs
-mingw-w64-x86_64-yarn
-")
-```
-
 ### install vim plug
 
 ```sh
@@ -134,6 +125,8 @@ vim +PlugStatus
 
 ### configurations
 
+**NOTE:** Ultisnips are problematic in Windows
+
 ```sh
 echo "
 call plug#begin('~/.vim/pack/plug/start')
@@ -147,7 +140,7 @@ call plug#begin('~/.vim/pack/plug/start')
     Plug 'godlygeek/tabular'
     Plug 'preservim/tagbar'
     Plug 'chrisbra/csv.vim'
-    Plug 'SirVer/ultisnips'
+\"    Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -180,16 +173,22 @@ syntax on" | tee ~/.vimrc
 ### install plugins
 
 ```sh
+pacman -S $(echo "
+mingw-w64-x86_64-jq
+mingw-w64-x86_64-yarn
+mingw-w64-x86_64-nodejs
+")
+```
+
+```sh
 vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-snippets coc-ultisnips"
-vim -c "CocInstall coc-clangd coc-jedi coc-json coc-tsserver"
+vim -c "CocInstall coc-pairs coc-snippets coc-json"
+vim -c "CocInstall coc-clangd coc-jedi coc-tsserver"
 vim +PlugClean
 
 echo "For editing PKGBUILD"
 echo ":set ft=PKGBUILD"
 ```
-
-**NOTE:** Python error on Ultisnips
 
 ```sh
 mkdir -p ~/.vim
