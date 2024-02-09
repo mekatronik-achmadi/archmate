@@ -46,19 +46,33 @@ pacman -Su --noconfirm
 pacman -S $(echo "
 base base-devel nano neofetch
 git tig winpty bash-completion
+tmux openssh mc unrar zip p7zip
 ")
 ```
 
 ### basic profile
 
 ```sh
-echo "
+echo '
 export PATH=$PATH:~/.local/bin
 export VISUAL=nano
 export EDITOR=nano
 export PAGER=less
 export VIEWER=less
-" | tee /etc/profile.d/msys_profile.sh
+' | tee /etc/profile.d/msys_profile.sh
+
+echo '[[ $- != *i* ]] && return' |  tee ~/.bashrc
+echo "
+shopt -s checkwinsize
+shopt -s histappend
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias makepkg='makepkg --nocheck --skippgpcheck'
+alias less='less -N'
+alias mc='mc --nocolor'
+export MAKEFLAGS=-j$(nproc)
+export HISTCONTROL=ignorespace:ignoredups:erasedupsT
+" | tee -a ~/.bashrc
 ```
 
 ### additional devel packages
@@ -90,6 +104,103 @@ pip install compiledb
 
 compiledb gcc -o main main.c
 compiledb make all
+```
+
+## Vim
+
+### install editor
+
+```sh
+pacman -S $(echo "
+vim mingw-w64-x86_64-jq
+mingw-w64-x86_64-nodejs
+mingw-w64-x86_64-yarn
+")
+```
+
+### install vim plug
+
+```sh
+mkdir -p ~/.vim/autoload/
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo -e "call plug#begin('~/.vim/pack/plug/start')
+call plug#end()" | tee ~/.vimrc
+
+mkdir -p ~/.vim/pack/plug/start/
+
+vim +PlugStatus
+```
+
+### configurations
+
+```sh
+echo "
+call plug#begin('~/.vim/pack/plug/start')
+    Plug 'preservim/nerdcommenter'
+    Plug 'preservim/nerdtree'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'godlygeek/tabular'
+    Plug 'preservim/tagbar'
+    Plug 'chrisbra/csv.vim'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+let g:coc_data_home = 'C:\\\\msys64\\\\home\\\\$USER\\\\.config\\\\coc'
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \\: \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\"
+
+hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
+hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
+
+autocmd BufWritePre * %s/\s\+$//e
+filetype plugin on
+filetype indent on
+filetype plugin indent on
+set expandtab ts=4 sw=4 ai
+set conceallevel=0
+set encoding=utf-8
+set termguicolors
+set ic is hls
+set number
+set wrap!
+set mouse=a
+let g:tagbar_width=20
+let g:NERDTreeWinSize=20
+syntax on" | tee ~/.vimrc
+```
+
+### install plugins
+
+```sh
+vim +PlugInstall
+vim -c "CocInstall coc-pairs coc-snippets coc-ultisnips"
+vim -c "CocInstall coc-clangd coc-jedi coc-json coc-tsserver"
+vim +PlugClean
+
+echo "For editing PKGBUILD"
+echo ":set ft=PKGBUILD"
+```
+
+**NOTE:** Python error on Ultisnips
+
+```sh
+mkdir -p ~/.vim
+
+jq -n '
+."clangd.arguments"=["-header-insertion=never"] |
+."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
+."snippets.ultisnips.enable"=false
+' > ~/.vim/coc-settings.json
+
+vim ~/.vim/coc-settings.json
 ```
 
 ## VSCodium

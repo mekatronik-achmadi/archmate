@@ -42,6 +42,7 @@ tcsh fltk
 ### install javacript programming
 
 nodejs npm yarn asar
+bash-language-server
 jq yq node-gyp ts-node
 
 --------------------------------------------------------------------------------
