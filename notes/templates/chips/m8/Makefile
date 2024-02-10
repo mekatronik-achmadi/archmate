@@ -1,5 +1,5 @@
 # MCU name
-MCU = atmega328
+MCU = atmega8
 
 # Processor frequency.
 F_CPU = 8000000
@@ -120,6 +120,7 @@ CFLAGS += -fpack-struct
 CFLAGS += -fshort-enums
 CFLAGS += -Wall
 CFLAGS += -Wstrict-prototypes
+CFLAGS += --param=min-pagesize=0
 #CFLAGS += -mshort-calls
 #CFLAGS += -fno-unit-at-a-time
 #CFLAGS += -Wundef
