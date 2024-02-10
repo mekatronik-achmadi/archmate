@@ -2,6 +2,10 @@
 
 ## Official
 
+### install document tools
+
+mupdf-gl mupdf-tools djview
+
 ### install graphic tools
 
 gimp xsane-gimp
@@ -59,6 +63,12 @@ ddrescue ext4magic foremost testdisk
 --------------------------------------------------------------------------------
 
 ## Configurations
+
+### configure mupdf
+
+```sh
+sudo sed -i 's#NoDisplay=true##g' /usr/share/applications/mupdf.desktop
+```
 
 ### configure steam
 
