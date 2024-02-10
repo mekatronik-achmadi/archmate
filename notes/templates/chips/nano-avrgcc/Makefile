@@ -1,8 +1,8 @@
 # MCU name
-MCU = atmega8
+MCU = atmega328
 
 # Processor frequency.
-F_CPU = 8000000
+F_CPU = 16000000
 
 # Target file name (without extension).
 PROJECT = main
