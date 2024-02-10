@@ -21,7 +21,7 @@ static int uart_getchar(FILE *stream){
     while ((UCSR0A & (1<<RXC0))==0) {};
     tmp=UDR0;
 
-    return(tmp);
+    return tmp;
 }
 
 static int uart_putchar(char chr, FILE *stream){
