@@ -118,7 +118,17 @@ arduino-cli core list
 arduino-cli lib search DHT11 | grep DHT11
 arduino-cli lib install "DHT11"
 
-arduino-cli compile --fqbn arduino:avr:nano
+# generate compilation database
+# in Vim -> :set ft=cpp
+arduino-cli compile \
+--build-path ./build \
+--only-compilation-database \
+--fqbn arduino:avr:nano
+
+arduino-cli compile \
+--build-path ./build \
+--export-binaries \
+--fqbn arduino:avr:nano
 
 arduino-cli board list
 arduino-cli upload --fqbn arduino:avr:nano --port /dev/ttyUSB0
