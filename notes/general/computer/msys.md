@@ -12,7 +12,7 @@
 - Notepad++: https://notepad-plus-plus.org/downloads/
 - Git: https://git-scm.com/download/win
 - Git-Cola: https://git-cola.github.io/downloads.html
-- VSCodium: https://github.com/VSCodium/vscodium/releases/
+- VSCode: https://code.visualstudio.com/download
 
 ## Installation
 
@@ -193,25 +193,11 @@ jq -n '
 vim ~/.vim/coc-settings.json
 ```
 
-## VSCodium
-
-### marketplace
-
-Product file located at: **%ProgramFiles%/VSCodium/resources/app/product.json**
-
-```json
-{
-  "extensionsGallery": {
-    "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-    "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-    "itemUrl": "https://marketplace.visualstudio.com/items"
-  },
-}
-```
+## VSCode
 
 ### settings
 
-Setting file located at **%APPDATA%\Roaming\VSCodium\User\settings.json**
+Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**
 
 ```json
 {
@@ -265,32 +251,21 @@ Setting file located at **%APPDATA%\Roaming\VSCodium\User\settings.json**
 ### extensions
 
 ```sh
-vscodium --list-extensions
+code --list-extensions
 
-#vscodium --force --install-extension vscodevim.vim
-#vscodium --force --install-extension ms-pyright.pyright
+#code --force --install-extension vscodevim.vim
+#code --force --install-extension ms-pyright.pyright
 
-vscodium --force --install-extension cschlosser.doxdocgen
-vscodium --force --install-extension ms-vscode.cpptools
-vscodium --force --install-extension ms-python.python
-vscodium --force --install-extension mads-hartmann.bash-ide-vscode
-
+code --force --install-extension cschlosser.doxdocgen
+code --force --install-extension ms-vscode.cpptools
+code --force --install-extension ms-python.python
+code --force --install-extension mads-hartmann.bash-ide-vscode
 ```
 
 ### arduino/platformio
 
 ```sh
-vscodium --force --install-extension platformio.platformio-ide
-vscodium --force --install-extension vsciot-vscode.vscode-arduino
-vscodium --force --install-extension ms-vscode.vscode-serial-monitor
-```
-
-Optional settings to **%APPDATA%\Roaming\VSCodium\User\settings.json**
-
-```json
-"arduino.path": "/usr/bin/",
-"arduino.commandPath": "arduino-cli",
-"arduino.useArduinoCli": true,
-"arduino.enableUSBDetection": true,
-"arduino.logLevel": "verbose",
+code --force --install-extension platformio.platformio-ide
+code --force --install-extension vsciot-vscode.vscode-arduino
+code --force --install-extension ms-vscode.vscode-serial-monitor
 ```

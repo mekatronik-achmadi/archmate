@@ -29,7 +29,7 @@ python-seaborn python-patsy
 python-pytables python-tqdm
 python-pandas python-numexpr
 
-### install python interface
+### install python jupyter
 
 jupyterlab jupyter-notebook
 
@@ -81,15 +81,11 @@ fftw liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/wavesurfer/
 - https://aur.archlinux.org/packages/snack/
 
-### install r programming
+### install shell additional
 
 - https://aur.archlinux.org/packages/littler/
-- https://aur.archlinux.org/packages/rstudio-desktop-bin/
-
-### install vscodium
-
-- https://aur.archlinux.org/packages/vscodium-bin/
-- https://aur.archlinux.org/packages/vscodium-bin-marketplace/
+- https://aur.archlinux.org/packages/ttyplot-git/
+- https://aur.archlinux.org/packages/ncurses5-compat-libs/
 
 --------------------------------------------------------------------------------
 
@@ -185,72 +181,4 @@ sudo sed -i 's#Categories=Application;#Categories=AudioVideo;Audio;Player;#g' \
 
 echo "Terminal=false" | sudo tee -a /usr/share/applications/roomeqwizard/roomeqwizard.desktop
 echo "Comment=Room Equalizer Wizard"  | sudo tee -a /usr/share/applications/roomeqwizard/roomeqwizard.desktop
-```
-
-### configure vscode
-
-#### settings
-
-```sh
-# remove wayland menu
-sudo rm -vf /usr/share/applications/codium-wayland.desktop
-```
-
-```sh
-VSCONFDIR=~/.config/VSCodium/User
-mkdir -p "$VSCONFDIR"
-echo "{}" > "$VSCONFDIR/settings.json"
-
-jq '
-."clangd.arguments"=["-header-insertion=never"] |
-."C_Cpp.intelliSenseEngine"="disabled" |
-."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
-."doxdocgen.file.fileOrder"=["file","brief","empty","custom"] |
-."editor.fontFamily"="'\''Liberation Mono'\''" |
-."editor.fontSize"=10 |
-."editor.minimap.enabled"=false |
-."files.trimTrailingWhitespace"=true |
-."files.enableTrash"=false |
-."git.openRepositoryInParentFolders"="never" |
-."terminal.integrated.fontSize"=10 |
-."terminal.integrated.gpuAcceleration"="canvas" |
-."debug.console.wordWrap"=false |
-."workbench.startupEditor"="none" |
-."workbench.activityBar.visible"=false |
-."workbench.colorTheme"="Default Light+" |
-."security.workspace.trust.untrustedFiles"="open" |
-."window.restoreWindows"="none" |
-."window.commandCenter"=false |
-."window.titleBarStyle"="native" |
-."telemetry.telemetryLevel"="off" |
-."telemetry.enableTelemetry"=false |
-."telemetry.enableCrashReporter"=false
-' "$VSCONFDIR/settings.json" | tee "$VSCONFDIR/temp.json"
-
-rm -f "$VSCONFDIR/settings.json"
-mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
-```
-
-#### extensions
-
-```sh
-vscodium --list-extensions
-
-#vscodium --force --install-extension vscodevim.vim
-#vscodium --force --install-extension ms-pyright.pyright
-#vscodium --force --install-extension ms-vscode.cpptools
-
-vscodium --force --install-extension ms-python.python
-vscodium --force --install-extension cschlosser.doxdocgen
-vscodium --force --install-extension mads-hartmann.bash-ide-vscode
-vscodium --force --install-extension llvm-vs-code-extensions.vscode-clangd
-
-vscodium --force --install-extension reditorsupport.r
-vscodium --force --install-extension rust-lang.rust-analyzer
-```
-
-```sh
-# disable Microsoft C/C++ extension for CLangd
-sed -i 's#Engine": "default"#Engine": "disabled"#g' \
-~/.config/VSCodium/User/settings.json
 ```

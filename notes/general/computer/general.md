@@ -29,6 +29,10 @@
 - for artworks (e.g gnome-themes-extra, etc)
 - for tools (e.g dconf, glade, brasero, etc)
 
+### Usage of Microsoft
+
+- Visual Studio Code
+
 ---------------------------------------------------------------------------------------------------
 
 ## Bash general

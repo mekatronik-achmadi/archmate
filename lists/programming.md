@@ -68,10 +68,9 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 - https://aur.archlinux.org/packages/python-wifiwrapper/
 - https://aur.archlinux.org/packages/python-pyalsaaudio/
 
-### install shell additional
+### install visual studio code
 
-- https://aur.archlinux.org/packages/ttyplot-git/
-- https://aur.archlinux.org/packages/ncurses5-compat-libs/
+https://aur.archlinux.org/packages/visual-studio-code-bin/
 
 --------------------------------------------------------------------------------
 
@@ -215,4 +214,67 @@ Diagnostics:
 " | tee ~/.config/clangd/config.yaml
 
 sed -i 's@UnusedIncludes: Strict@UnusedIncludes: None@g' ~/.config/clangd/config.yaml
+```
+
+### configure vscode
+
+#### settings
+
+```sh
+VSCONFDIR=~/.config/Code/User
+mkdir -p "$VSCONFDIR"
+echo "{}" > "$VSCONFDIR/settings.json"
+
+jq '
+."clangd.arguments"=["-header-insertion=never"] |
+."C_Cpp.intelliSenseEngine"="default" |
+."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
+."doxdocgen.file.fileOrder"=["file","brief","empty","custom"] |
+."editor.fontFamily"="'\''Liberation Mono'\''" |
+."editor.fontSize"=10 |
+."editor.minimap.enabled"=false |
+."files.trimTrailingWhitespace"=true |
+."files.enableTrash"=false |
+."git.openRepositoryInParentFolders"="never" |
+."terminal.integrated.fontSize"=10 |
+."terminal.integrated.gpuAcceleration"="canvas" |
+."debug.console.wordWrap"=false |
+."workbench.startupEditor"="none" |
+."workbench.activityBar.visible"=false |
+."workbench.colorTheme"="Default Light+" |
+."security.workspace.trust.untrustedFiles"="open" |
+."window.restoreWindows"="none" |
+."window.commandCenter"=false |
+."window.titleBarStyle"="native" |
+."telemetry.telemetryLevel"="off" |
+."telemetry.enableTelemetry"=false |
+."telemetry.enableCrashReporter"=false
+' "$VSCONFDIR/settings.json" | tee "$VSCONFDIR/temp.json"
+
+rm -f "$VSCONFDIR/settings.json"
+mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
+```
+
+#### extensions
+
+```sh
+code --list-extensions
+
+#code --force --install-extension vscodevim.vim
+#code --force --install-extension ms-pyright.pyright
+#code --force --install-extension llvm-vs-code-extensions.vscode-clangd
+
+code --force --install-extension ms-vscode.cpptools
+code --force --install-extension ms-python.python
+code --force --install-extension cschlosser.doxdocgen
+code --force --install-extension mads-hartmann.bash-ide-vscode
+
+code --force --install-extension reditorsupport.r
+code --force --install-extension rust-lang.rust-analyzer
+```
+
+```sh
+# disable Microsoft C/C++ extension for CLangd
+sed -i 's#Engine": "default"#Engine": "disabled"#g' \
+~/.config/VSCodium/User/settings.json
 ```
