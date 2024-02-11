@@ -1,0 +1,8 @@
+*~
+*.user
+.dep/
+.cache/
+build/
+Makefile
+compile_commands.json
+
