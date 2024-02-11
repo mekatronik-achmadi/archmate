@@ -63,11 +63,6 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 - https://aur.archlinux.org/packages/wxhexeditor/
 - https://aur.archlinux.org/packages/wxformbuilder/
 
-### install compiledb
-
-- https://aur.archlinux.org/packages/python-bashlex/
-- https://aur.archlinux.org/packages/compiledb/
-
 ### install system python bindings
 
 - https://aur.archlinux.org/packages/python-wifiwrapper/
@@ -191,16 +186,12 @@ jq -n '
 vim ~/.vim/coc-settings.json
 ```
 
-```
-# vim color setting commands
+#### vim colorscheme
 
+```
 :h cterm-colors
 :h gui-colors
 :hi
-
-# gvim colorscheme
-
-:colo <CTRL+D>
 ```
 
 ```sh
@@ -212,11 +203,6 @@ sudo sed -i 's#colorscheme shine#colorscheme evening#' /etc/vimrc
 ```sh
 bear -- gcc -o coba.exe coba.c
 bear -- make -j$(nproc)
-```
-
-```sh
-compiledb gcc -o coba.exe coba.c
-compiledb make -j$(nproc)
 ```
 
 ```sh

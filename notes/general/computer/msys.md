@@ -98,15 +98,6 @@ mingw-w64-x86_64-gtkmm3
 mingw-w64-x86_64-glade")
 ```
 
-## CLang compile commands
-
-```sh
-pip install compiledb
-
-compiledb gcc -o main main.c
-compiledb make all
-```
-
 ## Vim
 
 ### install vim plug

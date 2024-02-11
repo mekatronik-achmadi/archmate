@@ -263,12 +263,6 @@ make monitor # CTRL+] to exit
 
 ### configure platformio
 
-#### install requirements
-
-```sh
-sudo pacman -S clangd python-pipenv python-virtualenv
-```
-
 #### install inside virtualenv
 
 ```sh
@@ -314,7 +308,6 @@ source $HOME/platformio/bin/activate
 
 mkdir -p blink/;cd blink/
 pio project init --ide vim --board nanoatmega328
-pio project config
 
 echo -e '#PlatformIO Makefile
 all:
@@ -350,9 +343,9 @@ void loop(){
 ' | tee src/main.cpp
 
 bear -- make all
-compiledb make all
+ls .pio/build/nanoatmega328/*.hex
 
-vim src/main.c
+vim src/main.cpp
 ```
 
 #### run a serial monitor
