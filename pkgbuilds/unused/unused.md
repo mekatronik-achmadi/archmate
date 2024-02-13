@@ -19,9 +19,9 @@
 
 ### install internet tools
 
+- https://aur.archlinux.org/packages/ungoogled-chromium-bin/
 - https://aur.archlinux.org/packages/google-chrome/
 - https://aur.archlinux.org/packages/teamviewer/
-- https://aur.archlinux.org/packages/slimjet/
 
 ## install academic tools
 
