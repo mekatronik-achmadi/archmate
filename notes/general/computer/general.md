@@ -227,6 +227,20 @@ fping -s -g 10.199.6.60 10.199.6.70 -r 1
 fping -a -q -g 10.199.6.0/24
 ```
 
+### bypass blockade using dns
+
+```sh
+echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf
+
+# to restore
+#sudo systemctl restart NetworkManager
+```
+
+```
+Advance Network Configuration -> (Connection Name) -> Edit Connection
+IPv4 Settings -> DNS Servers -> 8.8.8.8 -> Save
+```
+
 ### samba sharing configuration
 
 #### config files
