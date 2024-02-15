@@ -20,7 +20,7 @@
 //////////////////////////////// Commands //////////////////////////
 
 static int reboot_cb(int argc, char *argv[]){
-    printf("Rebooting\r\n");
+    printf("Rebooting\n");
     esp_restart();
 }
 
@@ -35,7 +35,7 @@ static void reboot_reg(void){
 }
 
 static int serialTest_cb(int argc, char *argv[]){
-    printf("ESP32 Console Shell\r\n");
+    printf("ESP32 Console Shell\n");
     return 0;
 }
 
@@ -109,7 +109,8 @@ void shell_Init(void){
     printf("\n"
            "This is console shell.\n"
            "Run in dumb mode without line editing nor history.\n"
-           "Type 'help' to get the list of commands.\n");
+           "Type 'help' to get the list of commands.\n"
+           "\n");
 
     linenoiseSetDumbMode(1);
 }
@@ -122,20 +123,20 @@ int shell_Loop(void){
     esp_err_t err = esp_console_run(line,&ret);
 
     if(err==ESP_ERR_NOT_FOUND)
-        printf("Command Unknown\r\n");
+        printf("Command Unknown\n");
 
-    else if(err==ESP_ERR_INVALID_ARG)
-        printf("\r\n");
+    else if(err==ESP_ERR_INVALID_ARG) ;
 
     else if((err==ESP_OK) && (ret!=ESP_OK))
-        printf("Non-Zero return: 0x%x (%s)\r\n",
+        printf("Non-Zero return: 0x%x (%s)\n",
                 ret,
                 esp_err_to_name(ret));
 
     else if(err!=ESP_OK)
-        printf("Internal Error: %s\r\n", esp_err_to_name(err));
+        printf("Internal Error: %s\n", esp_err_to_name(err));
 
     linenoiseFree(line);
 
     return 0;
 }
+
