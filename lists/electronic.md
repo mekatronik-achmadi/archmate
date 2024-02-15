@@ -294,11 +294,11 @@ sudo udevadm trigger
 ```sh
 source $HOME/platformio/bin/activate
 
-pio home --host=0.0.0.0 --no-open
-vimb http://localhost:8008/
+pio home --shutdown-timeout 1 &
 
-#xdg-mime default vimb.desktop x-scheme-handler/http
-#pio home --host=0.0.0.0
+#pio home --no-open
+#pio home --host=0.0.0.0 --no-open
+#xdg-open http://localhost:8008/
 
 #sed -i "s@'dark'@'light'@g" $HOME/.platformio/packages/contrib-piohome/index.html
 ```
