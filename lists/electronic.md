@@ -313,22 +313,16 @@ pio project init --ide vim --board nanoatmega328
 
 echo -e '#PlatformIO Makefile
 all:
-\tpio -f -c vim run
+\tpio run
 
 upload:
-\tpio -f -c vim run --target upload
+\tpio run --target upload
 
 clean:
-\tpio -f -c vim run --target clean
+\tpio run --target clean
 
-program:
-\tpio -f -c vim run --target program
-
-uploadfs:
-\tpio -f -c vim run --target uploadfs
-
-update:
-\tpio -f -c vim update
+monitor:
+\tpio device monitor -p /dev/ttyUSB0 -b 9600
 ' | tee Makefile
 ```
 
@@ -349,12 +343,3 @@ ls .pio/build/nanoatmega328/*.hex
 
 vim src/main.cpp
 ```
-
-#### run a serial monitor
-
-```sh
-source $HOME/platformio/bin/activate
-
-pio device monitor -p /dev/ttyUSB0 -b 9600
-```
-

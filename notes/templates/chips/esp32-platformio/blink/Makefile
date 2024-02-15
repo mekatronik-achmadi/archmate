@@ -8,4 +8,5 @@ clean:
 	pio run --target clean
 
 monitor:
-	pio device monitor -p /dev/ttyUSB0 -b 9600
+	pio device monitor -p /dev/ttyUSB0 -b 115200
+
