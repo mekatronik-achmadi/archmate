@@ -20,7 +20,6 @@
 ### install internet tools
 
 - https://aur.archlinux.org/packages/google-chrome/
-- https://aur.archlinux.org/packages/otter-browser/
 - https://aur.archlinux.org/packages/teamviewer/
 
 ## install academic tools
@@ -45,6 +44,7 @@
 ### install internet tool
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/ungoogled/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
 
 ### install additional themes
