@@ -115,7 +115,9 @@ void shell_Init(void){
 
 int shell_Loop(void){
     char *line = linenoise(prompt);
+
     if(line==NULL) return 1;
+    if(strlen(line)==0) return 0;
 
     int ret;
     esp_err_t err = esp_console_run(line,&ret);
