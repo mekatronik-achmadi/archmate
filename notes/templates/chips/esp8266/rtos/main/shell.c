@@ -15,9 +15,9 @@
 #include "shell.h"
 
 #define CONFIG_ESP_CONSOLE_UART_NUM 0
-#define UART_USE_PROMPT 1
+#define UART_USE_PROMPT             1
 
-//////////////////////////////// Commands //////////////////////////
+//////////////////////////// Commands ///////////////////////
 
 static int reboot_cb(int argc, char *argv[]){
     printf("Rebooting\n");
@@ -54,7 +54,7 @@ static void register_Commands(void){
     serialTest_reg();
 }
 
-////////////////////////////// SHELL  ///////////////////////////////
+/////////////////////////// SHELL //////////////////
 
 #if UART_USE_PROMPT
 const char *prompt = "esp> ";
@@ -67,40 +67,35 @@ static void console_Init(void){
     fsync(fileno(stdout));
     setvbuf(stdin,NULL,_IONBF,0);
 
-    esp_vfs_dev_uart_port_set_rx_line_endings(CONFIG_ESP_CONSOLE_UART_NUM,
-            ESP_LINE_ENDINGS_CR);
-    esp_vfs_dev_uart_port_set_tx_line_endings(CONFIG_ESP_CONSOLE_UART_NUM,
-            ESP_LINE_ENDINGS_CRLF);
+    esp_vfs_dev_uart_set_rx_line_endings(ESP_LINE_ENDINGS_CR);
+    esp_vfs_dev_uart_set_tx_line_endings(ESP_LINE_ENDINGS_CRLF);
 
-    const uart_config_t uart_Conf = {
-        .baud_rate = 115200,
+    uart_config_t uart_Conf = {
+        .baud_rate = CONFIG_ESP_CONSOLE_UART_BAUDRATE,
         .data_bits = UART_DATA_8_BITS,
         .parity = UART_PARITY_DISABLE,
-        .stop_bits = UART_STOP_BITS_1,
-        .source_clk = UART_SCLK_REF_TICK
+        .stop_bits = UART_STOP_BITS_1
     };
 
+    uart_param_config(CONFIG_ESP_CONSOLE_UART_NUM,&uart_Conf);
     uart_driver_install(CONFIG_ESP_CONSOLE_UART_NUM,
             256,
             0,
             0,
             NULL,
             0);
-
-    uart_param_config(CONFIG_ESP_CONSOLE_UART_NUM,&uart_Conf);
     esp_vfs_dev_uart_use_driver(CONFIG_ESP_CONSOLE_UART_NUM);
 
-    const esp_console_config_t console_Conf = {
+    esp_console_config_t console_Conf = {
         .max_cmdline_args = 8,
         .max_cmdline_length = 256
     };
     esp_console_init(&console_Conf);
-
-    linenoiseAllowEmpty(true);
 }
 
 void shell_Init(void){
     console_Init();
+
     esp_console_register_help_command();
     register_Commands();
 
