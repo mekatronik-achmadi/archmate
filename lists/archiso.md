@@ -419,6 +419,7 @@ PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 git config --global user.name "mekatronik-achmadi"
 git config --global user.email "mekatronik.achmadi@gmail.com"
 
+git config --global init.defaultBranch main
 echo 'export GITHUBTOKEN=$(cat ~/GithubToken.txt)' | tee -a ~/.bashrc
 ```
 
