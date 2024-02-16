@@ -292,7 +292,7 @@ clean:
 \tpio run --target clean
 
 monitor:
-\tpio device monitor -p /dev/ttyUSB0 -b 9600
+\tpio device monitor -p /dev/ttyUSB0 -b 115200
 ' | tee Makefile
 ```
 
@@ -309,7 +309,8 @@ void loop(){
 ' | tee src/main.cpp
 
 make all
-ls .pio/build/nanoatmega328/*.hex
+ls .pio/build/*/firmware.bin
+ls .pio/build/*/firmware.hex
 
 make compiledb
 vim src/main.cpp
