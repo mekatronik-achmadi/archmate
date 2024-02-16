@@ -25,7 +25,7 @@ cd -
 source $HOME/platformio/bin/activate
 pio home --shutdown-timeout 1 &
 
-#firefox http://localhost:8008/ &
+#xdg-open http://localhost:8008/ &
 ```
 
 ## Project
@@ -43,12 +43,12 @@ pio project init --ide vim --board esp32dev
 
 ```sh
 source $HOME/platformio/bin/activate
-
 export MAKEFLAGS=-j$(nproc)
-# bear -- make all
+
+make compiledb
 make all
 
-ls .pio/build/esp32dev/firmware.hex
+ls .pio/build/esp32dev/firmware.bin
 make upload
 ```
 
@@ -56,7 +56,6 @@ make upload
 
 ```sh
 source $HOME/platformio/bin/activate
-
-pio device monitor -p /dev/ttyUSB0 -b 9600
+make monitor
 ```
 

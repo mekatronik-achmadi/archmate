@@ -35,8 +35,8 @@ pio home --shutdown-timeout 1 &
 ```sh
 source $HOME/platformio/bin/activate
 
-pio project init --ide vim --board nanoatmega328
-#pio project init --ide vscode --board nanoatmega328
+pio project init --ide vim --board nodemcu
+#pio project init --ide vscode --board nodemcu
 ```
 
 ### Build
@@ -48,7 +48,7 @@ export MAKEFLAGS=-j$(nproc)
 make compiledb
 make all
 
-ls .pio/build/nanoatmega328/firmware.hex
+ls .pio/build/nodemcu/firmware.bin
 make upload
 ```
 

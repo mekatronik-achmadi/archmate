@@ -282,6 +282,9 @@ echo -e '#PlatformIO Makefile
 all:
 \tpio run
 
+compiledb:
+\tpio run --target compiledb
+
 upload:
 \tpio run --target upload
 
@@ -305,8 +308,10 @@ void loop(){
 }
 ' | tee src/main.cpp
 
-bear -- make all
+make all
 ls .pio/build/nanoatmega328/*.hex
 
+make compiledb
 vim src/main.cpp
 ```
+

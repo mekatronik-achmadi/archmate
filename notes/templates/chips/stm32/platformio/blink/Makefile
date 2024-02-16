@@ -1,6 +1,9 @@
 all:
 	pio run
 
+compiledb:
+	pio run --target compiledb
+
 upload:
 	stm32flash -w .pio/build/bluepill_f103c8/firmware.bin -v /dev/ttyUSB0
 

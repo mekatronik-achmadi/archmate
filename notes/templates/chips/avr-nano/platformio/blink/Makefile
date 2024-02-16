@@ -1,6 +1,9 @@
 all:
 	pio run
 
+compiledb:
+	pio run --target compiledb
+
 upload:
 	pio run --target upload
 
