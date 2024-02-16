@@ -45,9 +45,11 @@ pio project init --ide vim --board esp32dev
 source $HOME/platformio/bin/activate
 
 export MAKEFLAGS=-j$(nproc)
+# bear -- make all
 make all
 
-ls .pio/build/esp32dev/*.hex
+ls .pio/build/esp32dev/firmware.hex
+make upload
 ```
 
 ### Serial
