@@ -164,7 +164,7 @@ deactivate
 export IDF_PATH=/opt/esp8266-rtos
 export PATH="$IDF_PATH/tools:$PATH"
 export MAKEFLAGS="-j$(nproc)"
-#export GNUMAKEFLAGS="-j$(nproc)"
+export GNUMAKEFLAGS="-j$(nproc)"
 source $HOME/esp-python/bin/activate
 
 cp -r $IDF_PATH/examples/get-started/hello_world/ ./
@@ -200,7 +200,7 @@ make monitor # CTRL+] to exit
 export IDF_PATH=/opt/esp-idf
 export PATH="$IDF_PATH/tools:$PATH"
 export MAKEFLAGS="-j$(nproc)"
-#export GNUMAKEFLAGS="-j$(nproc)"
+export GNUMAKEFLAGS="-j$(nproc)"
 source $HOME/esp-python/bin/activate
 
 cp -r $IDF_PATH/examples/get-started/blink/ ./
