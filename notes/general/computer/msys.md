@@ -262,10 +262,9 @@ code --force --install-extension ms-python.python
 code --force --install-extension mads-hartmann.bash-ide-vscode
 ```
 
-### arduino/platformio
+### platformio
 
 ```sh
 code --force --install-extension platformio.platformio-ide
-code --force --install-extension vsciot-vscode.vscode-arduino
 code --force --install-extension ms-vscode.vscode-serial-monitor
 ```

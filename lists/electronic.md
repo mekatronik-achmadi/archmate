@@ -13,9 +13,8 @@ avr-gcc avr-gdb avr-libc avrdude
 
 ### install additional tools
 
-arduino-cli minicom moserial
-python-pyserial python-pyusb
-dfu-util esptool socat screen
+python-pyserial minicom moserial
+python-pyusb socat screen dfu-util
 
 --------------------------------------------------------------------------------
 
@@ -100,38 +99,6 @@ sudo groupadd -fr uucp
 
 sudo gpasswd -a $USER lock
 sudo gpasswd -a $USER uucp
-```
-
-### configure arduino-cli
-
-```sh
-arduino-cli config init
-
-arduino-cli sketch new LED
-cd LED/
-
-arduino-cli core update-index
-arduino-cli core search nano
-arduino-cli core install arduino:avr
-arduino-cli core list
-
-arduino-cli lib search DHT11 | grep DHT11
-arduino-cli lib install "DHT11"
-
-# generate compilation database
-# in Vim -> :set ft=cpp
-arduino-cli compile \
---build-path ./build \
---only-compilation-database \
---fqbn arduino:avr:nano
-
-arduino-cli compile \
---build-path ./build \
---export-binaries \
---fqbn arduino:avr:nano
-
-arduino-cli board list
-arduino-cli upload --fqbn arduino:avr:nano --port /dev/ttyUSB0
 ```
 
 ### configure st-link
@@ -303,7 +270,7 @@ pio home --shutdown-timeout 1 &
 #sed -i "s@'dark'@'light'@g" $HOME/.platformio/packages/contrib-piohome/index.html
 ```
 
-#### example arduino avr
+#### example avr chip
 
 ```sh
 source $HOME/platformio/bin/activate

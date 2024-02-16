@@ -515,3 +515,77 @@ echo "device/port selection"
 scrcpy -w -S --disable-screensaver --no-audio [-d/-e] <device>
 scrcpy -w -S --disable-screensaver --no-audio --tcpip[=ip[:port]]
 ```
+
+--------------------------------------------------------------------------------------------------
+
+## Arduino
+
+### setup
+
+```sh
+cd $HOME
+mkdir -p ~/.local/arduino-cli/bin/
+
+cd ~/.local/arduino-cli/
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | bash
+
+export PATH=$PATH:~/.local/arduino-cli/bin
+arduino-cli version
+```
+
+### example
+
+```sh
+export PATH=$PATH:~/.local/arduino-cli/bin
+
+arduino-cli config init
+
+arduino-cli sketch new LED
+cd LED/
+
+arduino-cli core update-index
+arduino-cli core search nano
+arduino-cli core install arduino:avr
+arduino-cli core list
+
+arduino-cli lib search DHT11 | grep DHT11
+arduino-cli lib install "DHT11"
+
+# generate compilation database
+# in Vim -> :set ft=cpp
+arduino-cli compile \
+--build-path ./build \
+--only-compilation-database \
+--fqbn arduino:avr:nano
+
+arduino-cli compile \
+--build-path ./build \
+--export-binaries \
+--fqbn arduino:avr:nano
+
+arduino-cli board list
+arduino-cli upload --fqbn arduino:avr:nano --port /dev/ttyUSB0
+```
+
+### vscode
+
+```sh
+code --list-extensions
+
+code --force --install-extension cschlosser.doxdocgen
+code --force --install-extension ms-vscode.cpptools
+code --force --install-extension vsciot-vscode.vscode-arduino
+code --force --install-extension ms-vscode.vscode-serial-monitor
+```
+
+Optional settings to:
+- Windows: **%APPDATA%\Roaming\VSCodium\User\settings.json**
+- Linux: **~/.config/Code/User/settings.json**
+
+```json
+"arduino.path": "~/.local/arduino-cli/bin",
+"arduino.commandPath": "arduino-cli",
+"arduino.useArduinoCli": true,
+"arduino.enableUSBDetection": true,
+"arduino.logLevel": "verbose",
+```
