@@ -260,21 +260,27 @@ mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
 ```sh
 code --list-extensions
 
-#code --force --install-extension vscodevim.vim
-#code --force --install-extension ms-pyright.pyright
-#code --force --install-extension llvm-vs-code-extensions.vscode-clangd
-
 code --force --install-extension ms-vscode.cpptools
 code --force --install-extension ms-python.python
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension mads-hartmann.bash-ide-vscode
+```
 
-code --force --install-extension reditorsupport.r
+```sh
+code --force --install-extension golang.go
 code --force --install-extension rust-lang.rust-analyzer
 ```
 
 ```sh
-# disable Microsoft C/C++ extension for CLangd
+#code --force --install-extension vscodevim.vim
+#code --force --install-extension ms-pyright.pyright
+```
+
+```sh
+# Using CLangd instead Microsoft C/C++
+
+code --force --install-extension llvm-vs-code-extensions.vscode-clangd
+
 sed -i 's#Engine": "default"#Engine": "disabled"#g' \
 ~/.config/VSCodium/User/settings.json
 ```

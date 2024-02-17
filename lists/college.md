@@ -148,6 +148,12 @@ r -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
 r -e 'library(xlsx)'
 ```
 
+```sh
+# using VSCode
+
+code --force --install-extension reditorsupport.r
+```
+
 ### configure wps office
 
 ```sh
