@@ -20,6 +20,10 @@ kicad-library-3d ngspice
 
 - https://aur.archlinux.org/packages/cura-bin/
 
+### install kicad libraries
+
+- https://aur.archlinux.org/packages/kicad-library-espressif-git/
+
 --------------------------------------------------------------------------------
 
 ## External
@@ -55,7 +59,7 @@ FreeCAD recommended plugins:
 #### kicad menu
 
 ```sh
-for i in `pacman -Qlq kicad | grep desktop`;do sudo sed -i "s#Categories=Science;Electronics;#Categories=Development;#g" $i;done
+for i in `pacman -Qlq kicad | grep desktop`;do sudo sed -i "s#Categories=Science;Electronics;#Categories=Graphics;#g" $i;done
 ```
 
 #### kicad plugins

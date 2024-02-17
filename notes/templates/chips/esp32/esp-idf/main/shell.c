@@ -27,7 +27,7 @@ static int reboot_cb(int argc, char *argv[]){
 static void reboot_reg(void){
     const esp_console_cmd_t cmd = {
         .command = "reboot",
-        .help = "Usage: reboot",
+        .help = "Reboot the chip",
         .hint = NULL,
         .func = &reboot_cb
     };
@@ -42,7 +42,7 @@ static int serialTest_cb(int argc, char *argv[]){
 static void serialTest_reg(void){
     const esp_console_cmd_t cmd = {
         .command = "test",
-        .help = "Usage: test",
+        .help = "Testing Console",
         .hint = NULL,
         .func = &serialTest_cb
     };

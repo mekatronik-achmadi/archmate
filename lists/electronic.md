@@ -177,6 +177,7 @@ CONFIG_CONSOLE_UART_BAUDRATE=115200
 CONFIG_ESP_CONSOLE_UART_BAUDRATE=115200' > sdkconfig.defaults
 
 make defconfig
+bear -- make app
 ```
 
 ```sh
@@ -213,6 +214,7 @@ CONFIG_MBEDTLS_CERTIFICATE_BUNDLE_DEFAULT_CMN=y
 ' > sdkconfig.defaults
 
 make defconfig
+bear -- make app
 ```
 
 ```sh
