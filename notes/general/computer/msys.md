@@ -201,7 +201,10 @@ Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**
 
 ```json
 {
-  "C_Cpp.intelliSenseEngine": "default",
+  "clangd.arguments": [
+    "-header-insertion=never"
+  ],
+  "C_Cpp.intelliSenseEngine": "disabled",
   "doxdocgen.file.customTag": [
     "@addtogroup ",
     "@{"
@@ -253,10 +256,11 @@ Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**
 ```sh
 code --list-extensions
 
-code --force --install-extension cschlosser.doxdocgen
-code --force --install-extension ms-vscode.cpptools
 code --force --install-extension ms-python.python
+code --force --install-extension ms-python.vscode-pylance
+code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension mads-hartmann.bash-ide-vscode
+code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 ```
 
 ```sh

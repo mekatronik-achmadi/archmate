@@ -573,9 +573,9 @@ arduino-cli upload --fqbn arduino:avr:nano --port /dev/ttyUSB0
 code --list-extensions
 
 code --force --install-extension cschlosser.doxdocgen
-code --force --install-extension ms-vscode.cpptools
 code --force --install-extension vsciot-vscode.vscode-arduino
 code --force --install-extension ms-vscode.vscode-serial-monitor
+code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 ```
 
 Optional settings to:

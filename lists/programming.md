@@ -227,7 +227,7 @@ echo "{}" > "$VSCONFDIR/settings.json"
 
 jq '
 ."clangd.arguments"=["-header-insertion=never"] |
-."C_Cpp.intelliSenseEngine"="default" |
+."C_Cpp.intelliSenseEngine"="disabled" |
 ."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
 ."doxdocgen.file.fileOrder"=["file","brief","empty","custom"] |
 ."editor.fontFamily"="'\''Liberation Mono'\''" |
@@ -260,10 +260,11 @@ mv "$VSCONFDIR/temp.json" "$VSCONFDIR/settings.json"
 ```sh
 code --list-extensions
 
-code --force --install-extension ms-vscode.cpptools
 code --force --install-extension ms-python.python
+code --force --install-extension ms-python.vscode-pylance
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension mads-hartmann.bash-ide-vscode
+code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 ```
 
 ```sh
@@ -277,10 +278,11 @@ code --force --install-extension rust-lang.rust-analyzer
 ```
 
 ```sh
-# Using CLangd instead Microsoft C/C++
+# Using Microsoft C/C++ instead Clangd
 
-code --force --install-extension llvm-vs-code-extensions.vscode-clangd
+code --force --uninstall-extension llvm-vs-code-extensions.vscode-clangd
+code --force --install-extension ms-vscode.cpptools
 
-sed -i 's#Engine": "default"#Engine": "disabled"#g' \
+sed -i 's#Engine": "disabled"#Engine": "default"#g' \
 ~/.config/VSCodium/User/settings.json
 ```

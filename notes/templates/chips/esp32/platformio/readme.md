@@ -35,8 +35,8 @@ pio home --shutdown-timeout 1 &
 ```sh
 source $HOME/platformio/bin/activate
 
-pio project init --ide vim --board esp32dev
-#pio project init --ide vscode --board esp32dev
+pio project init --board esp32dev
+#pio project init --ide vim --board esp32dev
 ```
 
 ### Build

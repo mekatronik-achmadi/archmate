@@ -35,8 +35,8 @@ pio home --shutdown-timeout 1 &
 ```sh
 source $HOME/platformio/bin/activate
 
-pio project init --ide vim --board nanoatmega328
-#pio project init --ide vscode --board nanoatmega328
+pio project init --board nanoatmega328
+#pio project init --ide vim --board nanoatmega328
 ```
 
 ### Build

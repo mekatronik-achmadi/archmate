@@ -35,8 +35,8 @@ pio home --shutdown-timeout 1 &
 ```sh
 source $HOME/platformio/bin/activate
 
+pio project init --board nodemcu
 pio project init --ide vim --board nodemcu
-#pio project init --ide vscode --board nodemcu
 ```
 
 ### Build

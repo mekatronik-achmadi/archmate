@@ -278,7 +278,7 @@ pio home --shutdown-timeout 1 &
 source $HOME/platformio/bin/activate
 
 mkdir -p blink/;cd blink/
-pio project init --ide vim --board nanoatmega328
+pio project init --board nanoatmega328
 
 echo -e '#PlatformIO Makefile
 all:
