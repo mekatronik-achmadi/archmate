@@ -142,6 +142,7 @@ vim +PlugStatus
 # basic settings
 echo -e "call plug#begin('~/.vim/pack/plug/start')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'm-pilia/vim-pkgbuild'
 Plug 'tpope/vim-commentary'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/csv.vim'
@@ -167,9 +168,6 @@ vim -c "CocInstall coc-pairs coc-snippets coc-sh coc-ultisnips"
 vim -c "CocInstall coc-clangd coc-jedi coc-json coc-tsserver"
 vim -c "CocInstall coc-html coc-yaml coc-go coc-rust-analyzer"
 vim +PlugClean
-
-echo "For editing PKGBUILD"
-echo ":set ft=PKGBUILD"
 ```
 
 ```sh

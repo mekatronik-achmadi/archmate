@@ -23,11 +23,9 @@ default-layout='manjaro'
 show-icon=true
 
 [org.mate.caja.desktop]
-home-icon-visible=true
-trash-icon-visible=true
-computer-icon-visible=true
-
-[org.mate.caja.desktop]
+home-icon-visible=false
+trash-icon-visible=false
+computer-icon-visible=false
 volumes-visible=false
 network-icon-visible=false
 
@@ -47,24 +45,24 @@ pinned-shortcuts=[]
 rollover-activate=false
 favourites=['pluma.desktop', 'caja-browser.desktop', 'mate-terminal.desktop', 'firefox.desktop', 'matecc.desktop']
 
-[org.mate.mate-menu]
-hot-key='Super_L'
-applet-text='Start'
-plugins-list=['places', 'system_management', 'newpane', 'applications']
-start-with-favorites=true
-
-[org.mate.mate-menu.plugins.applications]
-show-application-comments=false
-swap-generic-name=true
-
-[org.mate.mate-menu.plugins.places]
-show-gtk-bookmarks=false
-
-[org.mate.mate-menu.plugins.system_management]
-show-package-manager=false
-
 [org.onboard]
 layout='/usr/share/onboard/layouts/Compact.onboard'
+
+#[org.mate.mate-menu]
+#hot-key='Super_L'
+#applet-text='Start'
+#plugins-list=['places', 'system_management', 'newpane', 'applications']
+#start-with-favorites=true
+
+#[org.mate.mate-menu.plugins.applications]
+#show-application-comments=false
+#swap-generic-name=true
+
+#[org.mate.mate-menu.plugins.places]
+#show-gtk-bookmarks=false
+
+#[org.mate.mate-menu.plugins.system_management]
+#show-package-manager=false
 
 ################################# APP ##########################################
 
@@ -96,7 +94,7 @@ exit-with-last-window=false
 
 [org.mate.caja.window-state]
 start-with-status-bar=true
-start-with-toolbar=true
+start-with-toolbar=false
 start-with-sidebar=true
 
 [org.mate.caja-open-terminal]
@@ -116,7 +114,7 @@ default-extension='.tar.gz'
 auto-save=true
 auto-save-interval=10
 bracket-matching=true
-toolbar-visible=true
+toolbar-visible=false
 statusbar-visible=true
 side-pane-visible=false
 display-line-numbers=true
@@ -136,7 +134,7 @@ use-mnemonics=false
 use-menu-accelerators=false
 
 [org.mate.terminal.profile]
-default-show-menubar=false
+default-show-menubar=true
 use-custom-default-size=true
 default-size-columns=80
 default-size-rows=25

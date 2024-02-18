@@ -121,6 +121,7 @@ vim +PlugStatus
 ```sh
 echo "
 call plug#begin('~/.vim/pack/plug/start')
+    Plug 'm-pilia/vim-pkgbuild'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'
@@ -176,9 +177,6 @@ vim +PlugInstall
 vim -c "CocInstall coc-pairs coc-snippets coc-json"
 vim -c "CocInstall coc-clangd coc-jedi coc-tsserver"
 vim +PlugClean
-
-echo "For editing PKGBUILD"
-echo ":set ft=PKGBUILD"
 ```
 
 ```sh
