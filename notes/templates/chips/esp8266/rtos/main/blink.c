@@ -47,7 +47,7 @@ void blink_Init(void){
 
     xTaskCreate(ledTask,
             "led task",
-            8,
+            256,
             NULL,
             tskIDLE_PRIORITY+1,
             NULL);
