@@ -12,5 +12,7 @@ void app_main(){
     while (1) {
         int shell = shell_Loop();
         if(shell==1) break;
+
+        vTaskDelay(1/portTICK_PERIOD_MS);
     }
 }
