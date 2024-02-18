@@ -142,7 +142,6 @@ vim +PlugStatus
 # basic settings
 echo -e "call plug#begin('~/.vim/pack/plug/start')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'm-pilia/vim-pkgbuild'
 Plug 'tpope/vim-commentary'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/csv.vim'

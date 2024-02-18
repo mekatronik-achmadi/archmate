@@ -176,6 +176,7 @@ fake-hwclock
 hardinfo-git
 
 vim-plug-git
+vim-pkgbuild-git
 vim-devicons-git
 
 archmate-font

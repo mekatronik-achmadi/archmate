@@ -251,6 +251,7 @@ edk2-ovmf
 ### install vim additionals
 
 - vim-plug-git: https://aur.archlinux.org/packages/vim-plug-git/
+- vim-pkgbuild-git: https://aur.archlinux.org/packages/vim-pkgbuild-git/
 - vim-devicons-git: https://aur.archlinux.org/packages/vim-devicons-git/
 
 ### install custom packages

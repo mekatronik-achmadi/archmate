@@ -134,11 +134,11 @@ use-mnemonics=false
 use-menu-accelerators=false
 
 [org.mate.terminal.profile]
-default-show-menubar=true
+default-show-menubar=false
 use-custom-default-size=true
 default-size-columns=80
 default-size-rows=25
-cursor-blink-mode='on'
+cursor-blink-mode='off'
 
 [org.gnome.meld]
 highlight-syntax=true
