@@ -15,8 +15,10 @@ editable_fehbg() {
 
 menu_cleaning() {
     rm -f /usr/share/applications/volumeicon.desktop
+    rm -f /usr/share/applications/tint2conf.desktop
     rm -f /usr/share/applications/openbox.desktop
     rm -f /usr/share/applications/obconf.desktop
+    rm -f /usr/share/applications/tint2.desktop
     rm -f /usr/share/applications/feh.desktop
 }
 
