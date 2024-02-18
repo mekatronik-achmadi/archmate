@@ -42,7 +42,7 @@ void led_Init(void){
             "LED-Task",
             8,
             NULL,
-            tskIDLE_PRIORITY+1,,
+            tskIDLE_PRIORITY+1,
             NULL);
 }
 

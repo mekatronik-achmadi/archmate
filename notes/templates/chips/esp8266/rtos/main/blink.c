@@ -28,10 +28,10 @@ static void ledTask(void *arg){
 
     while (1) {
        gpio_set_level(GPIO_OUTPUT_LED,0);
-       vTaskDelay(GPIO_BLINK_DELAY / portTICK_RATE_MS);
+       vTaskDelay(GPIO_BLINK_DELAY / portTICK_PERIOD_MS);
 
        gpio_set_level(GPIO_OUTPUT_LED,1);
-       vTaskDelay(GPIO_BLINK_DELAY / portTICK_RATE_MS);
+       vTaskDelay(GPIO_BLINK_DELAY / portTICK_PERIOD_MS);
     }
 }
 
