@@ -13,14 +13,23 @@ editable_fehbg() {
     chmod a+w /usr/share/openbox/fehbg
 }
 
+menu_cleaning() {
+    rm -f /usr/share/applications/volumeicon.desktop
+    rm -f /usr/share/applications/openbox.desktop
+    rm -f /usr/share/applications/obconf.desktop
+    rm -f /usr/share/applications/feh.desktop
+}
+
 post_install() {
     openbox_symlink
     editable_fehbg
     bashrun_theme
+    menu_cleaning
 }
 
 post_upgrade() {
     openbox_symlink
     editable_fehbg
     bashrun_theme
+    menu_cleaning
 }
