@@ -18,6 +18,7 @@
 - Conda
 - PyTest
 - Flatpak
+- Linting
 - Python-2
 - Mono/NET
 - Nativefier
