@@ -132,6 +132,7 @@ call plug#begin('~/.vim/pack/plug/start')
     Plug 'airblade/vim-gitgutter'
     Plug 'godlygeek/tabular'
     Plug 'preservim/tagbar'
+    Plug 'preservim/vim-markdown'
     Plug 'chrisbra/csv.vim'
 \"    Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
@@ -145,6 +146,10 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_autowrite = 1
 
 autocmd BufWritePre * %s/\s\+$//e
 filetype plugin on
