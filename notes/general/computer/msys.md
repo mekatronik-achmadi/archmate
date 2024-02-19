@@ -122,6 +122,7 @@ vim +PlugStatus
 echo "
 call plug#begin('~/.vim/pack/plug/start')
     Plug 'm-pilia/vim-pkgbuild'
+    Plug 'dense-analysis/ale'
     Plug 'preservim/nerdcommenter'
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'

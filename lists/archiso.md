@@ -31,9 +31,9 @@ posix-xsi posix-c-development
 
 ### install vim editor
 
-vim vim-nerdtree vim-surround
-vim-nerdcommenter vim-gitgutter
+vim-ale vim-nerdtree vim-surround
 vim-airline vim-tagbar vim-tabular
+vim vim-nerdcommenter vim-gitgutter
 
 ### install xorg server
 

@@ -19,9 +19,9 @@ cdrtools syslinux
 posix posix-software-development
 posix-xsi posix-c-development
 
-vim vim-nerdtree vim-surround
-vim-nerdcommenter vim-gitgutter
+vim-ale vim-nerdtree vim-surround
 vim-airline vim-tagbar vim-tabular
+vim vim-nerdcommenter vim-gitgutter
 
 xorg xorg-apps xorg-drivers
 xorg-xinit xorg-fonts

@@ -17,7 +17,6 @@
 - Snap
 - Conda
 - PyTest
-- Linting
 - Flatpak
 - Python-2
 - Mono/NET
