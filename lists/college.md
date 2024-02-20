@@ -4,7 +4,7 @@
 
 ### install libreoffice
 
-libreoffice-fresh coin-or-mp
+libreoffice-still coin-or-mp
 
 ### install fortran
 
@@ -64,11 +64,9 @@ fftw liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/ttf-ms-fonts/
 - https://aur.archlinux.org/packages/ttf-vista-fonts/
 
-### install wps office
+### install onlyoffice
 
-- https://aur.archlinux.org/packages/libtiff5/
-- https://aur.archlinux.org/packages/wps-office/
-- https://aur.archlinux.org/packages/ttf-wps-fonts/
+https://aur.archlinux.org/packages/onlyoffice-bin/
 
 ### install python additionals
 
@@ -104,6 +102,15 @@ fftw liquid-dsp libsndfile
 --------------------------------------------------------------------------------
 
 ## Configurations
+
+### configure onlyoffice
+
+```sh
+sudo sed -i 's#desktopeditors %F#desktopeditors --system-title-bar %F#g' \
+/usr/share/applications/onlyoffice-desktopeditors.desktop
+sudo sed -i 's#desktopeditors --new#desktopeditors --system-title-bar --new#g' \
+/usr/share/applications/onlyoffice-desktopeditors.desktop
+```
 
 ### configure r programming
 
@@ -152,15 +159,6 @@ r -e 'library(xlsx)'
 # using VSCode
 
 code --force --install-extension reditorsupport.r
-```
-
-### configure wps office
-
-```sh
-sudo rm -f /usr/share/applications/wps-office-pdf.desktop
-sudo rm -f /usr/share/applications/wps-office-prometheus.desktop
-sudo sed -i '/^$/d' /usr/share/desktop-directories/wps-office.directory
-echo 'NoDisplay=true' | sudo tee -a /usr/share/desktop-directories/wps-office.directory
 ```
 
 ### configure texstudio

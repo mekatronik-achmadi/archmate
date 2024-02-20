@@ -28,6 +28,12 @@
 - https://aur.archlinux.org/packages/rstudio-desktop-bin/
 - https://aur.archlinux.org/packages/mendeleydesktop-bundled/
 
+### install wps office
+
+- https://aur.archlinux.org/packages/libtiff5/
+- https://aur.archlinux.org/packages/wps-office/
+- https://aur.archlinux.org/packages/ttf-wps-fonts/
+
 --------------------------------------------------------------------------------
 
 ## External
@@ -158,6 +164,15 @@ sudo systemctl start teamviewerd
 
 ```sh
 sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
+```
+
+### configure wps office
+
+```sh
+sudo rm -f /usr/share/applications/wps-office-pdf.desktop
+sudo rm -f /usr/share/applications/wps-office-prometheus.desktop
+sudo sed -i '/^$/d' /usr/share/desktop-directories/wps-office.directory
+echo 'NoDisplay=true' | sudo tee -a /usr/share/desktop-directories/wps-office.directory
 ```
 
 ### configure lxde session
