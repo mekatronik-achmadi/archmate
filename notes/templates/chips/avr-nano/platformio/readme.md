@@ -34,9 +34,23 @@ pio home --shutdown-timeout 1 &
 
 ```sh
 source $HOME/platformio/bin/activate
+mkdir -p blink/;cd blink/
 
 pio project init --board nanoatmega328
 #pio project init --ide vim --board nanoatmega328
+```
+
+with freertos
+
+```sh
+source $HOME/platformio/bin/activate
+mkdir -p blink_rtos/;cd blink_rtos/
+
+pio project init --board nanoatmega328
+#pio project init --ide vim --board nanoatmega328
+
+pio lib search freertos
+pio lib -g install feilipu/FreeRTOS
 ```
 
 ### Build
