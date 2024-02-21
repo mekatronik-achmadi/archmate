@@ -248,6 +248,13 @@ pip install platformio
 deactivate
 ```
 
+#### install inside vscode
+
+```sh
+code --force --install-extension platformio.platformio-ide
+code --force --install-extension ms-vscode.vscode-serial-monitor
+```
+
 #### install udev
 
 ```sh
