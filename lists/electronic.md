@@ -263,11 +263,10 @@ sudo udevadm trigger
 ```sh
 source $HOME/platformio/bin/activate
 
-pio home --shutdown-timeout 1 &
+pio home --no-open &
+#pio home --host=0.0.0.0 --no-open &
 
-#pio home --no-open
-#pio home --host=0.0.0.0 --no-open
-#xdg-open http://localhost:8008/
+xdg-open http://localhost:8008/ &
 
 #sed -i "s@'dark'@'light'@g" $HOME/.platformio/packages/contrib-piohome/index.html
 ```
@@ -278,7 +277,10 @@ pio home --shutdown-timeout 1 &
 source $HOME/platformio/bin/activate
 
 mkdir -p blink/;cd blink/
-pio project init --board nanoatmega328
+pio project init -b nanoatmega328
+
+#pio project init -b nanoatmega328 --ide vim
+#pio project init -b nanoatmega328 --ide vscode
 
 echo -e '#PlatformIO Makefile
 all:

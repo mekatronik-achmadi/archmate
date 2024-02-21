@@ -7,7 +7,7 @@
 #include <string.h>
 
 #define CHARLEN     16
-#define BAUDRATE    9600
+#define BAUDRATE    115200
 
 char inString[CHARLEN];
 

@@ -23,9 +23,8 @@ cd -
 
 ```
 source $HOME/platformio/bin/activate
-pio home --shutdown-timeout 1 &
-
-#xdg-open http://localhost:8008/ &
+pio home --no-open &
+xdg-open http://localhost:8008/ &
 ```
 
 ## Project
@@ -36,11 +35,35 @@ pio home --shutdown-timeout 1 &
 source $HOME/platformio/bin/activate
 mkdir -p blink/;cd blink/
 
-pio project init --board nodemcu
-pio project init --ide vim --board nodemcu
+pio project init -b nodemcuv2
+```
+
+```sh
+source $HOME/platformio/bin/activate
+mkdir -p blink-rtos/;cd blink-rtos/
+
+pio project init -b nodemcuv2 -O 'framework=esp8266-rtos-sdk'
 ```
 
 ### Build
+
+```sh
+echo -e 'all:
+\tpio run
+
+compiledb:
+\tpio run --target compiledb
+
+upload:
+\tpio run --target upload
+
+clean:
+\tpio run --target clean
+
+monitor:
+\tpio device monitor -p /dev/ttyUSB0 -b 115200
+' | tee Makefile
+```
 
 ```sh
 source $HOME/platformio/bin/activate
