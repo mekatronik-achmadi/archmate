@@ -23,9 +23,8 @@ cd -
 
 ```
 source $HOME/platformio/bin/activate
-pio home --shutdown-timeout 1 &
-
-#xdg-open http://localhost:8008/ &
+pio home --no-open &
+xdg-open http://localhost:8008/ &
 ```
 
 ## Project
@@ -40,7 +39,33 @@ pio project init --board esp32dev
 #pio project init --ide vim --board esp32dev
 ```
 
+```sh
+source $HOME/platformio/bin/activate
+mkdir -p blink-rtos/;cd blink-rtos/
+
+pio project init --board esp32dev -O 'framework=espidf'
+#pio project init --ide vim --board esp32dev -O 'framework=espidf'
+```
+
 ### Build
+
+```sh
+echo -e 'all:
+\tpio run
+
+compiledb:
+\tpio run --target compiledb
+
+upload:
+\tpio run --target upload
+
+clean:
+\tpio run --target clean
+
+monitor:
+\tpio device monitor -p /dev/ttyUSB0 -b 115200
+' | tee Makefile
+```
 
 ```sh
 source $HOME/platformio/bin/activate
