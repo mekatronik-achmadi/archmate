@@ -6,9 +6,9 @@ void blink_task(void* pvParameter){
 
     while (1) {
         digitalWrite(13,HIGH);
-        vTaskDelay(200/portTICK_PERIOD_MS);
+        vTaskDelay(100/portTICK_PERIOD_MS);
         digitalWrite(13,LOW);
-        vTaskDelay(200/portTICK_PERIOD_MS);
+        vTaskDelay(100/portTICK_PERIOD_MS);
     }
 }
 
@@ -27,6 +27,6 @@ void setup(){
 
 void loop(){
     Serial.println("Serial OK");
-    vTaskDelay(200/portTICK_PERIOD_MS);
+    vTaskDelay(100/portTICK_PERIOD_MS);
 }
 
