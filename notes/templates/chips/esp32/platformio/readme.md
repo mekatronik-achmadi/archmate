@@ -35,16 +35,14 @@ xdg-open http://localhost:8008/ &
 source $HOME/platformio/bin/activate
 mkdir -p blink/;cd blink/
 
-pio project init --board esp32dev
-#pio project init --ide vim --board esp32dev
+pio project init -b esp32dev
 ```
 
 ```sh
 source $HOME/platformio/bin/activate
 mkdir -p blink-rtos/;cd blink-rtos/
 
-pio project init --board esp32dev -O 'framework=espidf'
-#pio project init --ide vim --board esp32dev -O 'framework=espidf'
+pio project init -b esp32dev -O 'framework=espidf'
 ```
 
 ### Build

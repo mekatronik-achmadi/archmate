@@ -23,9 +23,8 @@ cd -
 
 ```
 source $HOME/platformio/bin/activate
-pio home --shutdown-timeout 1 &
-
-#xdg-open http://localhost:8008/ &
+pio home --no-open &
+xdg-open http://localhost:8008/ &
 ```
 
 ## Project
@@ -36,8 +35,7 @@ pio home --shutdown-timeout 1 &
 source $HOME/platformio/bin/activate
 mkdir -p blink/;cd blink/
 
-pio project init --board bluepill_f103c8
-#pio project init --ide vim --board bluepill_f103c8
+pio project init -b bluepill_f103c8
 ```
 
 ### Build
