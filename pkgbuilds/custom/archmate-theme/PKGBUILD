@@ -1,34 +1,24 @@
 pkgname=archmate-theme
-_raleigh=raleigh-reloaded
-_raleighver=1.6
 pkgver=0.1
 pkgrel=1
-pkgdesc="some GTK/Icon themes for Arch Linux MATE"
+pkgdesc="GTK/Icon index themes for Arch Linux MATE"
 arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('custom')
-conflicts=('raleigh-reloaded')
-provides=('raleigh-reloaded')
-depends=('mate-themes' 'gnome-themes-extra'
-	'sassc' 'gtk-engines' 'gtk-engine-murrine'
-	'gtk-update-icon-cache' 'icon-naming-utils'
+depends=(
+    'mate-themes' 'gnome-themes-extra'
+    'gtk-engines' 'gtk-engine-murrine'
     'papirus-icon-theme' 'arc-solid-gtk-theme'
-    'mate-icon-theme' 'mate-icon-theme-faenza')
+    'mate-icon-theme' 'mate-icon-theme-faenza'
+    'gtk-update-icon-cache' 'icon-naming-utils')
 install=pkg.install
 options=('!makeflags' '!strip')
-source=("${_raleigh}-${_raleighver}.tar.gz::https://github.com/vlastavesely/${_raleigh}/archive/refs/tags/v${_raleighver}.tar.gz")
-sha256sums=('SKIP')
 
 package() {
-    ####################### Raleigh Theme ####################
-
-    cd $srcdir/${_raleigh}-${_raleighver}/
-    make PREFIX="$pkgdir"/usr install
-
     ####################### Theme Index ####################
 
 	cd $srcdir/;cd ../
-    for i in Black Dark Faenza Light Mate Raleigh;do
+    for i in Black Dark Faenza Light Mate;do
 	    install -d $pkgdir/usr/share/themes/Standard-$i/;
 	    cp -f ./Standard-$i.theme $pkgdir/usr/share/themes/Standard-$i/index.theme;
     done

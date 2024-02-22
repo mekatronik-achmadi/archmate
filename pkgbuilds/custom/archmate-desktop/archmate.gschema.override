@@ -110,6 +110,13 @@ show-thousands=true
 [org.mate.engrampa.dialogs.batch-add]
 default-extension='.tar.gz'
 
+[org.mate.eom.ui]
+sidebar=false
+toolbar=false
+
+[org.mate.eom.plugins]
+active-plugins=['reload', 'statusbar-date']
+
 [org.mate.pluma]
 auto-save=true
 auto-save-interval=10
