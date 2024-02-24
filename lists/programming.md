@@ -139,7 +139,6 @@ vim +PlugStatus
 #### vim plugins settings
 
 ```sh
-# basic settings
 echo -e "call plug#begin('~/.vim/pack/plug/start')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
@@ -152,6 +151,9 @@ call plug#end()
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \\: \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\"
 
+\":h cterm-colors
+\":h gui-colors
+\":hi
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 
@@ -185,18 +187,6 @@ jq -n '
 ' > ~/.vim/coc-settings.json
 
 vim ~/.vim/coc-settings.json
-```
-
-#### vim colorscheme
-
-```
-:h cterm-colors
-:h gui-colors
-:hi
-```
-
-```sh
-sudo sed -i 's#colorscheme shine#colorscheme evening#' /etc/vimrc
 ```
 
 ### configure clangd

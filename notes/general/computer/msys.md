@@ -144,6 +144,9 @@ let g:coc_data_home = 'C:\\\\msys64\\\\home\\\\$USER\\\\.config\\\\coc'
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \\: \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\"
 
+\":h cterm-colors
+\":h gui-colors
+\":hi
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 
