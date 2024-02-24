@@ -255,6 +255,22 @@ code --force --install-extension platformio.platformio-ide
 code --force --install-extension ms-vscode.vscode-serial-monitor
 ```
 
+Open PlatformIO Project Tasks, from VSCode Quick Open (Ctrl+P):
+
+```
+View: Show PlatformIO
+```
+
+Then on **Quick Access** -> **PIO Home**, click **Open**
+
+Next, to open project, click **Pick a Folder** on Project Tasks.
+
+To access Serial Port, from VSCode Quick Open (Ctrl+P):
+
+```
+View: Toggle Serial Monitor
+```
+
 #### install udev
 
 ```sh
