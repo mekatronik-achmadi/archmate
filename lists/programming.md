@@ -225,22 +225,25 @@ jq '
 ."editor.fontFamily"="'\''Liberation Mono'\''" |
 ."editor.fontSize"=10 |
 ."editor.minimap.enabled"=false |
+."extensions.ignoreRecommendations"=true |
 ."files.trimTrailingWhitespace"=true |
 ."files.enableTrash"=false |
 ."git.openRepositoryInParentFolders"="never" |
+."git.enableSmartCommit"=true |
+."security.workspace.trust.untrustedFiles"="open" |
 ."terminal.integrated.fontSize"=10 |
 ."terminal.integrated.gpuAcceleration"="canvas" |
 ."debug.console.wordWrap"=false |
 ."workbench.startupEditor"="none" |
 ."workbench.activityBar.visible"=false |
 ."workbench.colorTheme"="Default Light+" |
-."security.workspace.trust.untrustedFiles"="open" |
 ."window.restoreWindows"="none" |
 ."window.commandCenter"=false |
 ."window.titleBarStyle"="native" |
 ."telemetry.telemetryLevel"="off" |
 ."telemetry.enableTelemetry"=false |
-."telemetry.enableCrashReporter"=false
+."telemetry.enableCrashReporter"=false |
+."update.mode"="none"
 ' "$VSCONFDIR/settings.json" | tee "$VSCONFDIR/temp.json"
 
 rm -f "$VSCONFDIR/settings.json"
