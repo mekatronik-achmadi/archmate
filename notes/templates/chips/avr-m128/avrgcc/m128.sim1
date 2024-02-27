@@ -1,0 +1,21 @@
+<circuit version="1.0.0-SR0" rev="1320" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega1280-2" mainComp="false" Show_id="true" Show_Val="false" Pos="616,740" rotation="0" hflip="1" vflip="1" label="mega1280" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="build/main.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="false" Wdt_enabled="false" />
+
+<item itemtype="Led" CircId="Led-3" mainComp="false" Show_id="false" Show_Val="false" Pos="560,996" rotation="-270" hflip="1" vflip="1" label="Led" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.5 Ω" />
+
+<item itemtype="Ground" CircId="Ground-4" mainComp="false" Show_id="false" Show_Val="false" Pos="560,1036" rotation="0" hflip="1" vflip="1" label="Ground-4" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-7" mainComp="false" ShowProp="Voltage" Show_id="true" Show_Val="true" Pos="644,1000" rotation="0" hflip="1" vflip="1" label="VCC" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Voltage="5 V" />
+
+<item itemtype="Resistor" CircId="Resistor-14" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="560,956" rotation="-90" hflip="1" vflip="1" label="Resistor-14" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 Ω" />
+
+<item itemtype="Connector" uid="connector-10" startpinid="Fixed Voltage-7-outnod" endpinid="mega1280-2-RST" pointList="660,1000,664,1000,664,972" />
+
+<item itemtype="Connector" uid="Connector-20" startpinid="mega1280-2-PORTB5" endpinid="Resistor-14-rPin" pointList="608,940,560,940" />
+
+<item itemtype="Connector" uid="Connector-21" startpinid="Resistor-14-lPin" endpinid="Led-3-lPin" pointList="560,972,560,980" />
+
+<item itemtype="Connector" uid="Connector-22" startpinid="Led-3-rPin" endpinid="Ground-4-Gnd" pointList="560,1012,560,1020" />
+
+</circuit>

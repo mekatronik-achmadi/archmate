@@ -1,5 +1,5 @@
 # MCU name
-MCU = atmega328
+MCU = atmega1280
 
 # Processor frequency.
 F_CPU = 16000000
