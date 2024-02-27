@@ -319,12 +319,38 @@
     <action name="MoveResizeTo"><y>-0</y><width>50%</width><height>50%</height></action>
   </keybind>
 
-    <!-- Keybindings for running applications -->
+    <!-- Keybindings for running LXDE applications -->
+    <keybind key="W-t">
+      <action name="Execute">
+        <command>lxterminal</command>
+      </action>
+    </keybind>
     <keybind key="W-r">
       <action name="Execute">
         <command>lxpanelctl run</command>
       </action>
     </keybind>
+    <keybind key="W-e">
+      <action name="Execute">
+       <startupnotify>
+         <enabled>true</enabled>
+           <name>PCManFM</name>
+       </startupnotify>
+       <command>pcmanfm</command>
+      </action>
+    </keybind>
+    <keybind key="W-w">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="W-f">
+      <action name='Execute'>
+        <command>pcmanfm --find-files</command>
+      </action>
+    </keybind>
+
+    <!-- Keybindings for running applications -->
     <keybind key="C-A-t">
       <action name="Execute">
         <command>lxterminal</command>
@@ -344,28 +370,25 @@
        <command>pcmanfm</command>
       </action>
     </keybind>
-  <keybind key="C-A-w">
-    <action name="Execute">
-     <command>firefox</command>
-    </action>
-  </keybind>
-  <keybind key="C-A-f">
-   <action name='Execute'>
-     <command>pcmanfm --find-files</command>
-   </action>
-  </keybind>
-  <!-- Keybindings for backlight/brightness -->
-  <keybind key="C-A-i">
-    <action name="Execute">
-      <command>brightnessctl -q s 5%-</command>
-    </action>
-  </keybind>
-  <keybind key="C-A-o">
-    <action name="Execute">
-      <command>brightnessctl -q s 5%+</command>
-    </action>
-  </keybind>
+    <keybind key="C-A-w">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+
+    <!-- Keybindings for backlight/brightness -->
+    <keybind key="C-A-i">
+      <action name="Execute">
+        <command>brightnessctl -q s 5%-</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-o">
+      <action name="Execute">
+        <command>brightnessctl -q s 5%+</command>
+      </action>
+    </keybind>
   </keyboard>
+
   <mouse>
     <dragThreshold>1</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->

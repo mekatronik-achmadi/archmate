@@ -5,13 +5,13 @@ pkgdesc="alternative session using LXDE GTK-3"
 arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
-depends=(
+depends=('firefox'
 'archmate-openbox'
-'gvfs' 'xarchiver'
-'lxde-icon-theme'
 'lxterminal' 'gpicview'
+'gvfs' 'xarchiver' 'xpdf'
 'lxde-common' 'lxpanel-gtk3'
 'lxhotkey-gtk3' 'lxinput-gtk3'
+'lxde-icon-theme' 'lxtask-gtk3'
 'pcmanfm-gtk3' 'lxsession-gtk3'
 'lxrandr-gtk3' 'lxappearance-gtk3'
 )
