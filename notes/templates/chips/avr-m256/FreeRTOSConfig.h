@@ -245,7 +245,7 @@
  * memory in the build.  Set to 0 to exclude the ability to create statically
  * allocated objects from the build.  Defaults to 0 if left undefined.  See
  * https://www.freertos.org/Static_Vs_Dynamic_Memory_Allocation.html. */
-#define configSUPPORT_STATIC_ALLOCATION              1
+#define configSUPPORT_STATIC_ALLOCATION              0
 
 /* Set configSUPPORT_DYNAMIC_ALLOCATION to 1 to include FreeRTOS API functions
  * that create FreeRTOS objects (tasks, queues, etc.) using dynamically allocated
@@ -333,7 +333,7 @@
  * the stack overflow callback when configCHECK_FOR_STACK_OVERFLOW is set to 1.
  * See https://www.freertos.org/Stacks-and-stack-overflow-checking.html  Defaults
  * to 0 if left undefined. */
-#define configCHECK_FOR_STACK_OVERFLOW        2
+#define configCHECK_FOR_STACK_OVERFLOW        0
 
 /******************************************************************************/
 /* Run time and task stats gathering related definitions. *********************/
@@ -537,32 +537,32 @@
 
 /* Set the following configUSE_* constants to 1 to include the named feature in
  * the build, or 0 to exclude the named feature from the build. */
-#define configUSE_TASK_NOTIFICATIONS           1
-#define configUSE_MUTEXES                      1
-#define configUSE_RECURSIVE_MUTEXES            1
-#define configUSE_COUNTING_SEMAPHORES          1
+#define configUSE_TASK_NOTIFICATIONS           0
+#define configUSE_MUTEXES                      0
+#define configUSE_RECURSIVE_MUTEXES            0
+#define configUSE_COUNTING_SEMAPHORES          0
 #define configUSE_QUEUE_SETS                   0
 #define configUSE_APPLICATION_TASK_TAG         0
 
 /* Set the following INCLUDE_* constants to 1 to incldue the named API function,
  * or 0 to exclude the named API function.  Most linkers will remove unused
  * functions even when the constant is 1. */
-#define INCLUDE_vTaskPrioritySet               1
-#define INCLUDE_uxTaskPriorityGet              1
-#define INCLUDE_vTaskDelete                    1
-#define INCLUDE_vTaskSuspend                   1
-#define INCLUDE_xResumeFromISR                 1
-#define INCLUDE_vTaskDelayUntil                1
+#define INCLUDE_vTaskPrioritySet               0
+#define INCLUDE_uxTaskPriorityGet              0
+#define INCLUDE_vTaskDelete                    0
+#define INCLUDE_vTaskSuspend                   0
+#define INCLUDE_xResumeFromISR                 0
+#define INCLUDE_vTaskDelayUntil                0
 #define INCLUDE_vTaskDelay                     1
-#define INCLUDE_xTaskGetSchedulerState         1
-#define INCLUDE_xTaskGetCurrentTaskHandle      1
+#define INCLUDE_xTaskGetSchedulerState         0
+#define INCLUDE_xTaskGetCurrentTaskHandle      0
 #define INCLUDE_uxTaskGetStackHighWaterMark    0
 #define INCLUDE_xTaskGetIdleTaskHandle         0
 #define INCLUDE_eTaskGetState                  0
-#define INCLUDE_xEventGroupSetBitFromISR       1
+#define INCLUDE_xEventGroupSetBitFromISR       0
 #define INCLUDE_xTimerPendFunctionCall         0
 #define INCLUDE_xTaskAbortDelay                0
 #define INCLUDE_xTaskGetHandle                 0
-#define INCLUDE_xTaskResumeFromISR             1
+#define INCLUDE_xTaskResumeFromISR             0
 
 #endif /* FREERTOS_CONFIG_H */

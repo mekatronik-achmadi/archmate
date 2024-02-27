@@ -4,6 +4,7 @@ RTOSSRC += croutine.c \
 		event_groups.c \
 		list.c \
 		queue.c \
-		stream_buffer.c \
 		tasks.c \
-		timers.c
+		timers.c \
+		port.c \
+		heap_4.c
