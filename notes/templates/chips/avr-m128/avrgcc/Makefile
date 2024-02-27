@@ -7,8 +7,11 @@ F_CPU = 16000000
 # Target file name (without extension).
 PROJECT = main
 
+# include FreeRTOS
+include freertos.mk
+
 # List C source files here. (C dependencies are automatically generated.)
-SRC = main.c
+SRC = main.c $(RTOSSRC)
 
 # Build output directory
 ODIR= build
@@ -81,7 +84,7 @@ DEBUG = dwarf-2
 #     Each directory must be seperated by a space.
 #     Use forward slashes for directory separators.
 #     For a directory that has spaces, enclose it in quotes.
-EXTRAINCDIRS =
+EXTRAINCDIRS = $(RTOSINC)
 
 
 # Compiler flag to set the C Standard level.

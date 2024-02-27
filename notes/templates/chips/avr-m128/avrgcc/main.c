@@ -1,5 +1,7 @@
 #include <avr/io.h>
 
+#include <FreeRTOS.h>
+
 int main(void)
 {
     DDRB |= 1<<5;
@@ -7,3 +9,4 @@ int main(void)
 
     return 0;
 }
+
