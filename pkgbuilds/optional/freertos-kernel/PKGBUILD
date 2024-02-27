@@ -1,0 +1,18 @@
+pkgname=freertos-kernel
+_pkgname=FreeRTOS-Kernel
+pkgver=11.0.1
+pkgrel=1
+pkgdesc='A free RTOS for embedded softwares (kernel only).'
+arch=('any')
+url="https://github.com/FreeRTOS/${_pkgname}"
+license=('MIT')
+source=("${_pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/V${pkgver}.tar.gz")
+md5sums=('SKIP')
+
+package() {
+    cd $srcdir/${_pkgname}-${pkgver}/
+
+    mkdir -p $pkgdir/opt/freertos/kernel/
+    cp -rf ./* $pkgdir/opt/freertos/kernel/
+}
+
