@@ -208,10 +208,12 @@ Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**
 
 ```json
 {
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "C_Cpp.autocompleteAddParentheses": true,
+  "C_Cpp.default.compileCommands": "compile_commands.json",
   "clangd.arguments": [
     "-header-insertion=never"
   ],
-  "C_Cpp.intelliSenseEngine": "disabled",
   "doxdocgen.file.customTag": [
     "@addtogroup ",
     "@{"

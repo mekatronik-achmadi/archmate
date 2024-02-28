@@ -218,8 +218,10 @@ mkdir -p "$VSCONFDIR"
 echo "{}" > "$VSCONFDIR/settings.json"
 
 jq '
-."clangd.arguments"=["-header-insertion=never"] |
 ."C_Cpp.intelliSenseEngine"="default" |
+."C_Cpp.autocompleteAddParentheses"=true |
+."C_Cpp.default.compileCommands"="compile_commands.json" |
+."clangd.arguments"=["-header-insertion=never"] |
 ."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
 ."doxdocgen.file.fileOrder"=["file","brief","empty","custom"] |
 ."editor.fontFamily"="'\''Liberation Mono'\''" |
