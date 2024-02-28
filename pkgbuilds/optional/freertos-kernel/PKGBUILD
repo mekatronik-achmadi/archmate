@@ -12,7 +12,7 @@ md5sums=('SKIP')
 package() {
     cd $srcdir/${_pkgname}-${pkgver}/
 
-    mkdir -p $pkgdir/opt/freertos/kernel/
-    cp -rf ./* $pkgdir/opt/freertos/kernel/
+    mkdir -p $pkgdir/opt/freertos/kernel/${pkgver}/
+    cp -rf ./* $pkgdir/opt/freertos/kernel/${pkgver}/
 }
 

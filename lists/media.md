@@ -46,7 +46,6 @@ ddrescue ext4magic foremost testdisk
 ### install youtube downloader
 
 - https://aur.archlinux.org/packages/yt-dlp-git/
-- https://aur.archlinux.org/packages/yt-dlp-drop-in/
 
 --------------------------------------------------------------------------------
 

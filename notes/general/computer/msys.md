@@ -268,14 +268,16 @@ code --list-extensions
 
 code --force --install-extension ms-python.python
 code --force --install-extension ms-python.vscode-pylance
+code --force --install-extension ms-vscode.cpptools
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension mads-hartmann.bash-ide-vscode
-code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 ```
 
 ```sh
-#code --force --install-extension vscodevim.vim
-#code --force --install-extension ms-pyright.pyright
+# not really recommended as it may difficult to use
+
+code --force --install-extension vscodevim.vim
+code --force --install-extension ms-pyright.pyright
 ```
 
 ### platformio

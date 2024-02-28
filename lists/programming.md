@@ -219,7 +219,7 @@ echo "{}" > "$VSCONFDIR/settings.json"
 
 jq '
 ."clangd.arguments"=["-header-insertion=never"] |
-."C_Cpp.intelliSenseEngine"="disabled" |
+."C_Cpp.intelliSenseEngine"="default" |
 ."doxdocgen.file.customTag"=["@addtogroup ","@{"] |
 ."doxdocgen.file.fileOrder"=["file","brief","empty","custom"] |
 ."editor.fontFamily"="'\''Liberation Mono'\''" |
@@ -257,9 +257,9 @@ code --list-extensions
 
 code --force --install-extension ms-python.python
 code --force --install-extension ms-python.vscode-pylance
+code --force --install-extension ms-vscode.cpptools
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension mads-hartmann.bash-ide-vscode
-code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 ```
 
 ```sh
@@ -268,16 +268,18 @@ code --force --install-extension rust-lang.rust-analyzer
 ```
 
 ```sh
-#code --force --install-extension vscodevim.vim
-#code --force --install-extension ms-pyright.pyright
+# not really recommended as it may difficult to use
+
+code --force --install-extension vscodevim.vim
+code --force --install-extension ms-pyright.pyright
 ```
 
 ```sh
-# Using Microsoft C/C++ instead Clangd
+# Using Clangd instead Microsoft C/C++
 
-code --force --uninstall-extension llvm-vs-code-extensions.vscode-clangd
-code --force --install-extension ms-vscode.cpptools
+code --force --uninstall-extension ms-vscode.cpptools
+code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 
-sed -i 's#Engine": "disabled"#Engine": "default"#g' \
+sed -i 's#Engine": "default"#Engine": "disabled"#g' \
 ~/.config/VSCodium/User/settings.json
 ```
