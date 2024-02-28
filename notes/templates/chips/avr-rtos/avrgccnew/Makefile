@@ -41,7 +41,7 @@ SRC = $(PRJ).c
 # e.g. EXT = ../../EyeToSee ../../YouSART
 EXT = freertos \
 	  freertos/include \
-	  freertos/portable/GCC/ATMega328 \
+	  freertos/portable/GCC/Nano \
 	  freertos/portable/MemMang
 
 
