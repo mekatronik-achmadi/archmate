@@ -1,0 +1,13 @@
+*
+!freertos
+!freertos/include
+!freertos/portable/GCC/ATMega328
+!freertos/portable/MemMang
+!Makefile
+!*.c
+!*.cpp
+!*.h
+!*.md
+!*.sim1
+!.gitignore
+
