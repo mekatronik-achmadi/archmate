@@ -334,15 +334,24 @@ make compiledb
 vim src/main.cpp
 ```
 
-#### install libraries
+#### using frameworks/libraries
 
 ```sh
 source $HOME/platformio/bin/activate
 
-pio pkg install -g -l 'feilipu/FreeRTOS'
-
+pio project init -b nanoatmega328 -O 'framework=arduino'
 pio project init -b nanoatmega328 -O 'lib_deps=feilipu/FreeRTOS'
 
 rm -f compile_commands.json
 make compiledb
+```
+
+#### arduino bootloader using USBAsp
+
+```sh
+cd ~/.platformio/packages/framework-arduino-avr/bootloaders/atmega/
+
+avrdude -C /etc/avrdude.conf \
+-p m328p -P usb -c usbasp \
+-U flash:w:ATmegaBOOT_168_atmega328.hex:a
 ```

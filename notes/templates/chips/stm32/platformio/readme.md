@@ -38,6 +38,13 @@ mkdir -p blink/;cd blink/
 pio project init -b bluepill_f103c8
 ```
 
+```sh
+source $HOME/platformio/bin/activate
+mkdir -p blink-rtos/;cd blink-rtos/
+
+pio project init -b bluepill_f103c8 -O 'lib_deps=stm32duino/STM32duino FreeRTOS'
+```
+
 ### Build
 
 ```sh
