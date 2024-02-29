@@ -1,0 +1,212 @@
+[
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/CDC.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/CDC.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/CDC.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/CDC.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/HardwareSerial.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/HardwareSerial.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/HardwareSerial0.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial0.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial0.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/HardwareSerial0.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/HardwareSerial1.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial1.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial1.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/HardwareSerial1.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/HardwareSerial2.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial2.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial2.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/HardwareSerial2.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/HardwareSerial3.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial3.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial3.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/HardwareSerial3.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/IPAddress.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/IPAddress.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/IPAddress.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/IPAddress.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/PluggableUSB.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/PluggableUSB.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/PluggableUSB.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/PluggableUSB.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/Print.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/Print.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/Print.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/Print.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/Stream.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/Stream.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/Stream.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/Stream.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/Tone.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/Tone.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/Tone.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/Tone.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/USBCore.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/USBCore.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/USBCore.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/USBCore.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/FrameworkArduino/WInterrupts.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/WInterrupts.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/WInterrupts.c",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/WInterrupts.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/WMath.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/WMath.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/WMath.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/WMath.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/WString.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/WString.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/WString.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/WString.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/abi.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/abi.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/abi.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/abi.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/FrameworkArduino/hooks.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/hooks.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/hooks.c",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/hooks.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/main.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/main.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/main.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/FrameworkArduino/new.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/new.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/new.cpp",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/new.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/FrameworkArduino/wiring.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring.c",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/wiring.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/FrameworkArduino/wiring_analog.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_analog.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_analog.c",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/wiring_analog.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/FrameworkArduino/wiring_digital.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_digital.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_digital.c",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/wiring_digital.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -mmcu=atmega328p -x assembler-with-cpp -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs -c -o .pio/build/nanoatmega328/FrameworkArduino/wiring_pulse.S.o /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_pulse.S",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_pulse.S",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/wiring_pulse.S.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/FrameworkArduino/wiring_pulse.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_pulse.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_pulse.c",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/wiring_pulse.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/FrameworkArduino/wiring_shift.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs /home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_shift.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_shift.c",
+        "output": ".pio/build/nanoatmega328/FrameworkArduino/wiring_shift.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/libb07/FreeRTOS/event_groups.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/event_groups.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/event_groups.c",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/event_groups.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/libb07/FreeRTOS/heap_3.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/heap_3.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/heap_3.c",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/heap_3.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/libb07/FreeRTOS/list.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/list.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/list.c",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/list.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/libb07/FreeRTOS/port.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/port.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/port.c",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/port.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/libb07/FreeRTOS/queue.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/queue.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/queue.c",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/queue.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/libb07/FreeRTOS/stream_buffer.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/stream_buffer.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/stream_buffer.c",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/stream_buffer.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/libb07/FreeRTOS/tasks.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/tasks.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/tasks.c",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/tasks.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/libb07/FreeRTOS/timers.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/timers.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/timers.c",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/timers.c.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/nanoatmega328/libb07/FreeRTOS/variantHooks.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs .pio/libdeps/nanoatmega328/FreeRTOS/src/variantHooks.cpp",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": ".pio/libdeps/nanoatmega328/FreeRTOS/src/variantHooks.cpp",
+        "output": ".pio/build/nanoatmega328/libb07/FreeRTOS/variantHooks.cpp.o"
+    },
+    {
+        "command": "/home/achmaday/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/nanoatmega328/src/main.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60113 -DARDUINO_AVR_NANO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc -I.pio/libdeps/nanoatmega328/FreeRTOS/src -I/home/achmaday/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/achmaday/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs src/main.c",
+        "directory": "/home/developments/Projects/archmate/notes/templates/chips/avr-rtos/platformio",
+        "file": "src/main.c",
+        "output": ".pio/build/nanoatmega328/src/main.c.o"
+    }
+]

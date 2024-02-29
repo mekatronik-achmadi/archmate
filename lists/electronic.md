@@ -294,21 +294,18 @@ source $HOME/platformio/bin/activate
 mkdir -p blink/;cd blink/
 pio project init -b nanoatmega328
 
-#pio project init -b nanoatmega328 --ide vim
-#pio project init -b nanoatmega328 --ide vscode
-
 echo -e '#PlatformIO Makefile
 all:
-\tpio run
+\tpio run -v
 
 compiledb:
-\tpio run --target compiledb
+\tpio run -v --target compiledb
 
 upload:
-\tpio run --target upload
+\tpio run -v --target upload
 
 clean:
-\tpio run --target clean
+\tpio run -v --target clean
 
 monitor:
 \tpio device monitor -p /dev/ttyUSB0 -b 115200
@@ -331,7 +328,21 @@ make all
 ls .pio/build/*/firmware.bin
 ls .pio/build/*/firmware.hex
 
+rm -f compile_commands.json
 make compiledb
+
 vim src/main.cpp
 ```
 
+#### install libraries
+
+```sh
+source $HOME/platformio/bin/activate
+
+pio pkg install -g -l 'feilipu/FreeRTOS'
+
+pio project init -b nanoatmega328 -O 'lib_deps=feilipu/FreeRTOS'
+
+rm -f compile_commands.json
+make compiledb
+```
