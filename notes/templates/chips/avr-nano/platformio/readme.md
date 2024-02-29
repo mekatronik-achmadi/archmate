@@ -38,6 +38,14 @@ mkdir -p blink/;cd blink/
 pio project init -b nanoatmega328
 ```
 
+```sh
+source $HOME/platformio/bin/activate
+mkdir -p blink-rtos/;cd blink-rtos/
+
+pio pkg install -g -l 'feilipu/FreeRTOS'
+pio project init -b nanoatmega328 -O 'lib_deps=feilipu/FreeRTOS'
+```
+
 ### Build
 
 ```sh
