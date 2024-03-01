@@ -296,16 +296,16 @@ pio project init -b nanoatmega328
 
 echo -e '#PlatformIO Makefile
 all:
-\tpio run -v
+\tpio run
 
 compiledb:
-\tpio run -v --target compiledb
+\tpio run --target compiledb
 
 upload:
 \tpio run -v --target upload
 
 clean:
-\tpio run -v --target clean
+\tpio run --target clean
 
 monitor:
 \tpio device monitor -p /dev/ttyUSB0 -b 115200
@@ -339,8 +339,8 @@ vim src/main.cpp
 ```sh
 source $HOME/platformio/bin/activate
 
-pio project init -b nanoatmega328 -O 'framework=arduino'
-pio project init -b nanoatmega328 -O 'lib_deps=feilipu/FreeRTOS'
+pio project init -b nanoatmega328 -O "framework=arduino"
+pio project init -b nanoatmega328 -O "lib_deps=feilipu/FreeRTOS"
 
 rm -f compile_commands.json
 make compiledb

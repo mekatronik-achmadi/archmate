@@ -42,7 +42,7 @@ pio project init -b nodemcuv2
 source $HOME/platformio/bin/activate
 mkdir -p blink-rtos/;cd blink-rtos/
 
-pio project init -b nodemcuv2 -O 'framework=esp8266-rtos-sdk'
+pio project init -b nodemcuv2 -O "framework=esp8266-rtos-sdk"
 ```
 
 ### Build

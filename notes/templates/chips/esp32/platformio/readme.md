@@ -42,7 +42,7 @@ pio project init -b esp32dev
 source $HOME/platformio/bin/activate
 mkdir -p blink-rtos/;cd blink-rtos/
 
-pio project init -b esp32dev -O 'framework=espidf'
+pio project init -b esp32dev -O "framework=espidf"
 ```
 
 ### Build
