@@ -40,6 +40,15 @@ pio project init -b nodemcuv2
 
 ```sh
 source $HOME/platformio/bin/activate
+mkdir -p blink-nonos/;cd blink-nonos/
+
+pio project init -b nodemcuv2 \
+-O "framework=esp8266-nonos-sdk" \
+-O "build_flags=-Isrc/include"
+```
+
+```sh
+source $HOME/platformio/bin/activate
 mkdir -p blink-rtos/;cd blink-rtos/
 
 pio project init -b nodemcuv2 -O "framework=esp8266-rtos-sdk"
