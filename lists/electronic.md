@@ -13,8 +13,8 @@ avr-gcc avr-gdb avr-libc avrdude
 
 ### install additional tools
 
-python-pyserial minicom moserial
-python-pyusb socat screen dfu-util
+python-pyserial socat minicom moserial
+python-pyusb esptool screen dfu-util
 
 --------------------------------------------------------------------------------
 
