@@ -9,25 +9,25 @@ Brief list from 'tree -L 3':
 
 ```
 chips
-├── avr-nano				: Arduino Nano based on ATMega328P
-│   ├── avrgcc			: Minimal AVR-GCC
-│   ├── avrgcc-rtos		: Minimal AVR-GCC and FreeRTOS
+├── avr-nano			: Arduino Nano based on ATMega328P
+│   ├── avrgcc		: Minimal AVR-GCC
+│   ├── avrgcc-rtos	: Minimal AVR-GCC and FreeRTOS
 │   └── platformio
 │       ├── blink		: Arduino
 │       ├── blink-rtos	: Arduino and FreeRTOS
-├── esp32				: ESP32 DevKit
-│   ├── esp-idf			: ESP-IDF (Espressif)
+├── esp32			: ESP32 DevKit
+│   ├── esp-idf		: ESP-IDF (Espressif)
 │   └── platformio
 │       ├── blink		: Arduino
 │       ├── blink-rtos	: ESP-IDF (PlatformIO)
-├── esp8266				: ESP8266 NodeMCU
+├── esp8266			: ESP8266 NodeMCU
 │   ├── platformio
 │   │   ├── blink		: Arduino
 │   │   ├── blink-nonos	: ESP8266-NONOS (PlatformIO)
 │   │   ├── blink-rtos	: ESP8266-RTOS (PlatformIO)
-│   └── rtos				: ESP8266-RTOS (Espressif)
-└── stm32				: BluePill based on STM32F103C8
-    ├── chibios			: ChibiOS/RT
+│   └── rtos			: ESP8266-RTOS (Espressif)
+└── stm32			: BluePill based on STM32F103C8
+    ├── chibios		: ChibiOS/RT
     └── platformio
         ├── blink		: Arduino
         ├── blink-rtos	: Arduino and STM32-FreeRTOS
