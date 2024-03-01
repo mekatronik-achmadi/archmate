@@ -23,7 +23,9 @@ xorg-xinit xorg-fonts
 xf86-video-armsoc-git
 xinput_calibrator
 xsel xclip xterm
+default-cursors
 xorg-fonts-misc
+xorg-xmessage
 
 tk ttf-liberation onboard
 ttf-liberation-mono-nerd

@@ -42,6 +42,7 @@ xorg xorg-apps xorg-drivers
 xorg-xinit xorg-fonts
 xsel xclip xterm
 xorg-fonts-misc
+default-cursors
 xorg-xmessage
 
 ### install login manager
@@ -66,6 +67,7 @@ sound-theme-freedesktop
 
 gtk3 wxgtk3 glade
 gtk2 gtkmm gtkmm3
+adwaita-cursors
 python-wxpython
 python-gobject
 
