@@ -1,0 +1,11 @@
+update_icon_cache() {
+	for i in /usr/share/icons/*;do gtk-update-icon-cache -qft $i;done
+}
+
+post_install() {
+	update_icon_cache
+}
+
+post_upgrade() {
+	update_icon_cache
+}

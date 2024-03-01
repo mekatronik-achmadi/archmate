@@ -1,0 +1,35 @@
+pkgname=archmate-lubuntu
+_archivename=lubuntu-artwork
+pkgver=0.71
+pkgrel=1
+pkgdesc="Lubuntu 18.04 default GTK theme, icons, and wallpapers"
+arch=('any')
+url="https://github.com/mekatronik-achmadi/archmate/"
+license=('GPL')
+depends=('ttf-ubuntu-font-family' 'gtk-engine-murrine')
+conflicts=('lubuntu-artwork')
+provides=('lubuntu-artwork')
+install=pkg.install
+options=('!makeflags' '!strip')
+source=("http://archive.ubuntu.com/ubuntu/pool/universe/l/${_archivename}/${_archivename}_${pkgver}.tar.xz")
+sha256sums=('SKIP')
+
+package() {
+    cp -r "${srcdir}/${_archivename}/src/usr" "${pkgdir}"
+
+    # cleaning unused
+    rm -rf $pkgdir/usr/share/icons/lubuntu
+    rm -rf $pkgdir/usr/share/icons/Lubuntu-dark-panel
+
+    rm -rf $pkgdir/usr/share/themes/Box*
+    rm -rf $pkgdir/usr/share/themes/Ozone*
+    rm -rf $pkgdir/usr/share/themes/LxDesign
+    rm -rf $pkgdir/usr/share/themes/Lubuntu\ Arc
+    rm -rf $pkgdir/usr/share/themes/Lubuntu-dark-panel
+
+    rm -rf $pkgdir/usr/share/lxdm
+    rm -rf $pkgdir/usr/share/lxqt
+    rm -rf $pkgdir/usr/share/plymouth
+    rm -rf $pkgdir/usr/share/sddm
+    rm -rf $pkgdir/usr/share/unity-greeter
+}
