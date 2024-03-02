@@ -4,7 +4,7 @@ font-name='Liberation Sans 8'
 monospace-font-name='LiterationMono Nerd Font 8'
 
 [org.gnome.desktop.wm.preferences]
-titlebar-font='Liberation Sans Bold 8'
+titlebar-font='Liberation Sans 8'
 
 [org.gnome.Charmap]
 font='Liberation Sans 8'
@@ -24,7 +24,7 @@ document-font-name='Liberation Sans 8'
 monospace-font-name='LiterationMono Nerd Font 8'
 
 [org.mate.Marco.general]
-titlebar-font='Liberation Sans Bold 8'
+titlebar-font='Liberation Sans 8'
 
 [org.mate.pluma]
 editor-font='LiterationMono Nerd Font 8'

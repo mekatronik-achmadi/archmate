@@ -49,18 +49,18 @@
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Liberation Sans</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
       <name>Liberation Sans</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -85,18 +85,18 @@
     </font>
     <font place="ActiveOnScreenDisplay">
       <name>Liberation Sans</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Liberation Sans</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>normal</slant>
       <!-- 'italic' or 'normal' -->
