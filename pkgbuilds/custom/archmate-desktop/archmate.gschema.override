@@ -32,9 +32,6 @@ network-icon-visible=false
 [org.mate.Marco.general]
 num-workspaces=1
 
-[org.mate.Marco.global-keybindings]
-panel-main-menu=''
-
 [com.solus-project.brisk-menu]
 hot-key='Super_L'
 dark-theme=false
@@ -94,7 +91,7 @@ exit-with-last-window=false
 
 [org.mate.caja.window-state]
 start-with-status-bar=true
-start-with-toolbar=false
+start-with-toolbar=true
 start-with-sidebar=true
 
 [org.mate.caja-open-terminal]
@@ -172,7 +169,8 @@ focus-mode='click'
 
 [org.mate.Marco.global-keybindings]
 run-command-terminal='<Control><Alt>t'
-panel-main-menu='disabled'
+panel-run-dialog='<Control><Alt>r'
+panel-main-menu='Super_L'
 switch-panels='disabled'
 switch-windows='<Alt>Tab'
 switch-windows-all='<Control><Alt>Tab'
@@ -188,10 +186,11 @@ tile-to-corner-se='<Primary><Shift>j'
 tile-to-corner-sw='<Primary><Shift>h'
 
 [org.mate.SettingsDaemon.plugins.media-keys]
+control-center='disabled'
 screensaver='disabled'
+search='<Primary><Alt>f'
 www='<Control><Alt>w'
 home='<Control><Alt>e'
-control-center='<Control><Alt>r'
 
 [org.mate.peripherals-touchpad]
 disable-while-typing=true

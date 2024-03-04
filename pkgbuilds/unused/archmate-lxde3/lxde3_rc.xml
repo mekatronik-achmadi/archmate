@@ -334,7 +334,7 @@
     </keybind>
     <keybind key="C-A-r">
       <action name="Execute">
-       <command>bashrun</command>
+       <command>lxpanelctl run</command>
       </action>
     </keybind>
     <keybind key="C-A-e">
@@ -349,11 +349,6 @@
     <keybind key="C-A-w">
       <action name="Execute">
         <command>firefox</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-q">
-      <action name="Execute">
-        <command>lxpanelctl run</command>
       </action>
     </keybind>
     <keybind key="C-A-f">
