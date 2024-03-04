@@ -119,6 +119,9 @@
   <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
     <action name="Execute"><command>onboard</command></action>
   </item>
+  <item label="SpaceFM" icon="/usr/share/icons/Papirus/32x32/apps/spacefm.svg">
+    <action name="Execute"><command>spacefm</command></action>
+  </item>
   <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
   <menu id="settings" icon="/usr/share/icons/Papirus/32x32/apps/preferences.svg"/>
   <menu id="client-list-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
