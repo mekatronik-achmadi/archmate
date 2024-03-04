@@ -170,7 +170,7 @@ focus-mode='click'
 [org.mate.Marco.global-keybindings]
 run-command-terminal='<Control><Alt>t'
 panel-run-dialog='<Control><Alt>r'
-panel-main-menu='Super_L'
+panel-main-menu='disabled'
 switch-panels='disabled'
 switch-windows='<Alt>Tab'
 switch-windows-all='<Control><Alt>Tab'
