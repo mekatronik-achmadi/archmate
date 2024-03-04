@@ -135,6 +135,7 @@ edk2-ovmf
 
 qt5gtk2 qt6gtk2
 gtk3-nocsd-git
+spacefm-gtk3
 
 downgrade
 fake-hwclock

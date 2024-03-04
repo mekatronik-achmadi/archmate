@@ -244,6 +244,7 @@ edk2-ovmf
 - gtk3-nocsd-git: https://aur.archlinux.org/packages/gtk3-nocsd-git/
 - mate-tweak: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/mate-tweak/
 - mate-zenity: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/mate-zenity/
+- spacefm-gtk3: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/spacefm-gtk3/
 
 ### install additional tools
 
