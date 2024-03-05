@@ -37,7 +37,7 @@ gdb gdb-dashboard
 lld llvm lldb
 go gopls rust
 rust-analyzer
-tcsh fltk
+tcsh fltk fox
 
 ### install javacript programming
 

@@ -2,17 +2,17 @@ linux linux-headers linux-firmware
 base base-devel multilib-devel
 
 bash-completion mkinitcpio
+cloc less bear archinstall
 squashfs-tools rsync dkms
+git tig fzf terminus-font
+pv cmus libxcrypt-compat
 most highlight mc fdupes
 neofetch lsb-release dtc
 nano dialog bc tmux tree
 curl wget openssh sshfs
 pacman-contrib mlocate
 virtualbox-guest-utils
-cmus libxcrypt-compat
-git tig terminus-font
 arch-install-scripts
-less pv archinstall
 mkinitcpio-archiso
 cdrtools syslinux
 
@@ -142,6 +142,7 @@ hardinfo-git
 
 vim-plug-git
 vim-devicons-git
+vim-pkgbuild-git
 
 archmate-font
 archmate-openbox

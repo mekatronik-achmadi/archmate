@@ -8,19 +8,18 @@ linux linux-headers linux-firmware
 base base-devel multilib-devel
 
 ### install basic tools
-
 bash-completion mkinitcpio
+cloc less bear archinstall
 squashfs-tools rsync dkms
+git tig fzf terminus-font
+pv cmus libxcrypt-compat
 most highlight mc fdupes
 neofetch lsb-release dtc
 nano dialog bc tmux tree
 curl wget openssh sshfs
 pacman-contrib mlocate
 virtualbox-guest-utils
-cmus libxcrypt-compat
-git tig terminus-font
 arch-install-scripts
-less pv archinstall
 mkinitcpio-archiso
 cdrtools syslinux
 
@@ -134,14 +133,14 @@ lrzip lzip lzop zstd cpio
 
 ### install build tools
 
+meson ninja setconf
+mercurial breezy cvs
 cblas openblas lapack
 gobject-introspection
 subversion mk-configure
 mate-common gnome-common
 pkgconf gendesk help2man
-bear meson ninja setconf
 automake autogen autoconf
-mercurial breezy cvs cloc
 cmake extra-cmake-modules
 dos2unix doxygen graphviz
 
@@ -255,6 +254,7 @@ edk2-ovmf
 
 - vim-plug-git: https://aur.archlinux.org/packages/vim-plug-git/
 - vim-devicons-git: https://aur.archlinux.org/packages/vim-devicons-git/
+- vim-pkgbuild-git: https://aur.archlinux.org/packages/vim-pkgbuild-git/
 
 ### install custom packages
 

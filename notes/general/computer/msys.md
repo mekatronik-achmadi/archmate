@@ -79,6 +79,7 @@ export HISTCONTROL=ignorespace:ignoredups:erasedupsT
 
 ```sh
 pacman -S $(echo "
+mingw-w64-x86_64-fzf
 mingw-w64-x86_64-python
 mingw-w64-x86_64-cython0
 mingw-w64-x86_64-python-pip
