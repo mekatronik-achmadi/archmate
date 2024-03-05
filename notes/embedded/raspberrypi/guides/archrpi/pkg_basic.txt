@@ -1,14 +1,15 @@
 linux-rpi-headers base-devel
 
 bash-completion mkinitcpio
-git tig fzf terminus-font
-rsync dkms less bear cloc
-most highlight mc fdupes
+cloc less bear rsync dkms
+pv cmus libxcrypt-compat
 neofetch lsb-release dtc
 nano dialog bc tmux tree
-pv cmus libxcrypt-compat
 curl wget openssh sshfs
 pacman-contrib mlocate
+git tig terminus-font
+highlight mc fdupes
+ripgrep bat fzf
 
 posix posix-software-development
 posix-xsi posix-c-development

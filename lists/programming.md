@@ -145,8 +145,8 @@ Plug 'tpope/vim-commentary'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/csv.vim'
 Plug 'SirVer/ultisnips'
+Plug 'junegunn/fzf.vim'
 Plug 'preservim/vim-markdown'
-Plug 'm-pilia/vim-pkgbuild'
 call plug#end()
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
@@ -157,6 +157,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 \":hi
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
+
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <C-g> :Rg<CR>
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1

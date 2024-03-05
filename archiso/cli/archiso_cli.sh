@@ -70,6 +70,25 @@ sed -i "s#Include = /etc/pacman.d/mirrorlist#Server = $URLREPO#g" pacman.conf
 
 ######################### Basic Configs ##########################
 
+mkdir -pv airootfs/etc/
+echo '
+                    -@
+                   .##@
+                  .####@
+                  @#####@
+                . *######@
+               .##@o@#####@
+              /############@
+             /##############@
+            @######@**%######@
+           @######`     %#####o
+          @######@       ######%
+        -@#######h       ######@.`
+       /#####h**``       `**%@####@
+      @H@*`                    `*%#@
+     *`                            `*
+' | tee airootfs/etc/motd
+
 sed -i "s#archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs#consolefont#g" airootfs/etc/mkinitcpio.conf
 sed -i "s#memdisk archiso_shutdown archiso#memdisk archiso#g" airootfs/etc/mkinitcpio.conf
 sed -i "s#archiso_kms#kms#g" airootfs/etc/mkinitcpio.conf
@@ -142,7 +161,7 @@ TTYVTDisallocate=no
 
 echo "[Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin live --noissue --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin live --noclear %I 38400 linux
 " | tee airootfs/etc/systemd/system/getty@tty1.service.d/autologin.conf
 
 rm -vf airootfs/etc/systemd/logind.conf.d/do-not-suspend.conf
@@ -224,7 +243,7 @@ alias grep='grep --color=auto'
 alias sudo='sudo -E'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias htop='htop -C'
-alias less='less -N'
+alias bat='bat --theme=ansi'
 alias mc='mc --nocolor'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedups
@@ -237,12 +256,14 @@ echo 'export PATH=$PATH:~/.local/bin
 export QT_QPA_PLATFORMTHEME=qt5ct
 export VISUAL=vim
 export EDITOR=vim
-export PAGER=most
-export VIEWER=most
+export PAGER=less
+export VIEWER=less
 export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
 export FT2_SUBPIXEL_HINTING=2
 export GTK_CSD=0
 export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0:$LD_PRELOAD
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS="-m"
 ' | tee airootfs/etc/profile.d/arch-profile.sh
 
 ######################### GUI Configs ############################

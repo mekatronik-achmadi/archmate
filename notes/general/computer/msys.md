@@ -59,6 +59,8 @@ export VISUAL=vim
 export EDITOR=vim
 export PAGER=less
 export VIEWER=less
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS="-m"
 ' | tee /etc/profile.d/msys_profile.sh
 
 echo '[[ $- != *i* ]] && return' |  tee ~/.bashrc
@@ -68,10 +70,11 @@ shopt -s histappend
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias makepkg='makepkg --nocheck --skippgpcheck'
-alias less='less -N'
 alias mc='mc --nocolor'
+alias bat='bat --theme=ansi'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedupsT
+PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 " | tee -a ~/.bashrc
 ```
 
@@ -80,10 +83,12 @@ export HISTCONTROL=ignorespace:ignoredups:erasedupsT
 ```sh
 pacman -S $(echo "
 mingw-w64-x86_64-fzf
+mingw-w64-x86_64-bat
+mingw-w64-x86_64-ctags
+mingw-w64-x86_64-ripgrep
 mingw-w64-x86_64-python
 mingw-w64-x86_64-cython0
 mingw-w64-x86_64-python-pip
-mingw-w64-x86_64-ctags
 mingw-w64-x86_64-toolchain
 mingw-w64-x86_64-clang-analyzer
 mingw-w64-x86_64-clang-tools-extra
@@ -137,6 +142,7 @@ call plug#begin('~/.vim/pack/plug/start')
     Plug 'chrisbra/csv.vim'
 \"    Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    Plug 'junegunn/fzf.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -150,6 +156,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 \":hi
 hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
+
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <C-g> :Rg<CR>
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1

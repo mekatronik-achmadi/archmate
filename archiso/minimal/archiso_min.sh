@@ -70,6 +70,25 @@ sed -i "s#Include = /etc/pacman.d/mirrorlist#Server = $URLREPO#g" pacman.conf
 
 ######################### Basic Configs ##########################
 
+mkdir -pv airootfs/etc/
+echo '
+                    -@
+                   .##@
+                  .####@
+                  @#####@
+                . *######@
+               .##@o@#####@
+              /############@
+             /##############@
+            @######@**%######@
+           @######`     %#####o
+          @######@       ######%
+        -@#######h       ######@.`
+       /#####h**``       `**%@####@
+      @H@*`                    `*%#@
+     *`                            `*
+' | tee airootfs/etc/motd
+
 sed -i "s#archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs#consolefont#g" airootfs/etc/mkinitcpio.conf
 sed -i "s#memdisk archiso_shutdown archiso#memdisk archiso#g" airootfs/etc/mkinitcpio.conf
 sed -i "s#archiso_kms#kms#g" airootfs/etc/mkinitcpio.conf
@@ -132,7 +151,7 @@ TTYVTDisallocate=no
 
 echo "[Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin live --noissue --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin live --noclear %I 38400 linux
 " | tee airootfs/etc/systemd/system/getty@tty1.service.d/autologin.conf
 
 rm -vf airootfs/etc/systemd/logind.conf.d/do-not-suspend.conf
@@ -215,6 +234,7 @@ alias sudo='sudo -E'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias htop='htop -C'
 alias mc='mc --nocolor'
+alias bat='bat --theme=ansi'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedups
 export REPOURL='http://mirror.internode.on.net/pub/archlinux'
@@ -225,8 +245,10 @@ mkdir -pv airootfs/etc/profile.d/
 echo 'export PATH=$PATH:~/.local/bin
 export VISUAL=vim
 export EDITOR=vim
-export PAGER=most
-export VIEWER=most
+export PAGER=less
+export VIEWER=less
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS="-m"
 ' | tee airootfs/etc/profile.d/arch-profile.sh
 
 ######################### GUI Configs ############################

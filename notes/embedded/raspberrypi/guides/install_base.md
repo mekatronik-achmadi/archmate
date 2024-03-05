@@ -104,6 +104,28 @@ exit
 sudo arch-chroot /mnt/mmc/root /bin/bash
 ```
 
+### arch-linux logo (qemu-chroot)
+
+```sh
+echo '
+                    -@
+                   .##@
+                  .####@
+                  @#####@
+                . *######@
+               .##@o@#####@
+              /############@
+             /##############@
+            @######@**%######@
+           @######`     %#####o
+          @######@       ######%
+        -@#######h       ######@.`
+       /#####h**``       `**%@####@
+      @H@*`                    `*%#@
+     *`                            `*
+' > /etc/motd
+```
+
 ### generate locale (qemu-chroot)
 
 ```sh
@@ -358,7 +380,7 @@ TTYVTDisallocate=no
 
 echo "[Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin alarm --noissue --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin alarm --noclear %I 38400 linux
 " > /etc/systemd/system/getty@tty1.service.d/autologin.conf
 ```
 
@@ -371,10 +393,12 @@ export PATH=$PATH:~/.local/bin
 export QT_QPA_PLATFORMTHEME=qt5ct
 export VISUAL=vim
 export EDITOR=vim
-export PAGER=most
-export VIEWER=most
+export PAGER=less
+export VIEWER=less
 export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
 export FT2_SUBPIXEL_HINTING=2
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS="-m"
 ' | tee /etc/profile.d/archrpi-profile.sh
 ```
 
@@ -516,8 +540,8 @@ alias grep='grep --color=auto'
 alias sudo='sudo -E'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias htop='htop -C'
-alias less='less -N'
 alias mc='mc --nocolor'
+alias bat='bat --theme=ansi'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedups
 export REPOURL='http://mirror.internode.on.net/pub/archlinux'

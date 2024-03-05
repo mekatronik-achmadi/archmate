@@ -6,12 +6,11 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
 depends=(
-'udisks2' 'papirus-icon-theme' 'pavucontrol' 'volumeicon' 'htop'
-'openbox' 'obconf' 'tint2' 'scrot' 'onboard' 'xterm' 'vim' 'most'
-'archlinux-wallpaper' 'gsimplecal' 'arandr' 'vimb' 'brightnessctl'
-'feh' 'bashrun' 'mc' 'git' 'arc-solid-gtk-theme' 'papirus-icon-theme')
+'openbox' 'obconf' 'tint2' 'scrot' 'onboard' 'xterm' 'fzf' 'bat' 'mc' 'less'
+'udisks2' 'papirus-icon-theme' 'pavucontrol' 'volumeicon' 'vimb' 'ripgrep'
+'vim' 'feh' 'bashrun' 'git' 'arc-solid-gtk-theme' 'papirus-icon-theme'
+'archlinux-wallpaper' 'gsimplecal' 'arandr' 'brightnessctl' 'htop')
 optdepends=(
-'spacefm: file manager'
 'geany: text editor'
 'firefox: web browser'
 'xpdf: pdf reader'

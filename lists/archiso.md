@@ -11,17 +11,18 @@ base base-devel multilib-devel
 bash-completion mkinitcpio
 cloc less bear archinstall
 squashfs-tools rsync dkms
-git tig fzf terminus-font
 pv cmus libxcrypt-compat
-most highlight mc fdupes
 neofetch lsb-release dtc
 nano dialog bc tmux tree
 curl wget openssh sshfs
 pacman-contrib mlocate
 virtualbox-guest-utils
+git tig terminus-font
 arch-install-scripts
+highlight mc fdupes
 mkinitcpio-archiso
 cdrtools syslinux
+ripgrep bat fzf
 
 ### install posix meta
 
@@ -407,8 +408,8 @@ alias grep='grep --color=auto'
 alias sudo='sudo -E'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias htop='htop -C'
-alias less='less -N'
 alias mc='mc --nocolor'
+alias bat='bat --theme=GitHub'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedups
 export REPOURL='http://mirror.internode.on.net/pub/archlinux'
@@ -464,6 +465,7 @@ sudo bluetoothctl
 ```sh
 sudo mkdir -p /etc
 echo '" /usr/share/vim/vimfiles/archlinux.vim' | sudo tee /etc/vimrc
+
 echo 'runtime! archlinux.vim
 autocmd BufWritePre * %s/\s\+$//e
 filetype plugin on
@@ -491,12 +493,14 @@ export PATH=$PATH:~/.local/bin
 export QT_QPA_PLATFORMTHEME=qt5ct
 export VISUAL=vim
 export EDITOR=vim
-export PAGER=most
-export VIEWER=most
+export PAGER=less
+export VIEWER=less
 export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
 export FT2_SUBPIXEL_HINTING=2
 export GTK_CSD=0
 export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0:$LD_PRELOAD
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS="-m"
 ' | sudo tee /etc/profile.d/arch-profile.sh
 ```
 
@@ -562,6 +566,25 @@ sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
 #### configure login without lightdm
 
 ```sh
+sudo mkdir -p /etc/
+echo '
+                    -@
+                   .##@
+                  .####@
+                  @#####@
+                . *######@
+               .##@o@#####@
+              /############@
+             /##############@
+            @######@**%######@
+           @######`     %#####o
+          @######@       ######%
+        -@#######h       ######@.`
+       /#####h**``       `**%@####@
+      @H@*`                    `*%#@
+     *`                            `*
+' | sudo tee /etc/motd
+
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
 
 echo "[Service]
@@ -570,7 +593,7 @@ TTYVTDisallocate=no
 
 echo -e "[Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin $USER --noissue --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin $USER --noclear %I 38400 linux
 " | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
 ```
 
