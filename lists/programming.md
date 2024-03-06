@@ -32,12 +32,11 @@ python-pyqtgraph
 
 ### install c/c++ programming
 
-valabind clang boost
+clang llvm boost
+valabind lld lldb
 gdb gdb-dashboard
-lld llvm lldb
-go gopls rust
-rust-analyzer
-tcsh fltk fox
+go gopls rust fltk
+rust-analyzer tcsh
 
 ### install javacript programming
 
