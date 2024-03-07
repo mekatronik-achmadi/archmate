@@ -1,0 +1,103 @@
+# MSYS2 Basic
+
+## Non-MSYS2 Download
+
+- 7Zip: https://www.7-zip.org/download.html
+- LiberationFontsTTF: https://github.com/liberationfonts/liberation-fonts/releases/tag/2.1.5
+- Firefox Browser: https://www.mozilla.org/id/firefox/all/#product-desktop-release
+- Latest MSVC++: https://learn.microsoft.com/id-id/cpp/windows/latest-supported-vc-redist
+- CopyQ: https://github.com/hluk/CopyQ/releases
+- Ghostwriter: https://ghostwriter.kde.org/download/
+- WinMerge: https://winmerge.org/downloads/?lang=en
+- Notepad++: https://notepad-plus-plus.org/downloads/
+- Git: https://git-scm.com/download/win
+- Git-Cola: https://git-cola.github.io/downloads.html
+- VSCode: https://code.visualstudio.com/download
+
+## Setup
+
+### system install
+
+Download: https://github.com/msys2/msys2-installer/releases
+
+Install as usual and Choose **MSYS2 MINGW64** as default profile.
+
+To run from Windows' Run dialog (Windows+R)
+
+```bat
+C:\msys64\mingw64.exe
+```
+
+### add to Path Environment
+
+- C:\msys64\usr\bin
+- C:\msys64\mingw64\bin
+
+### update/upgrade (optional)
+
+```sh
+pacman -Sy
+pacman -Su --noconfirm
+```
+
+### basic packages
+
+```sh
+pacman -S $(echo "
+base base-devel vim neofetch
+git tig winpty bash-completion
+nano openssh mc unrar zip p7zip
+")
+```
+
+### devel packages
+
+```sh
+pacman -S $(echo "
+mingw-w64-x86_64-bat
+mingw-w64-x86_64-ctags
+mingw-w64-x86_64-python
+mingw-w64-x86_64-cython0
+mingw-w64-x86_64-python-pip
+mingw-w64-x86_64-toolchain
+mingw-w64-x86_64-clang-analyzer
+mingw-w64-x86_64-clang-tools-extra
+mingw-w64-x86_64-python-virtualenv
+")
+```
+
+### gtk3 programming
+
+```sh
+pacman -S $(echo "
+mingw-w64-x86_64-gtk3
+mingw-w64-x86_64-gtkmm3
+mingw-w64-x86_64-glade
+mingw-w64-x86_64-fltk")
+```
+
+### basic profile
+
+```sh
+echo '
+export PATH=$PATH:~/.local/bin
+export VISUAL=vim
+export EDITOR=vim
+export PAGER=less
+export VIEWER=less
+' | tee /etc/profile.d/msys_profile.sh
+
+echo '[[ $- != *i* ]] && return' |  tee ~/.bashrc
+echo "
+shopt -s checkwinsize
+shopt -s histappend
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias makepkg='makepkg --nocheck --skippgpcheck'
+alias mc='mc --nocolor'
+alias bat='bat --theme=ansi'
+export MAKEFLAGS=-j$(nproc)
+export HISTCONTROL=ignorespace:ignoredups:erasedupsT
+PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
+" | tee -a ~/.bashrc
+```
