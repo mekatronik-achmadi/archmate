@@ -295,7 +295,7 @@ code --force --install-extension ms-vscode.vscode-serial-monitor
 
 ## CompileDB
 
-**NOTE:** Only use if Bear nor PlatformIO is not available
+**NOTE:** Only use if Bear or PlatformIO is not available
 
 ```sh
 mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
