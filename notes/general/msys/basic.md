@@ -44,9 +44,9 @@ pacman -Su --noconfirm
 
 ```sh
 pacman -S $(echo "
-base base-devel vim neofetch
+base base-devel mintty mc neofetch
+vim nano openssh unrar zip p7zip
 git tig winpty bash-completion
-nano openssh mc unrar zip p7zip
 ")
 ```
 
@@ -74,7 +74,9 @@ mingw-w64-x86_64-geany-plugins
 pacman -S $(echo "
 mingw-w64-x86_64-gtk3 mingw-w64-x86_64-gtkmm3
 mingw-w64-x86_64-glade mingw-w64-x86_64-fltk
-mingw-w64-x86_64-wxwidgets3.2-gtk3")
+mingw-w64-x86_64-wxwidgets3.2-gtk3
+mingw-w64-x86_64-python-gobject
+mingw-w64-x86_64-wxPython")
 ```
 
 ### basic profile
