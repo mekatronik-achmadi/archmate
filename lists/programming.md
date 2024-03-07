@@ -103,7 +103,7 @@ deactivate
 
 ```sh
 source $HOME/PyEnv/compiledb/bin/activate
-compiledb make
+compiledb -n make
 deactivate
 
 less compile_commands.json
