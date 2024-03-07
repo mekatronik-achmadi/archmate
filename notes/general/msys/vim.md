@@ -84,8 +84,10 @@ mingw-w64-x86_64-nodejs
 mkdir -p ~/.config/coc/
 
 vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-snippets coc-json"
-vim -c "CocInstall coc-clangd coc-jedi coc-tsserver"
+vim -c "CocInstall coc-pairs coc-snippets"
+vim -c "CocInstall coc-clangd coc-json
+vim -c "CocInstall coc-html coc-yaml
+vim -c "CocInstall coc-tsserver"
 vim +PlugClean
 ```
 
