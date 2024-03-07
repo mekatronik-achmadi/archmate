@@ -51,13 +51,11 @@ Setting file located at **%APPDATA%\Roaming\Code\User\settings.json**
   "terminal.integrated.profiles.windows": {
     "msys64": {
       "path": "C:\\msys64\\usr\\bin\\bash.exe",
-      "args": [
-        "--login",
-        "-i"
-      ],
+      "args": ["--login","-i"],
       "env": {
         "MSYSTEM": "MINGW64",
-        "CHERE_INVOKING": "1"
+        "CHERE_INVOKING": "1",
+        "MSYS2_PATH_TYPE": "inherit"
       }
     }
   },
