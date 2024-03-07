@@ -68,7 +68,7 @@ mingw-w64-x86_64-geany-plugins
 ")
 ```
 
-### gtk3 programming
+### gtk3 packages
 
 ```sh
 pacman -S $(echo "
@@ -77,6 +77,16 @@ mingw-w64-x86_64-glade mingw-w64-x86_64-fltk
 mingw-w64-x86_64-wxwidgets3.2-gtk3
 mingw-w64-x86_64-python-gobject
 mingw-w64-x86_64-wxPython")
+```
+
+### nodejs packages
+
+```sh
+pacman -S $(echo "
+mingw-w64-x86_64-jq
+mingw-w64-x86_64-yarn
+mingw-w64-x86_64-nodejs
+")
 ```
 
 ### basic profile

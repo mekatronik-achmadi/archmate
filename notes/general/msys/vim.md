@@ -73,14 +73,6 @@ syntax on" | tee ~/.vimrc
 ## CoC Plugins
 
 ```sh
-pacman -S $(echo "
-mingw-w64-x86_64-jq
-mingw-w64-x86_64-yarn
-mingw-w64-x86_64-nodejs
-")
-```
-
-```sh
 mkdir -p ~/.config/coc/
 
 vim +PlugInstall
