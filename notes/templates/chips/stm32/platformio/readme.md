@@ -3,10 +3,10 @@
 ## Setup
 
 ```sh
-cd $HOME
+mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
 virtualenv platformio --system-site-packages
 
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 mkdir -p $HOME/.platformio/
 pip install platformio
 
@@ -22,7 +22,7 @@ cd -
 ## Home Webpage
 
 ```
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 pio home --no-open &
 xdg-open http://localhost:8008/ &
 ```
@@ -32,14 +32,14 @@ xdg-open http://localhost:8008/ &
 ### Setup
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 mkdir -p blink/;cd blink/
 
 pio project init -b bluepill_f103c8
 ```
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 mkdir -p blink-rtos/;cd blink-rtos/
 
 pio project init -b bluepill_f103c8 -O "lib_deps=stm32duino/STM32duino FreeRTOS"
@@ -48,7 +48,7 @@ pio project init -b bluepill_f103c8 -O "lib_deps=stm32duino/STM32duino FreeRTOS"
 ### Build
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 export MAKEFLAGS=-j$(nproc)
 
 make compiledb
@@ -61,7 +61,7 @@ make upload
 ### Serial
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 make monitor
 ```
 

@@ -50,6 +50,33 @@ nano openssh mc unrar zip p7zip
 ")
 ```
 
+### additional devel packages
+
+```sh
+pacman -S $(echo "
+mingw-w64-x86_64-fzf
+mingw-w64-x86_64-bat
+mingw-w64-x86_64-ctags
+mingw-w64-x86_64-ripgrep
+mingw-w64-x86_64-python
+mingw-w64-x86_64-cython0
+mingw-w64-x86_64-python-pip
+mingw-w64-x86_64-toolchain
+mingw-w64-x86_64-clang-analyzer
+mingw-w64-x86_64-clang-tools-extra
+")
+```
+
+### gtk3 programming
+
+```sh
+pacman -S $(echo "
+mingw-w64-x86_64-gtk3
+mingw-w64-x86_64-gtkmm3
+mingw-w64-x86_64-glade
+mingw-w64-x86_64-fltk")
+```
+
 ### basic profile
 
 ```sh
@@ -78,32 +105,6 @@ PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 " | tee -a ~/.bashrc
 ```
 
-### additional devel packages
-
-```sh
-pacman -S $(echo "
-mingw-w64-x86_64-fzf
-mingw-w64-x86_64-bat
-mingw-w64-x86_64-ctags
-mingw-w64-x86_64-ripgrep
-mingw-w64-x86_64-python
-mingw-w64-x86_64-cython0
-mingw-w64-x86_64-python-pip
-mingw-w64-x86_64-toolchain
-mingw-w64-x86_64-clang-analyzer
-mingw-w64-x86_64-clang-tools-extra
-")
-```
-
-### gtk3 programming
-
-```sh
-pacman -S $(echo "
-mingw-w64-x86_64-gtk3
-mingw-w64-x86_64-gtkmm3
-mingw-w64-x86_64-glade")
-```
-
 ## Vim
 
 ### install vim plug
@@ -116,7 +117,6 @@ echo -e "call plug#begin('~/.vim/pack/plug/start')
 call plug#end()" | tee ~/.vimrc
 
 mkdir -p ~/.vim/pack/plug/start/
-
 vim +PlugStatus
 ```
 
@@ -192,6 +192,8 @@ mingw-w64-x86_64-nodejs
 ```
 
 ```sh
+mkdir -p ~/.config/coc/
+
 vim +PlugInstall
 vim -c "CocInstall coc-pairs coc-snippets coc-json"
 vim -c "CocInstall coc-clangd coc-jedi coc-tsserver"
@@ -200,14 +202,13 @@ vim +PlugClean
 
 ```sh
 mkdir -p ~/.vim
+rm -f ~/.vim/coc-settings.json
 
 jq -n '
 ."clangd.arguments"=["-header-insertion=never"] |
 ."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
 ."snippets.ultisnips.enable"=false
 ' > ~/.vim/coc-settings.json
-
-vim ~/.vim/coc-settings.json
 ```
 
 ## VSCode
@@ -297,4 +298,25 @@ code --force --install-extension ms-pyright.pyright
 ```sh
 code --force --install-extension platformio.platformio-ide
 code --force --install-extension ms-vscode.vscode-serial-monitor
+```
+
+## CompileDB
+
+**NOTE:** Only use if Bear nor PlatformIO is not available
+
+```sh
+mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
+virtualenv compiledb --system-site-packages
+
+source $HOME/PyEnv/compiledb/bin/activate
+pip install compiledb
+deactivate
+```
+
+```sh
+source $HOME/PyEnv/compiledb/bin/activate
+compiledb make
+deactivate
+
+less compile_commands.json
 ```

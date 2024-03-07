@@ -423,9 +423,9 @@ sudo pacman -S python-pipenv python-virtualenv
 #### create virtualenv
 
 ```sh
-cd $HOME
+mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
 virtualenv infrapyenv --system-site-packages
-source $HOME/infrapyenv/bin/activate
+source $HOME/PyEnv/infrapyenv/bin/activate
 ```
 
 #### install additional
@@ -445,7 +445,7 @@ deactivate
 #### install kernel specs
 
 ```sh
-source $HOME/infrapyenv/bin/activate
+source $HOME/PyEnv/infrapyenv/bin/activate
 ipython kernel install --user --name=infrapyenv
 ```
 

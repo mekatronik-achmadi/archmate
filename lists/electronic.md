@@ -150,10 +150,10 @@ $> arm-none-eabi-gdb build/ch.elf
 #### mandatory python setup
 
 ```sh
-cd $HOME
+mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
 virtualenv --python=/usr/bin/python3.9 esp-python --system-site-packages
 
-source $HOME/esp-python/bin/activate
+source $HOME/PyEnv/esp-python/bin/activate
 pip install kconfiglib future cryptography pyserial pyparsing==2.2.0
 deactivate
 ```
@@ -165,7 +165,7 @@ export IDF_PATH=/opt/esp8266-rtos
 export PATH="$IDF_PATH/tools:$PATH"
 export MAKEFLAGS="-j$(nproc)"
 export GNUMAKEFLAGS="-j$(nproc)"
-source $HOME/esp-python/bin/activate
+source $HOME/PyEnv/esp-python/bin/activate
 
 cp -r $IDF_PATH/examples/get-started/hello_world/ ./
 cd hello_world/
@@ -202,7 +202,7 @@ export IDF_PATH=/opt/esp-idf
 export PATH="$IDF_PATH/tools:$PATH"
 export MAKEFLAGS="-j$(nproc)"
 export GNUMAKEFLAGS="-j$(nproc)"
-source $HOME/esp-python/bin/activate
+source $HOME/PyEnv/esp-python/bin/activate
 
 cp -r $IDF_PATH/examples/get-started/blink/ ./
 cd blink/;
@@ -237,10 +237,10 @@ make monitor # CTRL+] to exit
 #### install inside virtualenv
 
 ```sh
-cd $HOME
+mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
 virtualenv platformio --system-site-packages
 
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 
 mkdir -p $HOME/.platformio/
 pip install platformio
@@ -276,7 +276,7 @@ sudo udevadm trigger
 #### manager webserver
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 
 pio home --no-open &
 #pio home --host=0.0.0.0 --no-open &
@@ -289,7 +289,7 @@ xdg-open http://localhost:8008/ &
 #### example avr chip
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 
 mkdir -p blink/;cd blink/
 pio project init -b nanoatmega328
@@ -337,7 +337,7 @@ vim src/main.cpp
 #### using frameworks/libraries
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 
 pio project init -b nanoatmega328 -O "framework=arduino"
 pio project init -b nanoatmega328 -O "lib_deps=feilipu/FreeRTOS"

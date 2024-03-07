@@ -3,10 +3,10 @@
 ## Setup
 
 ```sh
-cd $HOME
+mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
 virtualenv platformio --system-site-packages
 
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 mkdir -p $HOME/.platformio/
 pip install platformio
 
@@ -22,7 +22,7 @@ cd -
 ## Home Webpage
 
 ```
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 pio home --no-open &
 xdg-open http://localhost:8008/ &
 ```
@@ -32,14 +32,14 @@ xdg-open http://localhost:8008/ &
 ### Setup
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 mkdir -p blink/;cd blink/
 
 pio project init -b nodemcuv2
 ```
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 mkdir -p blink-nonos/;cd blink-nonos/
 
 pio project init -b nodemcuv2 \
@@ -48,7 +48,7 @@ pio project init -b nodemcuv2 \
 ```
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 mkdir -p blink-rtos/;cd blink-rtos/
 
 pio project init -b nodemcuv2 -O "framework=esp8266-rtos-sdk"
@@ -75,7 +75,7 @@ monitor:
 ```
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 export MAKEFLAGS=-j$(nproc)
 
 make compiledb
@@ -88,7 +88,7 @@ make upload
 ### Serial
 
 ```sh
-source $HOME/platformio/bin/activate
+source $HOME/PyEnv/platformio/bin/activate
 make monitor
 ```
 

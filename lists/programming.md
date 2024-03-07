@@ -88,6 +88,27 @@ https://aur.archlinux.org/packages/visual-studio-code-bin/
 
 ## Configurations
 
+### configure compiledb
+
+**NOTE:** Only use if Bear nor PlatformIO is not available
+
+```sh
+mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
+virtualenv compiledb --system-site-packages
+
+source $HOME/PyEnv/compiledb/bin/activate
+pip install compiledb
+deactivate
+```
+
+```sh
+source $HOME/PyEnv/compiledb/bin/activate
+compiledb make
+deactivate
+
+less compile_commands.json
+```
+
 ### configure git server
 
 #### instant git web
