@@ -63,6 +63,8 @@ mingw-w64-x86_64-toolchain
 mingw-w64-x86_64-clang-analyzer
 mingw-w64-x86_64-clang-tools-extra
 mingw-w64-x86_64-python-virtualenv
+mingw-w64-x86_64-geany
+mingw-w64-x86_64-geany-plugins
 ")
 ```
 
@@ -99,4 +101,48 @@ export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedupsT
 PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 " | tee -a ~/.bashrc
+```
+
+### git profile
+
+```sh
+echo '[core]
+	pager = cat
+	editor = vim
+	whitespace = -trailing-space
+
+[gui]
+	editor = geany
+	spellingdictionary = none
+	fontui = -family \"Liberation Sans\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"LiterationMono Nerd Font\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+
+[guitool "Pull"]
+	cmd = git pull
+
+[diff]
+	renames = true
+	tool = vimdiff
+
+[color]
+	ui = auto
+
+[credential]
+	helper = cache --timeout=3600
+
+[advice]
+	addIgnoredFile = false
+
+[init]
+	defaultBranch = main
+
+[user]
+	name =
+	email =
+' > ~/.gitconfig
+
+git config --global user.name "mekatronik-achmadi"
+git config --global user.email "mekatronik.achmadi@gmail.com"
+
+echo 'export GITHUBTOKEN=$(cat ~/GithubToken.txt)' | tee -a ~/.bashrc
 ```
