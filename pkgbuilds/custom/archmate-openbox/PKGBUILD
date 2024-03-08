@@ -6,15 +6,12 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
 depends=(
+'xorg-xinit' 'xorg-server' 'geany' 'xpdf' 'xarchiver' 'gpicview' 'pcmanfm-gtk3'
 'openbox' 'obconf' 'tint2' 'scrot' 'onboard' 'xterm' 'fzf' 'bat' 'mc' 'less'
-'udisks2' 'papirus-icon-theme' 'pavucontrol' 'volumeicon' 'vimb' 'ripgrep'
+'gvfs' 'papirus-icon-theme' 'pavucontrol' 'volumeicon' 'vimb' 'ripgrep'
 'vim' 'feh' 'bashrun' 'git' 'arc-solid-gtk-theme' 'papirus-icon-theme'
 'archlinux-wallpaper' 'gsimplecal' 'arandr' 'brightnessctl' 'htop')
-optdepends=(
-'geany: text editor'
-'firefox: web browser'
-'xpdf: pdf reader'
-'xarchiver: archive tool')
+optdepends=('firefox: web browser')
 install=pkg.install
 options=('!makeflags' '!strip')
 
@@ -26,4 +23,6 @@ package() {
     cp -f ../openboxtint2.rc $pkgdir/usr/share/openbox/tint2.rc
     cp -f ../openboxmenu.xml $pkgdir/usr/share/openbox/menu.xml
     cp -f ../openboxautostart $pkgdir/usr/share/openbox/autostart
+    cp -f ../openboxlibfm.conf $pkgdir/usr/share/openbox/libfm.conf
+    cp -f ../openboxpcmanfm.conf $pkgdir/usr/share/openbox/pcmanfm.conf
 }

@@ -109,11 +109,14 @@
   <item label="Run a Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
     <action name="Execute"><command>bashrun</command></action>
   </item>
-  <item label="MC FileMan" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
-    <action name="Execute"><command>xterm -e mc --nocolor</command></action>
-  </item>
   <item label="XTerminal" icon="/usr/share/icons/Papirus/32x32/apps/terminal.svg">
     <action name="Execute"><command>xterm</command></action>
+  </item>
+  <item label="MC FileMgr" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
+    <action name="Execute"><command>xterm -e mc --nocolor</command></action>
+  </item>
+  <item label="PCManFM" icon="/usr/share/icons/Papirus/32x32/apps/system-file-manager.svg">
+    <action name="Execute"><command>pcmanfm</command></action>
   </item>
   <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
     <action name="Execute"><command>onboard</command></action>

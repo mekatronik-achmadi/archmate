@@ -22,11 +22,17 @@ menu_cleaning() {
     rm -f /usr/share/applications/feh.desktop
 }
 
+pcmanfm_setting() {
+    ln -sf /usr/share/openbox/libfm.conf /etc/xdg/libfm/libfm.conf
+    ln -sf /usr/share/openbox/pcmanfm.conf /etc/xdg/pcmanfm/default/pcmanfm.conf
+}
+
 post_install() {
     openbox_symlink
     editable_fehbg
     bashrun_theme
     menu_cleaning
+    pcmanfm_setting
 }
 
 post_upgrade() {
@@ -34,4 +40,5 @@ post_upgrade() {
     editable_fehbg
     bashrun_theme
     menu_cleaning
+    pcmanfm_setting
 }
