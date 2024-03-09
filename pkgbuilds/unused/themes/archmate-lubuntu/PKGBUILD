@@ -15,24 +15,15 @@ source=("http://archive.ubuntu.com/ubuntu/pool/universe/l/${_archivename}/${_arc
 sha256sums=('SKIP')
 
 package() {
-    cp -r "${srcdir}/${_archivename}/src/usr" "${pkgdir}"
+    cd "${srcdir}/${_archivename}/src/usr/share"
 
-    # cleaning unused
-    rm -rf $pkgdir/usr/share/icons/lubuntu
-    rm -rf $pkgdir/usr/share/icons/Lubuntu-dark-panel
+    mkdir -p "${pkgdir}/usr/share/icons"
+    cp -rf icons/Lubuntu/ "${pkgdir}/usr/share/icons"
 
-    rm -rf $pkgdir/usr/share/themes/Box*
-    rm -rf $pkgdir/usr/share/themes/Ozone*
-    rm -rf $pkgdir/usr/share/themes/LxDesign
-    rm -rf $pkgdir/usr/share/themes/Lubuntu\ Arc
-    rm -rf $pkgdir/usr/share/themes/Lubuntu-dark-panel
+    mkdir -p "${pkgdir}/usr/share/themes"
+    cp -rf themes/Lubuntu-small "${pkgdir}/usr/share/themes"
+    cp -rf themes/Lubuntu-default "${pkgdir}/usr/share/themes"
 
-    rm -rf $pkgdir/usr/share/lxdm
-    rm -rf $pkgdir/usr/share/lxqt
-    rm -rf $pkgdir/usr/share/plymouth
-    rm -rf $pkgdir/usr/share/sddm
-    rm -rf $pkgdir/usr/share/unity-greeter
-
-    mkdir -p $pkgdir/usr/share/backgrounds
-    ln -sf /usr/share/lubuntu/wallpapers $pkgdir/usr/share/backgrounds/lubuntu
+    mkdir -p "${pkgdir}/usr/share/backgrounds"
+    cp -rf lubuntu/wallpapers "${pkgdir}/usr/share/backgrounds/lubuntu"
 }
