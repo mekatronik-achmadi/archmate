@@ -32,4 +32,7 @@ package() {
     rm -rf $pkgdir/usr/share/plymouth
     rm -rf $pkgdir/usr/share/sddm
     rm -rf $pkgdir/usr/share/unity-greeter
+
+    mkdir -p $pkgdir/usr/share/backgrounds
+    ln -sf /usr/share/lubuntu/wallpapers $pkgdir/usr/share/backgrounds/lubuntu
 }
