@@ -8,6 +8,9 @@
 # or using cargo
 #cargo run
 
+# and to clean target
+#cargo clean
+
 cargo build
 cp -vf src/main.glade ./target/debug/
 

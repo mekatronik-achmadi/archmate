@@ -35,8 +35,9 @@ python-pyqtgraph
 clang llvm boost
 valabind lld lldb
 gdb gdb-dashboard
-go gopls rust fltk
-rust-analyzer tcsh
+tcsh fltk go gopls
+rust rust-analyzer
+cargo-generate
 
 ### install javacript programming
 
