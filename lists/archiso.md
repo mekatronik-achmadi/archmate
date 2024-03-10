@@ -536,6 +536,15 @@ XTerm*eightBitInput: false
 XTerm*eightBitOutput: true
 xterm*scrollBar: true
 xterm*rightScrollBar: true
+UXTerm*faceName: LiterationMono Nerd Font Mono
+UXTerm*faceSize: 8
+UXTerm*background: white
+UXTerm*foreground: black
+UXTerm*selectToClipboard: true
+UXTerm*eightBitInput: false
+UXTerm*eightBitOutput: true
+uxterm*scrollBar: true
+uxterm*rightScrollBar: true
 Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true

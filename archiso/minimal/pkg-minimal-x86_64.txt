@@ -24,4 +24,3 @@ vim-tabular vim-gitgutter
 networkmanager nm-connection-editor
 
 lsof htop lm_sensors usbutils inxi
-

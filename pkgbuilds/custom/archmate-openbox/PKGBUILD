@@ -12,6 +12,8 @@ depends=(
 'vim' 'feh' 'bashrun' 'git' 'arc-solid-gtk-theme' 'papirus-icon-theme'
 'archlinux-wallpaper' 'gsimplecal' 'arandr' 'brightnessctl' 'htop')
 optdepends=('firefox: web browser')
+provides=('vi')
+conflicts=('vi')
 install=pkg.install
 options=('!makeflags' '!strip')
 
@@ -25,4 +27,10 @@ package() {
     cp -f ../openboxautostart $pkgdir/usr/share/openbox/autostart
     cp -f ../openboxlibfm.conf $pkgdir/usr/share/openbox/libfm.conf
     cp -f ../openboxpcmanfm.conf $pkgdir/usr/share/openbox/pcmanfm.conf
+
+    install -d "$pkgdir/usr/bin"
+    local _file
+    for _file in edit ex vedit vi view; do
+        ln -s vim "$pkgdir/usr/bin/$_file"
+    done
 }
