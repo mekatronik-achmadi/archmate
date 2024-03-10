@@ -9,7 +9,7 @@
 #include "blink.h"
 
 #define GPIO_OUTPUT_LED     16
-#define GPIO_OUTPUT_PINSEL  (1ULL << GPIO_OUTPUT_LED)
+#define GPIO_OUTPUT_LED2    2
 #define GPIO_BLINK_DELAY    100
 
 void nvs_Init(void){
@@ -25,25 +25,34 @@ void nvs_Init(void){
 
 static void ledTask(void *arg){
     gpio_set_level(GPIO_OUTPUT_LED,1);
+    gpio_set_level(GPIO_OUTPUT_LED2,0);
 
     while (1) {
        gpio_set_level(GPIO_OUTPUT_LED,0);
+       gpio_set_level(GPIO_OUTPUT_LED2,1);
        vTaskDelay(GPIO_BLINK_DELAY / portTICK_PERIOD_MS);
 
        gpio_set_level(GPIO_OUTPUT_LED,1);
+       gpio_set_level(GPIO_OUTPUT_LED2,0);
        vTaskDelay(GPIO_BLINK_DELAY / portTICK_PERIOD_MS);
     }
 }
 
 void blink_Init(void){
+
+#if USE_NONOS_STYLE
     gpio_config_t gpio_Conf;
 
     gpio_Conf.intr_type = GPIO_INTR_DISABLE;
     gpio_Conf.mode = GPIO_MODE_OUTPUT;
-    gpio_Conf.pin_bit_mask = GPIO_OUTPUT_PINSEL;
+    gpio_Conf.pin_bit_mask = (1ULL << GPIO_OUTPUT_LED | 1ULL << GPIO_OUTPUT_LED2);
     gpio_Conf.pull_down_en = 0;
     gpio_Conf.pull_up_en = 0;
     gpio_config(&gpio_Conf);
+#else
+    gpio_set_direction(GPIO_OUTPUT_LED, GPIO_MODE_OUTPUT);
+    gpio_set_direction(GPIO_OUTPUT_LED2, GPIO_MODE_OUTPUT);
+#endif
 
     xTaskCreate(ledTask,
             "led task",

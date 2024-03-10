@@ -12,10 +12,12 @@ static os_timer_t ledTimer;
 static uint8_t ledOn = 0;
 static void ledTask(void *prv){
     if(ledOn){
+        gpio_output_set(0, (1 << 2), 0, 0);
         gpio16_output_set(1);
         ledOn = 0;
     }
     else{
+        gpio_output_set((1 << 2), 0, 0, 0);
         gpio16_output_set(0);
         ledOn = 1;
     }
@@ -31,6 +33,7 @@ void user_init(void){
 
     gpio_init();
     gpio16_output_conf();
+    gpio_output_set(0, 0, (1 << 2), 0);
 
     os_timer_setfn(&ledTimer,(os_timer_func_t*) ledTask,NULL);
     os_timer_setfn(&serialTimer,(os_timer_func_t*) serialTask,NULL);
