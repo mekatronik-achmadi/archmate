@@ -37,7 +37,7 @@ chips
 ## Desktop
 
 Contain example for some GUI toolkits.
-Brief list from 'tree -L 3':
+Brief list from 'tree -L 1':
 
 ```
 desktop
@@ -61,5 +61,8 @@ desktop
 ├── qt-pyside		: Qt6 in Python (PySide6)
 ├── qt-python		: Qt6 in Python (PyQt6)
 ├── wxform			: wxWidget in C++
-└── wxform-python	: wxWidget in Python
+├── wxform-python	: wxWidget in Python
+├── c-in-cpp			: Calling C from C++
+├── c-in-python		: Calling C from Python
+└── c-in-rust		: Calling C from Rust
 ```
