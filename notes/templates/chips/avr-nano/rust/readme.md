@@ -67,10 +67,9 @@ echo '{
 }' | tee avr-atmega328p.json
 ```
 
-example of main.rs
+example of **src/main.rs**
 
 ```rust
-echo '
 #![no_std]
 #![no_main]
 
@@ -87,7 +86,7 @@ pub extern fn main(){
         port::B5::set_low();
         ruduino::delay::delay_ms(200);
     }
-}' | tee src/main.rs
+}
 ```
 
 ## Test Build
