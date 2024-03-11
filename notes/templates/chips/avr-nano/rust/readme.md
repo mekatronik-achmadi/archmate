@@ -69,7 +69,7 @@ echo '{
 
 example of main.rs
 
-```sh
+```rust
 echo '
 #![no_std]
 #![no_main]
