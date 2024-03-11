@@ -64,5 +64,5 @@ desktop
 ├── wxform-python	: wxWidget in Python
 ├── c-in-cpp			: Calling C from C++
 ├── c-in-python		: Calling C from Python
-└── c-in-rust		: Calling C from Rust
+└── c-in-rust				: Calling C from Rust
 ```
