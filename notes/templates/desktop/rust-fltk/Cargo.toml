@@ -1,6 +1,7 @@
 [package]
-name = "gtk_template"
+name = "fltk_template"
 version = "0.1.0"
 
 [dependencies]
-gtk = "0.18.1"
+fltk = "1.4.26"
+
