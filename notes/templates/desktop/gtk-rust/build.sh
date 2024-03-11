@@ -7,11 +7,9 @@ cargo add gtk
 cargo build
 cp -vf src/main.glade ./target/debug/
 
-# using built binary
-#./target/debug/gtk_template
+ls ./target/debug/gtk_template
 
-# or using cargo
-#cargo run
+cargo run
 
 # and to clean target
 #cargo clean

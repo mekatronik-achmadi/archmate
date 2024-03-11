@@ -6,11 +6,9 @@ cargo add fltk
 # to run
 cargo build
 
-# using built binary
-#./target/debug/gtk_template
+ls ./target/debug/fltk_template
 
-# or using cargo
-#cargo run
+cargo run
 
 # and to clean target
 #cargo clean
