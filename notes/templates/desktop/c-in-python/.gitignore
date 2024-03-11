@@ -2,4 +2,5 @@ build/
 PyEnv/
 dist/
 *.egg-info/
+*.so
 compile_commands.json

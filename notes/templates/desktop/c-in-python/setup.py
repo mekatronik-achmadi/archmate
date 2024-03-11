@@ -1,8 +1,8 @@
 from distutils.core import setup,Extension
 
-setup(name='helloModule',
+setup(name='powerCalc',
       version="1.0",
       ext_modules=[
-          Extension('helloModule',
-                    ['printhello.c'])
+          Extension('powerCalc',
+                    ['pwr.c'])
       ])
