@@ -1,12 +1,18 @@
+#include <iostream>
+
 #include "cli.h"
-#include "msg.h"
+#include "pwr.h"
 
 Cli::Cli(){
-    init_msg();
+    v_x = 4;
+    v_y = 3;
 }
 
 Cli::~Cli(){}
 
 void Cli::Cli_Msg(){
-    print_msg();
+    std::cout
+        << "Power from C: "
+        << std::to_string(calc_pwr(v_x,v_y))
+        << std::endl;
 }

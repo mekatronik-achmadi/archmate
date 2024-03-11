@@ -17,7 +17,7 @@ ODIR=build
 # compiler options
 COPT=-O0 -Wall -pthread
 CFLAGS=$(COPT)
-LFLAGS=$(COPT)
+LFLAGS=$(COPT) -lm
 
 ################### Non Configurable ########################
 
