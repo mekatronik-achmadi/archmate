@@ -12,7 +12,7 @@ chips
 ├── avr-nano			: Arduino Nano based on ATMega328P
 │   ├── avrgcc		: Minimal AVR-GCC
 │   ├── avrgcc-rtos	: Minimal AVR-GCC and FreeRTOS
-│   ├── rust            : Minimal Rust using Ruduino
+│   ├── rust                : Minimal Rust using Ruduino
 │   └── platformio
 │       ├── blink		: Arduino
 │       ├── blink-rtos	: Arduino and FreeRTOS
