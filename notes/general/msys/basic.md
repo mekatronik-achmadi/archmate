@@ -7,7 +7,6 @@
 - Firefox Browser: https://www.mozilla.org/id/firefox/all/#product-desktop-release
 - Latest MSVC++: https://learn.microsoft.com/id-id/cpp/windows/latest-supported-vc-redist
 - CopyQ: https://github.com/hluk/CopyQ/releases
-- Ghostwriter: https://ghostwriter.kde.org/download/
 - WinMerge: https://winmerge.org/downloads/?lang=en
 - Notepad++: https://notepad-plus-plus.org/downloads/
 - Git: https://git-scm.com/download/win
@@ -55,6 +54,7 @@ git tig winpty bash-completion
 ```sh
 pacman -S $(echo "
 mingw-w64-x86_64-bat
+mingw-w64-x86_64-rust
 mingw-w64-x86_64-ctags
 mingw-w64-x86_64-python
 mingw-w64-x86_64-cython0

@@ -77,8 +77,9 @@ mkdir -p ~/.config/coc/
 
 vim +PlugInstall
 vim -c "CocInstall coc-pairs coc-snippets"
-vim -c "CocInstall coc-clangd coc-json
-vim -c "CocInstall coc-html coc-yaml
+vim -c "CocInstall coc-clangd coc-json"
+vim -c "CocInstall coc-html coc-yaml"
+vim -c "CocInstall coc-rust-analyzer"
 vim -c "CocInstall coc-tsserver"
 vim +PlugClean
 ```
@@ -90,6 +91,7 @@ rm -f ~/.vim/coc-settings.json
 jq -n '
 ."clangd.arguments"=["-header-insertion=never"] |
 ."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
+."rust-analyzer.server.path"="/mingw64/bin/rust-analyzer" |
 ."snippets.ultisnips.enable"=false
 ' > ~/.vim/coc-settings.json
 ```
