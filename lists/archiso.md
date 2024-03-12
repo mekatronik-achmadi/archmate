@@ -134,13 +134,13 @@ lrzip lzip lzop zstd cpio
 
 ### install build tools
 
-meson ninja setconf
 mercurial breezy cvs
 cblas openblas lapack
 gobject-introspection
 subversion mk-configure
 mate-common gnome-common
 pkgconf gendesk help2man
+meson ninja swig setconf
 automake autogen autoconf
 cmake extra-cmake-modules
 dos2unix doxygen graphviz

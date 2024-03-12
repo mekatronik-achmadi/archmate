@@ -85,6 +85,10 @@ https://aur.archlinux.org/packages/visual-studio-code-bin/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/custom-doxygen/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/vim-doxygen/
 
+### install python modules
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/fltk/
+
 --------------------------------------------------------------------------------
 
 ## Configurations

@@ -97,14 +97,14 @@ lhasa rpmextract lxsplit unrar-free
 bzip2 gzip lz4 p7zip zip unzip
 lrzip lzip lzop zstd cpio
 
+mercurial breezy cvs
 cblas openblas lapack
 gobject-introspection
 subversion mk-configure
 mate-common gnome-common
 pkgconf gendesk help2man
-bear meson ninja setconf
+meson ninja swig setconf
 automake autogen autoconf
-mercurial breezy cvs cloc
 cmake extra-cmake-modules
 dos2unix doxygen graphviz
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-    "fmt"
+    "os"
     "github.com/pwiecz/go-fltk"
 )
 
@@ -16,7 +16,7 @@ func main() {
     });
 
     btnQuit.SetCallback(func() {
-        fmt.Println("Unimplemented for now")
+        os.Exit(0)
     });
 
     wind.End()
