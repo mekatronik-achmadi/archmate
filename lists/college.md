@@ -28,10 +28,8 @@ python-gnuplot python-yaml
 python-seaborn python-patsy
 python-pytables python-tqdm
 python-pandas python-numexpr
-
-### install python jupyter
-
-jupyterlab jupyter-notebook
+jupyter-notebook
+jupyterlab ipython
 
 ### install python additional
 
