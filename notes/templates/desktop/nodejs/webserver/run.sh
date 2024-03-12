@@ -3,5 +3,5 @@
 # run this first
 #npm install
 
-node main.js
+node server.js
 
