@@ -51,7 +51,7 @@ sed -i '$s/$/ fbcon=font:ProFont6x11/' /boot/cmdline.txt
 
 ```sh
 #startx /usr/bin/xinput_calibrator | tee calib.log
-#less calib.log
+#bat calib.log
 
 # invert Y
 echo 'Section "InputClass"

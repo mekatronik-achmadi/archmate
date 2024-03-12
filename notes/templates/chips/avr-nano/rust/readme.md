@@ -18,6 +18,7 @@ source ~/.cargo/env
 
 rustup override set nightly
 rustup component add rust-src
+rustup component add rust-analyzer
 
 # changing default channel
 #rustup default stable

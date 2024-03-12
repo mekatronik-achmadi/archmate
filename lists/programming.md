@@ -112,7 +112,7 @@ source $HOME/PyEnv/compiledb/bin/activate
 compiledb -n make
 deactivate
 
-less compile_commands.json
+bat compile_commands.json
 ```
 
 ### configure git server
@@ -216,7 +216,7 @@ jq -n '
 ."rust-analyzer.server.path"="/usr/bin/rust-analyzer"
 ' > ~/.vim/coc-settings.json
 
-vim ~/.vim/coc-settings.json
+bat ~/.vim/coc-settings.json
 ```
 
 ### configure clangd
@@ -314,4 +314,50 @@ code --force --install-extension llvm-vs-code-extensions.vscode-clangd
 
 sed -i 's#Engine": "default"#Engine": "disabled"#g' \
 ~/.config/VSCodium/User/settings.json
+```
+
+### configure rustup
+
+#### setup
+
+```sh
+curl --proto '=https' --tlsv1.3 -sSf https://sh.rustup.rs -o ~/rust.sh
+
+bash ~/rust.sh -y --no-modify-path
+```
+
+```sh
+source ~/.cargo/env
+
+cargo -V
+```
+
+```sh
+source ~/.cargo/env
+
+rustup component add rust-src
+rustup component add rust-analyzer
+```
+
+#### changing default channel
+
+```sh
+rustup override set [nightly|stable]
+
+rustup default [nightly|stable]
+```
+
+#### vim-coc settings
+
+```sh
+jq '
+."clangd.arguments"=["-header-insertion=never"] |
+."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
+."go.goplsPath"="/usr/bin/gopls" |
+."rust-analyzer.server.path"=""
+' ~/.vim/coc-settings.json > ~/.vim/temp.json
+
+mv ~/.vim/temp.json ~/.vim/coc-settings.json
+
+bat ~/.vim/coc-settings.json
 ```

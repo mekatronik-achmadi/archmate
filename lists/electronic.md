@@ -330,8 +330,6 @@ ls .pio/build/*/firmware.hex
 
 rm -f compile_commands.json
 make compiledb
-
-vim src/main.cpp
 ```
 
 #### using frameworks/libraries

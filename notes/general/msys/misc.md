@@ -18,5 +18,5 @@ source $HOME/PyEnv/compiledb/bin/activate
 compiledb -n make
 deactivate
 
-less compile_commands.json
+bat compile_commands.json
 ```

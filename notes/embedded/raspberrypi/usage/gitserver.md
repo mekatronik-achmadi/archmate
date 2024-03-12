@@ -288,7 +288,7 @@ http://10.3.49.199:3000/mekatronikachmadi/.profile
 
 ```sh
 # app config
-sudo less /etc/gitea/app.ini
+sudo bat /etc/gitea/app.ini
 
 # repositories path
 sudo ls -l /var/lib/gitea/data/gitea-repositories

@@ -161,7 +161,7 @@ sudo interceptty -s 'ispeed 38400 ospeed 38400' /dev/ttyACM0 /dev/coba
 ### xorg module checking
 
 ```sh
-less /var/log/Xorg.0.log | grep -i <module_name>
+cat /var/log/Xorg.0.log | grep -i <module_name>
 ls /usr/lib/xorg/modules/extensions/ | grep -i <module_name>
 ```
 
