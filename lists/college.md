@@ -11,7 +11,7 @@ libreoffice-still coin-or-mp
 gcc-fortran arpack
 r mpdecimal gnuplot
 
-### install python computing
+### install python modules
 
 python-pygments
 python-tabulate
@@ -28,8 +28,10 @@ python-gnuplot python-yaml
 python-seaborn python-patsy
 python-pytables python-tqdm
 python-pandas python-numexpr
-jupyter-notebook
-jupyterlab ipython
+
+### install python interface
+
+jupyter-notebook ipython jupyterlab
 
 ### install python additional
 
