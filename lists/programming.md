@@ -291,6 +291,11 @@ code --force --install-extension ms-python.vscode-pylance
 code --force --install-extension ms-vscode.cpptools
 code --force --install-extension cschlosser.doxdocgen
 code --force --install-extension mads-hartmann.bash-ide-vscode
+
+code --force --install-extension oderwat.indent-rainbow
+code --force --install-extension pkief.material-icon-theme
+code --force --install-extension tejasvi.rainbow-brackets-2
+code --force --install-extension wayou.vscode-todo-highlight
 ```
 
 ```sh
