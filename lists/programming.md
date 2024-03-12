@@ -351,7 +351,7 @@ rustup override set [nightly|stable]
 rustup default [nightly|stable]
 ```
 
-#### vim-coc settings
+#### vim-coc default analyzer
 
 ```sh
 jq '
