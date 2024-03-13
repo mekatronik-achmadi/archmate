@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-sudo pacman -S gcc emscripten
+sudo pacman -S gcc emscripten nodejs
 ```
 
 ## Test the C source
@@ -49,3 +49,4 @@ Open in webbrowser
 ```sh
 firefox http://localhost:8001/
 ```
+

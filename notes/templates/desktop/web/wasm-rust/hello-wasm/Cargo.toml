@@ -1,0 +1,18 @@
+[package]
+name = "hello-wasm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wasm-bindgen = "*"
+console_error_panic_hook = { version = "*", optional = true }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[profile.release]
+opt-level = "s"
+
