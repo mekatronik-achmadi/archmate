@@ -3,14 +3,29 @@
 ## Install
 
 ```sh
-sudo pacman -S jq nodejs npm rust-wasm wasm-pack wasm-bindgen
+sudo pacman -S nodejs npm rust-wasm wasm-bindgen wasm-pack
 ```
 
-## Template
+## New Project
 
-A basic template to be used with Cargo Generate can be found in [Github](https://github.com/rustwasm/wasm-pack-template)
+```sh
+cargo new wasm-basic --lib
 
-## Compile into WASM
+cd wasm-basic/
+```
+
+add command line to add library:
+
+```sh
+cargo add wasm-bindgen
+
+echo '
+[lib]
+crate-type = ["cdylib"]
+' | tee -a Cargo.toml
+```
+
+## Compile WASM package
 
 Build using WASM-Pack tool (requires internet to download modules)
 
@@ -18,52 +33,26 @@ Build using WASM-Pack tool (requires internet to download modules)
 wasm-pack build
 ```
 
-The result will generated in **pkg/** folder.
+## Run using webpack
 
-## Setup Server to Test
-
-Ge NodeJS WASM App modules
-
-```sh
-npm init wasm-app www
-cd www/
-```
-
-set the content of main script **index.js**:
-
-```js
-import * as wasm from "hello-wasm-pack";
-
-wasm.power();
-```
-
-then install necessary modules inside wasm-app (www):
+First, install NPM modules
 
 ```sh
 npm install
 ```
 
-add previous dependencies using command:
+Run using command:
+
+```
+npm run serve
+```
+
+Open in webbrowser
 
 ```sh
-jq '
-."dependencies"={"hello-wasm":"file:../pkg"}
-' package.json > temp.json
-
-mv temp.json package.json
+firefox http://localhost:8080/
 ```
 
 
-and run install again:
 
-```sh
-npm install
-```
 
-## Run Server
-
-```sh
-npm run start
-```
-
-And it failed at NPM server start, LMAO

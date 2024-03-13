@@ -1,5 +1,3 @@
-mod utils;
-
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -8,16 +6,17 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-pub fn power() {
-    let x: u8 = 4;
-    let y: u8 = 3;
+pub fn power(x: u16, y: u16) {
+    let mut res: u16 = 1;
+    let mut i: u16 = 0;
 
-    let mut res = 1;
-    let mut i = 0;
     while i<y {
         res = res * x;
         i = i + 1;
     }
 
-    alert("Rust WASM: {res}");
+    unsafe{
+        alert(&format!("Power Rust: {}", res));
+    }
 }
+
