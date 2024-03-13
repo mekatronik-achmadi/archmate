@@ -476,6 +476,9 @@ EndSection' >  /etc/X11/xorg.conf.d/noblank.conf
 ### configure gtk theme (qemu-chroot)
 
 ```sh
+rm -f /home/alarm/.gtkrc-2.0
+rm -f /home/alarm/.config/gtk-3.0/settings.ini
+
 mkdir -pv /etc/gtk-2.0/
 echo '
 gtk-icon-theme-name = "Papirus-Light"

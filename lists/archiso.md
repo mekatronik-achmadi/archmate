@@ -507,6 +507,9 @@ export FZF_DEFAULT_OPTS="-m"
 #### configure gtk theme
 
 ```sh
+rm -f $HOME/.gtkrc-2.0
+rm -f $HOME/.config/gtk-3.0/settings.ini
+
 sudo mkdir -pv /etc/gtk-2.0/
 echo '
 gtk-icon-theme-name = "Papirus-Light"

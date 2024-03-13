@@ -2,15 +2,6 @@
 
 ## Official
 
-### install fonts
-
-ttf-ubuntu-font-family
-
-### install icons
-
-obsidian-icon-theme
-elementary-icon-theme
-
 --------------------------------------------------------------------------------
 
 ## AUR
