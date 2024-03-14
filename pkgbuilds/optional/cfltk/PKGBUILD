@@ -1,0 +1,69 @@
+pkgname=cfltk-git
+pkgver=r1066.27514b9
+pkgrel=1
+pkgdesc="C bindings for FLTK"
+arch=('x86_64')
+url="https://github.com/MoAlyousef/cfltk"
+license=('MIT')
+depends=('fltk')
+makedepends=('git' 'cmake')
+options=('!docs' 'staticlibs')
+source=("${pkgname}::git+${url}.git")
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/${pkgname}"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+	cd "${srcdir}/${pkgname}"
+
+    git submodule update --init --recursive
+
+    #cd fltk/
+    # git tag
+    #git checkout 'tags/release-1.3.8'
+}
+
+build() {
+    local cmake_options=(
+        -B build
+        -D CMAKE_INSTALL_PREFIX=/usr
+        -D CMAKE_BUILD_TYPE=None
+        -D FLTK_LIBDIR=/usr/lib
+        -D OPTION_BUILD_SHARED_LIBS=ON
+        -D OPTION_BUILD_HTML_DOCUMENTATION=OFF
+        -D OPTION_INSTALL_HTML_DOCUMENTATION=OFF
+        -D FLTK_OPTION_LARGE_FILE=ON
+        -D FLTK_BUILD_HTML_DOCS=OFF
+        -D FLTK_BUILD_PDF_DOCS=OFF
+        -D FLTK_BUILD_GL=OFF
+        -D FLTK_BUILD_EXAMPLES=OFF
+        -D FLTK_BUILD_TEST=OFF
+        -D FLTK_USE_PANGO=ON
+        -D FLTK_USE_SYSTEM_LIBPNG=ON
+        -D FLTK_USE_SYSTEM_LIBJPEG=ON
+        -D FLTK_USE_SYSTEM_ZLIB=ON
+        -S $pkgname
+        -W no-dev
+    )
+
+    CFLAGS+=" -ffat-lto-objects"
+    CXXFLAGS+=" -ffat-lto-objects"
+
+    cmake "${cmake_options[@]}"
+    cmake --build build --verbose
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+
+    # remove FLTK conflicted files
+    rm -rf $pkgdir/usr/bin
+    rm -rf $pkgdir/usr/include/FL
+    rm -f  $pkgdir/usr/lib/libfltk*
+    rm -rf $pkgdir/usr/share/applications
+    rm -rf $pkgdir/usr/share/{fltk,icons,man,mime}
+}
+

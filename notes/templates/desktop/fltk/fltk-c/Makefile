@@ -2,7 +2,7 @@
 TARGET=appname
 
 # compiler binary
-CC=g++
+CC=gcc
 
 # source directories
 SRCDIR=./
@@ -10,38 +10,32 @@ SRCDIR=./
 # include directories
 INCDIR=-I./
 
-# gui resource
-GUIRC=gui.fl
-
 # build output directory
 ODIR=build
 
 # compiler options
 COPT=-O0 -Wall -pthread
-CFLAGS=$(COPT) -I/usr/include/FL
-LFLAGS=$(COPT) -lfltk -lfltk_forms
+CFLAGS=$(COPT) -I/usr/include/cfl
+LFLAGS=$(COPT) -lcfltk
 
 ################### Non Configurable ########################
 
-CSRC=$(wildcard $(SRCDIR)/*.cxx)
-COBJ=$(patsubst $(SRCDIR)/%.cxx,$(ODIR)/%.o,$(CSRC))
+CSRC=$(wildcard $(SRCDIR)/*.c)
+COBJ=$(patsubst $(SRCDIR)/%.c,$(ODIR)/%.o,$(CSRC))
 
-all: uic dir $(ODIR)/$(TARGET)
+all: dir $(ODIR)/$(TARGET)
 
 dir:
 	mkdir -p $(ODIR)
 
-uic: $(GUIRC)
-	fluid -c $(GUIRC)
-
 $(ODIR)/$(TARGET): $(COBJ)
 	$(CC) $(COBJ) $(LFLAGS) -o $(ODIR)/$(TARGET)
 
-$(ODIR)/%.o: $(SRCDIR)/%.cxx
+$(ODIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(INCDIR) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(ODIR)/
 
-.PHONY: all dir uic clean
+.PHONY: all dir clean
 
