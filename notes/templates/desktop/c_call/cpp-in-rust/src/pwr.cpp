@@ -1,5 +1,8 @@
 #include "pwr.h"
 
+namespace org {
+namespace pwr {
+
 Pwr::Pwr() {}
 
 Pwr::~Pwr() {}
@@ -14,4 +17,6 @@ unsigned int Pwr::power(unsigned int x, unsigned int y){
 
     return res;
 }
+
+}}
 
