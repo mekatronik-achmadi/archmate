@@ -1,5 +1,5 @@
 #include "cli.h"
-#include <ostream>
+#include <iostream>
 
 Cli::Cli(){
     strMsg = "C++ Template\r\n";
