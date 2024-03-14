@@ -17,6 +17,7 @@ class Template():
         wind.end()
         wind.show()
 
+        Fl.scheme('gtk+')
         Fl.run()
 
     def Msg(self,widget):

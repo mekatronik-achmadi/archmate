@@ -3,7 +3,7 @@ extern crate fltk;
 use fltk::{app, prelude::*, window::Window, button::Button, frame::Frame, dialog};
 
 fn main() {
-    let app = app::App::default();
+    let app = app::App::default().with_scheme(app::Scheme::Gtk);
     let mut wind = Window::new(100,100,200,100,"FLTK Rust");
     let _lbl_app = Frame::new(0,0,200,30,"FLTK Rust");
     let mut btn_msg = Button::new(0,30,200,30,"Message");

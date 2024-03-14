@@ -22,6 +22,7 @@ func main() {
     wind.End()
     wind.Show()
 
+    fltk.SetScheme("gtk+");
     fltk.Run()
 }
 

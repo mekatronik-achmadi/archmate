@@ -7,6 +7,7 @@ int main(int argc, char** argv){
     ui = new Gui();
     ui->show(argc, argv);
 
+    Fl::scheme("gtk+");
     return Fl::run();
 }
 
