@@ -4,10 +4,10 @@
 cargo add gtk
 
 # to run
-cargo build
-cp -vf src/main.glade ./target/debug/
+cargo build --release
+cp -vf src/main.glade ./target/release/
 
-ls ./target/debug/gtk_template
+ls ./target/release/gtk_template
 
 cargo run
 

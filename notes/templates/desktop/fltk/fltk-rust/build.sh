@@ -4,9 +4,9 @@
 cargo add fltk
 
 # to run
-cargo build
+cargo build --release
 
-ls ./target/debug/fltk_template
+ls ./target/release/fltk_template
 
 cargo run
 

@@ -13,7 +13,7 @@ gcc -o target/pwr src/main.c src/pwr.c -lm
 
 ```sh
 cargo clean
-cargo build
+cargo build --release
 
 cargo run
 ```

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # to run
-cargo build
+cargo build --release
 
-ls ./target/debug/rust_template
+ls ./target/release/rust_template
 
 cargo run
 

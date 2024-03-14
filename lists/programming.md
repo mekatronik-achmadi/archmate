@@ -333,6 +333,10 @@ sed -i 's#Engine": "default"#Engine": "disabled"#g' \
 curl --proto '=https' --tlsv1.3 -sSf https://sh.rustup.rs -o ~/rust.sh
 
 bash ~/rust.sh -y --no-modify-path
+
+sed -i '/cargo/d' ~/.bashrc
+sed -i '/cargo/d' ~/.profile
+sed -i '/cargo/d' ~/.bash_profile
 ```
 
 ```sh
