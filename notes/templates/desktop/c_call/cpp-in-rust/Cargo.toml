@@ -1,0 +1,9 @@
+[package]
+name = "cxxrust"
+version = "0.1.0"
+
+[dependencies]
+bindgen = "0.60.1"
+
+[build-dependencies]
+bindgen = "0.60.1"

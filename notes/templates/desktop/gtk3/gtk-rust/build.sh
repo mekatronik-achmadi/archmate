@@ -9,7 +9,7 @@ cp -vf src/main.glade ./target/release/
 
 ls ./target/release/gtk_template
 
-cargo run
+cargo run --release
 
 # and to clean target
 #cargo clean

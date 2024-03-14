@@ -15,7 +15,7 @@ gcc -o target/pwr src/main.c src/pwr.c -lm
 cargo clean
 cargo build --release
 
-cargo run
+cargo run --release
 ```
 
 ## Alternative

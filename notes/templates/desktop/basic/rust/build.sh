@@ -5,7 +5,7 @@ cargo build --release
 
 ls ./target/release/rust_template
 
-cargo run
+cargo run --release
 
 # and to clean target
 #cargo clean

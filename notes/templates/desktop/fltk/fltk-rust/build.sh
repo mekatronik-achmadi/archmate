@@ -8,7 +8,7 @@ cargo build --release
 
 ls ./target/release/fltk_template
 
-cargo run
+cargo run --release
 
 # and to clean target
 #cargo clean
