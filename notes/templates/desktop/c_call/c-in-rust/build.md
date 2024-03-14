@@ -17,3 +17,11 @@ cargo build --release
 
 cargo run
 ```
+
+## Alternative
+
+Use [BindGen](https://github.com/rust-lang/rust-bindgen)
+
+```sh
+sudo pacman -S rust-bindgen
+```

@@ -4,5 +4,5 @@ fn main(){
     println!("cargo:rustc-link-arg=-lm");
     cc::Build::new()
         .file("src/pwr.c")
-        .compile("libpwr.a");
+        .compile("pwr");
 }

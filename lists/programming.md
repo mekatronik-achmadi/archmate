@@ -33,10 +33,11 @@ python-pyqtgraph
 ### install c/c++ programming
 
 clang llvm lld lldb
-rust cargo-generate
-rust-src rust-analyzer
 tcsh fltk boost valabind
 go gopls gdb gdb-dashboard
+cargo-generate
+rust rust-bindgen
+rust-src rust-analyzer
 
 ### install javacript programming
 
