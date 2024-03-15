@@ -1,44 +1,20 @@
 linux linux-headers
-linux-firmware
-base base-devel
+linux-firmware base
 
 bash-completion mkinitcpio
-cloc less bear archinstall
+cloc less archinstall
 squashfs-tools rsync dkms
-pv cmus libxcrypt-compat
-neofetch lsb-release dtc
+pv libxcrypt-compat
+neofetch lsb-release
 nano dialog bc tmux tree
 curl wget openssh sshfs
 pacman-contrib mlocate
 virtualbox-guest-utils
-git tig terminus-font
+terminus-font
 arch-install-scripts
 highlight mc fdupes
 mkinitcpio-archiso
 cdrtools syslinux
-ripgrep bat fzf
-
-vim vim-nerdcommenter
-vim-airline vim-tagbar
-vim-surround vim-nerdtree
-vim-tabular vim-gitgutter
-
-networkmanager modemmanager
-mobile-broadband-provider-info iftop
-bind-tools netctl ppp wpa_supplicant
-net-tools wavemon bmon nethogs gping
-crda iw iwd wireless_tools
-bridge-utils ethtool usb_modeswitch
-traceroute dhcp dnsmasq nss-mdns
-openresolv dhclient dhcpcd mtr
-gnu-netcat nmap termshark
-tcpdump fping inetutils
-
-ntfs-3g exfat-utils
-parted dosfstools
-gpart e2fsprogs
-gptfdisk mtools
-fuse2 fuse3
 
 libisoburn amd-ucode intel-ucode
 grub edk2-ovmf squashfs-tools

@@ -144,12 +144,6 @@ rm -vf airootfs/etc/systemd/system/dbus-org.freedesktop.resolve1.service
 rm -vf airootfs/etc/systemd/system/sysinit.target.wants/systemd-resolved.service
 rm -vf airootfs/etc/systemd/system/multi-user.target.wants/systemd-resolved.service
 
-ln -svf /usr/lib/systemd/system/NetworkManager-wait-online.service ${SYSTEMD}/NetworkManager-wait-online.service
-ln -svf /usr/lib/systemd/system/NetworkManager-dispatcher.service ${SYSTEMD}/NetworkManager-dispatcher.service
-ln -svf /usr/lib/systemd/system/NetworkManager.service ${SYSTEMD}/NetworkManager.service
-
-ln -svf /run/NetworkManager/resolv.conf airootfs/etc/resolv.conf
-
 mkdir -pv airootfs/etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
 TTYVTDisallocate=no
@@ -198,25 +192,6 @@ wireshark:!*::live
 
 ######################### CLI Configs ############################
 
-mkdir -pv airootfs/etc/
-echo '" /usr/share/vim/vimfiles/archlinux.vim' | tee airootfs/etc/vimrc
-echo 'runtime! archlinux.vim
-autocmd BufWritePre * %s/\s\+$//e
-filetype plugin on
-filetype indent on
-filetype plugin indent on
-set expandtab ts=4 sw=4 ai
-set conceallevel=0
-set encoding=utf-8
-set termguicolors
-set ic is hls
-set number
-set wrap!
-set mouse=a
-let g:tagbar_width=20
-let g:NERDTreeWinSize=20
-syntax on' | tee -a airootfs/etc/vimrc
-
 mkdir -pv airootfs/etc/skel/
 echo '
 [[ -f ~/.bashrc ]] && . ~/.bashrc
@@ -253,8 +228,6 @@ export VISUAL=nano
 export EDITOR=nano
 export PAGER=less
 export VIEWER=less
-export FZF_DEFAULT_COMMAND="rg --files"
-export FZF_DEFAULT_OPTS="-m"
 ' | tee airootfs/etc/profile.d/arch-profile.sh
 
 ######################### GUI Configs ############################
