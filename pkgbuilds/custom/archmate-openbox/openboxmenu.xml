@@ -14,6 +14,12 @@
   <item label="Git GUI" icon="/usr/share/icons/Papirus/32x32/apps/git-gui.svg">
     <action name="Execute"><command>git gui</command></action>
   </item>
+  <item label="GPicView" icon="/usr/share/icons/Papirus/32x32/apps/gpicview.svg">
+    <action name="Execute"><command>gpicview</command></action>
+  </item>
+  <item label="PCManFM" icon="/usr/share/icons/Papirus/32x32/apps/system-file-manager.svg">
+    <action name="Execute"><command>pcmanfm</command></action>
+  </item>
   <item label="TaskManager" icon="/usr/share/icons/Papirus/32x32/apps/htop.svg">
     <action name="Execute"><command>xterm -e htop -C</command></action>
   </item>
@@ -114,9 +120,6 @@
   </item>
   <item label="MC FileMgr" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
     <action name="Execute"><command>xterm -e mc --nocolor</command></action>
-  </item>
-  <item label="PCManFM" icon="/usr/share/icons/Papirus/32x32/apps/system-file-manager.svg">
-    <action name="Execute"><command>pcmanfm</command></action>
   </item>
   <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
     <action name="Execute"><command>onboard</command></action>
