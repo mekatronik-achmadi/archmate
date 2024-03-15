@@ -144,6 +144,12 @@ rm -vf airootfs/etc/systemd/system/dbus-org.freedesktop.resolve1.service
 rm -vf airootfs/etc/systemd/system/sysinit.target.wants/systemd-resolved.service
 rm -vf airootfs/etc/systemd/system/multi-user.target.wants/systemd-resolved.service
 
+ln -svf /usr/lib/systemd/system/NetworkManager-wait-online.service ${SYSTEMD}/NetworkManager-wait-online.service
+ln -svf /usr/lib/systemd/system/NetworkManager-dispatcher.service ${SYSTEMD}/NetworkManager-dispatcher.service
+ln -svf /usr/lib/systemd/system/NetworkManager.service ${SYSTEMD}/NetworkManager.service
+
+ln -svf /run/NetworkManager/resolv.conf airootfs/etc/resolv.conf
+
 mkdir -pv airootfs/etc/systemd/system/getty@tty1.service.d/
 echo "[Service]
 TTYVTDisallocate=no
@@ -243,8 +249,8 @@ PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 
 mkdir -pv airootfs/etc/profile.d/
 echo 'export PATH=$PATH:~/.local/bin
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nano
+export EDITOR=nano
 export PAGER=less
 export VIEWER=less
 export FZF_DEFAULT_COMMAND="rg --files"

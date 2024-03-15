@@ -21,6 +21,20 @@ vim-airline vim-tagbar
 vim-surround vim-nerdtree
 vim-tabular vim-gitgutter
 
-networkmanager nm-connection-editor
+networkmanager modemmanager
+mobile-broadband-provider-info iftop
+bind-tools netctl ppp wpa_supplicant
+net-tools wavemon bmon nethogs gping
+crda iw iwd wireless_tools
+bridge-utils ethtool usb_modeswitch
+traceroute dhcp dnsmasq nss-mdns
+openresolv dhclient dhcpcd mtr
+gnu-netcat nmap termshark
+tcpdump fping inetutils
 
-lsof htop lm_sensors usbutils inxi
+ntfs-3g exfat-utils
+parted dosfstools
+gpart e2fsprogs
+gptfdisk mtools
+fuse2 fuse3
+
