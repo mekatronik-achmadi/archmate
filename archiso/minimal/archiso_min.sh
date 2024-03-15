@@ -239,8 +239,8 @@ alias grep='grep --color=auto'
 alias sudo='sudo -E'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias htop='htop -C'
-alias mc='mc --nocolor'
 alias bat='bat --theme=ansi'
+alias mc='mc --nocolor'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedups
 export REPOURL='http://mirror.internode.on.net/pub/archlinux'

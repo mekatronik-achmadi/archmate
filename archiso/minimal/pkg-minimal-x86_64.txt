@@ -1,4 +1,6 @@
-linux base base-devel
+linux linux-headers
+linux-firmware
+base base-devel
 
 bash-completion mkinitcpio
 cloc less bear archinstall
@@ -37,4 +39,8 @@ parted dosfstools
 gpart e2fsprogs
 gptfdisk mtools
 fuse2 fuse3
+
+libisoburn amd-ucode intel-ucode
+grub edk2-ovmf squashfs-tools
+libarchive erofs-utils patch
 
