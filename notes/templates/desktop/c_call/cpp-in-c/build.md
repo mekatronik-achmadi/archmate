@@ -16,11 +16,3 @@ cmake --build build
 ./build/main
 ```
 
-Debug using Valgrind
-
-```sh
-cmake -B debug -DCMAKE_BUILD_TYPE=Debug
-cmake --build debug
-ctest -T memcheck --test-dir debug
-```
-

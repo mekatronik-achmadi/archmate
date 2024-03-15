@@ -7,5 +7,3 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(main main.c pwr.cpp pwr_wrap.cpp pwr_wrap.h)
 
-#include(CTest)
-
