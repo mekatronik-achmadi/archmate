@@ -1,27 +1,26 @@
-# Build C++ in C
+# Build C in C++
 
 Generate Makefile
 
 ```sh
-mkdir -p build/
-cd build/
+cmake -B build
 
-cmake ../
-```
-
-Generate compile_commands.json
-
-```sh
-bear -- make
-mv compile_commands.json ../
+mv build/compile_commands.json ../
 ```
 
 Compile and Run
 
 ```sh
-make clean
-make
+cmake --build build
 
-./main
+./build/main
+```
+
+Debug using Valgrind
+
+```sh
+cmake -B debug -DCMAKE_BUILD_TYPE=Debug
+cmake --build debug
+ctest -T memcheck --test-dir debug
 ```
 
