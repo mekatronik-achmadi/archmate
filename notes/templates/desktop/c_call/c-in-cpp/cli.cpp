@@ -12,7 +12,7 @@ Cli::~Cli(){}
 
 void Cli::Cli_Msg(){
     std::cout
-        << "Power from C: "
+        << "Power C++ from C: "
         << std::to_string(calc_pwr(v_x,v_y))
         << std::endl;
 }

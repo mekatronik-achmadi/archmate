@@ -11,6 +11,8 @@
 
 #ifdef __cplusplus
 
+#include <cstdint>
+
 class Pwr {
     public:
         Pwr();

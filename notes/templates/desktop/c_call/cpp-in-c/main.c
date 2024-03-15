@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 
 #include "pwr_wrap.h"
 
@@ -9,7 +10,7 @@ int main(int argc, char *argv[])
     pPwr objPwr = Pwr_new();
 
     res = Pwr_power(objPwr,4,3);
-    printf("C++ from C: %i\r\n",res);
+    printf("Power C from C++: %i\r\n",res);
 
     Pwr_del(objPwr);
 
