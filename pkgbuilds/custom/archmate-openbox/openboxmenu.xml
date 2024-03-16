@@ -32,7 +32,7 @@
   <item label="Vim" icon="/usr/share/icons/Papirus/32x32/apps/vim.svg">
     <action name="Execute"><command>xterm -e vim</command></action>
   </item>
-  <item label="VimBrowser" icon=" /usr/share/icons/Papirus/32x32/apps/web-browser.svg">
+  <item label="VimBrowser" icon="/usr/share/icons/Papirus/32x32/apps/web-browser.svg">
     <action name="Execute"><command>vimb</command></action>
   </item>
 </menu>
