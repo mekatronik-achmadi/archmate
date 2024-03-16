@@ -14,10 +14,15 @@ INCDIR=-I./
 # build output directory
 ODIR=build
 
+# memory leak detection
+# run binary with option:
+#unset LD_PRELOAD
+MEMLEAK=-fsanitize=address
+
 # compiler options
 COPT=-O0 -Wall -pthread
-CFLAGS=$(COPT)
-LFLAGS=$(COPT) -lm
+CFLAGS=$(COPT) $(MEMLEAK)
+LFLAGS=$(COPT) $(MEMLEAK) -lm
 
 ################### Non Configurable ########################
 

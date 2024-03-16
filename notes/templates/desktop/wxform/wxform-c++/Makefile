@@ -13,10 +13,15 @@ INCDIR=-I./
 # build output directory
 ODIR=build
 
+# memory leak detection
+# run binary with option:
+#unset LD_PRELOAD
+#MEMLEAK=-fsanitize=address
+
 # compiler options
 COPT=-O0 -Wall -pthread
-CFLAGS=$(COPT) $(shell wx-config --cflags)
-LFLAGS=$(COPT) $(shell wx-config --libs)
+CFLAGS=$(COPT) $(MEMLEAK) $(shell wx-config --cflags)
+LFLAGS=$(COPT) $(MEMLEAK) $(shell wx-config --libs)
 
 
 ################### Non Configurable ########################

@@ -16,10 +16,15 @@ GUIRC=gui.fl
 # build output directory
 ODIR=build
 
+# memory leak detection
+# run binary with option:
+#unset LD_PRELOAD
+#MEMLEAK=-fsanitize=address
+
 # compiler options
 COPT=-O0 -Wall -pthread
-CFLAGS=$(COPT) -I/usr/include/FL
-LFLAGS=$(COPT) -lfltk -lfltk_forms
+CFLAGS=$(COPT) $(MEMLEAK) -I/usr/include/FL
+LFLAGS=$(COPT) $(MEMLEAK) -lfltk -lfltk_forms
 
 ################### Non Configurable ########################
 

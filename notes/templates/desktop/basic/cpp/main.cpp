@@ -2,10 +2,10 @@
 
 int main(int argc, char *argv[])
 {
-    Cli *cli;
-
-    cli = new Cli();
+    Cli *cli = new Cli();
     cli->Cli_Msg();
+
+    delete cli;
 
     return 0;
 }

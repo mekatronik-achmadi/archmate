@@ -21,16 +21,21 @@
 # Linux settings
 	# See $(GFXLIB)/tools/gmake_scripts/os_linux.mk for the list of variables
 
+# memory leak detection
+# run binary with option:
+#unset LD_PRELOAD
+MEMLEAK=-fsanitize=address
+
 ##############################################################################################
 # Set these for your project
 #
 
 ARCH     =
 SRCFLAGS = -ggdb -O0
-CFLAGS   = `pkgconf sdl2 --cflags` -m32
-CXXFLAGS = `pkgconf sdl2 --cflags` -m32
+CFLAGS   = `pkgconf sdl2 --cflags` -m32 $(MEMLEAK)
+CXXFLAGS = `pkgconf sdl2 --cflags` -m32 $(MEMLEAK)
 ASFLAGS  =
-LDFLAGS  = `pkgconf sdl2 --libs` -m32
+LDFLAGS  = `pkgconf sdl2 --libs` -m32 $(MEMLEAK)
 
 SRC      =
 OBJS     =
