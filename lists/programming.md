@@ -74,8 +74,7 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 - https://aur.archlinux.org/packages/python-pyalsaaudio/
 
 ### install programming tools
-
-- https://aur.archlinux.org/packages/chatgpt-desktop-bin/
+- https://aur.archlinux.org/packages/noi-desktop-bin/
 - https://aur.archlinux.org/packages/visual-studio-code-bin/
 
 --------------------------------------------------------------------------------

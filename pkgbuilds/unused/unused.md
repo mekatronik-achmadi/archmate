@@ -25,7 +25,6 @@
 ## install academic tools
 
 - https://aur.archlinux.org/packages/zotero-bin/
-- https://aur.archlinux.org/packages/noi-desktop-bin/
 - https://aur.archlinux.org/packages/rstudio-desktop-bin/
 - https://aur.archlinux.org/packages/mendeleydesktop-bundled/
 

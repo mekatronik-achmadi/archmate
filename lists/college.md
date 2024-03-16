@@ -1,4 +1,4 @@
-# College Packages
+python-setuptools-scm # College Packages
 
 ## Official
 
@@ -13,7 +13,7 @@ r mpdecimal gnuplot
 
 ### install python modules
 
-python-pygments
+python-pyarrow
 python-tabulate
 python-matplotlib
 python-bottleneck
@@ -31,13 +31,16 @@ python-pandas python-numexpr
 
 ### install python interface
 
-jupyter-notebook ipython jupyterlab
+ipython jupyterlab
+jupyter-notebook
+python-pygments
 
 ### install python additional
 
+python-setuptools-scm python-pillow
 python-pyaudio python-sounddevice
-python-pillow python-beautifulsoup4
-python-invoke python-flit python-cffi
+python-beautifulsoup4 python-cffi
+python-invoke python-flit
 
 ### install texlive
 
