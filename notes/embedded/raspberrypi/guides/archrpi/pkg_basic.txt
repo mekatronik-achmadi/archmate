@@ -26,6 +26,7 @@ xinput_calibrator
 xsel xclip xterm
 default-cursors
 xorg-fonts-misc
+x11-ssh-askpass
 xorg-xmessage
 
 tk ttf-liberation onboard

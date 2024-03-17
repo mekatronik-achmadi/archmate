@@ -5,6 +5,9 @@
 <!-- ########################## Program Menu ########################## -->
 
 <menu id="programs" label="Applications">
+  <item label="Browser" icon="/usr/share/icons/Papirus/32x32/apps/web-browser.svg">
+    <action name="Execute"><command>vimb</command></action>
+  </item>
   <item label="Firefox" icon="/usr/share/icons/Papirus/32x32/apps/firefox.svg">
     <action name="Execute"><command>firefox</command></action>
   </item>
@@ -31,9 +34,6 @@
   </item>
   <item label="Vim" icon="/usr/share/icons/Papirus/32x32/apps/vim.svg">
     <action name="Execute"><command>xterm -e vim</command></action>
-  </item>
-  <item label="VimBrowser" icon="/usr/share/icons/Papirus/32x32/apps/web-browser.svg">
-    <action name="Execute"><command>vimb</command></action>
   </item>
 </menu>
 
@@ -105,6 +105,12 @@
   </item>
   <item label="OBConf" icon="/usr/share/icons/Papirus/32x32/apps/obconf.svg">
     <action name="Execute"><command>obconf</command></action>
+  </item>
+  <item label="Tint2Conf" icon="/usr/share/icons/Papirus/32x32/apps/tint2conf.svg">
+    <action name="Execute"><command>tint2conf</command></action>
+  </item>
+  <item label="Autostart" icon="/usr/share/icons/Papirus/32x32/apps/gnome-run.svg">
+    <action name="Execute"><command>xterm -e vim /usr/share/openbox/autostart</command></action>
   </item>
 </menu>
 

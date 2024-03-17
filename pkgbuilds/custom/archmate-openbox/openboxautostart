@@ -3,4 +3,5 @@ bash /usr/share/openbox/fehbg &
 volumeicon &
 brightnessctl -q s 15% &
 (sleep 1s && tint2 -c /usr/share/openbox/tint2.rc) &
+#(sleep 1s && tint2) &
 

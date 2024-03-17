@@ -43,6 +43,7 @@ xorg-xinit xorg-fonts
 xsel xclip xterm
 xorg-fonts-misc
 default-cursors
+x11-ssh-askpass
 xorg-xmessage
 
 ### install login manager

@@ -11,6 +11,7 @@ bashrun_theme() {
 
 editable_fehbg() {
     chmod a+w /usr/share/openbox/fehbg
+    chmod a+w /usr/share/openbox/autostart
 }
 
 menu_cleaning() {
