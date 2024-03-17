@@ -518,6 +518,30 @@ scrcpy -w -S --disable-screensaver --no-audio --tcpip[=ip[:port]]
 
 --------------------------------------------------------------------------------------------------
 
+## Qtcreator
+
+```sh
+echo "Help->About Plugins->C++"
+echo "check: ClangCodeModel"
+
+echo "Edit->Preferences->Text Editor->Font & Colors"
+echo "Family: LiterationMono Nerd Font"
+echo "Size: 8"
+
+echo "Edit->Preferences->C++->Code Model"
+echo "check: Interpret ambiguous headers as C headers"
+echo "check: Ignore precompiled headers"
+
+echo "Edit->Preferences->C++->Clangd"
+echo "uncheck: Use clangd"
+
+echo "Edit->Preferences->Analyzer"
+echo "uncheck: Analyze open files"
+
+echo "Edit->Preferences->FakeVim"
+echo "uncheck: Use FakeVim"
+```
+
 ## Arduino
 
 ### setup

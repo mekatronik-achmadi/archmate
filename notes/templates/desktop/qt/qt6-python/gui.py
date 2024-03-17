@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from PyQt5.QtWidgets import QMainWindow, QMessageBox
+from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from Ui_gui import Ui_Gui
 import sys
 
@@ -16,10 +16,10 @@ class Gui(QMainWindow,Ui_Gui):
 
     def btnMsg_clicked(self):
        msgBox = QMessageBox()
-       msgBox.setIcon(QMessageBox.Information)
+       msgBox.setIcon(QMessageBox.Icon.Information)
        msgBox.setWindowTitle("Template")
        msgBox.setText("Template Python Qt")
-       msgBox.setStandardButtons(QMessageBox.Ok)
+       msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
        msgBox.exec()
 
     def btnQuit_clicked(self):

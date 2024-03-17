@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from PySide2.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication
 from gui import Gui
 import sys
 

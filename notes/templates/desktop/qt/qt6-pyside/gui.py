@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PySide2.QtWidgets import QMainWindow,QMessageBox
-from Ui_gui import Ui_Gui
+from PySide6.QtWidgets import QMainWindow,QMessageBox
+from ui_gui import Ui_Gui
 
 class Gui(QMainWindow,Ui_Gui):
     def __init__(self, parent=None):
