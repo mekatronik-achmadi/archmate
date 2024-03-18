@@ -2,9 +2,13 @@
 
 ## Generate C++ Class using wxFormBuilder
 
+open gui file on wxFormBuilder
+
 ```sh
 wxformbuilder appGui.fbp
 ```
+
+press 'F8' to generate source files
 
 ## Using Makefile
 
@@ -23,7 +27,18 @@ make all
 
 ## Using CMake
 
-not tested for now
+create build folder and compile_commands.json
+
+```sh
+cmake -B build
+cp -vf build/compile_commands.json ./
+```
+
+clean and compile binary
+
+```sh
+cmake --build build
+```
 
 ## Run binary
 

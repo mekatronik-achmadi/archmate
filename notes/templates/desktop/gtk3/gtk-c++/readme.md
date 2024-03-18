@@ -17,7 +17,7 @@ make all
 
 ## Using CMake
 
-not tested for now
+Not Recommended for GTK+
 
 ## Run binary
 

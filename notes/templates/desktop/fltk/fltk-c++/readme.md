@@ -2,6 +2,12 @@
 
 ## Using Makefile
 
+generate GUI sources
+
+```sh
+fluid -c gui.fl
+```
+
 create compile_commands.json
 
 ```sh
@@ -17,7 +23,18 @@ make all
 
 ## Using CMake
 
-not tested for now
+create build folder and compile_commands.json
+
+```sh
+cmake -B build
+cp -vf build/compile_commands.json ./
+```
+
+clean and compile binary
+
+```sh
+cmake --build build
+```
 
 ## Run binary
 

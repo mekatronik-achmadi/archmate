@@ -1,24 +1,46 @@
 # Build C in C++
 
-Generate Makefile
+## Using Makefile
+
+create compile_commands.json
+
+```sh
+bear -- make
+```
+
+clean and compile binary
+
+```sh
+make clean
+make all
+```
+
+## Using CMake
+
+create build folder and compile_commands.json
 
 ```sh
 cmake -B build
-
-mv build/compile_commands.json ../
+cp -vf build/compile_commands.json ./
 ```
 
-To use memleak checker
+clean and compile binary
+
+```sh
+cmake --build build
+```
+
+## Run binary
+
+Unset loaded library for memleak checker
 
 ```sh
 unset LD_PRELOAD
 ```
 
-Compile and Run
+run binary
 
 ```sh
-cmake --build build
-
 ./build/main
 ```
 
