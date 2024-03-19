@@ -73,7 +73,7 @@ run **main** example using command:
 
 ```sh
 ./build/bin/main \
--m llm-models/llama-2-7b-chat.Q3_K_L.gguf \
+-m llm-models/llama-2-7b-chat.Q3_K_S.gguf \
 -r "User:" -f prompts/chat-with-bob.txt \
 -n 128 -b 1024 --repeat-penalty 1.0 --color -i
 ```
@@ -82,7 +82,7 @@ run **main** example with all model parts loaded to memory
 
 ```sh
 ./build/bin/main --no-mmap \
--m llm-models/llama-2-7b-chat.Q3_K_L.gguf \
+-m llm-models/llama-2-7b-chat.Q3_K_S.gguf \
 -r "User:" -f prompts/chat-with-bob.txt \
 -n 128 -b 1024 --repeat-penalty 1.0 --color -i
 ```
