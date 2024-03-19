@@ -59,6 +59,7 @@ mingw-w64-x86_64-ctags
 mingw-w64-x86_64-python
 mingw-w64-x86_64-cython0
 mingw-w64-x86_64-python-pip
+mingw-w64-x86_64-cmake
 mingw-w64-x86_64-toolchain
 mingw-w64-x86_64-clang-analyzer
 mingw-w64-x86_64-clang-tools-extra
