@@ -2,6 +2,11 @@
 
 ## Official
 
+### install ubuntu fonts
+
+ttf-ubuntu-mono-nerd
+ttf-ubuntu-font-family
+
 --------------------------------------------------------------------------------
 
 ## AUR

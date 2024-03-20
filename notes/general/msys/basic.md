@@ -12,6 +12,9 @@
 - Git: https://git-scm.com/download/win
 - Git-Cola: https://git-cola.github.io/downloads.html
 - VSCode: https://code.visualstudio.com/download
+- Geany:
+	- https://download.geany.org/geany-2.0_setup.exe
+	- https://plugins.geany.org/geany-plugins/geany-plugins-2.0_setup.exe
 
 ## Setup
 
@@ -64,8 +67,6 @@ mingw-w64-x86_64-toolchain
 mingw-w64-x86_64-clang-analyzer
 mingw-w64-x86_64-clang-tools-extra
 mingw-w64-x86_64-python-virtualenv
-mingw-w64-x86_64-geany
-mingw-w64-x86_64-geany-plugins
 ")
 ```
 
