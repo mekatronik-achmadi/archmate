@@ -58,13 +58,28 @@ As My Laptop only had 8GB memory, it only can use 7B variant with Quantization L
 Download from HuggingFace with wget
 
 ```sh
-mkdir -p llm-models/
-cd llm-models/
+mkdir -p ../llm-models/
+cd ../llm-models/
 
 #wget -c https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q3_K_L.gguf
 wget -c https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q3_K_S.gguf
 
-cd ../
+cd -
+```
+
+## Initial Chat
+
+here example of initial chat. Saved as **ask-oracle.txt**
+
+```txt
+Transcript of a dialog, where the User interacts with a deity named Oracle.
+Oracle know many things and happy to answer any question.
+
+User: Hello, Oracle.
+Oracle: Hello. what do you want to know?
+User: Please tell me the origin of life.
+Oracle: Sure. Life were happen as effect of deterministic random natural process that happen on Earth.
+User:
 ```
 
 ## Try interactive example
@@ -72,18 +87,18 @@ cd ../
 run **main** example using command:
 
 ```sh
-./build/bin/main \
--m llm-models/llama-2-7b-chat.Q3_K_S.gguf \
--r "User:" -f prompts/chat-with-bob.txt \
--n 128 -b 1024 --repeat-penalty 1.0 --color -i
+./build/bin/main -n 128 -b 1024 \
+-m ../llm-models/llama-2-7b-chat.Q3_K_S.gguf \
+--repeat-penalty 1.0 --color -i \
+-r "User:" -f ask-oracle.txt
 ```
 
 run **main** example with all model parts loaded to memory
 
 ```sh
-./build/bin/main --no-mmap \
--m llm-models/llama-2-7b-chat.Q3_K_S.gguf \
--r "User:" -f prompts/chat-with-bob.txt \
--n 128 -b 1024 --repeat-penalty 1.0 --color -i
+./build/bin/main -n 128 -b 1024 --no-mmap \
+-m ../llm-models/llama-2-7b-chat.Q3_K_S.gguf \
+--repeat-penalty 1.0 --color -i \
+-r "User:" -f ask-oracle.txt
 ```
 
