@@ -74,13 +74,8 @@ mingw-w64-x86_64-python-virtualenv
 
 ```sh
 pacman -S $(echo "
-mingw-w64-x86_64-gtk3
-mingw-w64-x86_64-fltk
-mingw-w64-x86_64-glade
-mingw-w64-x86_64-gtkmm3
-mingw-w64-x86_64-python-gobject
-mingw-w64-x86_64-wxwidgets3.2-gtk3
-mingw-w64-x86_64-wxPython
+mingw-w64-x86_64-gtk3 mingw-w64-x86_64-python-gobject
+mingw-w64-x86_64-glade mingw-w64-x86_64-gtkmm3
 ")
 ```
 
