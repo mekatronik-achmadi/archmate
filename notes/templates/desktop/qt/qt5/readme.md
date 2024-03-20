@@ -9,6 +9,14 @@ cd build/
 qmake-qt5 ../
 ```
 
+to also check using CLazy
+
+```sh
+cmake-qt5 ../ \
+-spec linux-clang \
+QMAKE_CXX="clazy"
+```
+
 Generate compile_commands.json
 
 ```sh

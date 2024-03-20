@@ -9,7 +9,7 @@ memcached redis
 
 ### install qt programming
 
-qt5 qt6 sip python-qtpy pyqt-builder
+qt5 qt6 clazy sip python-qtpy pyqt-builder
 python-pyqt5 pyside2 pyside2-tools
 python-pyqt5-3d python-pyqt5-webengine
 python-pyqt5-chart python-pyqt5-datavisualization
