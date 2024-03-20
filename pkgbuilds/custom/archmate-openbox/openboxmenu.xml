@@ -20,6 +20,9 @@
   <item label="GPicView" icon="/usr/share/icons/Papirus/32x32/apps/gpicview.svg">
     <action name="Execute"><command>gpicview</command></action>
   </item>
+  <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
+    <action name="Execute"><command>onboard</command></action>
+  </item>
   <item label="PCManFM" icon="/usr/share/icons/Papirus/32x32/apps/system-file-manager.svg">
     <action name="Execute"><command>pcmanfm</command></action>
   </item>
@@ -127,13 +130,13 @@
   <item label="MC FileMgr" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
     <action name="Execute"><command>xterm -e mc --nocolor</command></action>
   </item>
-  <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
-    <action name="Execute"><command>onboard</command></action>
-  </item>
   <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
   <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
   <menu id="settings" icon="/usr/share/icons/Papirus/32x32/apps/preferences.svg"/>
   <menu id="client-list-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
+
+  <separator label="Piped Menu"/>
+  <menu id="applications" label="All Menu" execute="xdg_menu --format openbox3-pipe"/>
 
   <separator label="Exit" />
   <item label="Logout" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-logout.svg">

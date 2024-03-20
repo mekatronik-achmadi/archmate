@@ -22,6 +22,7 @@ vim-tabular vim-gitgutter
 xorg xorg-apps xorg-drivers
 xorg-xinit xorg-fonts
 xf86-video-armsoc-git
+archlinux-xdg-menu
 xinput_calibrator
 xsel xclip xterm
 default-cursors
