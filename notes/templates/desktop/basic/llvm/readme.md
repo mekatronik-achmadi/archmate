@@ -28,6 +28,32 @@ run the binary
 ./bin_main_c
 ```
 
+## Compile and Assembly in C (GCC)
+
+generate Assembly
+
+```sh
+gcc -c -S -o main_c_gcc.s main_c.c
+```
+
+check generated files
+
+```sh
+bat main_c_gcc.s
+```
+
+compile to binary
+
+```sh
+gcc -o bin_main_c_gcc main_c.c
+```
+
+run the binary
+
+```sh
+./bin_main_c_gcc
+```
+
 ## Compile and IR in C++
 
 generate LLVM IR and Assembly
