@@ -27,7 +27,8 @@ python-pyqtgraph
 go gopls delve
 rust rust-analyzer
 rust-src rust-bindgen
-cargo-generate rust-wasm
+rust-wasm cargo-generate
+cargo-edit cargo-feature
 tcsh boost swig valabind
 clang llvm libc++ lld lldb
 gdb gdb-dashboard cppcheck
