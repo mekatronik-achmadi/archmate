@@ -93,6 +93,7 @@ sudo mkinitcpio -p archmate
 #### bumblebee setup
 
 ```sh
+sudo lspci | grep -i vga
 ls /usr/lib/modprobe.d/bumblebee.conf
 
 sudo gpasswd -a $USER video
@@ -108,18 +109,11 @@ sudo reboot
 #### bumblebee usage
 
 ```sh
+optirun --status
+lsmod | grep nvidia
+
 glxgears
 optirun glxgears
-optirun glxspheres64
-#optirun glxspheres32
-```
-
-```sh
-optirun wine program.exe
-optirun -b primus wine program.exe
-
-# if exit kill all wineserver
-killall wineserver
 ```
 
 #### optirun exit
@@ -127,6 +121,7 @@ killall wineserver
 ```sh
 optirun --status
 lsmod | grep nvidia
+
 sudo rmmod nvidia_drm nvidia_modeset nvidia
 echo 'OFF' | sudo tee /proc/acpi/bbswitch
 ```
