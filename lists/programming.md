@@ -24,13 +24,13 @@ python-pyqtgraph
 
 ### install c/c++ programming
 
-tcsh go gopls
+go gopls delve
 rust rust-analyzer
 rust-src rust-bindgen
 cargo-generate rust-wasm
-fltk boost swig valabind
-gdb gdb-dashboard cppcheck
+tcsh boost swig valabind
 clang llvm libc++ lld lldb
+gdb gdb-dashboard cppcheck
 
 ### install javacript programming
 
@@ -82,10 +82,6 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/custom-doxygen/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/vim-doxygen/
-
-### install python modules
-
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/fltk/
 
 --------------------------------------------------------------------------------
 
