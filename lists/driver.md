@@ -111,6 +111,7 @@ sudo reboot
 ```sh
 optirun --status
 lsmod | grep nvidia
+watch -n1 nvidia-smi
 
 glxgears
 optirun glxgears
@@ -121,6 +122,7 @@ optirun glxgears
 ```sh
 optirun --status
 lsmod | grep nvidia
+watch -n1 nvidia-smi
 
 sudo rmmod nvidia_drm nvidia_modeset nvidia
 echo 'OFF' | sudo tee /proc/acpi/bbswitch
