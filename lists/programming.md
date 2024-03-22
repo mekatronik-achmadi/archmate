@@ -24,7 +24,6 @@ python-pyqtgraph
 
 ### install c/c++ programming
 
-go gopls delve
 rust rust-analyzer
 rust-src rust-bindgen
 rust-wasm cargo-generate
@@ -170,9 +169,9 @@ node -v;ls ~/.vimrc
 mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-snippets coc-sh coc-ultisnips"
+vim -c "CocInstall coc-pairs coc-snippets coc-ultisnips"
 vim -c "CocInstall coc-clangd coc-jedi coc-json coc-tsserver"
-vim -c "CocInstall coc-html coc-yaml coc-go coc-rust-analyzer"
+vim -c "CocInstall coc-sh coc-html coc-yaml coc-rust-analyzer"
 vim +PlugClean
 ```
 
@@ -182,7 +181,6 @@ mkdir -p ~/.vim
 jq -n '
 ."clangd.arguments"=["-header-insertion=never"] |
 ."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
-."go.goplsPath"="/usr/bin/gopls" |
 ."rust-analyzer.server.path"="/usr/bin/rust-analyzer"
 ' > ~/.vim/coc-settings.json
 
@@ -261,17 +259,13 @@ code --force --install-extension ms-python.python
 code --force --install-extension ms-python.vscode-pylance
 code --force --install-extension ms-vscode.cpptools
 code --force --install-extension cschlosser.doxdocgen
+code --force --install-extension rust-lang.rust-analyzer
 code --force --install-extension mads-hartmann.bash-ide-vscode
 
 code --force --install-extension oderwat.indent-rainbow
 code --force --install-extension pkief.material-icon-theme
 code --force --install-extension tejasvi.rainbow-brackets-2
 code --force --install-extension wayou.vscode-todo-highlight
-```
-
-```sh
-code --force --install-extension golang.go
-code --force --install-extension rust-lang.rust-analyzer
 ```
 
 ```sh
@@ -332,7 +326,6 @@ rustup default [nightly|stable]
 jq '
 ."clangd.arguments"=["-header-insertion=never"] |
 ."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
-."go.goplsPath"="/usr/bin/gopls" |
 ."rust-analyzer.server.path"=""
 ' ~/.vim/coc-settings.json > ~/.vim/temp.json
 
