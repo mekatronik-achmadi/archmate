@@ -49,6 +49,7 @@ docker infodock
 
 ```sh
 docker image ls
+docker images
 ```
 
 ### Install Images
@@ -83,7 +84,34 @@ and to exit
 exit
 ```
 
+## Image Remove
+
+### Stop Images
+
+```sh
+docker stop $(sudo docker ps -q)
+docker kill $(sudo docker ps -q)
+```
+
+### Remove an Image
+
+```sh
+docker rm debian
+```
+
+### Remove all Images
+
+```sh
+docker system prune -a
+```
+
 ## Debian Packages
+
+### Enter Shell
+
+```sh
+docker run -it debian bash
+```
 
 ### Directory Paths
 
@@ -215,4 +243,28 @@ sudo apt-get clean
 ```sh
 sudo apt-get dist-upgrade
 sudo apt-get upgrade
+```
+
+## Docker Compose
+
+### Stop Running Images
+
+```sh
+docker-compose down
+```
+
+### Configuration example
+
+#### Dockerfile
+
+Coming Soon
+
+### docker-compose.yml
+
+Coming Soon
+
+### Build and Run
+
+```sh
+docker-compose up --build
 ```
