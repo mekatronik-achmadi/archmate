@@ -14,7 +14,6 @@ sudo pacman -S docker docker-compose
 sudo groupadd -f docker
 sudo gpasswd -a $USER docker
 
-# reload group without relogin
 newgrp docker
 
 sudo systemctl enable docker.service
@@ -82,4 +81,138 @@ and to exit
 
 ```sh
 exit
+```
+
+## Debian Packages
+
+### Directory Paths
+
+#### APT Configurations
+
+- Config File: **/etc/apt/apt.conf**
+- Config Folder: **/etc/apt/apt.conf.d/**
+
+#### Server List
+
+- ServerList File: **/etc/apt/sources.list**
+- ServerList Folder: **/etc/apt/sources.list.d/**
+
+#### Cache Folders
+
+- Databases: **/var/lib/apt/lists/**
+- Packages: **/var/cache/apt/archives/**
+
+### Update List from server
+
+```sh
+sudo apt-get update
+```
+
+### Install from Server
+
+#### Search Package
+
+```sh
+apt-cache search vim less
+```
+
+#### Check Package
+
+```sh
+apt-cache show vim less
+```
+
+#### Install Package
+
+```sh
+sudo apt-get install vim less
+```
+
+### Manage Installed Packages
+
+#### Search Installed
+
+```sh
+dpkg -l | grep vim | less
+```
+
+#### Check Package
+
+```sh
+dpkg -s vim | less
+```
+
+#### Check Installed Files
+
+```sh
+dpkg -L vim | less
+```
+
+#### Check Owned Files
+
+```sh
+dpkg -S /usr/bin/vim.basic
+```
+
+### Install local Files
+
+#### Get Package URLs
+
+```sh
+apt-get -y install --print-uris vim | cut -f 2 -d \' | grep \.deb
+````
+
+#### Get Installed Package URLs
+
+```sh
+apt-get -y install --print-uris --reinstall vim | cut -f 2 -d \' | grep \.deb
+```
+
+#### Install locally without APT
+
+```sh
+sudo dpkg -i vim_9.0.1378-2_amd64.deb
+```
+
+### Remove Packages
+
+#### Remove single Package
+
+```sh
+sudo apt-get remove vim
+```
+
+#### Remove Package and its configurations
+
+```sh
+sudo apt-get purge vim
+```
+
+#### Remove unused/orphaned packages
+
+```sh
+sudo apt-get autoremove
+```
+
+### Clean Cache
+
+#### Clean Old/Unused Packages
+
+```sh
+sudo apt-get autoclean
+```
+
+#### Clean All Packages
+
+```sh
+sudo apt-get clean
+```
+
+### Upgrade Packages
+
+**NOTE:** Not Recommended in many cases.
+
+```sh
+sudo apt-get dist-upgrade
+sudo apt-get upgrade
 ```
