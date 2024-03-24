@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include "gfx.h"
 
 static GListener gl;
@@ -56,11 +57,11 @@ int main(void) {
         switch (pe->type) {
             case GEVENT_GWIN_BUTTON:
                 if(((GEventGWinButton*)pe)->gwin==btnMsg) {
-                    printf("Template C uGFX\r\n");
+                    printf("Template C uGFX in X11\r\n");
                 }
 
                 else if(((GEventGWinButton*)pe)->gwin==btnQuit) {
-                    printf("There is no Quit/Exit functions\r\n");
+                    gfxExit();
                 }
                 break;
             default:

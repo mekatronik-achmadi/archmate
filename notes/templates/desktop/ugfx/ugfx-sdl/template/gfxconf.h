@@ -7,7 +7,7 @@
 #ifndef _GFXCONF_H
 #define _GFXCONF_H
 
-#define GFX_USE_OS_LINUX TRUE
+//#define GFX_USE_OS_LINUX TRUE
 
 /********************************************************/
 /* GDISP stuff                                          */

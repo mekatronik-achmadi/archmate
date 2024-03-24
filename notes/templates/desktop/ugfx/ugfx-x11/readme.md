@@ -30,6 +30,6 @@ unset LD_PRELOAD
 run binary
 
 ```sh
-./.build/ugfx-c
+./.build/ugfx-x11
 ```
 

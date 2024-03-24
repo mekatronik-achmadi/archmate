@@ -9,11 +9,11 @@
 	OPT_OS					= linux
 	OPT_LINK_OPTIMIZE		= yes
 	# Change this next setting (or add the explicit compiler flags) if you are not compiling for x86 linux
-	OPT_CPU					= x86
+	OPT_CPU					= x64
 
 # uGFX settings
 	# See $(GFXLIB)/tools/gmake_scripts/library_ugfx.mk for the list of variables
-	GFXLIB					= /opt/ugfxlib
+	GFXLIB					= /opt/ugfxlib/ugfx29
 	GFXBOARD				= Linux-SDL
 	GFXDEMO					=
 	include ./template/template.mk
@@ -32,14 +32,14 @@ MEMLEAK=-fsanitize=address
 
 ARCH     =
 SRCFLAGS = -ggdb -O0
-CFLAGS   = `pkgconf sdl2 --cflags` -m32 $(MEMLEAK)
-CXXFLAGS = `pkgconf sdl2 --cflags` -m32 $(MEMLEAK)
+CFLAGS   = `sdl2-config --cflags` $(MEMLEAK)
+CXXFLAGS =
 ASFLAGS  =
-LDFLAGS  = `pkgconf sdl2 --libs` -m32 $(MEMLEAK)
+LDFLAGS  = `sdl2-config --libs` $(MEMLEAK)
 
 SRC      =
 OBJS     =
-DEFS     = -DPKG_CONFIG_PATH=/usr/lib32/pkgconfig
+DEFS     =
 LIBS     =
 INCPATH  =
 LIBPATH  =
