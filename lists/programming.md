@@ -61,8 +61,9 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 - https://aur.archlinux.org/packages/wxhexeditor/
 - https://aur.archlinux.org/packages/wxformbuilder/
 
-### install system python bindings
+### install additional system python
 
+- https://aur.archlinux.org/packages/python-ttkthemes/
 - https://aur.archlinux.org/packages/python-wifiwrapper/
 - https://aur.archlinux.org/packages/python-pyalsaaudio/
 
