@@ -35,6 +35,51 @@ jq -n '
 ."data-root"="~/Dockers/"
 ' | sudo tee /etc/docker/daemon.json
 
-sudo systemctl start docker
+sudo systemctl restart docker
 ```
 
+### Checking
+
+```sh
+docker infodock
+```
+
+## Debian Images
+
+### List Installed
+
+```sh
+docker image ls
+```
+
+### Install Images
+
+```sh
+docker pull debian
+```
+
+### Inspect Images
+
+```sh
+docker image inspect debian | bat
+```
+
+### Run Images
+
+Run command
+
+```sh
+docker run -it debian bash -c "echo hello world"
+```
+
+Enter shell
+
+```sh
+docker run -it debian bash
+```
+
+and to exit
+
+```sh
+exit
+```
