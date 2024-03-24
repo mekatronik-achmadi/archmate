@@ -259,18 +259,26 @@ docker-compose down
 
 Coming Soon
 
-### docker-compose.yml
+#### docker-compose.yml
 
 Coming Soon
 
-### Build and Run
+### Run Images
+
+#### Build
 
 ```sh
 docker-compose up --build
 ```
 
-### Run as Daemon
+#### Daemonize
 
 ```sh
 docker-compose up -d
+```
+
+#### Check Log
+
+```sh
+docker-compose logs -f
 ```
