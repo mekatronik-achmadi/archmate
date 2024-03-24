@@ -86,7 +86,7 @@ exit
 
 ## Image Remove
 
-### Stop Images
+### Stop All Images
 
 ```sh
 docker stop $(sudo docker ps -q)
@@ -267,4 +267,10 @@ Coming Soon
 
 ```sh
 docker-compose up --build
+```
+
+### Run as Daemon
+
+```sh
+docker-compose up -d
 ```
