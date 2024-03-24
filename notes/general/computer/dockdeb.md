@@ -66,16 +66,27 @@ docker image inspect debian | bat
 
 ### Run Images
 
-Run command
+#### Run single command
+
+Run command in new instance
 
 ```sh
 docker run -it debian bash -c "echo hello world"
+````
+
+Run command in a already run instance
+
+```sh
+docker exec -it $(docker ps -q) bash -c "echo hello world"
 ```
+
+#### Run Shell
 
 Enter shell
 
 ```sh
 docker run -it debian bash
+#docker exec -it $(docker ps -q) bash
 ```
 
 and to exit
