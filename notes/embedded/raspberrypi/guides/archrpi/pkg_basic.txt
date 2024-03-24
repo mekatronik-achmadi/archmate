@@ -9,6 +9,7 @@ curl wget openssh sshfs
 pacman-contrib mlocate
 git tig terminus-font
 highlight mc fdupes
+fakechroot fakeroot
 ripgrep bat fzf
 
 posix posix-software-development

@@ -20,6 +20,7 @@ virtualbox-guest-utils
 git tig terminus-font
 arch-install-scripts
 highlight mc fdupes
+fakechroot fakeroot
 mkinitcpio-archiso
 cdrtools syslinux
 ripgrep bat fzf
