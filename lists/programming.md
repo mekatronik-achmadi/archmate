@@ -323,14 +323,26 @@ rustup default [nightly|stable]
 
 #### vim-coc default analyzer
 
+Change language server
+
 ```sh
 jq '
-."clangd.arguments"=["-header-insertion=never"] |
-."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
-."rust-analyzer.server.path"=""
+."rust-analyzer.server.path"="~/.cargo/bin/rust-analyzer"
 ' ~/.vim/coc-settings.json > ~/.vim/temp.json
 
 mv ~/.vim/temp.json ~/.vim/coc-settings.json
 
 bat ~/.vim/coc-settings.json
+```
+
+Open Rust sources in Vim
+
+```sh
+vim src/
+```
+
+Format sources
+
+```sh
+rustfmt src/*.rs
 ```
