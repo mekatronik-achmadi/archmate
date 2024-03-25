@@ -84,6 +84,10 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/custom-doxygen/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/vim-doxygen/
 
+### install additional system python
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/fltk/
+
 --------------------------------------------------------------------------------
 
 ## Configurations
