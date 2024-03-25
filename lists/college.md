@@ -1,4 +1,4 @@
-python-setuptools-scm # College Packages
+# College Packages
 
 ## Official
 
@@ -37,10 +37,11 @@ python-pygments
 
 ### install python additional
 
-python-setuptools-scm python-pillow
-python-pyaudio python-sounddevice
-python-beautifulsoup4 python-cffi
-python-invoke python-flit
+python-setuptools-scm
+python-beautifulsoup4
+python-flit python-cffi
+python-pillow python-pyaudio
+python-invoke python-sounddevice
 
 ### install texlive
 

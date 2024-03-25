@@ -3,14 +3,15 @@
 
 import tkinter as tk
 from tkinter import ttk, messagebox
-from ttkthemes import ThemedTk
 
 class Template():
     def __init__(self):
-        #self.window = tk.Tk()
-        self.window = ThemedTk(theme="clearlooks")
+        self.window = tk.Tk()
         self.window.geometry("200x100")
         self.window.title("Template")
+
+        self.style = ttk.Style(self.window)
+        self.style.theme_use("alt")
 
         self.txtlabel = ttk.Label(self.window,text="Template Tkinter")
         self.txtlabel.pack(side=tk.TOP,expand=True,fill='both')

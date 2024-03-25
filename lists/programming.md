@@ -63,7 +63,6 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 
 ### install additional system python
 
-- https://aur.archlinux.org/packages/python-ttkthemes/
 - https://aur.archlinux.org/packages/python-wifiwrapper/
 - https://aur.archlinux.org/packages/python-pyalsaaudio/
 
