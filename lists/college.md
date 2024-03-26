@@ -124,14 +124,15 @@ sudo sed -i 's#desktopeditors --new#desktopeditors --system-title-bar --new#g' \
 
 ```sh
 mkdir -p $HOME/R/library
-echo ".libPaths('$HOME/R/library')" | tee ~/.Rprofile
+echo ".libPaths(\"$HOME/R/library\")" | tee ~/.Rprofile
 echo '.First <- function() {
-  message("Welcome back ", Sys.getenv("USER"),"!\n","Working directory is: ", getwd())
+  message("User: ", Sys.getenv("USER"), "\n", "WorkDir: ", getwd())
 }
 local({
   r <- getOption("repos")
   r["CRAN"] <- "https://mirror.aarnet.edu.au/pub/CRAN/"
   options(repos = r)
+  options(timeout = 120)
 })' | tee -a ~/.Rprofile
 
 R -e 'print(R.version.string)'
@@ -153,10 +154,10 @@ r -e 'install.packages(c("ImportExport","tidymodels","tidyverse","markdown"))'
 r -e 'install.packages(c("randomForest","party","survival","plyr","plotrix"))'
 r -e 'install.packages(c("streamR","shiny","httpgd","GGally","haven","XML2R"))'
 
-sudo R CMD javareconf
-r -e 'install.packages("xlsx")'
-r -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
-r -e 'library(xlsx)'
+#sudo R CMD javareconf
+#r -e 'install.packages("xlsx")'
+#r -e 'options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx2048m"))'
+#r -e 'library(xlsx)'
 ```
 
 ```sh
