@@ -86,6 +86,7 @@ sed -i 's#-p1#-p0#g' PKGBUILD
 ### install additional system python
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/fltk/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/tktheme/
 
 --------------------------------------------------------------------------------
 

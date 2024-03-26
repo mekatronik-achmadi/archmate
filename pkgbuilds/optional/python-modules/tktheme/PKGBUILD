@@ -1,0 +1,27 @@
+pkgname=python-tktheme
+pkgver=3.2.2
+pkgrel=1
+pkgdesc="Themes for Tkinter in Python"
+arch=('any')
+url="https://github.com/TkinterEP/ttkthemes"
+license=('GPL3')
+depends=('tcl' 'tk' 'python-pillow')
+makedepends=('python-setuptools')
+provides=('ttk-themes' 'python-ttkthemes')
+conflicts=('ttk-themes' 'python-ttkthemes')
+source=("https://github.com/TkinterEP/ttkthemes/archive/refs/tags/v$pkgver.tar.gz")
+md5sums=('5a15968eec2d671992707c6e204d71e1')
+
+build() {
+    cd "$srcdir/ttkthemes-$pkgver"
+    python setup.py build
+}
+
+package() {
+    cd "$srcdir/ttkthemes-$pkgver"
+    python setup.py install --root="$pkgdir/" --prefix=/usr --optimize=1 --skip-build
+
+    mkdir -p ${pkgdir}/usr/lib/ttkthemes
+    cp -rf ttkthemes/themes/* ${pkgdir}/usr/lib/ttkthemes/
+}
+

@@ -3,6 +3,7 @@
 
 import tkinter as tk
 from tkinter import ttk, messagebox
+from ttkthemes import ThemedStyle
 
 class Template():
     def __init__(self):
@@ -10,8 +11,10 @@ class Template():
         self.window.geometry("200x100")
         self.window.title("Template")
 
-        self.style = ttk.Style(self.window)
-        self.style.theme_use("alt")
+        #self.style = ttk.Style(self.window)
+        #self.style.theme_use("alt")
+        self.style = ThemedStyle(self.window)
+        self.style.theme_use("clearlooks")
 
         self.txtlabel = ttk.Label(self.window,text="Template Tkinter")
         self.txtlabel.pack(side=tk.TOP,expand=True,fill='both')
