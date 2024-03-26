@@ -149,10 +149,11 @@ vim -c "CocInstall coc-r-lsp"
 
 ```sh
 r -e 'print(R.version.string);print(.libPaths())'
+r -e 'print(library())'
 
 r -e 'install.packages(c("ImportExport","tidymodels","tidyverse","markdown"))'
-r -e 'install.packages(c("randomForest","party","survival","plyr","plotrix"))'
-r -e 'install.packages(c("streamR","shiny","httpgd","GGally","haven","XML2R"))'
+r -e 'install.packages(c("randomForest","party","survival","haven","jsonlite"))'
+r -e 'install.packages(c("streamR","shiny","httpgd","GGally","plyr","plotrix"))'
 
 #sudo R CMD javareconf
 #r -e 'install.packages("xlsx")'
