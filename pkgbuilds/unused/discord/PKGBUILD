@@ -1,7 +1,7 @@
 pkgname=discord-bin
 _tarname=discord
 _pkgname=Discord
-pkgver=0.0.38
+pkgver=0.0.47
 pkgrel=1
 pkgdesc="All-in-one voice and text chat for gamers"
 arch=('x86_64')
@@ -17,7 +17,7 @@ optdepends=('libpulse: Pulseaudio support'
 source=("https://dl.discordapp.net/apps/linux/$pkgver/$_tarname-$pkgver.tar.gz"
         "LICENSE-$pkgver.html::https://discordapp.com/terms"
         "OSS-LICENSES-$pkgver.html::https://discordapp.com/licenses")
-md5sums=('f520ed276c659e07a858e1f1ff1a0580' 'SKIP' 'SKIP')
+md5sums=('SKIP' 'SKIP' 'SKIP')
 
 prepare() {
   cd $_pkgname
