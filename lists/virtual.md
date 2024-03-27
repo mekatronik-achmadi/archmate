@@ -12,6 +12,12 @@ qemu-user-static qemu-user-static-binfmt
 
 docker docker-compose
 
+### install wine
+
+wine-staging vkd3d
+winetricks msitools
+cabextract icoutils
+
 --------------------------------------------------------------------------------
 
 ## AUR

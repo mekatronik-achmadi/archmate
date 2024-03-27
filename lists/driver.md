@@ -87,14 +87,14 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ```sh
 sudo sed -i 's@kms @@g' /etc/mkinitcpio.conf
-sudo mkinitcpio -p archmate
+sudo mkinitcpio -p archlinux
 ```
 
 #### bumblebee setup
 
 ```sh
 sudo lspci | grep -i vga
-ls /usr/lib/modprobe.d/bumblebee.conf
+bat /usr/lib/modprobe.d/bumblebee.conf
 
 sudo gpasswd -a $USER video
 sudo gpasswd -a $USER bumblebee
