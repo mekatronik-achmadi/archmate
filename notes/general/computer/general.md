@@ -144,8 +144,8 @@ lsof -c socat
 socat -d -d pty,raw,echo=0 pty,raw,echo=0
 sudo ln -sf /dev/pts/2 /dev/ttyV2
 sudo ln -sf /dev/pts/3 /dev/ttyV3
-minicom -b 9600 -D /dev/ttyVUSB2
-minicom -b 9600 -D /dev/ttyVUSB3
+picocom -b 9600 /dev/ttyVUSB2
+picocom -b 9600 /dev/ttyVUSB3
 ```
 
 ### intercep serial port

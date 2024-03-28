@@ -13,7 +13,7 @@ avr-gcc avr-gdb avr-libc avrdude
 
 ### install additional tools
 
-python-pyserial socat minicom moserial
+python-pyserial socat picocom moserial
 python-pyusb esptool screen dfu-util
 
 --------------------------------------------------------------------------------
@@ -96,9 +96,11 @@ sed -i "s#'python2-pyserial' 'python2-cryptography' 'python2-pyparsing'##g" PKGB
 ```sh
 sudo groupadd -fr lock
 sudo groupadd -fr uucp
+sudo groupadd -fr dialout
 
 sudo gpasswd -a $USER lock
 sudo gpasswd -a $USER uucp
+sudo gpasswd -a $USER dialout
 ```
 
 ### configure st-link
