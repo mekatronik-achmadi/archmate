@@ -240,12 +240,21 @@ make monitor # CTRL+] to exit
 mkdir -p $HOME/PyEnv;cd $HOME/PyEnv
 virtualenv platformio --system-site-packages
 
-source $HOME/PyEnv/platformio/bin/activate
-
 mkdir -p $HOME/.platformio/
+source $HOME/PyEnv/platformio/bin/activate
 pip install platformio
 
 deactivate
+```
+
+#### install udev
+
+```sh
+UDEV=https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules
+curl -fsSL $UDEV | sudo tee /etc/udev/rules.d/99-platformio-udev.rules
+
+sudo udevadm control --reload-rules
+sudo udevadm trigger
 ```
 
 #### install inside vscode
@@ -262,16 +271,6 @@ Menu List:
 	+ Project: **Project Tasks** -> **Pick a Folder**
 	+ Build/Upload: **Project Tasks** -> ProjectName/Default -> **General**
 - Serial Port: **View** -> **Open View** -> **Serial Monitor**
-
-#### install udev
-
-```sh
-UDEV=https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules
-curl -fsSL $UDEV | sudo tee /etc/udev/rules.d/99-platformio-udev.rules
-
-sudo udevadm control --reload-rules
-sudo udevadm trigger
-```
 
 #### manager webserver
 

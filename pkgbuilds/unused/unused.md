@@ -11,7 +11,20 @@ ttf-ubuntu-font-family
 
 ## AUR
 
-### nvidia
+### install scanners
+
+#### brother mfc-j220
+
+- https://aur.archlinux.org/packages/brscan3/
+- https://aur.archlinux.org/packages/brother-mfc-j220/
+
+### install printers
+
+#### canon
+
+- https://aur.archlinux.org/packages/cnijfilter-ip2700series/rs
+
+### install nvidia drivers
 
 #### nvidia-470 (utils,dkms,opencl)
 
@@ -61,12 +74,12 @@ ttf-ubuntu-font-family
 ### install additional themes
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-classic/
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-lubuntu/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-ubuntu/
 
-### install alternative desktop session
+### install lxde session
 
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/archmate-lxde3/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lxde3/desktop/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lxde3/theme/
 
 --------------------------------------------------------------------------------
 

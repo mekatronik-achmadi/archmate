@@ -40,23 +40,6 @@ libusb-compat
 - https://aur.archlinux.org/packages/nvidia-390xx-utils/
 - https://aur.archlinux.org/packages/lib32-nvidia-390xx-utils/
 
-### install scanners
-
-#### brother mfc-j220
-
-- https://aur.archlinux.org/packages/brscan3/
-- https://aur.archlinux.org/packages/brother-mfc-j220/
-
-### install printers
-
-#### canon
-
-- https://aur.archlinux.org/packages/cnijfilter-ip2700series/
-
-#### hp
-
-- https://aur.archlinux.org/packages/hplip-plugin/
-
 ### install some usb drivers
 
 #### tl-wn823n (rtl8192eu)
@@ -128,13 +111,7 @@ sudo rmmod nvidia_drm nvidia_modeset nvidia
 echo 'OFF' | sudo tee /proc/acpi/bbswitch
 ```
 
-### configure printer drivers
-
-```sh
-sudo rm -vf /usr/share/applications/hp-uiscan.desktop
-```
-
-### configure usb-wifi drivers
+### configure some usb drivers
 
 #### tl-wn823n (rtl8192eu)
 

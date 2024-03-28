@@ -14,9 +14,8 @@ docker docker-compose
 
 ### install wine
 
-wine-staging vkd3d
-winetricks msitools
-cabextract icoutils
+wine msitools icoutils
+winetricks cabextract
 
 --------------------------------------------------------------------------------
 
@@ -66,29 +65,29 @@ sudo gpasswd -a $USER docker
 # temporarily reload group
 newgrp docker
 
-sudo systemctl enable docker.service
-sudo systemctl start docker.service
-
-docker pull hello-world
-docker run hello-world
-```
-
-```sh
-export DOCKERPATH="/home/developments/Servers"
-
-sudo systemctl stop docker
+export DOCKERPATH="/home/development/Virtuals/Dockers"
 
 sudo mkdir -p /etc/docker/
-sudo mkdir -p $DOCKERPATH/
+sudo mkdir -p /var/lib/docker/
 
+sudo mkdir -p $DOCKERPATH/
 sudo chown -R root:root $DOCKERPATH/
-sudo touch /etc/docker/daemon.json
+
 echo "
 {
     \"data-root\": \"$DOCKERPATH\"
 }" | sudo tee /etc/docker/daemon.json
+
+sudo systemctl stop docker.service
 sudo rsync -aP /var/lib/docker/ $DOCKERPATH
-sudo systemctl start docker
+
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+```
+
+```sh
+docker pull hello-world
+docker run hello-world
 ```
 
 ```sh

@@ -124,18 +124,6 @@ git instaweb -l -p 5757
 
 ### configure vim
 
-#### alternative vim plug
-
-```sh
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-echo -e "call plug#begin('~/.vim/pack/plug/start')
-call plug#end()" | tee ~/.vimrc
-mkdir -p ~/.vim/pack/plug/start/
-
-vim +PlugStatus
-```
-
 #### vim plugins settings
 
 ```sh
@@ -194,10 +182,7 @@ bat ~/.vim/coc-settings.json
 
 ### configure clangd
 
-```sh
-bear -- gcc -o coba.exe coba.c
-bear -- make -j$(nproc)
-```
+#### clangd without check unused header
 
 ```sh
 # Initial clangd config without header cleaning
@@ -209,6 +194,13 @@ Diagnostics:
 " | tee ~/.config/clangd/config.yaml
 
 sed -i 's@UnusedIncludes: Strict@UnusedIncludes: None@g' ~/.config/clangd/config.yaml
+```
+
+#### generate compile_commands.json
+
+```sh
+bear -- gcc -o coba.exe coba.c
+bear -- make -j$(nproc)
 ```
 
 ### configure vscode
