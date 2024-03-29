@@ -37,6 +37,7 @@ ttf-ubuntu-font-family
 
 ### install internet tools
 
+- https://aur.archlinux.org/packages/hyperspace-bin/
 - https://aur.archlinux.org/packages/google-chrome/
 - https://aur.archlinux.org/packages/teamviewer/
 
