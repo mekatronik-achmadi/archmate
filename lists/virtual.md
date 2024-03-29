@@ -14,8 +14,8 @@ docker docker-compose
 
 ### install wine
 
-wine msitools icoutils
-winetricks cabextract
+wine wine-mono winetricks
+msitools icoutils cabextract
 
 --------------------------------------------------------------------------------
 
