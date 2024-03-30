@@ -5,12 +5,11 @@ size=22
 
 
 
-[Object brisk-menu]
-applet-iid=BriskMenuFactory::BriskMenu
-locked=true
+[Object compact-menu]
+object-type=menu
 toplevel-id=bottom
 position=0
-object-type=applet
+locked=true
 panel-right-stick=false
 
 [Object windowlistapplet]

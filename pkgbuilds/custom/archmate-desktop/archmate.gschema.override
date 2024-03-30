@@ -1,7 +1,7 @@
 ################################# PANEL ########################################
 
 [org.mate.NotificationDaemon]
-popup-location='bottom_right'
+popup-location='top_right'
 theme='standard'
 
 [org.mate.panel.applet.workspace-switcher]
@@ -11,13 +11,13 @@ num-rows=1
 num-rows=1
 
 [org.mate.Marco.general]
-num-workspaces=1
+num-workspaces=2
 
 [org.mate.panel.applet.clock]
 show-date=false
 
 [org.mate.panel]
-default-layout='manjaro'
+default-layout='default'
 
 [org.mate.panel.menubar]
 show-icon=true
@@ -28,38 +28,6 @@ trash-icon-visible=false
 computer-icon-visible=false
 volumes-visible=false
 network-icon-visible=false
-
-[org.mate.Marco.general]
-num-workspaces=1
-
-[com.solus-project.brisk-menu]
-hot-key='Super_L'
-dark-theme=false
-label-text='Start'
-label-visible=true
-search-position='bottom'
-pinned-shortcuts=[]
-rollover-activate=false
-favourites=['pluma.desktop', 'caja-browser.desktop', 'mate-terminal.desktop', 'firefox.desktop', 'matecc.desktop']
-
-[org.onboard]
-layout='/usr/share/onboard/layouts/Compact.onboard'
-
-#[org.mate.mate-menu]
-#hot-key='Super_L'
-#applet-text='Start'
-#plugins-list=['places', 'system_management', 'newpane', 'applications']
-#start-with-favorites=true
-
-#[org.mate.mate-menu.plugins.applications]
-#show-application-comments=false
-#swap-generic-name=true
-
-#[org.mate.mate-menu.plugins.places]
-#show-gtk-bookmarks=false
-
-#[org.mate.mate-menu.plugins.system_management]
-#show-package-manager=false
 
 ################################# APP ##########################################
 
@@ -73,21 +41,22 @@ exec='mate-terminal'
 exec-arg='-x'
 
 [org.mate.caja.preferences]
+default-sort-in-reverse-order=false
 default-sort-order='type'
 show-directory-item-counts='always'
 show-icon-text='never'
 show-image-thumbnails='always'
 thumbnail-limit=1048576
 preview-sound='never'
-default-folder-viewer='icon-view'
+default-folder-viewer='compact-view'
+exit-with-last-window=false
 enable-delete=true
+confirm-move-to-trash=true
+show-backup-files=true
 show-advanced-permissions=true
 
 [org.mate.caja.compact-view]
-default-zoom-level='standard'
-
-[org.mate.caja.preferences]
-exit-with-last-window=false
+default-zoom-level='large'
 
 [org.mate.caja.window-state]
 start-with-status-bar=true
@@ -170,7 +139,7 @@ focus-mode='click'
 [org.mate.Marco.global-keybindings]
 run-command-terminal='<Control><Alt>t'
 panel-run-dialog='<Control><Alt>r'
-panel-main-menu='disabled'
+panel-main-menu='Super_L'
 switch-panels='disabled'
 switch-windows='<Alt>Tab'
 switch-windows-all='<Control><Alt>Tab'
@@ -186,11 +155,12 @@ tile-to-corner-se='<Primary><Shift>j'
 tile-to-corner-sw='<Primary><Shift>h'
 
 [org.mate.SettingsDaemon.plugins.media-keys]
-control-center='disabled'
-screensaver='disabled'
+control-center='<Control><Alt>q'
 search='<Primary><Alt>f'
 www='<Control><Alt>w'
 home='<Control><Alt>e'
+power='disabled'
+screensaver='disabled'
 
 [org.mate.peripherals-touchpad]
 disable-while-typing=true
@@ -287,5 +257,6 @@ style-scheme='kate'
 use-dark-theme=false
 
 [org.onboard]
+layout='/usr/share/onboard/layouts/Compact.onboard'
 theme='/usr/share/onboard/themes/Classic Onboard.theme'
 
