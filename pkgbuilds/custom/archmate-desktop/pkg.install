@@ -20,7 +20,7 @@ remove_autostart() {
 panel_config() {
     echo 'modify panel layout'
 
-    ln -sf archmate.layout /usr/share/mate-panel/layouts/manjaro.layout
+    ln -sf archmate.layout /usr/share/mate-panel/layouts/opensuse.layout
     ln -sf archdefault.layout /usr/share/mate-panel/layouts/default.layout
 }
 

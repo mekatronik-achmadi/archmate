@@ -243,7 +243,6 @@ edk2-ovmf
 
 - qt5gtk2: https://aur.archlinux.org/packages/qt5gtk2/
 - qt6gtk2: https://aur.archlinux.org/packages/qt6gtk2/
-- brisk-menu: https://aur.archlinux.org/packages/brisk-menu/
 - gtk3-nocsd-git: https://aur.archlinux.org/packages/gtk3-nocsd-git/
 - mate-tweak: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/mate-tweak/
 - mate-zenity: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/mate-zenity/
