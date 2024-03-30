@@ -8,7 +8,7 @@ Set Wine 32-bit environment
 unset LD_PRELOAD
 mkdir -p /home/development/Virtuals/WineDir
 
-export WINEDIR=/home/development/Virtuals/WineDir/office2013
+export WINEDIR=/home/development/Virtuals/WineDir/office2016
 export WINEARCH=win32
 export WINEPREFIX=$WINEDIR
 ```
@@ -16,11 +16,12 @@ export WINEPREFIX=$WINEDIR
 Setup Wine infrastructures
 
 ```sh
-winetricks msxml3 msxml4
-winetricks msxml6 corefonts
-
 winetricks settings win7
 winetricks settings fontsmooth=bgr
+
+winetricks msxml3 msxml4 msxml6
+winetricks gdiplus msls31 dotnet20
+winetricks corefonts tahoma riched20
 ```
 
 Setup DirectX
@@ -45,15 +46,12 @@ echo 'REGEDIT4
 regedit msoffice.reg
 ```
 
-Mount and install from ISO
+Install from folder
+
+**NOTE:** Not install from mounted ISO
 
 ```sh
-sudo mount Office2013/Office_2013_x86.iso /mnt
-cd /mnt
-
-wine setup.exe >/dev/null 2>&1
-
-cd -
-sudo umount /mnt
+cd office/
+wine setup32.exe
 ```
 
