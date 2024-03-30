@@ -20,8 +20,10 @@ remove_autostart() {
 panel_config() {
     echo 'modify panel layout'
 
+    rm -f /usr/share/mate-panel/layouts/default.layout
+
     ln -sf archmate.layout /usr/share/mate-panel/layouts/opensuse.layout
-    ln -sf archdefault.layout /usr/share/mate-panel/layouts/default.layout
+    ln -sf archdefault.layout /usr/share/mate-panel/layouts/fedora.layout
 }
 
 skel_config() {

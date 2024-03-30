@@ -17,7 +17,7 @@ num-workspaces=2
 show-date=false
 
 [org.mate.panel]
-default-layout='default'
+default-layout='fedora'
 
 [org.mate.panel.menubar]
 show-icon=true
