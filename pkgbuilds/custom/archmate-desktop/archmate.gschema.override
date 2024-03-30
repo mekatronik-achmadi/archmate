@@ -56,7 +56,7 @@ show-backup-files=true
 show-advanced-permissions=true
 
 [org.mate.caja.compact-view]
-default-zoom-level='standard'
+default-zoom-level='large'
 
 [org.mate.caja.window-state]
 start-with-status-bar=true
