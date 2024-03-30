@@ -10,7 +10,7 @@ fi
 echo $REPOURL
 export ISOVER='mate_012024'
 export ISONAME='minimal_012024'
-export DIRPATH="/home/developments/Packages/ArchMate-x86_64/$ISOVER"
+export DIRPATH="/home/development/Packages/ArchMate-x86_64/$ISOVER"
 export DBPATH="$DIRPATH/databases"
 export PKGPATH="$DIRPATH/packages/official"
 export CSTPATH="$DIRPATH/packages/custom"
