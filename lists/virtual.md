@@ -14,9 +14,16 @@ docker docker-compose
 
 ### install wine
 
-wine-staging msitools
-winetricks wine-mono
-icoutils cabextract
+wine winetricks msitools icoutils
+wine-mono wine-gecko cabextract
+samba smbclient lib32-vkd3d
+lib32-mesa lib32-gst-plugins-base-libs
+lib32-sdl2 lib32-openal lib32-libpulse
+lib32-libxcomposite lib32-libxinerama
+lib32-gtk3 lib32-gtk2 lib32-gnutls
+lib32-alsa-plugins lib32-alsa-lib
+lib32-v4l-utils lib32-imlib2
+lib32-libldap lib32-libxslt
 
 --------------------------------------------------------------------------------
 

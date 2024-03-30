@@ -720,12 +720,15 @@ sftp> exit
 
 ### uploading filezilla
 
+**Note:** Login on SFTP Shell first
+
 Connect FileZilla using:
 - host: sftp://frs.sourceforge.net
 - username: mekatronik
 - password: password
 - port: 22
-- directory: /home/pfs/project/archlinux-custom-iso/
+
+Remote site: /home/pfs/project/archlinux-custom-iso/
 
 --------------------------------------------------------------------------------
 

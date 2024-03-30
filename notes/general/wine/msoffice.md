@@ -1,6 +1,6 @@
 # MS Office on Wine
 
-**NOTE:** Installation Unsuccesful
+**NOTE:** Installation Failed
 
 Set Wine 32-bit environment
 
@@ -19,15 +19,22 @@ Setup Wine infrastructures
 winetricks settings win7
 winetricks settings fontsmooth=bgr
 
-winetricks msxml3 msxml4 msxml6
-winetricks gdiplus msls31 dotnet20
-winetricks corefonts tahoma riched20
+winetricks msxml3 msxml4
+winetricks msxml6 corefonts
+
+winetricks vd=1366x720
 ```
 
 Setup DirectX
 
 ```sh
 wine directx_Jun2010_redist/DXSETUP.exe
+```
+
+Install from mounted ISO
+
+```sh
+wine setup.exe
 ```
 
 Setup Registry
@@ -41,17 +48,8 @@ echo 'REGEDIT4
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
 "DirectDrawRenderer"="opengl"
 "UseGLSL"="enabled"
+"MaxVersionGL"=dword:00030002
 ' | tee msoffice.reg
 
 regedit msoffice.reg
 ```
-
-Install from folder
-
-**NOTE:** Not install from mounted ISO
-
-```sh
-cd office/
-wine setup32.exe
-```
-
