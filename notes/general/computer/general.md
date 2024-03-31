@@ -127,25 +127,16 @@ tmux split-window -h -c $PWD
 
 ## Serial Port Shell
 
-### virtual serial port
-
-```sh
-socat -d -d PTY PTY
-socat -d -d PTY,link=/dev/ttyS2 PTY,link=/dev/ttyS2
-socat -d -d pty,raw,echo=0 pty,raw,echo=0
-socat -d -d /dev/YOURPORT,raw,echo=0,bHEREBAUDRATE /dev/YOURPORT,raw,echo=0,bHEREBAUDRATE
-socat -d -d tcp-l:5760 /dev/YOURPORT,raw,echo=0,bHEREBAUDRATE
-lsof -c socat
-```
-
 ### create virtual serial communication
 
+**NOTE:** make sure the /dev/pts/ number is correct
+
 ```sh
 socat -d -d pty,raw,echo=0 pty,raw,echo=0
-sudo ln -sf /dev/pts/2 /dev/ttyV2
-sudo ln -sf /dev/pts/3 /dev/ttyV3
-picocom -b 9600 /dev/ttyVUSB2
-picocom -b 9600 /dev/ttyVUSB3
+sudo ln -sf /dev/pts/2 /dev/ttyV0
+sudo ln -sf /dev/pts/3 /dev/ttyV1
+picocom -b 9600 /dev/ttyV0
+picocom -b 9600 /dev/ttyV1
 ```
 
 ### intercep serial port
