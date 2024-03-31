@@ -21,6 +21,8 @@ default-layout='fedora'
 
 [org.mate.panel.menubar]
 show-icon=true
+max-recent-items=8
+max-items-or-submenu=8
 
 [org.mate.caja.desktop]
 home-icon-visible=false

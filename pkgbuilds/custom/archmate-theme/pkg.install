@@ -28,12 +28,12 @@ remove_themes() {
 	rm -rf /usr/share/themes/Redmond
 	rm -rf /usr/share/themes/ThinIce
 
-	rm -rf /usr/share/themes/Blue*
 	rm -rf /usr/share/themes/Yaru*
 	rm -rf /usr/share/themes/Green*
 	rm -rf /usr/share/themes/Traditional*
 
 	rm -rf /usr/share/themes/*-border
+    rm -rf /usr/share/themes/*-Submarine
 
 	rm -rf /usr/share/themes/HighContrast*
 	rm -rf /usr/share/themes/ContrastHigh*
@@ -62,6 +62,7 @@ remove_menus() {
 	rm -f /usr/share/themes/Arc-Darker-solid/index.theme
 
     rm -f /usr/share/themes/BlackMATE/index.theme
+    rm -f /usr/share/themes/BlueMenta/index.theme
     rm -f /usr/share/themes/Menta/index.theme
 }
 
