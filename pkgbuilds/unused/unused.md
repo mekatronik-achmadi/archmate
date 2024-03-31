@@ -74,6 +74,7 @@ ttf-ubuntu-font-family
 
 ### install additional themes
 
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-clearlooks/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-classic/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-ubuntu/
 

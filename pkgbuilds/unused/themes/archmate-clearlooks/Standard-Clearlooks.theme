@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Standard-Clearlooks
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Clearlooks-Phenix
+MetacityTheme=Clearlooks-Phenix
+IconTheme=Mist
+CursorTheme=mate-black
