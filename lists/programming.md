@@ -9,7 +9,7 @@ memcached redis
 
 ### install qt programming
 
-qt5 qt6 clazy sip python-qtpy pyqt-builder
+qt5 qt6 sip python-qtpy pyqt-builder
 python-pyqt5 pyside2 pyside2-tools
 python-pyqt5-3d python-pyqt5-webengine
 python-pyqt5-chart python-pyqt5-datavisualization
@@ -24,13 +24,13 @@ python-pyqtgraph
 
 ### install c/c++ programming
 
+gdb gdb-dashboard
 rust rust-analyzer
 rust-src rust-bindgen
 rust-wasm cargo-generate
 cargo-edit cargo-feature
 tcsh boost swig valabind
-clang llvm libc++ lld lldb
-gdb gdb-dashboard cppcheck
+llvm lld libc++ lldb clang
 
 ### install javacript programming
 
