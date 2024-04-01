@@ -686,6 +686,7 @@ ssh -t mekatronik,archlinux-custom-iso@shell.sourceforge.net create
 then you can exit
 
 ```sh
+exit
 ```
 
 ### manage
@@ -726,7 +727,6 @@ Connect FileZilla using:
 - host: sftp://frs.sourceforge.net
 - username: mekatronik
 - password: password
-- port: 22
 
 Remote site: /home/pfs/project/archlinux-custom-iso/
 
