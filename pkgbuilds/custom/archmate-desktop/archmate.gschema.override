@@ -14,7 +14,7 @@ num-rows=1
 num-workspaces=2
 
 [org.mate.panel.applet.clock]
-show-date=false
+show-date=true
 
 [org.mate.panel]
 default-layout='fedora'
@@ -25,9 +25,9 @@ max-recent-items=8
 max-items-or-submenu=8
 
 [org.mate.caja.desktop]
-home-icon-visible=false
-trash-icon-visible=false
-computer-icon-visible=false
+home-icon-visible=true
+trash-icon-visible=true
+computer-icon-visible=true
 volumes-visible=false
 network-icon-visible=false
 
@@ -62,7 +62,7 @@ default-zoom-level='large'
 
 [org.mate.caja.window-state]
 start-with-status-bar=true
-start-with-toolbar=true
+start-with-toolbar=false
 start-with-sidebar=true
 
 [org.mate.caja-open-terminal]
@@ -109,8 +109,8 @@ use-mnemonics=false
 use-menu-accelerators=false
 
 [org.mate.terminal.profile]
-default-show-menubar=false
 use-custom-default-size=true
+default-show-menubar=true
 default-size-columns=80
 default-size-rows=25
 cursor-blink-mode='off'
