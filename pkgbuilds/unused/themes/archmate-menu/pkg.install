@@ -1,0 +1,13 @@
+update_dconf() {
+    echo 'compile glib schemas'
+
+    glib-compile-schemas /usr/share/glib-2.0/schemas/
+}
+
+post_install() {
+    update_dconf
+}
+
+post_upgrade() {
+    update_dconf
+}

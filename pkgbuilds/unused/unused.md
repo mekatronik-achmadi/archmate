@@ -76,6 +76,7 @@ ttf-ubuntu-font-family
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-classic/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-ubuntu/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-menu/
 
 ### install lxde session
 

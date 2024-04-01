@@ -1,0 +1,36 @@
+# Disable panel main menu Super_L to avoid conflict
+#[org.mate.Marco.global-keybindings]
+#panel-main-menu='disabled'
+
+# To use in either Brisk-Menu or Mint-Menu
+#hot-key='Super_L'
+
+[com.solus-project.brisk-menu]
+hot-key=''
+dark-theme=false
+label-text='Start'
+label-visible=true
+search-position='bottom'
+pinned-shortcuts=[]
+rollover-activate=false
+favourites=['pluma.desktop', 'caja-browser.desktop', 'mate-terminal.desktop', 'firefox.desktop', 'matecc.desktop']
+
+[org.mate.mate-menu]
+hot-key=''
+applet-text='Start'
+plugins-list=['places', 'system_management', 'newpane', 'applications', 'newpane', 'recent']
+start-with-favorites=true
+
+[org.mate.mate-menu.plugins.applications]
+show-application-comments=false
+swap-generic-name=true
+
+[org.mate.mate-menu.plugins.places]
+show-gtk-bookmarks=false
+
+[org.mate.mate-menu.plugins.recent]
+num-recent-docs=8
+
+[org.mate.mate-menu.plugins.system_management]
+show-package-manager=false
+
