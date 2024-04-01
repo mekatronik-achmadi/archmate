@@ -721,7 +721,8 @@ sftp> exit
 
 ### uploading filezilla
 
-**Note:** Login on SFTP Shell first
+**Note:** Try to login on SFTP Shell first, then exit.
+This way may speed up uploading.
 
 Connect FileZilla using:
 - host: sftp://frs.sourceforge.net
