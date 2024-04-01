@@ -721,13 +721,14 @@ sftp> exit
 
 ### uploading filezilla
 
-**Note:** Try to login on SFTP Shell first, then exit.
+**Note:** Try to create SSH first, then login and exit.
 This way may speed up uploading.
 
 Connect FileZilla using:
 - host: sftp://frs.sourceforge.net
 - username: mekatronik
 - password: password
+- port: 22
 
 Remote site: /home/pfs/project/archlinux-custom-iso/
 
