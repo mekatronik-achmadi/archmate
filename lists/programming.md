@@ -36,6 +36,7 @@ llvm lld libc++ lldb clang
 
 nodejs npm yarn asar
 bash-language-server
+electron22 trash-cli
 jq yq node-gyp ts-node
 
 ### install webassembly
