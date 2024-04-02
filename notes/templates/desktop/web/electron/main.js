@@ -1,7 +1,8 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
 const path = require('node:path');
 
 let mainWindow;
+let counter = 0;
 
 function createWindow(){
     mainWindow = new BrowserWindow({
@@ -9,12 +10,15 @@ function createWindow(){
         height: 300,
         webPreferences: {
             preload: path.join(__dirname,'info.js'),
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false
         }
     });
 
     mainWindow.loadFile('index.html');
-    // mainWindow.webContents.send('welcome', 'Hello World, Electron');
+
+    // Open the DevTools.
+    mainWindow.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {
@@ -31,5 +35,19 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed',() => {
     console.log("Electron App Quit");
+    if(process.platform !== 'darwin') app.quit();
+});
+
+ipcMain.on('msgbox',(_,arg)=> {
+    console.log('Message from Renderer');
+    console.log(`Last counter: ${arg}`);
+
+    counter = counter + 1;
+    mainWindow.webContents.send('counter',counter.toString());
+});
+
+ipcMain.on('quit', () => {
+    console.log("Electron App Quit from Renderer");
+
     if(process.platform !== 'darwin') app.quit();
 });
