@@ -5,9 +5,15 @@ function replaceText(selector,text) {
     if(element) element.innerText = text;
 }
 
+const btnCnt = document.getElementById('btnCnt');
 const btnMsg = document.getElementById('btnMsg');
 const btnQuit = document.getElementById('btnQuit');
 const txtCnt = document.getElementById('txtCnt');
+
+btnCnt.addEventListener('click', () => {
+    // send messagebox request
+    ipcRenderer.send('msgbox',txtCnt.innerText);
+});
 
 btnMsg.addEventListener('click', () => {
     // shown in renderer console
@@ -15,9 +21,6 @@ btnMsg.addEventListener('click', () => {
 
     // shown in a pop up window
     window.alert('Template Electron Web');
-
-    // send messagebox request
-    ipcRenderer.send('msgbox',txtCnt.innerText);
 });
 
 btnQuit.addEventListener('click',() => {
