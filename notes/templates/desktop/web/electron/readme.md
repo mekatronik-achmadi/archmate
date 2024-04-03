@@ -30,3 +30,21 @@ electron22 main.js
 npm exec electron .
 ```
 
+## Package App
+
+**NOTE:** Resulting Package can big,
+as it contains Electron and all its dependencies.
+
+Build using NPM
+
+```sh
+rm -rf ./appname-linux-x64
+npm exec @electron/packager ./ appname
+```
+
+Run binary
+
+```sh
+./appname-linux-x64/appname
+```
+

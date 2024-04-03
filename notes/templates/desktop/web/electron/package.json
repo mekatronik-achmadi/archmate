@@ -1,6 +1,7 @@
 {
     "main": "main.js",
-    "dependencies": {
-        "electron" : "*"
+    "devDependencies": {
+        "electron": "*",
+        "@electron/packager": "*"
     }
 }
