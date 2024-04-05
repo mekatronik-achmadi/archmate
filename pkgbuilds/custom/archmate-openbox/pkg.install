@@ -21,6 +21,9 @@ menu_cleaning() {
     rm -f /usr/share/applications/obconf.desktop
     rm -f /usr/share/applications/tint2.desktop
     rm -f /usr/share/applications/feh.desktop
+
+    # disable icon in pipe menu
+    sed -i 's#return \$filename;#return "";#g' /usr/bin/xdg_menu
 }
 
 pcmanfm_setting() {

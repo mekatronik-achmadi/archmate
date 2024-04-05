@@ -133,7 +133,6 @@
   <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
   <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
   <menu id="settings" icon="/usr/share/icons/Papirus/32x32/apps/preferences.svg"/>
-  <menu id="client-list-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
 
   <separator label="Piped Menu"/>
   <menu id="applications" label="All Menu" execute="xdg_menu --format openbox3-pipe"/>

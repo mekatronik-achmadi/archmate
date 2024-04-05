@@ -29,7 +29,6 @@ rust rust-analyzer
 rust-src rust-bindgen
 rust-wasm cargo-generate
 cargo-edit cargo-feature
-tcsh boost swig valabind
 llvm lld libc++ lldb clang
 
 ### install javacript programming

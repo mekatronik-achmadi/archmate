@@ -143,10 +143,11 @@ gobject-introspection
 subversion mk-configure
 mate-common gnome-common
 pkgconf gendesk help2man
-meson ninja swig setconf
+meson ninja boost setconf
 automake autogen autoconf
 cmake extra-cmake-modules
 dos2unix doxygen graphviz
+tcsh chrpath swig valabind
 
 ### install java basic
 

@@ -9,6 +9,7 @@
 - Wayland
 - GNOME-4
 - WxGTK-2
+- GTK-4
 - Qt-4
 - KDE
 - LXQt

@@ -1,7 +1,7 @@
 ################################# PANEL ########################################
 
 [org.mate.NotificationDaemon]
-popup-location='top_right'
+popup-location='bottom_right'
 theme='standard'
 
 [org.mate.panel.applet.workspace-switcher]
