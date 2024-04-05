@@ -110,7 +110,7 @@ use-menu-accelerators=false
 
 [org.mate.terminal.profile]
 use-custom-default-size=true
-default-show-menubar=true
+default-show-menubar=false
 default-size-columns=80
 default-size-rows=25
 cursor-blink-mode='off'
