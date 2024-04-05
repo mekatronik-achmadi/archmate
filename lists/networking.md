@@ -37,10 +37,6 @@ mosquitto libwebsockets
 
 - https://aur.archlinux.org/packages/whatsdesk-bin/
 
-### install remote desktop
-
-- https://aur.archlinux.org/packages/anydesk-bin/
-
 ### install http tools
 
 - https://aur.archlinux.org/packages/postman-bin/
@@ -123,13 +119,6 @@ sudo systemctl enable mosquitto
 ```sh
 mosquitto_sub -t hello/world
 mosquitto_pub -t hello/world -m "MQTT on ArchLinux"
-```
-
-### configure anydesk
-
-```sh
-sudo systemctl enable anydesk
-sudo systemctl start anydesk
 ```
 
 ### configure ftp server

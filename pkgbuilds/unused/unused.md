@@ -39,6 +39,10 @@ ttf-ubuntu-font-family
 
 - https://aur.archlinux.org/packages/hyperspace-bin/
 - https://aur.archlinux.org/packages/google-chrome/
+
+### install remote desktop
+
+- https://aur.archlinux.org/packages/anydesk-bin/
 - https://aur.archlinux.org/packages/teamviewer/
 
 ## install academic tools
@@ -69,6 +73,7 @@ ttf-ubuntu-font-family
 ### install internet tool
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/telegram/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/ungoogled/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
 
@@ -172,7 +177,16 @@ schemer_import
 echo "-Djogl.disable.openglarbcontext=1" | sudo tee -a /opt/mathworks/matlab-2018a/bin/glnxa64/java.opts
 ```
 
-### configure teamviewer
+### configure remote desktop
+
+#### anydesk
+
+```sh
+sudo systemctl enable anydesk
+sudo systemctl start anydesk
+```
+
+#### teamviewer
 
 ```sh
 sudo rm -f /usr/share/applications/teamviewerapi.desktop
