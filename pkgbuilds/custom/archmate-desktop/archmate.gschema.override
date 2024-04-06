@@ -62,7 +62,7 @@ default-zoom-level='large'
 
 [org.mate.caja.window-state]
 start-with-status-bar=true
-start-with-toolbar=false
+start-with-toolbar=true
 start-with-sidebar=true
 
 [org.mate.caja-open-terminal]

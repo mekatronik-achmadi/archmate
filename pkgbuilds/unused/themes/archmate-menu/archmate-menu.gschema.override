@@ -13,20 +13,3 @@ pinned-shortcuts=[]
 rollover-activate=false
 favourites=['pluma.desktop', 'caja-browser.desktop', 'mate-terminal.desktop', 'firefox.desktop', 'matecc.desktop']
 
-[org.mate.mate-menu]
-#hot-key='Super_L'
-hot-key=''
-applet-text='Start'
-plugins-list=['places', 'system_management', 'newpane', 'applications']
-start-with-favorites=true
-
-[org.mate.mate-menu.plugins.applications]
-show-application-comments=false
-swap-generic-name=true
-
-[org.mate.mate-menu.plugins.places]
-show-gtk-bookmarks=false
-
-[org.mate.mate-menu.plugins.system_management]
-show-package-manager=false
-

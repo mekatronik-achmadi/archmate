@@ -2,29 +2,19 @@ pkgname=archmate-menu
 _pkgname=brisk-menu
 pkgver=0.6.2
 pkgrel=1
-_matepkg=mate-menu
-_matever=22.04.2
 pkgdesc="Additional Menu for Mate Desktop"
 arch=('x86_64')
 url="https://github.com/getsolus/brisk-menu"
 license=('GPL')
 groups=('mate-extra')
-depends=('mate-panel' 'libnotify'
-'python-configobj' 'python-gobject'
-'python-xdg' 'python-xlib'
-'xdg-utils' 'python-setproctitle'
-'mate-menus' 'python-cairo')
-makedepends=('gnome-common' 'gettext' 'itstool' 'vala>=0.36'
-'meson' 'ninja' 'python-distutils-extra' 'python-setuptools')
-provides=('brisk-menu' 'mate-menu')
-conflicts=('brisk-menu' 'mate-menu')
+depends=('mate-panel' 'libnotify')
+makedepends=('gnome-common' 'gettext' 'itstool' 'vala>=0.36' 'meson' 'ninja')
+provides=('brisk-menu')
+conflicts=('brisk-menu')
 install=pkg.install
 source=("archmate-menu.gschema.override"
-"https://github.com/getsolus/brisk-menu/releases/download/v${pkgver}/brisk-menu-v$pkgver.tar.xz"
-"$_matepkg-$_matever.tar.gz::https://github.com/ubuntu-mate/mate-menu/archive/$_matever.tar.gz")
-sha256sums=('SKIP'
-'5a87f4dcf7365e81a571128bf0b8199eb06a6fcd7e15ec7739be0ccff1326488'
-'36aa865b72664b8cc90d9c1c429fd3c44e2c198369aae4eaaa87228a5add075c')
+"https://github.com/getsolus/brisk-menu/releases/download/v${pkgver}/brisk-menu-v$pkgver.tar.xz")
+sha256sums=('SKIP' '5a87f4dcf7365e81a571128bf0b8199eb06a6fcd7e15ec7739be0ccff1326488')
 
 build() {
 	cd "${srcdir}/${_pkgname}-${pkgver}"
@@ -46,8 +36,5 @@ package() {
 	cd "${srcdir}/${_pkgname}-${pkgver}/build"
 
 	DESTDIR="${pkgdir}" ninja install
-
-    cd "${srcdir}/${_matepkg}-${_matever}"
-    python setup.py install --root="$pkgdir" --optimize=1
 }
 
