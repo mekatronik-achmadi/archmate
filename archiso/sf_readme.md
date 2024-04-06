@@ -20,6 +20,17 @@ The Openbox WM can be started using command:
 startx /usr/bin/openbox-session
 ```
 
+or using LightDM (disabled by default)
+
+```sh
+systemctl enable lightdm
+systemctl start lightdm
+```
+
+### LXDE Desktop
+
+The **archlinux-lxde_012024-x86_64.iso** contain LXDE Desktop and Openbox WM with LightDM as Login Manager.
+
 ## Install From Live Session
 
 You can try to follow this document:

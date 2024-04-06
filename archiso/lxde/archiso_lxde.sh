@@ -9,12 +9,12 @@ fi
 
 echo $REPOURL
 export ISOVER='mate_012024'
-export ISONAME='cli_012024'
+export ISONAME='lxde_012024'
 export DIRPATH="/home/development/Packages/ArchMate-x86_64/$ISOVER"
 export DBPATH="$DIRPATH/databases"
 export PKGPATH="$DIRPATH/packages/official"
 export CSTPATH="$DIRPATH/packages/custom"
-export PKGLIST='../pkg-cli-x86_64.txt'
+export PKGLIST='../pkg-lxde-x86_64.txt'
 export PKGCUSTOM='true'
 
 mkdir -pv archlive/
@@ -345,7 +345,7 @@ allow-guest=false
 session-wrapper=/etc/lightdm/Xsession
 greeter-session=lightdm-gtk-greeter
 autologin-user-timeout=0
-autologin-session=openbox
+autologin-session=LXDE
 autologin-user=live
 ' | tee airootfs/etc/lightdm/lightdm.conf
 
@@ -362,6 +362,8 @@ xft-hintstyle = hintslight
 hide-user-image = true
 keyboard = onboard
 ' | tee airootfs/etc/lightdm/lightdm-gtk-greeter.conf
+
+ln -svf /usr/lib/systemd/system/lightdm.service ${SYSTEMD}/lightdm.service
 
 ######################### Archiso Packages #########################
 
