@@ -264,6 +264,7 @@ edk2-ovmf
 
 - archmate-font: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-font/
 - archmate-theme: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-theme/
+- archmate-lxde3: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-lxde3/
 - archmate-openbox: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-openbox/
 - archmate-archiso: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso/
 - archmate-desktop: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-desktop/
@@ -576,6 +577,9 @@ ls /usr/share/xsessions/ | cut -d. -f1
 
 # using openbox
 sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
+
+# using lxde3
+sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
 ```
 
 #### configure login without lightdm
@@ -615,11 +619,14 @@ ExecStart=-/sbin/agetty --autologin $USER --noclear %I 38400 linux
 #### desktop session without lighdm
 
 ```sh
+# using Mate
+startx /usr/bin/mate-session
+
 # using openbox
 startx /usr/bin/openbox-session
 
-# using Mate
-startx /usr/bin/mate-session
+# using LXDE
+startx /usr/bin/startlxde
 ```
 
 #### cli mount disks

@@ -80,13 +80,9 @@ ttf-ubuntu-font-family
 ### install additional themes
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-classic/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-lubuntu/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-ubuntu/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-menu/
-
-### install lxde session
-
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lxde3/desktop/
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lxde3/theme/
 
 --------------------------------------------------------------------------------
 
@@ -210,12 +206,3 @@ sudo sed -i '/^$/d' /usr/share/desktop-directories/wps-office.directory
 echo 'NoDisplay=true' | sudo tee -a /usr/share/desktop-directories/wps-office.directory
 ```
 
-### configure lxde session
-
-```sh
-# using lightdm session
-sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
-
-# without using lightdm
-startx /usr/bin/startlxde
-```
