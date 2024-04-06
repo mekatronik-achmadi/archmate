@@ -272,9 +272,9 @@ edk2-ovmf
 
 --------------------------------------------------------------------------------
 
-## Configurations
+## After Install
 
-### repository setting
+### repository
 
 ```sh
 # ArchLinux Repository Main Server URL
@@ -284,7 +284,7 @@ edk2-ovmf
 export REPOURL='http://mirror.internode.on.net/pub/archlinux'
 ```
 
-### after installation
+### preparation
 
 ```sh
 sudo systemctl enable systemd-timesyncd
@@ -312,7 +312,11 @@ echo "install driver packages"
 pluma lists/driver.md
 ```
 
-### pacman-key problem
+--------------------------------------------------------------------------------
+
+## Configurations
+
+### Pacman-Key
 
 ```sh
 # optionally only if had problems
@@ -325,23 +329,23 @@ sudo pacman-key --populate archlinux
 #sudo pacman-key --refresh-keys
 ```
 
-### configure booting
+### Booting
 
-#### GRUB Disable Submenu
+#### GRUB disable submenu
 
 ```sh
 sudo sed -i "s@#GRUB_DISABLE_SUBMENU=y@GRUB_DISABLE_SUBMENU=y@g" /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-#### GRUB Default Kernel
+#### GRUB default kernel
 
 ```sh
 sudo sed -i "s@GRUB_DEFAULT=0@GRUB_DEFAULT=2@g" /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-#### GRUB-BIOS from Live ISO
+#### GRUB-BIOS from live ISO
 
 ```sh
 sudo mount /dev/sda1 /mnt/
@@ -392,7 +396,7 @@ SWAPUUID=$(sudo blkid -s UUID -o value /dev/sdxy)
 echo "UUID=$SWAPUUID none swap defaults 0 0" | sudo tee -a /etc/fstab
 ```
 
-### generic configurations
+### Bash Shell
 
 #### modify pacstrap
 
@@ -400,189 +404,7 @@ echo "UUID=$SWAPUUID none swap defaults 0 0" | sudo tee -a /etc/fstab
 sudo bash /usr/share/archmate-archiso/pacstrap_modify
 ```
 
-#### configure bashrc
-
-```sh
-echo '[[ $- != *i* ]] && return' |  tee ~/.bashrc
-echo "
-shopt -s checkwinsize
-shopt -s histappend
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias sudo='sudo -E'
-alias makepkg='makepkg --nocheck --skippgpcheck'
-alias htop='htop -C'
-alias mc='mc --nocolor'
-alias bat='bat --theme=GitHub'
-export MAKEFLAGS=-j$(nproc)
-export HISTCONTROL=ignorespace:ignoredups:erasedups
-export REPOURL='http://mirror.internode.on.net/pub/archlinux'
-PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
-" | tee -a ~/.bashrc
-```
-
-#### configure git user
-
-```sh
-git config --global user.name "mekatronik-achmadi"
-git config --global user.email "mekatronik.achmadi@gmail.com"
-
-git config --global init.defaultBranch main
-echo 'export GITHUBTOKEN=$(cat ~/GithubToken.txt)' | tee -a ~/.bashrc
-```
-
-#### create new user with/without password
-
-```sh
-sudo useradd -m -g users -G wheel,storage,power,tty,video -s /bin/bash -c username username
-
-# change password
-sudo passwd username
-
-# remove password password
-sudo passwd -d username
-```
-
-#### configure networkmanager
-
-```sh
-sudo systemctl disable systemd-networkd
-sudo systemctl disable systemd-resolved
-sudo systemctl stop systemd-networkd
-sudo systemctl stop systemd-resolved
-
-sudo ln -svf /run/NetworkManager/resolv.conf /etc/resolv.conf
-sudo systemctl enable NetworkManager
-sudo systemctl start NetworkManager
-```
-
-#### configure bluetooth
-
-```sh
-sudo systemctl enable bluetooth
-sudo systemctl start bluetooth
-sudo bluetoothctl
-```
-
-#### configure vim
-
-```sh
-sudo mkdir -p /etc
-echo '" /usr/share/vim/vimfiles/archlinux.vim' | sudo tee /etc/vimrc
-
-echo 'runtime! archlinux.vim
-autocmd BufWritePre * %s/\s\+$//e
-filetype plugin on
-filetype indent on
-filetype plugin indent on
-set expandtab ts=4 sw=4 ai
-set conceallevel=0
-set encoding=utf-8
-set termguicolors
-set ic is hls
-set number
-set wrap!
-set mouse=a
-let g:tagbar_width=20
-let g:NERDTreeWinSize=20
-syntax on' | sudo tee -a /etc/vimrc
-```
-
-#### configure profile
-
-```sh
-sudo mkdir -p /etc/profile.d/
-echo '
-export PATH=$PATH:~/.local/bin
-export QT_QPA_PLATFORMTHEME=qt5ct
-export VISUAL=vim
-export EDITOR=vim
-export PAGER=less
-export VIEWER=less
-export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
-export FT2_SUBPIXEL_HINTING=2
-export GTK_CSD=0
-export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0:$LD_PRELOAD
-export FZF_DEFAULT_COMMAND="rg --files"
-export FZF_DEFAULT_OPTS="-m"
-' | sudo tee /etc/profile.d/arch-profile.sh
-```
-
-#### configure gtk theme
-
-```sh
-rm -f $HOME/.gtkrc-2.0
-rm -f $HOME/.config/gtk-3.0/settings.ini
-
-sudo mkdir -pv /etc/gtk-2.0/
-echo '
-gtk-icon-theme-name = "Papirus-Light"
-gtk-theme-name = "Arc-Lighter-solid"
-gtk-font-name = "Liberation Sans 8"
-' | sudo tee /etc/gtk-2.0/gtkrc
-
-sudo mkdir -pv /etc/gtk-3.0/
-echo '
-[Settings]
-gtk-icon-theme-name = Papirus-Light
-gtk-theme-name = Arc-Lighter-solid
-gtk-font-name = Liberation Sans 8
-gtk-application-prefer-dark-theme = false
-' | sudo tee /etc/gtk-3.0/settings.ini
-```
-
-#### configure xterm
-
-```sh
-echo "XTerm*faceName: LiterationMono Nerd Font Mono
-XTerm*faceSize: 8
-XTerm*background: white
-XTerm*foreground: black
-XTerm*selectToClipboard: true
-XTerm*eightBitInput: false
-XTerm*eightBitOutput: true
-xterm*scrollBar: true
-xterm*rightScrollBar: true
-UXTerm*faceName: LiterationMono Nerd Font Mono
-UXTerm*faceSize: 8
-UXTerm*background: white
-UXTerm*foreground: black
-UXTerm*selectToClipboard: true
-UXTerm*eightBitInput: false
-UXTerm*eightBitOutput: true
-uxterm*scrollBar: true
-uxterm*rightScrollBar: true
-Xft.autohint: 0
-Xft.antialias: 1
-Xft.hinting: true
-Xft.hintstyle: hintslight
-Xft.dpi: 96
-Xft.rgba: rgb
-Xft.lcdfilter: lcddefault" | tee ~/.Xdefaults
-
-xrdb .Xdefaults
-```
-
-#### configure lightdm default session
-
-```sh
-sudo rm -vf /etc/systemd/logind.conf.d/do-not-suspend.conf
-echo '[login]
-HandleLidSwitch=suspend
-HandleLidSwitchDocked=suspend
-' | sudo tee /etc/systemd/logind.conf.d/lid-suspend.conf
-
-# check available session
-ls /usr/share/xsessions/ | cut -d. -f1
-
-# using openbox
-sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
-
-# using lxde3
-sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
-```
-
-#### configure login without lightdm
+#### autologin shell
 
 ```sh
 sudo mkdir -p /etc/
@@ -616,6 +438,192 @@ ExecStart=-/sbin/agetty --autologin $USER --noclear %I 38400 linux
 " | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
 ```
 
+#### bashrc
+
+```sh
+echo '[[ $- != *i* ]] && return' |  tee ~/.bashrc
+echo "
+shopt -s checkwinsize
+shopt -s histappend
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias sudo='sudo -E'
+alias makepkg='makepkg --nocheck --skippgpcheck'
+alias htop='htop -C'
+alias mc='mc --nocolor'
+alias bat='bat --theme=GitHub'
+export MAKEFLAGS=-j$(nproc)
+export HISTCONTROL=ignorespace:ignoredups:erasedups
+export REPOURL='http://mirror.internode.on.net/pub/archlinux'
+PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
+" | tee -a ~/.bashrc
+```
+
+#### git user
+
+```sh
+git config --global user.name "mekatronik-achmadi"
+git config --global user.email "mekatronik.achmadi@gmail.com"
+
+git config --global init.defaultBranch main
+echo 'export GITHUBTOKEN=$(cat ~/GithubToken.txt)' | tee -a ~/.bashrc
+```
+
+#### create new user with/without password
+
+```sh
+sudo useradd -m -g users -G wheel,storage,power,tty,video -s /bin/bash -c username username
+
+# change password
+sudo passwd username
+
+# remove password password
+sudo passwd -d username
+```
+
+#### networkmanager
+
+```sh
+sudo systemctl disable systemd-networkd
+sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-networkd
+sudo systemctl stop systemd-resolved
+
+sudo ln -svf /run/NetworkManager/resolv.conf /etc/resolv.conf
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
+```
+
+#### bluetooth
+
+```sh
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+sudo bluetoothctl
+```
+
+#### vim
+
+```sh
+sudo mkdir -p /etc
+echo '" /usr/share/vim/vimfiles/archlinux.vim' | sudo tee /etc/vimrc
+
+echo 'runtime! archlinux.vim
+autocmd BufWritePre * %s/\s\+$//e
+filetype plugin on
+filetype indent on
+filetype plugin indent on
+set expandtab ts=4 sw=4 ai
+set conceallevel=0
+set encoding=utf-8
+set termguicolors
+set ic is hls
+set number
+set wrap!
+set mouse=a
+let g:tagbar_width=20
+let g:NERDTreeWinSize=20
+syntax on' | sudo tee -a /etc/vimrc
+```
+
+#### profile
+
+```sh
+sudo mkdir -p /etc/profile.d/
+echo '
+export PATH=$PATH:~/.local/bin
+export QT_QPA_PLATFORMTHEME=qt5ct
+export VISUAL=vim
+export EDITOR=vim
+export PAGER=less
+export VIEWER=less
+export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
+export FT2_SUBPIXEL_HINTING=2
+export GTK_CSD=0
+export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0:$LD_PRELOAD
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS="-m"
+' | sudo tee /etc/profile.d/arch-profile.sh
+```
+
+### Xorg
+
+#### gtk theme
+
+```sh
+rm -f $HOME/.gtkrc-2.0
+rm -f $HOME/.config/gtk-3.0/settings.ini
+
+sudo mkdir -pv /etc/gtk-2.0/
+echo '
+gtk-icon-theme-name = "Papirus-Light"
+gtk-theme-name = "Arc-Lighter-solid"
+gtk-font-name = "Liberation Sans 8"
+' | sudo tee /etc/gtk-2.0/gtkrc
+
+sudo mkdir -pv /etc/gtk-3.0/
+echo '
+[Settings]
+gtk-icon-theme-name = Papirus-Light
+gtk-theme-name = Arc-Lighter-solid
+gtk-font-name = Liberation Sans 8
+gtk-application-prefer-dark-theme = false
+' | sudo tee /etc/gtk-3.0/settings.ini
+```
+
+#### xterm
+
+```sh
+echo "XTerm*faceName: LiterationMono Nerd Font Mono
+XTerm*faceSize: 8
+XTerm*background: white
+XTerm*foreground: black
+XTerm*selectToClipboard: true
+XTerm*eightBitInput: false
+XTerm*eightBitOutput: true
+xterm*scrollBar: true
+xterm*rightScrollBar: true
+UXTerm*faceName: LiterationMono Nerd Font Mono
+UXTerm*faceSize: 8
+UXTerm*background: white
+UXTerm*foreground: black
+UXTerm*selectToClipboard: true
+UXTerm*eightBitInput: false
+UXTerm*eightBitOutput: true
+uxterm*scrollBar: true
+uxterm*rightScrollBar: true
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault" | tee ~/.Xdefaults
+
+xrdb .Xdefaults
+```
+
+### LightDM
+
+#### default session
+
+```sh
+sudo rm -vf /etc/systemd/logind.conf.d/do-not-suspend.conf
+echo '[login]
+HandleLidSwitch=suspend
+HandleLidSwitchDocked=suspend
+' | sudo tee /etc/systemd/logind.conf.d/lid-suspend.conf
+
+# check available session
+ls /usr/share/xsessions/ | cut -d. -f1
+
+# using openbox
+sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
+
+# using lxde3
+sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
+```
+
 #### desktop session without lighdm
 
 ```sh
@@ -629,7 +637,11 @@ startx /usr/bin/openbox-session
 startx /usr/bin/startlxde
 ```
 
-#### cli mount disks
+--------------------------------------------------------------------------------
+
+## Utilities
+
+### Disk
 
 ```sh
 # list attached disk
@@ -648,7 +660,9 @@ udisksctl unmount -b /dev/sdb2
 udisksctl power-off -b /dev/sdb2
 ```
 
-#### configure vnc server
+### VNC
+
+#### server
 
 ```sh
 vncpasswd
@@ -657,7 +671,7 @@ x0vncserver -rfbauth ~/.vnc/passwd
 #x0vncserver -geometry 1280x1024+0+0 -rfbauth ~/.vnc/passwd
 ```
 
-#### configure vnc viewer
+#### viewer
 
 ```sh
 # Menu/Fullscreen -> F8
@@ -665,7 +679,7 @@ x0vncserver -rfbauth ~/.vnc/passwd
 vncviewer <ip_number>:0
 ```
 
-#### configure firefox
+### Firefox
 
 - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
 - https://addons.mozilla.org/en-US/firefox/addon/adblock-for-firefox/

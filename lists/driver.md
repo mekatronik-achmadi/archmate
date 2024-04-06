@@ -73,6 +73,13 @@ sudo sed -i 's@kms @@g' /etc/mkinitcpio.conf
 sudo mkinitcpio -p archlinux
 ```
 
+#### disable nvidiafb
+
+```sh
+echo 'blacklist nvidiafb
+' | sudo tee /etc/modprobe.d/rtl8xxxu.conf
+```
+
 #### bumblebee setup
 
 ```sh
