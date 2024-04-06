@@ -9,8 +9,8 @@ mupdf-gl mupdf-tools djview
 ### install graphic tools
 
 gimp xsane-gimp
+inkscape sassc
 imagemagick
-inkscape
 
 ### install multimedia tools
 
