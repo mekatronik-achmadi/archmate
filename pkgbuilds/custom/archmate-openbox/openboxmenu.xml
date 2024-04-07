@@ -112,6 +112,10 @@
   <item label="Tint2Conf" icon="/usr/share/icons/Papirus/32x32/apps/tint2conf.svg">
     <action name="Execute"><command>tint2conf</command></action>
   </item>
+  <item label="ThemeConf" icon="/usr/share/icons/Papirus/32x32/apps/gtk-theme-config.svg">
+    <action name="Execute"><command>lxappearance</command></action>
+  </item>
+
   <item label="Autostart" icon="/usr/share/icons/Papirus/32x32/apps/gnome-run.svg">
     <action name="Execute"><command>xterm -e vim /usr/share/openbox/autostart</command></action>
   </item>
