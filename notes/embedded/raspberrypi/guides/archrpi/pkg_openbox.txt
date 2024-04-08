@@ -4,8 +4,9 @@ python-wxpython
 python-gobject
 gtkmm gtkmm3
 
-openbox tint2 obconf feh volumeicon htop bashrun
-xpdf gsimplecal xarchiver brightnessctl arandr
+feh xpdf gsimplecal xarchiver brightnessctl arandr
+openbox tint2 obconf gvfs volumeicon htop bashrun
+cbatticon pcmanfm-gtk3 lxappearance-gtk3 gpicview
 
 icon-naming-utils gtk-update-icon-cache
 papirus-icon-theme arc-solid-gtk-theme
@@ -17,4 +18,3 @@ geany geany-plugins
 qt5-base qt6-base
 qt5ct qt6ct scrot
 xdotool parcellite
-

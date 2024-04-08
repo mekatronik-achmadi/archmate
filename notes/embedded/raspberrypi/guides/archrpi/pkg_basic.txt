@@ -63,4 +63,3 @@ gptfdisk mtools
 
 gpio-utils wiringpi fake-hwclock
 python-periphery python-wiringx-git
-

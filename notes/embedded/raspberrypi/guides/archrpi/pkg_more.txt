@@ -33,4 +33,3 @@ vdpauinfo
 python-numpy python-requests
 python-scipy python-matplotlib
 sox python-pandas python-pyqt5
-

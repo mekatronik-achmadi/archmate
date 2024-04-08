@@ -22,4 +22,3 @@ docker docker-compose
 
 gitea memcached
 postgresql redis
-
