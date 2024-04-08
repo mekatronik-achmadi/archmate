@@ -363,8 +363,6 @@ hide-user-image = true
 keyboard = onboard
 ' | tee airootfs/etc/lightdm/lightdm-gtk-greeter.conf
 
-ln -svf /usr/lib/systemd/system/lightdm.service ${SYSTEMD}/lightdm.service
-
 ######################### Archiso Packages #########################
 
 mkdir -pv work/x86_64/airootfs/etc/

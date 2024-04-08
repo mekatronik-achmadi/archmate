@@ -8,11 +8,30 @@ This is just example of custom Arch-Linux ISOs using Archiso dan Pacstrap tools.
 
 ### Mate Desktop
 
-The **archlinux-mate_012024-x86_64.iso** contain Mate Desktop and Openbox WM with LightDM as Login Manager.
+The **archlinux-mate_012024-x86_64.iso** contain Mate Desktop with LightDM as Login Manager (enabled by default).
 
-### Command Line Interface
+Additionally, you can disable LightDM using command:
 
-The **archlinux-cli_012024-x86_64.iso** contain Bash interface as default with additional Openbox WM.
+```sh
+sudo systemctl disable lightdm
+sudo systemctl stop lightdm
+```
+
+and optionally start minimal Openbox session using command:
+
+```sh
+startx /usr/bin/openbox-session
+```
+
+### LXDE Desktop
+
+The **archlinux-lxde_012024-x86_64.iso** contain LXDE Desktop and Openbox WM with LightDM as Login Manager (disabled by default).
+
+The LXDE Desktop can be started using command:
+
+```sh
+startx /usr/bin/startlxde
+```
 
 The Openbox WM can be started using command:
 
@@ -20,16 +39,15 @@ The Openbox WM can be started using command:
 startx /usr/bin/openbox-session
 ```
 
-or using LightDM (disabled by default)
+Optionally, you can enable LightDM using command:
 
 ```sh
 systemctl enable lightdm
 systemctl start lightdm
 ```
 
-### LXDE Desktop
+and login into LXDE Desktop from there.
 
-The **archlinux-lxde_012024-x86_64.iso** contain LXDE Desktop and Openbox WM with LightDM as Login Manager.
 
 ## Install From Live Session
 
