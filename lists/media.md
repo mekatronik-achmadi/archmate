@@ -116,3 +116,11 @@ yt-dlp -f 251 https://www.youtube.com/watch?v=xxxxxxxxxxx
 ffmpeg -i videoname.webm -vn -ab 128k -ar 44100 -y videoname.mp3
 rm -vf videoname.webm
 ```
+
+### ffmpeg faster video
+
+```sh
+ffmpeg -i input.mp4 \
+-filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2[a]" \
+-map "[v]" -map "[a]" -c:v libx264 -c:a aac output.mp4
+```
