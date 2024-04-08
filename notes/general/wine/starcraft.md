@@ -1,4 +1,4 @@
-# Startcraft-2 on Wine
+# Starcraft-2 on Wine
 
 ## Setup Wine 32-bit environment
 
@@ -6,7 +6,7 @@
 unset LD_PRELOAD
 mkdir -p /home/development/Virtuals/WineDir
 
-export WINEDIR=/home/development/Virtuals/WineDir/starcraft2
+export WINEDIR=/home/development/Virtuals/WineDir/starcraft
 export WINEARCH=win32
 export WINEPREFIX=$WINEDIR
 ```
@@ -24,7 +24,7 @@ wine directx_Jun2010_redist/DXSETUP.exe
 
 ## Install Games
 
-Install path: **Z:\home\development\Virtuals\WineDir\Games\StarCraft2**
+Install path: **Z:\home\development\Virtuals\WineDir\Games\StarCraft**
 
 ```sh
 cd Starcraft/
@@ -35,7 +35,7 @@ wine setup.exe
 
 ```sh
 unset LD_PRELOAD
-export WINEDIR=/home/development/Virtuals/WineDir/starcraft2
+export WINEDIR=/home/development/Virtuals/WineDir/starcraft
 export WINEPREFIX=$WINEDIR
 
 echo 'REGEDIT4
@@ -53,10 +53,10 @@ regedit starcraft.reg
 
 ```sh
 unset LD_PRELOAD
-export WINEDIR=/home/development/Virtuals/WineDir/starcraft2
+export WINEDIR=/home/development/Virtuals/WineDir/starcraft
 export WINEPREFIX=$WINEDIR
 
-cd /home/development/Virtuals/WineDir/Games/StarCraft2
+cd /home/development/Virtuals/WineDir/Games/StarCraft
 wine *Offline.exe
 ```
 
@@ -68,10 +68,10 @@ Account tag: **dlr@dr.com**
 
 ```sh
 unset LD_PRELOAD
-export WINEDIR=/home/development/Virtuals/WineDir/starcraft2
+export WINEDIR=/home/development/Virtuals/WineDir/starcraft
 export WINEPREFIX=$WINEDIR
 
-cd /home/development/Virtuals/WineDir/Games/StarCraft2
+cd /home/development/Virtuals/WineDir/Games/StarCraft
 wine cmd /c "Run me first.bat"
 ```
 
