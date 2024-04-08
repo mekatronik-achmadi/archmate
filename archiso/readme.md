@@ -3,7 +3,7 @@
 This section contains scripts to build a simple Arch-Linux ISO.
 To try, there are two options:
 - [Download Examples](#download-example)
-    + [CLI Variant](#cli-variant)
+    + [LXDE Variant](#lxde-variant)
     + [MATE Variant](#mate-variant)
 - [Build Yourself](#build-yourself)
 	+ [Brief](#brief)
@@ -20,14 +20,14 @@ Any my custom package recipes that build these ISO can be found [here](https://g
 
 ## Download Example
 
-There are two variants: Command Line Interface and MATE Desktop.
+There are two variants: LXDE and MATE.
 You can download from [SourceForge](https://sourceforge.net/projects/archlinux-custom-iso/files/archmate/).
 
-### CLI variant
+### LXDE variant
 
-This ArchISO using CLI BASH as default interface and Openbox as optional.
+This ArchISO using CLI BASH as default interface with LXDE and Openbox as optional.
 
-CLI ISO automatically login into a BASH interface after booting using **live** user.
+LXDE ISO automatically login into a BASH interface after booting using **live** user.
 
 ![](screenshots/archcli.png)
 
@@ -42,6 +42,21 @@ startx /usr/bin/openbox-session
 ```
 
 ![](screenshots/archob.png)
+
+or using LXDE using command:
+
+```sh
+startx /usr/bin/startlxde
+```
+
+![](screenshots/archlxde.png)
+
+Additionally you can enable LightDM to use LXDE from Login Manager:
+
+```sh
+sudo systemctl enable lightdm
+sudo systemctl start lightdm
+```
 
 ### MATE variant
 
