@@ -10,13 +10,13 @@ pcmanfm-gtk3 lxappearance-gtk3 gpicview
 arc-solid-gtk-theme papirus-icon-theme
 openbox obconf tint2 feh xpdf bashrun
 volumeicon xarchiver brightnessctl
+cbatticon xorg-xinit xorg-server
 firefox mc gvfs less xterm vimb
 archlinux-wallpaper scrot htop
 gsimplecal archlinux-xdg-menu
 brightnessctl arandr onboard
 geany pavucontrol volumeicon
-git vim fzf bat ripgrep
-xorg-xinit xorg-server)
+git vim fzf bat ripgrep)
 provides=('vi')
 conflicts=('vi')
 install=pkg.install

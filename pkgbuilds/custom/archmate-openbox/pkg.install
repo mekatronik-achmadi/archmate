@@ -24,6 +24,9 @@ menu_cleaning() {
 
     # disable icon in pipe menu
     sed -i 's#return \$filename;#return "";#g' /usr/bin/xdg_menu
+
+    # remove openbox from lightdm
+    rm -f /usr/share/xsessions/openbox*.desktop
 }
 
 pcmanfm_setting() {
