@@ -60,7 +60,7 @@ sudo systemctl start lightdm
 
 ### MATE variant
 
-This ArchISO provide MATE Desktop and Openbox with LightDM as login manager.
+This ArchISO provide MATE Desktop with LightDM as login manager.
 
 After booting, it will show the LightDM to choose session:
 
@@ -69,6 +69,25 @@ After booting, it will show the LightDM to choose session:
 If MATE desktop chosen, it will login into Mate desktop using **live** user.
 
 ![](screenshots/archmate.png)
+
+Optionally, you can disable LightDM using command:
+
+```sh
+sudo systemctl disable lightdm
+sudo systemctl stop lightdm
+```
+
+then reboot using command;
+
+```sh
+sudo reboot
+```
+
+after reboot, you can use Openbox session using command:
+
+```sh
+startx /usr/bin/openbox-session
+```
 
 ## Build Yourself
 
