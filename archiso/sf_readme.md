@@ -15,9 +15,10 @@ Additionally, you can disable LightDM using command:
 ```sh
 sudo systemctl disable lightdm
 sudo systemctl stop lightdm
+sudo reboot
 ```
 
-and optionally start minimal Openbox session using command:
+and after reboot, you can start minimal Openbox session using command:
 
 ```sh
 startx /usr/bin/openbox-session
