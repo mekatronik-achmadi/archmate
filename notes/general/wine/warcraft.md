@@ -60,7 +60,7 @@ unset LD_PRELOAD
 export WINEDIR=/home/development/Virtuals/WineDir/warcraft
 export WINEPREFIX=$WINEDIR
 
-cd "/home/development/Virtuals/WineDir/warcraft/drive_c/Program Files/Warcraft 3/"
+cd "$WINEDIR/drive_c/Program Files/Warcraft 3/"
 wine "Warcraft III.exe"
 ```
 
