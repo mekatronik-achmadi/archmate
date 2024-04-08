@@ -1,6 +1,6 @@
 # CnC Generals on Wine
 
-## Set Wine 32-bit environment
+## Setup Wine 32-bit environment
 
 ```sh
 unset LD_PRELOAD
@@ -11,13 +11,9 @@ export WINEARCH=win32
 export WINEPREFIX=$WINEDIR
 ```
 
-## Setup Wine infrastructures
-
 ```sh
 winetricks settings winxp
 winetricks settings fontsmooth=bgr
-
-winetricks vd=800x600
 ```
 
 ## Setup DirectX
