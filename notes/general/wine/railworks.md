@@ -12,7 +12,6 @@ export WINEPREFIX=$WINEDIR
 ```
 
 ```sh
-winetricks corefonts
 winetricks settings winxp
 winetricks settings fontsmooth=bgr
 ```
@@ -25,12 +24,35 @@ wine directx_Jun2010_redist/DXSETUP.exe
 
 ## Install Games
 
+### RW3 Version
+
 ```sh
 cd Railworks/
 sudo mount Railworks_3.iso /mnt/
 
 cd /mnt
 wine Setup.exe
+
+cd -
+sudo umount /mnt
+```
+
+### SKidrow version
+
+Install Path: **C:\Railworks**
+
+```sh
+cd Railworks/
+sudo mount sr-r3ts12.iso /mnt/
+
+cd /mnt
+wine Setup.exe
+
+export TARGETDIR=$WINEDIR/drive_c/Railworks
+cp -vf /mnt/SKIDROW/SKIDROW.ini $TARGETDIR/
+cp -vf /mnt/SKIDROW/RailWorks.exe $TARGETDIR/
+cp -vf /mnt/SKIDROW/Steamclient.dll $TARGETDIR/
+cp -vf /mnt/SKIDROW/LocalisedStrings.dll $TARGETDIR/
 
 cd -
 sudo umount /mnt
@@ -56,11 +78,24 @@ regedit railworks.reg
 
 ## Run Games
 
+### RW-3 version
+
 ```sh
 unset LD_PRELOAD
 export WINEDIR=/home/development/Virtuals/WineDir/railworks
 export WINEPREFIX=$WINEDIR
 
 cd "$WINEDIR/drive_c/Program Files/Railworks 3/"
+wine "Railworks.exe"
+```
+
+### Skidrow version
+
+```sh
+unset LD_PRELOAD
+export WINEDIR=/home/development/Virtuals/WineDir/railworks
+export WINEPREFIX=$WINEDIR
+
+cd $WINEDIR/drive_c/Railworks/
 wine "Railworks.exe"
 ```
