@@ -8,7 +8,7 @@ license=('GPL')
 depends=(
 pcmanfm-gtk3 lxappearance-gtk3 gpicview
 arc-solid-gtk-theme papirus-icon-theme
-openbox obconf tint2 feh xpdf bashrun
+openbox obconf tint2 feh xpdf gmrun
 volumeicon xarchiver brightnessctl
 cbatticon xorg-xinit xorg-server
 firefox mc gvfs less xterm vimb
@@ -32,6 +32,10 @@ package() {
     cp -f ../openboxautostart $pkgdir/usr/share/openbox/autostart
     cp -f ../openboxlibfm.conf $pkgdir/usr/share/openbox/libfm.conf
     cp -f ../openboxpcmanfm.conf $pkgdir/usr/share/openbox/pcmanfm.conf
+
+    mkdir -p $pkgdir/usr/bin/
+    cp -f ../startopenbox $pkgdir/usr/bin/
+    chmod a-x $pkgdir/usr/bin/startopenbox
 
     install -d "$pkgdir/usr/bin"
     local _file

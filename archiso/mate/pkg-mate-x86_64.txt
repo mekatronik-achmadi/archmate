@@ -69,8 +69,8 @@ qt5ct qt6ct scrot
 xdotool shotwell
 parcellite meld
 
-openbox obconf tint2 bashrun cbatticon
-volumeicon feh xpdf xarchiver brightnessctl
+openbox obconf tint2 volumeicon cbatticon
+gmrun feh xpdf xarchiver brightnessctl
 
 networkmanager nm-connection-editor
 network-manager-applet modemmanager

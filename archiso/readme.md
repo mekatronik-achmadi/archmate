@@ -38,7 +38,7 @@ Using [TMux](https://github.com/tmux/tmux/wiki), you can have multiple CLI BASH.
 Optionally, you can enter X11 Session with Openbox using command:
 
 ```sh
-startx /usr/bin/openbox-session
+startx /usr/bin/startopenbox
 ```
 
 ![](screenshots/archob.png)
@@ -86,7 +86,7 @@ sudo reboot
 after reboot, you can use Openbox session using command:
 
 ```sh
-startx /usr/bin/openbox-session
+startx /usr/bin/startopenbox
 ```
 
 ## Build Yourself

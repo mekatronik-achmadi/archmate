@@ -26,7 +26,7 @@ sudo reboot
 after reboot, you can use Openbox session using command:
 
 ```sh
-startx /usr/bin/openbox-session
+startx /usr/bin/startopenbox
 ```
 
 ### LXDE Desktop
@@ -42,7 +42,7 @@ startx /usr/bin/startlxde
 The Openbox WM can be started using command:
 
 ```sh
-startx /usr/bin/openbox-session
+startx /usr/bin/startopenbox
 ```
 
 Optionally, you can enable LightDM using command:

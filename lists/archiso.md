@@ -96,8 +96,8 @@ parcellite meld
 
 ### install openbox session
 
-openbox obconf tint2 bashrun cbatticon
-volumeicon feh xpdf xarchiver brightnessctl
+openbox obconf tint2 volumeicon cbatticon
+gmrun feh xpdf xarchiver brightnessctl
 
 ### install networking system
 
@@ -631,7 +631,7 @@ startx /usr/bin/mate-session
 startx /usr/bin/startlxde
 
 # using openbox
-startx /usr/bin/openbox-session
+startx /usr/bin/startopenbox
 ```
 
 --------------------------------------------------------------------------------
