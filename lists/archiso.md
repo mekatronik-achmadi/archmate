@@ -676,6 +676,16 @@ x0vncserver -rfbauth ~/.vnc/passwd
 vncviewer <ip_number>:0
 ```
 
+### Session Info
+
+```sh
+echo "$TERM in $SHELL"
+ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)
+
+echo $XDG_CURRENT_DESKTOP
+echo $XDG_SESSION_TYPE
+```
+
 ### Firefox
 
 - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
