@@ -31,7 +31,8 @@ startx /usr/bin/startopenbox
 
 ### LXDE Desktop
 
-The **archlinux-lxde_012024-x86_64.iso** contain LXDE Desktop and Openbox WM with LightDM as Login Manager (disabled by default).
+The **archlinux-lxde_012024-x86_64.iso** contain LXDE Desktop and Openbox WM,
+with LightDM as Login Manager (disabled by default).
 
 The LXDE Desktop can be started using command:
 
@@ -54,7 +55,6 @@ systemctl start lightdm
 
 and login into LXDE Desktop from there.
 
-
 ## Install From Live Session
 
 You can try to follow this document:
@@ -66,5 +66,4 @@ https://github.com/mekatronik-achmadi/archmate/tree/main/archiso/install_live/in
 You are free to visit this project repository on Github:
 
 https://github.com/mekatronik-achmadi/archmate/tree/main/archiso
-
 
