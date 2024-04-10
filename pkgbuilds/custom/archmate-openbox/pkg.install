@@ -2,6 +2,7 @@ openbox_symlink() {
     ln -sf /usr/share/openbox/rc.xml /etc/xdg/openbox/rc.xml
     ln -sf /usr/share/openbox/menu.xml /etc/xdg/openbox/menu.xml
     ln -sf /usr/share/openbox/autostart /etc/xdg/openbox/autostart
+    ln -sf /usr/bin/startopenbox /usr/bin/openbox-session
 }
 
 editable_fehbg() {
