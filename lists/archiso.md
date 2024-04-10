@@ -78,12 +78,12 @@ python-gobject
 
 tk ttf-liberation onboard
 ttf-liberation-mono-nerd
+dbus xdg-desktop-portal
 xdg-desktop-portal-gtk
 ttf-dejavu ttf-droid
 libappindicator-gtk3
 redshift python-xdg
 archlinux-wallpaper
-xdg-desktop-portal
 xdg-user-dirs-gtk
 
 ### install desktop tools

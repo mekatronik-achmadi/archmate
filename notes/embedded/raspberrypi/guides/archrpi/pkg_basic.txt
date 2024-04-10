@@ -33,11 +33,11 @@ xorg-xmessage
 
 tk ttf-liberation onboard
 ttf-liberation-mono-nerd
+dbus xdg-desktop-portal
 xdg-desktop-portal-gtk
 ttf-dejavu ttf-droid
 redshift python-xdg
 archlinux-wallpaper
-xdg-desktop-portal
 xdg-user-dirs-gtk
 
 networkmanager nm-connection-editor
