@@ -99,3 +99,9 @@ export WINEPREFIX=$WINEDIR
 cd $WINEDIR/drive_c/Railworks/
 wine "Railworks.exe"
 ```
+
+### Some Worked Addons
+
+- https://steamcommunity.com/app/24010/discussions/3/1700542332319483278/
+- http://www.trensim.com/lib/rs/
+
