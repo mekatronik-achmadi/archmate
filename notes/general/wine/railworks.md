@@ -37,7 +37,7 @@ cd -
 sudo umount /mnt
 ```
 
-### SKidrow version
+### SKidrow version (Recommended)
 
 Install Path: **C:\Railworks**
 
@@ -61,10 +61,6 @@ sudo umount /mnt
 ## Setup Registry
 
 ```sh
-unset LD_PRELOAD
-export WINEDIR=/home/development/Virtuals/WineDir/railworks
-export WINEPREFIX=$WINEDIR
-
 echo 'REGEDIT4
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -89,7 +85,7 @@ cd "$WINEDIR/drive_c/Program Files/Railworks 3/"
 wine "Railworks.exe"
 ```
 
-### Skidrow version
+### Skidrow version (Recommended)
 
 ```sh
 unset LD_PRELOAD

@@ -34,10 +34,6 @@ wine setup.exe
 ## Setup Registry
 
 ```sh
-unset LD_PRELOAD
-export WINEDIR=/home/development/Virtuals/WineDir/starcraft
-export WINEPREFIX=$WINEDIR
-
 echo 'REGEDIT4
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]

@@ -94,10 +94,6 @@ cp -vf "$HOME/Documents/Command and Conquer Generals Data/Options.ini" \
 ## Setup Registry
 
 ```sh
-unset LD_PRELOAD
-export WINEDIR=/home/development/Virtuals/WineDir/generals
-export WINEPREFIX=$WINEDIR
-
 regedit /D "HKEY_LOCAL_MACHINE\SOFTWARE\Electronic Arts\EA Games\Command and Conquer Generals Zero Hour\ergc"
 
 echo 'REGEDIT4
