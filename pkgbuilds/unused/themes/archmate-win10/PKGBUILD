@@ -1,0 +1,64 @@
+pkgname=archmate-win10
+_pkgname=windows10-gtk-theme
+_iconame=windows10-icon-theme
+pkgver=3.2.1.r43.g6e6cc09
+pkgrel=1
+pkgdesc="Windows 10 for MATE Desktop"
+arch=(any)
+url="https://github.com/mekatronik-achmadi/archmate/"
+license=('GPL')
+depends=('gtk-engines' 'gtk-engine-murrine' 'gnome-themes-extra')
+makedepends=('git')
+provides=('windows10-gtk-theme')
+conflicts=('windows10-gtk-theme')
+options=('!makeflags' '!strip')
+install=pkg.install
+source=(
+    "${_pkgname}::git+https://github.com/B00merang-Project/Windows-10.git"
+    "${_iconame}::git+https://github.com/B00merang-Artwork/Windows-10.git"
+)
+sha256sums=('SKIP' 'SKIP')
+
+pkgver() {
+	cd "${srcdir}/${_pkgname}"
+	git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+package() {
+  ###### THEME ################
+  cd "${srcdir}/${_pkgname}"
+
+  # create theme dir
+  install -d -m 755 "$pkgdir/usr/share/themes/Windows10"
+
+  # install theme
+  find * -type f -exec \
+  install -D -m 644 '{}' "$pkgdir/usr/share/themes/Windows10/{}" \;
+
+  ###### ICON #############
+  cd "${srcdir}/${_iconame}"
+  install -d -m 755 "$pkgdir/usr/share/icons/Windows10"
+
+  cp -a * "$pkgdir/usr/share/icons/Windows10"
+  rm -rf "$pkgdir/.git/*"
+  rm -f "$pkgdir/usr/share/icons/Windows10/README.md"
+  find "$pkgdir/usr/share/icons/Windows10" -type f -exec chmod 644 {} +
+  find "$pkgdir/usr/share/icons/Windows10" -type l -exec chmod -c 644 {} +
+
+  ###### INDEX ###########
+
+  echo '[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Standard-Windows
+Comment=Windows 10 UI for GNU/Linux
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Windows10
+MetacityTheme=Windows10
+IconTheme=Windows10
+CursorTheme=mate-black
+ButtonLayout=menu:minimize,maximize,close
+' > $pkgdir/usr/share/themes/Windows10/index.theme
+}
+
