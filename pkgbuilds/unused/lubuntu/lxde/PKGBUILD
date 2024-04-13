@@ -6,12 +6,10 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
 depends=('archmate-openbox'
-'pcmanfm-gtk3' 'gpicview'
-'dbus' 'lxappearance-gtk3'
+'lxrandr-gtk3' 'lxterminal'
 'lxde-common' 'lxpanel-gtk3'
-'lxde-icon-theme' 'lxterminal'
-'lxhotkey-gtk3' 'lxinput-gtk3'
-'lxsession-gtk3' 'lxrandr-gtk3')
+'lxinput-gtk3' 'lxsession-gtk3'
+'lxde-icon-theme' 'lxhotkey-gtk3')
 install=pkg.install
 options=('!makeflags' '!strip')
 

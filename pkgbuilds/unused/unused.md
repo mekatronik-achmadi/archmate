@@ -79,10 +79,14 @@ ttf-ubuntu-font-family
 
 ### install additional themes
 
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-lubuntu/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-ubuntu/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-win10/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-menu/
+
+### install lubuntu desktop
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lubuntu/lxde/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lubuntu/theme/
 
 --------------------------------------------------------------------------------
 
