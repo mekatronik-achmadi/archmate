@@ -26,7 +26,7 @@ sudo reboot
 after reboot, you can use Openbox session using command:
 
 ```sh
-startx /usr/bin/startopenbox
+startx /usr/bin/openbox-session
 ```
 
 ### Openbox Desktop
