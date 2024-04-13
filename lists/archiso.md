@@ -97,6 +97,7 @@ parcellite meld
 ### install openbox session
 
 openbox obconf tint2 volumeicon cbatticon
+pcmanfm-gtk3 gpicview lxappearance-gtk3
 gmrun feh xpdf xarchiver brightnessctl
 
 ### install networking system

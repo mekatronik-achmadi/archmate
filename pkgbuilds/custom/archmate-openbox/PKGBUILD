@@ -15,7 +15,9 @@ gsimplecal archlinux-xdg-menu
 brightnessctl arandr onboard
 scrot pavucontrol volumeicon
 git vim archlinux-wallpaper
-dbus htop fzf bat ripgrep)
+dbus htop fzf bat ripgrep
+pcmanfm-gtk3 gpicview
+lxappearance-gtk3)
 provides=('vi')
 conflicts=('vi')
 install=pkg.install
@@ -29,6 +31,8 @@ package() {
     cp -f ../openboxtint2.rc $pkgdir/usr/share/openbox/tint2.rc
     cp -f ../openboxmenu.xml $pkgdir/usr/share/openbox/menu.xml
     cp -f ../openboxautostart $pkgdir/usr/share/openbox/autostart
+    cp -f ../openboxlibfm.conf $pkgdir/usr/share/openbox/libfm.conf
+    cp -f ../openboxpcmanfm.conf $pkgdir/usr/share/openbox/pcmanfm.conf
 
     mkdir -p $pkgdir/usr/bin/
     cp -f ../startopenbox $pkgdir/usr/bin/

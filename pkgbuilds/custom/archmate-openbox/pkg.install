@@ -23,14 +23,21 @@ menu_cleaning() {
     sed -i 's#return \$filename;#return "";#g' /usr/bin/xdg_menu
 }
 
+pcmanfm_setting() {
+    ln -sf /usr/share/openbox/libfm.conf /etc/xdg/libfm/libfm.conf
+    ln -sf /usr/share/openbox/pcmanfm.conf /etc/xdg/pcmanfm/default/pcmanfm.conf
+}
+
 post_install() {
     openbox_symlink
     editable_fehbg
     menu_cleaning
+    pcmanfm_setting
 }
 
 post_upgrade() {
     openbox_symlink
     editable_fehbg
     menu_cleaning
+    pcmanfm_setting
 }

@@ -14,8 +14,14 @@
   <item label="Git GUI" icon="/usr/share/icons/Papirus/32x32/apps/git-gui.svg">
     <action name="Execute"><command>git gui</command></action>
   </item>
+  <item label="GPicView" icon="/usr/share/icons/Papirus/32x32/apps/gpicview.svg">
+    <action name="Execute"><command>gpicview</command></action>
+  </item>
   <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
     <action name="Execute"><command>onboard</command></action>
+  </item>
+  <item label="PCManFM" icon="/usr/share/icons/Papirus/32x32/apps/system-file-manager.svg">
+    <action name="Execute"><command>pcmanfm</command></action>
   </item>
   <item label="TaskManager" icon="/usr/share/icons/Papirus/32x32/apps/htop.svg">
     <action name="Execute"><command>xterm -e htop -C</command></action>
@@ -102,6 +108,9 @@
   </item>
   <item label="Tint2Conf" icon="/usr/share/icons/Papirus/32x32/apps/tint2conf.svg">
     <action name="Execute"><command>tint2conf</command></action>
+  </item>
+  <item label="ThemeConf" icon="/usr/share/icons/Papirus/32x32/apps/gtk-theme-config.svg">
+    <action name="Execute"><command>lxappearance</command></action>
   </item>
   <item label="Autostart" icon="/usr/share/icons/Papirus/32x32/apps/gnome-run.svg">
     <action name="Execute"><command>xterm -e vim /usr/share/openbox/autostart</command></action>
