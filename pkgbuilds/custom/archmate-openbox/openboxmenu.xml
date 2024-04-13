@@ -11,20 +11,11 @@
   <item label="Firefox" icon="/usr/share/icons/Papirus/32x32/apps/firefox.svg">
     <action name="Execute"><command>firefox</command></action>
   </item>
-  <item label="Geany" icon="/usr/share/icons/Papirus/32x32/apps/geany.svg">
-    <action name="Execute"><command>geany</command></action>
-  </item>
   <item label="Git GUI" icon="/usr/share/icons/Papirus/32x32/apps/git-gui.svg">
     <action name="Execute"><command>git gui</command></action>
   </item>
-  <item label="GPicView" icon="/usr/share/icons/Papirus/32x32/apps/gpicview.svg">
-    <action name="Execute"><command>gpicview</command></action>
-  </item>
   <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
     <action name="Execute"><command>onboard</command></action>
-  </item>
-  <item label="PCManFM" icon="/usr/share/icons/Papirus/32x32/apps/system-file-manager.svg">
-    <action name="Execute"><command>pcmanfm</command></action>
   </item>
   <item label="TaskManager" icon="/usr/share/icons/Papirus/32x32/apps/htop.svg">
     <action name="Execute"><command>xterm -e htop -C</command></action>
@@ -112,10 +103,6 @@
   <item label="Tint2Conf" icon="/usr/share/icons/Papirus/32x32/apps/tint2conf.svg">
     <action name="Execute"><command>tint2conf</command></action>
   </item>
-  <item label="ThemeConf" icon="/usr/share/icons/Papirus/32x32/apps/gtk-theme-config.svg">
-    <action name="Execute"><command>lxappearance</command></action>
-  </item>
-
   <item label="Autostart" icon="/usr/share/icons/Papirus/32x32/apps/gnome-run.svg">
     <action name="Execute"><command>xterm -e vim /usr/share/openbox/autostart</command></action>
   </item>
@@ -126,7 +113,7 @@
 <menu id="root-menu" label="Root Menu">
   <separator label="Quick Menu" />
   <item label="Run a Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
-    <action name="Execute"><command>gmrun -g 300x</command></action>
+    <action name="Execute"><command>bashrun</command></action>
   </item>
   <item label="XTerminal" icon="/usr/share/icons/Papirus/32x32/apps/terminal.svg">
     <action name="Execute"><command>xterm</command></action>
@@ -137,6 +124,7 @@
   <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
   <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
   <menu id="settings" icon="/usr/share/icons/Papirus/32x32/apps/preferences.svg"/>
+  <menu id="client-list-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
 
   <separator label="Piped Menu"/>
   <menu id="applications" label="All Menu" execute="xdg_menu --format openbox3-pipe"/>

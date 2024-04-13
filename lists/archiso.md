@@ -97,7 +97,7 @@ parcellite meld
 ### install openbox session
 
 openbox obconf tint2 volumeicon cbatticon
-gmrun feh xpdf xarchiver brightnessctl
+bashrun feh xpdf xarchiver brightnessctl
 
 ### install networking system
 

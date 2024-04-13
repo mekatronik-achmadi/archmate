@@ -326,7 +326,7 @@
   </keybind>
   <keybind key="C-A-r">
     <action name="Execute">
-      <command>gmrun -g 300x</command>
+      <command>bashrun</command>
     </action>
   </keybind>
   <keybind key="C-A-e">

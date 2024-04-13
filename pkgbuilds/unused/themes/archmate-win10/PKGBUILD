@@ -60,7 +60,7 @@ package() {
 
   echo '[Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Standard-Windows
+Name=Standard-Win10
 Comment=Windows 10 Theme
 Encoding=UTF-8
 
@@ -74,7 +74,7 @@ ButtonLayout=menu:minimize,maximize,close
 
   echo '[Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Standard-Windows
+Name=Standard-Win10Dark
 Comment=Windows 10 Dark Theme
 Encoding=UTF-8
 
