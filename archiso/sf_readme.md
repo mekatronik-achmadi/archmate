@@ -29,21 +29,15 @@ after reboot, you can use Openbox session using command:
 startx /usr/bin/startopenbox
 ```
 
-### LXDE Desktop
+### Openbox Desktop
 
-The **archlinux-lxde_012024-x86_64.iso** contain LXDE Desktop and Openbox WM,
+The **archlinux-openbox_012024-x86_64.iso** contain Openbox Window Manager,
 with LightDM as Login Manager (disabled by default).
 
-The LXDE Desktop can be started using command:
+The Openbox session can be started using command:
 
 ```sh
-startx /usr/bin/startlxde
-```
-
-The Openbox WM can be started using command:
-
-```sh
-startx /usr/bin/startopenbox
+startx /usr/bin/openbox-session
 ```
 
 Optionally, you can enable LightDM using command:
@@ -53,7 +47,7 @@ systemctl enable lightdm
 systemctl start lightdm
 ```
 
-and login into LXDE Desktop from there.
+and login into desktop from there.
 
 ## Install From Live Session
 

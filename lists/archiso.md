@@ -265,7 +265,6 @@ edk2-ovmf
 
 - archmate-font: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-font/
 - archmate-theme: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-theme/
-- archmate-lxde3: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-lxde3/
 - archmate-openbox: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-openbox/
 - archmate-archiso: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-archiso/
 - archmate-desktop: https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom/archmate-desktop/
@@ -620,9 +619,6 @@ ls /usr/share/xsessions/ | cut -d. -f1
 
 # using Openbox
 sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
-
-# using LXDE
-sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
 ```
 
 #### desktop session without lighdm
@@ -631,11 +627,8 @@ sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
 # using Mate
 startx /usr/bin/mate-session
 
-# using LXDE
-startx /usr/bin/startlxde
-
 # using openbox
-startx /usr/bin/startopenbox
+startx /usr/bin/openbox-session
 ```
 
 --------------------------------------------------------------------------------

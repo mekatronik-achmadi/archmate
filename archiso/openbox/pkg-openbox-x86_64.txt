@@ -155,7 +155,6 @@ vim-devicons-git
 vim-pkgbuild-git
 
 archmate-font
-archmate-lxde3
 archmate-openbox
 archmate-archiso
 archmate-install
