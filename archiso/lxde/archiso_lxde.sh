@@ -136,6 +136,7 @@ ln -svf /usr/lib/systemd/system/fake-hwclock.service ${SYSTEMD}/fake-hwclock.ser
 ln -svf /usr/lib/systemd/system/vboxservice.service ${SYSTEMD}/vboxservice.service
 ln -svf /usr/lib/systemd/system/bluetooth.service ${SYSTEMD}/bluetooth.service
 ln -svf /usr/lib/systemd/system/sensord.service ${SYSTEMD}/sensord.service
+ln -svf /usr/lib/systemd/system/dbus.service ${SYSTEMD}/dbus.service
 ln -svf /usr/lib/systemd/system/sshd.service ${SYSTEMD}/sshd.service
 
 rm -vf airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service

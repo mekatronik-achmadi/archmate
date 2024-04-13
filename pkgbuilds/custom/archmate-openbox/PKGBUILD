@@ -7,7 +7,7 @@ url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
 depends=(
 arc-solid-gtk-theme papirus-icon-theme
-openbox obconf tint2 feh xpdf bashrun
+openbox obconf tint2 feh xpdf gmrun
 volumeicon xarchiver brightnessctl
 cbatticon xorg-xinit xorg-server
 firefox mc gvfs less xterm vimb
@@ -32,7 +32,7 @@ package() {
 
     mkdir -p $pkgdir/usr/bin/
     cp -f ../startopenbox $pkgdir/usr/bin/
-    chmod a-x $pkgdir/usr/bin/startopenbox
+    chmod a+x $pkgdir/usr/bin/startopenbox
 
     install -d "$pkgdir/usr/bin"
     local _file

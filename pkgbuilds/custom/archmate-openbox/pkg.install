@@ -11,11 +11,6 @@ editable_fehbg() {
     chmod a+w /usr/share/openbox/autostart
 }
 
-bashrun_theme() {
-    sed -i 's#BGCOLOR=black#BGCOLOR=white#g' /usr/bin/bashrun
-    sed -i 's#FGCOLOR=grey#FGCOLOR=black#g' /usr/bin/bashrun
-}
-
 menu_cleaning() {
     rm -f /usr/share/applications/volumeicon.desktop
     rm -f /usr/share/applications/tint2conf.desktop
@@ -26,21 +21,16 @@ menu_cleaning() {
 
     # disable icon in pipe menu
     sed -i 's#return \$filename;#return "";#g' /usr/bin/xdg_menu
-
-    # remove openbox from lightdm
-    rm -f /usr/share/xsessions/openbox*.desktop
 }
 
 post_install() {
     openbox_symlink
     editable_fehbg
-    bashrun_theme
     menu_cleaning
 }
 
 post_upgrade() {
     openbox_symlink
     editable_fehbg
-    bashrun_theme
     menu_cleaning
 }

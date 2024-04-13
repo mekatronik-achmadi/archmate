@@ -1,12 +1,12 @@
 [Toplevel top]
 expand=true
 orientation=top
-size=22
+size=24
 
 [Toplevel bottom]
 expand=true
 orientation=bottom
-size=22
+size=24
 
 
 

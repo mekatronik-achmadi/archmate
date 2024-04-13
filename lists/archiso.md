@@ -97,7 +97,7 @@ parcellite meld
 ### install openbox session
 
 openbox obconf tint2 volumeicon cbatticon
-bashrun feh xpdf xarchiver brightnessctl
+gmrun feh xpdf xarchiver brightnessctl
 
 ### install networking system
 
@@ -616,6 +616,9 @@ HandleLidSwitchDocked=suspend
 
 # check available session
 ls /usr/share/xsessions/ | cut -d. -f1
+
+# using Openbox
+sudo sed -i 's#session=mate#session=openbox#g' /etc/lightdm/lightdm.conf
 
 # using LXDE
 sudo sed -i 's#session=mate#session=LXDE#g' /etc/lightdm/lightdm.conf
