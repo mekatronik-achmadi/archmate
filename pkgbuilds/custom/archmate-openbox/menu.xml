@@ -17,13 +17,16 @@
   <item label="Git GUI" icon="/usr/share/icons/Papirus/32x32/apps/git-gui.svg">
     <action name="Execute"><command>git gui</command></action>
   </item>
+  <item label="GPicView" icon="/usr/share/icons/Papirus/32x32/apps/gpicview.svg">
+    <action name="Execute"><command>gpicview</command></action>
+  </item>
   <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
     <action name="Execute"><command>onboard</command></action>
   </item>
   <item label="PCManFM" icon="/usr/share/icons/Papirus/32x32/apps/system-file-manager.svg">
     <action name="Execute"><command>pcmanfm</command></action>
   </item>
-  <item label="TaskManager" icon="/usr/share/icons/Papirus/32x32/apps/htop.svg">
+  <item label="TaskMgr" icon="/usr/share/icons/Papirus/32x32/apps/htop.svg">
     <action name="Execute"><command>xterm -e htop -C</command></action>
   </item>
   <item label="XArchiver" icon="/usr/share/icons/Papirus/32x32/apps/xarchiver.svg">
@@ -39,27 +42,27 @@
 <menu id="screenshot" label="Screenshot">
   <item label="Desktop" icon="/usr/share/icons/Papirus/24x24/places/user-desktop.svg">
     <action name="Execute"><execute>
-      scrot -z 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+      scrot -z 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'gpicview $f'
     </execute></action>
   </item>
   <item label="Desktop (5s)" icon="/usr/share/icons/Papirus/24x24/places/user-desktop.svg">
     <action name="Execute"><execute>
-      scrot -z -d 5 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+      scrot -z -d 5 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'gpicview $f'
     </execute></action>
   </item>
   <item label="Selection" icon="/usr/share/icons/Papirus/24x24/actions/select-rectangular.svg">
     <action name="Execute"><execute>
-      scrot -z -s 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+      scrot -z -s 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'gpicview $f'
     </execute></action>
   </item>
   <item label="Window" icon="/usr/share/icons/Papirus/24x24/actions/window.svg">
     <action name="Execute"><execute>
-      scrot -z -d 1 -u 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+      scrot -z -d 1 -u 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'gpicview $f'
     </execute></action>
   </item>
   <item label="Window (5s)" icon="/usr/share/icons/Papirus/24x24/actions/window.svg">
     <action name="Execute"><execute>
-      scrot -z -d 5 -u 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'feh $f'
+      scrot -z -d 5 -u 'screenshot-%Y-%m-%dT%H%M%S.png' -e 'gpicview $f'
     </execute></action>
   </item>
 </menu>
