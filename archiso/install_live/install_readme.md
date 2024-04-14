@@ -10,7 +10,7 @@ Using **Start Menu** -> **Administration** -> **ArchMate Install**
 
 ![](screenshots/install_mate.png)
 
-### CLI ISO
+### Openbox ISO
 
 First, start Openbox session using command:
 

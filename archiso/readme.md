@@ -21,7 +21,7 @@ Any my custom package recipes that build these ISO can be found [here](https://g
 ## Download Example
 
 There are two variants: Openbox and MATE.
-You can download from [SourceForge](https://sourceforge.net/projects/archlinux-custom-iso/files/archmate/).
+You can download from [SourceForge](https://sourceforge.net/projects/archlinux-custom-iso/files/).
 
 ### Openbox variant
 
@@ -31,7 +31,7 @@ Openbox ISO automatically login into a Bash interface after booting using **live
 
 ![](screenshots/archcli.png)
 
-Using [TMux](https://github.com/tmux/tmux/wiki), you can have multiple CLI BASH.
+Using [TMux](https://github.com/tmux/tmux/wiki), you can have multiple Bash Console.
 
 ![](screenshots/archtmux.png)
 
@@ -271,5 +271,5 @@ zoom-to-fit=on,show-menubar=off \
 -m 2048M -cpu host -smp 2 \
 -vga virtio -monitor stdio \
 -machine type=q35,accel=kvm \
--boot d -cdrom archlinux-minimal-x86_64.txt
+-boot d -cdrom archlinux-minimal_012024-x86_64.iso
 ```

@@ -705,16 +705,15 @@ echo $XDG_SESSION_TYPE
 
 ## SourceForge Upload
 
-### setup
+### Directories
 
 Project folder:
-- https://sourceforge.net/projects/archlinux-custom-iso/files/archmate/
+- https://sourceforge.net/projects/archlinux-custom-iso/files/
 
 For uploading using web interface:
-- https://sourceforge.net/projects/archlinux-custom-iso/upload/archmate/
+- https://sourceforge.net/projects/archlinux-custom-iso/upload/
 
-For uploading using sftp interface:
-- https://sourceforge.net/p/forge/documentation/SFTP/
+### SSH Setup
 
 create SSH using username and project-name:
 
@@ -728,7 +727,7 @@ then you can exit
 exit
 ```
 
-### manage
+### Manage
 
 login using previously created SSH
 
@@ -744,7 +743,7 @@ cd /home/frs/project/archlinux-custom-iso/
 tree
 ```
 
-### uploading sftp
+### Uploading SFTP
 
 upload using sftp from a new bash shell:
 
@@ -753,12 +752,12 @@ sftp mekatronik@frs.sourceforge.net
 ```
 
 ```sh
-sftp> cd /home/frs/project/archlinux-custom-iso/archmate/
-sftp> put archiso_cli.sh
+sftp> cd /home/frs/project/archlinux-custom-iso/
+sftp> put readme.md
 sftp> exit
 ```
 
-### uploading filezilla
+### Uploading FileZilla
 
 **Note:** Try to create SSH first, then login and exit.
 This way may speed up uploading.
