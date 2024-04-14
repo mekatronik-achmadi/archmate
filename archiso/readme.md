@@ -38,7 +38,7 @@ Using [TMux](https://github.com/tmux/tmux/wiki), you can have multiple CLI BASH.
 Optionally, you can enter X11 Session with Openbox using command:
 
 ```sh
-startx /usr/bin/startopenbox
+startx /usr/bin/openbox-session
 ```
 
 ![](screenshots/archob.png)
