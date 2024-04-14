@@ -35,7 +35,7 @@ Install Path: **C:\Games\SCRemastered**
 
 ```sh
 cd Remastered/
-sudo mount StarCraft_Remastered_*.iso /mnt
+sudo mount SCRemastered_*.iso /mnt
 
 cd /mnt
 wine setup.exe
