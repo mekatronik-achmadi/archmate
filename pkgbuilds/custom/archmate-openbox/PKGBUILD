@@ -6,18 +6,17 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
 depends=(
+pcmanfm-gtk3 gpicview lxappearance-gtk3
 arc-solid-gtk-theme papirus-icon-theme
 openbox obconf tint2 feh xpdf gmrun
 volumeicon xarchiver brightnessctl
 cbatticon xorg-xinit xorg-server
 firefox mc gvfs less xterm vimb
+geany dbus htop fzf bat ripgrep
 gsimplecal archlinux-xdg-menu
 brightnessctl arandr onboard
 scrot pavucontrol volumeicon
-git vim archlinux-wallpaper
-dbus htop fzf bat ripgrep
-pcmanfm-gtk3 gpicview
-lxappearance-gtk3)
+git vim archlinux-wallpaper)
 provides=('vi')
 conflicts=('vi')
 install=pkg.install
@@ -25,14 +24,14 @@ options=('!makeflags' '!strip')
 
 package() {
     cd $srcdir/
-    mkdir -p $pkgdir/usr/share/openbox/
-    cp -f ../openboxfehbg $pkgdir/usr/share/openbox/fehbg
-    cp -f ../openboxrc.xml $pkgdir/usr/share/openbox/rc.xml
-    cp -f ../openboxtint2.rc $pkgdir/usr/share/openbox/tint2.rc
-    cp -f ../openboxmenu.xml $pkgdir/usr/share/openbox/menu.xml
-    cp -f ../openboxautostart $pkgdir/usr/share/openbox/autostart
-    cp -f ../openboxlibfm.conf $pkgdir/usr/share/openbox/libfm.conf
-    cp -f ../openboxpcmanfm.conf $pkgdir/usr/share/openbox/pcmanfm.conf
+    mkdir -p $pkgdir/usr/share/archmate-openbox/
+    cp -f ../fehbg $pkgdir/usr/share/archmate-openbox/fehbg
+    cp -f ../rc.xml $pkgdir/usr/share/archmate-openbox/rc.xml
+    cp -f ../tint2.rc $pkgdir/usr/share/archmate-openbox/tint2.rc
+    cp -f ../menu.xml $pkgdir/usr/share/archmate-openbox/menu.xml
+    cp -f ../autostart $pkgdir/usr/share/archmate-openbox/autostart
+    cp -f ../libfm.conf $pkgdir/usr/share/archmate-openbox/libfm.conf
+    cp -f ../pcmanfm.conf $pkgdir/usr/share/archmate-openbox/pcmanfm.conf
 
     mkdir -p $pkgdir/usr/bin/
     cp -f ../startopenbox $pkgdir/usr/bin/

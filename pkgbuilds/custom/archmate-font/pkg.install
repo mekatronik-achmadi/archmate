@@ -22,7 +22,7 @@ font_tweak() {
         ln -sf /usr/share/fontconfig/conf.avail/$i /etc/fonts/conf.d/$i
     done
 
-    ln -sf /usr/share/archmate-symlink/local.conf /etc/fonts/local.conf
+    ln -sf /usr/share/archmate-font/local.conf /etc/fonts/local.conf
 
     fc-cache -f > /dev/null
     mkfontscale /usr/share/fonts/TTF
