@@ -137,6 +137,9 @@
   <separator label="Piped Menu"/>
   <menu id="applications" label="All Menu" execute="xdg_menu --format openbox3-pipe"/>
 
+  <separator label="Workspaces"/>
+  <menu id="client-list-combined-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
+
   <separator label="Exit" />
   <item label="Logout" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-logout.svg">
     <action name="Exit"><prompt>yes</prompt></action>

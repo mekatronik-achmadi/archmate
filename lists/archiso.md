@@ -631,6 +631,19 @@ startx /usr/bin/mate-session
 startx /usr/bin/openbox-session
 ```
 
+#### desktop session using xinitrc
+
+```sh
+# using Mate
+echo 'exec mate-session' > ~/.xinitrc
+
+# using Openbox
+echo 'exec openbox-session' > ~/.xinitrc
+
+# start session
+startx
+```
+
 --------------------------------------------------------------------------------
 
 ## Utilities
