@@ -70,8 +70,8 @@ xdotool shotwell
 parcellite meld
 
 openbox obconf tint2 volumeicon cbatticon
-pcmanfm-gtk3 gpicview lxappearance-gtk3
-gmrun feh xpdf xarchiver brightnessctl
+gmrun pcmanfm-gtk3 lxappearance-gtk3
+feh xpdf xarchiver brightnessctl
 
 networkmanager nm-connection-editor
 network-manager-applet modemmanager

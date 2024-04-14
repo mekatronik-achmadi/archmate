@@ -4,10 +4,10 @@ python-wxpython
 python-gobject
 gtkmm gtkmm3
 
-openbox obconf tint2 cbatticon brightnessctl
-pcmanfm-gtk3 gpicview lxappearance-gtk3
-gmrun gvfs arandr htop gsimplecal
-feh xpdf xarchiver volumeicon
+openbox obconf tint2 volumeicon cbatticon
+gmrun pcmanfm-gtk3 lxappearance-gtk3
+feh xpdf xarchiver brightnessctl
+gvfs arandr htop gsimplecal
 
 icon-naming-utils gtk-update-icon-cache
 papirus-icon-theme arc-solid-gtk-theme

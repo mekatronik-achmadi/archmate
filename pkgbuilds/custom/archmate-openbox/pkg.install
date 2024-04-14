@@ -1,14 +1,14 @@
 openbox_symlink() {
-    ln -sf /usr/share/archmate-openbox/rc.xml /etc/xdg/openbox/rc.xml
-    ln -sf /usr/share/archmate-openbox/menu.xml /etc/xdg/openbox/menu.xml
-    ln -sf /usr/share/archmate-openbox/autostart /etc/xdg/openbox/autostart
+    ln -sf /usr/share/openbox/rc.xml /etc/xdg/openbox/rc.xml
+    ln -sf /usr/share/openbox/menu.xml /etc/xdg/openbox/menu.xml
+    ln -sf /usr/share/openbox/autostart /etc/xdg/openbox/autostart
 
     ln -sf /usr/bin/startopenbox /usr/bin/openbox-session
 }
 
 editable_fehbg() {
-    chmod a+w /usr/share/archmate-openbox/fehbg
-    chmod a+w /usr/share/archmate-openbox/autostart
+    chmod a+w /usr/share/openbox/fehbg
+    chmod a+w /usr/share/openbox/autostart
 }
 
 menu_cleaning() {
@@ -17,15 +17,14 @@ menu_cleaning() {
     rm -f /usr/share/applications/openbox.desktop
     rm -f /usr/share/applications/obconf.desktop
     rm -f /usr/share/applications/tint2.desktop
-    rm -f /usr/share/applications/feh.desktop
 
     # disable icon in pipe menu
     sed -i 's#return \$filename;#return "";#g' /usr/bin/xdg_menu
 }
 
 pcmanfm_setting() {
-    ln -sf /usr/share/archmate-openbox/libfm.conf /etc/xdg/libfm/libfm.conf
-    ln -sf /usr/share/archmate-openbox/pcmanfm.conf /etc/xdg/pcmanfm/default/pcmanfm.conf
+    ln -sf /usr/share/openbox/libfm.conf /etc/xdg/libfm/libfm.conf
+    ln -sf /usr/share/openbox/pcmanfm.conf /etc/xdg/pcmanfm/default/pcmanfm.conf
 }
 
 post_install() {

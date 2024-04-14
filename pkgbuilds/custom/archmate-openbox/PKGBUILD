@@ -5,8 +5,7 @@ pkgdesc="alternative session using OpenBox"
 arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
-depends=(
-pcmanfm-gtk3 gpicview lxappearance-gtk3
+depends=(pcmanfm-gtk3 lxappearance-gtk3
 arc-solid-gtk-theme papirus-icon-theme
 openbox obconf tint2 feh xpdf gmrun
 volumeicon xarchiver brightnessctl
@@ -24,14 +23,14 @@ options=('!makeflags' '!strip')
 
 package() {
     cd $srcdir/
-    mkdir -p $pkgdir/usr/share/archmate-openbox/
-    cp -f ../fehbg $pkgdir/usr/share/archmate-openbox/fehbg
-    cp -f ../rc.xml $pkgdir/usr/share/archmate-openbox/rc.xml
-    cp -f ../tint2.rc $pkgdir/usr/share/archmate-openbox/tint2.rc
-    cp -f ../menu.xml $pkgdir/usr/share/archmate-openbox/menu.xml
-    cp -f ../autostart $pkgdir/usr/share/archmate-openbox/autostart
-    cp -f ../libfm.conf $pkgdir/usr/share/archmate-openbox/libfm.conf
-    cp -f ../pcmanfm.conf $pkgdir/usr/share/archmate-openbox/pcmanfm.conf
+    mkdir -p $pkgdir/usr/share/openbox/
+    cp -f ../fehbg $pkgdir/usr/share/openbox/fehbg
+    cp -f ../rc.xml $pkgdir/usr/share/openbox/rc.xml
+    cp -f ../tint2.rc $pkgdir/usr/share/openbox/tint2.rc
+    cp -f ../menu.xml $pkgdir/usr/share/openbox/menu.xml
+    cp -f ../autostart $pkgdir/usr/share/openbox/autostart
+    cp -f ../libfm.conf $pkgdir/usr/share/openbox/libfm.conf
+    cp -f ../pcmanfm.conf $pkgdir/usr/share/openbox/pcmanfm.conf
 
     mkdir -p $pkgdir/usr/bin/
     cp -f ../startopenbox $pkgdir/usr/bin/

@@ -69,8 +69,8 @@ xdotool shotwell
 parcellite meld
 
 openbox obconf tint2 volumeicon cbatticon
-pcmanfm-gtk3 gpicview lxappearance-gtk3
-gmrun feh xpdf xarchiver brightnessctl
+gmrun pcmanfm-gtk3 lxappearance-gtk3
+feh xpdf xarchiver brightnessctl
 
 networkmanager nm-connection-editor
 network-manager-applet modemmanager
@@ -91,6 +91,9 @@ alsa-ucm-conf sof-firmware
 alsa-oss alsa-lib alsa-plugins
 pulseaudio-equalizer pavucontrol
 pulseaudio-alsa pulseaudio-bluetooth
+
+gvfs gvfs-gphoto2 gvfs-afc
+gvfs-mtp gvfs-smb gvfs-nfs
 
 tar atool xz libarchive unrar unarj
 lhasa rpmextract lxsplit unrar-free
