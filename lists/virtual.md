@@ -110,39 +110,40 @@ docker-compose down
 docker-compose up -d --build
 ```
 
-### configure wine
-
-#### basic setup
+### configure wine example
 
 ```sh
 unset LD_PRELOAD
 mkdir -p /home/development/Virtuals/WineDir
 
-export WINEDIR=/home/development/Virtuals/WineDir/pingtest
+export WINEDIR=/home/development/Virtuals/WineDir/winetest
 export WINEARCH=win32
 export WINEPREFIX=$WINEDIR
 
 winetricks settings winxp
 ```
 
-#### test ping
+List internal commands:
+
+- https://wiki.winehq.org/List_of_Commands
 
 ```sh
 unset LD_PRELOAD
-export WINEDIR=/home/development/Virtuals/WineDir/pingtest
+export WINEDIR=/home/development/Virtuals/WineDir/winetest
 export WINEPREFIX=$WINEDIR
 
-wine ping 8.8.8.8
+pacman -Qlq wine | grep /usr/bin/
+
+winecfg
+regedit
+notepad
+winefile
+wineconsole
+
+wine cmd
+wine cmd /c ping 8.8.8.8
+
+wine taskmgr
+wine explorer
+wine iexplore
 ```
-
-#### test network blocking
-
-```sh
-unset LD_PRELOAD
-export WINEDIR=/home/development/Virtuals/WineDir/pingtest
-export WINEPREFIX=$WINEDIR
-
-sudo unshare -n sudo -E -u $USER \
-wine ping 8.8.8.8
-```
-

@@ -57,8 +57,6 @@ export WINEDIR=/home/development/Virtuals/WineDir/warcraft
 export WINEPREFIX=$WINEDIR
 
 cd "$WINEDIR/drive_c/Program Files/Warcraft 3/"
-
-sudo unshare -n sudo -E -u $USER \
 wine "Warcraft III.exe"
 ```
 
