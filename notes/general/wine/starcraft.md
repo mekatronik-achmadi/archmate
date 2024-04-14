@@ -55,6 +55,8 @@ export WINEDIR=/home/development/Virtuals/WineDir/starcraft
 export WINEPREFIX=$WINEDIR
 
 cd /home/development/Virtuals/WineDir/Games/StarCraft
+
+sudo unshare -n sudo -E -u $USER \
 wine *Offline.exe
 ```
 

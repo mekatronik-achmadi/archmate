@@ -73,5 +73,7 @@ export WINEDIR=/home/development/Virtuals/WineDir/remastered
 export WINEPREFIX=$WINEDIR
 
 cd $WINEDIR/drive_c/Games/SCRemastered/
+
+sudo unshare -n sudo -E -u $USER \
 wine x86_64/StarCraft.exe
 ```

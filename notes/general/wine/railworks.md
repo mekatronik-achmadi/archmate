@@ -93,6 +93,8 @@ export WINEDIR=/home/development/Virtuals/WineDir/railworks
 export WINEPREFIX=$WINEDIR
 
 cd $WINEDIR/drive_c/Railworks/
+
+sudo unshare -n sudo -E -u $USER \
 wine "Railworks.exe"
 ```
 

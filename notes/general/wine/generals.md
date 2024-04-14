@@ -118,5 +118,7 @@ export WINEDIR=/home/development/Virtuals/WineDir/generals
 export WINEPREFIX=$WINEDIR
 
 cd "$WINEDIR/drive_c/Program Files/CnCGenerals/"
+
+sudo unshare -n sudo -E -u $USER \
 wine ZeroHour/generals.exe
 ```
