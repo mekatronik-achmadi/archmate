@@ -47,6 +47,8 @@ regedit starcraft.reg
 
 ## Run Games
 
+**NOTE:** Must be no internet to play.
+
 ```sh
 unset LD_PRELOAD
 export WINEDIR=/home/development/Virtuals/WineDir/starcraft
@@ -56,9 +58,7 @@ cd /home/development/Virtuals/WineDir/Games/StarCraft
 wine *Offline.exe
 ```
 
-## Crack Game
-
-**NOTE:** Must be offline to play.
+## Crack Game (Optional)
 
 Account tag: **dlr@dr.com**
 
@@ -70,4 +70,3 @@ export WINEPREFIX=$WINEDIR
 cd /home/development/Virtuals/WineDir/Games/StarCraft
 wine cmd /c "Run me first.bat"
 ```
-
