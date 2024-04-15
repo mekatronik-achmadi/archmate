@@ -119,8 +119,13 @@ mkdir -p /home/development/Virtuals/WineDir
 export WINEDIR=/home/development/Virtuals/WineDir/winetest
 export WINEARCH=win32
 export WINEPREFIX=$WINEDIR
+```
+
+```sh
+winetricks corefonts
 
 winetricks settings winxp
+winetricks settings fontsmooth=bgr
 ```
 
 List internal commands:
@@ -132,18 +137,18 @@ unset LD_PRELOAD
 export WINEDIR=/home/development/Virtuals/WineDir/winetest
 export WINEPREFIX=$WINEDIR
 
-pacman -Qlq wine | grep /usr/bin/
-
 winecfg
 regedit
-notepad
-winefile
-wineconsole
 
 wine cmd
 wine cmd /c ping 8.8.8.8
 
 wine taskmgr
 wine explorer
-wine iexplore
+
+notepad
+wineconsole
+
+msiexec installer.msi
+wineboot
 ```
