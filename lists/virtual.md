@@ -110,7 +110,9 @@ docker-compose down
 docker-compose up -d --build
 ```
 
-### configure wine example
+### configure wine
+
+#### basic setup
 
 ```sh
 unset LD_PRELOAD
@@ -128,9 +130,13 @@ winetricks settings winxp
 winetricks settings fontsmooth=bgr
 ```
 
-List internal commands:
+#### command examples
 
 - https://wiki.winehq.org/List_of_Commands
+
+```sh
+pacman -Qlq wine | grep /usr/bin/ | less
+```
 
 ```sh
 unset LD_PRELOAD
