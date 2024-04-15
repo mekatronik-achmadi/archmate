@@ -735,12 +735,14 @@ login using previously created SSH
 ssh -t mekatronik,archlinux-custom-iso@shell.sourceforge.net
 ```
 
-check directory:
+check files:
 
 ```sh
-pwd
 cd /home/frs/project/archlinux-custom-iso/
+
 tree
+ls -l *.iso
+md5sum *.iso
 ```
 
 ### Uploading SFTP
