@@ -136,14 +136,13 @@ ln -svf /usr/lib/systemd/system/fake-hwclock.service ${SYSTEMD}/fake-hwclock.ser
 ln -svf /usr/lib/systemd/system/vboxservice.service ${SYSTEMD}/vboxservice.service
 ln -svf /usr/lib/systemd/system/bluetooth.service ${SYSTEMD}/bluetooth.service
 ln -svf /usr/lib/systemd/system/sensord.service ${SYSTEMD}/sensord.service
-ln -svf /usr/lib/systemd/system/dbus.service ${SYSTEMD}/dbus.service
 ln -svf /usr/lib/systemd/system/sshd.service ${SYSTEMD}/sshd.service
 
 rm -vf airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service
 rm -vf airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service
 rm -vf airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket
 rm -vf airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
-rm -rvf airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d/
+rm -vf airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d/*
 
 rm -vf airootfs/etc/systemd/system/dbus-org.freedesktop.resolve1.service
 rm -vf airootfs/etc/systemd/system/sysinit.target.wants/systemd-resolved.service
