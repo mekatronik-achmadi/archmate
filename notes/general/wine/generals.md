@@ -69,7 +69,7 @@ LanguageFilter = false
 MaxParticleCount = 100
 MoveScrollAnchor = 0
 MusicVolume = 79
-Resolution = 800 600
+Resolution = 1024 768
 Retaliation = yes
 SFX3DVolume = 79
 SFXVolume = 71
@@ -89,6 +89,11 @@ VoiceVolume = 70
 
 cp -vf "$HOME/Documents/Command and Conquer Generals Data/Options.ini" \
 "$HOME/Documents/Command And Conquer Generals Zero Hour Data/"
+```
+
+```sh
+sed -i 's#1024 768#1366 768#g' "$HOME/Documents/Command and Conquer Generals Data/Options.ini"
+sed -i 's#1024 768#1366 768#g' "$HOME/Documents/Command And Conquer Generals Zero Hour Data/Options.ini"
 ```
 
 ## Setup Registry
