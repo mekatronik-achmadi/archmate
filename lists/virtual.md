@@ -58,6 +58,11 @@ echo 'mount shared folder on guest'
 sudo mount -t vboxsf -o rw,uid=$USER folder_name /mnt
 ```
 
+```sh
+#if failed to start at first run
+sudo rm -rvf ~/.config/VirtualBox/
+```
+
 ### configure qemu additional driver
 
 ```sh

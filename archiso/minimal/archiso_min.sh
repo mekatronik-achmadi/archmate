@@ -92,6 +92,7 @@ echo '
 sed -i "s#archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs#consolefont#g" airootfs/etc/mkinitcpio.conf
 sed -i "s#memdisk archiso_shutdown archiso#memdisk archiso#g" airootfs/etc/mkinitcpio.conf
 sed -i "s#archiso_kms#kms#g" airootfs/etc/mkinitcpio.conf
+sed -i "s#xz#zstd#g" airootfs/etc/mkinitcpio.conf
 
 echo "archlive" | tee airootfs/etc/hostname
 
