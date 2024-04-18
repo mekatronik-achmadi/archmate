@@ -31,6 +31,13 @@ rust-wasm cargo-generate
 cargo-edit cargo-feature
 llvm lld libc++ lldb clang
 
+### install python programming
+
+jedi-language-server
+ipython jupyterlab
+jupyter-notebook
+python-pygments
+
 ### install javacript programming
 
 nodejs npm yarn asar

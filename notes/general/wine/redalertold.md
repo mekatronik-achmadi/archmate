@@ -31,7 +31,7 @@ cd RedAlertOld/
 unrar x 'Command.&.Conquer.Red.Alert.II.rar'
 
 cd "Command.&.Conquer.Red.Alert.II/game"
-cp -vf ../../cnc-ddraw.zip ./
+wget -c https://github.com/FunkyFr3sh/cnc-ddraw/releases/latest/download/cnc-ddraw.zip
 unzip cnc-ddraw.zip
 wine "cnc-ddraw config.exe"
 ```

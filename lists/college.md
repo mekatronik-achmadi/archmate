@@ -29,12 +29,6 @@ python-seaborn python-patsy
 python-pytables python-tqdm
 python-pandas python-numexpr
 
-### install python interface
-
-ipython jupyterlab
-jupyter-notebook
-python-pygments
-
 ### install python additional
 
 python-setuptools-scm
