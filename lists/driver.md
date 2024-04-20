@@ -22,6 +22,10 @@ nvidia-prime bbswitch-dkms
 primus_vk lib32-primus_vk
 virtualgl lib32-virtualgl
 
+### install additonal kernel
+
+linux-lts linux-lts-headers
+
 ### install additonal drivers
 
 android-file-transfer
@@ -54,6 +58,14 @@ sed -i '2i EXTRA_CFLAGS += -DCONFIG_RTW_LED' src/8192eu/Makefile
 --------------------------------------------------------------------------------
 
 ## Configurations
+
+### configure default kernel
+
+```sh
+sudo sed -i "s@#GRUB_DISABLE_SUBMENU=y@GRUB_DISABLE_SUBMENU=y@g" /etc/default/grub
+sudo sed -i "s@GRUB_DEFAULT=0@GRUB_DEFAULT=2@g" /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 ### configure newer gpu modeset
 

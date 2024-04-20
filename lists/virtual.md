@@ -12,11 +12,16 @@ qemu-user-static qemu-user-static-binfmt
 
 docker docker-compose
 
+### install steam client
+
+steam vkd3d lib32-vkd3d
+steam-native-runtime
+
 ### install wine
 
 wine winetricks msitools icoutils
 wine-mono wine-gecko cabextract
-samba smbclient lib32-vkd3d
+samba smbclient lib32-systemd
 lib32-mesa lib32-gst-plugins-base-libs
 lib32-sdl2 lib32-openal lib32-libpulse
 lib32-libxcomposite lib32-libxinerama
@@ -114,6 +119,21 @@ docker-compose up
 docker-compose down
 docker-compose up -d --build
 ```
+
+### configure steam
+
+Running non-Compatible Windows games:
+
+- Steam -> Settings -> Compatibility
+- Enable Steam Play for supported titles
+- Enable Steam Play for all other titles
+- Run other titles with: Proton 7.0
+
+Indiviual games:
+
+- Manage -> Properties
+- Compatibility -> Force use Steam Play
+- Use Proton 7.0
 
 ### configure wine
 

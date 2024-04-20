@@ -338,13 +338,6 @@ sudo sed -i "s@#GRUB_DISABLE_SUBMENU=y@GRUB_DISABLE_SUBMENU=y@g" /etc/default/gr
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-#### GRUB default kernel
-
-```sh
-sudo sed -i "s@GRUB_DEFAULT=0@GRUB_DEFAULT=2@g" /etc/default/grub
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
-
 #### GRUB-BIOS from live ISO
 
 ```sh

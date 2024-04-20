@@ -16,11 +16,6 @@ inkscape xsane-gimp
 audacity sox faac
 openshot frei0r-plugins
 
-### install gaming client
-
-steam vkd3d lib32-vkd3d
-steam-native-runtime
-
 ### install disk recovery tools
 
 ddrescue ext4magic foremost testdisk
@@ -68,31 +63,16 @@ ddrescue ext4magic foremost testdisk
 sudo sed -i 's#NoDisplay=true##g' /usr/share/applications/mupdf.desktop
 ```
 
-### configure steam
-
-```sh
-echo "Steam -> Settings -> Steam Play"
-echo "Enable Steam Play for all"
-
-echo "Choose Game -> Manage -> Properties"
-echo "Compatibility -> Force use Steam Play"
-
-echo "use Proton 4.11"
-```
-
 ### configure audacity
 
+re-enabled headphone
+
 ```sh
-echo "re-enabled headphone"
 alsactl init
 ```
 
-```sh
-echo "
-change 'sysdefault: Headphone Mic:0'
-to 'sysdefault: Internal Mic:0'
-"
-```
+then change **sysdefault: Headphone Mic:0**
+to **sysdefault: Internal Mic:0'**
 
 ### configure key-mon
 
@@ -117,7 +97,7 @@ ffmpeg -i videoname.webm -vn -ab 128k -ar 44100 -y videoname.mp3
 rm -vf videoname.webm
 ```
 
-### ffmpeg faster video
+### ffmpeg fasten video
 
 ```sh
 ffmpeg -i input.mp4 \
