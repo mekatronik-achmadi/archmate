@@ -694,7 +694,50 @@ echo $XDG_SESSION_TYPE
 - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
 - https://addons.mozilla.org/en-US/firefox/addon/adblock-for-firefox/
 
---------------------------------------------------------------------------------
+### CPU Limit
+
+#### Get information
+
+Kernel modules
+
+```sh
+ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
+```
+
+CPU info
+
+```sh
+sudo cpupower info
+sudo cpupower frequency-info
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+```
+
+```sh
+sudo turbostat
+```
+
+```sh
+watch -n1 sensors
+```
+
+#### Governor Scaling
+
+Limit to minimum
+
+```sh
+sudo cpupower frequency-set -g powersave
+```
+
+Save scaling using systemd
+
+```sh
+sudo sed -i "s@#governor='ondemand'@governor='powersave'@g" /etc/default/cpupower
+sudo sed -i "s@#perf_bias=@perf_bias=15@g" /etc/default/cpupower
+sudo systemctl enable cpupower
+sudo reboot
+```
+
+-----------------------------------------------------------
 
 ## SourceForge Upload
 
