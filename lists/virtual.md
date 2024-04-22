@@ -122,8 +122,9 @@ docker-compose up -d --build
 
 ### configure steam
 
-Running non-Compatible Windows games:
+Running non-Compatible Windows games
 
+Global Steam client:
 - Steam -> Settings -> Compatibility
 - Enable Steam Play for:
     - Supported titles
@@ -131,12 +132,17 @@ Running non-Compatible Windows games:
 - Run other titles with: Proton Experimental
 
 For each games:
-
 - Manage -> Properties
-- Launch Options:  PROTON_USE_WINED3D=1 %command%
-- Compatibility:
-    + Force use Steam Play
-    + Proton Experimental
+- Launch Options
+- Compatibility
+
+Game Tweaks:
+- Master Duel:
+    + Force use Steam Play: Proton Experimental
+    + Launch Options:  PROTON_USE_WINED3D=1 %command%
+- DS Together:
+    + Force use Steam Play: disabled
+    + Launch Options: empty
 
 ### configure wine
 
