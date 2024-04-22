@@ -125,15 +125,20 @@ docker-compose up -d --build
 Running non-Compatible Windows games:
 
 - Steam -> Settings -> Compatibility
-- Enable Steam Play for supported titles
-- Enable Steam Play for all other titles
-- Run other titles with: Proton 7.0
+- Enable Steam Play for:
+    - Supported titles
+    - All other titles
+- Run other titles with: Proton Experimental
 
 Indiviual games:
 
 - Manage -> Properties
-- Compatibility -> Force use Steam Play
-- Use Proton 7.0
+- Compatibility:
+    + Force use Steam Play
+    + Proton Experimental
+- Launch Options:
+    + Master Duel: PROTON_USE_WINED3D=1 %command%
+    + Shadowverse: PROTON_USE_WINED3D=1 %command%
 
 ### configure wine
 

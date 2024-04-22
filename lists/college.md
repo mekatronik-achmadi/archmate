@@ -13,7 +13,6 @@ r mpdecimal gnuplot
 
 ### install python modules
 
-python-pyarrow
 python-tabulate
 python-matplotlib
 python-bottleneck
@@ -28,6 +27,7 @@ python-gnuplot python-yaml
 python-seaborn python-patsy
 python-pytables python-tqdm
 python-pandas python-numexpr
+python-pyarrow python-openpyxl
 
 ### install python additional
 
