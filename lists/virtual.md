@@ -130,15 +130,13 @@ Running non-Compatible Windows games:
     - All other titles
 - Run other titles with: Proton Experimental
 
-Indiviual games:
+For each games:
 
 - Manage -> Properties
+- Launch Options:  PROTON_USE_WINED3D=1 %command%
 - Compatibility:
     + Force use Steam Play
     + Proton Experimental
-- Launch Options:
-    + Master Duel: PROTON_USE_WINED3D=1 %command%
-    + Shadowverse: PROTON_USE_WINED3D=1 %command%
 
 ### configure wine
 
