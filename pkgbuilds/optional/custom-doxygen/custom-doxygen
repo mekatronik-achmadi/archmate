@@ -88,7 +88,7 @@ doxyfile_config() {
 
     # use html and pdflatex output
     sed -i "s#GENERATE_HTML          = NO#GENERATE_HTML          = YES#g" $DOXYCONF
-    sed -i "s#GENERATE_LATEX         = YES#GENERATE_LATEX         = NO#g" $DOXYCONF
+    sed -i "s#GENERATE_LATEX         = NO#GENERATE_LATEX         = YES#g" $DOXYCONF
     sed -i "s#GENERATE_DOCBOOK       = YES#GENERATE_DOCBOOK       = NO#g" $DOXYCONF
     sed -i "s#GENERATE_HTMLHELP      = YES#GENERATE_HTMLHELP      = NO#g" $DOXYCONF
     sed -i "s#GENERATE_RTF           = YES#GENERATE_RTF           = NO#g" $DOXYCONF
@@ -99,7 +99,7 @@ doxyfile_config() {
 
     # pdflatex related
     sed -i "s#USE_PDFLATEX           = NO#USE_PDFLATEX           = YES#g" $DOXYCONF
-    sed -i "s#LATEX_CMD_NAME         =\$#LATEX_CMD_NAME         = \"pdflatex -interaction=nonstopmode\"#g" $DOXYCONF
+    sed -i "s#LATEX_CMD_NAME         =\$#LATEX_CMD_NAME         = pdflatex#g" $DOXYCONF
 
     # html custom css
     #sed -i 's@HTML_EXTRA_STYLESHEET  =@HTML_EXTRA_STYLESHEET  = "/usr/share/doxygen/theme/dark/custom.css" "/usr/share/doxygen/theme/dark/custom_dark_theme.css"@g' $DOXYCONF
