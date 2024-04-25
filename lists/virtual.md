@@ -139,10 +139,10 @@ For each games:
 Game Tweaks:
 - Master Duel:
     + Force use Steam Play: Proton Experimental
-    + Launch Options:  PROTON_USE_WINED3D=1 %command%
+    + Launch Options: PROTON_USE_WINED3D=1 %command%
 - Legacy of Duelist:
     + Force use Steam Play: Proton Experimental
-    + Launch Options:  PROTON_USE_WINED3D=1 %command%
+    + Launch Options: PROTON_USE_WINED3D=1 %command%
 - DontStarve Hamlet:
     + Force use Steam Play: disabled
     + Launch Options: empty

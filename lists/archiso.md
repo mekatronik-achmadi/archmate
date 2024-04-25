@@ -111,8 +111,8 @@ crda iw iwd wireless_tools tigervnc
 bridge-utils ethtool usb_modeswitch
 traceroute dhcp dnsmasq nss-mdns
 openresolv dhclient dhcpcd mtr
+tcpdump iperf3 fping inetutils
 gnu-netcat nmap termshark
-tcpdump fping inetutils
 
 ### install audio system
 
