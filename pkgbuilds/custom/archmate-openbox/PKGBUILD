@@ -6,7 +6,6 @@ arch=('any')
 url="https://github.com/mekatronik-achmadi/archmate/"
 license=('GPL')
 depends=(
-pcmanfm-gtk3 gpicview lxappearance-gtk3
 arc-solid-gtk-theme papirus-icon-theme
 openbox obconf tint2 feh xpdf gmrun
 volumeicon xarchiver brightnessctl
@@ -16,7 +15,9 @@ geany dbus htop fzf bat ripgrep
 gsimplecal archlinux-xdg-menu
 brightnessctl arandr onboard
 scrot pavucontrol volumeicon
-git vim archlinux-wallpaper)
+git vim archlinux-wallpaper
+gpicview lxappearance-gtk3
+pcmanfm-gtk3 lxterminal)
 provides=('vi')
 conflicts=('vi')
 install=pkg.install
@@ -31,6 +32,7 @@ package() {
     cp -f ../menu.xml $pkgdir/usr/share/openbox/menu.xml
     cp -f ../autostart $pkgdir/usr/share/openbox/autostart
     cp -f ../libfm.conf $pkgdir/usr/share/openbox/libfm.conf
+    cp -f ../lxterm.conf $pkgdir/usr/share/openbox/lxterm.conf
     cp -f ../pcmanfm.conf $pkgdir/usr/share/openbox/pcmanfm.conf
 
     mkdir -p $pkgdir/usr/bin/

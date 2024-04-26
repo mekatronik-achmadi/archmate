@@ -3,6 +3,8 @@ openbox_symlink() {
     ln -sf /usr/share/openbox/menu.xml /etc/xdg/openbox/menu.xml
     ln -sf /usr/share/openbox/autostart /etc/xdg/openbox/autostart
 
+    ln -sf /usr/share/openbox/lxterm.conf /usr/share/lxterminal/lxterminal.conf
+
     ln -sf /usr/bin/startopenbox /usr/bin/openbox-session
 }
 

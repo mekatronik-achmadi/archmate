@@ -20,6 +20,9 @@
   <item label="GPicView" icon="/usr/share/icons/Papirus/32x32/apps/gpicview.svg">
     <action name="Execute"><command>gpicview</command></action>
   </item>
+  <item label="LXTerm" icon="/usr/share/icons/Papirus/32x32/apps/lxterminal.svg">
+    <action name="Execute"><command>lxterminal</command></action>
+  </item>
   <item label="Onboard" icon="/usr/share/icons/Papirus/32x32/apps/onboard.svg">
     <action name="Execute"><command>onboard</command></action>
   </item>
@@ -124,7 +127,7 @@
   <item label="Run Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
     <action name="Execute"><command>gmrun -g 300x</command></action>
   </item>
-  <item label="XTerminal" icon="/usr/share/icons/Papirus/32x32/apps/terminal.svg">
+  <item label="XTerminal" icon="/usr/share/icons/Papirus/32x32/apps/xterm.svg">
     <action name="Execute"><command>xterm</command></action>
   </item>
   <item label="MC FileMgr" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
