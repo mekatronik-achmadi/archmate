@@ -11,21 +11,31 @@ conflicts=('chicago95-gtk-theme' 'chicago95-icon-theme')
 provides=('chicago95-gtk-theme' 'chicago95-icon-theme')
 install=pkg.install
 options=('!makeflags' '!strip')
-source=("Standard-Classic.theme"
-"${_pkgname}-${pkgver}.tar.gz::https://github.com/grassmunk/${_pkgname}/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('SKIP' 'SKIP')
+source=("${_pkgname}-${pkgver}.tar.gz::https://github.com/grassmunk/${_pkgname}/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('SKIP')
 
 package() {
     cd $srcdir/${_pkgname}-${pkgver}/
     install -d "${pkgdir}/usr/share/themes/"
     cp -rf "Theme/Chicago95/" "${pkgdir}/usr/share/themes/Chicago95/"
 
-    cd $srcdir/
-    cp -f "Standard-Classic.theme"  "${pkgdir}/usr/share/themes/Chicago95/index.theme"
-
     cd $srcdir/${_pkgname}-${pkgver}/
     install -d "${pkgdir}/usr/share/icons/"
     cp -rf "Icons/Chicago95/" "${pkgdir}/usr/share/icons/Chicago95/"
     cp -rf "Icons/Chicago95-tux/" "${pkgdir}/usr/share/icons/Chicago95-tux/"
     sed -i 's#Name=Chicago95#Name=Chicago95-Linux#g' "${pkgdir}/usr/share/icons/Chicago95-tux/index.theme"
+
+  echo '[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Standard-Win95
+Comment=Windows 95 Theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Chicago95
+MetacityTheme=Chicago95
+IconTheme=Chicago95
+CursorTheme=mate-black
+ButtonLayout=menu:minimize,maximize,close
+' > $pkgdir/usr/share/themes/Chicago95/index.theme
 }
