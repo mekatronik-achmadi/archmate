@@ -97,8 +97,8 @@ parcellite meld
 ### install openbox session
 
 openbox obconf tint2 volumeicon cbatticon
-pcmanfm-gtk3 gpicview lxappearance-gtk3
-gmrun feh xpdf xarchiver brightnessctl
+lxterminal feh xpdf xarchiver brightnessctl
+gmrun pcmanfm-gtk3 gpicview lxappearance-gtk3
 
 ### install networking system
 
@@ -720,12 +720,13 @@ sudo turbostat
 watch -n1 sensors
 ```
 
-#### Governor Scaling
+#### Governor Scaling (Intel)
 
 Limit to minimum
 
 ```sh
 sudo cpupower frequency-set -g powersave
+sudo cpupower set -b 15
 ```
 
 Save scaling using systemd

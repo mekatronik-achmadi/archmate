@@ -5,9 +5,10 @@ python-gobject
 gtkmm gtkmm3
 
 openbox obconf tint2 volumeicon cbatticon
-pcmanfm-gtk3 gpicview lxappearance-gtk3
-gmrun xpdf xarchiver brightnessctl
-feh gvfs arandr htop gsimplecal
+lxterminal feh xpdf xarchiver brightnessctl
+gmrun pcmanfm-gtk3 gpicview lxappearance-gtk3
+
+arandr gsimplecal gvfs htop lm_sensors
 
 icon-naming-utils gtk-update-icon-cache
 papirus-icon-theme arc-solid-gtk-theme
