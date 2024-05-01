@@ -8,12 +8,15 @@
 
 ## EdoPro
 
-Unity/3D: No
-Open-Source: Yes
+Features:
+- Unity/3D: No
+- All Free: Yes
+- Offline: Yes
 
-Website: https://projectignis.github.io/
-Project: https://github.com/ProjectIgnis
-Discord: https://discord.com/invite/ygopro-percy
+Links:
+- Website: https://projectignis.github.io/
+- Project: https://github.com/ProjectIgnis
+- Discord: https://discord.com/invite/ygopro-percy
 
 Install:
 - [Download](https://projectignis.github.io/download.html)
@@ -22,12 +25,15 @@ Install:
 
 ## Omega
 
-Unity/3D: Yes
-Open-Source: Yes
+Features:
+- Unity/3D: Yes
+- All Free: Yes
+- Offline: Yes
 
-Website: https://omega.duelistsunite.org/
-Project: https://github.com/duelists-unite
-Discord: https://discord.com/invite/duelistsunite
+Links:
+- Website: https://omega.duelistsunite.org/
+- Project: https://github.com/duelists-unite
+- Discord: https://discord.com/invite/duelistsunite
 
 Install:
 - [Download](https://omega.duelistsunite.org/)
@@ -35,12 +41,12 @@ Install:
 
 ## Master-Duel
 
-Unity/3D: Yes
-Open-Source: No
+Features:
+- Unity/3D: Yes
+- All Free: No
+- Offline: No
 
 Website: https://www.konami.com/yugioh/masterduel/
-Github:
-Discord:
 
 Install:
 - [Steam](https://store.steampowered.com/app/1449850/YuGiOh_Master_Duel/)
