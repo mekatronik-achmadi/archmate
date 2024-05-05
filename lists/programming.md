@@ -50,6 +50,11 @@ jq yq node-gyp ts-node
 emscripten rust-wasm
 wasm-pack wasm-bindgen
 
+### install mono
+
+mono mono-msbuild mono-tools
+gtk-sharp-3 gtk-sharp-2
+
 --------------------------------------------------------------------------------
 
 ## AUR

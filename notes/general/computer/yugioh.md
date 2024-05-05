@@ -21,7 +21,9 @@ Links:
 Install:
 - [Download](https://projectignis.github.io/download.html)
 - [Github](https://github.com/ProjectIgnis/edopro-assets/releases)
-- [ArchLinux](https://aur.archlinux.org/packages/edopro-bin)
+- ArchLinux:
+    - [AUR](https://aur.archlinux.org/packages/edopro-bin)
+    - [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/edopro/)
 
 ## Omega
 
