@@ -16,11 +16,14 @@ options=('emptydirs')
 package() {
 	cd ProjectIgnis
 
-	install -dv "$pkgdir/opt/edopro/"
-	cp -av * "$pkgdir/opt/edopro/"
-	install -Dvm755 "$srcdir/edopro" "$pkgdir/usr/bin/edopro"
-	install -Dvm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-	install -Dv "$srcdir/io.github.edo9300.EDOPro.desktop" \
+    echo 'Copying Assets'
+	install -d "$pkgdir/opt/edopro/"
+	cp -a * "$pkgdir/opt/edopro/"
+	chmod a+w -Rf "$pkgdir/opt/edopro/"
+
+	install -Dm755 "$srcdir/edopro" "$pkgdir/usr/bin/edopro"
+	install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+	install -D "$srcdir/io.github.edo9300.EDOPro.desktop" \
 		-t "$pkgdir/usr/share/applications/"
 }
 
