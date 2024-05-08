@@ -69,6 +69,7 @@ https://aur.archlinux.org/packages/onlyoffice-bin/
 ### install python additionals
 
 - https://aur.archlinux.org/packages/python-soundfile/
+- https://aur.archlinux.org/packages/python-pmdarima/
 - https://aur.archlinux.org/packages/python-pyfftw/
 
 ### install audio tools
