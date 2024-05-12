@@ -74,7 +74,6 @@ ttf-ubuntu-font-family
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/telegram/
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/ungoogled/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
 
 ### install additional themes
