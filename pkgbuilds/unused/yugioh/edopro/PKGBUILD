@@ -1,7 +1,7 @@
 pkgname=ygo-edopro
 pkgver=40.1.4
 pkgrel=1
-pkgdesc="Free and open source ygopro client"
+pkgdesc="Free and open source YuGiOh client (OpenGL)"
 arch=('x86_64')
 url='https://github.com/edo9300/edopro'
 license=('AGPL3')
@@ -19,6 +19,8 @@ package() {
     echo 'Copying Assets'
 	install -d "$pkgdir/opt/edopro/"
 	cp -a * "$pkgdir/opt/edopro/"
+
+	echo 'Write Permission'
 	chmod a+w -Rf "$pkgdir/opt/edopro/"
 
 	install -Dm755 "$srcdir/edopro" "$pkgdir/usr/bin/edopro"

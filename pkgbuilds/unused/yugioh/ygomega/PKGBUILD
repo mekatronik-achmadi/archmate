@@ -1,0 +1,41 @@
+pkgname=ygo-omega
+pkgver=2.8
+pkgrel=1
+pkgdesc="Free and open source YuGiOh client (Unity)"
+arch=('x86_64')
+url='https://github.com/edo9300/edopro'
+license=('AGPL3')
+depends=('libglvnd' 'sqlite' 'vulkan-tools' 'vulkan-mesa-layers' 'vulkan-icd-loader' 'vulkan-driver')
+optdepends=(
+'vulkan-swrast: Vulkan for Rasteriser'
+'vulkan-intel: Vulkan for Intel'
+'vulkan-radeon: Vulkan for Radeon'
+'amdvlk: Vulkan for AMD'
+'NVIDIA-MODULE: NVidia Driver'
+'discord: For going online'
+)
+source=(
+	"https://github.com/duelists-unite/omega-releases/releases/download/Latest/linux-x64.zip"
+	"ygomega.desktop")
+sha256sums=('SKIP' 'SKIP')
+options=('emptydirs')
+
+package() {
+    echo 'Copying Assets'
+	install -d "$pkgdir/opt/ygomega/"
+	cp -ar "YGO Omega_Data" "$pkgdir/opt/ygomega/"
+	cp -a "YGO Omega.x86_64" "$pkgdir/opt/ygomega/"
+	cp -a *.so "$pkgdir/opt/ygomega/"
+	cp -a *.so.0 "$pkgdir/opt/ygomega/"
+	cp -a "YGO Omega_Data/Resources/UnityPlayer.png" "$pkgdir/opt/ygomega/"
+
+    echo 'Write Permission'
+	chmod a+w -Rf "$pkgdir/opt/ygomega/"
+
+	echo 'Binary Symlink'
+	chmod a+x "$pkgdir/opt/ygomega/YGO Omega.x86_64"
+	ln -s "/opt/ygomega/YGO Omega.x86_64" "$pkgdir/opt/ygomega/ygomega"
+
+	install -D "$srcdir/ygomega.desktop" -t "$pkgdir/usr/share/applications/"
+}
+

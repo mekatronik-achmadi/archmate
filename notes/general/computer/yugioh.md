@@ -25,6 +25,19 @@ Install:
     - [AUR](https://aur.archlinux.org/packages/edopro-bin)
     - [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/edopro/)
 
+CardArtworks:
+- https://www.deviantart.com/thong3/art/EDOPRO-HD-BIG-UPDATE-v10-7-ALL-IN-ONE-1011513809
+- https://drive.google.com/drive/folders/17KjpvifyiLf-tCB5zpWC7TQu3AqJgK_V
+- https://github.com/c-bejar/EDOPro-HD-Image-Downloader
+
+If requires seperate disk for cards resources:
+
+```sh
+ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
+```
+
+Custom Texture Path: */opt/edopro/textures*
+
 ## Omega
 
 Features:
@@ -40,6 +53,14 @@ Links:
 Install:
 - [Download](https://omega.duelistsunite.org/)
 - [Github](https://github.com/duelists-unite/omega-releases/releases/)
+- ArchLinux: [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/ygomega/)
+
+If requires seperate disk for game resources:
+
+```sh
+ln -svf "/home/development/Packages/YgoAsset/ygomega/Files" \
+"/opt/ygomega/YGO Omega_Data/Files"
+```
 
 ## Master-Duel
 

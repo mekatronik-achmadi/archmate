@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Project Ignis: EDOPro
-Comment=Automatic Yugioh Duel Simulator
+Comment=Automatic Yugioh Duel Simulator (OpenGL)
 Path=/opt/edopro
 Exec=/opt/edopro/EDOPro
 Icon=/opt/edopro/textures/AppIcon.png

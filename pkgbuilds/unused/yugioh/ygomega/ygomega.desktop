@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Duelist Unite: YuGiOh Omega
+Comment=Automatic Yugioh Duel Simulator (Unity)
+Path=/opt/ygomega
+Exec=/opt/ygomega/ygomega
+Icon=/opt/ygomega/UnityPlayer.png
+Terminal=false
+Categories=Game;CardGame;
+
