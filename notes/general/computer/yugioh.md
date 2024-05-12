@@ -36,7 +36,12 @@ If requires seperate disk for cards resources:
 ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
 ```
 
-Custom Texture Path: */opt/edopro/textures*
+Customable Texture Files (JPG/PNG):
+- /opt/edopro/textures/bg
+- /opt/edopro/textures/bg_deck
+- /opt/edopro/textures/bg_menu
+- /opt/edopro/textures/cover
+- /opt/edopro/textures/cover2
 
 ## Omega
 
