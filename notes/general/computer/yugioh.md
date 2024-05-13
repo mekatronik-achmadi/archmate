@@ -43,6 +43,8 @@ Customable Texture Files (JPG/PNG):
 - /opt/edopro/textures/cover
 - /opt/edopro/textures/cover2
 
+**Note:** the game prioritize PNG images over JPG images, so remove the PNG first
+
 ## Omega
 
 Features:
