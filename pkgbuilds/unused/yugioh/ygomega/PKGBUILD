@@ -1,9 +1,9 @@
 pkgname=ygo-omega
 pkgver=2.8
 pkgrel=1
-pkgdesc="Free and open source YuGiOh client (Unity)"
+pkgdesc="Community developed Unity-based YuGiOh simulator"
 arch=('x86_64')
-url='https://github.com/edo9300/edopro'
+url='https://omega.duelistsunite.org/'
 license=('AGPL3')
 depends=('libglvnd' 'sqlite' 'vulkan-tools' 'vulkan-mesa-layers' 'vulkan-icd-loader' 'vulkan-driver')
 optdepends=(

@@ -1,20 +1,19 @@
 pkgname=ygo-edopro
 pkgver=40.1.4
 pkgrel=1
-pkgdesc="Free and open source YuGiOh client (OpenGL)"
+pkgdesc="Community developed OpenGL-based YuGiOh simulator"
 arch=('x86_64')
-url='https://github.com/edo9300/edopro'
+url='https://projectignis.github.io/'
 license=('AGPL3')
 depends=('libglvnd' 'mono')
 source=(
 	"$pkgname-$pkgver.tar.gz::https://github.com/projectignis/edopro-assets/releases/download/$pkgver/ProjectIgnis-EDOPro-$pkgver-linux.tar.gz"
-	"io.github.edo9300.EDOPro.desktop"
-	"edopro")
-sha256sums=('SKIP' 'SKIP' 'SKIP')
+	"edopro.desktop")
+sha256sums=('SKIP' 'SKIP')
 options=('emptydirs')
 
 package() {
-	cd ProjectIgnis
+	cd ProjectIgnis/
 
     echo 'Copying Assets'
 	install -d "$pkgdir/opt/edopro/"
@@ -23,9 +22,7 @@ package() {
 	echo 'Write Permission'
 	chmod a+w -Rf "$pkgdir/opt/edopro/"
 
-	install -Dm755 "$srcdir/edopro" "$pkgdir/usr/bin/edopro"
 	install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-	install -D "$srcdir/io.github.edo9300.EDOPro.desktop" \
-		-t "$pkgdir/usr/share/applications/"
+	install -D "$srcdir/edopro.desktop" -t "$pkgdir/usr/share/applications/"
 }
 
