@@ -7,6 +7,11 @@
 ttf-ubuntu-mono-nerd
 ttf-ubuntu-font-family
 
+### install additonal kernel
+
+linux-lts linux-lts-headers
+linux-zen linux-zen-headers
+
 --------------------------------------------------------------------------------
 
 ## AUR
@@ -91,6 +96,14 @@ ttf-ubuntu-font-family
 --------------------------------------------------------------------------------
 
 ## Configurations
+
+### configure default kernel
+
+```sh
+sudo sed -i "s@#GRUB_DISABLE_SUBMENU=y@GRUB_DISABLE_SUBMENU=y@g" /etc/default/grub
+sudo sed -i "s@GRUB_DEFAULT=0@GRUB_DEFAULT=2@g" /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 ### configure nvidia
 
