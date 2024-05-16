@@ -14,6 +14,7 @@ squashfs-tools rsync dkms
 pv cmus libxcrypt-compat
 neofetch lsb-release dtc
 nano dialog bc tmux tree
+ripgrep bat fzf onefetch
 curl wget openssh sshfs
 pacman-contrib mlocate
 virtualbox-guest-utils
@@ -23,7 +24,6 @@ highlight mc fdupes
 fakechroot fakeroot
 mkinitcpio-archiso
 cdrtools syslinux
-ripgrep bat fzf
 
 ### install posix meta
 
