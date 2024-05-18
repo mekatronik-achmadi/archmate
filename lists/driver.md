@@ -154,7 +154,10 @@ aft-mtp-mount ~/MTP_mnt
 mc ~/MTP_mnt
 
 # re-mount after ask permission
+umount ~/MTP_mnt
 aft-mtp-mount ~/MTP_mnt
+
+# check again if not empty
 mc ~/MTP_mnt
 
 umount ~/MTP_mnt
