@@ -146,6 +146,20 @@ pcmanfm ~/MTP_mnt
 umount ~/MTP_mnt
 ```
 
+```sh
+mkdir -p ~/MTP_mnt
+aft-mtp-mount ~/MTP_mnt
+
+# exit MC if empty
+mc ~/MTP_mnt
+
+# re-mount after ask permission
+aft-mtp-mount ~/MTP_mnt
+mc ~/MTP_mnt
+
+umount ~/MTP_mnt
+```
+
 ### configure some usb drivers
 
 #### tl-wn823n (rtl8192eu)
