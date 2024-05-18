@@ -45,6 +45,8 @@ Customable Texture Files (JPG/PNG):
 
 **Note:** the game prioritize PNG images over JPG images, so remove the PNG first
 
+Deck directory: /opt/edopro/deck
+
 ## Omega
 
 Features:
