@@ -24,10 +24,8 @@ virtualgl lib32-virtualgl
 
 ### install additonal drivers
 
-android-file-transfer
-scrcpy android-udev
-python-pyudev
-libusb-compat
+android-udev python-pyudev libusb-compat
+scrcpy libmtp android-file-transfer
 
 --------------------------------------------------------------------------------
 
@@ -116,6 +114,36 @@ watch -n1 nvidia-smi
 
 sudo rmmod nvidia_drm nvidia_modeset nvidia
 echo 'OFF' | sudo tee /proc/acpi/bbswitch
+```
+
+### configure android MTP
+
+**WARNING:** MTPFs won't work.
+
+**NOTE:** Sometimes, GVFS-MTP works better
+
+```sh
+sudo groupadd -fr adbusers
+sudo gpasswd -a $USER adbusers
+sudo reboot
+
+mtp-detect
+```
+
+get access permission:
+- Caja/PCManFM:
+    + open mount path in file manager
+    + reload, it will ask permission
+    + reload again
+
+```sh
+mkdir -p ~/MTP_mnt
+aft-mtp-mount ~/MTP_mnt
+
+caja ~/MTP_mnt
+pcmanfm ~/MTP_mnt
+
+umount ~/MTP_mnt
 ```
 
 ### configure some usb drivers
