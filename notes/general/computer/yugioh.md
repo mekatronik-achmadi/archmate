@@ -8,27 +8,26 @@
 
 ## EdoPro
 
-Features:
+### Features
 - Unity/3D: No
 - All Free: Yes
 - Offline: Yes
 
-Links:
+### Links
 - Website: https://projectignis.github.io/
 - Project: https://github.com/ProjectIgnis
 - Discord: https://discord.com/invite/ygopro-percy
 
-Install:
+### Install
 - [Download](https://projectignis.github.io/download.html)
 - [Github](https://github.com/ProjectIgnis/edopro-assets/releases)
 - ArchLinux:
-    - [AUR](https://aur.archlinux.org/packages/edopro-bin)
-    - [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/edopro/)
+    + [AUR](https://aur.archlinux.org/packages/edopro-bin)
+    + [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/edopro/)
 
-CardArtworks:
+### CardArtworks
 - https://www.deviantart.com/thong3/art/EDOPRO-HD-BIG-UPDATE-v10-7-ALL-IN-ONE-1011513809
 - https://drive.google.com/drive/folders/17KjpvifyiLf-tCB5zpWC7TQu3AqJgK_V
-- https://github.com/c-bejar/EDOPro-HD-Image-Downloader
 
 If requires seperate disk for cards resources:
 
@@ -36,7 +35,7 @@ If requires seperate disk for cards resources:
 ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
 ```
 
-Customable Texture Files (JPG/PNG):
+### Customizations
 - /opt/edopro/textures/bg
 - /opt/edopro/textures/bg_deck
 - /opt/edopro/textures/bg_menu
@@ -45,31 +44,69 @@ Customable Texture Files (JPG/PNG):
 
 **Note:** the game prioritize PNG images over JPG images, so remove the PNG first
 
-Deck directory: /opt/edopro/deck
+### Decks
+- /opt/edopro/deck/*.ydk
 
 ## Omega
 
-Features:
+### Features
 - Unity/3D: Yes
 - All Free: Yes
 - Offline: Yes
 
-Links:
+### Links
 - Website: https://omega.duelistsunite.org/
 - Project: https://github.com/duelists-unite
 - Discord: https://discord.com/invite/duelistsunite
 
-Install:
+### Install
 - [Download](https://omega.duelistsunite.org/)
 - [Github](https://github.com/duelists-unite/omega-releases/releases/)
-- ArchLinux: [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/ygomega/)
+- ArchLinux:
+    + [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/ygomega/)
 
-If requires seperate disk for game resources:
+### Resources
+
+#### Linux
+
+If requires seperate disk for game resources before downloading:
 
 ```sh
 ln -svf "/home/development/Packages/YgoAsset/ygomega/Files" \
 "/opt/ygomega/YGO Omega_Data/Files"
 ```
+
+#### Android
+
+Symlink to access asset dir in **Internal storage**, using ADB tools:
+
+**NOTE:** It doesnt work as the permission denied
+
+```sh
+adb shell
+```
+
+```sh
+cd /storage/sdcard0/
+mkdir -p YgoOmega/;cd YgoOmega/
+ln -svf ../Android/data/com.DuelistsUnite.YGOOmega/files ./Files
+```
+
+### Customizations
+- Linux:
+    + /opt/ygomega/YGO Omega_Data/Files/Playmat
+    + /opt/ygomega/YGO Omega_Data/Files/Sleeves
+- Android:
+    + Android/data/com.DuelistsUnite.YGOOmega/files/Playmat
+    + Android/data/com.DuelistsUnite.YGOOmega/files/Sleeves
+
+### Decks
+- Linux:
+    + /opt/ygomega/YGO Omega_Data/Files/Exports
+    + /opt/ygomega/YGO Omega_Data/Files/Imports
+- Android:
+    + Android/data/com.DuelistsUnite.YGOOmega/files/Exports
+    + Android/data/com.DuelistsUnite.YGOOmega/files/Imports
 
 ## Master-Duel
 
