@@ -108,3 +108,35 @@ Install:
 - [Game8](https://game8.co/games/Yu-Gi-Oh-Master-Duel/)
 - [YgoProDeck](https://ygoprodeck.com/)
 
+## Archetypes
+
+### Anime
+
+DM:
+- BlueEyes     : Main, Fusion, Synchro, Xyz
+- HarpieLady   : Synchro, Xyz, Link
+- TheMagicians : Main, Fusion, Xyz
+
+GX:
+- CyberDragon  : Fusion, Xyz, Link
+
+5DS:
+- TechGenus    : Synchro, Link
+
+VRAINS:
+- CodeFirewall : Link
+- Salamangreat : Link
+
+### Non-Anime
+
+Non-Extra:
+- Kaiju        : Main
+- Labrynth     : Main
+
+Ritual:
+- Vendread     : Ritual, Link
+- Voiceless    : Ritual
+
+Pendulum:
+- Qliphort     : Pendulum, Link
+
