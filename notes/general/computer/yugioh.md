@@ -25,7 +25,7 @@
     + [AUR](https://aur.archlinux.org/packages/edopro-bin)
     + [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/edopro/)
 
-### CardArtworks
+### Resources
 - https://www.deviantart.com/thong3/art/EDOPRO-HD-BIG-UPDATE-v10-7-ALL-IN-ONE-1011513809
 - https://drive.google.com/drive/folders/17KjpvifyiLf-tCB5zpWC7TQu3AqJgK_V
 
@@ -67,29 +67,11 @@ ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
 
 ### Resources
 
-#### Linux
-
-If requires seperate disk for game resources before downloading:
+If requires seperate disk for game resources before downloading on Linux:
 
 ```sh
 ln -svf "/home/development/Packages/YgoAsset/ygomega/Files" \
 "/opt/ygomega/YGO Omega_Data/Files"
-```
-
-#### Android
-
-Symlink to access asset dir in **Internal storage**, using ADB tools:
-
-**NOTE:** It doesnt work as the permission denied
-
-```sh
-adb shell
-```
-
-```sh
-cd /storage/sdcard0/
-mkdir -p YgoOmega/;cd YgoOmega/
-ln -svf ../Android/data/com.DuelistsUnite.YGOOmega/files ./Files
 ```
 
 ### Customizations
