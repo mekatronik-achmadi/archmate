@@ -4,6 +4,7 @@
 - [EdoPro](#edopro)
 - [Omega](#omega)
 - [Master-Duel](#master-duel)
+- [Archetypes](#archetypes)
 - [Meta](#meta)
 
 ## EdoPro
@@ -103,11 +104,6 @@ Install:
 - [Steam](https://store.steampowered.com/app/1449850/YuGiOh_Master_Duel/)
 - [PlayStore](https://play.google.com/store/apps/details?id=jp.konami.masterduel)
 
-## Meta
-- [Master Duel Meta](https://www.masterduelmeta.com/)
-- [Game8](https://game8.co/games/Yu-Gi-Oh-Master-Duel/)
-- [YgoProDeck](https://ygoprodeck.com/)
-
 ## Archetypes
 
 ### Anime
@@ -139,4 +135,9 @@ Ritual:
 
 Pendulum:
 - Qliphort     : Pendulum, Link
+
+## Meta
+- [Master Duel Meta](https://www.masterduelmeta.com/)
+- [Game8](https://game8.co/games/Yu-Gi-Oh-Master-Duel/)
+- [YgoProDeck](https://ygoprodeck.com/)
 
