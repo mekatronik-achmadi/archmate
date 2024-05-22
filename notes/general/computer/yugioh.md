@@ -27,10 +27,20 @@
     + [Custom](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/yugioh/edopro/)
 
 ### Resources
+
+Paths:
+- ArchLinux: /opt/edopro/
+- Android: Android/data/io.github.edo9300.edopro/files/
+
+**NOTE:**
+- For Android, set game path in Internal storage without copying assets
+- If repositories clone failed, delete files in repositories folder to re-clone
+
+HD Card Pics:
 - https://www.deviantart.com/thong3/art/EDOPRO-HD-BIG-UPDATE-v10-7-ALL-IN-ONE-1011513809
 - https://drive.google.com/drive/folders/17KjpvifyiLf-tCB5zpWC7TQu3AqJgK_V
 
-If requires seperate disk for cards resources (ArchLinux):
+If requires seperate disk for card pics resources (ArchLinux):
 
 ```sh
 ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
@@ -38,22 +48,12 @@ ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
 
 ### Customizations
 
-Path:
-- ArchLinux: /opt/edopro/
-- Android: Android/data/io.github.edo9300.edopro/files/EDOPro/
-
-**NOTE:** For Android, set game path in Internal storage without copying assets
-
 Customable Files:
 - textures/bg.*
 - textures/bg_deck.*
 - textures/bg_menu.*
 - textures/cover.*
 - textures/cover2.*
-
-Customable Folders
-- pics/*
-- repositories/*
 
 **Note:** the game prioritize PNG images over JPG images, so remove the PNG first
 
@@ -80,6 +80,10 @@ Customable Folders
 
 ### Resources
 
+Paths:
+- ArchLinux: /opt/ygomega/
+- Android: Android/data/com.DuelistsUnite.YGOOmega/files
+
 If requires seperate disk for game resources before downloading on ArchLinux:
 
 ```sh
@@ -88,22 +92,21 @@ ln -svf "/home/development/Packages/YgoAsset/ygomega/Files" \
 ```
 
 ### Customizations
-- ArchLinux:
-    + /opt/ygomega/YGO Omega_Data/Files/Playmat
-    + /opt/ygomega/YGO Omega_Data/Files/Sleeves
-- Android:
-    + Android/data/com.DuelistsUnite.YGOOmega/files/Playmat
-    + Android/data/com.DuelistsUnite.YGOOmega/files/Sleeves
+
+Customable Files:
+- Playmat/*.jpg
+- Sleeves/*.jpg
 
 ### Decks
-- ArchLinux:
-    + /opt/ygomega/YGO Omega_Data/Files/Exports
-    + /opt/ygomega/YGO Omega_Data/Files/Imports
-- Android:
-    + Android/data/com.DuelistsUnite.YGOOmega/files/Exports
-    + Android/data/com.DuelistsUnite.YGOOmega/files/Imports
 
-**NOTE:** The decks either in *.ydk format or game's *.csv files
+Exports:
+    + Exports/*.zip
+    + Exports/*.ydk
+    * Exports/*.csv
+
+Imports:
+    + Imports/*.ydk
+    + Imports/*.csv
 
 ## Master-Duel
 
