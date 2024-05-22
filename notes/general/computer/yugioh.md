@@ -30,23 +30,35 @@
 - https://www.deviantart.com/thong3/art/EDOPRO-HD-BIG-UPDATE-v10-7-ALL-IN-ONE-1011513809
 - https://drive.google.com/drive/folders/17KjpvifyiLf-tCB5zpWC7TQu3AqJgK_V
 
-If requires seperate disk for cards resources:
+If requires seperate disk for cards resources (ArchLinux):
 
 ```sh
 ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
 ```
 
 ### Customizations
-- /opt/edopro/textures/bg
-- /opt/edopro/textures/bg_deck
-- /opt/edopro/textures/bg_menu
-- /opt/edopro/textures/cover
-- /opt/edopro/textures/cover2
+
+Path:
+- ArchLinux: /opt/edopro/
+- Android: data/io.github.edo9300.edopro/files/EDOPro/
+
+**NOTE:** Its recommended on External storage and optionally copyin internal assets
+
+Customable Files:
+- textures/bg.*
+- textures/bg_deck.*
+- textures/bg_menu.*
+- textures/cover.*
+- textures/cover2.*
+
+Customable Folders
+- pics/*
+- repositories/*
 
 **Note:** the game prioritize PNG images over JPG images, so remove the PNG first
 
 ### Decks
-- /opt/edopro/deck/*.ydk
+- deck/*.ydk
 
 ## Omega
 
@@ -68,7 +80,7 @@ ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
 
 ### Resources
 
-If requires seperate disk for game resources before downloading on Linux:
+If requires seperate disk for game resources before downloading on ArchLinux:
 
 ```sh
 ln -svf "/home/development/Packages/YgoAsset/ygomega/Files" \
@@ -76,7 +88,7 @@ ln -svf "/home/development/Packages/YgoAsset/ygomega/Files" \
 ```
 
 ### Customizations
-- Linux:
+- ArchLinux:
     + /opt/ygomega/YGO Omega_Data/Files/Playmat
     + /opt/ygomega/YGO Omega_Data/Files/Sleeves
 - Android:
@@ -84,12 +96,14 @@ ln -svf "/home/development/Packages/YgoAsset/ygomega/Files" \
     + Android/data/com.DuelistsUnite.YGOOmega/files/Sleeves
 
 ### Decks
-- Linux:
+- ArchLinux:
     + /opt/ygomega/YGO Omega_Data/Files/Exports
     + /opt/ygomega/YGO Omega_Data/Files/Imports
 - Android:
     + Android/data/com.DuelistsUnite.YGOOmega/files/Exports
     + Android/data/com.DuelistsUnite.YGOOmega/files/Imports
+
+**NOTE:** The decks either in *.ydk format or game's *.csv files
 
 ## Master-Duel
 
