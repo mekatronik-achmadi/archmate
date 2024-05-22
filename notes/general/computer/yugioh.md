@@ -40,9 +40,9 @@ ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
 
 Path:
 - ArchLinux: /opt/edopro/
-- Android: data/io.github.edo9300.edopro/files/EDOPro/
+- Android: Android/data/io.github.edo9300.edopro/files/EDOPro/
 
-**NOTE:** Its recommended on External storage and optionally copyin internal assets
+**NOTE:** For Android, set game path in Internal storage without copying assets
 
 Customable Files:
 - textures/bg.*
