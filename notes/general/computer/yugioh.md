@@ -49,13 +49,11 @@ ln -svf /home/development/Packages/YgoAsset/edopro/pics /opt/edopro/pics
 ### Customizations
 
 Customable Files:
-- textures/bg.*
-- textures/bg_deck.*
-- textures/bg_menu.*
-- textures/cover.*
-- textures/cover2.*
-
-**Note:** the game prioritize PNG images over JPG images, so remove the PNG first
+- textures/bg.png
+- textures/bg_deck.png
+- textures/bg_menu.png
+- textures/cover.png
+- textures/cover2.png
 
 ### Decks
 - deck/*.ydk
