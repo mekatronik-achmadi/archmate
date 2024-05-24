@@ -40,10 +40,10 @@ linux-zen linux-zen-headers
 
 - https://aur.archlinux.org/packages/optimus-manager/
 
-### install internet tools
+### install chrome browsers
 
-- https://aur.archlinux.org/packages/hyperspace-bin/
 - https://aur.archlinux.org/packages/google-chrome/
+- https://aur.archlinux.org/packages/microsoft-edge-stable-bin/
 
 ### install remote desktop
 
