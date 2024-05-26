@@ -137,6 +137,7 @@ GX:
 VRAINS:
 - CodeFirewall : Link
 - Salamangreat : Link
+- Marincess    : Link
 
 ### Non-Anime
 
@@ -147,9 +148,6 @@ Non-Extra:
 Ritual:
 - Vendread     : Ritual, Link
 - Voiceless    : Ritual
-
-Pendulum:
-- Qliphort     : Pendulum, Link
 
 ## Meta
 - [Master Duel Meta](https://www.masterduelmeta.com/)
