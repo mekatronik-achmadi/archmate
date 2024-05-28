@@ -121,7 +121,7 @@ Install:
 
 ## Archetypes
 
-### Anime
+### Extra Deck
 
 DM:
 - BlueEyes     : Main, Fusion, Synchro, Xyz
@@ -139,18 +139,19 @@ VRAINS:
 - Salamangreat : Link
 - Marincess    : Link
 
-### Non-Anime
+### No Extra Deck
 
-Non-Extra:
+Anime:
+- CyberAngel   : Ritual
+
+Non-Anime:
 - Kaiju        : Main
 - Labrynth     : Main
-
-Ritual:
-- Vendread     : Ritual, Link
 - Voiceless    : Ritual
 
 ## Meta
 - [Master Duel Meta](https://www.masterduelmeta.com/)
 - [Game8](https://game8.co/games/Yu-Gi-Oh-Master-Duel/)
 - [YgoProDeck](https://ygoprodeck.com/)
+- [Female](https://www.deviantart.com/primesui/journal/Tier-List-Yu-Gi-Oh-Female-Archetypes-815726528)
 
