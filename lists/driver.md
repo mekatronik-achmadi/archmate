@@ -78,6 +78,13 @@ echo 'blacklist nvidiafb
 ' | sudo tee /etc/modprobe.d/rtl8xxxu.conf
 ```
 
+#### disable ibt
+
+```sh
+sudo sed -i 's#quiet"#quiet ibt=off"#g' /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 #### bumblebee setup
 
 ```sh
