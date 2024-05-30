@@ -121,7 +121,7 @@ Install:
 
 ## Archetypes
 
-### Extra Deck
+### Anime
 
 DM:
 - BlueEyes     : Main, Fusion, Synchro, Xyz
@@ -139,15 +139,15 @@ VRAINS:
 - Salamangreat : Link
 - Marincess    : Link
 
-### No Extra Deck
+### Non-Anime
 
-Anime:
-- CyberAngel   : Ritual
+Ritual:
+- Vendread     : Ritual, Link
+- Voiceless    : Ritual
 
-Non-Anime:
+Non-Extra:
 - Kaiju        : Main
 - Labrynth     : Main
-- Voiceless    : Ritual
 
 ## Meta
 - [Master Duel Meta](https://www.masterduelmeta.com/)
