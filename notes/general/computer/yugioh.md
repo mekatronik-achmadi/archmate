@@ -149,6 +149,10 @@ Non-Extra:
 - Kaiju        : Main
 - Labrynth     : Main
 
+Other:
+- Qli          : Pendulum
+- Female       : Catalog
+
 ## Meta
 - [Master Duel Meta](https://www.masterduelmeta.com/)
 - [Game8](https://game8.co/games/Yu-Gi-Oh-Master-Duel/)
