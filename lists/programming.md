@@ -147,6 +147,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/vim-markdown'
+Plug 'lervag/vimtex'
 call plug#end()
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
@@ -174,9 +175,9 @@ node -v;ls ~/.vimrc
 mkdir -p ~/.vim/pack/plug/start/
 
 vim +PlugInstall
-vim -c "CocInstall coc-pairs coc-snippets coc-ultisnips"
 vim -c "CocInstall coc-clangd coc-jedi coc-json coc-tsserver"
-vim -c "CocInstall coc-sh coc-html coc-yaml coc-rust-analyzer"
+vim -c "CocInstall coc-pairs coc-snippets coc-ultisnips coc-sh"
+vim -c "CocInstall coc-vimtex coc-html coc-yaml coc-rust-analyzer"
 vim +PlugClean
 ```
 

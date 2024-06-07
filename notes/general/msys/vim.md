@@ -33,6 +33,7 @@ call plug#begin('~/.vim/pack/plug/start')
     Plug 'preservim/tagbar'
     Plug 'preservim/vim-markdown'
     Plug 'chrisbra/csv.vim'
+    Plug 'lervag/vimtex'
 \"    Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -76,11 +77,11 @@ syntax on" | tee ~/.vimrc
 mkdir -p ~/.config/coc/
 
 vim +PlugInstall
+vim -c "CocInstall coc-tsserver coc-vimtex"
 vim -c "CocInstall coc-pairs coc-snippets"
 vim -c "CocInstall coc-clangd coc-json"
 vim -c "CocInstall coc-html coc-yaml"
 vim -c "CocInstall coc-rust-analyzer"
-vim -c "CocInstall coc-tsserver"
 vim +PlugClean
 ```
 
