@@ -125,7 +125,7 @@ Install:
 
 DM:
 - BlueEyes     : Main, Fusion, Synchro, Xyz
-- HarpieLady   : Synchro, Xyz, Link
+- Harpies      : Synchro, Xyz, Link
 - TheMagicians : Main, Fusion, Xyz
 
 GX:
@@ -145,12 +145,16 @@ Ritual:
 - Vendread     : Ritual, Link
 - Voiceless    : Ritual
 
+Extra:
+- Danger       : Main, Xyz, Link
+
 Non-Extra:
 - Kaiju        : Main
 - Labrynth     : Main
 
 Other:
-- Qli          : Pendulum
+- Qli          : Pendulum, Link
+- Paleozoic    : Trap, Xyz, Link
 - Female       : Catalog
 
 ## Meta
