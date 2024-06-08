@@ -62,21 +62,9 @@ fftw liquid-dsp libsndfile
 - https://aur.archlinux.org/packages/ttf-ms-fonts/
 - https://aur.archlinux.org/packages/ttf-vista-fonts/
 
-### install onlyoffice
-
-https://aur.archlinux.org/packages/onlyoffice-bin/
-
 ### install python additionals
 
-- https://aur.archlinux.org/packages/python-soundfile/
-- https://aur.archlinux.org/packages/python-pmdarima/
 - https://aur.archlinux.org/packages/python-pyfftw/
-
-### install audio tools
-
-- https://aur.archlinux.org/packages/roomeqwizard/
-- https://aur.archlinux.org/packages/wavesurfer/
-- https://aur.archlinux.org/packages/snack/
 
 ### install shell additional
 
@@ -88,28 +76,9 @@ https://aur.archlinux.org/packages/onlyoffice-bin/
 
 ## External
 
-### install python visa tools
-
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/instrumental/
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/pyotdr/
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/python-modules/pm100/
-
-### install python acoustics tools
-
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/pychoacoustics/
-
 --------------------------------------------------------------------------------
 
 ## Configurations
-
-### configure onlyoffice
-
-```sh
-sudo sed -i 's#desktopeditors %F#desktopeditors --system-title-bar %F#g' \
-/usr/share/applications/onlyoffice-desktopeditors.desktop
-sudo sed -i 's#desktopeditors --new#desktopeditors --system-title-bar --new#g' \
-/usr/share/applications/onlyoffice-desktopeditors.desktop
-```
 
 ### configure r programming
 
@@ -178,12 +147,3 @@ Just delete \t (Tab) after \end{minted}
 Uncheck 'Adv. Editor'->'Structure Panel'->'Mark structure elements beyond \end{document}'
 ```
 
-### configure roomeqwizard
-
-```sh
-sudo sed -i 's#Categories=Application;#Categories=AudioVideo;Audio;Player;#g' \
-/usr/share/applications/roomeqwizard/roomeqwizard.desktop
-
-echo "Terminal=false" | sudo tee -a /usr/share/applications/roomeqwizard/roomeqwizard.desktop
-echo "Comment=Room Equalizer Wizard"  | sudo tee -a /usr/share/applications/roomeqwizard/roomeqwizard.desktop
-```

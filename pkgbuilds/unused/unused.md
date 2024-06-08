@@ -62,6 +62,14 @@ linux-zen linux-zen-headers
 - https://aur.archlinux.org/packages/wps-office/
 - https://aur.archlinux.org/packages/ttf-wps-fonts/
 
+### install campus tools
+
+- https://aur.archlinux.org/packages/roomeqwizard/
+- https://aur.archlinux.org/packages/wavesurfer/
+- https://aur.archlinux.org/packages/snack/
+- https://aur.archlinux.org/packages/python-soundfile/
+- https://aur.archlinux.org/packages/python-pmdarima/
+
 --------------------------------------------------------------------------------
 
 ## External
@@ -92,6 +100,13 @@ linux-zen linux-zen-headers
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lubuntu/lxde/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lubuntu/theme/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lubuntu/win95/
+
+### install campus tools
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/campus/py-instrumental/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/campus/py-pyotdr/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/campus/py-pm100/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/campus/pychoacoustics/
 
 --------------------------------------------------------------------------------
 
@@ -221,5 +236,15 @@ sudo rm -f /usr/share/applications/wps-office-pdf.desktop
 sudo rm -f /usr/share/applications/wps-office-prometheus.desktop
 sudo sed -i '/^$/d' /usr/share/desktop-directories/wps-office.directory
 echo 'NoDisplay=true' | sudo tee -a /usr/share/desktop-directories/wps-office.directory
+```
+
+### configure roomeqwizard
+
+```sh
+sudo sed -i 's#Categories=Application;#Categories=AudioVideo;Audio;Player;#g' \
+/usr/share/applications/roomeqwizard/roomeqwizard.desktop
+
+echo "Terminal=false" | sudo tee -a /usr/share/applications/roomeqwizard/roomeqwizard.desktop
+echo "Comment=Room Equalizer Wizard"  | sudo tee -a /usr/share/applications/roomeqwizard/roomeqwizard.desktop
 ```
 
