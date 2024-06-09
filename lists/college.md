@@ -66,9 +66,12 @@ fftw liquid-dsp libsndfile
 
 - https://aur.archlinux.org/packages/python-pyfftw/
 
-### install shell additional
+### install r programming
 
 - https://aur.archlinux.org/packages/littler/
+
+### install shell additional
+
 - https://aur.archlinux.org/packages/ttyplot-git/
 - https://aur.archlinux.org/packages/ncurses5-compat-libs/
 

@@ -36,9 +36,12 @@ Paths:
 - For Android, set game path in Internal storage without copying assets
 - If repositories clone failed, delete files in repositories folder to re-clone
 
-HD Card Pics:
-- https://www.deviantart.com/thong3/art/EDOPRO-HD-BIG-UPDATE-v10-7-ALL-IN-ONE-1011513809
-- https://drive.google.com/drive/folders/17KjpvifyiLf-tCB5zpWC7TQu3AqJgK_V
+All Card Pics:
+- High Definition:
+    + [DeviantArt](https://www.deviantart.com/thong3/art/EDOPRO-HD-BIG-UPDATE-v10-7-ALL-IN-ONE-1011513809)
+    + [G-Drive](https://drive.google.com/drive/folders/17KjpvifyiLf-tCB5zpWC7TQu3AqJgK_V)
+- Standard:
+    + [G-Drive](https://drive.google.com/file/d/1UdA2UKRk2CjKYwDaWHwJmQj0mjngDjP1)
 
 If requires seperate disk for card pics resources (ArchLinux):
 
