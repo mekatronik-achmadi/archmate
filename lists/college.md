@@ -134,6 +134,13 @@ r -e 'install.packages(c("streamR","shiny","httpgd","GGally","plyr","plotrix"))'
 code --force --install-extension reditorsupport.r
 ```
 
+```sh
+# RStudio menu
+
+sudo sed -i 's#Development;IDE;#Math;Education;#g' \
+/usr/share/applications/rstudio.desktop
+```
+
 ### configure texstudio
 
 ```sh
