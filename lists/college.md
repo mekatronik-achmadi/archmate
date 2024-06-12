@@ -2,10 +2,6 @@
 
 ## Official
 
-### install libreoffice
-
-libreoffice-still coin-or-mp
-
 ### install fortran
 
 gcc-fortran arpack
@@ -48,10 +44,6 @@ dblatex latex2html latex2rtf
 opencv hdf5-openmpi
 python-opencv vtk
 
-### install programming additionals
-
-fftw liquid-dsp libsndfile
-
 --------------------------------------------------------------------------------
 
 ## AUR
@@ -64,16 +56,24 @@ fftw liquid-dsp libsndfile
 
 ### install python additionals
 
+- https://aur.archlinux.org/packages/python-soundfile/
 - https://aur.archlinux.org/packages/python-pyfftw/
 
 ### install r programming
 
 - https://aur.archlinux.org/packages/littler/
+- https://aur.archlinux.org/packages/rstudio-desktop-bin/
 
 ### install shell additional
 
 - https://aur.archlinux.org/packages/ttyplot-git/
 - https://aur.archlinux.org/packages/ncurses5-compat-libs/
+
+### install wps office
+
+- https://aur.archlinux.org/packages/libtiff5/
+- https://aur.archlinux.org/packages/wps-office/
+- https://aur.archlinux.org/packages/ttf-wps-fonts/
 
 --------------------------------------------------------------------------------
 
@@ -150,3 +150,11 @@ Just delete \t (Tab) after \end{minted}
 Uncheck 'Adv. Editor'->'Structure Panel'->'Mark structure elements beyond \end{document}'
 ```
 
+### configure wps office
+
+```sh
+sudo rm -f /usr/share/applications/wps-office-pdf.desktop
+sudo rm -f /usr/share/applications/wps-office-prometheus.desktop
+sudo sed -i '/^$/d' /usr/share/desktop-directories/wps-office.directory
+echo 'NoDisplay=true' | sudo tee -a /usr/share/desktop-directories/wps-office.directory
+```

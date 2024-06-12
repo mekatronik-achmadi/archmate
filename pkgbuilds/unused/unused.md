@@ -52,23 +52,13 @@ linux-zen linux-zen-headers
 
 ## install academic tools
 
-- https://aur.archlinux.org/packages/zotero-bin/
-- https://aur.archlinux.org/packages/rstudio-desktop-bin/
-- https://aur.archlinux.org/packages/mendeleydesktop-bundled/
-
-### install wps office
-
-- https://aur.archlinux.org/packages/libtiff5/
-- https://aur.archlinux.org/packages/wps-office/
-- https://aur.archlinux.org/packages/ttf-wps-fonts/
-
-### install campus tools
-
 - https://aur.archlinux.org/packages/roomeqwizard/
 - https://aur.archlinux.org/packages/wavesurfer/
 - https://aur.archlinux.org/packages/snack/
 - https://aur.archlinux.org/packages/python-soundfile/
 - https://aur.archlinux.org/packages/python-pmdarima/
+- https://aur.archlinux.org/packages/mendeleydesktop-bundled/
+- https://aur.archlinux.org/packages/zotero-bin/
 
 --------------------------------------------------------------------------------
 
@@ -227,15 +217,6 @@ sudo systemctl start teamviewerd
 
 ```sh
 sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
-```
-
-### configure wps office
-
-```sh
-sudo rm -f /usr/share/applications/wps-office-pdf.desktop
-sudo rm -f /usr/share/applications/wps-office-prometheus.desktop
-sudo sed -i '/^$/d' /usr/share/desktop-directories/wps-office.directory
-echo 'NoDisplay=true' | sudo tee -a /usr/share/desktop-directories/wps-office.directory
 ```
 
 ### configure roomeqwizard
