@@ -321,7 +321,7 @@
   <!-- Keybindings for running applications -->
   <keybind key="C-A-t">
     <action name="Execute">
-      <command>xterm</command>
+      <command>uxterm</command>
     </action>
   </keybind>
   <keybind key="C-A-r">
@@ -331,7 +331,7 @@
   </keybind>
   <keybind key="C-A-e">
     <action name="Execute">
-      <command>xterm -e mc --nocolor</command>
+      <command>uxterm -e mc --nocolor</command>
     </action>
   </keybind>
   <keybind key="C-A-w">

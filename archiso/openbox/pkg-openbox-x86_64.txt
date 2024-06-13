@@ -110,6 +110,7 @@ ffmpegthumbnailer
 ffmpeg gst-libav
 gst-plugins-good
 gst-plugins-base
+gst-plugins-ugly
 vlc guvcview
 
 intel-media-driver

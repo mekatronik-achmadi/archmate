@@ -30,7 +30,7 @@
     <action name="Execute"><command>pcmanfm</command></action>
   </item>
   <item label="TaskMgr" icon="/usr/share/icons/Papirus/32x32/apps/htop.svg">
-    <action name="Execute"><command>xterm -e htop -C</command></action>
+    <action name="Execute"><command>uxterm -e htop -C</command></action>
   </item>
   <item label="XArchiver" icon="/usr/share/icons/Papirus/32x32/apps/xarchiver.svg">
     <action name="Execute"><command>xarchiver</command></action>
@@ -88,7 +88,7 @@
 
 <menu id="background" label="Background">
   <item label="Choose">
-    <action name="Execute"><command>xterm -e vim /usr/share/openbox/fehbg</command></action>
+    <action name="Execute"><command>uxterm -e vim /usr/share/openbox/fehbg</command></action>
   </item>
   <item label="Redraw">
     <action name="Execute"><command>bash /usr/share/openbox/fehbg</command></action>
@@ -116,7 +116,7 @@
     <action name="Execute"><command>lxappearance</command></action>
   </item>
   <item label="Autostart" icon="/usr/share/icons/Papirus/32x32/apps/gnome-run.svg">
-    <action name="Execute"><command>xterm -e vim /usr/share/openbox/autostart</command></action>
+    <action name="Execute"><command>uxterm -e vim /usr/share/openbox/autostart</command></action>
   </item>
 </menu>
 
@@ -127,11 +127,11 @@
   <item label="Run Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
     <action name="Execute"><command>gmrun -g 300x</command></action>
   </item>
-  <item label="XTerminal" icon="/usr/share/icons/Papirus/32x32/apps/xterm.svg">
-    <action name="Execute"><command>xterm</command></action>
+  <item label="UXTerm" icon="/usr/share/icons/Papirus/32x32/apps/xterm.svg">
+    <action name="Execute"><command>uxterm</command></action>
   </item>
-  <item label="MC FileMgr" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
-    <action name="Execute"><command>xterm -e mc --nocolor</command></action>
+  <item label="MC FM" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
+    <action name="Execute"><command>uxterm -e mc --nocolor</command></action>
   </item>
   <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
   <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
