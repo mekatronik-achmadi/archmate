@@ -1,5 +1,0 @@
-pkg/
-target/
-node_modules/
-*lock
-*lock.json

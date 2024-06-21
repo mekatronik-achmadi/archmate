@@ -1,7 +1,0 @@
-*.wasm
-main
-main.js
-main.html
-node_modules/
-package-lock.json
-
