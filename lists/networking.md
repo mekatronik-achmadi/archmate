@@ -36,10 +36,6 @@ mosquitto libwebsockets
 
 - https://aur.archlinux.org/packages/whatsdesk-bin/
 
-### install http tools
-
-- https://aur.archlinux.org/packages/postman-bin/
-
 --------------------------------------------------------------------------------
 
 ## Configurations

@@ -57,6 +57,10 @@ python-sounddevice
 - https://aur.archlinux.org/packages/anydesk-bin/
 - https://aur.archlinux.org/packages/teamviewer/
 
+### install http tools
+
+- https://aur.archlinux.org/packages/postman-bin/
+
 ## install academic tools
 
 - https://aur.archlinux.org/packages/littler/
