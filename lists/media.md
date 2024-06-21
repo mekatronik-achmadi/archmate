@@ -40,7 +40,6 @@ ddrescue ext4magic foremost testdisk
 ### install youtube programs
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/youtube/
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/youtubemusic/
 
 ### install markdown tools
 
