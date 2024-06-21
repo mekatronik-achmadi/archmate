@@ -27,7 +27,6 @@ ddrescue ext4magic foremost testdisk
 ### install screencast tools
 
 - https://aur.archlinux.org/packages/simplescreenrecorder/
-- https://aur.archlinux.org/packages/key-mon/
 
 ### install youtube downloader
 
