@@ -48,13 +48,6 @@ ddrescue ext4magic foremost testdisk
 
 ## Configurations
 
-### configure key-mon
-
-```sh
-key-mon --reset &
-key-mon -s -m --decorated -t classic &
-```
-
 ### configure youtube-dl
 
 Format recommendations:
