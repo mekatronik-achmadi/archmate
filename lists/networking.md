@@ -4,9 +4,8 @@
 
 ### install web server
 
-openssl openssl-1.1
-lighttpd perl-cgi
-apache wt vsftpd
+openssl openssl-1.1 vsftpd
+lighttpd perl-cgi apache
 
 ### install mysql
 

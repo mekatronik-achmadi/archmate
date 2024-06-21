@@ -2,19 +2,11 @@
 
 ## Official
 
-### install document tools
+### install media editor
 
-mupdf-gl mupdf-tools djview
-
-### install graphic tools
-
-gimp imagemagick
+openshot faac frei0r-plugins
+gimp imagemagick djview
 inkscape xsane-gimp
-
-### install multimedia tools
-
-audacity sox faac
-openshot frei0r-plugins
 
 ### install disk recovery tools
 
@@ -57,23 +49,6 @@ ddrescue ext4magic foremost testdisk
 --------------------------------------------------------------------------------
 
 ## Configurations
-
-### configure mupdf
-
-```sh
-sudo sed -i 's#NoDisplay=true##g' /usr/share/applications/mupdf.desktop
-```
-
-### configure audacity
-
-re-enabled headphone
-
-```sh
-alsactl init
-```
-
-then change **sysdefault: Headphone Mic:0**
-to **sysdefault: Internal Mic:0'**
 
 ### configure key-mon
 

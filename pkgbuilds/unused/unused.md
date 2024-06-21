@@ -12,6 +12,10 @@ ttf-ubuntu-font-family
 linux-lts linux-lts-headers
 linux-zen linux-zen-headers
 
+## install academic tools
+
+audacity sox
+
 --------------------------------------------------------------------------------
 
 ## AUR
@@ -64,10 +68,6 @@ linux-zen linux-zen-headers
 
 ## External
 
-### install matlab binary
-
-- https://github.com/mekatronik-achmadi/archmate/tree/master/pkgbuilds/unused/matlab-bin-basic/
-
 ### install cadsoft eagle
 
 - https://aur.archlinux.org/packages/openssl-1.0/
@@ -93,6 +93,7 @@ linux-zen linux-zen-headers
 
 ### install campus tools
 
+- https://github.com/mekatronik-achmadi/archmate/tree/master/pkgbuilds/unused/matlab-bin-basic/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/campus/py-instrumental/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/campus/py-pyotdr/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/campus/py-pm100/
@@ -155,7 +156,33 @@ lsmod | grep nou
 lspci | grep -i nvidia
 ```
 
-### configure matlab
+### configure remote desktop
+
+#### anydesk
+
+```sh
+sudo systemctl enable anydesk
+sudo systemctl start anydesk
+```
+
+#### teamviewer
+
+```sh
+sudo rm -f /usr/share/applications/teamviewerapi.desktop
+
+sudo systemctl enable teamviewerd
+sudo systemctl start teamviewerd
+```
+
+### configure cisco packet simulator
+
+```sh
+sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
+```
+
+### configure campus tools
+
+#### matlab
 
 ```sh
 echo "09806-07443-53955-64350-21751-41297"
@@ -195,31 +222,7 @@ schemer_import
 echo "-Djogl.disable.openglarbcontext=1" | sudo tee -a /opt/mathworks/matlab-2018a/bin/glnxa64/java.opts
 ```
 
-### configure remote desktop
-
-#### anydesk
-
-```sh
-sudo systemctl enable anydesk
-sudo systemctl start anydesk
-```
-
-#### teamviewer
-
-```sh
-sudo rm -f /usr/share/applications/teamviewerapi.desktop
-
-sudo systemctl enable teamviewerd
-sudo systemctl start teamviewerd
-```
-
-### configure cisco packet simulator
-
-```sh
-sudo ln -svf /opt/packettracer/packettracer /usr/bin/packettracer
-```
-
-### configure roomeqwizard
+#### roomeqwizard
 
 ```sh
 sudo sed -i 's#Categories=Application;#Categories=AudioVideo;Audio;Player;#g' \
@@ -228,4 +231,15 @@ sudo sed -i 's#Categories=Application;#Categories=AudioVideo;Audio;Player;#g' \
 echo "Terminal=false" | sudo tee -a /usr/share/applications/roomeqwizard/roomeqwizard.desktop
 echo "Comment=Room Equalizer Wizard"  | sudo tee -a /usr/share/applications/roomeqwizard/roomeqwizard.desktop
 ```
+
+#### audacity
+
+re-enabled headphone
+
+```sh
+alsactl init
+```
+
+then change **sysdefault: Headphone Mic:0**
+to **sysdefault: Internal Mic:0'**
 

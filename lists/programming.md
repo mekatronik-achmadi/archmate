@@ -24,12 +24,13 @@ python-pyqtgraph
 
 ### install c/c++ programming
 
-gdb gdb-dashboard
-rust rust-analyzer
-rust-src rust-bindgen
-rust-wasm cargo-generate
-cargo-edit cargo-feature
-llvm lld libc++ lldb clang
+llvm lld libc++ clang
+lldb gdb gdb-dashboard
+
+### install rust programming
+
+rust rust-analyzer rust-src rust-bindgen
+cargo-generate cargo-edit cargo-feature
 
 ### install python programming
 
@@ -44,11 +45,6 @@ nodejs npm yarn asar
 bash-language-server
 electron22 trash-cli
 jq yq node-gyp ts-node
-
-### install webassembly
-
-emscripten rust-wasm
-wasm-pack wasm-bindgen
 
 ### install mono
 
