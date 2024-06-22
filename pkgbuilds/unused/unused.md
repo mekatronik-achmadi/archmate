@@ -47,7 +47,6 @@ audacity r python-rpy2
 ### install chrome browsers
 
 - https://aur.archlinux.org/packages/google-chrome/
-- https://aur.archlinux.org/packages/microsoft-edge-stable-bin/
 
 ### install remote desktop
 
