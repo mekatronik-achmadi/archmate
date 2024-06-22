@@ -48,6 +48,10 @@ audacity r python-rpy2
 
 - https://aur.archlinux.org/packages/google-chrome/
 
+### install cad tools
+
+- https://aur.archlinux.org/packages/cura-bin/
+
 ### install remote desktop
 
 - https://aur.archlinux.org/packages/anydesk-bin/
@@ -68,7 +72,7 @@ audacity r python-rpy2
 
 ## External
 
-### install cadsoft eagle
+### install cad tools
 
 - https://aur.archlinux.org/packages/openssl-1.0/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/eaglecad/

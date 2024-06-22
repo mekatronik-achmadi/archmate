@@ -16,10 +16,6 @@ kicad-library-3d ngspice
 
 ## AUR
 
-### install cad tools
-
-- https://aur.archlinux.org/packages/cura-bin/
-
 ### install kicad libraries
 
 - https://aur.archlinux.org/packages/kicad-library-espressif-git/
