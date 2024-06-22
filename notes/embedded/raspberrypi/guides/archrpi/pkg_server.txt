@@ -1,7 +1,5 @@
-vsftpd perl-cgi lighttpd
-apache fake-hwclock
-
-openssl openssl-1.1
+openssl openssl-1.1 vsftpd
+lighttpd perl-cgi apache
 
 jq yq
 nodejs
@@ -14,6 +12,7 @@ python-flask python-dotenv
 python-mysql-connector
 python-mysqlclient
 python-mongoengine
+python-requests
 python-pymongo
 
 mosquitto libwebsockets

@@ -31,6 +31,6 @@ libva libva-utils
 libvdpau-va-gl
 vdpauinfo
 
-python-numpy python-requests
-python-scipy python-matplotlib
-sox python-pandas python-pyqt5
+sox python-matplotlib
+python-numpy python-scipy
+python-pandas python-pyqt5

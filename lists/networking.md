@@ -18,6 +18,7 @@ python-flask python-dotenv
 python-mysql-connector
 python-mysqlclient
 python-mongoengine
+python-requests
 python-pymongo
 
 ### install mqtt broker
@@ -35,6 +36,10 @@ mosquitto libwebsockets
 ### install social media
 
 - https://aur.archlinux.org/packages/whatsdesk-bin/
+
+### install http tools
+
+- https://aur.archlinux.org/packages/postman-bin/
 
 --------------------------------------------------------------------------------
 

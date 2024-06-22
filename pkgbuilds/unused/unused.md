@@ -14,10 +14,7 @@ linux-zen linux-zen-headers
 
 ## install academic tools
 
-audacity sox
-r python-rpy2
-python-pyaudio
-python-sounddevice
+audacity r python-rpy2
 
 --------------------------------------------------------------------------------
 
@@ -57,18 +54,13 @@ python-sounddevice
 - https://aur.archlinux.org/packages/anydesk-bin/
 - https://aur.archlinux.org/packages/teamviewer/
 
-### install http tools
-
-- https://aur.archlinux.org/packages/postman-bin/
-
-## install academic tools
+### install academic tools
 
 - https://aur.archlinux.org/packages/littler/
 - https://aur.archlinux.org/packages/rstudio-desktop-bin/
 - https://aur.archlinux.org/packages/roomeqwizard/
 - https://aur.archlinux.org/packages/wavesurfer/
 - https://aur.archlinux.org/packages/snack/
-- https://aur.archlinux.org/packages/python-soundfile/
 - https://aur.archlinux.org/packages/python-pmdarima/
 - https://aur.archlinux.org/packages/mendeleydesktop-bundled/
 - https://aur.archlinux.org/packages/zotero-bin/

@@ -21,12 +21,6 @@ python-numpy python-pandas
 python-pytables python-numexpr
 python-pyarrow python-openpyxl
 
-### install python additional
-
-python-beautifulsoup4
-python-flit python-cffi
-python-sphinx python-yaml
-
 ### install texlive
 
 texlive texlive-langenglish

@@ -64,23 +64,15 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ### configure nvidia
 
-#### prevent nouveau
+#### booting setup
 
 ```sh
 sudo sed -i 's@kms @@g' /etc/mkinitcpio.conf
 sudo mkinitcpio -p archlinux
-```
 
-#### disable nvidiafb
-
-```sh
 echo 'blacklist nvidiafb
 ' | sudo tee /etc/modprobe.d/rtl8xxxu.conf
-```
 
-#### disable ibt
-
-```sh
 sudo sed -i 's#quiet"#quiet ibt=off"#g' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```

@@ -4,9 +4,8 @@
 
 ### install media editor
 
-openshot faac frei0r-plugins
-gimp imagemagick djview
-inkscape xsane-gimp
+sox openshot faac inkscape gimp djview
+frei0r-plugins imagemagick xsane-gimp
 
 ### install disk recovery tools
 

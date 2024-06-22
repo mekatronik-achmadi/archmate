@@ -32,12 +32,19 @@ lldb gdb gdb-dashboard
 rust rust-analyzer rust-src rust-bindgen
 cargo-generate cargo-edit cargo-feature
 
-### install python programming
+### install python interface
 
+python-beautifulsoup4
 jedi-language-server
 ipython jupyterlab
 jupyter-notebook
 python-pygments
+
+### install python additional
+
+python-sounddevice
+python-flit python-cffi
+python-sphinx python-yaml
 
 ### install javacript programming
 
@@ -179,7 +186,6 @@ vim +PlugClean
 
 ```sh
 mkdir -p ~/.vim
-
 jq -n '
 ."clangd.arguments"=["-header-insertion=never"] |
 ."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
