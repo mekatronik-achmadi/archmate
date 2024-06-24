@@ -65,6 +65,7 @@ wsl -d ubuntu-20.04 -- neofetch
 Paths:
 - drive C: -> **/mnt/c**
 - Windows User -> **/mnt/c/Users/Administrator/**
+- WSL Distro -> **C:\Users\Administrator\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows**
 
 ```sh
 wsl -- ls /mnt/c/
