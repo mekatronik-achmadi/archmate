@@ -75,7 +75,7 @@ wsl --terminate ubuntu-20.04
 wsl --shutdown
 ```
 
-## Ubuntu-20.04 WSL 
+## Ubuntu-20.04 WSL
 
 **Notes:** Avoid install GUI/X11 packages as WSL run like a container
 
@@ -169,6 +169,11 @@ git config --global user.email "mekatronik.achmadi@gmail.com"
 ### vim profile
 
 ```sh
+mkdir -p ~/.vim/autoload/
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+
 echo "
 call plug#begin('~/.vim/pack/plug/start')
     Plug 'm-pilia/vim-pkgbuild'
