@@ -96,9 +96,9 @@ sudo apt-get upgrade
 
 ```sh
 sudo apt-get install $(echo "
-git tig mc bat neofetch vim nano zip p7zip
-cython python3-pip python3-virtualenv yarn
-unrar bash-completion clangd cmake jq nodejs
+git tig mc bat neofetch vim nano p7zip
+zip unrar bash-completion clangd cmake
+cython python3-pip python3-virtualenv
 ")
 ```
 
@@ -168,6 +168,8 @@ git config --global user.email "mekatronik.achmadi@gmail.com"
 
 ### vim profile
 
+**Notes:** CoC currently doesn't work for Vim inside WSL
+
 ```sh
 mkdir -p ~/.vim/autoload/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -190,9 +192,6 @@ call plug#begin('~/.vim/pack/plug/start')
     Plug 'preservim/vim-markdown'
     Plug 'chrisbra/csv.vim'
     Plug 'lervag/vimtex'
-\"    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
@@ -207,8 +206,6 @@ hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_autowrite = 1
-
-let g:coc_disable_startup_warning = 1
 
 autocmd BufWritePre * %s/\s\+$//e
 filetype plugin on
@@ -226,26 +223,9 @@ let g:tagbar_width=20
 let g:NERDTreeWinSize=20
 syntax on" | tee ~/.vimrc
 ```
-`
-```sh
-mkdir -p ~/.config/coc/
 
+```sh
 vim +PlugInstall
-vim -c "CocInstall coc-tsserver coc-vimtex"
-vim -c "CocInstall coc-pairs coc-snippets"
-vim -c "CocInstall coc-clangd coc-json"
-vim -c "CocInstall coc-html coc-yaml"
 vim +PlugClean
-```
-
-```sh
-mkdir -p ~/.vim
-rm -f ~/.vim/coc-settings.json
-
-jq -n '
-."clangd.arguments"=["-header-insertion=never"] |
-."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
-."snippets.ultisnips.enable"=false
-' > ~/.vim/coc-settings.json
 ```
 
