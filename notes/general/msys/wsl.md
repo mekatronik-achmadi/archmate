@@ -36,6 +36,12 @@ wsl --list --verbose
 wsl --set-default ubuntu-20.04
 ```
 
+### removing distro
+
+```sh
+wsl --unregister ubuntu-20.04
+```
+
 ## WSL Usage
 
 **Note:** This doesn't have to be run as Administrator
