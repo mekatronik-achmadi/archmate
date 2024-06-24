@@ -26,6 +26,12 @@ wsl --list --online
 wsl --install -d ubuntu-20.04
 ```
 
+Installed distro folder:
+
+```
+C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows*
+```
+
 ### set default distro
 
 ```sh
@@ -64,8 +70,7 @@ wsl -d ubuntu-20.04 -- neofetch
 
 Paths:
 - drive C: -> **/mnt/c**
-- Windows User -> **/mnt/c/Users/Administrator/**
-- WSL Distro -> **C:\Users\Administrator\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows**
+- Windows User -> **/mnt/c/Users/<username>/**
 
 ```sh
 wsl -- ls /mnt/c/
