@@ -171,9 +171,9 @@ git config --global user.email "mekatronik.achmadi@gmail.com"
 ```sh
 mkdir -p ~/.vim/autoload/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
-
-
+```sh
 echo "
 call plug#begin('~/.vim/pack/plug/start')
     Plug 'm-pilia/vim-pkgbuild'
