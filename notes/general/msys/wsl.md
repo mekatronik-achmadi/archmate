@@ -194,15 +194,6 @@ call plug#begin('~/.vim/pack/plug/start')
     Plug 'lervag/vimtex'
 call plug#end()
 
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \\: \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\"
-
-\":h cterm-colors
-\":h gui-colors
-\":hi
-hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
-hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
-
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_autowrite = 1
