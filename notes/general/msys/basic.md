@@ -46,9 +46,9 @@ pacman -Su --noconfirm
 
 ```sh
 pacman -S $(echo "
-base base-devel mintty mc neofetch
+base base-devel mintty winpty
 vim nano openssh unrar zip p7zip
-git tig winpty bash-completion
+git tig mc neofetch bash-completion
 ")
 ```
 
