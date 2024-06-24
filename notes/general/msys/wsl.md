@@ -112,8 +112,8 @@ exit
 
 ```sh
 sudo apt-get install $(echo "
-git tig mc bat neofetch vim nano p7zip
-zip unrar bash-completion clangd cmake
+git tig mc bat neofetch vim nano p7zip zip unrar 
+bash-completion clangd cmake build-essential
 cython python3-pip python3-virtualenv
 ")
 ```
