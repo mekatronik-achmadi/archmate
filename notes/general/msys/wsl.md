@@ -56,8 +56,9 @@ wsl -d ubuntu-20.04 -- neofetch
 
 ### drive path
 
-drive C: -> **/mnt/c**
-Windows User -> **/mnt/c/Users/Administrator/**
+Paths:
+- drive C: -> **/mnt/c**
+- Windows User -> **/mnt/c/Users/Administrator/**
 
 ```sh
 wsl -- ls /mnt/c/
@@ -84,16 +85,21 @@ wsl --shutdown
 wsl -d ubuntu-20.04
 ```
 
-### update databases
+### update\upgrade
 
 ```sh
 sudo apt-get update
+sudo apt-get upgrade
 ```
 
 ### basic packages
 
 ```sh
-sudo apt-get install git tig mc bat neofetch vim nano zip p7zip bash-completion
+sudo apt-get install $(echo "
+git tig mc bat neofetch vim nano zip p7zip
+cython python3-pip python3-virtualenv yarn
+unrar bash-completion clangd cmake jq nodejs
+")
 ```
 
 ### basic profiles
@@ -159,3 +165,82 @@ echo '[core]
 git config --global user.name "mekatronik-achmadi"
 git config --global user.email "mekatronik.achmadi@gmail.com"
 ```
+
+### vim profile
+
+```sh
+echo "
+call plug#begin('~/.vim/pack/plug/start')
+    Plug 'm-pilia/vim-pkgbuild'
+    Plug 'dense-analysis/ale'
+    Plug 'preservim/nerdcommenter'
+    Plug 'preservim/nerdtree'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'godlygeek/tabular'
+    Plug 'preservim/tagbar'
+    Plug 'preservim/vim-markdown'
+    Plug 'chrisbra/csv.vim'
+    Plug 'lervag/vimtex'
+\"    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \\: \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\"
+
+\":h cterm-colors
+\":h gui-colors
+\":hi
+hi CocFloating ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
+hi CocInlayHint ctermfg=Black ctermbg=Yellow guifg=Black guibg=Yellow
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_autowrite = 1
+
+autocmd BufWritePre * %s/\s\+$//e
+filetype plugin on
+filetype indent on
+filetype plugin indent on
+set expandtab ts=4 sw=4 ai
+set conceallevel=0
+set encoding=utf-8
+set termguicolors
+set ic is hls
+set number
+set wrap!
+set mouse=a
+let g:tagbar_width=20
+let g:NERDTreeWinSize=20
+syntax on" | tee ~/.vimrc
+```
+`
+```sh
+mkdir -p ~/.config/coc/
+
+vim +PlugInstall
+vim -c "CocInstall coc-tsserver coc-vimtex"
+vim -c "CocInstall coc-pairs coc-snippets"
+vim -c "CocInstall coc-clangd coc-json"
+vim -c "CocInstall coc-html coc-yaml"
+vim -c "CocInstall coc-rust-analyzer"
+vim +PlugClean
+```
+
+```sh
+mkdir -p ~/.vim
+rm -f ~/.vim/coc-settings.json
+
+jq -n '
+."clangd.arguments"=["-header-insertion=never"] |
+."pairs.enableCharacters"=["(","[","\"","'\''","`"] |
+."rust-analyzer.server.path"="/mingw64/bin/rust-analyzer" |
+."snippets.ultisnips.enable"=false
+' > ~/.vim/coc-settings.json
+```
+
