@@ -57,9 +57,11 @@ wsl -d ubuntu-20.04 -- neofetch
 ### drive path
 
 drive C: -> **/mnt/c**
+Windows User -> **/mnt/c/Users/Administrator/**
 
 ```sh
 wsl -- ls /mnt/c/
+wsl -- ls /mnt/c/Users/Administrator/
 ```
 
 ### termination
@@ -95,15 +97,20 @@ sudo apt-get install git tig mc bat neofetch vim nano zip p7zip bash-completion
 ### basic profiles
 
 ```sh
+sudo su
+
 echo '
 export PATH=$PATH:~/.local/bin
 export VISUAL=vim
 export EDITOR=vim
 export PAGER=less
 export VIEWER=less
-' | sudo tee /etc/profile.d/wsl_profile.sh
+' | tee /etc/profile.d/wsl_profile.sh
 
-echo '[[ $- != *i* ]] && return' |  tee ~/.bashrc
+exit
+```
+
+```sh
 echo "
 shopt -s checkwinsize
 shopt -s histappend
@@ -112,9 +119,8 @@ alias grep='grep --color=auto'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias mc='mc --nocolor'
 alias bat='bat --theme=ansi'
-alias wsl='cmd.exe /c start cmd.exe /c wsl.exe'
+alias wsl='cmd.exe /c start cmd.exe /c wsl.exe -- cd ~'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedupsT
-PS1='\[\033[01m\][\u@\h \W]\$ \[\033[00m\]'
 " | tee -a ~/.bashrc
 ```
