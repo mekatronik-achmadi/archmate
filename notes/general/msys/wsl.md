@@ -76,6 +76,8 @@ wsl --shutdown
 
 ## Ubuntu-20.04 WSL 
 
+**Notes:** Avoid install GUI/X11 packages as WSL run like a container
+
 ### start-up
 
 ```sh
@@ -119,8 +121,41 @@ alias grep='grep --color=auto'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias mc='mc --nocolor'
 alias bat='bat --theme=ansi'
-alias wsl='cmd.exe /c start cmd.exe /c wsl.exe -- cd ~'
+alias wsl='cmd.exe /c start cmd.exe /c wsl.exe'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedupsT
 " | tee -a ~/.bashrc
+```
+
+### git profile
+
+```sh
+echo '[core]
+	pager = cat
+	editor = vim
+	whitespace = -trailing-space
+
+[diff]
+	renames = true
+	tool = vimdiff
+
+[color]
+	ui = auto
+
+[credential]
+	helper = cache --timeout=3600
+
+[advice]
+	addIgnoredFile = false
+
+[init]
+	defaultBranch = main
+
+[user]
+	name =
+	email =
+' > ~/.gitconfig
+
+git config --global user.name "mekatronik-achmadi"
+git config --global user.email "mekatronik.achmadi@gmail.com"
 ```
