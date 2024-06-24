@@ -95,8 +95,12 @@ wsl -d ubuntu-20.04
 ### update\upgrade
 
 ```sh
-sudo apt-get update
-sudo apt-get upgrade
+sudo su
+
+apt-get update
+apt-get upgrade
+
+exit
 ```
 
 ### basic packages
