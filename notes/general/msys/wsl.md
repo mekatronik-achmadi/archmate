@@ -208,6 +208,8 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_autowrite = 1
 
+let g:coc_disable_startup_warning = 1
+
 autocmd BufWritePre * %s/\s\+$//e
 filetype plugin on
 filetype indent on
