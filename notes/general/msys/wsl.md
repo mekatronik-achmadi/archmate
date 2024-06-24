@@ -112,7 +112,7 @@ exit
 
 ```sh
 sudo apt-get install $(echo "
-git tig mc bat neofetch vim nano p7zip zip unrar 
+git tig mc bat neofetch vim nano p7zip zip unrar
 bash-completion clangd cmake build-essential
 cython python3-pip python3-virtualenv
 ")
@@ -228,10 +228,7 @@ set mouse=a
 let g:tagbar_width=20
 let g:NERDTreeWinSize=20
 syntax on" | tee ~/.vimrc
-```
 
-```sh
 vim +PlugInstall
-vim +PlugClean
 ```
 
