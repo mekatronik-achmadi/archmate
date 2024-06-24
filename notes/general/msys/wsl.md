@@ -143,7 +143,6 @@ alias grep='grep --color=auto'
 alias makepkg='makepkg --nocheck --skippgpcheck'
 alias mc='mc --nocolor'
 alias bat='bat --theme=ansi'
-alias wsl='cmd.exe /c start cmd.exe /c wsl.exe'
 export MAKEFLAGS=-j$(nproc)
 export HISTCONTROL=ignorespace:ignoredups:erasedupsT
 " | tee -a ~/.bashrc
