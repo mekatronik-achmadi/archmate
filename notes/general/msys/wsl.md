@@ -48,6 +48,30 @@ wsl --set-default ubuntu-20.04
 wsl --unregister ubuntu-20.04
 ```
 
+### termination
+
+```sh
+# terminate specific distro
+wsl --terminate ubuntu-20.04
+
+# shutdown WSL kernel
+wsl --shutdown
+```
+
+### disable/enable autostart
+
+enable:
+
+```sh
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+
+disable:
+
+```sh
+dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux /norestart
+```
+
 ## WSL Usage
 
 **Note:** This doesn't have to be run as Administrator
@@ -75,16 +99,6 @@ Paths:
 ```sh
 wsl -- ls /mnt/c/
 wsl -- ls /mnt/c/Users/Administrator/
-```
-
-### termination
-
-```sh
-# terminate specific distro
-wsl --terminate ubuntu-20.04
-
-# shutdown WSL kernel
-wsl --shutdown
 ```
 
 ## Ubuntu-20.04 WSL
