@@ -58,7 +58,27 @@ wsl --terminate ubuntu-20.04
 wsl --shutdown
 ```
 
-### disable/enable autostart
+### disable sudo password
+
+```sh
+wsl -d ubuntu-20.04
+
+sudo su
+```
+
+**Notes:** This example use **wsl** as username example
+
+```sh
+echo 'wsl ALL:(ALL) NOPASSWD:ALL' | tee -a /etc/sudoers
+```
+
+```sh
+exit
+
+wsl --terminate -d ubuntu-20.04
+```
+
+### disable/enable wsl autostart
 
 enable:
 
@@ -114,12 +134,8 @@ wsl -d ubuntu-20.04
 ### update\upgrade
 
 ```sh
-sudo su
-
-apt-get update
-apt-get upgrade
-
-exit
+sudo apt-get update
+sudo apt-get upgrade
 ```
 
 ### basic packages
@@ -135,17 +151,13 @@ unrar bash-completion clangd build-essential
 ### basic profiles
 
 ```sh
-sudo su
-
 echo '
 export PATH=$PATH:~/.local/bin
 export VISUAL=vim
 export EDITOR=vim
 export PAGER=less
 export VIEWER=less
-' | tee /etc/profile.d/wsl_profile.sh
-
-exit
+' | sudo tee /etc/profile.d/wsl_profile.sh
 ```
 
 ```sh
