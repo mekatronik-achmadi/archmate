@@ -42,12 +42,6 @@ wsl --list --verbose
 wsl --set-default ubuntu-20.04
 ```
 
-### removing distro
-
-```sh
-wsl --unregister ubuntu-20.04
-```
-
 ### termination
 
 ```sh
@@ -76,6 +70,12 @@ echo 'wsl ALL:(ALL) NOPASSWD:ALL' | tee -a /etc/sudoers
 exit
 
 wsl --terminate -d ubuntu-20.04
+```
+
+### removing distro
+
+```sh
+wsl --unregister ubuntu-20.04
 ```
 
 ### disable/enable wsl autostart
@@ -142,9 +142,9 @@ sudo apt-get upgrade
 
 ```sh
 sudo apt-get install $(echo "
-git tig mc bat neofetch vim nano p7zip zip
-cmake cython python3-pip python3-virtualenv
-unrar bash-completion clangd build-essential
+git tig mc bat neofetch vim nano p7zip
+zip cython python3-pip python3-virtualenv
+unrar bash-completion cmake build-essential
 ")
 ```
 
