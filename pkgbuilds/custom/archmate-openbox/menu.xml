@@ -120,30 +120,9 @@
   </item>
 </menu>
 
-<!-- ####################### Quick Menu List ####################### -->
+<!-- ####################### Exit Menu ############################# -->
 
-<menu id="root-menu" label="Root Menu">
-  <separator label="Quick Menu" />
-  <item label="Run Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
-    <action name="Execute"><command>gmrun -g 300x</command></action>
-  </item>
-  <item label="UXTerm" icon="/usr/share/icons/Papirus/32x32/apps/xterm.svg">
-    <action name="Execute"><command>uxterm</command></action>
-  </item>
-  <item label="MC FM" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
-    <action name="Execute"><command>uxterm -e mc --nocolor</command></action>
-  </item>
-  <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
-  <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
-  <menu id="settings" icon="/usr/share/icons/Papirus/32x32/apps/preferences.svg"/>
-
-  <separator label="Piped Menu"/>
-  <menu id="applications" label="All Menu" execute="xdg_menu --format openbox3-pipe"/>
-
-  <separator label="Workspaces"/>
-  <menu id="client-list-combined-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
-
-  <separator label="Exit" />
+<menu id="exit-menu" label="Exit Menu">
   <item label="Logout" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-logout.svg">
     <action name="Exit"><prompt>yes</prompt></action>
   </item>
@@ -156,6 +135,33 @@
   <item label="Shutdown" icon="/usr/share/icons/Papirus/32x32/apps/xfsm-shutdown.svg">
     <action name="Execute"><command>systemctl poweroff</command><prompt>Poweroff now?</prompt></action>
   </item>
+</menu>
+
+<!-- ####################### Quick Menu List ####################### -->
+
+<menu id="root-menu" label="Root Menu">
+  <separator label="Session Menu" />
+  <item label="Run Program" icon="/usr/share/icons/Papirus/32x32/apps/gnome-panel-launcher.svg">
+    <action name="Execute"><command>gmrun -g 300x</command></action>
+  </item>
+  <item label="UXTerm" icon="/usr/share/icons/Papirus/32x32/apps/xterm.svg">
+    <action name="Execute"><command>uxterm</command></action>
+  </item>
+  <item label="MC Files" icon="/usr/share/icons/Papirus/32x32/apps/mc.svg">
+    <action name="Execute"><command>uxterm -e mc --nocolor</command></action>
+  </item>
+  <menu id="programs" icon="/usr/share/icons/Papirus/32x32/apps/app-launcher.svg"/>
+  <menu id="screenshot" icon="/usr/share/icons/Papirus/32x32/apps/accessories-screenshot.svg"/>
+  <menu id="settings" icon="/usr/share/icons/Papirus/32x32/apps/preferences.svg"/>
+
+  <separator label="Piped Menu"/>
+  <menu id="applications" label="All Menu" execute="xdg_menu --format openbox3-pipe"/>
+
+  <separator label="Workspaces"/>
+  <menu id="client-list-combined-menu" icon="/usr/share/icons/Papirus/32x32/apps/workspace-switcher.svg"/>
+  <menu id="exit-menu" icon="/usr/share/icons/Papirus/32x32/apps/session-desktop.svg"/>
+
+  <separator label=""/>
 </menu>
 
 </openbox_menu>

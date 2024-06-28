@@ -1,6 +1,4 @@
-# Arch Linux with MATE Desktop
-
-![archmate](./archmate.png)
+# Arch Linux with MATE/Openbox Desktop
 
 My Personal lists, scripts, and configurations for my Arch Linux with MATE Desktop installation while try to be minimal as possible.
 

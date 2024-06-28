@@ -10,14 +10,14 @@ arc-solid-gtk-theme papirus-icon-theme
 openbox obconf tint2 feh xpdf gmrun
 volumeicon xarchiver brightnessctl
 cbatticon xorg-xinit xorg-server
+pcmanfm-gtk3 lxterminal systemd
 firefox mc gvfs less xterm vimb
 geany dbus htop fzf bat ripgrep
 gsimplecal archlinux-xdg-menu
 brightnessctl arandr onboard
 scrot pavucontrol volumeicon
 git vim archlinux-wallpaper
-gpicview lxappearance-gtk3
-pcmanfm-gtk3 lxterminal)
+gpicview lxappearance-gtk3)
 provides=('vi')
 conflicts=('vi')
 install=pkg.install
