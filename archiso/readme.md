@@ -18,6 +18,13 @@ To try, there are two options:
 
 Any my custom package recipes that build these ISO can be found [here](https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/custom).
 
+## Disk Partition
+
+Recommendation:
+- EFI Disk: 200MB
+- Root Disk: 55GB or more
+- Optional Home: 50GB or more
+
 ## Download Example
 
 There are two variants: Openbox and MATE.

@@ -305,7 +305,7 @@ sudo mkdir -vp /var/lib/pacman/sync/
 sudo mkdir -vp /var/cache/pacman/pkg/
 
 export ISOVER='mate_012024'
-export DIRPATH="/home/developments/Packages/ArchMate-x86_64/$ISOVER"
+export DIRPATH="/home/development/Packages/ArchMate-x86_64/$ISOVER"
 sudo rsync -avh $DIRPATH/databases/ /var/lib/pacman/sync/
 sudo rsync -avh $DIRPATH/packages/official/ /var/cache/pacman/pkg/
 

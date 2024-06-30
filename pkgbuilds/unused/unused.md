@@ -44,9 +44,10 @@ audacity r python-rpy2
 
 - https://aur.archlinux.org/packages/optimus-manager/
 
-### install chrome browsers
+### install internet tools
 
 - https://aur.archlinux.org/packages/google-chrome/
+- https://aur.archlinux.org/packages/hyperspace-bin/
 
 ### install cad tools
 
