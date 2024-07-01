@@ -47,7 +47,6 @@ audacity r python-rpy2
 ### install internet tools
 
 - https://aur.archlinux.org/packages/google-chrome/
-- https://aur.archlinux.org/packages/hyperspace-bin/
 
 ### install cad tools
 
@@ -82,6 +81,7 @@ audacity r python-rpy2
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/telegram/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/ungoogled/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/youtubemusic/
 
