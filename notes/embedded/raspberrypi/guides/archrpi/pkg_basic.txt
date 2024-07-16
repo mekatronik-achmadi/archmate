@@ -57,9 +57,9 @@ qbittorrent-nox qbittorrent
 
 fuse2 fuse3 udisks2
 ntfs-3g exfat-utils
+dfc gptfdisk mtools
 gparted dosfstools
 gpart e2fsprogs
-gptfdisk mtools
 
 gpio-utils wiringpi fake-hwclock
 python-periphery python-wiringx-git

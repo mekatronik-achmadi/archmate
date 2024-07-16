@@ -229,7 +229,7 @@ ntfs-3g exfat-utils
 gparted dosfstools
 gpart e2fsprogs
 gptfdisk mtools
-fuse2 fuse3
+dfc fuse2 fuse3
 
 ### install boot system
 
