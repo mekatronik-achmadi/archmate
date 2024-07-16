@@ -88,6 +88,7 @@ audacity r python-rpy2
 ### install additional themes
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-ubuntu/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-win95/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-win10/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/themes/archmate-menu/
 
@@ -95,7 +96,6 @@ audacity r python-rpy2
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lubuntu/lxde/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lubuntu/theme/
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/lubuntu/win95/
 
 ### install campus tools
 
