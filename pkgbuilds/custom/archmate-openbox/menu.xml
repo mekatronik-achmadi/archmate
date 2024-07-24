@@ -8,9 +8,6 @@
   <item label="Browser" icon="/usr/share/icons/Papirus/32x32/apps/web-browser.svg">
     <action name="Execute"><command>vimb</command></action>
   </item>
-  <item label="Firefox" icon="/usr/share/icons/Papirus/32x32/apps/firefox.svg">
-    <action name="Execute"><command>firefox</command></action>
-  </item>
   <item label="Geany" icon="/usr/share/icons/Papirus/32x32/apps/geany.svg">
     <action name="Execute"><command>geany</command></action>
   </item>

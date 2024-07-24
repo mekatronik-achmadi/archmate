@@ -114,7 +114,7 @@ sudo reboot
 ## Test on Webrowser
 
 ```sh
-firefox http://10.124.4.150/gitweb
+vimb http://10.124.4.150/gitweb
 ```
 
 ## Create Repository
@@ -271,7 +271,7 @@ sudo systemctl start gitea
 
 ```sh
 # make sure database type is correct
-firefox http://10.3.49.199:3000/
+vimb http://10.3.49.199:3000/
 ```
 
 #### repository URL pattern

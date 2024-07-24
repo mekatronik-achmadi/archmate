@@ -1,8 +1,8 @@
 [Default Applications]
 inode/directory=caja-folder-handler.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
-x-scheme-handler/about=firefox.desktop
+x-scheme-handler/http=vimb.desktop
+x-scheme-handler/https=vimb.desktop
+x-scheme-handler/about=vimb.desktop
 text/plain=pluma.desktop
 audio/mpeg=vlc.desktop
 audio/x-mpegurl=vlc.desktop

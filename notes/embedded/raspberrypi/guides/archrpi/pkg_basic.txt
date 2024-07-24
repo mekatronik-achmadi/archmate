@@ -52,8 +52,8 @@ openresolv dhclient dhcpcd mtr
 tcpdump iperf3 fping inetutils
 gnu-netcat nmap termshark
 
-firefox vimb uget aria2
-qbittorrent-nox qbittorrent
+uget vimb qbittorrent
+aria2 qbittorrent-nox
 
 fuse2 fuse3 udisks2
 ntfs-3g exfat-utils

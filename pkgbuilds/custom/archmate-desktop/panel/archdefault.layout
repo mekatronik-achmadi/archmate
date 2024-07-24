@@ -33,14 +33,6 @@ position=20
 object-type=launcher
 panel-right-stick=false
 
-[Object web-browser]
-launcher-location=/usr/share/applications/firefox.desktop
-locked=true
-toplevel-id=top
-position=30
-object-type=launcher
-panel-right-stick=false
-
 [Object notification-area]
 object-type=applet
 applet-iid=NotificationAreaAppletFactory::NotificationArea

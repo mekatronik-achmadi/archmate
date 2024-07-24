@@ -100,8 +100,8 @@ lhasa rpmextract lxsplit unrar-free
 bzip2 gzip lz4 p7zip zip unzip
 lrzip lzip lzop zstd cpio
 
-firefox filezilla uget aria2
-vimb qbittorrent-nox qbittorrent
+vimb filezilla uget aria2
+qbittorrent-nox qbittorrent
 
 blueman bluez
 bluez-utils

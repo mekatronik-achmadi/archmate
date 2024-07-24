@@ -15,6 +15,10 @@ ddrescue ext4magic foremost testdisk
 
 ## AUR
 
+### install web-browser
+
+- https://aur.archlinux.org/packages/google-chrome/
+
 ### install markdown tools
 
 - https://aur.archlinux.org/packages/pandoc-bin/

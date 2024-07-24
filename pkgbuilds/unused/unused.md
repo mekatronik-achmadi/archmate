@@ -44,10 +44,6 @@ audacity r python-rpy2
 
 - https://aur.archlinux.org/packages/optimus-manager/
 
-### install internet tools
-
-- https://aur.archlinux.org/packages/google-chrome/
-
 ### install cad tools
 
 - https://aur.archlinux.org/packages/cura-bin/
@@ -81,6 +77,7 @@ audacity r python-rpy2
 
 ### install internet tool
 
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/firefox/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/telegram/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/ungoogled/
@@ -163,6 +160,13 @@ lsmod | grep nvi
 lsmod | grep nou
 lspci | grep -i nvidia
 ```
+
+### configure firefox
+
+#### recommended addons
+
+- https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+- https://addons.mozilla.org/en-US/firefox/addon/adblock-for-firefox/
 
 ### configure remote desktop
 

@@ -164,8 +164,8 @@ cython0 pybind11 python-setuptools
 
 ### install internet tools
 
-firefox filezilla uget aria2
-vimb qbittorrent-nox qbittorrent
+vimb filezilla uget aria2
+qbittorrent-nox qbittorrent
 
 ### install bluetooth support
 
@@ -691,11 +691,6 @@ ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)
 echo $XDG_CURRENT_DESKTOP
 echo $XDG_SESSION_TYPE
 ```
-
-### Firefox
-
-- https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
-- https://addons.mozilla.org/en-US/firefox/addon/adblock-for-firefox/
 
 ### CPU Limit
 

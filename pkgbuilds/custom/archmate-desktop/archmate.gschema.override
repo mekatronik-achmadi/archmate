@@ -34,7 +34,7 @@ network-icon-visible=false
 ################################# APP ##########################################
 
 [org.mate.applications-browser]
-exec='firefox'
+exec='vimb'
 nremote=false
 needs-term=false
 
