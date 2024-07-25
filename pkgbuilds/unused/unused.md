@@ -77,12 +77,17 @@ audacity r python-rpy2
 
 ### install internet tool
 
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/firefox/
+
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/telegram/
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/ungoogled/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/youtubemusic/
+
+### install web browser
+
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/webbrowser/msedge/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/webbrowser/firefox/
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/webbrowser/ungoogled/
 
 ### install additional themes
 
