@@ -39,10 +39,6 @@ ddrescue ext4magic foremost testdisk
 
 ## External
 
-### install youtube programs
-
-- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/youtube/
-
 ### install markdown tools
 
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/optional/ghostwriter-qt5/

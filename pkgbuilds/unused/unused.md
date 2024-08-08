@@ -77,7 +77,7 @@ audacity r python-rpy2
 
 ### install internet tool
 
-
+- https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/youtube/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/discord/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/telegram/
 - https://github.com/mekatronik-achmadi/archmate/tree/main/pkgbuilds/unused/packettracer/
