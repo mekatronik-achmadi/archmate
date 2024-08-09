@@ -1,8 +1,8 @@
 "item";"qty";"url"
 terminal block 2p;8;[Tokped](https://www.tokopedia.com/pcmelektronik/terminal-block-pcb-2pin-biru-kf300)
 nodemcu esp8266;1;[Tokped](https://www.tokopedia.com/pcmelektronik/esp8266-ch340-nodemcu-wifi-lolin-lua-esp-8266-modul)
-header male;4;https:[Tokped](//www.tokopedia.com/pcmelektronik/pin-header-male-1x40-single)
-header female;2;https:[Tokped](//www.tokopedia.com/pcmelektronik/female-header-pin-header-40-pin-female-1x40-lurus)
+header male;4;[Tokped](https://www.tokopedia.com/pcmelektronik/pin-header-male-1x40-single)
+header female;2;[Tokped](https://www.tokopedia.com/pcmelektronik/female-header-pin-header-40-pin-female-1x40-lurus)
 led 3mm;4;[Tokped](https://www.tokopedia.com/pcmelektronik/dioda-led-hijau-3-mm-hijau-hijau)
 resistor 560;4;[Tokped](https://www.tokopedia.com/pcmelektronik/resistor-0-5w-1-2-w-560-ohm-560ohm)
 elco 16v;6;[Tokped](https://www.tokopedia.com/pcmelektronik/2200uf-16v-elco-2200-16v-nipon-chimicon-hitam)

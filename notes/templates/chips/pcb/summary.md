@@ -1,5 +1,7 @@
 # Design Summary
 
+[//]:<> (Convert PDF: Ghostwriter -> Export -> Pandoc GFM -> Format PDF Latex)
+
 ## Description
 
 This circuit design are NodeMCU ESP8266 based module to control a halogen lamp.
@@ -66,19 +68,17 @@ This make USB connection can be dangerous from induction back voltage.
 
 ### Purchasing List
 
-|item             |qty|url                                                                                                           |
-|-----------------|---|--------------------------------------------------------------------------------------------------------------|
-|terminal block 2p|8  |[Tokped](https://www.tokopedia.com/pcmelektronik/terminal-block-pcb-2pin-biru-kf300)                          |
-|nodemcu esp8266  |1  |[Tokped](https://www.tokopedia.com/pcmelektronik/esp8266-ch340-nodemcu-wifi-lolin-lua-esp-8266-modul)         |
-|header male      |4  |https:[Tokped](//www.tokopedia.com/pcmelektronik/pin-header-male-1x40-single)                                 |
-|header female    |2  |https:[Tokped](//www.tokopedia.com/pcmelektronik/female-header-pin-header-40-pin-female-1x40-lurus)           |
-|led 3mm          |4  |[Tokped](https://www.tokopedia.com/pcmelektronik/dioda-led-hijau-3-mm-hijau-hijau)                            |
-|resistor 560     |4  |[Tokped](https://www.tokopedia.com/pcmelektronik/resistor-0-5w-1-2-w-560-ohm-560ohm)                          |
-|elco 16v         |6  |[Tokped](https://www.tokopedia.com/pcmelektronik/2200uf-16v-elco-2200-16v-nipon-chimicon-hitam)               |
-|7805             |2  |[Tokped](https://www.tokopedia.com/pcmelektronik/promo-transistor-ic-regulator-l-7805-l7805-to-220)           |
-|7812             |2  |[Tokped](https://www.tokopedia.com/pcmelektronik/promo-ic-regulator-7812-l7812)                               |
-|dc jack          |2  |[Tokped](https://www.tokopedia.com/pcmelektronik/promo-socket-power-dc-female-2-1x5-5-black-3-pin-berkwalitas)|
-|HX2.54 2p        |2  |[Tokped](https://www.tokopedia.com/rajacell/1set-xh2-54-2p-connector-socket-terminal-pcb-xh-2pin-pitch-2-54mm)|
-|PreOrder PCB     |1  |[Tokped](https://www.tokopedia.com/raftech/jasa-cetak-pcb-general)                                            |
-
-
+|item           |qty|url                           |
+|---------------|---|------------------------------|
+|terminal block 2p|8  |[Tokped](https://www.tokopedia.com/pcmelektronik/terminal-block-pcb-2pin-biru-kf300)|
+|nodemcu esp8266|1  |[Tokped](https://www.tokopedia.com/pcmelektronik/esp8266-ch340-nodemcu-wifi-lolin-lua-esp-8266-modul)|
+|header male    |4  |[Tokped](https://www.tokopedia.com/pcmelektronik/pin-header-male-1x40-single)|
+|header female  |2  |[Tokped](https://www.tokopedia.com/pcmelektronik/female-header-pin-header-40-pin-female-1x40-lurus)|
+|led 3mm        |4  |[Tokped](https://www.tokopedia.com/pcmelektronik/dioda-led-hijau-3-mm-hijau-hijau)|
+|resistor 560   |4  |[Tokped](https://www.tokopedia.com/pcmelektronik/resistor-0-5w-1-2-w-560-ohm-560ohm)|
+|elco 16v       |6  |[Tokped](https://www.tokopedia.com/pcmelektronik/2200uf-16v-elco-2200-16v-nipon-chimicon-hitam)|
+|7805           |2  |[Tokped](https://www.tokopedia.com/pcmelektronik/promo-transistor-ic-regulator-l-7805-l7805-to-220)|
+|7812           |2  |[Tokped](https://www.tokopedia.com/pcmelektronik/promo-ic-regulator-7812-l7812)|
+|dc jack        |2  |[Tokped](https://www.tokopedia.com/pcmelektronik/promo-socket-power-dc-female-2-1x5-5-black-3-pin-berkwalitas)|
+|HX2.54 2p      |2  |[Tokped](https://www.tokopedia.com/rajacell/1set-xh2-54-2p-connector-socket-terminal-pcb-xh-2pin-pitch-2-54mm)|
+|PreOrder PCB   |1  |[Tokped](https://www.tokopedia.com/raftech/jasa-cetak-pcb-general)|
